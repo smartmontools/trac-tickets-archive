@@ -1,0 +1,14 @@
+--- drivedb.h	2018-10-23 19:17:14.546362195 -0500
++++ drivedb.h.new	2018-10-23 19:20:13.774367701 -0500
+@@ -4031,8 +4031,9 @@
+     "", "", ""
+   },
+   { "Western Digital Gold", // tested with WDC WD4002FYYZ-01B7CB0/01.01M02
+-    "WDC WD(101KR|[68]002FR|4002FY)YZ-.*",
+-    "", "", ""
++    "WDC WD(1[02]1KR|[68]002FR|4002FY)YZ-.*",
++    "", "",
++    "-v 22,raw48,Helium_Level" // WD121KRYZ
+   },
+   { "Western Digital Blue Mobile", // tested with WDC WD5000LPVX-08V0TT2/03.01A03,
+       // WDC WD20NPVZ-00WFZT0/01.01A01

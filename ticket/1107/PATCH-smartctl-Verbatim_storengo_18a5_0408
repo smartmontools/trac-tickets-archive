@@ -1,0 +1,17 @@
+*** drivedb.h.4814	2018-10-14 22:40:36.204790656 +0200
+--- drivedb.h	2018-10-14 22:43:30.700737058 +0200
+***************
+*** 5082,5087 ****
+--- 5082,5093 ----
+      "",
+      "-d sat"
+    },
++   { "USB: Verbatim External Hard Drive; ", // 1TB USB 3.0
++     "0x18a5:0x0408",
++     "",
++     "",
++     "-d sat"
++   },
+    // Silicon Image
+    { "USB: Vantec NST-400MX-SR; Silicon Image 5744",
+      "0x1a4a:0x1670",
