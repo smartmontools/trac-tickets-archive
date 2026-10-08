@@ -1,0 +1,39 @@
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 4934)
++++ os_linux.cpp	(working copy)
+@@ -78,6 +78,7 @@
+ #include "utility.h"
+ #include "cciss.h"
+ #include "megaraid.h"
++#define LSRAID_IOC_FIRMWARE _IOWR('R', 1, struct megasas_ocpacket)
+ #include "aacraid.h"
+ #include "nvmecmds.h"
+ 
+@@ -1321,7 +1322,7 @@
+   }
+ 
+   /* Open Device IOCTL node */
+-  if ((m_fd = ::open("/dev/megaraid_sas_ioctl_node", O_RDWR)) >= 0) {
++  if ((m_fd = ::open("/dev/megaraid_swr_ioctl_node", O_RDWR)) >= 0) {
+     pt_cmd = &linux_megaraid_device::megasas_cmd;
+   }
+   else if ((m_fd = ::open("/dev/megadev0", O_RDWR)) >= 0) {
+@@ -1330,7 +1331,7 @@
+   else {
+     int err = errno;
+     linux_smart_device::close();
+-    return set_err(err, "cannot open /dev/megaraid_sas_ioctl_node or /dev/megadev0");
++    return set_err(err, "cannot open /dev/megaraid_swr_ioctl_node or /dev/megadev0");
+   }
+   set_fd(m_fd);
+   return true;
+@@ -1448,7 +1449,7 @@
+   }
+ 
+   errno = 0;
+-  int rc = ioctl(m_fd, MEGASAS_IOC_FIRMWARE, &uio);
++  int rc = ioctl(m_fd, LSRAID_IOC_FIRMWARE, &uio);
+   if (pthru->cmd_status || rc != 0) {
+     if (pthru->cmd_status == 12) {
+       return set_err(EIO, "megasas_cmd: Device %d does not exist\n", m_disknum);

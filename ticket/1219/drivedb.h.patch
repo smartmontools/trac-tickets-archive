@@ -1,0 +1,16 @@
+--- drivedb.h.trunk	2016-09-08 18:22:16.213279253 +0500
++++ drivedb.h	2016-09-08 18:46:24.098050963 +0500
+@@ -96,7 +96,12 @@
+     "-v 11,raw48,Calibration_Retry_Count,HDD "
+     "-v 12,raw48,Power_Cycle_Count "
+     "-v 13,raw48,Read_Soft_Error_Rate "
+-    //  14-174 Unknown_Attribute
++    //  14-169 Unknown_Attribute
++    "-v 170,raw48,Reserved_Block_Count,SSD "
++    "-v 171,raw48,Program_Fail_Count,SSD "
++    "-v 172,raw48,Erase_Fail_Count,SSD "
++    "-v 173,raw48,Wear_Levelling_Worst,SSD "
++    "-v 174,raw48,Unexpected_Power_Loss,SSD "
+     "-v 175,raw48,Program_Fail_Count_Chip,SSD "
+     "-v 176,raw48,Erase_Fail_Count_Chip,SSD "
+     "-v 177,raw48,Wear_Leveling_Count,SSD "

@@ -1,0 +1,16 @@
+diff -ur a/smartd.cpp b/smartd.cpp
+--- a/smartd.cpp	2019-07-19 11:50:32.000000000 +0900
++++ b/smartd.cpp	2019-07-19 11:52:53.000000000 +0900
+@@ -1149,7 +1149,11 @@
+   mail->lastsent=epoch;
+ 
+   // print warning string into message
++#ifdef __APPLE__
++  char message[512];
++#else
+   char message[256];
++#endif // __APPLE__
+   va_list ap;
+   va_start(ap, fmt);
+   vsnprintf(message, sizeof(message), fmt, ap);
+Only in b: smartd.cpp~
