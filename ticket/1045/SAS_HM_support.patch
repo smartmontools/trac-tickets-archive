@@ -1,0 +1,24 @@
+diff -Naur smartmontools_original/scsicmds.h smartmontools_patched/scsicmds.h
+--- smartmontools_original/scsicmds.h	2018-06-21 13:33:11.000000000 -0600
++++ smartmontools_patched/scsicmds.h	2018-06-29 14:11:07.267802400 -0600
+@@ -184,6 +184,7 @@
+ #define SCSI_PT_CDROM                   0x5
+ #define SCSI_PT_MEDIUM_CHANGER          0x8
+ #define SCSI_PT_ENCLOSURE               0xd
++#define SCSI_PT_HOST_MANAGED            0x14
+ 
+ /* Transport protocol identifiers or just Protocol identifiers */
+ #define SCSI_TPROTO_FCP 0
+diff -Naur smartmontools_original/scsiprint.cpp smartmontools_patched/scsiprint.cpp
+--- smartmontools_original/scsiprint.cpp	2018-06-21 13:33:11.000000000 -0600
++++ smartmontools_patched/scsiprint.cpp	2018-06-29 14:11:41.812784600 -0600
+@@ -2268,7 +2268,8 @@
+             failuretest(MANDATORY_CMD, returnval |= FAILID);
+         any_output = true;
+     }
+-    is_disk = (SCSI_PT_DIRECT_ACCESS == peripheral_type);
++    is_disk = ((SCSI_PT_DIRECT_ACCESS == peripheral_type) ||
++               (SCSI_PT_HOST_MANAGED == peripheral_type));
+     is_tape = ((SCSI_PT_SEQUENTIAL_ACCESS == peripheral_type) ||
+                (SCSI_PT_MEDIUM_CHANGER == peripheral_type));
+ 
