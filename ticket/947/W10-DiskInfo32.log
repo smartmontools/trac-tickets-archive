@@ -1,0 +1,279 @@
+00000000 CreateMutex
+00000000 AfxOleInit()
+00000016 AfxOleGetMessageFilter()->SetMessagePendingDelay
+00000016 AfxOleGetMessageFilter()->EnableNotRespondingDialog(FALSE)
+00000016 AfxOleGetMessageFilter()->EnableBusyDialog(FALSE)
+00000032 CDialogCx::CDialogCx
+00000032 CMainDialog::CMainDialog
+00000032 CDiskInfoDlg::CDiskInfoDlg
+00000047 CDiskInfoDlg::CDiskInfoDlg
+00000063 dlg.DoModal()
+00000110 InitAta
+00000110 CAtaSmart::Init WMI on - Start
+00000125 CoInitializeSecurity()
+00000125 CoCreateInstance()
+00000141 ConnectServer()
+00000141 CoSetProxyBlanket()
+00000157 OK:WMI Init
+00000235 OK:Win32_IDEController
+00000297 OK:Win32_SCSIController
+00000297 --ControllerMap--
+ + Standard SATA AHCI Controller [ATA]
+   - Samsung SSD 840 PRO Series
+   - Samsung SSD 850 PRO 1TB
+   - Samsung SSD 850 PRO 512GB
+ - Standard SATA AHCI Controller [ATA]
+ - Standard SATA AHCI Controller [ATA]
+ + Standard SATA AHCI Controller [ATA]
+   - PIONEER BD-RW   BDR-209M
+   - WDC WD4000F9YZ-09N20L1
+   - WDC WD6000HLHX-60JJPV0
+ - Microsoft Storage Spaces Controller [SCSI]
+ + Standard NVM Express Controller [SCSI]
+   - Samsung SSD 960 PRO 512GB
+
+00000469 OK:Win32_USBController
+00000469 VID=0781h, PID=5588h
+00000485 WakeUp(0)
+00000485 WakeUp(1)
+00000500 WakeUp(2)
+00000500 WakeUp(3)
+00000500 WakeUp(4)
+00000516 WakeUp(5)
+00000532 WakeUp(6)
+00000532 FAILED: CC_CSMI_SAS_GET_DRIVER_INFO
+00000532 DO:SELECT * FROM Win32_DiskDrive
+00000547 OK1:SELECT * FROM Win32_DiskDrive
+00000657 while(pEnumCOMDevs ...
+00000688 diskSize:256085867520
+00000704 deviceId:\\.\PHYSICALDRIVE6
+00000719 model:SanDisk Extreme Pro USB Device
+00000735 mediaType:External hard disk media
+00000735 interfaceTypeWmi:USB
+00000750 pnpDeviceId:USBSTOR\DISK&VEN_SANDISK&PROD_EXTREME_PRO&REV_0\12345678AC2B&0
+00000750 DO:GetDiskInfo pd=6, sp=0, st=0, mt=external hard disk media
+00000766 INTERFACE_TYPE_USB
+00000766 usbVendorId=0781, usbProductId=5588
+00000782 flagTarget && GetDiskInfo
+00000782 GetDiskInfo
+00000797 else (USB-HDD)
+00000797 AddDisk - USB10
+00000797 GetSmartAttributeSat(6) - 1 [sa]
+00000813 GetSmartAttributeSat - 1A
+00000829 int index = (int)vars.GetCount() - 1;
+00000829 OK:Check Model Name
+00000829 while(pEnumCOMDevs ...
+00000844 diskSize:512105932800
+00000844 deviceId:\\.\PHYSICALDRIVE5
+00000875 model:Samsung SSD 960 PRO 512GB
+00000875 mediaType:Fixed hard disk media
+00000875 interfaceTypeWmi:SCSI
+00000891 pnpDeviceId:SCSI\DISK&VEN_NVME&PROD_SAMSUNG_SSD_960\7&2DD9FBF2&0&000000
+00000891 DO:GetDiskInfo pd=5, sp=4, st=0, mt=fixed hard disk media
+00000891 INTERFACE_TYPE_NVME
+00000922 flagTarget && GetDiskInfo
+00000922 GetDiskInfo
+00000938 DoIdentifyDeviceNVMeStorageQuery
+00000938 DoIdentifyDeviceNVMeSamsung
+00000954 AddDiskNVMe - CMD_TYPE_NVME_SAMSUNG
+00001079 int index = (int)vars.GetCount() - 1;
+00001079 OK:Check Model Name
+00001094 while(pEnumCOMDevs ...
+00001110 diskSize:4000784417280
+00001110 deviceId:\\.\PHYSICALDRIVE3
+00001125 model:WDC WD4000F9YZ-09N20L1
+00001125 mediaType:Fixed hard disk media
+00001125 interfaceTypeWmi:IDE
+00001141 pnpDeviceId:SCSI\DISK&VEN_WDC&PROD_WD4000F9YZ-09N20\4&3449ECB1&0&020000
+00001141 DO:GetDiskInfo pd=3, sp=3, st=0, mt=fixed hard disk media
+00001157 flagTarget && GetDiskInfo
+00001157 GetDiskInfo
+00001157 DoIdentifyDevicePd(3, 0xA0) - 1
+00001188 SendAtaCommandPd - IDENTIFY_DEVICE (ATA_PASS_THROUGH)
+00001188 AddDisk(3, 3, 0) - 6
+00001204 GetSmartAttributePd(3) - 1
+00001204 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00001219 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00001219 SendAtaCommandPd - SMART_READ_THRESHOLDS (ATA_PASS_THROUGH)
+00001235 int index = (int)vars.GetCount() - 1;
+00001235 OK:Check Model Name
+00001250 while(pEnumCOMDevs ...
+00001250 diskSize:512105932800
+00001250 deviceId:\\.\PHYSICALDRIVE2
+00001266 model:Samsung SSD 850 PRO 512GB
+00001266 mediaType:Fixed hard disk media
+00001282 interfaceTypeWmi:IDE
+00001282 pnpDeviceId:SCSI\DISK&VEN_SAMSUNG&PROD_SSD_850_PRO_512G\4&DC154C5&0&030000
+00001297 DO:GetDiskInfo pd=2, sp=0, st=0, mt=fixed hard disk media
+00001297 flagTarget && GetDiskInfo
+00001297 GetDiskInfo
+00001313 DoIdentifyDevicePd(2, 0xA0) - 1
+00001313 SendAtaCommandPd - IDENTIFY_DEVICE (ATA_PASS_THROUGH)
+00001313 AddDisk(2, 0, 0) - 6
+00001329 GetSmartAttributePd(2) - 1
+00001329 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00001344 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00001344 SendAtaCommandPd - SMART_READ_THRESHOLDS (ATA_PASS_THROUGH)
+00001360 int index = (int)vars.GetCount() - 1;
+00001360 OK:Check Model Name
+00001375 while(pEnumCOMDevs ...
+00001375 diskSize:512105932800
+00001375 deviceId:\\.\PHYSICALDRIVE0
+00001391 model:Samsung SSD 840 PRO Series
+00001391 mediaType:Fixed hard disk media
+00001407 interfaceTypeWmi:IDE
+00001422 pnpDeviceId:SCSI\DISK&VEN_SAMSUNG&PROD_SSD_840_PRO_SERI\4&DC154C5&0&000000
+00001422 DO:GetDiskInfo pd=0, sp=0, st=0, mt=fixed hard disk media
+00001422 flagTarget && GetDiskInfo
+00001438 GetDiskInfo
+00001438 DoIdentifyDevicePd(0, 0xA0) - 1
+00001454 SendAtaCommandPd - IDENTIFY_DEVICE (ATA_PASS_THROUGH)
+00001454 AddDisk(0, 0, 0) - 6
+00001469 GetSmartAttributePd(0) - 1
+00001469 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00002047 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00002969 SendAtaCommandPd - SMART_READ_THRESHOLDS (ATA_PASS_THROUGH)
+00003157 int index = (int)vars.GetCount() - 1;
+00003172 OK:Check Model Name
+00003188 while(pEnumCOMDevs ...
+00003188 diskSize:600124654080
+00003204 deviceId:\\.\PHYSICALDRIVE4
+00003204 model:WDC WD6000HLHX-60JJPV0
+00003219 mediaType:Fixed hard disk media
+00003219 interfaceTypeWmi:IDE
+00003219 pnpDeviceId:SCSI\DISK&VEN_WDC&PROD_WD6000HLHX-60JJP\4&3449ECB1&0&030000
+00003235 DO:GetDiskInfo pd=4, sp=3, st=0, mt=fixed hard disk media
+00003235 flagTarget && GetDiskInfo
+00003250 GetDiskInfo
+00003250 DoIdentifyDevicePd(4, 0xA0) - 1
+00003250 SendAtaCommandPd - IDENTIFY_DEVICE (ATA_PASS_THROUGH)
+00003266 AddDisk(4, 3, 0) - 6
+00003266 GetSmartAttributePd(4) - 1
+00003282 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00003282 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00003297 SendAtaCommandPd - SMART_READ_THRESHOLDS (ATA_PASS_THROUGH)
+00003313 int index = (int)vars.GetCount() - 1;
+00003313 OK:Check Model Name
+00003329 while(pEnumCOMDevs ...
+00003329 diskSize:1024203640320
+00003344 deviceId:\\.\PHYSICALDRIVE1
+00003360 model:Samsung SSD 850 PRO 1TB
+00003360 mediaType:Fixed hard disk media
+00003375 interfaceTypeWmi:IDE
+00003375 pnpDeviceId:SCSI\DISK&VEN_SAMSUNG&PROD_SSD_850_PRO_1TB\4&DC154C5&0&010000
+00003391 DO:GetDiskInfo pd=1, sp=0, st=0, mt=fixed hard disk media
+00003391 flagTarget && GetDiskInfo
+00003391 GetDiskInfo
+00003407 DoIdentifyDevicePd(1, 0xA0) - 1
+00003407 SendAtaCommandPd - IDENTIFY_DEVICE (ATA_PASS_THROUGH)
+00003422 AddDisk(1, 0, 0) - 6
+00003422 GetSmartAttributePd(1) - 1
+00003422 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00003438 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00003454 SendAtaCommandPd - SMART_READ_THRESHOLDS (ATA_PASS_THROUGH)
+00003454 int index = (int)vars.GetCount() - 1;
+00003469 OK:Check Model Name
+00003469 uReturned != 1
+00003485 OK2:SELECT * FROM Win32_DiskDrive
+00003485 OK:GetDiskInfo - PhysicalDrive
+00003485 OK:qsort
+00003500 Drive Letter Mapping - Start
+00003500 A:\
+00003516 Drive Letter Mapping - != DRIVE_FIXED
+00003516 B:\
+00003516 Drive Letter Mapping - != DRIVE_FIXED
+00003532 C:\
+00003532 \\.\C:
+00003547 volumeDiskExtents.NumberOfDiskExtents = 1
+00003547 n = 0, pDiskExtent->DiskNumber = 6
+00003547 D:\
+00003563 \\.\D:
+00003563 volumeDiskExtents.NumberOfDiskExtents = 1
+00003579 n = 0, pDiskExtent->DiskNumber = 4
+00003579 E:\
+00003594 \\.\E:
+00003594 volumeDiskExtents.NumberOfDiskExtents = 2
+00003610 n = 0, pDiskExtent->DiskNumber = 0
+00003610 n = 1, pDiskExtent->DiskNumber = 2
+00003625 F:\
+00003625 \\.\F:
+00003625 volumeDiskExtents.NumberOfDiskExtents = 1
+00003641 n = 0, pDiskExtent->DiskNumber = 1
+00003641 G:\
+00003657 \\.\G:
+00003672 volumeDiskExtents.NumberOfDiskExtents = 1
+00003672 n = 0, pDiskExtent->DiskNumber = 3
+00003688 H:\
+00003688 \\.\H:
+00003688 volumeDiskExtents.NumberOfDiskExtents = 1
+00003704 n = 0, pDiskExtent->DiskNumber = 3
+00003704 I:\
+00003719 Drive Letter Mapping - != DRIVE_FIXED
+00003719 J:\
+00003735 \\.\J:
+00003735 volumeDiskExtents.NumberOfDiskExtents = 1
+00003735 n = 0, pDiskExtent->DiskNumber = 5
+00003750 K:\
+00003750 Drive Letter Mapping - != DRIVE_FIXED
+00003766 L:\
+00003766 Drive Letter Mapping - != DRIVE_FIXED
+00003766 M:\
+00003782 Drive Letter Mapping - != DRIVE_FIXED
+00003782 N:\
+00003782 Drive Letter Mapping - != DRIVE_FIXED
+00003797 O:\
+00003797 Drive Letter Mapping - != DRIVE_FIXED
+00003813 P:\
+00003813 Drive Letter Mapping - != DRIVE_FIXED
+00003829 Q:\
+00003829 Drive Letter Mapping - != DRIVE_FIXED
+00003829 R:\
+00003844 Drive Letter Mapping - != DRIVE_FIXED
+00003844 S:\
+00003860 Drive Letter Mapping - != DRIVE_FIXED
+00003860 T:\
+00003875 Drive Letter Mapping - != DRIVE_FIXED
+00003875 U:\
+00003891 Drive Letter Mapping - != DRIVE_FIXED
+00003891 V:\
+00003907 Drive Letter Mapping - != DRIVE_FIXED
+00003907 W:\
+00003922 Drive Letter Mapping - != DRIVE_FIXED
+00003922 X:\
+00003938 Drive Letter Mapping - != DRIVE_FIXED
+00003938 Y:\
+00003938 Drive Letter Mapping - != DRIVE_FIXED
+00003954 Z:\
+00003954 Drive Letter Mapping - != DRIVE_FIXED
+00003954 Drive Letter Mapping - End
+00003969 E
+00003969 F
+00003969 E
+00003985 G
+00003985 H
+00004000 D
+00004000 J
+00004000 C
+00004016 CAtaSmart::Init - Complete
+00004016 CheckResident()
+00004032 SaveSmartInfo(i)
+00004047 SaveSmartInfo(i)
+00004110 SaveSmartInfo(i)
+00004125 SaveSmartInfo(i)
+00004141 SaveSmartInfo(i)
+00004172 SaveSmartInfo(i)
+00004188 SaveSmartInfo(i)
+00004204 AutoAamApmAdaption()
+00004219 UpdateShareInfo()
+00004219 RegisterDeviceNotification
+00004235 InitDialogComplete
+00004235 CheckStartup
+00004250 CheckHideSerialNumber
+00004250 ChangeZoomType
+00004266 UpdateDialogSize
+00004329 ChangeLang
+00004344 SendAtaCommandPd - SMART_READ_DATA (ATA_PASS_THROUGH)
+00004391 CheckPage()
+00004391 CenterWindow()
+00004407 ShowWindow(SW_SHOW)
+00004407 SetWindowTitle()

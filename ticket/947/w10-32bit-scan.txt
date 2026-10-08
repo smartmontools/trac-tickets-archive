@@ -1,0 +1,87 @@
+ \\.\PhysicalDrive0: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "Samsung SSD 840 PRO Series"
+    Revision: "DXM06B0Q"
+    Removable: No
+    BusType:   0x0b
+ \\.\PhysicalDrive1: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "Samsung SSD 850 PRO 1TB"
+    Revision: "EXM04B6Q"
+    Removable: No
+    BusType:   0x0b
+ \\.\PhysicalDrive2: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "Samsung SSD 850 PRO 512GB"
+    Revision: "EXM04B6Q"
+    Removable: No
+    BusType:   0x0b
+ \\.\PhysicalDrive3: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "WDC WD4000F9YZ-09N20L1"
+    Revision: "01.01A02"
+    Removable: No
+    BusType:   0x0b
+ \\.\PhysicalDrive4: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "WDC WD6000HLHX-60JJPV0"
+    Revision: "04.05G04"
+    Removable: No
+    BusType:   0x0b
+ \\.\PhysicalDrive5: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "Samsung SSD 960 PRO 512GB"
+    Revision: "3B6QCXP7"
+    Removable: No
+    BusType:   0x11
+ \\.\PhysicalDrive6: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "SanDisk "
+    Product:  "Extreme Pro     "
+    Revision: "0   "
+    Removable: No
+    BusType:   0x07
+  \\.\Scsi0:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi1:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi2:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi3:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=55
+  \\.\Scsi4:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=170
+  \\.\Scsi5:: Open failed, Error=2
+  \\.\Scsi6:: Open failed, Error=2
+  \\.\Scsi7:: Open failed, Error=2
+  \\.\Scsi8:: Open failed, Error=2
+  \\.\Scsi9:: Open failed, Error=2
+  \\.\Scsi10:: Open failed, Error=2
+  \\.\Scsi11:: Open failed, Error=2
+  \\.\Scsi12:: Open failed, Error=2
+  \\.\Scsi13:: Open failed, Error=2
+  \\.\Scsi14:: Open failed, Error=2
+  \\.\Scsi15:: Open failed, Error=2
+  \\.\Scsi16:: Open failed, Error=2
+  \\.\Scsi17:: Open failed, Error=2
+  \\.\Scsi18:: Open failed, Error=2
+  \\.\Scsi19:: Open failed, Error=2
+  \\.\Scsi20:: Open failed, Error=2
+  \\.\Scsi21:: Open failed, Error=2
+  \\.\Scsi22:: Open failed, Error=2
+  \\.\Scsi23:: Open failed, Error=2
+  \\.\Scsi24:: Open failed, Error=2
+  \\.\Scsi25:: Open failed, Error=2
+  \\.\Scsi26:: Open failed, Error=2
+  \\.\Scsi27:: Open failed, Error=2
+  \\.\Scsi28:: Open failed, Error=2
+  \\.\Scsi29:: Open failed, Error=2
+  \\.\Scsi30:: Open failed, Error=2
+  \\.\Scsi31:: Open failed, Error=2
+/dev/sdf -d nvme # /dev/sdf, NVMe device
