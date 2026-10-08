@@ -1,0 +1,14 @@
+
+# /opt/smartmontools/5.40/sbin/smartctl -d 3ware,3 /dev/twl0 --log=xselftest
+
+smartctl 5.40 2010-06-14 r3121 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF READ SMART DATA SECTION ===
+General Purpose Logging (GPL) feature set supported
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%       399         -
+# 2  Extended offline    Completed without error       00%        57         -
+# 3  Extended offline    Completed without error       00%        24         -
+

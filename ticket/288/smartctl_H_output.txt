@@ -1,0 +1,5 @@
+=== START OF READ SMART DATA SECTION ===
+                SMART overall-health self-assessment test result: PASSED
+                Please note the following marginal Attributes:
+                ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+                190 Airflow_Temperature_Cel 0x0022   065   045   045    Old_age   Always   In_the_past 35 (Min/Max 27/37)

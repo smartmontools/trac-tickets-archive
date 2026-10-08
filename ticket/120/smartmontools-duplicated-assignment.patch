@@ -1,0 +1,11 @@
+--- a/os_win32/daemon_win32.cpp	2010-01-28 21:24:31.000000000 +0100
++++ b/os_win32/daemon_win32.cpp	2010-11-10 21:08:04.829636033 +0100
+@@ -525,7 +525,7 @@ int daemon_messagebox(int system, const 
+ 	mb.mode = MB_OK|MB_ICONWARNING
+ 	         |(svc_mode?MB_SERVICE_NOTIFICATION:0)
+ 	         |(system?MB_SYSTEMMODAL:MB_APPLMODAL);
+-	mb.title = title; mb.text = text;
++	mb.title = title;
+ 	mb.text = text;
+ 	if (!(ht = CreateThread(NULL, 0, mbox_thread, &mb, 0, &tid)))
+ 		return -1;

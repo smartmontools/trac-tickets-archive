@@ -1,0 +1,401 @@
+smartd 5.42 2011-10-20 r3458 [FreeBSD 8.3-STABLE-20121101 amd64] (local build)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+Opened configuration file /usr/local/etc/smartd.conf
+Configuration file /usr/local/etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass0, opened
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+ [inquiry: 12 01 83 00 fc 00 ]  status=0
+  Incoming data, len=252:
+ 00     1f 83 00 48 01 03 00 08  50 00 03 93 b8 c9 4c 5c                        
+ 10     61 93 00 08 50 00 03 93  b8 c9 4c 5e 61 94 00 04                        
+ 20     00 00 00 01 61 a3 00 08  50 00 03 93 b8 c9 4c 5d                        
+ 30     63 a8 00 18 6e 61 61 2e  35 30 30 30 30 33 39 33                        
+ 40     42 38 43 39 34 43 35 44  00 00 00 00 08 00 00 00                        
+ 50     01 00 00 00 00 00 00 00  5d a8 55 00 08 00 00 00                        
+ 60     02 02 00 00 00 00 00 00  d0 ea 40 42 88 ff ff ff                        
+ 70     70 04 17 2b 02 ff ff ff  19 00 00 00 00 00 00 00                        
+ 80     d1 bc ff ff ff 7f 00 00  01 b8 44 00 00 00 00 00                        
+ 90     19 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ a0     00 00 00 00 00 00 00 00  06 02 00 00 00 00 00 00                        
+ b0     18 00 00 00 30 00 00 00  00 90 58 00 08 00 00 00                        
+ c0     35 00 00 00 00 00 00 00  09 29 42 00 00 00 00 00                        
+ d0     b0 b6 6a 00 08 00 00 00  d1 bc ff ff ff 7f 00 00                        
+ e0     31 28 43 00 01 00 00 00  24 00 00 00 20 00 00 00                        
+ f0     20 32 30 20 20 20 20 20  33 30 20 33                                    
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=8:
+ 00     e8 e0 88 af 00 00 02 00                                                 
+Device: /dev/pass0, [TOSHIBA  MK2001TRKB       0105], lu id: 0x50000393b8c94c5c, 2.00 TB
+ [test unit ready: 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=0:
+ [mode sense(6): 1a 00 1c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     17 00 00 08 e8 e0 88 b0  00 00 02 00 9c 0a 00 06                        
+ 10     00 00 00 01 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [mode sense(6): 1a 00 5c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     17 00 00 08 00 00 00 00  00 00 02 00 9c 0a bf 07                        
+ 10     ff ff ff ff ff ff ff ff  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     00 00 00 0f                                                             
+ [log sense: 4d 00 40 00 00 00 00 00 14 00 ]  status=0
+  Incoming data, len=20:
+ 00     00 00 00 0f 00 01 02 03  05 06 0d 0e 0f 10 15 18                        
+ 10     1a 2f 38 12                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     2f 00 00 08                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 0c 00 ]  status=0
+  Incoming data, len=12:
+ 00     2f 00 00 08 00 00 03 04  00 00 17 00                                    
+ [request sense: 03 00 00 00 12 00 ]  status=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 28  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]  status=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 17 00 01 43 02 00 41                        
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]  status=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 0f 9e ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 0f 49                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     20 00 0e e8 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 40     00 04 03 10 20 00 0e 46  ff ff ff ff ff ff ff ff                        
+ 50     00 00 00 00 00 05 03 10  20 00 0e 15 ff ff ff ff                        
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 20 00 0d c7                        
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10                        
+ 80     40 00 0d 8f ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 90     00 08 03 10 20 00 0d 83  ff ff ff ff ff ff ff ff                        
+ a0     00 00 00 00 00 09 03 10  20 00 0d 6b ff ff ff ff                        
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 0d 53                        
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10                        
+ d0     20 00 0d 3b ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ e0     00 0c 03 10 20 00 0d 23  ff ff ff ff ff ff ff ff                        
+ f0     00 00 00 00 00 0d 03 10  20 00 0d 0b ff ff ff ff                        
+Device: /dev/pass0, is SMART capable. Adding to "monitor" list.
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass1, opened
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+ [inquiry: 12 01 83 00 fc 00 ]  status=0
+  Incoming data, len=252:
+ 00     1f 83 00 48 01 03 00 08  50 00 03 93 b8 c9 4c 6c                        
+ 10     61 93 00 08 50 00 03 93  b8 c9 4c 6e 61 94 00 04                        
+ 20     00 00 00 01 61 a3 00 08  50 00 03 93 b8 c9 4c 6d                        
+ 30     63 a8 00 18 6e 61 61 2e  35 30 30 30 30 33 39 33                        
+ 40     42 38 43 39 34 43 36 44  00 00 00 00 08 00 00 00                        
+ 50     40 00 f1 00 08 00 00 00  02 00 00 00 00 00 00 00                        
+ 60     03 00 00 00 00 00 00 00  14 b5 da 00 08 00 00 00                        
+ 70     f0 e9 ff ff ff 7f 00 00  87 2e 45 00 00 00 00 00                        
+ 80     a0 bd ff ff ff 7f 00 00  10 be ff ff ff 7f 00 00                        
+ 90     00 92 23 01 08 00 00 00  01 00 00 00 00 00 00 00                        
+ a0     f0 e9 ff ff ff 7f 00 00  c4 5c 40 00 00 00 00 00                        
+ b0     18 00 00 00 30 00 00 00  70 bd ff ff ff 7f 00 00                        
+ c0     35 00 00 00 00 00 00 00  09 29 42 00 00 00 00 00                        
+ d0     08 90 f3 00 08 00 00 00  d1 bc ff ff ff 7f 00 00                        
+ e0     31 28 43 00 01 00 00 00  24 00 00 00 20 00 00 00                        
+ f0     20 32 30 20 20 20 20 20  33 30 20 33                                    
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=8:
+ 00     e8 e0 88 af 00 00 02 00                                                 
+Device: /dev/pass1, [TOSHIBA  MK2001TRKB       0105], lu id: 0x50000393b8c94c6c, 2.00 TB
+ [test unit ready: 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=0:
+ [mode sense(6): 1a 00 1c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     17 00 00 08 e8 e0 88 b0  00 00 02 00 9c 0a 00 06                        
+ 10     00 00 00 01 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [mode sense(6): 1a 00 5c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     17 00 00 08 00 00 00 00  00 00 02 00 9c 0a bf 07                        
+ 10     ff ff ff ff ff ff ff ff  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     00 00 00 0f                                                             
+ [log sense: 4d 00 40 00 00 00 00 00 14 00 ]  status=0
+  Incoming data, len=20:
+ 00     00 00 00 0f 00 01 02 03  05 06 0d 0e 0f 10 15 18                        
+ 10     1a 2f 38 12                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     2f 00 00 08                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 0c 00 ]  status=0
+  Incoming data, len=12:
+ 00     2f 00 00 08 00 00 03 04  00 00 17 00                                    
+ [request sense: 03 00 00 00 12 00 ]  status=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 28  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]  status=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 17 00 01 43 02 00 41                        
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]  status=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 0f 9e ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 0f 49                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     20 00 0e e8 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 40     00 04 03 10 20 00 0e 46  ff ff ff ff ff ff ff ff                        
+ 50     00 00 00 00 00 05 03 10  20 00 0e 01 ff ff ff ff                        
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 20 00 0d c7                        
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10                        
+ 80     40 00 0d 8f ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 90     00 08 03 10 20 00 0d 83  ff ff ff ff ff ff ff ff                        
+ a0     00 00 00 00 00 09 03 10  20 00 0d 6b ff ff ff ff                        
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 0d 53                        
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10                        
+ d0     20 00 0d 3b ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ e0     00 0c 03 10 20 00 0d 23  ff ff ff ff ff ff ff ff                        
+ f0     00 00 00 00 00 0d 03 10  20 00 0d 0b ff ff ff ff                        
+Device: /dev/pass1, is SMART capable. Adding to "monitor" list.
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass2, opened
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+ [inquiry: 12 01 83 00 fc 00 ]  status=0
+  Incoming data, len=252:
+ 00     1f 83 00 48 01 03 00 08  50 00 03 93 b8 c9 4a ec                        
+ 10     61 93 00 08 50 00 03 93  b8 c9 4a ee 61 94 00 04                        
+ 20     00 00 00 01 61 a3 00 08  50 00 03 93 b8 c9 4a ed                        
+ 30     63 a8 00 18 6e 61 61 2e  35 30 30 30 30 33 39 33                        
+ 40     42 38 43 39 34 41 45 44  00 00 00 00 08 00 00 00                        
+ 50     40 00 f1 00 08 00 00 00  02 00 00 00 00 00 00 00                        
+ 60     03 00 00 00 00 00 00 00  14 b5 da 00 08 00 00 00                        
+ 70     f0 e9 ff ff ff 7f 00 00  87 2e 45 00 00 00 00 00                        
+ 80     a0 bd ff ff ff 7f 00 00  10 be ff ff ff 7f 00 00                        
+ 90     80 92 23 01 08 00 00 00  01 00 00 00 00 00 00 00                        
+ a0     f0 e9 ff ff ff 7f 00 00  c4 5c 40 00 00 00 00 00                        
+ b0     18 00 00 00 30 00 00 00  70 bd ff ff ff 7f 00 00                        
+ c0     35 00 00 00 00 00 00 00  09 29 42 00 00 00 00 00                        
+ d0     08 90 f3 00 08 00 00 00  d1 bc ff ff ff 7f 00 00                        
+ e0     31 28 43 00 01 00 00 00  24 00 00 00 20 00 00 00                        
+ f0     20 32 30 20 20 20 20 20  33 30 20 33                                    
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=8:
+ 00     e8 e0 88 af 00 00 02 00                                                 
+Device: /dev/pass2, [TOSHIBA  MK2001TRKB       0105], lu id: 0x50000393b8c94aec, 2.00 TB
+ [test unit ready: 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=0:
+ [mode sense(6): 1a 00 1c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     17 00 00 08 e8 e0 88 b0  00 00 02 00 9c 0a 00 06                        
+ 10     00 00 00 01 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [mode sense(6): 1a 00 5c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     17 00 00 08 00 00 00 00  00 00 02 00 9c 0a bf 07                        
+ 10     ff ff ff ff ff ff ff ff  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     00 00 00 0f                                                             
+ [log sense: 4d 00 40 00 00 00 00 00 14 00 ]  status=0
+  Incoming data, len=20:
+ 00     00 00 00 0f 00 01 02 03  05 06 0d 0e 0f 10 15 18                        
+ 10     1a 2f 38 12                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     2f 00 00 08                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 0c 00 ]  status=0
+  Incoming data, len=12:
+ 00     2f 00 00 08 00 00 03 04  00 00 16 00                                    
+ [request sense: 03 00 00 00 12 00 ]  status=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 28  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]  status=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 16 00 01 43 02 00 41                        
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]  status=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 0f 9e ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 0f 49                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     20 00 0e e8 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 40     00 04 03 10 20 00 0e 46  ff ff ff ff ff ff ff ff                        
+ 50     00 00 00 00 00 05 03 10  20 00 0d d4 ff ff ff ff                        
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 40 00 0d 8f                        
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10                        
+ 80     20 00 0d 83 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 90     00 08 03 10 20 00 0d 6b  ff ff ff ff ff ff ff ff                        
+ a0     00 00 00 00 00 09 03 10  20 00 0d 53 ff ff ff ff                        
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 0d 3b                        
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10                        
+ d0     20 00 0d 23 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ e0     00 0c 03 10 20 00 0d 0b  ff ff ff ff ff ff ff ff                        
+ f0     00 00 00 00 00 0d 03 10  20 00 0c f3 ff ff ff ff                        
+Device: /dev/pass2, is SMART capable. Adding to "monitor" list.
+Monitoring 0 ATA and 3 SCSI devices
+Device: /dev/pass0, opened SCSI device
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     2f 00 00 08                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 0c 00 ]  status=0
+  Incoming data, len=12:
+ 00     2f 00 00 08 00 00 03 04  00 00 17 00                                    
+ [request sense: 03 00 00 00 12 00 ]  status=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 28  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]  status=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 17 00 01 43 02 00 41                        
+Device: /dev/pass0, SMART health: passed
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]  status=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 0f 9e ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 0f 49                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     20 00 0e e8 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 40     00 04 03 10 20 00 0e 46  ff ff ff ff ff ff ff ff                        
+ 50     00 00 00 00 00 05 03 10  20 00 0e 15 ff ff ff ff                        
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 20 00 0d c7                        
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10                        
+ 80     40 00 0d 8f ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 90     00 08 03 10 20 00 0d 83  ff ff ff ff ff ff ff ff                        
+ a0     00 00 00 00 00 09 03 10  20 00 0d 6b ff ff ff ff                        
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 0d 53                        
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10                        
+ d0     20 00 0d 3b ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ e0     00 0c 03 10 20 00 0d 23  ff ff ff ff ff ff ff ff                        
+ f0     00 00 00 00 00 0d 03 10  20 00 0d 0b ff ff ff ff                        
+Device: /dev/pass1, opened SCSI device
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     2f 00 00 08                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 0c 00 ]  status=0
+  Incoming data, len=12:
+ 00     2f 00 00 08 00 00 03 04  00 00 17 00                                    
+ [request sense: 03 00 00 00 12 00 ]  status=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 28  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]  status=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 17 00 01 43 02 00 41                        
+Device: /dev/pass1, SMART health: passed
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]  status=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 0f 9e ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 0f 49                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     20 00 0e e8 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 40     00 04 03 10 20 00 0e 46  ff ff ff ff ff ff ff ff                        
+ 50     00 00 00 00 00 05 03 10  20 00 0e 01 ff ff ff ff                        
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 20 00 0d c7                        
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10                        
+ 80     40 00 0d 8f ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 90     00 08 03 10 20 00 0d 83  ff ff ff ff ff ff ff ff                        
+ a0     00 00 00 00 00 09 03 10  20 00 0d 6b ff ff ff ff                        
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 0d 53                        
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10                        
+ d0     20 00 0d 3b ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ e0     00 0c 03 10 20 00 0d 23  ff ff ff ff ff ff ff ff                        
+ f0     00 00 00 00 00 0d 03 10  20 00 0d 0b ff ff ff ff                        
+Device: /dev/pass2, opened SCSI device
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     2f 00 00 08                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 0c 00 ]  status=0
+  Incoming data, len=12:
+ 00     2f 00 00 08 00 00 03 04  00 00 16 00                                    
+ [request sense: 03 00 00 00 12 00 ]  status=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 28  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]  status=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 16 00 01 43 02 00 41                        
+Device: /dev/pass2, SMART health: passed
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]  status=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]  status=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 0f 9e ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 0f 49                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     20 00 0e e8 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 40     00 04 03 10 20 00 0e 46  ff ff ff ff ff ff ff ff                        
+ 50     00 00 00 00 00 05 03 10  20 00 0d d4 ff ff ff ff                        
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 40 00 0d 8f                        
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10                        
+ 80     20 00 0d 83 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ 90     00 08 03 10 20 00 0d 6b  ff ff ff ff ff ff ff ff                        
+ a0     00 00 00 00 00 09 03 10  20 00 0d 53 ff ff ff ff                        
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 0d 3b                        
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10                        
+ d0     20 00 0d 23 ff ff ff ff  ff ff ff ff 00 00 00 00                        
+ e0     00 0c 03 10 20 00 0d 0b  ff ff ff ff ff ff ff ff                        
+ f0     00 00 00 00 00 0d 03 10  20 00 0c f3 ff ff ff ff                        
+smartd received signal 3: Quit: 3
+smartd is exiting (exit status 0)

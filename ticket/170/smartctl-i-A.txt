@@ -1,0 +1,30 @@
+smartctl 5.40 2010-10-16 r3189 [FreeBSD 8.2-RELEASE amd64] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Intel 510 Series SSDs
+Device Model:     INTEL SSDSC2MH120A2
+Serial Number:    LNEL111501CW120CGN
+Firmware Version: PPG2
+User Capacity:    120,034,123,776 bytes
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 2d
+Local Time is:    Tue May 10 14:39:27 2011 PDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  3 Spin_Up_Time            0x0020   100   100   000    Old_age   Offline      -       0
+  4 Start_Stop_Count        0x0030   100   100   000    Old_age   Offline      -       0
+  5 Reallocated_Sector_Ct   0x0032   100   100   000    Old_age   Always       -       0
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       70
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       37
+192 Unsafe_Shutdown_Count   0x0032   100   100   000    Old_age   Always       -       18
+225 Host_Writes_32MiB       0x0030   100   100   000    Old_age   Offline      -       11160
+232 Available_Reservd_Space 0x0033   100   100   010    Pre-fail  Always       -       0
+233 Media_Wearout_Indicator 0x0032   100   100   000    Old_age   Always       -       0
+

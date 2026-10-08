@@ -1,0 +1,38 @@
+[root@stor log]# smartctl -a -T permissive -d 3ware,0 /dev/twl0
+smartctl 5.39.1 2010-01-28 r3054 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+Smartctl: Device Read Identity Failed (not an ATA/ATAPI device)
+
+=== START OF INFORMATION SECTION ===
+Device Model:     [No Information Found]
+Serial Number:    [No Information Found]
+Firmware Version: [No Information Found]
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   1
+ATA Standard is:  Exact ATA specification draft version not indicated
+Local Time is:    Fri Mar  9 12:37:46 2012 CET
+SMART is only available in ATA Version 3 Revision 3 or greater.
+We will try to proceed in spite of this.
+SMART support is: Ambiguous - ATA IDENTIFY DEVICE words 82-83 don't show if SMART supported.
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.
+
+
+[root@stor log]# smartctl -a -T permissive -d 3ware,0 /dev/sda
+smartctl 5.39.1 2010-01-28 r3054 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+Smartctl: Device Read Identity Failed (not an ATA/ATAPI device)
+
+=== START OF INFORMATION SECTION ===
+Device Model:     [No Information Found]
+Serial Number:    [No Information Found]
+Firmware Version: [No Information Found]
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   1
+ATA Standard is:  Exact ATA specification draft version not indicated
+Local Time is:    Fri Mar  9 12:37:54 2012 CET
+SMART is only available in ATA Version 3 Revision 3 or greater.
+We will try to proceed in spite of this.
+SMART support is: Ambiguous - ATA IDENTIFY DEVICE words 82-83 don't show if SMART supported.
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.

@@ -1,0 +1,11 @@
+--- a/drivedb.h	2013-04-20 13:59:19.000000000 -0500
++++ b/drivedb.h	2013-06-08 14:29:49.000000000 -0500
+@@ -282,6 +282,8 @@ const drive_settings builtin_knowndrives
+       // OWC Mercury Electra 6G SSD/502ABBF0
+     "OWC Mercury Extreme Pro (RE )?SSD|" // tested with
+       // OWC Mercury Extreme Pro SSD/360A13F0
++    "OWC Mercury EXTREME Pro 6G SSD|" // tested with
++      // OWC Mercury EXTREME Pro 6G SSD/507ABBF0
+     "Patriot Pyro|" // tested with Patriot Pyro/332ABBF0
+     "SanDisk SDSSDX(60|120|240|480)GG25|" // SanDisk Extreme, SF-2281, tested with
+       // SDSSDX240GG25/R201

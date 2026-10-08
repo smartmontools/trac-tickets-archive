@@ -1,0 +1,16 @@
+diff --git a/update-smart-drivedb b/update-smart-drivedb
+index b8d5505..32e0c6e 100755
+--- a/update-smart-drivedb
++++ b/update-smart-drivedb
+@@ -84,8 +84,10 @@ elif which wget >/dev/null 2>/dev/null; then
+   DOWNLOAD="wget $q"'-O "$DEST.new" "$SRC"'
+ elif which lynx >/dev/null 2>/dev/null; then
+   DOWNLOAD='lynx -source "$SRC" >"$DEST.new"'
++elif which fetch >/dev/null 2>/dev/null; then
++  DOWNLOAD='fetch -o "$DEST.new" "$SRC"'
+ else
+-  echo "$0: curl, wget or lynx not available" >&2; exit 1
++  echo "$0: curl, wget, fetch or lynx not available" >&2; exit 1
+ fi
+
+ # Try possible branch first, then trunk

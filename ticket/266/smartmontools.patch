@@ -1,0 +1,82 @@
+diff -rauN smartmontools-6.0/os_darwin.cpp smartmontools-6.0-p1/os_darwin.cpp
+--- smartmontools-6.0/os_darwin.cpp	2009-07-15 21:59:19.000000000 +0200
++++ smartmontools-6.0-p1/os_darwin.cpp	2013-01-17 18:56:46.000000000 +0100
+@@ -72,9 +72,8 @@
+ 
+ // tries to guess device type given the name (a path).  See utility.h
+ // for return values.
+-int guess_device_type (const char* dev_name) {
++int guess_device_type (const char* dev_name __attribute__((__unused__))) {
+   // Only ATA is supported right now, so that's what it'd better be.
+-  dev_name = dev_name;  // suppress unused warning.
+   return CONTROLLER_ATA;
+ }
+ 
+@@ -422,57 +421,35 @@
+ 
+ // There's no special handling needed for hidden devices, the kernel
+ // must deal with them.
+-int escalade_command_interface(int fd, int escalade_port, int escalade_type,
+-			       smart_command_set command, int select,
+-			       char *data)
++int escalade_command_interface(int fd __attribute__((__unused__)), int escalade_port __attribute__((__unused__)), int escalade_type __attribute__((__unused__)),
++			       smart_command_set command __attribute__((__unused__)), int select __attribute__((__unused__)),
++			       char *data __attribute__((__unused__)))
+ {
+-  fd = fd;
+-  escalade_port = escalade_port;
+-  escalade_type = escalade_type;
+-  command = command;
+-  select = select;
+-  data = data;
+   return -1;
+ }
+ 
+-int areca_command_interface(int fd, int escalade_port, 
+-			       smart_command_set command, int select,
+-			       char *data)
++int areca_command_interface(int fd __attribute__((__unused__)), int escalade_port __attribute__((__unused__)), 
++			       smart_command_set command __attribute__((__unused__)), int select __attribute__((__unused__)),
++			       char *data __attribute__((__unused__)))
+ {
+-  fd = fd;
+-  escalade_port = escalade_port;
+-  command = command;
+-  select = select;
+-  data = data;
+   return -1;
+ }
+ 
+ 
+ 
+ 
+-int marvell_command_interface(int fd, smart_command_set command,
+-		      int select, char *data)
++int marvell_command_interface(int fd __attribute__((__unused__)), smart_command_set command __attribute__((__unused__)),
++		      int select __attribute__((__unused__)), char *data __attribute__((__unused__)))
+ { 
+-  fd = fd;
+-  command = command;
+-  select = select;
+-  data = data;
+   return -1;
+ }
+ 
+-int highpoint_command_interface(int fd, smart_command_set command, int select, char *data)
++int highpoint_command_interface(int fd __attribute__((__unused__)), smart_command_set command __attribute__((__unused__)), int select __attribute__((__unused__)), char *data __attribute__((__unused__)))
+ {
+-  fd = fd;
+-  command = command;
+-  select = select;
+-  data = data;
+   return -1;
+ }
+ 
+ // Interface to SCSI devices.  See os_linux.c
+-int do_scsi_cmnd_io(int fd, struct scsi_cmnd_io * iop, int report) {
+-  fd = fd;
+-  iop = iop;
+-  report = report;
++int do_scsi_cmnd_io(int fd __attribute__((__unused__)), struct scsi_cmnd_io * iop __attribute__((__unused__)), int report __attribute__((__unused__))) {
+   return -ENOSYS;
+ }

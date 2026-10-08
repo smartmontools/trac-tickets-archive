@@ -1,0 +1,12 @@
+Index: smartctl.cpp
+===================================================================
+--- smartctl.cpp	(revision 3854)
++++ smartctl.cpp	(working copy)
+@@ -26,6 +26,7 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <string.h>
++#include <stdlib.h>
+ #include <stdarg.h>
+ #include <stdexcept>
+ #include <getopt.h>

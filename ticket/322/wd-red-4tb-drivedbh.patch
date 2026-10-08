@@ -1,0 +1,11 @@
+--- drivedb.h.svn	2014-03-06 10:26:14.690763002 -0300
++++ drivedb.h	2014-03-06 10:28:44.496774553 -0300
+@@ -2682,7 +2682,7 @@
+   },
+   { "Western Digital Red (AF)", // tested with WDC WD10EFRX-68JCSN0/01.01A01,
+       // WDC WD10JFCX-68N6GN0/01.01A01
+-    "WDC WD(10|20|30)[EJ]F[CR]X-.*",
++    "WDC WD(10|20|30|40)[EJ]F[CR]X-.*",
+     "", "", ""
+   },
+   { "Western Digital Green Mobile", // tested with WDC WD20NPVX-00EA4T0/01.01A01

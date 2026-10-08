@@ -1,0 +1,16 @@
+
+# /opt/smartmontools/5.40/sbin/smartctl -d 3ware,3 /dev/twl0 --log=scttempsts
+
+smartctl 5.40 2010-06-14 r3121 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF READ SMART DATA SECTION ===
+SCT Status Version:                  3
+SCT Version (vendor specific):       522 (0x020a)
+SCT Support Level:                   1
+Device State:                        Active (0)
+Current Temperature:                    32 Celsius
+Power Cycle Min/Max Temperature:     32/34 Celsius
+Lifetime    Min/Max Temperature:     23/38 Celsius
+Under/Over Temperature Limit Count:   0/3
+

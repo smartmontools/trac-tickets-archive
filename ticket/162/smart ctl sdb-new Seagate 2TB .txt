@@ -1,0 +1,28 @@
+root@Tower:~# smartctl -a -d ata /dev/sdb
+smartctl 5.39.1 2010-01-28 r3054 [i486-slackware-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     ST2000DL003-9VT166
+Serial Number:    5YD257K5
+Firmware Version: CC32
+User Capacity:    2,000,398,934,016 bytes
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 4
+Local Time is:    Sun Apr 17 16:52:58 2011 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+Error SMART Status command failed
+Please get assistance from http://smartmontools.sourceforge.net/
+Register values returned from SMART Status command are:
+ST =0x40
+ERR=0x00
+NS =0x88
+SC =0x00
+CL =0xf4
+CH =0xd7
+SEL=0x40
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.
+root@Tower:~#

@@ -1,0 +1,96 @@
+Index: sys/dev/ata/chipsets/ata-ahci.c
+===================================================================
+--- sys/dev/ata/chipsets/ata-ahci.c	(revision 242159)
++++ sys/dev/ata/chipsets/ata-ahci.c	(working copy)
+@@ -555,8 +555,10 @@
+     if (request->status & ATA_S_ERROR)  
+ 	request->error = tf_data >> 8;
+ 
+-    /* on control commands read back registers to the request struct */
+-    if (request->flags & ATA_R_CONTROL) {
++    /* Read back registers to the request struct. */
++    if ((request->flags & ATA_R_ATAPI) == 0 &&
++	((request->status & ATA_S_ERROR) ||
++	 (request->flags & (ATA_R_CONTROL | ATA_R_NEEDRESULT)))) {
+ 	u_int8_t *fis = ch->dma.work + ATA_AHCI_FB_OFFSET + 0x40;
+ 
+ 	request->u.ata.count = fis[12] | ((u_int16_t)fis[13] << 8);
+Index: sys/dev/ata/chipsets/ata-siliconimage.c
+===================================================================
+--- sys/dev/ata/chipsets/ata-siliconimage.c	(revision 242159)
++++ sys/dev/ata/chipsets/ata-siliconimage.c	(working copy)
+@@ -658,8 +658,10 @@
+ 	}
+     }
+ 
+-    /* on control commands read back registers to the request struct */
+-    if (request->flags & ATA_R_CONTROL) {
++    /* Read back registers to the request struct. */
++    if ((request->flags & ATA_R_ATAPI) == 0 &&
++	((request->status & ATA_S_ERROR) ||
++	 (request->flags & (ATA_R_CONTROL | ATA_R_NEEDRESULT)))) {
+ 	request->u.ata.count = prb->fis[12] | ((u_int16_t)prb->fis[13] << 8);
+ 	request->u.ata.lba = prb->fis[4] | ((u_int64_t)prb->fis[5] << 8) |
+ 			     ((u_int64_t)prb->fis[6] << 16);
+Index: sys/dev/ata/ata-all.c
+===================================================================
+--- sys/dev/ata/ata-all.c	(revision 242159)
++++ sys/dev/ata/ata-all.c	(working copy)
+@@ -1483,6 +1483,8 @@
+ 		request->u.ata.lba |= ((uint64_t)ccb->ataio.cmd.lba_high << 16) |
+ 				      ((uint64_t)ccb->ataio.cmd.lba_mid << 8) |
+ 				       (uint64_t)ccb->ataio.cmd.lba_low;
++		if (ccb->ataio.cmd.flags & CAM_ATAIO_NEEDRESULT)
++			request->flags |= ATA_R_NEEDRESULT;
+ 		if ((ccb->ccb_h.flags & CAM_DIR_MASK) != CAM_DIR_NONE &&
+ 		    ccb->ataio.cmd.flags & CAM_ATAIO_DMA)
+ 			request->flags |= ATA_R_DMA;
+Index: sys/dev/ata/ata-all.h
+===================================================================
+--- sys/dev/ata/ata-all.h	(revision 242159)
++++ sys/dev/ata/ata-all.h	(working copy)
+@@ -396,6 +396,7 @@
+ #define         ATA_R_REQUEUE           0x00000400
+ #define         ATA_R_THREAD            0x00000800
+ #define         ATA_R_DIRECT            0x00001000
++#define         ATA_R_NEEDRESULT        0x00002000
+ 
+ #define         ATA_R_ATAPI16           0x00010000
+ #define         ATA_R_ATAPI_INTR        0x00020000
+Index: sys/dev/ata/ata-lowlevel.c
+===================================================================
+--- sys/dev/ata/ata-lowlevel.c	(revision 242159)
++++ sys/dev/ata/ata-lowlevel.c	(working copy)
+@@ -116,6 +116,7 @@
+ 		} while (request->status & ATA_S_BUSY && timeout--);
+ 		if (request->status & ATA_S_ERROR)
+ 		    request->error = ATA_IDX_INB(ch, ATA_ERROR);
++		ch->hw.tf_read(request);
+ 		goto begin_finished;
+ 	    }
+ 
+@@ -253,8 +254,9 @@
+ 	if (request->flags & ATA_R_TIMEOUT)
+ 	    goto end_finished;
+ 
+-	/* on control commands read back registers to the request struct */
+-	if (request->flags & ATA_R_CONTROL) {
++	/* Read back registers to the request struct. */
++	if ((request->status & ATA_S_ERROR) ||
++	    (request->flags & (ATA_R_CONTROL | ATA_R_NEEDRESULT))) {
+ 	    ch->hw.tf_read(request);
+ 	}
+ 
+@@ -332,6 +334,12 @@
+ 	else if (!(request->flags & ATA_R_TIMEOUT))
+ 	    request->donecount = request->bytecount;
+ 
++	/* Read back registers to the request struct. */
++	if ((request->status & ATA_S_ERROR) ||
++	    (request->flags & (ATA_R_CONTROL | ATA_R_NEEDRESULT))) {
++	    ch->hw.tf_read(request);
++	}
++
+ 	/* release SG list etc */
+ 	ch->dma.unload(request);
+ 

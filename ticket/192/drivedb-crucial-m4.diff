@@ -1,0 +1,23 @@
+diff --git a/a/drivedb.h b/b/drivedb.h
+index f87fba7..b84117d 100644
+--- a/a/drivedb.h
++++ b/b/drivedb.h
+@@ -90,7 +90,8 @@ const drive_settings builtin_knowndrives[] = {
+   },
+   { "Crucial/Micron RealSSD C300/C400",
+     "C300-CTFDDA[AC](064|128|256)MAG|" // Marvell 88SS9174 BJP2, tested with C300-CTFDDAC128MAG/0002
+-    "C400-MTFDDA[ACK](064|128|256|512)MAM", // tested with C400-MTFDDAC256MAM/0002
++    "C400-MTFDDA[ACK](064|128|256|512)MAM|" // tested with C400-MTFDDAC256MAM/0002
++    "M4-CT(064|128|256)M4SSD2", // tested with M4-CT064M4SSD2/0002
+     "", "",
+   //"-v 1,raw48,Raw_Read_Error_Rate "
+   //"-v 5,raw48,Reallocated_Sector_Ct "
+@@ -101,7 +102,7 @@ const drive_settings builtin_knowndrives[] = {
+     "-v 172,raw48,Erase_Fail_Count "
+     "-v 173,raw48,Wear_Levelling_Count "
+     "-v 174,raw48,Unexpect_Power_Loss_Ct "
+-    "-v 181,raw48,Non4k_Aligned_Access "
++    "-v 181,raw16,Non4k_Aligned_Access "
+     "-v 183,raw48,SATA_Iface_Downshift "
+   //"-v 184,raw48,End-to-End_Error "
+     "-v 189,raw48,Factory_Bad_Block_Ct "

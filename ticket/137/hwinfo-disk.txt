@@ -1,0 +1,89 @@
+14: IDE 00.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: 3OOL.ejdset_ZrU5
+  Parent ID: w7Y8.VAeuMo4mTH6
+  SysFS ID: /class/block/sda
+  SysFS BusID: 0:0:0:0
+  SysFS Device Link: /devices/pci0000:00/0000:00:1f.2/host0/target0:0:0/0:0:0:0
+  Hardware Class: disk
+  Model: "INTEL SSDSA2M080"
+  Vendor: "INTEL"
+  Device: "SSDSA2M080"
+  Revision: "2CV1"
+  Driver: "ahci", "sd"
+  Driver Modules: "ahci"
+  Device File: /dev/sda
+  Device Files: /dev/sda, /dev/block/8:0, /dev/disk/by-id/ata-INTEL_SSDSA2M080G2GN_CVPO017402JP080JGN, /dev/disk/by-id/scsi-SATA_INTEL_SSDSA2M08CVPO017402JP080JGN, /dev/disk/by-path/pci-0000:00:1f.2-scsi-0:0:0:0, /dev/disk/by-id/wwn-0x5001517959331252
+  Device Number: block 8:0-8:15
+  Drive status: no medium
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #11 (SATA controller)
+
+15: IDE 100.0: 10600 Disk
+  [Created at block.245]
+  Unique ID: WZeP.MXzEiHNm1oF
+  Parent ID: w7Y8.VAeuMo4mTH6
+  SysFS ID: /class/block/sdb
+  SysFS BusID: 1:0:0:0
+  SysFS Device Link: /devices/pci0000:00/0000:00:1f.2/host1/target1:0:0/1:0:0:0
+  Hardware Class: disk
+  Model: "SAMSUNG HD203WI"
+  Vendor: "SAMSUNG"
+  Device: "HD203WI"
+  Revision: "1AN1"
+  Driver: "ahci", "sd"
+  Driver Modules: "ahci"
+  Device File: /dev/sdb
+  Device Files: /dev/sdb, /dev/block/8:16, /dev/disk/by-id/ata-SAMSUNG_HD203WI_S1UYJDWZ725876, /dev/disk/by-id/scsi-SATA_SAMSUNG_HD203WIS1UYJDWZ725876, /dev/disk/by-path/pci-0000:00:1f.2-scsi-1:0:0:0, /dev/disk/by-id/wwn-0x50024e9003c95c94
+  Device Number: block 8:16-8:31
+  Drive status: no medium
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #11 (SATA controller)
+
+17: SCSI c00.0: 10600 Disk
+  [Created at block.256]
+  Unique ID: JPTW.w7uKzL338B7
+  Parent ID: 1GTX.u8ewPqcAUtE
+  SysFS ID: /class/block/sdc
+  SysFS BusID: 12:0:0:0
+  SysFS Device Link: /devices/pci0000:00/0000:00:1d.0/usb2/2-1/2-1.3/2-1.3:1.0/host12/target12:0:0/12:0:0:0
+  Hardware Class: disk
+  Model: "Generic STORAGE DEVICE"
+  Vendor: usb 0x05e3 "Generic"
+  Device: usb 0x0716 "STORAGE DEVICE"
+  Revision: "9744"
+  Serial ID: "000000009744"
+  Driver: "usb-storage", "sd"
+  Driver Modules: "usb_storage"
+  Device File: /dev/sdc (/dev/sg3)
+  Device Files: /dev/sdc, /dev/block/8:32, /dev/disk/by-id/usb-Generic_STORAGE_DEVICE_000000009744-0:0, /dev/disk/by-path/pci-0000:00:1d.0-usb-0:1.3:1.0-scsi-0:0:0:0
+  Device Number: block 8:32-8:47 (char 21:3)
+  Speed: 480 Mbps
+  Module Alias: "usb:v05E3p0716d9744dc00dsc00dp00ic08isc06ip50"
+  Driver Info #0:
+    Driver Status: usb_storage is active
+    Driver Activation Cmd: "modprobe usb_storage"
+  Drive status: no medium
+  Config Status: cfg=no, avail=yes, need=no, active=unknown
+  Attached to: #8 (USB Controller)
+
+18: SCSI c00.1: 10600 Disk
+  [Created at block.256]
+  Unique ID: ofUZ.QNnIOgEV7f6
+  Parent ID: 1GTX.u8ewPqcAUtE
+  SysFS ID: /class/block/sdd
+  SysFS BusID: 12:0:0:1
+  SysFS Device Link: /devices/pci0000:00/0000:00:1d.0/usb2/2-1/2-1.3/2-1.3:1.0/host12/target12:0:0/12:0:0:1
+  Hardware Class: disk
+  Model: "Generic STORAGE DEVICE"
+  Vendor: usb 0x05e3 "Generic"
+  Device: usb 0x0716 "STORAGE DEVICE"
+  Revision: "9744"
+  Driver: "usb-storage", "sd"
+  Driver Modules: "usb_storage"
+  Device File: /dev/sdd (/dev/sg4)
+  Device Files: /dev/sdd, /dev/block/8:48, /dev/disk/by-id/usb-Generic_STORAGE_DEVICE_000000009744-0:1, /dev/disk/by-path/pci-0000:00:1d.0-usb-0:1.3:1.0-scsi-0:0:0:1
+  Device Number: block 8:48-8:63 (char 21:4)
+  Drive status: no medium
+  Config Status: cfg=no, avail=yes, need=no, active=unknown
+  Attached to: #8 (USB Controller)

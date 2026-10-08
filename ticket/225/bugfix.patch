@@ -1,0 +1,12 @@
+diff -ru trunk_original/smartmontools/os_linux.cpp trunk/smartmontools/os_linux.cpp
+--- trunk_original/smartmontools/os_linux.cpp	2011-10-12 17:22:14 -0400
++++ trunk/smartmontools/os_linux.cpp	2012-04-20 14:52:50 -0400
+@@ -605,7 +605,7 @@
+         }
+     }
+ 
+-    if (io_hdr.info | SG_INFO_CHECK) { /* error or warning */
++    if (io_hdr.info & SG_INFO_CHECK) { /* error or warning */
+         int masked_driver_status = (LSCSI_DRIVER_MASK & io_hdr.driver_status);
+ 
+         if (0 != io_hdr.host_status) {

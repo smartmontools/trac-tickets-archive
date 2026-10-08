@@ -1,0 +1,14 @@
+--- smartd.service.in.O	2011-08-29 20:42:04.499660240 +0200
++++ smartd.service.in	2011-08-29 20:43:06.435481831 +0200
+@@ -3,8 +3,9 @@
+ After=syslog.target
+ 
+ [Service]
+-EnvironmentFile=/usr/local/etc/sysconfig/smartmontools
+-ExecStart=/usr/local/sbin/smartd -n $smartd_opts
++ExecStart=/usr/local/sbin/smartd -n
++ExecReload=/bin/kill -HUP $MAINPID
++StandardOutput=syslog
+ 
+ [Install]
+ WantedBy=multi-user.target

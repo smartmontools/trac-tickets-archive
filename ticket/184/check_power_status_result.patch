@@ -1,0 +1,111 @@
+Index: atacmds.cpp
+===================================================================
+--- atacmds.cpp	(revision 4247)
++++ atacmds.cpp	(working copy)
+@@ -797,7 +797,10 @@
+   if ((smartcommandhandler(device, CHECK_POWER_MODE, 0, (char *)&result)))
+     return -1;
+ 
+-  if (result!=0 && result!=0x80 && result!=0xff)
++  if (result!=0x00 && result!=0x01 
++      && result!=0x40 && result!=0x41 
++      && result!=0x80 && result!=0x81 && result!=0x82 && result!=0x83 
++      && result!=0xff)
+     pout("ataCheckPowerMode(): ATA CHECK POWER MODE returned unknown Sector Count Register value %02x\n", result);
+ 
+   return (int)result;
+Index: smartd.cpp
+===================================================================
+--- smartd.cpp	(revision 4247)
++++ smartd.cpp	(working copy)
+@@ -427,6 +427,7 @@
+ 
+   bool powermodefail;                     // true if power mode check failed
+   int powerskipcnt;                       // Number of checks skipped due to idle or standby mode
++  int lastpowermodeskipped;               // the last power mode that was skipped
+ 
+   // SCSI ONLY
+   unsigned char SmartPageSupported;       // has log sense IE page (0x2f)
+@@ -459,6 +460,7 @@
+   tempmin_delay(0),
+   powermodefail(false),
+   powerskipcnt(0),
++  lastpowermodeskipped(0),
+   SmartPageSupported(false),
+   TempPageSupported(false),
+   ReadECounterPageSupported(false),
+@@ -2066,7 +2068,10 @@
+       PrintOut(LOG_CRIT, "Device: %s, no ATA CHECK POWER STATUS support, ignoring -n Directive\n", name);
+       cfg.powermode=0;
+     } 
+-    else if (powermode!=0 && powermode!=0x80 && powermode!=0xff) {
++    else if (powermode!=0x00 && powermode!=0x01 
++        && powermode!=0x40 && powermode!=0x41 
++        && powermode!=0x80 && powermode!=0x81 && powermode!=0x82 && powermode!=0x83 
++        && powermode!=0xff) {
+       PrintOut(LOG_CRIT, "Device: %s, CHECK POWER STATUS returned %d, not ATA compliant, ignoring -n Directive\n",
+ 	       name, powermode);
+       cfg.powermode=0;
+@@ -3044,12 +3049,18 @@
+       if (cfg.powermode>=1)
+         dontcheck=1;
+       break;
+-    case 0:
++    case 0x00:
+       // STANDBY
+       mode="STANDBY";
+       if (cfg.powermode>=2)
+         dontcheck=1;
+       break;
++    case 0x01:
++     // STANDBY_Y
++      mode="STANDBY_Y";
++      if (cfg.powermode>=2)
++        dontcheck=1;
++      break;
+     case 0x80:
+       // IDLE
+       mode="IDLE";
+@@ -3056,8 +3067,30 @@
+       if (cfg.powermode>=3)
+         dontcheck=1;
+       break;
++    case 0x81:
++      // IDLE_A
++      mode="IDLE_A";
++      if (cfg.powermode>=3)
++        dontcheck=1;
++      break;
++    case 0x82:
++      // IDLE_B
++      mode="IDLE_B";
++      if (cfg.powermode>=3)
++        dontcheck=1;
++      break;
++    case 0x83:
++      // IDLE_C
++      mode="IDLE_C";
++      if (cfg.powermode>=3)
++        dontcheck=1;
++      break;
+     case 0xff:
+       // ACTIVE/IDLE
++    case 0x40:
++      // ACTIVE
++    case 0x41:
++      // ACTIVE
+       mode="ACTIVE or IDLE";
+       break;
+     default:
+@@ -3073,8 +3106,10 @@
+       // skip at most powerskipmax checks
+       if (!cfg.powerskipmax || state.powerskipcnt<cfg.powerskipmax) {
+         CloseDevice(atadev, name);
+-        if (!state.powerskipcnt && !cfg.powerquiet) // report first only and avoid waking up system disk
++        if ((!state.powerskipcnt || state.lastpowermodeskipped != powermode) && !cfg.powerquiet) { // report first only and avoid waking up system disk
+           PrintOut(LOG_INFO, "Device: %s, is in %s mode, suspending checks\n", name, mode);
++          state.lastpowermodeskipped = powermode;
++        }
+         state.powerskipcnt++;
+         return 0;
+       }

@@ -1,0 +1,401 @@
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 3726)
++++ os_linux.cpp	(working copy)
+@@ -65,6 +65,7 @@
+ #include <stddef.h>  // for offsetof()
+ #include <sys/uio.h>
+ #include <sys/types.h>
++#include <dirent.h>
+ #ifndef makedev // old versions of types.h do not include sysmacros.h
+ #include <sys/sysmacros.h>
+ #endif
+@@ -122,6 +123,9 @@
+   int get_fd() const
+     { return m_fd; }
+ 
++  void set_fd(int fd)
++    { m_fd = fd; }
++
+ private:
+   int m_fd; ///< filedesc, -1 if not open.
+   int m_flags; ///< Flags for ::open()
+@@ -901,6 +905,7 @@
+    m_fd(-1), pt_cmd(0)
+ {
+   set_info().info_name = strprintf("%s [megaraid_disk_%02d]", dev_name, m_disknum);
++  set_info().dev_type = strprintf("megaraid,%d", tgt);
+ }
+ 
+ linux_megaraid_device::~linux_megaraid_device() throw()
+@@ -944,9 +949,6 @@
+     ata_device * newdev = smi()->autodetect_sat_device(this, req_buff, len);
+     if (newdev) {
+       // NOTE: 'this' is now owned by '*newdev'
+-      newdev->close();
+-      newdev->set_err(ENOSYS, "SATA device detected,\n"
+-        "MegaRAID SAT layer is reportedly buggy, use '-d sat+megaraid,N' to try anyhow");
+       return newdev;
+     }
+   }
+@@ -963,38 +965,39 @@
+   FILE *fp;
+   int report = scsi_debugmode;
+ 
+-  if (!linux_smart_device::open())
+-    return false;
+-
+-  /* Get device HBA */
+-  struct sg_scsi_id sgid;
+-  if (ioctl(get_fd(), SG_GET_SCSI_ID, &sgid) == 0) {
+-    m_hba = sgid.host_no;
+-  }
+-  else if (ioctl(get_fd(), SCSI_IOCTL_GET_BUS_NUMBER, &m_hba) != 0) {
+-    int err = errno;
++  if(sscanf(get_dev_name(),"/dev/bus/%d", &m_hba) == 0) {
++    if (!linux_smart_device::open())
++      return false;
++    /* Get device HBA */
++    struct sg_scsi_id sgid;
++    if (ioctl(get_fd(), SG_GET_SCSI_ID, &sgid) == 0) {
++      m_hba = sgid.host_no;
++    }
++    else if (ioctl(get_fd(), SCSI_IOCTL_GET_BUS_NUMBER, &m_hba) != 0) {
++      int err = errno;
++      linux_smart_device::close();
++      return set_err(err, "can't get bus number");
++    } // we dont need this device anymore
+     linux_smart_device::close();
+-    return set_err(err, "can't get bus number");
+   }
+-
+   /* Perform mknod of device ioctl node */
+   fp = fopen("/proc/devices", "r");
+   while (fgets(line, sizeof(line), fp) != NULL) {
+   	n1=0;
+   	if (sscanf(line, "%d megaraid_sas_ioctl%n", &mjr, &n1) == 1 && n1 == 22) {
+-	   n1=mknod("/dev/megaraid_sas_ioctl_node", S_IFCHR, makedev(mjr, 0));
+-	   if(report > 0)
+-	     pout("Creating /dev/megaraid_sas_ioctl_node = %d\n", n1 >= 0 ? 0 : errno);
+-	   if (n1 >= 0 || errno == EEXIST)
++  		n1=mknod("/dev/megaraid_sas_ioctl_node", S_IFCHR, makedev(mjr, 0));
++  		if(report > 0)
++  			pout("Creating /dev/megaraid_sas_ioctl_node = %d\n", n1 >= 0 ? 0 : errno);
++  		if (n1 >= 0 || errno == EEXIST)
+ 	      break;
+-	}
+-	else if (sscanf(line, "%d megadev%n", &mjr, &n1) == 1 && n1 == 11) {
+-	   n1=mknod("/dev/megadev0", S_IFCHR, makedev(mjr, 0));
+-	   if(report > 0)
+-	     pout("Creating /dev/megadev0 = %d\n", n1 >= 0 ? 0 : errno);
+-	   if (n1 >= 0 || errno == EEXIST)
++	  }
++	  else if (sscanf(line, "%d megadev%n", &mjr, &n1) == 1 && n1 == 11) {
++	  	n1=mknod("/dev/megadev0", S_IFCHR, makedev(mjr, 0));
++	  	if(report > 0)
++	  		pout("Creating /dev/megadev0 = %d\n", n1 >= 0 ? 0 : errno);
++	  	if (n1 >= 0 || errno == EEXIST)
+ 	      break;
+-	}
++	  }
+   }
+   fclose(fp);
+ 
+@@ -1010,16 +1013,18 @@
+     linux_smart_device::close();
+     return set_err(err, "cannot open /dev/megaraid_sas_ioctl_node or /dev/megadev0");
+   }
+-
++  set_fd(m_fd);
+   return true;
+ }
+ 
++
+ bool linux_megaraid_device::close()
+ {
+   if (m_fd >= 0)
+     ::close(m_fd);
+   m_fd = -1; m_hba = 0; pt_cmd = 0;
+-  return linux_smart_device::close();
++  set_fd(m_fd);
++  return true;
+ }
+ 
+ bool linux_megaraid_device::scsi_pass_through(scsi_cmnd_io *iop)
+@@ -2313,7 +2318,7 @@
+ 
+     // DELL?
+     if (!memcmp(req_buff + 8, "DELL    PERC", 12) || !memcmp(req_buff + 8, "MegaRAID", 8)
+-        || !memcmp(req_buff + 16, "PERC H700", 9)
++        || !memcmp(req_buff + 16, "PERC H700", 9) || !memcmp(req_buff + 8, "LSI\0",4)
+     ) {
+       close();
+       set_err(EINVAL, "DELL or MegaRaid controller, please try adding '-d megaraid,N'");
+@@ -2433,8 +2438,11 @@
+ private:
+   bool get_dev_list(smart_device_list & devlist, const char * pattern,
+     bool scan_ata, bool scan_scsi, const char * req_type, bool autodetect);
+-
++  bool get_dev_megasas(smart_device_list & devlist);
+   smart_device * missing_option(const char * opt);
++  int megasas_dcmd_cmd(int bus_no, uint32_t opcode, void *buf,
++    size_t bufsize, uint8_t *mbox, size_t mboxlen, uint8_t *statusp);
++  int megasas_pd_add_list(int bus_no, smart_device_list & devlist);
+ };
+ 
+ std::string linux_smart_interface::get_os_version_str()
+@@ -2547,10 +2555,67 @@
+         devlist.push_back(dev);
+     }
+   }
+-
++ 
+   // free memory
+   globfree(&globbuf);
++  return true;
++}
+ 
++// getting devices from LSI SAS MegaRaid, if available
++bool linux_smart_interface::get_dev_megasas(smart_device_list & devlist)
++{
++  /* Scanning of disks on MegaRaid device */
++  /* Perform mknod of device ioctl node */
++  int   mjr, n1;
++  FILE *fp;
++  char line[128];
++  bool scan_megasas = false;
++  fp = fopen("/proc/devices", "r");
++  while (fgets(line, sizeof(line), fp) != NULL) {
++  	n1=0;
++  	if (sscanf(line, "%d megaraid_sas_ioctl%n", &mjr, &n1) == 1 && n1 == 22) {
++  		scan_megasas = true;
++  		n1=mknod("/dev/megaraid_sas_ioctl_node", S_IFCHR, makedev(mjr, 0));
++  		if(scsi_debugmode > 0)
++  			pout("Creating /dev/megaraid_sas_ioctl_node = %d\n", n1 >= 0 ? 0 : errno);
++  		if (n1 >= 0 || errno == EEXIST)
++	      break;
++	  }
++  }
++  fclose(fp);
++  
++  if(!scan_megasas)
++  	return false;
++  
++  // getting bus numbers with megasas devices
++  DIR *dp;
++  struct dirent *ep;
++  unsigned int host_no = 0, i;
++  char sysfsdir[256];
++  
++  /* we are using sysfs to get list of all scsi hosts */
++  dp = opendir ("/sys/class/scsi_host/");
++  if (dp != NULL)
++  {
++  	while ((ep = readdir (dp)) != NULL) {
++	    if (!sscanf(ep->d_name, "host%d", &host_no)) 
++	    	continue;
++	    /* proc_name should be megaraid_sas */
++	    snprintf(sysfsdir, sizeof(sysfsdir) - 1,
++	    	"/sys/class/scsi_host/host%d/proc_name", host_no);
++	    if((fp = fopen(sysfsdir, "r")) == NULL)
++	    	continue;
++	    if(fgets(line, sizeof(line), fp) != NULL && !strncmp(line,"megaraid_sas",12)) {
++	    	megasas_pd_add_list(host_no, devlist);
++	    }
++	    fclose(fp);
++	    
++	  }
++  	(void) closedir (dp);
++  } else { /* sysfs not mounted ? */
++  	for(i = 0; i <=16; i++) // trying to add devices on first 16 buses
++  		megasas_pd_add_list(i, devlist);
++  }
+   return true;
+ }
+ 
+@@ -2578,6 +2643,8 @@
+     get_dev_list(devlist, "/dev/sd[a-z]", false, true, type, autodetect);
+     // Support up to 104 devices
+     get_dev_list(devlist, "/dev/sd[a-c][a-z]", false, true, type, autodetect);
++    // get device list from the megaraid device
++    get_dev_megasas(devlist);
+   }
+ 
+   // if we found traditional links, we are done
+@@ -2605,6 +2672,110 @@
+   return 0;
+ }
+ 
++int
++linux_smart_interface::megasas_dcmd_cmd(int bus_no, uint32_t opcode, void *buf,
++  size_t bufsize, uint8_t *mbox, size_t mboxlen, uint8_t *statusp)
++{
++  struct megasas_iocpacket ioc;
++  struct megasas_dcmd_frame *dcmd;
++  int r;
++  
++  if ((mbox != NULL && (mboxlen == 0 || mboxlen > MFI_MBOX_SIZE)) ||
++    (mbox == NULL && mboxlen != 0)) 
++  {
++    errno = EINVAL;
++    return (-1);
++  }
++  
++  bzero(&ioc, sizeof(ioc));
++  dcmd = &ioc.frame.dcmd;
++  ioc.host_no = bus_no;
++  if (mbox)
++    bcopy(mbox, dcmd->mbox.w, mboxlen);
++  dcmd->cmd = MFI_CMD_DCMD;
++  dcmd->timeout = 0;
++  dcmd->flags = 0;
++  dcmd->data_xfer_len = bufsize;
++  dcmd->opcode = opcode;
++  
++  if (bufsize > 0) {
++    dcmd->sge_count = 1;
++    dcmd->data_xfer_len = bufsize;
++    dcmd->sgl.sge32[0].phys_addr = (intptr_t)buf;
++    dcmd->sgl.sge32[0].length = (uint32_t)bufsize;
++  }
++  
++  if (bufsize > 0) {
++    ioc.sge_count = 1;
++    ioc.sgl_off = offsetof(struct megasas_dcmd_frame, sgl);
++    ioc.sgl[0].iov_base = buf;
++    ioc.sgl[0].iov_len = bufsize;
++  }
++  int fd;
++  if ((fd = ::open("/dev/megaraid_sas_ioctl_node", O_RDWR)) <= 0) {
++    return (errno);
++  }
++  
++  r = ioctl(fd, MEGASAS_IOC_FIRMWARE, &ioc);
++  if (r < 0) {
++    return (r);
++  }
++  
++  if (statusp != NULL)
++    *statusp = dcmd->cmd_status;
++  else if (dcmd->cmd_status != MFI_STAT_OK) {
++    fprintf(stderr, "command %x returned error status %x\n",
++      opcode, dcmd->cmd_status);
++    errno = EIO;
++    return (-1);
++  }
++  return (0);
++}
++
++int
++linux_smart_interface::megasas_pd_add_list(int bus_no, smart_device_list & devlist)
++{
++  struct megasas_pd_list *list;
++  uint32_t list_size;
++  unsigned int i;
++  char line[128];
++  smart_device * dev;
++  
++  /*
++  * Keep fetching the list in a loop until we have a large enough
++  * buffer to hold the entire list.
++  */
++  list = NULL;
++  list_size = 1024;
++fetch:
++  list = (megasas_pd_list *)realloc(list, list_size);
++  if (list == NULL)
++    return (-1);
++  bzero(list, list_size);
++  if (megasas_dcmd_cmd(bus_no, MFI_DCMD_PD_GET_LIST, list, list_size, NULL, 0,
++    NULL) < 0) 
++  {
++    free(list);
++    return (-1);
++  }
++  if (list->size > list_size) {
++    list_size = list->size;
++    goto fetch;
++  }
++  // adding new to devlist devices
++  // adding all SCSI devices
++  for (i = 0; i < list->count; i++) {
++    if(list->addr[i].scsi_dev_type)
++      continue; /* non disk device found */
++    snprintf(line, sizeof(line) - 1, "/dev/bus/%d", bus_no);
++    dev = new linux_megaraid_device(this, line, 0, list->addr[i].device_id);
++    if (dev)
++      devlist.push_back(dev);
++  }
++  free(list);
++  return (0);
++}
++
+ // Return kernel release as integer ("2.6.31" -> 206031)
+ static unsigned get_kernel_release()
+ {
+Index: megaraid.h
+===================================================================
+--- megaraid.h	(revision 3726)
++++ megaraid.h	(working copy)
+@@ -107,10 +107,18 @@
+ #define MEGASAS_IOC_FIRMWARE   _IOWR(MEGASAS_MAGIC, 1, struct megasas_iocpacket)
+ 
+ #define MFI_CMD_PD_SCSI_IO        0x04
++#define MFI_CMD_DCMD              0x05
+ #define MFI_FRAME_SGL64           0x02
+-#define MFI_FRAME_DIR_READ        0x10 
++#define MFI_FRAME_DIR_READ        0x10
++#define MFI_STAT_OK               0x00
++#define MFI_DCMD_PD_GET_LIST      0x02010000
++/*
++ * Number of mailbox bytes in DCMD message frame
++ */
++#define MFI_MBOX_SIZE             12
++#define MAX_IOCTL_SGE             16
+ 
+-#define MAX_IOCTL_SGE			16
++#define MAX_SYS_PDS   240
+ 
+ struct megasas_sge32 {
+ 
+@@ -220,10 +228,26 @@
+ 		u8 raw[128];
+ 		struct megasas_header hdr;
+ 		struct megasas_pthru_frame pthru;
++		struct megasas_dcmd_frame dcmd;
+ 	} frame;
+ 
+ 	struct iovec sgl[MAX_IOCTL_SGE];
++} __attribute__ ((packed));
+ 
++struct megasas_pd_address {
++	u16 device_id;
++	u16 encl_device_id;
++	u8 encl_index;
++	u8 slot_number;
++	u8 scsi_dev_type; /* 0 = disk */
++	u8 connect_port_bitmap;
++	u64 sas_addr[2];
++}   __attribute__ ((packed));
++
++struct megasas_pd_list {
++	u32 size;
++	u32 count;
++	struct megasas_pd_address addr[MAX_SYS_PDS];
+ } __attribute__ ((packed));
+ 
+ #undef u8
+Index: scsiata.cpp
+===================================================================
+--- scsiata.cpp	(revision 3727)
++++ scsiata.cpp	(working copy)
+@@ -141,6 +141,9 @@
+     hide_ata(); // Start as SCSI, switch to ATA in autodetect_open()
+   else
+     hide_scsi(); // ATA always
++  
++  if (strcmp(scsidev->get_dev_type(),"scsi")) // RAID devices                                                                                                     
++    set_info().dev_type = strprintf("sat+%s", scsidev->get_dev_type());                                                                       
+ 
+   set_info().info_name = strprintf("%s [%sSAT]", scsidev->get_info_name(),
+                                    (enable_auto ? "SCSI/" : ""));

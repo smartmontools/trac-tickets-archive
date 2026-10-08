@@ -1,0 +1,39 @@
+Index: smartd.8.in
+===================================================================
+--- smartd.8.in	(revision 3422)
++++ smartd.8.in	(working copy)
+@@ -753,7 +753,7 @@
+ \fBGuido Guenther\fP (Autoconf/Automake packaging)
+ \fBGeoffrey Keating\fP (Darwin ATA interface)
+ \fBEduard Martinescu\fP (FreeBSD interface)
+-\fBFr\*'ed\*'eric L. W. Meunier\fP (Web site and Mailing list)
++\fBFr\['e]d\['e]ric L. W. Meunier\fP (Web site and Mailing list)
+ \fBGabriele Pohl\fP (Web site and Wiki, conversion from CVS to SVN)
+ \fBKeiji Sawada\fP (Solaris ATA interface)
+ \fBManfred Schwarb\fP (Drive database)
+Index: smartd.conf.5.in
+===================================================================
+--- smartd.conf.5.in	(revision 3422)
++++ smartd.conf.5.in	(working copy)
+@@ -1422,7 +1422,7 @@
+ \fBGuido Guenther\fP (Autoconf/Automake packaging)
+ \fBGeoffrey Keating\fP (Darwin ATA interface)
+ \fBEduard Martinescu\fP (FreeBSD interface)
+-\fBFr\*'ed\*'eric L. W. Meunier\fP (Web site and Mailing list)
++\fBFr\['e]d\['e]ric L. W. Meunier\fP (Web site and Mailing list)
+ \fBGabriele Pohl\fP (Web site and Wiki, conversion from CVS to SVN)
+ \fBKeiji Sawada\fP (Solaris ATA interface)
+ \fBManfred Schwarb\fP (Drive database)
+Index: smartctl.8.in
+===================================================================
+--- smartctl.8.in	(revision 3422)
++++ smartctl.8.in	(working copy)
+@@ -1965,7 +1965,7 @@
+ \fBGuido Guenther\fP (Autoconf/Automake packaging)
+ \fBGeoffrey Keating\fP (Darwin ATA interface)
+ \fBEduard Martinescu\fP (FreeBSD interface)
+-\fBFr\*'ed\*'eric L. W. Meunier\fP (Web site and Mailing list)
++\fBFr\['e]d\['e]ric L. W. Meunier\fP (Web site and Mailing list)
+ \fBGabriele Pohl\fP (Web site and Wiki, conversion from CVS to SVN)
+ \fBKeiji Sawada\fP (Solaris ATA interface)
+ \fBManfred Schwarb\fP (Drive database)

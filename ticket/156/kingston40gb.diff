@@ -1,0 +1,29 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 3301)
++++ drivedb.h	(working copy)
+@@ -212,7 +212,7 @@
+   },
+   { "Intel X18-M/X25-M/X25-V G2 SSDs", // fixed firmware
+       // tested with INTEL SSDSA2M(080|160)G2GC/2CV102J8 (X25-M)
+-    "INTEL SSDSA[12]M(040|080|160)G2.*",  // G2 = second generation, 34nm
++    "(INTEL SSDSA[12]M(040|080|160)G2.*|KINGSTON SSDNow 40GB)", // G2 = second generation, 34nm
+     "2CV102(J[89A-Z]|[K-Z].)", // >= "2CV102J8"
+     "",
+   //"-v 3,raw48,Spin_Up_Time "
+@@ -231,11 +231,13 @@
+   },
+   { "Intel X18-M/X25-M/X25-V G2 SSDs", // buggy or unknown firmware
+       // tested with INTEL SSDSA2M040G2GC/2CV102HD (X25-V)
+-    "INTEL SSDSA[12]M(040|080|160)G2.*",
++    "(INTEL SSDSA[12]M(040|080|160)G2.*|KINGSTON SSDNow 40GB)",
+     "",
+     "This drive may require a firmware update to\n"
+     "fix possible drive hangs when reading SMART self-test log:\n"
+-    "http://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=18363",
++    "http://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=18363\n"
++    "To update Kingston branded drives, a modified Intel update\n"
++    "tool must be used. Search for \"kingston 40gb firmware\".",
+     "-v 192,raw48,Unsafe_Shutdown_Count "
+     "-v 225,raw48,Host_Writes_32MiB "
+     "-v 226,raw48,Workld_Media_Wear_Indic "

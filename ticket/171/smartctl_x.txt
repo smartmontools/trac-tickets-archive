@@ -1,0 +1,73 @@
+smartctl 5.40 2010-03-16 r3077 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     Kingston SSDNow V Series 64GB
+Serial Number:    06J970016883
+Firmware Version: B090522a
+User Capacity:    64,023,257,088 bytes
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   7
+ATA Standard is:  Exact ATA specification draft version not indicated
+Local Time is:    Fri May  6 17:00:13 2011 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Total time to complete Offline 
+data collection: 		 (   0) seconds.
+Offline data collection
+capabilities: 			 (0x00) 	Offline data collection not supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x00)	Error logging NOT supported.
+					No General Purpose Logging support.
+
+SMART Attributes Data Structure revision number: 1280
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       27
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       0
+194 Temperature_Celsius     0x0007   032   100   000    Pre-fail  Always       -       0
+229 Unknown_Attribute       0x0002   100   000   000    Old_age   Always       -       21941823264152
+232 Available_Reservd_Space 0x0002   100   048   000    Old_age   Always       -       9011683733561
+233 Media_Wearout_Indicator 0x0002   100   000   000    Old_age   Always       -       0
+234 Unknown_Attribute       0x0002   100   000   000    Old_age   Always       -       953583438342
+235 Unknown_Attribute       0x0002   100   000   000    Old_age   Always       -       1476591679
+
+ATA_READ_LOG_EXT (addr=0x00:0x00, page=0, n=1) failed: scsi error aborted command
+Read GP Log Directory failed.
+
+SMART Log Directory Version 16
+SMART Log at address 0x00 has    1 sectors [Log Directory]
+SMART Log at address 0x01 has   12 sectors [Summary SMART error log]
+SMART Log at address 0x07 has    9 sectors [Extended self-test log]
+SMART Log at address 0x0d has  194 sectors [Reserved]
+SMART Log at address 0x13 has  229 sectors [Reserved for Serial ATA]
+SMART Log at address 0x19 has  232 sectors [Reserved]
+SMART Log at address 0x1f has  233 sectors [Reserved]
+SMART Log at address 0x25 has  234 sectors [Reserved]
+SMART Log at address 0x2b has  235 sectors [Reserved]
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+Warning: device does not support Error Logging
+SMART Error Log Version: 16
+No Errors Logged
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+Warning: device does not support Self Test Logging
+SMART Self-test log structure revision number 16
+Warning: ATA Specification requires self-test log structure revision number = 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+
+Device does not support Selective Self Tests/Logging
+Warning: device does not support SCT Commands
+SATA Phy Event Counters (GP Log 0x11) not supported

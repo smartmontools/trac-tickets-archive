@@ -1,0 +1,37 @@
+smartctl 5.43 2012-06-30 r3573 [i686-w64-mingw32-2008(64)-sp1] (sf-5.43-1)
+Copyright (C) 2002-12 by Bruce Allen, http://smartmontools.sourceforge.net
+
+Vendor:               TOSHIBA 
+Product:              MK1401GR CLAR146
+Revision:             FA07
+User Capacity:        145,781,201,280 bytes [145 GB]
+Logical block size:   520 bytes
+Logical Unit id:      0x50000393e80a6ee0
+Serial number:        32802CFRW8  
+Device type:          disk
+Transport protocol:   SAS
+Local Time is:        Mon Oct 08 17:44:27 2012 MPST
+Device supports SMART and is Enabled
+Temperature Warning Disabled or Not Supported
+SMART Health Status: OK
+
+Current Drive Temperature:     45 C
+Drive Trip Temperature:        65 C
+Manufactured in week 10 of year 2012
+Specified cycle count over device lifetime:  50000
+Accumulated start-stop cycles:  89
+Specified load-unload count over device lifetime:  200000
+Accumulated load-unload cycles:  0
+Elements in grown defect list: 1
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0       31        10         8          0     178017.427           2
+write:         0        2         0         0          0     158536.229           0
+verify:        0        0         0         0          0          0.000           0
+
+Non-medium error count:      167
+No self-tests have been logged
+Long (extended) Self Test duration: 6 seconds [0.1 minutes]

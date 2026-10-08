@@ -1,0 +1,45 @@
+smartd 6.0 2012-10-10 r3643 [FreeBSD 8.3-STABLE-20121101 amd64] (local build)
+Copyright (C) 2002-12, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Opened configuration file /usr/local/etc/smartd.conf
+Configuration file /usr/local/etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass0, opened
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass0, not a disk like device [PDT=0x1f], skip
+Unable to register SCSI device /dev/pass0 at line 4 of file /usr/local/etc/smartd.conf
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass1, opened
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass1, not a disk like device [PDT=0x1f], skip
+Unable to register SCSI device /dev/pass1 at line 4 of file /usr/local/etc/smartd.conf
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass2, opened
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     1f 00 05 12 5b 00 10 02  54 4f 53 48 49 42 41 20                        
+ 10     4d 4b 32 30 30 31 54 52  4b 42 20 20 20 20 20 20                        
+ 20     30 31 30 35                                                             
+Device: /dev/pass2, not a disk like device [PDT=0x1f], skip
+Unable to register SCSI device /dev/pass2 at line 4 of file /usr/local/etc/smartd.conf
+Unable to monitor any SMART enabled devices. Try debug (-d) option. Exiting...

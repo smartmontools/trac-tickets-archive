@@ -1,0 +1,10 @@
+--- a/scsiata.cpp
++++ b/scsiata.cpp
+@@ -1352,6 +1352,7 @@
+   // LaCie
+   { 0x059f, 0x0651,     -1, d_unsup   }, // LaCie hard disk (FA Porsche design)
+   { 0x059f, 0x1018,     -1, d_sat     }, // LaCie hard disk (Neil Poulton design)
++  { 0x059f, 0x1019,     -1, d_jmicron }, // LaCie Desktop Hard Disk
+   // In-System Design
+   { 0x05ab, 0x0060, 0x1101, d_cypress }, // In-System/Cypress ISD-300A1
+   // Genesys Logic

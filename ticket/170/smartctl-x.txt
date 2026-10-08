@@ -1,0 +1,145 @@
+smartctl 5.40 2010-10-16 r3189 [FreeBSD 8.2-RELEASE amd64] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     INTEL SSDSC2MH120A2
+Serial Number:    LNEL111501CW120CGN
+Firmware Version: PPG2
+User Capacity:    120,034,123,776 bytes
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 2d
+Local Time is:    Thu May  5 12:24:31 2011 PDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 (  10) seconds.
+Offline data collection
+capabilities: 			 (0x15) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Abort Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0002)	Does not save SMART data before
+					entering power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x00)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  10) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  3 Spin_Up_Time            0x0020   100   100   000    Old_age   Offline      -       0
+  4 Start_Stop_Count        0x0030   100   100   000    Old_age   Offline      -       0
+  5 Reallocated_Sector_Ct   0x0032   100   100   000    Old_age   Always       -       0
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       45
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       31
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       14
+225 Load_Cycle_Count        0x0030   100   100   000    Old_age   Offline      -       8391
+232 Available_Reservd_Space 0x0033   100   100   010    Pre-fail  Always       -       0
+233 Media_Wearout_Indicator 0x0032   100   100   000    Old_age   Always       -       0
+
+General Purpose Logging (GPL) feature set supported
+ATA_READ_LOG_EXT (addr=0x00:0x00, page=0, n=1) failed: 48-bit ATA commands not supported
+Read GP Log Directory failed.
+
+SMART Log Directory Version 0
+SMART Log at address 0x00 has    1 sectors [Log Directory]
+SMART Log at address 0x02 has    2 sectors [Comprehensive SMART error log]
+SMART Log at address 0x03 has    1 sectors [Ext. Comprehensive SMART error log]
+SMART Log at address 0x06 has    1 sectors [SMART self-test log]
+SMART Log at address 0x07 has    1 sectors [Extended self-test log]
+SMART Log at address 0x10 has    1 sectors [NCQ Command Error]
+SMART Log at address 0x11 has    1 sectors [SATA Phy Event Counters]
+SMART Log at address 0x80 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x81 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x82 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x83 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x84 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x85 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x86 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x87 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x88 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x89 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x8a has    1 sectors [Host vendor specific log]
+SMART Log at address 0x8b has    1 sectors [Host vendor specific log]
+SMART Log at address 0x8c has    1 sectors [Host vendor specific log]
+SMART Log at address 0x8d has    1 sectors [Host vendor specific log]
+SMART Log at address 0x8e has    1 sectors [Host vendor specific log]
+SMART Log at address 0x8f has    1 sectors [Host vendor specific log]
+SMART Log at address 0x90 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x91 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x92 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x93 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x94 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x95 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x96 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x97 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x98 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x99 has    1 sectors [Host vendor specific log]
+SMART Log at address 0x9a has    1 sectors [Host vendor specific log]
+SMART Log at address 0x9b has    1 sectors [Host vendor specific log]
+SMART Log at address 0x9c has    1 sectors [Host vendor specific log]
+SMART Log at address 0x9d has    1 sectors [Host vendor specific log]
+SMART Log at address 0x9e has    1 sectors [Host vendor specific log]
+SMART Log at address 0x9f has    1 sectors [Host vendor specific log]
+SMART Log at address 0xa9 has    1 sectors [Device vendor specific log]
+SMART Log at address 0xe0 has    1 sectors [SCT Command/Status]
+SMART Log at address 0xe1 has    1 sectors [SCT Data Transfer]
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+Error SMART Error Log Read failed: Input/output error
+Smartctl: SMART Error Log Read Failed
+SMART Extended Self-test Log (GP Log 0x07) not supported
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+
+Device does not support Selective Self Tests/Logging
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+SCT Support Level:                   1
+Device State:                        Active (0)
+Current Temperature:                     ? Celsius
+Power Cycle Min/Max Temperature:      ?/ ? Celsius
+Lifetime    Min/Max Temperature:      ?/ ? Celsius
+Under/Over Temperature Limit Count:   0/0
+SCT Temperature History Version:     2
+Temperature Sampling Period:         0 minutes
+Temperature Logging Interval:        0 minutes
+Min/Max recommended Temperature:      ?/ ? Celsius
+Min/Max Temperature Limit:            ?/ ? Celsius
+Temperature History Size (Index):    128 (0)
+
+Index    Estimated Time   Temperature Celsius
+   1    2011-05-05 10:17     ?  -
+ ...    ..(126 skipped).    ..  -
+   0    2011-05-05 12:24     ?  -
+
+SCT Error Recovery Control:
+           Read:  57345 (5734.5 seconds)
+          Write:  57345 (5734.5 seconds)
+
+SATA Phy Event Counters (GP Log 0x11) not supported

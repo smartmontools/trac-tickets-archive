@@ -1,0 +1,16 @@
+smartctl 5.40 2010-04-30 r3100 [x86_64-w64-mingw32-2003-sp2] (cf-win32-20100501)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+ \\.\PhysicalDrive5: successfully opened
+  SMART_GET_VERSION failed, Error=1
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "AMCC    "
+    Product:  "9650SE-4LPML"
+    Revision: "4.10"
+    Removable: No
+    BusType:   0x08
+/dev/sdf,0: Unable to detect device type
+Smartctl: please specify device type with the -d option.
+
+Use smartctl -h to get a usage summary
+

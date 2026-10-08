@@ -1,0 +1,85 @@
+smartctl 5.41 2011-02-04 r3253 [i686-w64-mingw32-win7(64)-sp1] (cf-win32-20110204)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Seagate Barracuda 7200.9 family
+Device Model:     ST3250824AS
+Serial Number:    4ND1X24H
+Firmware Version: 3.AAD
+User Capacity:    250,059,350,016 bytes
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   7
+ATA Standard is:  Exact ATA specification draft version not indicated
+Local Time is:    Sat Apr 23 14:40:16 2011 GST
+SMART support is: Available - device has SMART capability.
+                  Enabled status cached by OS, trying SMART RETURN STATUS cmd.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (  25)	The self-test routine was aborted by
+					the host.
+Total time to complete Offline 
+data collection: 		(  430) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 100) minutes.
+
+SMART Attributes Data Structure revision number: 10
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000f   114   093   006    Pre-fail  Always       -       79528687
+  3 Spin_Up_Time            0x0003   098   098   000    Pre-fail  Always       -       0
+  4 Start_Stop_Count        0x0032   100   100   020    Old_age   Always       -       539
+  5 Reallocated_Sector_Ct   0x0033   100   100   036    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000f   078   060   030    Pre-fail  Always       -       8735253070
+  9 Power_On_Hours          0x0032   096   096   000    Old_age   Always       -       4324
+ 10 Spin_Retry_Count        0x0013   100   100   097    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   020    Old_age   Always       -       634
+187 Reported_Uncorrect      0x0032   100   100   000    Old_age   Always       -       0
+189 High_Fly_Writes         0x003a   100   100   000    Old_age   Always       -       0
+190 Airflow_Temperature_Cel 0x0022   062   049   045    Old_age   Always       -       38 (Min/Max 25/38)
+194 Temperature_Celsius     0x0022   038   051   000    Old_age   Always       -       38 (0 13 0 0)
+195 Hardware_ECC_Recovered  0x001a   058   052   000    Old_age   Always       -       167186800
+197 Current_Pending_Sector  0x0012   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0010   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x003e   200   200   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x0000   100   253   000    Old_age   Offline      -       0
+202 Data_Address_Mark_Errs  0x0032   100   253   000    Old_age   Always       -       0
+
+SMART Error Log not supported
+SMART Self-test Log not supported
+Warning! SMART Selective Self-Test Log Structure error: invalid SMART checksum.
+Note: selective self-test log revision number (0) not 1 implies that no selective self-test has ever been run
+SMART Selective self-test log data structure revision number 0
+Note: revision number not 1 implies that no selective self-test has ever been run
+ SPAN  MIN_LBA          MAX_LBA  CURRENT_TEST_STATUS
+    1        0  281474976710656  Not_testing
+    2        0                0  Not_testing
+    3        0                0  Not_testing
+    4        0                0  Not_testing
+    5        0                0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+

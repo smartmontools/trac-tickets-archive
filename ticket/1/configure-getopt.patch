@@ -1,0 +1,54 @@
+diff --git a/Makefile.am b/Makefile.am
+index d2bc922..d8897c8 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -21,6 +21,9 @@ endif
+ if ENABLE_ATTRIBUTELOG
+ AM_CPPFLAGS += -DSMARTMONTOOLS_ATTRIBUTELOG='"$(attributelog)"'
+ endif
++if NEED_GETOPT_LONG
++AM_CPPFLAGS += -I$(srcdir)/getopt -DHAVE_GETOPT_LONG
++endif
+ 
+ sbin_PROGRAMS = smartd 	\
+ 		smartctl
+@@ -161,6 +164,20 @@ EXTRA_smartctl_SOURCES +=              \
+ 
+ endif
+ 
++if NEED_GETOPT_LONG
++
++smartctl_SOURCES += \
++        getopt/getopt.c \
++        getopt/getopt.h \
++        getopt/getopt1.c
++
++smartd_SOURCES += \
++        getopt/getopt.c \
++        getopt/getopt.h \
++        getopt/getopt1.c
++
++endif
++
+ if OS_SOLARIS
+ # This block is required because Solaris uses manual page section 1m
+ # for administrative command (linux/freebsd use section 8) and Solaris
+diff --git a/configure.in b/configure.in
+index a733bca..6822cb5 100644
+--- a/configure.in
++++ b/configure.in
+@@ -107,12 +107,8 @@ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_CHECK_TYPES([int64_t, uint64_t])
+ 
+ dnl Checks for library functions.
+-AC_CHECK_FUNCS([getopt_long], , [
+-  AC_MSG_NOTICE([smartmontools does no longer support platforms without getopt_long().])
+-  AC_MSG_NOTICE([Please inform ${PACKAGE_BUGREPORT},])
+-  AC_MSG_NOTICE([including details about your build environment.])
+-  AC_MSG_ERROR([function getopt_long() not found])
+-])
++AC_CHECK_FUNCS([getopt_long], [need_getopt_long=no], [need_getopt_long=yes])
++AM_CONDITIONAL(NEED_GETOPT_LONG, [test "$need_getopt_long" = "yes"])
+ 
+ AC_CHECK_FUNCS([getdomainname])
+ AC_CHECK_FUNCS([gethostname])

@@ -1,0 +1,58 @@
+Fixed FTBFS on GNU/kFreeBSD
+--- a/os_freebsd.cpp
++++ b/os_freebsd.cpp
+@@ -79,6 +79,14 @@ struct freebsd_dev_channel *devicetable[
+ // forward declaration
+ // static int parse_ata_chan_dev(const char * dev_name, struct freebsd_dev_channel *ch);
+ 
++#ifdef __GLIBC__
++static inline void * reallocf(void *ptr, size_t size) {
++   void *rv = realloc(ptr, size);
++   if(rv == NULL)
++     free(ptr);
++   return rv;
++   }
++#endif 
+ 
+ // Returns 1 if device not available/open/found else 0.  Also shifts fd into valid range.
+ static int isnotopen(int *fd, struct freebsd_dev_channel** fdchan) {
+@@ -759,7 +767,7 @@ int freebsd_ata_device::ata_command_inte
+ 			#endif
+ 		return -1;
+ 		
+-		#if __FreeBSD_version < 502000
++		#if (__FreeBSD_version < 502000) && (__FreeBSD_kernel_version < 502000)
+ 		printwarning(NO_RETURN,NULL);
+ 		#endif
+ 		
+@@ -1369,7 +1377,7 @@ int do_normal_scsi_cmnd_io(int fd, struc
+ 
+   if (cam_send_ccb(cam_dev,ccb) < 0) {
+     warn("error sending SCSI ccb");
+- #if __FreeBSD_version > 500000
++ #if (__FreeBSD_version > 500000) || (__FreeBSD_kernel_version > 500000)
+     cam_error_print(cam_dev,ccb,CAM_ESF_ALL,CAM_EPF_ALL,stderr);
+  #endif
+     cam_freeccb(ccb);
+@@ -1377,7 +1385,7 @@ int do_normal_scsi_cmnd_io(int fd, struc
+   }
+ 
+   if ((ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP) {
+- #if __FreeBSD_version > 500000
++ #if (__FreeBSD_version > 500000) || (__FreeBSD_kernel_version > 500000)
+     cam_error_print(cam_dev,ccb,CAM_ESF_ALL,CAM_EPF_ALL,stderr);
+  #endif
+     cam_freeccb(ccb);
+--- a/cciss.cpp
++++ b/cciss.cpp
+@@ -19,6 +19,10 @@
+ #  include <sys/endian.h>
+ #  include <dev/ciss/cissio.h>
+ #  define _HAVE_CCISS
++#elif defined(__FreeBSD_kernel__) && defined(HAVE_DEV_CISS_CISSIO_H)
++#  include <endian.h>
++#  include <dev/ciss/cissio.h>
++#  define _HAVE_CCISS
+ #endif
+ 
+ #ifdef _HAVE_CCISS

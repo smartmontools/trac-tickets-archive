@@ -1,0 +1,66 @@
+# smartctl -a -r ioctl /dev/da6
+smartctl 6.2 2013-07-26 r3841 [FreeBSD 9.1-STABLE amd64] (local build)
+Copyright (C) 2002-13, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     00 00 06 12 8b 01 10 02  53 45 41 47 41 54 45 20                        
+ 10     53 54 33 33 30 30 30 36  35 30 53 53 20 20 20 20                        
+ 20     30 30 30 34                                                             
+ [inquiry: 12 01 00 01 fc 00 ]  status=0
+  Incoming data, len=508 [only first 256 bytes shown]:
+ 00     00 00 00 10 00 80 82 83  86 87 88 8a 90 b1 c0 c1                        
+ 10     c2 c3 d1 d2 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ f0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [inquiry: 12 00 00 00 24 00 ]  status=0
+  Incoming data, len=36:
+ 00     00 00 06 12 8b 01 10 02  53 45 41 47 41 54 45 20                        
+ 10     53 54 33 33 30 30 30 36  35 30 53 53 20 20 20 20                        
+ 20     30 30 30 34                                                             
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST33000650SS
+Revision:             0004
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]  status=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00                                                 
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]  status=0
+  Incoming data, len=32:
+ 00     00 00 00 01 5d 50 a3 af  00 00 02 00 00 00 00 00                        
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+User Capacity:        3,000,592,982,016 bytes [3.00 TB]
+Logical block size:   512 bytes
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]  status=0
+  Incoming data, len=32:
+ 00     00 00 00 01 5d 50 a3 af  00 00 02 00 00 00 00 00                        
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ [inquiry: 12 01 b1 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     00 b1 00 3c 1c 20 00 02  00 00 00 00 00 00 00 00                        
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+Rotation Rate:        7200 rpm
+Form Factor:          3.5 inches
+ [mode sense(6): 1a 00 1c 00 40 00 ]  status=0
+  Incoming data, len=64:
+ 00     00 10 08 ff ff ff ff 00  00 02 00 9c 0a 10 00 00                        
+ 10     00 00 00 00 00 00 01 00  00 00 00 00 00 00 00 00                        
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+scsiModePageOffset: raw_curr too small, offset=259 resp_len=1 bd_len=255
+>> Terminate command early due to bad response to IEC mode page
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.

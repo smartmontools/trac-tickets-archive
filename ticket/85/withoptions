@@ -1,0 +1,90 @@
+smartctl 5.40 2010-03-16 r3077 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SAMSUNG SV1604N
+Serial Number:    xxxxxxxxxxxxxx
+Firmware Version: TR100-23
+User Capacity:    160.041.885.696 bytes
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   7
+ATA Standard is:  ATA/ATAPI-7 T13 1532D revision 0
+Local Time is:    Tue Jul 13 10:51:37 2010 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x84)	Offline data collection activity
+					was suspended by an interrupting command from host.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 (4320) seconds.
+Offline data collection
+capabilities: 			 (0x1b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					No General Purpose Logging support.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (  72) minutes.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   051    Pre-fail  Always       -       0
+  3 Spin_Up_Time            0x0007   079   059   000    Pre-fail  Always       -       4096
+  4 Start_Stop_Count        0x0032   095   095   000    Old_age   Always       -       6009
+  5 Reallocated_Sector_Ct   0x0033   100   100   010    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   253   253   051    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0024   087   087   000    Old_age   Offline      -       11219
+  9 Power_On_Half_Minutes   0x0032   099   099   000    Old_age   Always       -       6252h+40m
+ 10 Spin_Retry_Count        0x0013   253   253   049    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   096   096   000    Old_age   Always       -       4263
+194 Temperature_Celsius     0x0022   109   085   000    Old_age   Always       -       43
+195 Hardware_ECC_Recovered  0x000a   100   100   000    Old_age   Always       -       156955019
+196 Reallocated_Event_Count 0x0012   253   253   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0033   253   253   010    Pre-fail  Always       -       0
+198 Offline_Uncorrectable   0x0031   253   253   010    Pre-fail  Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   100   100   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x000b   100   100   051    Pre-fail  Always       -       0
+201 Soft_Read_Error_Rate    0x000b   100   100   051    Pre-fail  Always       -       0
+
+SMART Error Log Version: 1
+ATA Error Count: 9624 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+... serveral errors here ...
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%      5847         -
+
+Device does not support Selective Self Tests/Logging

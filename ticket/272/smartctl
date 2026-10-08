@@ -1,0 +1,127 @@
+smartctl 5.43 2012-06-30 r3573 [x86_64-linux-3.8.0-19-generic] (local build)
+Copyright (C) 2002-12 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SanDisk iSSD P4 16GB
+Serial Number:    115000165612
+LU WWN Device Id: 5 001b44 5d22040ec
+Firmware Version: SSD 9.14
+User Capacity:    16 013 942 784 bytes [16,0 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 2d
+Local Time is:    Wed May  1 20:57:22 2013 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, frozen [SEC2]
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x15) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Abort Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (   4) minutes.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   -O----   100   100   000    -    0
+  9 Power_On_Hours          -O----   100   100   000    -    4148
+ 12 Power_Cycle_Count       -O----   100   100   000    -    482
+171 Unknown_Attribute       -O----   100   100   000    -    18
+172 Unknown_Attribute       -O----   100   100   000    -    2230656
+173 Unknown_Attribute       -O----   100   100   000    -    105
+174 Unknown_Attribute       -O----   100   100   000    -    36
+187 Reported_Uncorrect      -O----   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -O----   100   100   000    -    0
+230 Head_Amplitude          -O----   003   100   000    -    0
+232 Available_Reservd_Space PO----   098   100   005    -    0
+234 Unknown_Attribute       -O----   100   100   000    -    86
+241 Total_LBAs_Written      -O----   100   100   000    -    1112683116
+242 Total_LBAs_Read         -O----   100   100   000    -    686726006
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+GP/S  Log at address 0x00 has    1 sectors [Log Directory]
+GP/S  Log at address 0x03 has   16 sectors [Ext. Comprehensive SMART error log]
+GP/S  Log at address 0x06 has    1 sectors [SMART self-test log]
+GP/S  Log at address 0x80 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x81 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x82 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x83 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x84 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x85 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x86 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x87 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x88 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x89 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x90 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x91 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x92 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x93 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x94 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x95 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x96 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x97 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x98 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x99 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9f has   16 sectors [Host vendor specific log]
+
+Warning! SMART Extended Comprehensive Error Log Structure (16/16) error: invalid SMART checksum.
+SMART Extended Comprehensive Error Log Version: 1 (16 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+
+Device does not support Selective Self Tests/Logging
+Warning: device does not support SCT Commands
+SATA Phy Event Counters (GP Log 0x11) not supported

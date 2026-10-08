@@ -1,0 +1,229 @@
+
+# /opt/smartmontools/5.40/sbin/smartctl -d 3ware,3 /dev/twl0 -x
+
+smartctl 5.40 2010-06-14 r3121 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Seagate Barracuda ES.2
+Device Model:     ST31000340NS
+Serial Number:    9QJ827CP
+Firmware Version: SN06
+User Capacity:    1,000,204,886,016 bytes
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 4
+Local Time is:    Wed Jul 28 17:20:26 2010 PDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 ( 634) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 228) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   2) minutes.
+SCT capabilities: 	       (0x103d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 10
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000f   082   064   044    Pre-fail  Always       -       176746153
+  3 Spin_Up_Time            0x0003   099   099   000    Pre-fail  Always       -       0
+  4 Start_Stop_Count        0x0032   100   100   020    Old_age   Always       -       19
+  5 Reallocated_Sector_Ct   0x0033   100   100   036    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000f   063   060   030    Pre-fail  Always       -       2284637
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       436
+ 10 Spin_Retry_Count        0x0013   100   100   097    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   037   020    Old_age   Always       -       19
+184 End-to-End_Error        0x0032   100   100   099    Old_age   Always       -       0
+187 Reported_Uncorrect      0x0032   100   100   000    Old_age   Always       -       0
+188 Command_Timeout         0x0032   100   100   000    Old_age   Always       -       0
+189 High_Fly_Writes         0x003a   100   100   000    Old_age   Always       -       0
+190 Airflow_Temperature_Cel 0x0022   068   062   045    Old_age   Always       -       32 (Lifetime Min/Max 32/35)
+194 Temperature_Celsius     0x0022   032   040   000    Old_age   Always       -       32 (0 23 0 0)
+195 Hardware_ECC_Recovered  0x001a   069   048   000    Old_age   Always       -       176746153
+197 Current_Pending_Sector  0x0012   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0010   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x003e   200   200   000    Old_age   Always       -       0
+
+General Purpose Logging (GPL) feature set supported
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+GP/S  Log at address 0x00 has    1 sectors [Log Directory]
+GP/S  Log at address 0x01 has    1 sectors [Summary SMART error log]
+GP/S  Log at address 0x02 has    5 sectors [Comprehensive SMART error log]
+GP/S  Log at address 0x03 has    5 sectors [Ext. Comprehensive SMART error log]
+GP/S  Log at address 0x06 has    1 sectors [SMART self-test log]
+GP/S  Log at address 0x07 has    1 sectors [Extended self-test log]
+GP/S  Log at address 0x09 has    1 sectors [Selective self-test log]
+GP/S  Log at address 0x10 has    1 sectors [NCQ Command Error]
+GP/S  Log at address 0x11 has    1 sectors [SATA Phy Event Counters]
+GP/S  Log at address 0x21 has    1 sectors [Write stream error log]
+GP/S  Log at address 0x22 has    1 sectors [Read stream error log]
+GP/S  Log at address 0x80 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x81 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x82 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x83 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x84 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x85 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x86 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x87 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x88 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x89 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x90 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x91 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x92 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x93 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x94 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x95 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x96 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x97 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x98 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x99 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0xa1 has   20 sectors [Device vendor specific log]
+GP    Log at address 0xa2 has 2248 sectors [Device vendor specific log]
+GP/S  Log at address 0xa8 has   65 sectors [Device vendor specific log]
+GP/S  Log at address 0xa9 has    1 sectors [Device vendor specific log]
+GP    Log at address 0xb0 has 2864 sectors [Device vendor specific log]
+GP    Log at address 0xb6 has 1918 sectors [Device vendor specific log]
+GP    Log at address 0xbe has 65535 sectors [Device vendor specific log]
+GP    Log at address 0xbf has 65535 sectors [Device vendor specific log]
+GP/S  Log at address 0xe0 has    1 sectors [SCT Command/Status]
+GP/S  Log at address 0xe1 has    1 sectors [SCT Data Transfer]
+
+SMART Extended Comprehensive Error Log Version: 1 (5 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%       399         -
+# 2  Extended offline    Completed without error       00%        57         -
+# 3  Extended offline    Completed without error       00%        24         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       522 (0x020a)
+SCT Support Level:                   1
+Device State:                        Active (0)
+Current Temperature:                    33 Celsius
+Power Cycle Min/Max Temperature:     33/34 Celsius
+Lifetime    Min/Max Temperature:     23/38 Celsius
+Under/Over Temperature Limit Count:   0/2
+SCT Temperature History Version:     2
+Temperature Sampling Period:         10 minutes
+Temperature Logging Interval:        10 minutes
+Min/Max recommended Temperature:      0/ 0 Celsius
+Min/Max Temperature Limit:            0/ 0 Celsius
+Temperature History Size (Index):    128 (91)
+
+Index    Estimated Time   Temperature Celsius
+  92    2010-07-27 20:10    32  *************
+ ...    ..( 13 skipped).    ..  *************
+ 106    2010-07-27 22:30    32  *************
+ 107    2010-07-27 22:40    31  ************
+ 108    2010-07-27 22:50    32  *************
+ 109    2010-07-27 23:00    32  *************
+ 110    2010-07-27 23:10    31  ************
+ 111    2010-07-27 23:20    31  ************
+ 112    2010-07-27 23:30    32  *************
+ 113    2010-07-27 23:40    32  *************
+ 114    2010-07-27 23:50    32  *************
+ 115    2010-07-28 00:00    31  ************
+ 116    2010-07-28 00:10    32  *************
+ ...    ..( 14 skipped).    ..  *************
+   3    2010-07-28 02:40    32  *************
+   4    2010-07-28 02:50    33  **************
+ ...    ..( 34 skipped).    ..  **************
+  39    2010-07-28 08:40    33  **************
+  40    2010-07-28 08:50    32  *************
+ ...    ..(  5 skipped).    ..  *************
+  46    2010-07-28 09:50    32  *************
+  47    2010-07-28 10:00    33  **************
+ ...    ..(  4 skipped).    ..  **************
+  52    2010-07-28 10:50    33  **************
+  53    2010-07-28 11:00    34  ***************
+ ...    ..( 10 skipped).    ..  ***************
+  64    2010-07-28 12:50    34  ***************
+  65    2010-07-28 13:00    35  ****************
+  66    2010-07-28 13:10    34  ***************
+ ...    ..(  6 skipped).    ..  ***************
+  73    2010-07-28 14:20    34  ***************
+  74    2010-07-28 14:30    35  ****************
+  75    2010-07-28 14:40    36  *****************
+ ...    ..(  6 skipped).    ..  *****************
+  82    2010-07-28 15:50    36  *****************
+  83    2010-07-28 16:00    35  ****************
+  84    2010-07-28 16:10    35  ****************
+  85    2010-07-28 16:20    36  *****************
+  86    2010-07-28 16:30     ?  -
+  87    2010-07-28 16:40    31  ************
+  88    2010-07-28 16:50    34  ***************
+  89    2010-07-28 17:00     ?  -
+  90    2010-07-28 17:10    34  ***************
+  91    2010-07-28 17:20    33  **************
+
+SCT Error Recovery Control:
+           Read:    100 (10.0 seconds)
+          Write:    100 (10.0 seconds)
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x000a  2            2  Device-to-host register FISes sent due to a COMRESET
+0x0001  2            0  Command failed due to ICRC error
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+

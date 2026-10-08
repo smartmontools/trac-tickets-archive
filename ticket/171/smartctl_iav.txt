@@ -1,0 +1,28 @@
+smartctl 5.40 2010-03-16 r3077 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     Kingston SSDNow V Series 64GB
+Serial Number:    06J970016883
+Firmware Version: B090522a
+User Capacity:    64,023,257,088 bytes
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   7
+ATA Standard is:  Exact ATA specification draft version not indicated
+Local Time is:    Fri May  6 17:00:42 2011 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Attributes Data Structure revision number: 1280
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+ 12 Power_Cycle_Count       0x0032   ---   ---   ---    Old_age   Always       -       0x00000000001b6464
+  9 Power_On_Hours          0x0032   ---   ---   ---    Old_age   Always       -       0x0000000000006464
+194 Temperature_Celsius     0x0007   ---   ---   ---    Pre-fail  Always       -       0x0000000000006420
+229 Unknown_Attribute       0x0002   ---   ---   ---    Old_age   Always       -       0x13f4ba94d5980064
+232 Available_Reservd_Space 0x0002   ---   ---   ---    Old_age   Always       -       0x0832323530393064
+233 Media_Wearout_Indicator 0x0002   ---   ---   ---    Old_age   Always       -       0x0000000000000064
+234 Unknown_Attribute       0x0002   ---   ---   ---    Old_age   Always       -       0x00de06008a060064
+235 Unknown_Attribute       0x0002   ---   ---   ---    Old_age   Always       -       0x00005803003f0064
+

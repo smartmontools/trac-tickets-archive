@@ -1,0 +1,476 @@
+﻿'ID', 'Description', 'Raw', 'Normalized', 'Threshold', 'Action'
+05, Re-allocated Sector Count, 0, 100, 0, Ready for use.
+09, Power-On Hours Count, 67, 100, 0, Ready for use.
+0C, Power Cycle Count, 13, 100, 0, Ready for use.
+AA, Available Reserved Space, 0, 100, 10, Ready for use.
+AB, Program Fail Count, 0, 100, 0, Ready for use.
+AC, Erase Fail Count, 0, 100, 0, Ready for use.
+AE, Unexpected Power Loss, 6, 100, 0, Ready for use.
+AF, Power Loss Protection Failure, 0x12026F, 100, 10, Ready for use.
+, Last test result (microseconds), 623, , , 
+, Minutes since last test, 18, , , 
+, Total number of tests, 1, , , 
+B7, SATA Downshift Count, 0, 100, 0, Ready for use.
+B8, End-to-End Error Detection Count, 0, 100, 90, Ready for use.
+BB, Uncorrectable Error Count, 0, 100, 0, Ready for use.
+BE, Temperature, 0x140D0014, 80, 0, Ready for use.
+, Current degree C, 20, , , 
+, Highest degree C, 20, , , 
+, Lowest degree C, 13, , , 
+, Over Temperature Counter, 0, , , 
+C0, Unsafe Shutdown Count, 6, 100, 0, Ready for use.
+C2, Temperature - Device Internal, 27 degree C (direct from PCB without offset), 100, 0, Ready for use.
+C5, Pending Sector Count, 0, 100, 0, Ready for use.
+C7, CRC Error Count, 0, 100, 0, Ready for use.
+E1, Host Writes, 76.41 GB, 100, 0, Ready for use.
+E2, Timed Workload - Media Wear, 0, 100, 0, Ready for use.
+E3, Timed Workload - Host Read/Write Ratio, 2, 100, 0, Ready for use.
+E4, Timed Workload Timer, 3941, 100, 0, Ready for use.
+E8, Available Reserved Space, 0, 100, 10, Ready for use.
+E9, Media Wearout Indicator, 0, 100, 0, Ready for use.
+EA, Thermal Throttle Status, 0x0, 100, 0, Ready for use.
+, Throttle status (%), 0, , , 
+, Throttling event count, 0, , , 
+, Reserved, 0, , , 
+F1, Total LBAs Written, 76.41 GB, 100, 0, Ready for use.
+F2, Total LBAs Read, 31.74 TB, 100, 0, Ready for use.
+
+
+
+'Word', 'Description', 'Value'
+0, General Configuration, 0040
+,     Bit 15 - ATA Device Identifier, 0
+,     Bit 14:8 - Retired, 00
+,     Bit 7:6 - Obsolete, 1
+,     Bit 5:3 - Retired, 0
+,     Bit 2 - Response Incomplete, 0
+,     Bit 1 - Retired, 0
+,     Bit 0 - Reserved, 0
+1, Obsolete, 3FFF
+2, Specific Configuration, C837
+3, Obsolete, 0010
+4, Retired, 0000
+5, Retired, 0000
+6, Obsolete, 003F
+7-8, Reserved, 00000000
+9, Retired, 0000
+10-19, Serial Number, BTWL340507HM080KGN
+20-21, Reserved, 00000000
+22, Obsolete, 0000
+23-26, Firmware Version, D2010370
+27-46, Model Number, INTEL SSDSC2BB080G4
+47, READ/WRITE MULTIPLE Support, 8001
+,     Bit 15:8, 80
+,     Bit 7:0 - Maximum Sectors, 01
+48, Trusted Computing Feature Set Options, 4000
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13:1 - Reserved, 0000
+,     Bit 0 - Trusted Computing Feature Set Supported, 0
+49, Capabilities, 2F00
+,     Bit 15:14 - Reserved, 0
+,     Bit 13 - Standby Timer Option, 1
+,     Bit 12 - Reserved, 0
+,     Bit 11 - IORDY Supported, 1
+,     Bit 10 - IORDY May Be Disabled, 1
+,     Bit 9 - LBA Supported, 1
+,     Bit 8 - DMA Supported, 1
+,     Bit 7:0 - Retired, 00
+50, Capabilities, 4000
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13:2 - Reserved, 0000
+,     Bit 1 - Obsolete, 0
+,     Bit 0 - Vendor Specific Minimum Standby timer, 0
+51-52, Obsolete, 00000000
+53, Field Validity, 0007
+,     Bit 15:8 - Vendor Recommended Free-Fall Control Sensitivity, 00
+,     Bit 7:3 - Reserved, 00
+,     Bit 2 - Word 88 is Valid, 1
+,     Bit 1 - Words 70:64 are Valid, 1
+,     Bit 0 - Obsolete, 1
+54-58, Obsolete, 3FFF0010003FFC1000FB
+59, Multiple Sector Setting, BF01
+,     Bit 15 - Block Erase Ext Command Supported, 1
+,     Bit 14 - Overwrite Ext Command Supported, 0
+,     Bit 13 - Crypto Scramble Ext Command Supported, 1
+,     Bit 12 - Sanitize Feature Supported, 1
+,     Bit 11:9 - Reserved, 7
+,     Bit 8 - Setting is Valid, 1
+,     Bit 7:0 - Sectors Per Transfer, 01
+60-61, Total Number of user addressable sectors, 0950F8B0
+62, Obsolete, 0000
+63, Multiword DMA Transfer, 0007
+,     Bit 15:11 - Reserved, 00
+,     Bit 10 - Multiword DMA Mode 2 Selected, 0
+,     Bit 9 - Multiword DMA Mode 1 Selected, 0
+,     Bit 8 - Multiword DMA Mode 0 Selected, 0
+,     Bit 7:3 - Reserved, 00
+,     Bit 2 - Multiword DMA Mode 2 Supported, 1
+,     Bit 1 - Multiword DMA Mode 1 Supported, 1
+,     Bit 0 - Multiword DMA Mode 0 Supported, 1
+64, PIO Transfer Modes Supported, 0003
+,     Bit 15:2 - Reserved, 0000
+,     Bit 1 - PIO Mode 4 Supported, 1
+,     Bit 0 - PIO Mode 3 Supported, 1
+65, Minimum Multiword DMA Transfer Cycle Time Per Word (ns), 0078
+66, Device Recommended Multiword DMA Cycle Time (ns), 0078
+67, Minimum PIO Transfer Cycle Time Without IORDY Flow Control (ns), 0078
+68, Minimum PIO Transfer Cycle Time With IORDY Flow Control (ns), 0078
+69, Additional Supported, 4030
+,     Bit 15 - CFast Specification Support, 0
+,     Bit 14 - Deterministic Read After Trim Supported, 1
+,     Bit 13 - Long Physical Sector Alignment Error Reporting Control Supported, 0
+,     Bit 12 - DCO IDENTIFY DMA and DCO SET DMA Supported, 0
+,     Bit 11 - READ BUFFER DMA Supported, 0
+,     Bit 10 - WRITE BUFFER DMA Supported, 0
+,     Bit 9 - SET MAX SET PASSWORD DMA and SET MAX UNLOCK DMA Supported, 0
+,     Bit 8 - DOWNLOAD MICROCODE DMA Supported, 0
+,     Bit 7 - Reserved, 0
+,     Bit 6 - Optional ATA Device 28-bit Commands Supported, 0
+,     Bit 5 - Read Zero After Trim Supported, 1
+,     Bit 4 - Device Encrypts All User Data, 1
+,     Bit 3 - Extended Number of User Addressable Sectors Supported, 0
+,     Bit 2 - All Write Cache Non-Volatile, 0
+,     Bit 1:0 - Reserved, 0
+70-74, Reserved, 000000000000 00000000
+75, Queue Depth, 001F
+,     Bit 15:5 - Reserved, 000
+,     Bit 4:0 - Maximum Queue Depth - 1, 1F
+76, Serial ATA Capabilities, 850E
+,     Bit 15 - READ LOG DMA EXT As READ LOG EXT Support, 1
+,     Bit 14 - Device Automatic Partial to Slumber Transitions Support, 0
+,     Bit 13 - Host Automatic Partial to Slumber Transitions Support, 0
+,     Bit 12 - Native Command Queuing Priority Information Support, 0
+,     Bit 11 - Unload While NCQ Commands Outstanding Support, 0
+,     Bit 10 - Phy Event Counters Support, 1
+,     Bit 9 - Receipt of Host-Initiated Interface Power Managament Requests Support, 0
+,     Bit 8 - Native Command Queuing Support, 1
+,     Bit 7:4 - Reserved, 0
+,     Bit 3 - Serial ATA Gen3 Signaling Speed (6.0 Gbps) Support, 1
+,     Bit 2 - Serial ATA Gen2 Signaling Speed (3.0 Gbps) Support, 1
+,     Bit 1 - Serial ATA Gen1 Signaling Speed (1.5 Gbps) Support, 1
+,     Bit 0, 0
+77, Serial ATA Additional Capabilities, 0004
+,     Bit 15:8 - Reserved, 00
+,     Bit 7 - DEVSLP to Reduced Power State, 0
+,     Bit 6 - RECEIVE FPDMA QUEUED and SEND FPDMA QUEUED Commands Supported, 0
+,     Bit 5 - NCQ Queue Management Command Supported, 0
+,     Bit 4 - NCQ Streaming Supported, 0
+,     Bit 3:1 - Coded Value Indicating Current Negotiated Serial ATA Signal Speed, 2
+,     Bit 0 - Shall be cleared to 0, 0
+78, Serial ATA Features Supported, 0040
+,     Bit 15:10 - Reserved, 00
+,     Bit 9 - Hybrid Information Feature Supported, 0
+,     Bit 8 - Link Power State Device Sleep Supported, 0
+,     Bit 7 - NCQ Autosense Supported, 0
+,     Bit 6 - Software Settings Preservation Supported, 1
+,     Bit 5 - Hardware Feature Control Supported, 0
+,     Bit 4 - In-Order Data Delivery Supported, 0
+,     Bit 3 - Device Initiating Interface Power Management (DIPM) Supported, 0
+,     Bit 2 - DMA Setup Auto-Activate Optimization Supported, 0
+,     Bit 1 - Non-Zero Buffer Offsets in DMA Setup FIS Supported, 0
+,     Bit 0 - Must be set to 0, 0
+79, Serial ATA Features Enabled, 0040
+,     Bit 15:10 - Reserved, 00
+,     Bit 9 - Hybrid Information Feature Enabled, 0
+,     Bit 8 - Link Power State Device Sleep Enabled, 0
+,     Bit 7 - Automatic Partial to Slumber Transitions Enabled, 0
+,     Bit 6 - Software Settings Preservation Enabled, 1
+,     Bit 5 - Hardware Feature Control Enabled, 0
+,     Bit 4 - In-Order Data Delivery Enabled, 0
+,     Bit 3 - Device Initiating Interface Power Management (DIPM) Enabled, 0
+,     Bit 2 - DMA Setup Auto-Activation Enabled, 0
+,     Bit 1 - Non-Zero Buffer Offsets in DMA Setup FIS Enabled, 0
+,     Bit 0 - Must be set to 0, 0
+80, Major Version Number, 03FC
+,     Bit 15 - Reserved, 0
+,     Bit 14 - ATA14 Support, 0
+,     Bit 13 - ATA13 Support, 0
+,     Bit 12 - ATA12 Support, 0
+,     Bit 11 - ATA11 Support, 0
+,     Bit 10 - ATA10 Support, 0
+,     Bit 9 - ATA9 Support, 1
+,     Bit 8 - ATA8-ACS Support, 1
+,     Bit 7 - ATA/ATAPI-7 Support, 1
+,     Bit 6 - ATA/ATAPI-6 Support, 1
+,     Bit 5 - ATA/ATAPI-5 Support, 1
+,     Bit 4 - ATA/ATAPI-4 Support, 1
+,     Bit 3 - Obsolete, 1
+,     Bit 2 - Obsolete, 1
+,     Bit 1 - Obsolete, 0
+,     Bit 0 - Reserved, 0
+81, Minor Version Number, 0110
+82, Features/Command Sets Supported, 746B
+,     Bit 15 - Obsolete, 0
+,     Bit 14 - NOP Command Supported, 1
+,     Bit 13 - READ BUFFER Command Supported, 1
+,     Bit 12 - WRITE BUFFER Command Supported, 1
+,     Bit 11 - Obsolete, 0
+,     Bit 10 - HPA Feature Set Supported, 1
+,     Bit 9 - DEVICE RESET Command Supported, 0
+,     Bit 8 - SERVICE Interrupt Supported, 0
+,     Bit 7 - Release Interrupt Supported, 0
+,     Bit 6 - Read Look-Ahead Supported, 1
+,     Bit 5 - Write Cache Supported, 1
+,     Bit 4 - PACKET Feature Set Supported, 0
+,     Bit 3 - Power Management Feature Set Supported, 1
+,     Bit 2 - Obsolete, 0
+,     Bit 1 - Security Mode Feature Set Supported, 1
+,     Bit 0 - SMART Feature Set Supported, 1
+83, Features/Command Sets Supported, 7501
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13 - FLUSH CACHE EXT Command Supported, 1
+,     Bit 12 - Mandatory FLUSH CACHE Command Supported, 1
+,     Bit 11 - DCO Feature Set Supported, 0
+,     Bit 10 - 48-Bit Address Feature Set Supported, 1
+,     Bit 9 - AAM Feature Set Supported, 0
+,     Bit 8 - HPA Security Extensions Supported, 1
+,     Bit 7 - Reserved for Address Offset Reserved Area Boot Method, 0
+,     Bit 6 - SET FEATURES Subcommand Required to Spinup After Power-Up Supported, 0
+,     Bit 5 - PUIS Feature Set Supported, 0
+,     Bit 4 - Obsolete, 0
+,     Bit 3 - APM Feature Set Supported, 0
+,     Bit 2 - CFA Feature Set Supported, 0
+,     Bit 1 - TCQ Feature Set Supported, 0
+,     Bit 0 - DOWNLOAD MICROCODE Command is Supported, 1
+84, Features/Command Sets Supported, 6163
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13 - IDLE IMMEDIATE With UNLOAD FEATURE Supported, 1
+,     Bit 12 - Obsolete, 0
+,     Bit 11 - Obsolete, 0
+,     Bit 10:9 - Obsolete, 0
+,     Bit 8 - 64-Bit World Wide Name Supported, 1
+,     Bit 7 - Obsolete, 0
+,     Bit 6 - WRITE DMA FUA EXT and WRITE MULTIPLE FUA EXT Commands Supported, 1
+,     Bit 5 - GPL Feature Set Supported, 1
+,     Bit 4 - Streaming Feature Set Supported, 0
+,     Bit 3 - Obsolete, 0
+,     Bit 2 - Media Serial Number Supported, 0
+,     Bit 1 - SMART Self-Test Supported, 1
+,     Bit 0 - SMART Error Logging Supported, 1
+85, Features/Command Sets Enabled, 7469
+,     Bit 15 - Obsolete, 0
+,     Bit 14 - NOP Command Enabled, 1
+,     Bit 13 - READ BUFFER Command Enabled, 1
+,     Bit 12 - WRITE BUFFER Command Enabled, 1
+,     Bit 11 - Obsolete, 0
+,     Bit 10 - HPA Feature Set Enabled, 1
+,     Bit 9 - DEVICE RESET Command Enabled, 0
+,     Bit 8 - SERVICE Interrupt Enabled, 0
+,     Bit 7 - Release Interrupt Enabled, 0
+,     Bit 6 - Read Look-Ahead Enabled, 1
+,     Bit 5 - Volatile Write Cache Enabled, 1
+,     Bit 4 - PACKET Feature Set Enabled, 0
+,     Bit 3 - Power Management Feature Set Enabled, 1
+,     Bit 2 - Obsolete, 0
+,     Bit 1 - Security Mode Feature Set Enabled, 0
+,     Bit 0 - SMART Feature Set Enabled, 1
+86, Features/Command Sets Enabled, B401
+,     Bit 15 - Words 119-120 Are Valid, 1
+,     Bit 14 - Reserved, 0
+,     Bit 13 - FLUSH CACHE EXT Command Enabled, 1
+,     Bit 12 - FLUSH CACHE Command Enabled, 1
+,     Bit 11 - DCO Enabled, 0
+,     Bit 10 - 48-Bit Address Feature Set Enabled, 1
+,     Bit 9 - Obsolete, 0
+,     Bit 8 - HPA Security Extensions Enabled, 0
+,     Bit 7 - Reserved for Address Offset Reserved Area Boot Method, 0
+,     Bit 6 - SET FEATURES Subcommand Required to Spinup After Power-Up, 0
+,     Bit 5 - PUIS Feature Set Enabled, 0
+,     Bit 4 - Obsolete, 0
+,     Bit 3 - APM Feature Set Enabled, 0
+,     Bit 2 - CFA Feature Set Enabled, 0
+,     Bit 1 - Obsolete, 0
+,     Bit 0 - DOWNLOAD MICROCODE Command Enabled, 1
+87, Features/Command Sets Enabled, 6163
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13 - IDLE IMMEDIATE With UNLOAD FEATURE Enabled, 1
+,     Bit 12 - Reserved for Technical Report, 0
+,     Bit 11 - Reserved for Technical Report, 0
+,     Bit 10:9 - Obsolete, 0
+,     Bit 8 - 64-Bit World Wide Name Enabled, 1
+,     Bit 7 - WRITE DMA QUEUED FUA EXT Command Enabled, 0
+,     Bit 6 - WRITE DMA FUA EXT Command Enabled, 1
+,     Bit 5 - GPL Feature Set Enabled, 1
+,     Bit 4 - Streaming Feature Set Enabled, 0
+,     Bit 3 - Media Card Pass Through Command Feature Set Enabled, 0
+,     Bit 2 - Media Serial Number Enabled, 0
+,     Bit 1 - SMART Self-Test Enabled, 1
+,     Bit 0 - SMART Error Logging Enabled, 1
+88, Ultra DMA Modes, 207F
+,     Bit 15 - Reserved, 0
+,     Bit 14 - Ultra DMA Mode 6 Selected, 0
+,     Bit 13 - Ultra DMA Mode 5 Selected, 1
+,     Bit 12 - Ultra DMA Mode 4 Selected, 0
+,     Bit 11 - Ultra DMA Mode 3 Selected, 0
+,     Bit 10 - Ultra DMA Mode 2 Selected, 0
+,     Bit 9 - Ultra DMA Mode 1 Selected, 0
+,     Bit 8 - Ultra DMA Mode 0 Selected, 0
+,     Bit 7 - Reserved, 0
+,     Bit 6 - Ultra DMA Mode 6 and Below Supported, 1
+,     Bit 5 - Ultra DMA Mode 5 and Below Supported, 1
+,     Bit 4 - Ultra DMA Mode 4 and Below Supported, 1
+,     Bit 3 - Ultra DMA Mode 3 and Below Supported, 1
+,     Bit 2 - Ultra DMA Mode 2 and Below Supported, 1
+,     Bit 1 - Ultra DMA Mode 1 and Below Supported, 1
+,     Bit 0 - Ultra DMA Mode 0 and Below Supported, 1
+89, SECURITY ERASE UNIT Time, 0002
+,     Bit 15 - Extended Time Reported In Bits 14:0, 0
+,     Bit 14:8 - Extended Time Required Normal Mode SECURITY ERASE UNIT, 00
+,     Bit 7:0 - Normal or Extended Time Required Normal Mode SECURITY ERASE UNIT, 02
+90, ENHANCED SECURITY ERASE UNIT Time, 0002
+,     Bit 15 - Extended Time Reported In Bits 14:0, 0
+,     Bit 14:8 - Extended Time Required Enhanced Mode SECURITY ERASE UNIT, 00
+,     Bit 7:0 - Normal or Extended Time Required Enhanced Mode SECURITY ERASE UNIT, 02
+91, Advanced Power Management Level, 0000
+,     Bit 15:8 - Reserved, 00
+,     Bit 7:0 - APM Level Value, 00
+92, Master Password Revision Code, FFFE
+93, Hardware Reset Result, 0000
+94, Current Automatic Acoustic Management Value, 0000
+,     Bit 15:8 - Vendor's Recommended Value, 00
+,     Bit 7:0 - Current Value, 00
+95, Stream Minimum Request Size, 0000
+96, Streaming Transfer Time - DMA, 0000
+97, Streaming Access Latency - DMA and PIO, 0000
+98-99, Streaming Performance Granularity, 00000000
+100-103, Maximum User 48-Bit LBA, 000000000950F8B0
+104, Streaming Transfer Time - PIO, 0000
+105, Maximum 512-byte blocks of LBA Range Entries per DATA SET MANAGEMENT command, 0004
+106, Physical / Logical Sector Size, 6003
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13 - Device has Multiple Logical Sectors Per Physical Sector, 1
+,     Bit 12 - Logical Sector Size Larger than 256 Words, 0
+,     Bit 11:4 - Reserved, 00
+,     Bit 3:0 - 2^Value Sectors Per Physical Sector, 3
+107, Inter-Seek Delay for ISO7779 Standard Acoustic Testing, 0000
+108-111, World Wide Name, 55CD2E404B4D2FD9
+112-116, Reserved, 0000000000000000 0000
+117-118, Logical Sector Size, 00000000
+119, Features/Command Sets Supported, 405C
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13:9 - Reserved, 00
+,     Bit 8 - Accessible Max Address Configuration Feature Supported, 0
+,     Bit 7 - Extended Power Conditions Feature Supported, 0
+,     Bit 6 - Sense Data Reporting Feature Supported, 1
+,     Bit 5 - Free-Fall Control Feature Supported, 0
+,     Bit 4 - DOWNLOAD MICROCODE Command With Mode 3 Supported, 1
+,     Bit 3 - READ/WRITE LOG DMA EXT Optional GPL Commands Supported, 1
+,     Bit 2 - WRITE UNCORRECTABLE EXT Command Supported, 1
+,     Bit 1 - Write-Read-Verify Feature Set Supported, 0
+,     Bit 0 - Reserved for DDT, 0
+120, Features/Command Sets Enabled, 401C
+,     Bit 15 - Must be set to 0, 0
+,     Bit 14 - Must be set to 1, 1
+,     Bit 13:9 - Reserved, 00
+,     Bit 8 - Accessible Max Address Configuration Feature Enabled, 0
+,     Bit 7 - Extended Power Conditions Feature Enabled, 0
+,     Bit 6 - Sense Data Reporting Feature Enabled, 0
+,     Bit 5 - Free-Fall Control Feature Enabled, 0
+,     Bit 4 - DOWNLOAD MICROCODE Command With Mode 3 Enabled, 1
+,     Bit 3 - READ/WRITE LOG DMA EXT Optional GPL Commands Enabled, 1
+,     Bit 2 - WRITE UNCORRECTABLE EXT Command Enabled, 1
+,     Bit 1 - Write-Read-Verify Feature Set Enabled, 0
+,     Bit 0 - Reserved for DDT, 0
+121-126, Reserved For Expanded Supported and Enabled Settings, 0000000000000000 00000000
+127, Obsolete, 0000
+128, Security Status, 0029
+,     Bit 15:9 - Reserved, 00
+,     Bit 8 - Master Password Capability, 0
+,     Bit 7:6 - Reserved, 0
+,     Bit 5 - Enhanced Security Erase Supported, 1
+,     Bit 4 - Security Count Expired, 0
+,     Bit 3 - Security Frozen, 1
+,     Bit 2 - Security Locked, 0
+,     Bit 1 - Security Enabled, 0
+,     Bit 0 - Security Supported, 1
+129-159, Vendor Specific, 001C000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 000000000000
+160, CFA Power Mode, 0000
+161-167, Reserved for CFA, 0000000000000000 000000000000
+168, Device Nominal Form Factor, 0003
+,     Bit 15:4 - Reserved, 000
+,     Bit 3:0 - Form Factor, 3
+169, Data Set Management Support, 0001
+,     Bit 15:1 - Reserved, 0000
+,     Bit 0 - Data Set Management Supported, 1
+170-175, Reserved, 0000000000000000 00000000
+176-205, Current Media Serial Number, 2020202020202020 2020202020202020 2020202020202020 2020202020202020 2020202020202020 2020202020202020 2020202020202020 20202020
+206, SCT Command Transport, 003D
+,     Bit 15:12 - Vendor Specific, 0
+,     Bit 11:8 - Reserved, 00
+,     Bit 7 - Reserved for Serial ATA, 0
+,     Bit 6 - Reserved, 0
+,     Bit 5 - SCT Data Tables Supported, 1
+,     Bit 4 - SCT Features Control Supported, 1
+,     Bit 3 - SCT Error Recovery Control Supported, 1
+,     Bit 2 - SCT Write Same Supported, 1
+,     Bit 1 - SCT Long Sector Access Supported, 0
+,     Bit 0 - SCT Command Transport Supported, 1
+207-208, Reserved, 00000000
+209, Alignment of Logical Blocks Within a Physical Block, 4000
+210-211, Write-Read-Verify Sector Count Mode 3, 00000000
+212-213, Write-Read-Verify Sector Count Mode 2, 00000000
+214, NV Cache Capabilities, 0000
+215-216, NV Cache Size In Logical Blocks, 00000000
+217, Nominal Media Rotation Rate, 0001
+218, Reserved, 0000
+219, NV Cache Options, 0000
+220, Write-Read-Verify Mode, 0000
+,     Bit 15:8 - Reserved, 00
+,     Bit 7:0 - Write-Read-Verify Feature Set Current Mode, 00
+221, Reserved, 0000
+222, Transport Major Version Number, 101F
+,     Bit 15:12 - Transport Type, 1
+,     Bit 11:7 - Reserved, 00
+,     Bit 6 - SATA Rev 3.1 Supported, 0
+,     Bit 5 - SATA Rev 3.0 Supported, 0
+,     Bit 4 - SATA Rev 2.6 Supported, 1
+,     Bit 3 - SATA Rev 2.5 Supported, 1
+,     Bit 2 - SATA II: Extensions Supported, 1
+,     Bit 1 - SATA 1.0a Supported, 1
+,     Bit 0 - ATA8-AST Supported, 1
+223, Transport Minor Version Number, 0000
+224-233, Reserved, 0000000000000000 0000000000000000 00000000
+234, Minimum Number Of Blocks Per DOWNLOAD MICROCODE Mode 3, 0001
+235, Maximum Number Of Blocks Per DOWNLOAD MICROCODE Mode 3, FFFF
+236-254, Reserved, 0000000000000000 0000000000000000 0000000000000000 0000000000000000 000000000000
+255, Integrity Word, 70A5
+
+
+
+'Item', '', 'Value'
+Operating System, Name, Microsoft Windows 7 Professional 
+Version, 6.1.7601
+Service Pack, 1
+Computer, Manufacturer, Gigabyte Technology Co., Ltd.
+Model, 965P-DQ6
+Processor, , Intel(R) Core(TM)2 Quad CPU           @ 2.66GHz
+Controller, Name, Standard Dual Channel PCI IDE Controller
+Driver Version, 6.1.7601.17514
+Controller, Name, Intel(R) ICH8 4 port Serial ATA Storage Controller - 2820
+Driver Version, 6.1.7601.17514
+Controller, Name, IDE Channel
+Driver Version, 6.1.7601.17514
+Controller, Name, IDE Channel
+Driver Version, 6.1.7601.17514
+Controller, Name, Intel(R) ICH8 2 port Serial ATA Storage Controller - 2825
+Driver Version, 6.1.7601.17514
+Controller, Name, IDE Channel
+Driver Version, 6.1.7601.17514
+Controller, Name, IDE Channel
+Driver Version, 6.1.7601.17514
+Controller, Name, IDE Channel
+Driver Version, 6.1.7601.17514
+Controller, Name, IDE Channel
+Driver Version, 6.1.7601.17514
+
+
+
+'Manufacturer', 'Description', 'Version', 'Controller Mode'
+(Standard IDE ATA/ATAPI controllers), IDE Channel, 6.1, Storage Controller is in IDE mode

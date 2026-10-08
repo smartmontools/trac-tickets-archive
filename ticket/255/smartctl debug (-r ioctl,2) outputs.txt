@@ -1,0 +1,72 @@
+ 
+linux:/opt # ./smartctl6.0 -H -r ioctl,2 /dev/sg0
+smartctl 6.0 2012-10-10 r3643 [x86_64-linux-2.6.16.60-0.42.54.1-smp] (local build)
+Copyright (C) 2002-12, Bruce Allen, Christian Franke, www.smartmontools.org
+ 
+[inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=4 milliseconds  resid=0
+  Incoming data, len=36:
+00     00 00 02 02 34 00 00 32  4c 53 49 4c 4f 47 49 43
+10     4c 6f 67 69 63 61 6c 20  56 6f 6c 75 6d 65 20 20
+20     33 30 30 30
+[inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+00     00 00 02 02 34 00 00 32  4c 53 49 4c 4f 47 49 43
+10     4c 6f 67 69 63 61 6c 20  56 6f 6c 75 6d 65 20 20
+20     33 30 30 30
+[log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=4
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=8:
+00     70 1c 05 39 00 00 00 00
+  status=2: sense_key=5 asc=0 ascq=0
+Log Sense for supported pages failed [badly formed scsi parameters]
+[request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+00     70 00 00 00 00 00 00 0c  00 00 00 00 00 00 00 00
+10     00 00
+SMART Health Status: OK
+linux:/opt # ./smartctl6.0 -t short -H -r ioctl,2 /dev/sg0
+smartctl 6.0 2012-10-10 r3643 [x86_64-linux-2.6.16.60-0.42.54.1-smp] (local build)
+Copyright (C) 2002-12, Bruce Allen, Christian Franke, www.smartmontools.org
+ 
+[inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+00     00 00 02 02 34 00 00 32  4c 53 49 4c 4f 47 49 43
+10     4c 6f 67 69 63 61 6c 20  56 6f 6c 75 6d 65 20 20
+20     33 30 30 30
+[inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+00     00 00 02 02 34 00 00 32  4c 53 49 4c 4f 47 49 43
+10     4c 6f 67 69 63 61 6c 20  56 6f 6c 75 6d 65 20 20
+20     33 30 30 30
+[log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=4
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=8:
+00     70 1c 05 39 00 00 00 00
+  status=2: sense_key=5 asc=0 ascq=0
+Log Sense for supported pages failed [badly formed scsi parameters]
+[request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+00     70 00 00 00 00 00 00 0c  00 00 00 00 00 00 00 00
+10     00 00
+SMART Health Status: OK
+[send diagnostic: 1d 20 00 00 00 00 ]
+  SG_IO ioctl failed, errno=1 [Operation not permitted]
+Short offline self test failed [Operation not permitted]
+ 
+ 

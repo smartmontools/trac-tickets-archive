@@ -1,0 +1,6 @@
+
+# /opt/smartmontools/5.40/sbin/smartctl -d 3ware,3 /dev/twl0 -background
+
+smartctl 5.40 2010-06-14 r3121 [x86_64-unknown-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+

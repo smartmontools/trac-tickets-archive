@@ -1,0 +1,35 @@
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 3256)
++++ os_linux.cpp	(working copy)
+@@ -1046,23 +1046,15 @@
+         pout("%s", buff);
+   }
+ 
+-  /* Controller rejects Enable SMART and Test Unit Ready */
++  // Controller rejects Test Unit Ready
+   if (iop->cmnd[0] == 0x00)
+     return true;
+-  if (iop->cmnd[0] == 0x85 && iop->cmnd[1] == 0x06) {
+-    if(report > 0)
+-      pout("Rejecting SMART/ATA command to controller\n");
+-    // Emulate SMART STATUS CHECK drive reply
+-    // smartctl fail to work without this
+-    if(iop->cmnd[2]==0x2c) {
+-      iop->resp_sense_len=22; // copied from real response
+-      iop->sensep[0]=0x72; // descriptor format
+-      iop->sensep[7]=0x0e; // additional length
+-      iop->sensep[8]=0x09; // description pointer
+-      iop->sensep[17]=0x4f; // low cylinder GOOD smart status
+-      iop->sensep[19]=0xc2; // high cylinder GOOD smart status
+-    }
+-    return true;
++
++  if (iop->cmnd[0] == 0xa1 || iop->cmnd[0] == 0x85) { // SAT_ATA_PASSTHROUGH_12/16
++    // Controller does not return ATA output registers in SAT sense data
++    if (iop->cmnd[2] & (1 << 5)) // chk_cond
++      return set_err(ENOSYS, "ATA output registers not supported");
++    // TODO: Controller rejects Enable SMART
+   }
+ 
+   if (pt_cmd == NULL)

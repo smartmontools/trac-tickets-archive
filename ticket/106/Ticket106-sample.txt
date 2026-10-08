@@ -1,0 +1,58 @@
+# smartctl -q noserial -i -l devstat,0 -l devstat /dev/sda
+smartctl 5.42 2011-10-11 r3435 [x86_64-linux-2.6.32-71.29.1.el6.x86_64] (local build)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Intel 710 Series SSDs
+Device Model:     INTEL SSDSA2BZ100G3
+Firmware Version: 6PB10362
+User Capacity:    100,030,242,816 bytes [100 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 4
+Local Time is:    Tue Oct 11 06:30:41 2011 MDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+Device Statistics (GP Log 0x04) supported pages
+Page Description
+  0  List of supported log pages
+  1  General Statistics
+  4  General Errors Statistics
+  5  Temperature Statistics
+  6  Transport Statistics
+  7  Solid State Device Statistics
+
+Device Statistics (GP Log 0x04)
+Page Offset Size         Value  Description
+  1  =====  =                =  == General Statistics (rev 2) ==
+  1  0x008  4               10  Lifetime Power-On Resets
+  1  0x010  4              223  Power-on Hours
+  1  0x018  6       3366938561  Logical Sectors Written
+  1  0x020  6        248200814  Number of Write Commands
+  1  0x028  6         54654812  Logical Sectors Read
+  1  0x030  6          2626216  Number of Read Commands
+  4  =====  =                =  == General Errors Statistics (rev 1) ==
+  4  0x008  4                0  Number of Reported Uncorrectable Errors
+  4  0x010  4                0  Resets Between Cmd Acceptance and Completion
+  5  =====  =                =  == Temperature Statistics (rev 1) ==
+  5  0x008  1               22  Current Temperature
+  5  0x010  1               21  Average Short Term Temperature
+  5  0x018  1                -  Average Long Term Temperature
+  5  0x020  1               30  Highest Temperature
+  5  0x028  1               17  Lowest Temperature
+  5  0x030  1               23  Highest Average Short Term Temperature
+  5  0x038  1               18  Lowest Average Short Term Temperature
+  5  0x040  1                -  Highest Average Long Term Temperature
+  5  0x048  1                -  Lowest Average Long Term Temperature
+  5  0x050  4                0  Time in Over-Temperature
+  5  0x058  1               70  Specified Maximum Operating Temperature
+  5  0x060  4                0  Time in Under-Temperature
+  5  0x068  1                0  Specified Minimum Operating Temperature
+  6  =====  =                =  == Transport Statistics (rev 1) ==
+  6  0x008  4               77  Number of Hardware Resets
+  6  0x010  4               22  Number of ASR Events
+  6  0x018  4                0  Number of Interface CRC Errors
+  7  =====  =                =  == Solid State Device Statistics (rev 1) ==
+  7  0x008  1                0  Percentage Used Endurance Indicator

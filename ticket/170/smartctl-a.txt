@@ -1,0 +1,70 @@
+smartctl 5.40 2010-10-16 r3189 [FreeBSD 8.2-RELEASE amd64] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     INTEL SSDSC2MH120A2
+Serial Number:    LNEL111501CW120CGN
+Firmware Version: PPG2
+User Capacity:    120,034,123,776 bytes
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 2d
+Local Time is:    Tue May  3 17:52:49 2011 PDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 (  10) seconds.
+Offline data collection
+capabilities: 			 (0x15) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Abort Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0002)	Does not save SMART data before
+					entering power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x00)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  10) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  3 Spin_Up_Time            0x0020   100   100   000    Old_age   Offline      -       0
+  4 Start_Stop_Count        0x0030   100   100   000    Old_age   Offline      -       0
+  5 Reallocated_Sector_Ct   0x0032   100   100   000    Old_age   Always       -       0
+  9 Power_On_Hours          0x0032   100   100   000    Old_age   Always       -       45
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       19
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       7
+225 Load_Cycle_Count        0x0030   100   100   000    Old_age   Offline      -       8365
+232 Available_Reservd_Space 0x0033   100   100   010    Pre-fail  Always       -       0
+233 Media_Wearout_Indicator 0x0032   100   100   000    Old_age   Always       -       0
+
+Error SMART Error Log Read failed: Input/output error
+Smartctl: SMART Error Log Read Failed
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+
+Device does not support Selective Self Tests/Logging

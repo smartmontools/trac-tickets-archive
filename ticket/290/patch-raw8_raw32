@@ -1,0 +1,60 @@
+Index: atacmds.cpp
+===================================================================
+--- atacmds.cpp	(revision 3848)
++++ atacmds.cpp	(working copy)
+@@ -129,6 +129,7 @@
+   {"msec24hour32"   , RAWFMT_MSEC24_HOUR32},
+   {"tempminmax"     , RAWFMT_TEMPMINMAX},
+   {"temp10x"        , RAWFMT_TEMP10X},
++  {"raw8/raw32"     , RAWFMT_RAW8_DIV_RAW32},
+ };
+ 
+ const unsigned num_format_names = sizeof(format_names)/sizeof(format_names[0]);
+@@ -1897,6 +1898,7 @@
+       case RAWFMT_RAW56:
+       case RAWFMT_HEX56:
+       case RAWFMT_RAW24_DIV_RAW32:
++      case RAWFMT_RAW8_DIV_RAW32:
+       case RAWFMT_MSEC24_HOUR32:
+         byteorder = "r543210"; break;
+       default:
+@@ -2009,6 +2011,10 @@
+     s = strprintf("%u/%u",
+       (unsigned)(rawvalue >> 32), (unsigned)(rawvalue & 0xffffffffULL));
+     break;
++  case RAWFMT_RAW8_DIV_RAW32:
++    s = strprintf("%u/%u",
++      raw[0], (unsigned)((rawvalue >> 8) & 0xffffffffULL));
++    break;
+ 
+   case RAWFMT_MIN2HOUR:
+     {
+Index: atacmds.h
+===================================================================
+--- atacmds.h	(revision 3848)
++++ atacmds.h	(working copy)
+@@ -679,6 +679,7 @@
+   RAWFMT_MSEC24_HOUR32,
+   RAWFMT_TEMPMINMAX,
+   RAWFMT_TEMP10X,
++  RAWFMT_RAW8_DIV_RAW32,
+ };
+ 
+ // Attribute flags
+Index: smartctl.8.in
+===================================================================
+--- smartctl.8.in	(revision 3848)
++++ smartctl.8.in	(working copy)
+@@ -1462,6 +1462,12 @@
+ \- Raw attribute is an error rate which consists of a 24-bit error
+ count and a 32-bit total count.
+ 
++.I raw8/raw32
++\- Raw Attribute contains 8-bit value, followed by 32-bit values. 
++Used by Intel in Thermal Throtle Status attribute. The first is the 
++throttle status reported as integer percentage. The second is number 
++of times the thermal throttle has activated over lifetime.
++
+ The following old arguments to \'\-v\' are also still valid:
+ 
+ .I 9,minutes
