@@ -1,0 +1,14 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 5028)
++++ drivedb.h	(working copy)
+@@ -2026,7 +2026,8 @@
+     "TS(16G|32G|64G|128G|256G|512G|1T)MTS800S?|" // MTS800, tested with TS1TMTS800/O1225H1
+     "TS(16|32|64)GMSA630|" // MSA630 mSATA SSD, tested with TS32GMSA630/N0113E1
+     "TS(32|64|128)GPSD330|" // Transcend PSD SSD, tested with TS64GPSD330/20140121
+-    "TS(16|32|64|96|128|256)GSSD630|" // Transcend 630, tested with TS16GSSD630/N0113E1
++    "TS(16|32|64|96|128|256)GSSD(630|360S)|" // Transcend 630/360S, tested with TS16GSSD630/N0113E1,
++      // TS256GSSD360S/R0123A0
+     "TS(128G|256G|512G|1T)ESD400K", // Transcend ESD400 Portable, tested with
+       // TS256GESD400K/R0605AS (0x2174:0x2000)
+     "", "",

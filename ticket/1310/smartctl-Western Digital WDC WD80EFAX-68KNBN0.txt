@@ -1,0 +1,69 @@
+smartctl 7.0 2018-12-30 r4883 [x86_64-linux-5.3.0-42-generic] (local build)
+Copyright (C) 2002-18, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Western Digital Red
+Device Model:     WDC WD80EFAX-68KNBN0
+Firmware Version: 81.00A81
+User Capacity:    8 001 563 222 016 bytes [8,00 TB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    5400 rpm
+Form Factor:      3.5 inches
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Fri Mar 27 15:29:36 2020 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     164 (intermediate level without standby)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Write SCT (Get) Feature Control Command failed: scsi error badly formed scsi parameters
+Wt Cache Reorder: Unknown (SCT Feature Control command failed)
+
+Read SMART Data failed: scsi error badly formed scsi parameters
+
+=== START OF READ SMART DATA SECTION ===
+SMART Status command failed: scsi error badly formed scsi parameters
+SMART overall-health self-assessment test result: UNKNOWN!
+SMART Status, Attributes and Thresholds cannot be read.
+
+Read SMART Log Directory failed: scsi error badly formed scsi parameters
+
+ATA_READ_LOG_EXT (addr=0x00:0x00, page=0, n=1) failed: scsi error badly formed scsi parameters
+Read GP Log Directory failed
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+
+Read SMART Error Log failed: scsi error badly formed scsi parameters
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+Read SMART Self-test Log failed: scsi error badly formed scsi parameters
+
+Selective Self-tests/Logging not supported
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       256 (0x0100)
+Device State:                        Active (0)
+Current Temperature:                     0 Celsius
+Power Cycle Min/Max Temperature:     -3/ 3 Celsius
+Lifetime    Min/Max Temperature:      0/ 0 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+Write SCT Data Table failed: scsi error badly formed scsi parameters
+Read SCT Temperature History failed
+
+Write SCT (Get) Error Recovery Control Command failed: scsi error badly formed scsi parameters
+SCT (Get) Error Recovery Control command failed
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+ATA_READ_LOG_EXT (addr=0x11:0x00, page=0, n=1) failed: scsi error badly formed scsi parameters
+Read SATA Phy Event Counters failed
+
