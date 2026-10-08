@@ -1,0 +1,3353 @@
+smartd 6.6 2017-11-05 r4594 [x86_64-linux-4.12.14-122.144-default] (SUSE RPM)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Opened configuration file /etc/smartd.conf
+Drive: DEVICESCAN, implied '-a' Directive on line 32 of file /etc/smartd.conf
+Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+glob(3) found no matches for pattern /dev/hd[a-t]
+sda -> /sys/class/scsi_host/host0/proc_name: "megaraid_sas"
+sdb -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdc -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdd -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sde -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdf -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdg -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdh -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdi -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdj -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdk -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdl -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdm -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdn -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdo -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdp -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdq -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdr -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sds -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdt -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdu -> /sys/class/scsi_host/host2/proc_name: "(null)"
+sdv -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdw -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdx -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdy -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdz -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdaa -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdab -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdac -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdad -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdae -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdaf -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdag -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdah -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdai -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdaj -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdak -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdal -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdam -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdan -> /sys/class/scsi_host/host3/proc_name: "(null)"
+sdao -> /sys/class/scsi_host/host3/proc_name: "(null)"
+Creating /dev/megaraid_sas_ioctl_node = 17
+glob(3) found no matches for pattern /dev/nvme[0-9]
+glob(3) found no matches for pattern /dev/nvme[1-9][0-9]
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 05 02 5b 00 00 02  44 45 4c 4c 20 20 20 20
+ 10     50 45 52 43 20 48 37 33  30 50 20 4d 69 6e 69 20
+ 20     34 2e 33 30
+Device: /dev/sda, open() failed: DELL or MegaRaid controller, please try adding '-d megaraid,N'
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdb, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 46 3d 9a  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 34 36 33 44 39 41 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 34 36  33 44 39 41 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdb, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b463d9a, S/N: D665CE5044D343F10B463D9A, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdb, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdb' to turn on SMART features
+Unable to register SCSI device /dev/sdb at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdc, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 59 f1 49  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 35 39 46 31 34 39 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 35 39  46 31 34 39 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdc, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b59f149, S/N: D665CE5044D343F10B59F149, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdc, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdc' to turn on SMART features
+Unable to register SCSI device /dev/sdc at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdd, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 07 64 5e ee  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     37 36 34 35 45 45 45 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 37 36 34  35 45 45 45 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdd, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f107645eee, S/N: D665CE5044D343F107645EEE, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdd, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdd' to turn on SMART features
+Unable to register SCSI device /dev/sdd at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sde, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ea 3e f0  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 41 33 45 46 30 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 41  33 45 46 30 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sde, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aea3ef0, S/N: D665CE5044D343F10AEA3EF0, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sde, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sde' to turn on SMART features
+Unable to register SCSI device /dev/sde at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdf, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ec 16 58  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 43 31 36 35 38 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 43  31 36 35 38 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdf, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aec1658, S/N: D665CE5044D343F10AEC1658, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdf, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdf' to turn on SMART features
+Unable to register SCSI device /dev/sdf at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdg, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 46 3d 9a  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 34 36 33 44 39 41 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 34 36  33 44 39 41 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdg, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b463d9a, S/N: D665CE5044D343F10B463D9A, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdg, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdg' to turn on SMART features
+Unable to register SCSI device /dev/sdg at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdh, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 59 f1 49  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 35 39 46 31 34 39 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 35 39  46 31 34 39 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdh, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b59f149, S/N: D665CE5044D343F10B59F149, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdh, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdh' to turn on SMART features
+Unable to register SCSI device /dev/sdh at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdi, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 07 64 5e ee  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     37 36 34 35 45 45 45 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 37 36 34  35 45 45 45 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdi, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f107645eee, S/N: D665CE5044D343F107645EEE, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdi, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdi' to turn on SMART features
+Unable to register SCSI device /dev/sdi at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdj, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ea 3e f0  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 41 33 45 46 30 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 41  33 45 46 30 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdj, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aea3ef0, S/N: D665CE5044D343F10AEA3EF0, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdj, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdj' to turn on SMART features
+Unable to register SCSI device /dev/sdj at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdk, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ec 16 58  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 43 31 36 35 38 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 43  31 36 35 38 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdk, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aec1658, S/N: D665CE5044D343F10AEC1658, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdk, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdk' to turn on SMART features
+Unable to register SCSI device /dev/sdk at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdl, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 4a 54 5b  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 34 41 35 34 35 42 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 34 41  35 34 35 42 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdl, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b4a545b, S/N: 278170EDC2B248420B4A545B, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdl, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdl' to turn on SMART features
+Unable to register SCSI device /dev/sdl at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdm, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 5d f7 5f  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 35 44 46 37 35 46 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 35 44  46 37 35 46 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdm, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b5df75f, S/N: 278170EDC2B248420B5DF75F, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdm, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdm' to turn on SMART features
+Unable to register SCSI device /dev/sdm at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdn, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 07 67 6a 37  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     37 36 37 36 41 33 37 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 37 36 37  36 41 33 37 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdn, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b2484207676a37, S/N: 278170EDC2B2484207676A37, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdn, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdn' to turn on SMART features
+Unable to register SCSI device /dev/sdn at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdo, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a ee 83 83  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 45 45 38 33 38 33 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 45 45  38 33 38 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdo, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420aee8383, S/N: 278170EDC2B248420AEE8383, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdo, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdo' to turn on SMART features
+Unable to register SCSI device /dev/sdo at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdp, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a f0 6a cc  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 46 30 36 41 43 43 01  94 00 04 00 00 00 02 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 46 30  36 41 43 43 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdp, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420af06acc, S/N: 278170EDC2B248420AF06ACC, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdp, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdp' to turn on SMART features
+Unable to register SCSI device /dev/sdp at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdq, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 4a 54 5b  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 34 41 35 34 35 42 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 34 41  35 34 35 42 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdq, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b4a545b, S/N: 278170EDC2B248420B4A545B, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdq, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdq' to turn on SMART features
+Unable to register SCSI device /dev/sdq at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdr, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 5d f7 5f  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 35 44 46 37 35 46 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 35 44  46 37 35 46 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdr, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b5df75f, S/N: 278170EDC2B248420B5DF75F, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdr, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdr' to turn on SMART features
+Unable to register SCSI device /dev/sdr at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sds, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 07 67 6a 37  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     37 36 37 36 41 33 37 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 37 36 37  36 41 33 37 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sds, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b2484207676a37, S/N: 278170EDC2B2484207676A37, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sds, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sds' to turn on SMART features
+Unable to register SCSI device /dev/sds at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdt, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a ee 83 83  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 45 45 38 33 38 33 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 45 45  38 33 38 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdt, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420aee8383, S/N: 278170EDC2B248420AEE8383, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdt, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdt' to turn on SMART features
+Unable to register SCSI device /dev/sdt at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdu, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a f0 6a cc  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 46 30 36 41 43 43 01  94 00 04 00 00 00 12 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 31 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 46 30  36 41 43 43 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdu, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420af06acc, S/N: 278170EDC2B248420AF06ACC, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdu, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdu' to turn on SMART features
+Unable to register SCSI device /dev/sdu at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdv, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 46 3d 9a  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 34 36 33 44 39 41 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 34 36  33 44 39 41 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdv, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b463d9a, S/N: D665CE5044D343F10B463D9A, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdv, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdv' to turn on SMART features
+Unable to register SCSI device /dev/sdv at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdw, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 59 f1 49  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 35 39 46 31 34 39 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 35 39  46 31 34 39 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdw, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b59f149, S/N: D665CE5044D343F10B59F149, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdw, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdw' to turn on SMART features
+Unable to register SCSI device /dev/sdw at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdx, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 07 64 5e ee  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     37 36 34 35 45 45 45 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 37 36 34  35 45 45 45 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdx, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f107645eee, S/N: D665CE5044D343F107645EEE, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdx, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdx' to turn on SMART features
+Unable to register SCSI device /dev/sdx at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdy, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ea 3e f0  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 41 33 45 46 30 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 41  33 45 46 30 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdy, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aea3ef0, S/N: D665CE5044D343F10AEA3EF0, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdy, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdy' to turn on SMART features
+Unable to register SCSI device /dev/sdy at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdz, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ec 16 58  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 43 31 36 35 38 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 43  31 36 35 38 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdz, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aec1658, S/N: D665CE5044D343F10AEC1658, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdz, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdz' to turn on SMART features
+Unable to register SCSI device /dev/sdz at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdaa, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 46 3d 9a  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 34 36 33 44 39 41 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 34 36  33 44 39 41 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdaa, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b463d9a, S/N: D665CE5044D343F10B463D9A, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdaa, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdaa' to turn on SMART features
+Unable to register SCSI device /dev/sdaa at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdab, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0b 59 f1 49  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     42 35 39 46 31 34 39 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 42 35 39  46 31 34 39 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdab, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10b59f149, S/N: D665CE5044D343F10B59F149, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdab, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdab' to turn on SMART features
+Unable to register SCSI device /dev/sdab at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdac, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 07 64 5e ee  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     37 36 34 35 45 45 45 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 37 36 34  35 45 45 45 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdac, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f107645eee, S/N: D665CE5044D343F107645EEE, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdac, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdac' to turn on SMART features
+Unable to register SCSI device /dev/sdac at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdad, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ea 3e f0  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 41 33 45 46 30 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 41  33 45 46 30 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdad, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aea3ef0, S/N: D665CE5044D343F10AEA3EF0, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdad, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdad' to turn on SMART features
+Unable to register SCSI device /dev/sdad at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdae, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 d6 65 ce 50
+ 10     44 d3 43 f1 0a ec 16 58  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 44
+ 30     36 36 35 43 45 35 30 34  34 44 33 34 33 46 31 30
+ 40     41 45 43 31 36 35 38 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 37 34
+ 70     33 38 63 61 31 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 44 36 36 35  43 45 35 30 34 34 44 33
+ 10     34 33 46 31 30 41 45 43  31 36 35 38 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdae, [PURE     FlashArray       8888], lu id: 0x624a9370d665ce5044d343f10aec1658, S/N: D665CE5044D343F10AEC1658, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdae, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdae' to turn on SMART features
+Unable to register SCSI device /dev/sdae at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdaf, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 4a 54 5b  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 34 41 35 34 35 42 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 34 41  35 34 35 42 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdaf, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b4a545b, S/N: 278170EDC2B248420B4A545B, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdaf, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdaf' to turn on SMART features
+Unable to register SCSI device /dev/sdaf at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdag, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 5d f7 5f  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 35 44 46 37 35 46 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 35 44  46 37 35 46 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdag, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b5df75f, S/N: 278170EDC2B248420B5DF75F, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdag, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdag' to turn on SMART features
+Unable to register SCSI device /dev/sdag at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdah, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 07 67 6a 37  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     37 36 37 36 41 33 37 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 37 36 37  36 41 33 37 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdah, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b2484207676a37, S/N: 278170EDC2B2484207676A37, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdah, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdah' to turn on SMART features
+Unable to register SCSI device /dev/sdah at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdai, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a ee 83 83  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 45 45 38 33 38 33 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 45 45  38 33 38 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdai, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420aee8383, S/N: 278170EDC2B248420AEE8383, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdai, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdai' to turn on SMART features
+Unable to register SCSI device /dev/sdai at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdaj, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a f0 6a cc  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 46 30 36 41 43 43 01  94 00 04 00 00 00 01 01
+ 50     95 00 04 00 00 00 00 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 30 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 46 30  36 41 43 43 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdaj, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420af06acc, S/N: 278170EDC2B248420AF06ACC, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdaj, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdaj' to turn on SMART features
+Unable to register SCSI device /dev/sdaj at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdak, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 4a 54 5b  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 34 41 35 34 35 42 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 6c 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 34 41  35 34 35 42 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 00 07 ff 00 00 02 00
+Device: /dev/sdak, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b4a545b, S/N: 278170EDC2B248420B4A545B, 1.04 MB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 00 07 ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdak, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdak' to turn on SMART features
+Unable to register SCSI device /dev/sdak at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdal, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0b 5d f7 5f  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     42 35 44 46 37 35 46 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 42 35 44  46 37 35 46 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 51 7f ff ff  00 00 02 00 00 00 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Device: /dev/sdal, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420b5df75f, S/N: 278170EDC2B248420B5DF75F, 2.89 TB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 ff ff ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdal, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdal' to turn on SMART features
+Unable to register SCSI device /dev/sdal at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdam, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 07 67 6a 37  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     37 36 37 36 41 33 37 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 32 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 37 36 37  36 41 33 37 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     03 bf ff ff 00 00 02 00
+Device: /dev/sdam, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b2484207676a37, S/N: 278170EDC2B2484207676A37, 32.2 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 03 bf ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdam, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdam' to turn on SMART features
+Unable to register SCSI device /dev/sdam at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdan, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a ee 83 83  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 45 45 38 33 38 33 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 63 31 31 2d 30
+ 90     30 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 45 45  38 33 38 33 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     19 9f ff ff 00 00 02 00
+Device: /dev/sdan, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420aee8383, S/N: 278170EDC2B248420AEE8383, 220 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 19 9f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdan, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdan' to turn on SMART features
+Unable to register SCSI device /dev/sdan at line 32 of file /etc/smartd.conf
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+Device: /dev/sdao, opened
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 32 5b 98 10 02  50 55 52 45 20 20 20 20
+ 10     46 6c 61 73 68 41 72 72  61 79 20 20 20 20 20 20
+ 20     38 38 38 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=240
+  Incoming data, len=12:
+ 00     00 00 00 08 00 80 83 86  8f b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=105
+  Incoming data, len=147:
+ 00     00 83 00 8f 01 03 00 10  62 4a 93 70 27 81 70 ed
+ 10     c2 b2 48 42 0a f0 6a cc  02 01 00 2b 50 55 52 45
+ 20     20 20 20 20 46 6c 61 73  68 41 72 72 61 79 3a 32
+ 30     37 38 31 37 30 45 44 43  32 42 32 34 38 34 32 30
+ 40     41 46 30 36 41 43 43 01  94 00 04 00 00 00 11 01
+ 50     95 00 04 00 00 00 01 01  06 00 04 00 00 00 00 03
+ 60     98 00 20 6e 61 61 2e 35  32 34 61 39 33 37 32 36
+ 70     64 33 61 63 32 31 30 2c  74 2c 30 78 30 30 30 31
+ 80     00 00 00 02 00 00 0c 73  61 70 2d 72 74 72 2d 30
+ 90     30 31 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=223
+  Incoming data, len=29:
+ 00     00 80 00 19 32 37 38 31  37 30 45 44 43 32 42 32
+ 10     34 38 34 32 30 41 46 30  36 41 43 43 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 1f ff ff 00 00 02 00
+Device: /dev/sdao, [PURE     FlashArray       8888], lu id: 0x624a9370278170edc2b248420af06acc, S/N: 278170EDC2B248420AF06ACC, 1.07 GB
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 08 00 1f ff ff  00 00 02 00 1c 0a 08 00
+ 10     00 00 00 00 00 00 00 00
+Device: /dev/sdao, IE (SMART) not enabled, skip device
+Try 'smartctl -s on /dev/sdao' to turn on SMART features
+Unable to register SCSI device /dev/sdao at line 32 of file /etc/smartd.conf
+Creating /dev/megaraid_sas_ioctl_node = 17
+ [inquiry: 12 00 00 00 24 00 ]
+Got MegaRAID inquiry.. ATA     SSDSC2KG240G7R  DL5C
+ [ata pass-through(16): 85 08 0e 00 00 00 01 00 00 00 00 00 00 00 ec 00 ]
+Device: /dev/bus/0 [megaraid_disk_00], type changed from 'megaraid,0' to 'sat+megaraid,0'
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], opened
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=IDENTIFY DEVICE
+ Input:   FR=...., SC=0x01, LL=...., LM=...., LH=...., DEV=...., CMD=0xec IN
+ [ata pass-through(16): 85 08 0e 00 00 00 01 00 00 00 00 00 00 00 ec 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=IDENTIFY DEVICE returned 0
+
+===== [IDENTIFY DEVICE] DATA START (BASE-16) =====
+000-015: 40 00 ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 |@..?7.......?...|
+016-031: 00 00 00 00 20 20 48 50 4d 59 31 38 33 38 31 30 |....  HPMY183810|
+032-047: 52 38 34 32 41 30 4e 47 00 00 00 00 00 00 43 53 |R842A0NG......CS|
+048-063: 31 56 4c 44 43 35 53 53 53 44 32 43 47 4b 34 32 |1VLDC5SSSD2CGK42|
+064-079: 47 30 52 37 20 20 20 20 20 20 20 20 20 20 20 20 |G0R7            |
+080-095: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 01 80 |              ..|
+096-111: 00 40 00 2f 00 40 00 00 00 00 06 00 ff 3f 10 00 |.@./.@.......?..|
+112-127: 3f 00 10 fc fb 00 01 fd ff ff ff 0f 00 00 07 00 |?...............|
+128-143: 03 00 78 00 78 00 78 00 78 00 3c 40 00 00 00 00 |..x.x.x.x.<@....|
+144-159: 00 00 00 00 00 00 1f 00 0e 95 06 00 40 00 40 00 |............@.@.|
+160-175: fc 07 6d 00 69 70 01 74 63 61 69 70 01 b4 63 61 |..m.ip.tcaip..ca|
+176-191: 7f 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |.@..............|
+192-207: 00 00 00 00 00 00 00 00 b0 44 f2 1b 00 00 00 00 |.........D......|
+208-223: 00 00 04 00 03 60 00 00 cd 55 41 2e 3a 4f b0 d4 |.....`...UA.:O..|
+224-239: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 5c 41 |..............\A|
+240-255: 1c 41 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |.A..............|
+256-271: 00 00 1c 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+272-287: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+288-303: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+304-319: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+320-335: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+336-351: 03 00 01 00 45 44 4c 4c 74 28 29 6d 00 00 00 00 |....EDLLt()m....|
+352-367: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 |                |
+368-383: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 |                |
+384-399: 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 |                |
+400-415: 20 20 20 20 20 20 20 20 20 20 20 20 3d 00 00 00 |            =...|
+416-431: 00 00 00 40 00 00 00 00 00 00 00 00 00 00 00 00 |...@............|
+432-447: 00 00 01 00 00 00 00 00 00 00 00 00 ff 10 00 00 |................|
+448-463: 00 00 00 00 00 00 00 00 00 00 00 00 b0 44 f2 1b |.............D..|
+464-479: 00 00 00 00 01 00 ff ff 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 a5 42 |...............B|
+===== [IDENTIFY DEVICE] DATA END (512 Bytes) =====
+
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], SSDSC2KG240G7R, S/N:PHYM8183018R240AGN, WWN:5-5cd2e4-14f3ad4b0, FW:SCV1DL5C, 240 GB
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], found in smartd database: Dell Certified Intel S4x00/D3-S4x10 Series SSDs
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART ENABLE
+ Input:   FR=0xd8, SC=...., LL=0x01, LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0
+ [ata pass-through(16): 85 06 0c 00 d8 00 00 00 01 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART ENABLE returned 0
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART STATUS CHECK
+ Input:   FR=0xda, SC=...., LL=...., LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0
+ [ata pass-through(16): 85 06 2c 00 da 00 00 00 00 00 4f 00 c2 00 b0 00 ]
+sat_device::ata_pass_through: scsi_pass_through() failed, errno=38 [ATA return descriptor not supported by controller firmware]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART STATUS CHECK returned -1 errno=38 [ATA return descriptor not supported by controller firmware]
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], not capable of SMART Health Status check
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ ATTRIBUTE VALUES
+ Input:   FR=0xd0, SC=0x01, LL=...., LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0 IN
+ [ata pass-through(16): 85 08 0e 00 d0 00 01 00 00 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ ATTRIBUTE VALUES returned 0 errno=38 [ATA return descriptor not supported by controller firmware]
+
+===== [SMART READ ATTRIBUTE VALUES] DATA START (BASE-16) =====
+000-015: 01 00 01 0e 00 82 82 ff ff ff ff 00 00 00 05 33 |...............3|
+016-031: 00 64 64 00 00 00 00 00 00 00 09 32 00 64 64 27 |.dd........2.dd'|
+032-047: 91 00 00 00 00 00 0c 32 00 64 64 1b 00 00 00 00 |.......2.dd.....|
+048-063: 00 00 0d 1e 00 5d 50 ff ff ff ff ff ff 00 aa 33 |.....]P........3|
+064-079: 00 64 64 00 00 00 00 00 00 00 ae 32 00 64 64 16 |.dd........2.dd.|
+080-095: 00 00 00 00 00 00 b3 33 00 64 64 00 00 00 00 00 |.......3.dd.....|
+096-111: 00 00 b4 32 00 64 64 6c 26 00 00 00 00 00 b5 3a |...2.ddl&......:|
+112-127: 00 64 64 00 00 00 00 00 00 00 b6 3a 00 64 64 00 |.dd........:.dd.|
+128-143: 00 00 00 00 00 00 b8 32 00 64 64 00 00 00 00 00 |.......2.dd.....|
+144-159: 00 00 c2 22 00 64 64 18 00 00 00 00 00 00 c3 32 |...".dd........2|
+160-175: 00 64 64 00 00 00 00 00 00 00 c5 12 00 64 64 00 |.dd..........dd.|
+176-191: 00 00 00 00 00 00 c6 10 00 64 64 00 00 00 00 00 |.........dd.....|
+192-207: 00 00 c7 3e 00 64 64 00 00 00 00 00 00 00 c9 33 |...>.dd........3|
+208-223: 00 64 64 5a 09 83 02 52 0c 00 ca 27 00 64 64 00 |.ddZ...R...'.dd.|
+224-239: 00 00 00 00 00 00 e1 32 00 64 64 2a 03 02 00 00 |.......2.dd*....|
+240-255: 00 00 e2 32 00 64 64 c2 01 00 00 00 00 00 e3 32 |...2.dd........2|
+256-271: 00 64 64 5d 00 00 00 00 00 00 e4 32 00 64 64 6a |.dd].......2.ddj|
+272-287: 04 22 00 00 00 00 e8 33 00 64 64 00 00 00 00 00 |.".....3.dd.....|
+288-303: 00 00 e9 32 00 64 64 2a 03 02 00 00 00 00 ea 32 |...2.dd*.......2|
+304-319: 00 64 64 00 00 00 00 00 00 00 f1 32 00 64 64 2a |.dd........2.dd*|
+320-335: 03 02 00 00 00 00 f2 32 00 64 64 0c 99 1c 00 00 |.......2.dd.....|
+336-351: 00 00 f5 32 00 64 64 64 00 00 00 00 00 00 00 00 |...2.ddd........|
+352-367: 00 00 00 00 00 00 00 00 00 00 02 00 02 00 00 79 |...............y|
+368-383: 03 00 01 80 01 3c 3c 00 00 00 00 00 00 00 00 00 |.....<<.........|
+384-399: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+400-415: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+416-431: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+432-447: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+448-463: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+464-479: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c4 |................|
+===== [SMART READ ATTRIBUTE VALUES] DATA END (512 Bytes) =====
+
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ ATTRIBUTE THRESHOLDS
+ Input:   FR=0xd1, SC=0x01, LL=0x01, LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0 IN
+ [ata pass-through(16): 85 08 0e 00 d1 00 01 00 01 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ ATTRIBUTE THRESHOLDS returned 0 errno=38 [ATA return descriptor not supported by controller firmware]
+
+===== [SMART READ ATTRIBUTE THRESHOLDS] DATA START (BASE-16) =====
+000-015: 01 00 01 27 00 00 00 00 00 00 00 00 00 00 05 01 |...'............|
+016-031: 00 00 00 00 00 00 00 00 00 00 09 00 00 00 00 00 |................|
+032-047: 00 00 00 00 00 00 0c 00 00 00 00 00 00 00 00 00 |................|
+048-063: 00 00 0d 00 00 00 00 00 00 00 00 00 00 00 aa 0a |................|
+064-079: 00 00 00 00 00 00 00 00 00 00 ae 00 00 00 00 00 |................|
+080-095: 00 00 00 00 00 00 b3 0a 00 00 00 00 00 00 00 00 |................|
+096-111: 00 00 b4 00 00 00 00 00 00 00 00 00 00 00 b5 00 |................|
+112-127: 00 00 00 00 00 00 00 00 00 00 b6 00 00 00 00 00 |................|
+128-143: 00 00 00 00 00 00 b8 00 00 00 00 00 00 00 00 00 |................|
+144-159: 00 00 c2 00 00 00 00 00 00 00 00 00 00 00 c3 00 |................|
+160-175: 00 00 00 00 00 00 00 00 00 00 c5 00 00 00 00 00 |................|
+176-191: 00 00 00 00 00 00 c6 00 00 00 00 00 00 00 00 00 |................|
+192-207: 00 00 c7 00 00 00 00 00 00 00 00 00 00 00 c9 0a |................|
+208-223: 00 00 00 00 00 00 00 00 00 00 ca 00 00 00 00 00 |................|
+224-239: 00 00 00 00 00 00 e1 00 00 00 00 00 00 00 00 00 |................|
+240-255: 00 00 e2 00 00 00 00 00 00 00 00 00 00 00 e3 00 |................|
+256-271: 00 00 00 00 00 00 00 00 00 00 e4 00 00 00 00 00 |................|
+272-287: 00 00 00 00 00 00 e8 0a 00 00 00 00 00 00 00 00 |................|
+288-303: 00 00 e9 00 00 00 00 00 00 00 00 00 00 00 ea 00 |................|
+304-319: 00 00 00 00 00 00 00 00 00 00 f1 00 00 00 00 00 |................|
+320-335: 00 00 00 00 00 00 f2 00 00 00 00 00 00 00 00 00 |................|
+336-351: 00 00 f5 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+352-367: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+368-383: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+384-399: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+400-415: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+416-431: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+432-447: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+448-463: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+464-479: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 1e |................|
+===== [SMART READ ATTRIBUTE THRESHOLDS] DATA END (512 Bytes) =====
+
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ LOG InputParameter=0
+ Input:   FR=0xd5, SC=0x01, LL=0x00, LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0 IN
+ [ata pass-through(16): 85 08 0e 00 d5 00 01 00 00 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ LOG returned 0 errno=38 [ATA return descriptor not supported by controller firmware]
+
+===== [SMART READ LOG] DATA START (BASE-16) =====
+000-015: 01 00 00 00 08 00 00 00 08 00 00 00 01 00 00 00 |................|
+016-031: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+032-047: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+048-063: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+064-079: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+080-095: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+096-111: 09 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+112-127: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+128-143: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+144-159: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+160-175: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+176-191: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+192-207: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+208-223: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+224-239: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+240-255: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+256-271: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+272-287: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+288-303: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+304-319: 00 00 01 00 01 00 00 00 00 00 00 00 00 00 00 00 |................|
+320-335: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+336-351: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+352-367: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+368-383: 01 00 f0 0c 00 05 00 00 00 00 00 00 00 00 00 00 |................|
+384-399: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+400-415: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+416-431: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+432-447: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+448-463: 01 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+464-479: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+===== [SMART READ LOG] DATA END (512 Bytes) =====
+
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ LOG InputParameter=6
+ Input:   FR=0xd5, SC=0x01, LL=0x06, LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0 IN
+ [ata pass-through(16): 85 08 0e 00 d5 00 01 00 06 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ LOG returned 0 errno=38 [ATA return descriptor not supported by controller firmware]
+
+===== [SMART READ LOG] DATA START (BASE-16) =====
+000-015: 01 00 01 00 5e 90 4e 00 00 00 00 00 00 00 00 00 |....^.N.........|
+016-031: 00 00 00 00 00 00 00 00 00 00 01 00 75 90 1e 00 |............u...|
+032-047: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+048-063: 00 00 01 00 8d 90 6e 00 00 00 00 00 00 00 00 00 |......n.........|
+064-079: 00 00 00 00 00 00 00 00 00 00 01 00 a5 90 ae 00 |................|
+080-095: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+096-111: 00 00 01 00 bd 90 ee 00 00 00 00 00 00 00 00 00 |................|
+112-127: 00 00 00 00 00 00 00 00 00 00 01 00 d4 90 be 00 |................|
+128-143: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+144-159: 00 00 01 00 ec 90 6e 00 00 00 00 00 00 00 00 00 |......n.........|
+160-175: 00 00 00 00 00 00 00 00 00 00 01 00 04 91 8e 00 |................|
+176-191: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+192-207: 00 00 01 00 1c 91 0e 00 00 00 00 00 00 00 00 00 |................|
+208-223: 00 00 00 00 00 00 00 00 00 00 01 00 40 8f 3e 00 |............@.>.|
+224-239: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+240-255: 00 00 01 00 58 8f ae 00 00 00 00 00 00 00 00 00 |....X...........|
+256-271: 00 00 00 00 00 00 00 00 00 00 01 00 70 8f de 00 |............p...|
+272-287: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+288-303: 00 00 01 00 88 8f ae 00 00 00 00 00 00 00 00 00 |................|
+304-319: 00 00 00 00 00 00 00 00 00 00 01 00 9f 8f 1e 00 |................|
+320-335: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+336-351: 00 00 01 00 b7 8f ae 00 00 00 00 00 00 00 00 00 |................|
+352-367: 00 00 00 00 00 00 00 00 00 00 01 00 cf 8f 9e 00 |................|
+368-383: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+384-399: 00 00 01 00 e7 8f ce 00 00 00 00 00 00 00 00 00 |................|
+400-415: 00 00 00 00 00 00 00 00 00 00 01 00 fe 8f 6e 00 |..............n.|
+416-431: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+432-447: 00 00 01 00 16 90 5e 00 00 00 00 00 00 00 00 00 |......^.........|
+448-463: 00 00 00 00 00 00 00 00 00 00 01 00 2e 90 fe 00 |................|
+464-479: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 01 00 46 90 0e 00 00 00 00 00 00 00 00 00 |....F...........|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 09 00 00 8c |................|
+===== [SMART READ LOG] DATA END (512 Bytes) =====
+
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], no SMART Error Log, ignoring -l error (override with -T permissive)
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], is SMART capable. Adding to "monitor" list.
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], state read from /var/lib/smartmontools/smartd.SSDSC2KG240G7R-PHYM8183018R240AGN.ata.state
+Monitoring 1 ATA/SATA, 0 SCSI/SAS and 0 NVMe devices
+Creating /dev/megaraid_sas_ioctl_node = 17
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], opened ATA device
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ ATTRIBUTE VALUES
+ Input:   FR=0xd0, SC=0x01, LL=...., LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0 IN
+ [ata pass-through(16): 85 08 0e 00 d0 00 01 00 00 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ ATTRIBUTE VALUES returned 0 errno=38 [ATA return descriptor not supported by controller firmware]
+
+===== [SMART READ ATTRIBUTE VALUES] DATA START (BASE-16) =====
+000-015: 01 00 01 0e 00 82 82 ff ff ff ff 00 00 00 05 33 |...............3|
+016-031: 00 64 64 00 00 00 00 00 00 00 09 32 00 64 64 27 |.dd........2.dd'|
+032-047: 91 00 00 00 00 00 0c 32 00 64 64 1b 00 00 00 00 |.......2.dd.....|
+048-063: 00 00 0d 1e 00 5d 50 ff ff ff ff ff ff 00 aa 33 |.....]P........3|
+064-079: 00 64 64 00 00 00 00 00 00 00 ae 32 00 64 64 16 |.dd........2.dd.|
+080-095: 00 00 00 00 00 00 b3 33 00 64 64 00 00 00 00 00 |.......3.dd.....|
+096-111: 00 00 b4 32 00 64 64 6c 26 00 00 00 00 00 b5 3a |...2.ddl&......:|
+112-127: 00 64 64 00 00 00 00 00 00 00 b6 3a 00 64 64 00 |.dd........:.dd.|
+128-143: 00 00 00 00 00 00 b8 32 00 64 64 00 00 00 00 00 |.......2.dd.....|
+144-159: 00 00 c2 22 00 64 64 18 00 00 00 00 00 00 c3 32 |...".dd........2|
+160-175: 00 64 64 00 00 00 00 00 00 00 c5 12 00 64 64 00 |.dd..........dd.|
+176-191: 00 00 00 00 00 00 c6 10 00 64 64 00 00 00 00 00 |.........dd.....|
+192-207: 00 00 c7 3e 00 64 64 00 00 00 00 00 00 00 c9 33 |...>.dd........3|
+208-223: 00 64 64 5a 09 83 02 52 0c 00 ca 27 00 64 64 00 |.ddZ...R...'.dd.|
+224-239: 00 00 00 00 00 00 e1 32 00 64 64 2a 03 02 00 00 |.......2.dd*....|
+240-255: 00 00 e2 32 00 64 64 c2 01 00 00 00 00 00 e3 32 |...2.dd........2|
+256-271: 00 64 64 5d 00 00 00 00 00 00 e4 32 00 64 64 6a |.dd].......2.ddj|
+272-287: 04 22 00 00 00 00 e8 33 00 64 64 00 00 00 00 00 |.".....3.dd.....|
+288-303: 00 00 e9 32 00 64 64 2a 03 02 00 00 00 00 ea 32 |...2.dd*.......2|
+304-319: 00 64 64 00 00 00 00 00 00 00 f1 32 00 64 64 2a |.dd........2.dd*|
+320-335: 03 02 00 00 00 00 f2 32 00 64 64 0c 99 1c 00 00 |.......2.dd.....|
+336-351: 00 00 f5 32 00 64 64 64 00 00 00 00 00 00 00 00 |...2.ddd........|
+352-367: 00 00 00 00 00 00 00 00 00 00 02 00 02 00 00 79 |...............y|
+368-383: 03 00 01 80 01 3c 3c 00 00 00 00 00 00 00 00 00 |.....<<.........|
+384-399: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+400-415: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+416-431: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+432-447: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+448-463: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+464-479: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 c4 |................|
+===== [SMART READ ATTRIBUTE VALUES] DATA END (512 Bytes) =====
+
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], previous self-test completed without error
+
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ LOG InputParameter=6
+ Input:   FR=0xd5, SC=0x01, LL=0x06, LM=0x4f, LH=0xc2, DEV=...., CMD=0xb0 IN
+ [ata pass-through(16): 85 08 0e 00 d5 00 01 00 06 00 4f 00 c2 00 b0 00 ]
+REPORT-IOCTL: Device=/dev/bus/0 Command=SMART READ LOG returned 0 errno=38 [ATA return descriptor not supported by controller firmware]
+
+===== [SMART READ LOG] DATA START (BASE-16) =====
+000-015: 01 00 01 00 5e 90 4e 00 00 00 00 00 00 00 00 00 |....^.N.........|
+016-031: 00 00 00 00 00 00 00 00 00 00 01 00 75 90 1e 00 |............u...|
+032-047: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+048-063: 00 00 01 00 8d 90 6e 00 00 00 00 00 00 00 00 00 |......n.........|
+064-079: 00 00 00 00 00 00 00 00 00 00 01 00 a5 90 ae 00 |................|
+080-095: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+096-111: 00 00 01 00 bd 90 ee 00 00 00 00 00 00 00 00 00 |................|
+112-127: 00 00 00 00 00 00 00 00 00 00 01 00 d4 90 be 00 |................|
+128-143: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+144-159: 00 00 01 00 ec 90 6e 00 00 00 00 00 00 00 00 00 |......n.........|
+160-175: 00 00 00 00 00 00 00 00 00 00 01 00 04 91 8e 00 |................|
+176-191: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+192-207: 00 00 01 00 1c 91 0e 00 00 00 00 00 00 00 00 00 |................|
+208-223: 00 00 00 00 00 00 00 00 00 00 01 00 40 8f 3e 00 |............@.>.|
+224-239: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+240-255: 00 00 01 00 58 8f ae 00 00 00 00 00 00 00 00 00 |....X...........|
+256-271: 00 00 00 00 00 00 00 00 00 00 01 00 70 8f de 00 |............p...|
+272-287: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+288-303: 00 00 01 00 88 8f ae 00 00 00 00 00 00 00 00 00 |................|
+304-319: 00 00 00 00 00 00 00 00 00 00 01 00 9f 8f 1e 00 |................|
+320-335: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+336-351: 00 00 01 00 b7 8f ae 00 00 00 00 00 00 00 00 00 |................|
+352-367: 00 00 00 00 00 00 00 00 00 00 01 00 cf 8f 9e 00 |................|
+368-383: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+384-399: 00 00 01 00 e7 8f ce 00 00 00 00 00 00 00 00 00 |................|
+400-415: 00 00 00 00 00 00 00 00 00 00 01 00 fe 8f 6e 00 |..............n.|
+416-431: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+432-447: 00 00 01 00 16 90 5e 00 00 00 00 00 00 00 00 00 |......^.........|
+448-463: 00 00 00 00 00 00 00 00 00 00 01 00 2e 90 fe 00 |................|
+464-479: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |................|
+480-495: 00 00 01 00 46 90 0e 00 00 00 00 00 00 00 00 00 |....F...........|
+496-511: 00 00 00 00 00 00 00 00 00 00 00 00 09 00 00 8c |................|
+===== [SMART READ LOG] DATA END (512 Bytes) =====
+
+Device: /dev/bus/0 [megaraid_disk_00] [SAT], state written to /var/lib/smartmontools/smartd.SSDSC2KG240G7R-PHYM8183018R240AGN.ata.state
+Started with '-q onecheck' option. All devices sucessfully checked once.
+smartd is exiting (exit status 0)

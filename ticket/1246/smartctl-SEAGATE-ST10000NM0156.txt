@@ -1,0 +1,4 @@
+smartctl 6.6 2016-05-31 r4324 [x86_64-linux-4.15.0-54-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Smartctl open device: /dev/sdX failed: No such device
