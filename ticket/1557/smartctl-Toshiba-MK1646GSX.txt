@@ -1,0 +1,765 @@
+smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.13.0-21-generic] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Toshiba 2.5" HDD MK..46GSX
+Device Model:     TOSHIBA MK1646GSX
+Serial Number:    Z77CT58HT
+LU WWN Device Id: 5 000039 0b1582429
+Firmware Version: LB112D
+User Capacity:    160,041,885,696 bytes [160 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ATA8-ACS (minor revision not indicated)
+SATA Version is:  SATA 2.6, 3.0 Gb/s
+Local Time is:    Mon Jan  3 17:09:34 2022 MST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM level is:     128 (quiet), recommended: 254
+APM level is:     254 (maximum performance)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      ( 112)	The previous self-test completed having
+					the read element of the test failed.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  88) minutes.
+SCT capabilities: 	       (0x0039)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 128
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     PO-R--   100   100   050    -    0
+  3 Spin_Up_Time            POS--K   100   100   001    -    1678
+  5 Reallocated_Sector_Ct   PO--CK   100   100   050    -    9
+  9 Power_On_Hours          -O--CK   089   089   000    -    287178
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    7702
+191 G-Sense_Error_Rate      -O--CK   100   100   000    -    7484
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    47
+193 Load_Cycle_Count        -O--CK   099   099   000    -    10045
+194 Temperature_Celsius     -O---K   100   100   000    -    29 (Min/Max 11/48)
+199 UDMA_CRC_Error_Count    -O--CK   100   100   000    -    39984356
+200 Multi_Zone_Error_Rate   -O--CK   100   100   000    -    147974421
+240 Head_Flying_Hours       -O--CK   089   089   000    -    285255
+241 Total_LBAs_Written      -O--CK   100   100   000    -    7363133817
+242 Total_LBAs_Read         -O--CK   100   100   000    -    12723395214
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O     51  Comprehensive SMART error log
+0x03       GPL     R/O     64  Ext. Comprehensive SMART error log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (64 sectors)
+Device Error Count: 177
+	CR     = Command Register
+	FEATR  = Features Register
+	COUNT  = Count (was: Sector Count) Register
+	LBA_48 = Upper bytes of LBA High/Mid/Low Registers ]  ATA-8
+	LH     = LBA High (was: Cylinder High) Register    ]   LBA
+	LM     = LBA Mid (was: Cylinder Low) Register      ] Register
+	LL     = LBA Low (was: Sector Number) Register     ]
+	DV     = Device (was: Device/Head) Register
+	DC     = Device Control Register
+	ER     = Error register
+	ST     = Status register
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 177 [176] occurred at disk power-on lifetime: 4779 hours (199 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 80 00 00 00 03 b1 7a e0 00  Error: UNC 128 sectors at LBA = 0x0003b17a = 242042
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 80 00 00 00 03 b1 7a e0 00     02:27:11.727  READ DMA EXT
+  35 00 00 00 08 00 00 01 8c 7e 42 e0 00     02:27:11.726  WRITE DMA EXT
+  25 00 00 00 08 00 00 00 03 b5 4a e0 00     02:27:11.720  READ DMA EXT
+  35 00 00 00 68 00 00 01 8c 7d da e0 00     02:27:11.718  WRITE DMA EXT
+  25 00 00 00 68 00 00 00 03 b1 0a e0 00     02:27:11.718  READ DMA EXT
+
+Error 176 [175] occurred at disk power-on lifetime: 4724 hours (196 days + 20 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 07 00 00 00 03 b1 7b e0 00  Error: UNC 7 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 08 00 00 00 03 b1 7a e0 00     00:03:38.554  READ DMA EXT
+  35 00 00 00 20 00 00 0b ac d2 32 e0 00     00:03:38.554  WRITE DMA EXT
+  35 00 00 00 08 00 00 0b 9d 89 a2 e0 00     00:03:38.553  WRITE DMA EXT
+  35 00 00 00 08 00 00 0b 8f dd d2 e0 00     00:03:38.553  WRITE DMA EXT
+  35 00 00 00 08 00 00 03 23 65 22 e0 00     00:03:38.553  WRITE DMA EXT
+
+Error 175 [174] occurred at disk power-on lifetime: 4724 hours (196 days + 20 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 07 00 00 00 03 b1 7b e0 00  Error: UNC 7 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 08 00 00 00 03 b1 7a e0 00     00:03:34.636  READ DMA EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 00     00:03:34.591  FLUSH CACHE EXT
+  35 00 00 00 08 00 00 00 62 f2 1a e0 00     00:03:34.590  WRITE DMA EXT
+  35 00 00 00 08 00 00 00 63 21 c2 e0 00     00:03:34.590  WRITE DMA EXT
+  35 00 00 00 20 00 00 0b ac d2 32 e0 00     00:03:34.589  WRITE DMA EXT
+
+Error 174 [173] occurred at disk power-on lifetime: 4724 hours (196 days + 20 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 3f 00 00 00 03 b1 7b e0 00  Error: UNC 63 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 00 03 b1 7a e0 00     00:03:29.828  READ DMA EXT
+  25 00 00 00 01 00 00 00 00 00 00 e0 00     00:03:29.786  READ DMA EXT
+  35 00 00 00 08 00 00 0b 9d 89 a2 e0 00     00:03:29.786  WRITE DMA EXT
+  35 00 00 00 07 00 00 00 ad 36 3a e0 00     00:03:29.786  WRITE DMA EXT
+  35 00 00 00 08 00 00 00 62 f2 22 e0 00     00:03:29.785  WRITE DMA EXT
+
+Error 173 [172] occurred at disk power-on lifetime: 4724 hours (196 days + 20 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 3f 00 00 00 03 b1 7b e0 00  Error: UNC 63 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 00 03 b1 7a e0 00     00:03:25.828  READ DMA EXT
+  25 00 00 00 01 00 00 00 00 00 00 e0 00     00:03:25.804  READ DMA EXT
+  35 00 00 00 08 00 00 00 63 21 72 e0 00     00:03:25.804  WRITE DMA EXT
+  25 00 00 00 20 00 00 0b 9a 9c 59 e0 00     00:03:25.775  READ DMA EXT
+  35 00 00 00 07 00 00 00 ad 36 3a e0 00     00:03:25.774  WRITE DMA EXT
+
+Error 172 [171] occurred at disk power-on lifetime: 4724 hours (196 days + 20 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 3f 00 00 00 03 b1 7b e0 00  Error: UNC 63 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 00 03 b1 7a e0 00     00:03:21.886  READ DMA EXT
+  25 00 00 00 08 00 00 00 03 b5 4a e0 00     00:03:21.878  READ DMA EXT
+  25 00 00 00 38 00 00 00 03 b1 3a e0 00     00:03:21.878  READ DMA EXT
+  25 00 00 00 40 00 00 00 03 b0 fa e0 00     00:03:21.869  READ DMA EXT
+  25 00 00 00 40 00 00 00 03 b0 ba e0 00     00:03:21.866  READ DMA EXT
+
+Error 171 [170] occurred at disk power-on lifetime: 4690 hours (195 days + 10 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 07 00 00 00 03 b1 7b e0 00  Error: UNC 7 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 da d0 00 08 00 00 00 03 b1 7a e0 00     02:00:54.064  READ DMA EXT
+  35 da d0 00 08 00 00 00 03 31 d2 e0 00     02:00:54.063  WRITE DMA EXT
+  25 da d0 00 40 00 00 0b 36 f8 d2 e0 00     02:00:54.054  READ DMA EXT
+  25 da d0 00 40 00 00 0a 1e 54 ca e0 00     02:00:54.029  READ DMA EXT
+  35 da d0 00 08 00 00 03 23 ec a2 e0 00     02:00:54.029  WRITE DMA EXT
+
+Error 170 [169] occurred at disk power-on lifetime: 4690 hours (195 days + 10 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  40 -- 51 00 07 00 00 00 03 b1 7b e0 00  Error: UNC 7 sectors at LBA = 0x0003b17b = 242043
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 da d0 00 08 00 00 00 03 b1 7a e0 00     02:00:49.432  READ DMA EXT
+  25 da d0 00 01 00 00 00 00 00 00 e0 00     02:00:49.409  READ DMA EXT
+  25 da d0 00 40 00 00 0a 1e 54 8a e0 00     02:00:49.384  READ DMA EXT
+  35 da d0 00 08 00 00 00 62 f2 22 e0 00     02:00:49.383  WRITE DMA EXT
+  25 da d0 00 34 00 00 00 23 56 a2 e0 00     02:00:49.368  READ DMA EXT
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed: read failure       00%      4786         242039
+# 2  Short offline       Aborted by host               60%      3025         -
+# 3  Short offline       Completed without error       00%         1         -
+# 4  Short offline       Completed without error       00%         0         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  2
+SCT Version (vendor specific):       1 (0x0001)
+Device State:                        Active (0)
+Current Temperature:                    29 Celsius
+Power Cycle Min/Max Temperature:     23/29 Celsius
+Lifetime    Min/Max Temperature:     11/48 Celsius
+Specified Max Operating Temperature:    34 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        10 minutes
+Min/Max recommended Temperature:     15/55 Celsius
+Min/Max Temperature Limit:           10/60 Celsius
+Temperature History Size (Index):    478 (95)
+
+Index    Estimated Time   Temperature Celsius
+  96    2021-12-31 09:30    32  *************
+  97    2021-12-31 09:40    32  *************
+  98    2021-12-31 09:50    32  *************
+  99    2021-12-31 10:00    31  ************
+ 100    2021-12-31 10:10    32  *************
+ 101    2021-12-31 10:20    32  *************
+ 102    2021-12-31 10:30    33  **************
+ 103    2021-12-31 10:40    35  ****************
+ 104    2021-12-31 10:50     ?  -
+ 105    2021-12-31 11:00    29  **********
+ 106    2021-12-31 11:10    31  ************
+ 107    2021-12-31 11:20    34  ***************
+ 108    2021-12-31 11:30     ?  -
+ 109    2021-12-31 11:40    32  *************
+ 110    2021-12-31 11:50    37  ******************
+ 111    2021-12-31 12:00     ?  -
+ 112    2021-12-31 12:10    31  ************
+ 113    2021-12-31 12:20    36  *****************
+ 114    2021-12-31 12:30    38  *******************
+ 115    2021-12-31 12:40     ?  -
+ 116    2021-12-31 12:50    32  *************
+ 117    2021-12-31 13:00     ?  -
+ 118    2021-12-31 13:10    30  ***********
+ 119    2021-12-31 13:20    34  ***************
+ 120    2021-12-31 13:30    37  ******************
+ 121    2021-12-31 13:40     ?  -
+ 122    2021-12-31 13:50    31  ************
+ 123    2021-12-31 14:00    32  *************
+ 124    2021-12-31 14:10    32  *************
+ 125    2021-12-31 14:20    32  *************
+ 126    2021-12-31 14:30    33  **************
+ 127    2021-12-31 14:40    32  *************
+ ...    ..(  3 skipped).    ..  *************
+ 131    2021-12-31 15:20    32  *************
+ 132    2021-12-31 15:30     ?  -
+ 133    2021-12-31 15:40     ?  -
+ 134    2021-12-31 15:50    28  *********
+ 135    2021-12-31 16:00     ?  -
+ 136    2021-12-31 16:10     ?  -
+ 137    2021-12-31 16:20    28  *********
+ 138    2021-12-31 16:30    30  ***********
+ 139    2021-12-31 16:40    32  *************
+ 140    2021-12-31 16:50    32  *************
+ 141    2021-12-31 17:00    34  ***************
+ 142    2021-12-31 17:10    36  *****************
+ 143    2021-12-31 17:20    36  *****************
+ 144    2021-12-31 17:30    35  ****************
+ 145    2021-12-31 17:40    34  ***************
+ 146    2021-12-31 17:50    33  **************
+ ...    ..(  3 skipped).    ..  **************
+ 150    2021-12-31 18:30    33  **************
+ 151    2021-12-31 18:40    34  ***************
+ ...    ..(  4 skipped).    ..  ***************
+ 156    2021-12-31 19:30    34  ***************
+ 157    2021-12-31 19:40     ?  -
+ 158    2021-12-31 19:50     ?  -
+ 159    2021-12-31 20:00    25  ******
+ 160    2021-12-31 20:10    27  ********
+ 161    2021-12-31 20:20    29  **********
+ 162    2021-12-31 20:30    29  **********
+ 163    2021-12-31 20:40    30  ***********
+ 164    2021-12-31 20:50    32  *************
+ ...    ..(  4 skipped).    ..  *************
+ 169    2021-12-31 21:40    32  *************
+ 170    2021-12-31 21:50     ?  -
+ 171    2021-12-31 22:00     ?  -
+ 172    2021-12-31 22:10    28  *********
+ 173    2021-12-31 22:20     ?  -
+ 174    2021-12-31 22:30    31  ************
+ 175    2021-12-31 22:40    33  **************
+ 176    2021-12-31 22:50     ?  -
+ 177    2021-12-31 23:00    31  ************
+ 178    2021-12-31 23:10    37  ******************
+ 179    2021-12-31 23:20    37  ******************
+ 180    2021-12-31 23:30    38  *******************
+ 181    2021-12-31 23:40     ?  -
+ 182    2021-12-31 23:50    32  *************
+ 183    2022-01-01 00:00     ?  -
+ 184    2022-01-01 00:10    30  ***********
+ 185    2022-01-01 00:20     ?  -
+ 186    2022-01-01 00:30     ?  -
+ 187    2022-01-01 00:40     ?  -
+ 188    2022-01-01 00:50    29  **********
+ 189    2022-01-01 01:00     ?  -
+ 190    2022-01-01 01:10    30  ***********
+ 191    2022-01-01 01:20     ?  -
+ 192    2022-01-01 01:30     ?  -
+ 193    2022-01-01 01:40    38  *******************
+ 194    2022-01-01 01:50    38  *******************
+ 195    2022-01-01 02:00    39  ********************
+ 196    2022-01-01 02:10    39  ********************
+ 197    2022-01-01 02:20    38  *******************
+ 198    2022-01-01 02:30    40  *********************
+ 199    2022-01-01 02:40     ?  -
+ 200    2022-01-01 02:50     ?  -
+ 201    2022-01-01 03:00    30  ***********
+ 202    2022-01-01 03:10     ?  -
+ 203    2022-01-01 03:20    31  ************
+ 204    2022-01-01 03:30    35  ****************
+ 205    2022-01-01 03:40    37  ******************
+ 206    2022-01-01 03:50     ?  -
+ 207    2022-01-01 04:00     ?  -
+ 208    2022-01-01 04:10     ?  -
+ 209    2022-01-01 04:20    31  ************
+ 210    2022-01-01 04:30     ?  -
+ 211    2022-01-01 04:40    30  ***********
+ 212    2022-01-01 04:50    36  *****************
+ 213    2022-01-01 05:00    38  *******************
+ 214    2022-01-01 05:10    38  *******************
+ 215    2022-01-01 05:20     ?  -
+ 216    2022-01-01 05:30     ?  -
+ 217    2022-01-01 05:40    27  ********
+ 218    2022-01-01 05:50    29  **********
+ 219    2022-01-01 06:00    31  ************
+ 220    2022-01-01 06:10    32  *************
+ 221    2022-01-01 06:20    33  **************
+ 222    2022-01-01 06:30     ?  -
+ ...    ..(  2 skipped).    ..  -
+ 225    2022-01-01 07:00     ?  -
+ 226    2022-01-01 07:10    33  **************
+ 227    2022-01-01 07:20    35  ****************
+ 228    2022-01-01 07:30     ?  -
+ 229    2022-01-01 07:40    32  *************
+ 230    2022-01-01 07:50     ?  -
+ 231    2022-01-01 08:00    32  *************
+ 232    2022-01-01 08:10     ?  -
+ 233    2022-01-01 08:20    30  ***********
+ 234    2022-01-01 08:30    32  *************
+ 235    2022-01-01 08:40    33  **************
+ 236    2022-01-01 08:50     ?  -
+ 237    2022-01-01 09:00     ?  -
+ 238    2022-01-01 09:10    28  *********
+ 239    2022-01-01 09:20     ?  -
+ 240    2022-01-01 09:30    31  ************
+ 241    2022-01-01 09:40    33  **************
+ 242    2022-01-01 09:50    34  ***************
+ 243    2022-01-01 10:00     ?  -
+ 244    2022-01-01 10:10     ?  -
+ 245    2022-01-01 10:20     ?  -
+ 246    2022-01-01 10:30    29  **********
+ 247    2022-01-01 10:40    32  *************
+ 248    2022-01-01 10:50    35  ****************
+ 249    2022-01-01 11:00    35  ****************
+ 250    2022-01-01 11:10    38  *******************
+ 251    2022-01-01 11:20     ?  -
+ 252    2022-01-01 11:30    31  ************
+ 253    2022-01-01 11:40    32  *************
+ 254    2022-01-01 11:50    33  **************
+ 255    2022-01-01 12:00     ?  -
+ 256    2022-01-01 12:10    31  ************
+ 257    2022-01-01 12:20    33  **************
+ 258    2022-01-01 12:30     ?  -
+ 259    2022-01-01 12:40    30  ***********
+ 260    2022-01-01 12:50    32  *************
+ 261    2022-01-01 13:00    32  *************
+ 262    2022-01-01 13:10    32  *************
+ 263    2022-01-01 13:20     ?  -
+ 264    2022-01-01 13:30    28  *********
+ 265    2022-01-01 13:40     ?  -
+ 266    2022-01-01 13:50    31  ************
+ 267    2022-01-01 14:00     ?  -
+ 268    2022-01-01 14:10    32  *************
+ 269    2022-01-01 14:20    36  *****************
+ 270    2022-01-01 14:30     ?  -
+ 271    2022-01-01 14:40    32  *************
+ 272    2022-01-01 14:50     ?  -
+ 273    2022-01-01 15:00    32  *************
+ 274    2022-01-01 15:10     ?  -
+ 275    2022-01-01 15:20    30  ***********
+ 276    2022-01-01 15:30     ?  -
+ 277    2022-01-01 15:40     ?  -
+ 278    2022-01-01 15:50    30  ***********
+ 279    2022-01-01 16:00     ?  -
+ 280    2022-01-01 16:10     ?  -
+ 281    2022-01-01 16:20    30  ***********
+ 282    2022-01-01 16:30    31  ************
+ 283    2022-01-01 16:40    32  *************
+ 284    2022-01-01 16:50    33  **************
+ 285    2022-01-01 17:00    32  *************
+ 286    2022-01-01 17:10    32  *************
+ 287    2022-01-01 17:20    33  **************
+ 288    2022-01-01 17:30    36  *****************
+ 289    2022-01-01 17:40    36  *****************
+ 290    2022-01-01 17:50    35  ****************
+ ...    ..(  2 skipped).    ..  ****************
+ 293    2022-01-01 18:20    35  ****************
+ 294    2022-01-01 18:30    36  *****************
+ 295    2022-01-01 18:40    36  *****************
+ 296    2022-01-01 18:50    35  ****************
+ 297    2022-01-01 19:00    35  ****************
+ 298    2022-01-01 19:10    34  ***************
+ 299    2022-01-01 19:20    34  ***************
+ 300    2022-01-01 19:30    34  ***************
+ 301    2022-01-01 19:40     ?  -
+ 302    2022-01-01 19:50     ?  -
+ 303    2022-01-01 20:00    29  **********
+ 304    2022-01-01 20:10    30  ***********
+ 305    2022-01-01 20:20    32  *************
+ 306    2022-01-01 20:30     ?  -
+ 307    2022-01-01 20:40    30  ***********
+ 308    2022-01-01 20:50     ?  -
+ 309    2022-01-01 21:00    30  ***********
+ 310    2022-01-01 21:10    34  ***************
+ 311    2022-01-01 21:20     ?  -
+ 312    2022-01-01 21:30    28  *********
+ 313    2022-01-01 21:40    30  ***********
+ 314    2022-01-01 21:50    32  *************
+ 315    2022-01-01 22:00    31  ************
+ 316    2022-01-01 22:10    32  *************
+ 317    2022-01-01 22:20    33  **************
+ 318    2022-01-01 22:30    34  ***************
+ 319    2022-01-01 22:40    35  ****************
+ 320    2022-01-01 22:50    35  ****************
+ 321    2022-01-01 23:00    34  ***************
+ 322    2022-01-01 23:10     ?  -
+ 323    2022-01-01 23:20     ?  -
+ 324    2022-01-01 23:30    30  ***********
+ 325    2022-01-01 23:40     ?  -
+ 326    2022-01-01 23:50    29  **********
+ 327    2022-01-02 00:00    34  ***************
+ 328    2022-01-02 00:10    37  ******************
+ 329    2022-01-02 00:20    37  ******************
+ 330    2022-01-02 00:30    37  ******************
+ 331    2022-01-02 00:40    38  *******************
+ 332    2022-01-02 00:50    39  ********************
+ ...    ..(  5 skipped).    ..  ********************
+ 338    2022-01-02 01:50    39  ********************
+ 339    2022-01-02 02:00    38  *******************
+ 340    2022-01-02 02:10    38  *******************
+ 341    2022-01-02 02:20     ?  -
+ 342    2022-01-02 02:30     ?  -
+ 343    2022-01-02 02:40    28  *********
+ 344    2022-01-02 02:50    32  *************
+ 345    2022-01-02 03:00     ?  -
+ 346    2022-01-02 03:10    30  ***********
+ 347    2022-01-02 03:20     ?  -
+ 348    2022-01-02 03:30     ?  -
+ 349    2022-01-02 03:40    29  **********
+ 350    2022-01-02 03:50     ?  -
+ 351    2022-01-02 04:00    28  *********
+ 352    2022-01-02 04:10    29  **********
+ 353    2022-01-02 04:20    31  ************
+ 354    2022-01-02 04:30    32  *************
+ 355    2022-01-02 04:40    32  *************
+ 356    2022-01-02 04:50    33  **************
+ ...    ..(  3 skipped).    ..  **************
+ 360    2022-01-02 05:30    33  **************
+ 361    2022-01-02 05:40     ?  -
+ 362    2022-01-02 05:50     ?  -
+ 363    2022-01-02 06:00    30  ***********
+ 364    2022-01-02 06:10     ?  -
+ ...    ..(  2 skipped).    ..  -
+ 367    2022-01-02 06:40     ?  -
+ 368    2022-01-02 06:50    29  **********
+ 369    2022-01-02 07:00    32  *************
+ 370    2022-01-02 07:10    38  *******************
+ 371    2022-01-02 07:20     ?  -
+ 372    2022-01-02 07:30    30  ***********
+ 373    2022-01-02 07:40     ?  -
+ 374    2022-01-02 07:50    31  ************
+ 375    2022-01-02 08:00     ?  -
+ 376    2022-01-02 08:10    29  **********
+ 377    2022-01-02 08:20     ?  -
+ 378    2022-01-02 08:30    30  ***********
+ 379    2022-01-02 08:40     ?  -
+ 380    2022-01-02 08:50    29  **********
+ 381    2022-01-02 09:00     ?  -
+ 382    2022-01-02 09:10    30  ***********
+ 383    2022-01-02 09:20    33  **************
+ 384    2022-01-02 09:30     ?  -
+ 385    2022-01-02 09:40    31  ************
+ 386    2022-01-02 09:50     ?  -
+ 387    2022-01-02 10:00    32  *************
+ 388    2022-01-02 10:10     ?  -
+ 389    2022-01-02 10:20    30  ***********
+ 390    2022-01-02 10:30    37  ******************
+ 391    2022-01-02 10:40    37  ******************
+ 392    2022-01-02 10:50    36  *****************
+ 393    2022-01-02 11:00    36  *****************
+ 394    2022-01-02 11:10    35  ****************
+ ...    ..(  4 skipped).    ..  ****************
+ 399    2022-01-02 12:00    35  ****************
+ 400    2022-01-02 12:10     ?  -
+ 401    2022-01-02 12:20     ?  -
+ 402    2022-01-02 12:30    31  ************
+ 403    2022-01-02 12:40     ?  -
+ 404    2022-01-02 12:50    27  ********
+ 405    2022-01-02 13:00     ?  -
+ 406    2022-01-02 13:10     ?  -
+ 407    2022-01-02 13:20    33  **************
+ 408    2022-01-02 13:30    35  ****************
+ 409    2022-01-02 13:40     ?  -
+ 410    2022-01-02 13:50    30  ***********
+ 411    2022-01-02 14:00     ?  -
+ 412    2022-01-02 14:10    34  ***************
+ 413    2022-01-02 14:20     ?  -
+ 414    2022-01-02 14:30    30  ***********
+ 415    2022-01-02 14:40     ?  -
+ 416    2022-01-02 14:50    32  *************
+ 417    2022-01-02 15:00     ?  -
+ 418    2022-01-02 15:10    30  ***********
+ 419    2022-01-02 15:20    33  **************
+ 420    2022-01-02 15:30     ?  -
+ 421    2022-01-02 15:40    33  **************
+ 422    2022-01-02 15:50    35  ****************
+ 423    2022-01-02 16:00     ?  -
+ 424    2022-01-02 16:10    29  **********
+ 425    2022-01-02 16:20    32  *************
+ 426    2022-01-02 16:30     ?  -
+ 427    2022-01-02 16:40    33  **************
+ 428    2022-01-02 16:50     ?  -
+ 429    2022-01-02 17:00    37  ******************
+ 430    2022-01-02 17:10     ?  -
+ ...    ..(  2 skipped).    ..  -
+ 433    2022-01-02 17:40     ?  -
+ 434    2022-01-02 17:50    30  ***********
+ 435    2022-01-02 18:00     ?  -
+ 436    2022-01-02 18:10    33  **************
+ 437    2022-01-02 18:20    37  ******************
+ 438    2022-01-02 18:30     ?  -
+ 439    2022-01-02 18:40    29  **********
+ 440    2022-01-02 18:50     ?  -
+ 441    2022-01-02 19:00    34  ***************
+ 442    2022-01-02 19:10     ?  -
+ 443    2022-01-02 19:20    34  ***************
+ 444    2022-01-02 19:30     ?  -
+ 445    2022-01-02 19:40    32  *************
+ 446    2022-01-02 19:50     ?  -
+ 447    2022-01-02 20:00    33  **************
+ 448    2022-01-02 20:10    37  ******************
+ 449    2022-01-02 20:20     ?  -
+ 450    2022-01-02 20:30    29  **********
+ 451    2022-01-02 20:40     ?  -
+ 452    2022-01-02 20:50    31  ************
+ 453    2022-01-02 21:00     ?  -
+ 454    2022-01-02 21:10    33  **************
+ 455    2022-01-02 21:20     ?  -
+ 456    2022-01-02 21:30    29  **********
+ 457    2022-01-02 21:40     ?  -
+ 458    2022-01-02 21:50    33  **************
+ 459    2022-01-02 22:00     ?  -
+ 460    2022-01-02 22:10    30  ***********
+ 461    2022-01-02 22:20    32  *************
+ 462    2022-01-02 22:30    32  *************
+ 463    2022-01-02 22:40     ?  -
+ 464    2022-01-02 22:50     ?  -
+ 465    2022-01-02 23:00    30  ***********
+ 466    2022-01-02 23:10    37  ******************
+ 467    2022-01-02 23:20     ?  -
+ 468    2022-01-02 23:30    31  ************
+ 469    2022-01-02 23:40    36  *****************
+ 470    2022-01-02 23:50    40  *********************
+ 471    2022-01-03 00:00     ?  -
+ 472    2022-01-03 00:10     ?  -
+ 473    2022-01-03 00:20    33  **************
+ 474    2022-01-03 00:30     ?  -
+ 475    2022-01-03 00:40    38  *******************
+ 476    2022-01-03 00:50     ?  -
+ 477    2022-01-03 01:00    31  ************
+   0    2022-01-03 01:10     ?  -
+   1    2022-01-03 01:20    31  ************
+   2    2022-01-03 01:30    36  *****************
+   3    2022-01-03 01:40     ?  -
+   4    2022-01-03 01:50    33  **************
+   5    2022-01-03 02:00     ?  -
+   6    2022-01-03 02:10    31  ************
+   7    2022-01-03 02:20     ?  -
+   8    2022-01-03 02:30    34  ***************
+   9    2022-01-03 02:40     ?  -
+  10    2022-01-03 02:50    30  ***********
+  11    2022-01-03 03:00     ?  -
+  12    2022-01-03 03:10    32  *************
+  13    2022-01-03 03:20     ?  -
+  14    2022-01-03 03:30    32  *************
+  15    2022-01-03 03:40     ?  -
+  16    2022-01-03 03:50    32  *************
+  17    2022-01-03 04:00     ?  -
+  18    2022-01-03 04:10    33  **************
+  19    2022-01-03 04:20     ?  -
+  20    2022-01-03 04:30    35  ****************
+  21    2022-01-03 04:40     ?  -
+  22    2022-01-03 04:50     ?  -
+  23    2022-01-03 05:00    32  *************
+  24    2022-01-03 05:10     ?  -
+  25    2022-01-03 05:20     ?  -
+  26    2022-01-03 05:30    34  ***************
+  27    2022-01-03 05:40    37  ******************
+  28    2022-01-03 05:50    38  *******************
+  29    2022-01-03 06:00    39  ********************
+  30    2022-01-03 06:10    38  *******************
+  31    2022-01-03 06:20    38  *******************
+  32    2022-01-03 06:30    40  *********************
+  33    2022-01-03 06:40     ?  -
+  34    2022-01-03 06:50    41  **********************
+  35    2022-01-03 07:00    37  ******************
+  36    2022-01-03 07:10    38  *******************
+  37    2022-01-03 07:20    40  *********************
+  38    2022-01-03 07:30    41  **********************
+  39    2022-01-03 07:40    40  *********************
+  40    2022-01-03 07:50    41  **********************
+  41    2022-01-03 08:00    41  **********************
+  42    2022-01-03 08:10    41  **********************
+  43    2022-01-03 08:20    42  ***********************
+  44    2022-01-03 08:30    42  ***********************
+  45    2022-01-03 08:40    42  ***********************
+  46    2022-01-03 08:50    39  ********************
+  47    2022-01-03 09:00    37  ******************
+  48    2022-01-03 09:10    37  ******************
+  49    2022-01-03 09:20    37  ******************
+  50    2022-01-03 09:30    36  *****************
+  51    2022-01-03 09:40     ?  -
+ ...    ..(  3 skipped).    ..  -
+  55    2022-01-03 10:20     ?  -
+  56    2022-01-03 10:30    31  ************
+  57    2022-01-03 10:40    34  ***************
+  58    2022-01-03 10:50    34  ***************
+  59    2022-01-03 11:00     ?  -
+  60    2022-01-03 11:10     ?  -
+  61    2022-01-03 11:20    29  **********
+  62    2022-01-03 11:30    31  ************
+  63    2022-01-03 11:40    32  *************
+  64    2022-01-03 11:50    34  ***************
+  65    2022-01-03 12:00    35  ****************
+  66    2022-01-03 12:10    35  ****************
+  67    2022-01-03 12:20    37  ******************
+  68    2022-01-03 12:30    37  ******************
+  69    2022-01-03 12:40    37  ******************
+  70    2022-01-03 12:50     ?  -
+  71    2022-01-03 13:00     ?  -
+  72    2022-01-03 13:10    28  *********
+  73    2022-01-03 13:20    30  ***********
+  74    2022-01-03 13:30    32  *************
+  75    2022-01-03 13:40    34  ***************
+  76    2022-01-03 13:50    35  ****************
+  77    2022-01-03 14:00    36  *****************
+  78    2022-01-03 14:10    37  ******************
+  79    2022-01-03 14:20     ?  -
+  80    2022-01-03 14:30     ?  -
+  81    2022-01-03 14:40    29  **********
+  82    2022-01-03 14:50    32  *************
+  83    2022-01-03 15:00    33  **************
+  84    2022-01-03 15:10    35  ****************
+  85    2022-01-03 15:20    35  ****************
+  86    2022-01-03 15:30    36  *****************
+  87    2022-01-03 15:40     ?  -
+ ...    ..(  4 skipped).    ..  -
+  92    2022-01-03 16:30     ?  -
+  93    2022-01-03 16:40    30  ***********
+  94    2022-01-03 16:50     ?  -
+  95    2022-01-03 17:00    29  **********
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x0002  4            0  R_ERR response for data FIS
+0x0003  4            0  R_ERR response for device-to-host data FIS
+0x0004  4            0  R_ERR response for host-to-device data FIS
+0x0005  4            0  R_ERR response for non-data FIS
+0x0006  4            0  R_ERR response for device-to-host non-data FIS
+0x0007  4            0  R_ERR response for host-to-device non-data FIS
+0x0008  4            0  Device-to-host non-data FIS retries
+0x0009  4            0  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  4            0  Device-to-host register FISes sent due to a COMRESET
+0x000b  4            0  CRC errors within host-to-device FIS
+0x000d  4            0  Non-CRC errors within host-to-device FIS
+0x000f  4            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  4            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  4            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  4            0  R_ERR response for host-to-device non-data FIS, non-CRC
+

@@ -1,0 +1,103 @@
+smartctl 6.6 2017-11-05 r4594 [FreeBSD 12.3-STABLE amd64] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SAMSUNG
+Product:              MZILT3T8HBLS/007
+Revision:             GXA0
+Compliance:           SPC-5
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Logical Unit id:      0x5002538b71a30390
+Serial number:        S5G0NG0RA01020
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Sun Jan 23 00:15:20 2022 EET
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Percentage used endurance indicator: 0%
+Current Drive Temperature:     26 C
+Drive Trip Temperature:        74 C
+
+Manufactured in week 42 of year 2021
+Accumulated start-stop cycles:  2
+Specified load-unload count over device lifetime:  0
+Accumulated load-unload cycles:  0
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0       1857.755           0
+write:         0        0         0         0          0       2817.675           0
+
+Non-medium error count:        0
+
+No self-tests have been logged
+
+Background scan results log
+  Status: scan is active
+    Accumulated power on time, hours:minutes 32:44 [1964 minutes]
+    Number of background scans performed: 0,  scan progress: 4.85%
+    Number of background medium scans performed: 0
+
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 3
+  number of phys = 1
+  phy identifier = 0
+    attached device type: SAS or SATA device
+    attached reason: unknown
+    reason: loss of dword synchronization
+    negotiated logical link rate: phy enabled; 12 Gbps
+    attached initiator port: ssp=1 stp=1 smp=1
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5002538b71a30392
+    attached SAS address = 0x5003048002fdda0b
+    attached phy identifier = 12
+    Invalid DWORD count = 4
+    Running disparity error count = 4
+    Loss of DWORD synchronization = 1
+    Phy reset problem = 0
+    Phy event descriptors:
+     Received ERROR  count: 0
+     Received address frame error count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Received retry-class OPEN_REJECT count: 4631
+     Received SSP frame error count: 0
+relative target port id = 2
+  generation code = 3
+  number of phys = 1
+  phy identifier = 1
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5002538b71a30393
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+    Phy event descriptors:
+     Received ERROR  count: 0
+     Received address frame error count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Received retry-class OPEN_REJECT count: 0
+     Received SSP frame error count: 0
+

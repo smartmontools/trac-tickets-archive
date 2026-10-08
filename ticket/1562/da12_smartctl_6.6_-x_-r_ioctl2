@@ -1,0 +1,406 @@
+smartctl 6.6 2017-11-05 r4594 [FreeBSD 12.3-STABLE amd64] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ [inquiry: 12 00 00 00 24 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=36:
+ 00     00 00 07 12 c5 01 10 03  53 41 4d 53 55 4e 47 20
+ 10     4d 5a 49 4c 54 33 54 38  48 42 4c 53 2f 30 30 37
+ 20     47 58 41 30
+  status=0x0
+ [inquiry: 12 01 00 00 fc 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0xeb
+  Incoming data, len=17:
+ 00     00 00 00 0d 00 80 83 86  87 88 8d 90 91 b0 b1 b2
+ 10     b7
+  status=0x0
+ [inquiry: 12 00 00 00 24 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=36:
+ 00     00 00 07 12 c5 01 10 03  53 41 4d 53 55 4e 47 20
+ 10     4d 5a 49 4c 54 33 54 38  48 42 4c 53 2f 30 30 37
+ 20     47 58 41 30
+  status=0x0
+=== START OF INFORMATION SECTION ===
+Vendor:               SAMSUNG
+Product:              MZILT3T8HBLS/007
+Revision:             GXA0
+Compliance:           SPC-5
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+  status=0x0
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=32:
+ 00     00 00 00 01 bf 1f 72 af  00 00 02 00 00 03 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+  status=0x0
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=32:
+ 00     00 00 00 01 bf 1f 72 af  00 00 02 00 00 03 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+  status=0x0
+Physical block size:  4096 bytes
+ [inquiry: 12 01 b2 00 08 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=8:
+ 00     00 b2 00 04 00 e6 01 00
+  status=0x0
+LU is resource provisioned, LBPRZ=1
+ [inquiry: 12 01 b1 00 40 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=64:
+ 00     00 b1 00 3c 00 01 00 03  03 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+  status=0x0
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x28
+  Incoming data, len=24:
+ 00     17 00 10 08 ff ff ff ff  00 00 02 00 9c 0a 10 06
+ 10     00 00 00 00 00 00 00 01
+  status=0x0
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x28
+  Incoming data, len=24:
+ 00     17 00 10 08 ff ff ff ff  00 00 02 00 9c 0a bf 0f
+ 10     ff ff ff ff ff ff ff ff
+  status=0x0
+ [inquiry: 12 01 83 00 fc 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0xb0
+  Incoming data, len=76:
+ 00     00 83 00 48 01 03 00 08  50 02 53 8b 71 a3 03 90
+ 10     61 93 00 08 50 02 53 8b  71 a3 03 92 61 94 00 04
+ 20     00 00 00 01 61 a3 00 08  50 02 53 8b 71 a3 03 91
+ 30     03 28 00 18 6e 61 61 2e  35 30 30 32 35 33 38 42
+ 40     37 31 41 33 30 33 39 31  00 00 00 00
+  status=0x0
+Logical Unit id:      0x5002538b71a30390
+ [inquiry: 12 01 80 00 fc 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0xe4
+  Incoming data, len=24:
+ 00     00 80 00 14 53 35 47 30  4e 47 30 52 41 30 31 30
+ 10     32 30 20 20 20 20 20 20
+  status=0x0
+Serial number:        S5G0NG0RA01020
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Sun Jan 23 00:15:14 2022 EET
+ [test unit ready: 00 00 00 00 00 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  status=0x0
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+ [mode sense(6): 1a 00 08 00 40 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x20
+  Incoming data, len=32:
+ 00     1f 00 10 08 ff ff ff ff  00 00 02 00 88 12 04 00
+ 10     ff ff 00 00 ff ff ff ff  00 ff 00 ff 00 00 00 00
+  status=0x0
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     00 00 00 0e
+  status=0x0
+ [log sense: 4d 00 40 00 00 00 00 00 12 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=18:
+ 00     00 00 00 0e 00 02 03 05  06 0d 0e 0f 10 11 15 18
+ 10     1a 2f
+  status=0x0
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     2f 00 00 e4
+  status=0x0
+ [log sense: 4d 00 6f 00 00 00 00 00 e8 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=232:
+ 00     2f 00 00 e4 00 00 03 08  00 00 1a 00 00 00 00 00
+ 10     00 01 03 08 00 00 00 00  00 00 00 0f 00 09 03 08
+ 20     00 00 00 00 00 00 00 20  00 0c 03 08 00 00 00 00
+ 30     00 00 00 02 00 ad 03 08  00 00 00 00 00 00 00 06
+ 40     00 b2 03 08 00 00 00 00  00 00 00 57 00 b4 03 08
+ 50     00 00 00 00 00 00 00 00  00 b5 03 08 00 00 00 00
+ 60     00 00 00 00 00 b6 03 08  00 00 00 00 00 00 00 00
+ 70     00 bb 03 08 00 00 00 00  00 00 00 00 00 be 03 08
+ 80     00 00 00 00 00 00 00 00  00 c2 03 08 00 00 00 00
+ 90     00 00 00 21 00 c7 03 08  00 00 00 00 00 00 00 00
+ a0     00 c8 03 08 01 6f 01 6b  01 69 00 1a 00 c9 03 08
+ b0     00 00 00 00 00 00 00 00  00 ca 03 08 00 00 00 00
+ c0     00 00 00 00 00 e9 03 08  00 00 00 01 42 f9 5b fe
+ d0     00 ea 03 08 00 00 00 00  d4 f1 a6 a2 00 eb 03 08
+ e0     00 00 00 06 b6 ef 80 00
+  status=0x0
+ [request sense: 03 00 00 00 12 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 10  00 00 00 00 00 00 00 80
+ 10     00 00
+  status=0x0
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     0d 00 00 0c
+  status=0x0
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 03 02  00 1a 00 01 03 02 00 4a
+  status=0x0
+SMART Health Status: OK
+
+ [log sense: 4d 00 51 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     11 00 00 08
+  status=0x0
+ [log sense: 4d 00 51 00 00 00 00 00 0c 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=12:
+ 00     11 00 00 08 00 01 03 04  00 00 00 00
+  status=0x0
+Percentage used endurance indicator: 0%
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     0d 00 00 0c
+  status=0x0
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 03 02  00 1a 00 01 03 02 00 4a
+  status=0x0
+Current Drive Temperature:     26 C
+Drive Trip Temperature:        74 C
+
+ [log sense: 4d 00 4e 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     0e 00 00 34
+  status=0x0
+ [log sense: 4d 00 4e 00 00 00 00 00 38 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=56:
+ 00     0e 00 00 34 00 01 01 06  32 30 32 31 34 32 00 02
+ 10     01 06 20 20 20 20 20 20  00 03 03 04 ff ff ff ff
+ 20     00 04 03 04 00 00 00 02  00 05 03 04 00 00 00 00
+ 30     00 06 03 04 00 00 00 00
+  status=0x0
+Manufactured in week 42 of year 2021
+Accumulated start-stop cycles:  2
+Specified load-unload count over device lifetime:  0
+Accumulated load-unload cycles:  0
+ [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=8:
+ 00     00 0c 00 01 00 00 00 00
+  status=0x0
+Elements in grown defect list: 0
+
+ [log sense: 4d 00 43 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     03 00 00 54
+  status=0x0
+ [log sense: 4d 00 43 00 00 00 00 00 58 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=88:
+ 00     03 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00
+ 40     00 05 00 08 00 00 01 b0  8a da 79 10 00 06 00 08
+ 50     00 00 00 00 00 00 00 00
+  status=0x0
+ [log sense: 4d 00 42 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     02 00 00 54
+  status=0x0
+ [log sense: 4d 00 42 00 00 00 00 00 58 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=88:
+ 00     02 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00
+ 40     00 05 00 08 00 00 02 90  0a 82 db f0 00 06 00 08
+ 50     00 00 00 00 00 00 00 00
+  status=0x0
+ [log sense: 4d 00 45 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     05 00 00 54
+  status=0x0
+ [log sense: 4d 00 45 00 00 00 00 00 58 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=88:
+ 00     05 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00
+ 40     00 05 00 08 00 00 00 00  00 00 00 00 00 06 00 08
+ 50     00 00 00 00 00 00 00 00
+  status=0x0
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0       1857.755           0
+write:         0        0         0         0          0       2817.675           0
+ [log sense: 4d 00 46 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     06 00 00 0c
+  status=0x0
+ [log sense: 4d 00 46 00 00 00 00 00 10 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=16:
+ 00     06 00 00 0c 00 00 00 08  00 00 00 00 00 00 00 00
+  status=0x0
+
+Non-medium error count:        0
+
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x28
+  Incoming data, len=24:
+ 00     17 00 10 08 ff ff ff ff  00 00 02 00 8a 0a 00 10
+ 10     00 80 00 00 00 00 0e 10
+  status=0x0
+ [request sense: 03 00 00 00 12 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 10  00 00 00 00 00 00 00 80
+ 10     00 00
+  status=0x0
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     10 00 01 90
+  status=0x0
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 02 03 10 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 03 03 10
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 04 03 10 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 05 03 10  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 06 03 10 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 07 03 10
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 08 03 10 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 09 03 10  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 0a 03 10 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 0b 03 10
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 0c 03 10 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 0d 03 10  00 00 00 00 00 00 00 00
+  status=0x0
+No self-tests have been logged
+
+ [log sense: 4d 00 55 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     15 00 00 10
+  status=0x0
+ [log sense: 4d 00 55 00 00 00 00 00 14 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=20:
+ 00     15 00 00 10 00 00 03 0c  00 00 07 ac 00 01 00 00
+ 10     0c 6c 00 00
+  status=0x0
+Background scan results log
+  Status: scan is active
+    Accumulated power on time, hours:minutes 32:44 [1964 minutes]
+    Number of background scans performed: 0,  scan progress: 4.85%
+    Number of background medium scans performed: 0
+
+ [log sense: 4d 00 58 00 00 00 00 00 04 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=4:
+ 00     18 00 00 f0
+  status=0x0
+ [log sense: 4d 00 58 00 00 00 00 00 f4 00 ]
+  CAM status=0x1, SCSI status=0x0, resid=0x0
+  Incoming data, len=244:
+ 00     18 00 00 f0 00 01 03 74  06 00 03 01 00 00 00 6c
+ 10     10 4b 0e 00 50 02 53 8b  71 a3 03 92 50 03 04 80
+ 20     02 fd da 0b 0c 00 00 00  00 00 00 00 00 00 00 04
+ 30     00 00 00 04 00 00 00 01  00 00 00 00 00 00 0c 05
+ 40     00 00 00 06 00 00 00 00  00 00 00 00 00 00 00 20
+ 50     00 00 00 00 00 00 00 00  00 00 00 22 00 00 00 00
+ 60     00 00 00 00 00 00 00 24  00 00 12 17 00 00 00 00
+ 70     00 00 00 43 00 00 00 00  00 00 00 00 00 02 03 74
+ 80     06 00 03 01 00 01 00 6c  00 00 00 00 50 02 53 8b
+ 90     71 a3 03 93 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 0c 05  00 00 00 06 00 00 00 00
+ c0     00 00 00 00 00 00 00 20  00 00 00 00 00 00 00 00
+ d0     00 00 00 22 00 00 00 00  00 00 00 00 00 00 00 24
+ e0     00 00 00 00 00 00 00 00  00 00 00 43 00 00 00 00
+ f0     00 00 00 00
+  status=0x0
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 3
+  number of phys = 1
+  phy identifier = 0
+    attached device type: SAS or SATA device
+    attached reason: unknown
+    reason: loss of dword synchronization
+    negotiated logical link rate: phy enabled; 12 Gbps
+    attached initiator port: ssp=1 stp=1 smp=1
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5002538b71a30392
+    attached SAS address = 0x5003048002fdda0b
+    attached phy identifier = 12
+    Invalid DWORD count = 4
+    Running disparity error count = 4
+    Loss of DWORD synchronization = 1
+    Phy reset problem = 0
+    Phy event descriptors:
+     Received ERROR  count: 0
+     Received address frame error count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Received retry-class OPEN_REJECT count: 4631
+     Received SSP frame error count: 0
+relative target port id = 2
+  generation code = 3
+  number of phys = 1
+  phy identifier = 1
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5002538b71a30393
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+    Phy event descriptors:
+     Received ERROR  count: 0
+     Received address frame error count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Received retry-class OPEN_REJECT count: 0
+     Received SSP frame error count: 0
+

@@ -1,0 +1,60 @@
+smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.13.0-21-generic] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     WDC WD102KFBX-68M95N0
+Firmware Version: 13501070
+User Capacity:    10,000,831,348,736 bytes [10.0 TB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA/ATAPI-7 (minor revision not indicated)
+Local Time is:    Thu Nov 11 13:17:31 2021 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Disabled
+Rd look-ahead is: Disabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Unavailable
+
+=== START OF READ SMART DATA SECTION ===
+SMART Status not supported: Incomplete response, ATA output registers missing
+SMART overall-health self-assessment test result: PASSED
+Warning: This result is based on an Attribute check.
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x00) 	Offline data collection not supported.
+SMART capabilities:            (0x0000)	Automatic saving of SMART data					is not implemented.
+Error logging capability:        (0x00)	Error logging NOT supported.
+					No General Purpose Logging support.
+
+Read SMART Log Directory failed: scsi error aborted command
+
+General Purpose Log Directory not supported
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+
+SMART Error Log not supported
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+SMART Self-test Log not supported
+
+Selective Self-tests/Logging not supported
+
+SCT Commands not supported
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11) not supported
+

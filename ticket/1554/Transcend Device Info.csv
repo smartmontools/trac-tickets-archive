@@ -1,0 +1,41 @@
+Identify Info,,
+,,
+ Model Name,  TS128GMSA370I,
+ Serial Num,  F043400004,
+ Firmware,  P1225CH1,
+ Support Interface,  SATA-3,
+ Current Interface,  SATA-3,
+,,
+,,
+SMART Info,,
+,,
+ [0x01],  Read Error Rate,0
+ [0x05],  Reallocated Sectors Count,0
+ [0x09],  Power-On Hour Count,67
+ [0x0C],  Power Cycle Count,4808
+ [0xA0],  Uncorrectable sectors count when read/write,0
+ [0xA1],  Number of Valid Spare Blocks,152
+ [0xA3],  Number of Initial Invalid Blocks,13
+ [0xA4],  Total Erase Count,43672
+ [0xA5],  Maximum Erase Count,68
+ [0xA6],  Minimum Erase Count,1
+ [0xA7],  Average Erase Count,20
+ [0xA8],  Max Erase Count of Spec,3000
+ [0xA9],  Remain Life (percentage),100
+ [0xAF],  Program fail count in worst die,0
+ [0xB0],  Erase fail count in worst die,0
+ [0xB1],  Total Wear Level Count,0
+ [0xB2],  Runtime Invalid Block Count,0
+ [0xB5],  Total Program Fail Count,0
+ [0xB6],  Total Erase Fail Count,0
+ [0xC0],  Power-Off Retract Count,17
+ [0xC2],  Controlled Temperature,19
+ [0xC3],  Hardware ECC Recovered,0
+ [0xC4],  Reallocation Event Count,0
+ [0xC5],  Current Pending Sector Count,0
+ [0xC6],  Uncorrectable Error Count Off-Line,0
+ [0xC7],  Ultra DMA CRC Error Count,0
+ [0xE8],  Available Reserved Space,100
+ [0xF1],  Total LBA Written (each write unit=32MB),7605
+ [0xF2],  Total LBA Read (each read unit=32MB),37129
+ [0xF5],  Flash Write Sector Count,87344

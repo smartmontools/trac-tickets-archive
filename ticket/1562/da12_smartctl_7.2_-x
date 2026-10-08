@@ -1,0 +1,42 @@
+smartctl 7.2 2021-09-14 r5236 [FreeBSD 12.3-STABLE amd64] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SAMSUNG
+Product:              MZILT3T8HBLS/007
+Revision:             GXA0
+Compliance:           SPC-5
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Logical Unit id:      0x5002538b71a30390
+Serial number:        S5G0NG0RA01020
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Sun Jan 23 00:13:19 2022 EET
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     26 C
+Drive Trip Temperature:        74 C
+
+Elements in grown defect list: 0
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
+Background scan results log
+  Status: scan is active
+    Accumulated power on time, hours:minutes 32:42 [1962 minutes]
+    Number of background scans performed: 0,  scan progress: 4.85%
+    Number of background medium scans performed: 0
+
