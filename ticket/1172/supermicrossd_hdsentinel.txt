@@ -1,0 +1,187 @@
+  -- Physical Disk Information - Disk: #6: SuperMicro SSD --
+
+   Hard Disk Summary
+   -------------------
+    Hard Disk Number  . . . . . . . . . . . . . . . . : 6
+    Interface . . . . . . . . . . . . . . . . . . . . : S-ATA Gen3, 6 Gbps
+    Hard Disk Model ID  . . . . . . . . . . . . . . . : SuperMicro SSD
+    Firmware Revision . . . . . . . . . . . . . . . . : SOB20R
+    Hard Disk Serial Number . . . . . . . . . . . . . : SMC0515D90717B692094
+    SSD Controller  . . . . . . . . . . . . . . . . . : Transcend TS6500 / Silicon Motion SM2246 / SM223x
+    Total Size  . . . . . . . . . . . . . . . . . . . : 30208 MB
+    Current Temperature . . . . . . . . . . . . . . . : 34 °C (93 °F)
+    Maximum Temperature (during Entire Lifespan)  . . : 50 °C (122 °F)
+    Power On Time . . . . . . . . . . . . . . . . . . : 387 days, 19 hours
+    Estimated Remaining Lifetime  . . . . . . . . . . : 745 days
+    Lifetime Writes . . . . . . . . . . . . . . . . . : 177.31 GB
+    Health  . . . . . . . . . . . . . . . . . . . . . : ##############------ 72 % (Good)
+    Performance . . . . . . . . . . . . . . . . . . . : #################### 100 % (Excellent)
+
+    28 errors reported during write to the device.
+    At this point, warranty replacement of the disk is not yet possible, only if the health drops further.
+    It is recommended to examine the log of the disk regularly. All new problems found will be logged there.
+      It is recommended to continuously monitor the hard disk status.
+
+   ATA Information
+   -----------------
+    Hard Disk Cylinders . . . . . . . . . . . . . . . : 61375
+    Hard Disk Heads . . . . . . . . . . . . . . . . . : 16
+    Hard Disk Sectors . . . . . . . . . . . . . . . . : 63
+    ATA Revision  . . . . . . . . . . . . . . . . . . : 9
+    Transport Version . . . . . . . . . . . . . . . . : SATA Rev 2.6
+    Total Sectors . . . . . . . . . . . . . . . . . . : 61865984
+    Bytes Per Sector  . . . . . . . . . . . . . . . . : 512
+    Multiple Sectors  . . . . . . . . . . . . . . . . : 1
+    Error Correction Bytes  . . . . . . . . . . . . . : 0
+    Unformatted Capacity  . . . . . . . . . . . . . . : 30208 MB
+    Maximum PIO Mode  . . . . . . . . . . . . . . . . : 1
+    Maximum Multiword DMA Mode  . . . . . . . . . . . : 2
+    Maximum UDMA Mode . . . . . . . . . . . . . . . . : 6 Gbps (6)
+    Active UDMA Mode  . . . . . . . . . . . . . . . . : 6 Gbps (6)
+    Minimum Multiword DMA Transfer Time . . . . . . . : 120 ns
+    Recommended Multiword DMA Transfer Time . . . . . : 120 ns
+    Minimum PIO Transfer Time Without IORDY . . . . . : 120 ns
+    Minimum PIO Transfer Time With IORDY  . . . . . . : 120 ns
+    ATA Control Byte  . . . . . . . . . . . . . . . . : Valid
+    ATA Checksum Value  . . . . . . . . . . . . . . . : Valid
+
+   Acoustic Management Configuration
+   -----------------------------------
+    Acoustic Management . . . . . . . . . . . . . . . : Supported
+    Acoustic Management . . . . . . . . . . . . . . . : Disabled
+    Current Acoustic Level  . . . . . . . . . . . . . : Default (00h)
+    Recommended Acoustic Level  . . . . . . . . . . . : Default (00h)
+
+   ATA Features
+   --------------
+    Read Ahead Buffer . . . . . . . . . . . . . . . . : Supported, Enabled
+    DMA . . . . . . . . . . . . . . . . . . . . . . . : Supported
+    Ultra DMA . . . . . . . . . . . . . . . . . . . . : Supported
+    S.M.A.R.T.  . . . . . . . . . . . . . . . . . . . : Supported
+    Power Management  . . . . . . . . . . . . . . . . : Supported
+    Write Cache . . . . . . . . . . . . . . . . . . . : Supported
+    Host Protected Area . . . . . . . . . . . . . . . : Supported
+    HPA Security Extensions . . . . . . . . . . . . . : Supported
+    Advanced Power Management . . . . . . . . . . . . : Not supported
+    Extended Power Management . . . . . . . . . . . . : Not supported
+    Power Up In Standby . . . . . . . . . . . . . . . : Not supported
+    48-bit LBA Addressing . . . . . . . . . . . . . . : Supported
+    Device Configuration Overlay  . . . . . . . . . . : Supported
+    IORDY Support . . . . . . . . . . . . . . . . . . : Supported
+    Read/Write DMA Queue  . . . . . . . . . . . . . . : Not supported
+    NOP Command . . . . . . . . . . . . . . . . . . . : Supported
+    Trusted Computing . . . . . . . . . . . . . . . . : Not supported
+    64-bit World Wide ID  . . . . . . . . . . . . . . : 5D517190007B9400
+    Streaming . . . . . . . . . . . . . . . . . . . . : Not supported
+    Media Card Pass Through . . . . . . . . . . . . . : Not supported
+    General Purpose Logging . . . . . . . . . . . . . : Supported
+    Error Logging . . . . . . . . . . . . . . . . . . : Supported
+    CFA Feature Set . . . . . . . . . . . . . . . . . : Not supported
+    CFast Device  . . . . . . . . . . . . . . . . . . : Not supported
+    Long Physical Sectors (1) . . . . . . . . . . . . : Not supported
+    Long Logical Sectors  . . . . . . . . . . . . . . : Not supported
+    Write-Read-Verify . . . . . . . . . . . . . . . . : Not supported
+    NV Cache Feature  . . . . . . . . . . . . . . . . : Not supported
+    NV Cache Power Mode . . . . . . . . . . . . . . . : Not supported
+    NV Cache Size . . . . . . . . . . . . . . . . . . : Not supported
+    Free-fall Control . . . . . . . . . . . . . . . . : Not supported
+    Free-fall Control Sensitivity . . . . . . . . . . : Not supported
+    Service Interrupt . . . . . . . . . . . . . . . . : Not supported
+    Device Encrypts All User Data . . . . . . . . . . : No
+    IDLE IMMEDIATE Command With UNLOAD Feature  . . . : Not supported
+    Nominal Media Rotation Rate . . . . . . . . . . . : Non-rotating Media (SSD)
+
+   SSD Features
+   --------------
+    Data Set Management . . . . . . . . . . . . . . . : Supported
+    TRIM Command  . . . . . . . . . . . . . . . . . . : Supported
+    Deterministic Read After TRIM . . . . . . . . . . : Supported
+
+   S.M.A.R.T. Details
+   --------------------
+    Off-line Data Collection Status . . . . . . . . . : Never Started
+    Self Test Execution Status  . . . . . . . . . . . : Successfully Completed
+    Total Time To Complete Off-line Data Collection . : 0 seconds
+    Execute Off-line Immediate  . . . . . . . . . . . : Supported
+    Abort/restart Off-line By Host  . . . . . . . . . : Not supported
+    Off-line Read Scanning  . . . . . . . . . . . . . : Not supported
+    Short Self-test . . . . . . . . . . . . . . . . . : Supported
+    Extended Self-test  . . . . . . . . . . . . . . . : Supported
+    Conveyance Self-test  . . . . . . . . . . . . . . : Supported
+    Selective Self-Test . . . . . . . . . . . . . . . : Supported
+    Save Data Before/After Power Saving Mode  . . . . : Not supported
+    Enable/Disable Attribute Autosave . . . . . . . . : Supported
+    Error Logging Capability  . . . . . . . . . . . . : Supported
+    Short Self-test Estimated Time  . . . . . . . . . : 2 minutes
+    Extended Self-test Estimated Time . . . . . . . . : 10 minutes
+    Conveyance Self-test Estimated Time . . . . . . . : 2 minutes
+
+   Security Mode
+   ---------------
+    Security Mode . . . . . . . . . . . . . . . . . . : Supported
+    Security Erase  . . . . . . . . . . . . . . . . . : Supported
+    Security Erase Time . . . . . . . . . . . . . . . : 4 minutes
+    Security Enhanced Erase Feature . . . . . . . . . : Supported
+    Security Enhanced Erase Time  . . . . . . . . . . : 4 minutes
+    Security Enabled  . . . . . . . . . . . . . . . . : No
+    Security Locked . . . . . . . . . . . . . . . . . : No
+    Security Frozen . . . . . . . . . . . . . . . . . : Yes
+    Security Counter Expired  . . . . . . . . . . . . : No
+    Security Level  . . . . . . . . . . . . . . . . . : High
+
+   Serial ATA Features
+   ---------------------
+    S-ATA Compliance  . . . . . . . . . . . . . . . . : Yes
+    S-ATA I Signaling Speed (1.5 Gps) . . . . . . . . : Supported
+    S-ATA II Signaling Speed (3 Gps)  . . . . . . . . : Supported
+    S-ATA Gen3 Signaling Speed (6 Gps)  . . . . . . . : Supported
+    Receipt Of Power Management Requests From Host  . : Supported
+    PHY Event Counters  . . . . . . . . . . . . . . . : Not supported
+    Non-Zero Buffer Offsets In DMA Setup FIS  . . . . : Not supported
+    DMA Setup Auto-Activate Optimization  . . . . . . : Supported, Enabled
+    Device Initiating Interface Power Management  . . : Supported, Disabled
+    In-Order Data Delivery  . . . . . . . . . . . . . : Not supported
+    Asynchronous Notification . . . . . . . . . . . . : Not supported
+    Software Settings Preservation  . . . . . . . . . : Supported, Enabled
+    Native Command Queuing (NCQ)  . . . . . . . . . . : Supported
+    Queue Length  . . . . . . . . . . . . . . . . . . : 32
+    NCQ Streaming . . . . . . . . . . . . . . . . . . : Not supported
+    NCQ Autosense . . . . . . . . . . . . . . . . . . : Not supported
+    Automatic Partial To Slumber Translations . . . . : Not supported
+    Rebuild Assist  . . . . . . . . . . . . . . . . . : Not supported
+    Hybrid Information  . . . . . . . . . . . . . . . : Not supported
+    Device Sleep (DevSleep) . . . . . . . . . . . . . : Supported, Disabled
+    DevSleep To ReducedPwrState . . . . . . . . . . . : Supported
+
+   S.M.A.R.T.
+   ------------
+No.  Attribute                Thre.. Value  Worst  Data                Status                   Flags
+1    Read Error Rate          0      100    100    000000000000        OK (Always passing)
+5    Reallocated Sectors Co.. 0      100    100    000000000000        OK (Always passing)
+9    Power On Time Count      0      100    100    00000000245B        OK (Always passing)
+12   Power Cycle Count        0      100    100    00000000001F        OK (Always passing)
+15   Vendor-specific          0      100    100    000003B00000        OK (Always passing)
+160  Uncorrectable Sectors .. 0      100    100    000000000000        OK (Always passing)
+161  Number of Valid Spare .. 0      100    100    000000000091        OK (Always passing)
+163  Number of Initial Inva.. 0      100    100    00000000001C        OK (Always passing)
+164  Total Erase Count        0      100    100    000000169B27        OK (Always passing)
+165  Maximum Erase Count      0      100    100    0000000002FF        OK (Always passing)
+166  Minimum Erase Count      0      100    100    000000000298        OK (Always passing)
+167  Average Erase Count      0      100    100    0000000002CB        OK (Always passing)
+168  Max Erase Count of Spec  0      100    100    000000000BB8        OK (Always passing)
+172  Erase Fail Count         0      100    100    000000000000        OK (Always passing)
+175  Program Fail Count In .. 0      100    100    00000000001C        OK (Always passing)
+177  Total Wearlevel Count    0      100    100    000000002D3F        OK (Always passing)
+181  Total Program Fail Count 0      100    100    000000000000        OK (Always passing)
+187  Uncorrectable Error Co.. 0      100    100    000000000000        OK (Always passing)
+192  Power-off Retract Count  0      100    100    000000000002        OK (Always passing)
+194  Controlled Temperature   0      100    100    003200110022        OK (Always passing)
+195  Hardware ECC Recovered   0      100    100    000000001869        OK (Always passing)
+197  Current Pending Sector.. 0      100    100    000000000000        OK (Always passing)
+198  Uncorrectable Error Co.. 0      100    100    000000000000        OK (Always passing)
+199  UltraDMA CRC Error Count 0      100    100    000000000000        OK (Always passing)
+231  SSD Life Left            0      100    100    000000000064        OK (Always passing)
+232  Available Reserved Space 0      100    100    00000000004D        OK (Always passing)
+233  Vendor-specific          0      100    100    000000005A6C        OK (Always passing)
+241  Total Data Written (32.. 0      100    100    00000000162A        OK (Always passing)
+242  Total Data Read (32MB)   0      100    100    000000000151        OK (Always passing)

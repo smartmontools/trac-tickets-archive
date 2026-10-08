@@ -1,0 +1,146 @@
+smartctl 6.6 2017-11-05 r4594 [x86_64-w64-mingw32-2016-1607] (sf-6.6-1)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Dell Certified Intel S4x00/D3-S4x10 Series SSDs
+Device Model:     SSDSC2KB038T7R
+Serial Number:    PHYS7461009N3P8EGN
+LU WWN Device Id: 5 5cd2e4 14e3c0391
+Add. Product Id:  DELL(tm)
+Firmware Version: SCV1DL56
+User Capacity:    3,840,755,982,336 bytes [3.84 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ACS-3 T13/2161-D revision 5
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Tue Dec 18 11:22:53 2018 PST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Unavailable
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    2) seconds.
+Offline data collection
+capabilities: 			 (0x79) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (  60) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (  60) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     -OSR--   130   130   039    -    11718934
+  5 Reallocated_Sector_Ct   PO--CK   100   100   001    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    617
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    45
+ 13 Read_Soft_Error_Rate    -OSRC-   085   085   000    -    1417350926614
+170 Available_Reserved_SpacePO--CK   100   100   010    -    0
+174 Unsafe_Shutdown_Count   -O--CK   100   100   000    -    42
+179 Used_Rsvd_Blk_Cnt_Tot   PO--CK   100   100   010    -    0
+180 Unused_Rsvd_Blk_Cnt_Tot -O--CK   100   100   000    -    42040
+181 Program_Fail_Cnt_Total  -O-RCK   100   100   000    -    0
+182 Erase_Fail_Count_Total  -O-RCK   100   100   000    -    0
+184 End-to-End_Error        -O--CK   100   100   000    -    0
+194 Temperature_Celsius     -O---K   100   100   000    -    24
+195 Uncorrectable_Error_Cnt -O--CK   100   100   000    -    0
+197 Current_Pending_Sector  -O--C-   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 CRC_Error_Count         -OSRCK   100   100   000    -    0
+201 Power_Loss_Cap_Test     PO--CK   100   100   010    -    2703 (51 2)
+202 End_of_Life             POS--K   100   100   000    -    0
+225 Host_Writes_32MiB       -O--CK   100   100   000    -    99086
+226 Workld_Media_Wear_Indic -O--CK   100   100   000    -    65535
+227 Workld_Host_Reads_Perc  -O--CK   100   100   000    -    65535
+228 Workload_Minutes        -O--CK   100   100   000    -    65535
+232 Available_Reservd_Space PO--CK   100   100   010    -    0
+233 Total_LBAs_Written      -O--CK   100   100   000    -    99086
+234 Thermal_Throttle_Status -O--CK   100   100   000    -    0/0
+241 Total_LBAs_Written      -O--CK   100   100   000    -    99086
+242 Total_LBAs_Read         -O--CK   100   100   000    -    55828
+245 Percent_Life_Remaining  -O--CK   100   100   000    -    100
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x02           SL  R/O      8  Comprehensive SMART error log
+0x03       GPL     R/O     20  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      2  Extended self-test log
+0x08       GPL     R/O      2  Power Conditions log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x99-0x9a  GPL,SL  R/W      1  Host vendor specific log
+0xb8           SL  VS       1  Device vendor specific log
+0xb9           SL  VS     240  Device vendor specific log
+0xba       GPL     VS    1280  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      8  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (20 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (2 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%       617         -
+
+Read SMART Selective Self-test Log failed: Input/output error
+
+Read SCT Status failed: Input/output error
+
+Read SCT Status failed: Input/output error
+SCT (Get) Error Recovery Control command failed
+
+ATA_READ_LOG_EXT (addr=0x04:0x00, page=0, n=1) failed: Input/output error
+Read Device Statistics page 0x00 failed
+
+Pending Defects log (GP Log 0x0c) not supported
+
+ATA_READ_LOG_EXT (addr=0x11:0x00, page=0, n=1) failed: Input/output error
+Read SATA Phy Event Counters failed
+

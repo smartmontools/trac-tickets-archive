@@ -1,0 +1,306 @@
+smartctl 6.6 2017-11-05 r4594 [x86_64-linux-4.19.0-1-amd64] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     INTEL SSDSCKKW256G8
+Firmware Version: LHF002C
+User Capacity:    256 060 514 304 bytes [256 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Form Factor:      M.2
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-3 (minor revision not indicated)
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed Jan 16 21:54:31 2019 MSK
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     254 (maximum performance)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Write SCT (Get) Feature Control Command failed: scsi error badly formed scsi parameters
+Wt Cache Reorder: Unknown (SCT Feature Control command failed)
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x53) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  15) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   -O--CK   100   100   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    25
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    16
+170 Unknown_Attribute       PO--CK   100   100   010    -    0
+171 Unknown_Attribute       -O--CK   100   100   000    -    0
+172 Unknown_Attribute       -O--CK   100   100   000    -    0
+173 Unknown_Attribute       PO--CK   100   100   005    -    196608
+174 Unknown_Attribute       -O--CK   100   100   000    -    2
+183 Runtime_Bad_Block       -O--CK   100   100   000    -    0
+184 End-to-End_Error        PO--CK   100   100   090    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+190 Airflow_Temperature_Cel -O--CK   034   065   000    -    34 (Min/Max 18/65)
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    2
+199 UDMA_CRC_Error_Count    -O--CK   100   100   000    -    0
+225 Unknown_SSD_Attribute   -O--CK   100   100   000    -    4038
+226 Unknown_SSD_Attribute   -O--CK   100   100   000    -    0
+227 Unknown_SSD_Attribute   -O--CK   100   100   000    -    0
+228 Power-off_Retract_Count -O--CK   100   100   000    -    0
+232 Available_Reservd_Space PO--CK   100   100   010    -    0
+233 Media_Wearout_Indicator -O--CK   100   100   000    -    0
+236 Unknown_Attribute       -O--CK   100   100   000    -    0
+241 Total_LBAs_Written      -O--CK   100   100   000    -    4038
+242 Total_LBAs_Read         -O--CK   100   100   000    -    2727
+249 Unknown_Attribute       -O--CK   100   100   000    -    112
+252 Unknown_Attribute       -O--CK   100   100   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01       GPL,SL  R/O      1  Summary SMART error log
+0x02       GPL,SL  R/O      1  Comprehensive SMART error log
+0x03       GPL,SL  R/O      1  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06       GPL,SL  R/O      1  SMART self-test log
+0x07       GPL,SL  R/O      1  Extended self-test log
+0x09       GPL,SL  R/W      1  Selective self-test log
+0x10       GPL,SL  R/O      1  NCQ Command Error log
+0x11       GPL,SL  R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xdf       GPL,SL  VS       1  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%        25         -
+# 2  Short offline       Completed without error       00%        25         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN               MIN_LBA               MAX_LBA  CURRENT_TEST_STATUS
+    1  10561756848453896906  11863882167472485106  Not_testing
+    2   2966111554234383484  14612614465981833183  Not_testing
+    3  17506084508177610551   8970121828470721933  Not_testing
+    4  16131772445420823331   3978829821956278344  Not_testing
+    5  10199853987589214802   2531949098379416724  Not_testing
+25186  14323353117172533898  14323353117172599433  Read_scanning was completed without error
+Selective self-test flags (0xe3e3):
+  After scanning selected spans, read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 55512 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       0 (0x0000)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                    43 Celsius
+Power Cycle Min/Max Temperature:     29/80 Celsius
+Lifetime    Min/Max Temperature:     24/80 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/100 Celsius
+Min/Max Temperature Limit:            0/100 Celsius
+Temperature History Size (Index):    128 (82)
+
+Index    Estimated Time   Temperature Celsius
+  83    2019-01-16 19:47    41  **********************
+ ...    ..(  2 skipped).    ..  **********************
+  86    2019-01-16 19:50    41  **********************
+  87    2019-01-16 19:51    42  ***********************
+  88    2019-01-16 19:52    41  **********************
+  89    2019-01-16 19:53    43  ************************
+  90    2019-01-16 19:54    41  **********************
+  91    2019-01-16 19:55    41  **********************
+  92    2019-01-16 19:56    44  *************************
+  93    2019-01-16 19:57    42  ***********************
+  94    2019-01-16 19:58    42  ***********************
+  95    2019-01-16 19:59    41  **********************
+  96    2019-01-16 20:00    49  ******************************
+  97    2019-01-16 20:01    26  *******
+  98    2019-01-16 20:02    29  **********
+  99    2019-01-16 20:03    31  ************
+ 100    2019-01-16 20:04    31  ************
+ 101    2019-01-16 20:05    31  ************
+ 102    2019-01-16 20:06    34  ***************
+ 103    2019-01-16 20:07    34  ***************
+ 104    2019-01-16 20:08    35  ****************
+ ...    ..(  3 skipped).    ..  ****************
+ 108    2019-01-16 20:12    35  ****************
+ 109    2019-01-16 20:13    36  *****************
+ 110    2019-01-16 20:14    37  ******************
+ 111    2019-01-16 20:15    43  ************************
+ 112    2019-01-16 20:16    39  ********************
+ 113    2019-01-16 20:17    37  ******************
+ 114    2019-01-16 20:18    38  *******************
+ 115    2019-01-16 20:19    37  ******************
+ 116    2019-01-16 20:20    37  ******************
+ 117    2019-01-16 20:21    36  *****************
+ 118    2019-01-16 20:22    33  **************
+ 119    2019-01-16 20:23    31  ************
+ ...    ..(  2 skipped).    ..  ************
+ 122    2019-01-16 20:26    31  ************
+ 123    2019-01-16 20:27    37  ******************
+ 124    2019-01-16 20:28    35  ****************
+ 125    2019-01-16 20:29    35  ****************
+ 126    2019-01-16 20:30    52  *********************************
+ 127    2019-01-16 20:31    52  *********************************
+   0    2019-01-16 20:32    50  *******************************
+   1    2019-01-16 20:33    50  *******************************
+   2    2019-01-16 20:34    51  ********************************
+   3    2019-01-16 20:35    55  ************************************
+   4    2019-01-16 20:36    35  ****************
+   5    2019-01-16 20:37    32  *************
+   6    2019-01-16 20:38    31  ************
+   7    2019-01-16 20:39    31  ************
+   8    2019-01-16 20:40    31  ************
+   9    2019-01-16 20:41    30  ***********
+  10    2019-01-16 20:42    30  ***********
+  11    2019-01-16 20:43    31  ************
+  12    2019-01-16 20:44    30  ***********
+ ...    ..( 18 skipped).    ..  ***********
+  31    2019-01-16 21:03    30  ***********
+  32    2019-01-16 21:04    32  *************
+  33    2019-01-16 21:05    37  ******************
+  34    2019-01-16 21:06    38  *******************
+  35    2019-01-16 21:07    37  ******************
+  36    2019-01-16 21:08    38  *******************
+  37    2019-01-16 21:09    39  ********************
+  38    2019-01-16 21:10    40  *********************
+  39    2019-01-16 21:11    42  ***********************
+  40    2019-01-16 21:12    38  *******************
+  41    2019-01-16 21:13    38  *******************
+  42    2019-01-16 21:14    37  ******************
+  43    2019-01-16 21:15    38  *******************
+  44    2019-01-16 21:16    37  ******************
+  45    2019-01-16 21:17    39  ********************
+  46    2019-01-16 21:18    42  ***********************
+  47    2019-01-16 21:19    43  ************************
+  48    2019-01-16 21:20    29  **********
+  49    2019-01-16 21:21    31  ************
+  50    2019-01-16 21:22    31  ************
+  51    2019-01-16 21:23    32  *************
+  52    2019-01-16 21:24    30  ***********
+  53    2019-01-16 21:25    30  ***********
+  54    2019-01-16 21:26    32  *************
+  55    2019-01-16 21:27    36  *****************
+  56    2019-01-16 21:28    35  ****************
+  57    2019-01-16 21:29    34  ***************
+  58    2019-01-16 21:30    36  *****************
+  59    2019-01-16 21:31    38  *******************
+  60    2019-01-16 21:32    39  ********************
+  61    2019-01-16 21:33    37  ******************
+  62    2019-01-16 21:34    36  *****************
+  63    2019-01-16 21:35    37  ******************
+  64    2019-01-16 21:36    38  *******************
+  65    2019-01-16 21:37    38  *******************
+  66    2019-01-16 21:38    68  ***************************************+
+  67    2019-01-16 21:39    80  ***************************************+
+  68    2019-01-16 21:40    80  ***************************************+
+  69    2019-01-16 21:41    50  *******************************
+  70    2019-01-16 21:42    50  *******************************
+  71    2019-01-16 21:43    44  *************************
+  72    2019-01-16 21:44    45  **************************
+  73    2019-01-16 21:45    39  ********************
+  74    2019-01-16 21:46    46  ***************************
+  75    2019-01-16 21:47    46  ***************************
+  76    2019-01-16 21:48    47  ****************************
+  77    2019-01-16 21:49    47  ****************************
+  78    2019-01-16 21:50    46  ***************************
+  79    2019-01-16 21:51    46  ***************************
+  80    2019-01-16 21:52    43  ************************
+  81    2019-01-16 21:53    43  ************************
+  82    2019-01-16 21:54    40  *********************
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4              16  ---  Lifetime Power-On Resets
+0x01  0x010  4              25  ---  Power-on Hours
+0x01  0x018  6       264683663  ---  Logical Sectors Written
+0x01  0x020  6         2025891  ---  Number of Write Commands
+0x01  0x028  6       178728934  ---  Logical Sectors Read
+0x01  0x030  6         4519633  ---  Number of Read Commands
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               2  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              43  ---  Current Temperature
+0x05  0x010  1               -  ---  Average Short Term Temperature
+0x05  0x018  1               -  ---  Average Long Term Temperature
+0x05  0x020  1              34  ---  Highest Temperature
+0x05  0x028  1              34  ---  Lowest Temperature
+0x05  0x030  1               -  ---  Highest Average Short Term Temperature
+0x05  0x038  1               -  ---  Lowest Average Short Term Temperature
+0x05  0x040  1               -  ---  Highest Average Long Term Temperature
+0x05  0x048  1               -  ---  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              85  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1               0  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4             176  ---  Number of Hardware Resets
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               0  ---  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0005  2            0  R_ERR response for non-data FIS
+0x000a  2            3  Device-to-host register FISes sent due to a COMRESET
+

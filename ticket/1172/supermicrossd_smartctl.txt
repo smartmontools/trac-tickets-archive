@@ -1,0 +1,102 @@
+# smartctl -a /dev/sde
+smartctl 6.6 2016-05-31 r4324 [x86_64-linux-4.15.18-10-pve] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SuperMicro SSD
+Serial Number:    SMC0515D90717B6J6896
+LU WWN Device Id: 5 15d907 17b000896
+Firmware Version: SOB20R
+User Capacity:    31,675,383,808 bytes [31.6 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-2 (minor revision not indicated)
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Mon Mar 11 13:41:22 2019 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00) Offline data collection activity
+                                was never started.
+                                Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0) The previous self-test routine completed
+                                without error or no self-test has ever
+                                been run.
+Total time to complete Offline
+data collection:                (    0) seconds.
+Offline data collection
+capabilities:                    (0x71) SMART execute Offline immediate.
+                                No Auto Offline data collection support.
+                                Suspend Offline collection upon new
+                                command.
+                                No Offline surface scan supported.
+                                Self-test supported.
+                                Conveyance Self-test supported.
+                                Selective Self-test supported.
+SMART capabilities:            (0x0002) Does not save SMART data before
+                                entering power-saving mode.
+                                Supports SMART auto save timer.
+Error logging capability:        (0x01) Error logging supported.
+                                General Purpose Logging supported.
+Short self-test routine
+recommended polling time:        (   2) minutes.
+Extended self-test routine
+recommended polling time:        (  10) minutes.
+Conveyance self-test routine
+recommended polling time:        (   2) minutes.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x0000   100   100   000    Old_age   Offline      -       0
+  5 Reallocated_Sector_Ct   0x0000   100   100   000    Old_age   Offline      -       0
+  9 Power_On_Hours          0x0000   100   100   000    Old_age   Offline      -       7830
+ 12 Power_Cycle_Count       0x0000   100   100   000    Old_age   Offline      -       14
+ 15 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       61865984
+160 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       0
+161 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       162
+163 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       11
+164 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       55249
+165 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       131
+166 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       4
+167 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       26
+168 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       3000
+172 Unknown_Attribute       0x0000   100   100   000    Old_age   Offline      -       0
+175 Program_Fail_Count_Chip 0x0000   100   100   000    Old_age   Offline      -       11
+177 Wear_Leveling_Count     0x0000   100   100   000    Old_age   Offline      -       2
+181 Program_Fail_Cnt_Total  0x0000   100   100   000    Old_age   Offline      -       0
+187 Reported_Uncorrect      0x0000   100   100   000    Old_age   Offline      -       0
+192 Power-Off_Retract_Count 0x0000   100   100   000    Old_age   Offline      -       1
+194 Temperature_Celsius     0x0000   100   100   000    Old_age   Offline      -       34 (Min/Max 19/50)
+195 Hardware_ECC_Recovered  0x0000   100   100   000    Old_age   Offline      -       5499
+197 Current_Pending_Sector  0x0000   100   100   000    Old_age   Offline      -       0
+198 Offline_Uncorrectable   0x0000   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0000   100   100   000    Old_age   Offline      -       78
+231 Temperature_Celsius     0x0000   100   100   000    Old_age   Offline      -       100
+232 Available_Reservd_Space 0x0000   100   100   000    Old_age   Offline      -       100
+233 Media_Wearout_Indicator 0x0000   100   100   000    Old_age   Offline      -       863
+241 Total_LBAs_Written      0x0000   100   100   000    Old_age   Offline      -       370
+242 Total_LBAs_Read         0x0000   100   100   000    Old_age   Offline      -       222
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
