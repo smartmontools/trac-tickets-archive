@@ -1,0 +1,11 @@
+smartctl 6.6 2016-05-31 r4324 [x86_64-linux-5.3.0-62-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF OFFLINE IMMEDIATE AND SELF-TEST SECTION ===
+Sending command: "Execute SMART Short self-test routine immediately in off-line mode".
+Drive command "Execute SMART Short self-test routine immediately in off-line mode" successful.
+Testing has begun.
+Please wait 2 minutes for test to complete.
+Test will complete after Tue Jul 14 18:54:43 2020
+
+Use smartctl -X to abort test.

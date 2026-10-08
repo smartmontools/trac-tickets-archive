@@ -1,0 +1,19 @@
+  { "Xmore pSLC NAND Industrial M.2 2280 SATA SSD add by REA GmbH",
+    // spec v1.1 send from Xmore/glyn Xmore(R)%20M2CAxxxGXAIMS-003Z%20v1.1.pdf
+    // tested with M2CA032GXAIMS-003Z
+    // added by REA GmbH
+    "M2CA032GXAIMS-003Z",
+    "", "",
+  //default//"-v 1,raw48,Raw_Read_Error_Rate "
+  //default//"-v 9,raw24(raw8),Power_On_Hours "
+  //default//"-v 12,raw48,Power_Cycle_Count "
+    "-v 168,raw48,SATA_PHY_Err_Ct "
+    "-v 169,raw48,Bad_Block_Rate "
+    "-v 170,raw24/raw24:z54z10,Bad_Blk_Ct_Lat/Erl " // Later bad block/Early bad block
+    "-v 173,raw24/raw24:z32z10,MaxAvgErase_Ct "
+    "-v 192,raw48,Unexpect_Power_Loss_Ct "
+    "-v 194,tempminmax,Temperature_Celsius "  // optional
+    "-v 218,raw48,SATA_CRC_Error_Count "
+    "-v 231,raw48,Perc_Rated_Life_Remain "
+    "-v 241,raw48,Host_Writes_GiB "
+  },
