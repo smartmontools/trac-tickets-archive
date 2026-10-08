@@ -1,0 +1,59 @@
+smartctl 6.5 2016-01-24 r4214 [x86_64-linux-4.4.0-92-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST4000NM0095
+Revision:             K002
+Compliance:           SPC-4
+User Capacity:        4,000,787,030,016 bytes [4.00 TB]
+Logical block size:   4096 bytes
+LB provisioning type: unreported, LBPME=0, LBPRZ=0
+Rotation Rate:        7200 rpm
+Form Factor:          3.5 inches
+Logical Unit id:      0x5000c50086bba117
+Serial number:        ZC11EBND0000R729VB20
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Wed Mar  7 15:11:53 2018 UTC
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     37 C
+Drive Trip Temperature:        60 C
+
+Manufactured in week 06 of year 2017
+Specified cycle count over device lifetime:  10000
+Accumulated start-stop cycles:  47
+Specified load-unload count over device lifetime:  300000
+Accumulated load-unload cycles:  163
+Elements in grown defect list: 0
+
+Vendor (Seagate) cache information
+  Blocks sent to initiator = 1895260086
+  Blocks received from initiator = 2301020362
+  Blocks read from cache and sent to initiator = 35025327
+  Number of read and write commands whose size <= segment size = 46067105
+  Number of read and write commands whose size > segment size = 1278816
+
+Vendor (Seagate/Hitachi) factory information
+  number of hours powered up = 2497.80
+  number of minutes until next internal SMART test = 43
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:   3977560906        0         0  3977560906          0       7762.985           0
+write:         0        0         0         0          0       9428.802           0
+
+Non-medium error count:      655
+
+
+[GLTSD (Global Logging Target Save Disable) set. Enable Save with '-S on']
+No self-tests have been logged
+

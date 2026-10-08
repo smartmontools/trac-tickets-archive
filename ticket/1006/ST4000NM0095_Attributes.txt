@@ -1,0 +1,24 @@
+smartctl 6.5 2016-01-24 r4214 [x86_64-linux-4.4.0-92-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF READ SMART DATA SECTION ===
+Current Drive Temperature:     37 C
+Drive Trip Temperature:        60 C
+
+Manufactured in week 06 of year 2017
+Specified cycle count over device lifetime:  10000
+Accumulated start-stop cycles:  47
+Specified load-unload count over device lifetime:  300000
+Accumulated load-unload cycles:  163
+Elements in grown defect list: 0
+
+Vendor (Seagate) cache information
+  Blocks sent to initiator = 1895274880
+  Blocks received from initiator = 2301253639
+  Blocks read from cache and sent to initiator = 35026047
+  Number of read and write commands whose size <= segment size = 46071701
+  Number of read and write commands whose size > segment size = 1278960
+
+Vendor (Seagate/Hitachi) factory information
+  number of hours powered up = 2497.88
+  number of minutes until next internal SMART test = 38

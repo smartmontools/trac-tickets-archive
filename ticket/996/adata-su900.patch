@@ -1,0 +1,12 @@
+diff -ruN smartmontools-7.0/drivedb.h smartmontools-7.0-new/drivedb.h
+--- smartmontools-7.0/drivedb.h	2018-12-27 16:58:07.000000000 +0100
++++ smartmontools-7.0-new/drivedb.h	2019-08-20 11:19:14.079069000 +0200
+@@ -1780,7 +1780,7 @@
+     "MKNSSDRE(1TB|2TB|512GB|500GB|256GB|250GB)|" // MKNSSDRE256GB/N1007C
+     "MKNSSDTR(240|500|250|120|480|240)GB(-LT)?|" // MKNSSDTR500GB/O1126A
+     "LITEON LMH-(128|256|512)V2M-.*|" // LITEON LMH-256V2M-11 MSATA 256GB/FM8110C
+-    "ADATA SP550", // ADATA SP550/O0803B5a
++    "ADATA (SP550|SU900)", // ADATA SP550/O0803B5a
+     "", "",
+   //"-v 1,raw48,Raw_Read_Error_Rate "
+   //"-v 2,raw48,Throughput_Performance "

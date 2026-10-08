@@ -1,0 +1,22 @@
+smartctl 6.5 2016-05-07 r4318 [x86_64-linux-3.14.79-ipfire] (IPFire 2.19)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     MARVELL Raid VD
+Serial Number:    338684c80eb90010
+Firmware Version: MV.R00-0
+User Capacity:    1,000,120,975,360 bytes [1.00 TB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA/ATAPI-7 T13/1532D revision 4a
+Local Time is:    Thu Mar 15 16:47:58 2018 CET
+SMART support is: Unavailable - device lacks SMART capability.
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Unavailable
+Wt Cache Reorder: Unavailable
+
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.
+
