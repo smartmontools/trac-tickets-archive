@@ -1,0 +1,33 @@
+From: Elbandi <bandispam@gmail.com>
+Date: Sat, 4 Apr 2020 12:20:39 +0200
+Subject: [PATCH 1/2] Change dev_jmb39x_raid to JMS56x
+
+---
+ dev_jmb39x_raid.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/dev_jmb39x_raid.cpp b/dev_jmb39x_raid.cpp
+index 5b3cd0e..2eb6a3f 100644
+--- a/dev_jmb39x_raid.cpp
++++ b/dev_jmb39x_raid.cpp
+@@ -174,7 +174,7 @@ static void jmb_set_request_sector(uint8_t (& data)[512], uint32_t cmd_id,
+ {
+   jmbassert(4 <= cmdsize && cmdsize <= 24);
+   memset(data, 0, sizeof(data));
+-  jmb_put_le32(data, 0, 0x197b0322); // SCRAMLED_CMD
++  jmb_put_le32(data, 0, 0x197b0562); // SCRAMLED_CMD
+   jmb_put_le32(data, 4, cmd_id);
+   memcpy(data + 8, cmd, cmdsize);
+   jmb_put_crc(data, jmb_crc(data));
+@@ -210,7 +210,7 @@ static void jmb_check_funcs()
+   jmbassert(jmb_check_crc(data));
+   uint8_t cmd[] = {1, 2, 3, 4, 5, 6, 7};
+   jmb_set_request_sector(data, 42, cmd, sizeof(cmd));
+-  jmbassert(jmb_get_crc(data) == 0xb1f765d7);
++  jmbassert(jmb_get_crc(data) == 0xde10952b);
+   jmbassert(jmb_check_crc(data));
+   jmb_xor(data);
+   jmbassert(jmb_get_sector_type(data) == 2);
+-- 
+1.9.1
+

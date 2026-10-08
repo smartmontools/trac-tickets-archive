@@ -1,0 +1,30 @@
+--- drivedb.h.default	2020-01-06 16:26:02.000000000 +0000
++++ drivedb.h	2020-04-11 03:06:00.019803807 +0000
+@@ -600,7 +600,6 @@
+     "Patriot Pyro|" // tested with Patriot Pyro/332ABBF0
+     "SanDisk SDSSDX(60|120|240|480)GG25|" // SanDisk Extreme, SF-2281, tested with
+       // SDSSDX240GG25/R201
+-    "SanDisk SDSSDA(120|240|480)G|" // SanDisk SSD Plus, tested with SanDisk SDSSDA240G/U21010RL
+     "SuperSSpeed S301 [0-9]*GB|" // SF-2281, tested with SuperSSpeed S301 128GB/503
+     "SG9XCS2D(0?50|100|200|400)GESLT|" // Smart Storage Systems XceedIOPS2, tested with
+       // SG9XCS2D200GESLT/SA03L370
+@@ -651,6 +650,19 @@
+     "-v 241,raw48,Lifetime_Writes_GiB "
+     "-v 242,raw48,Lifetime_Reads_GiB"
+   },
++  { "SandForce Driven SSDs",
++    "SanDisk SDSSDA(120|240|480)G", // SanDisk SSD Plus, tested with SanDisk SDSSDA240G/U21010RL
++    "", "",
++    "-v 5,raw48,Reassigned_Block_Count "
++    "-v 166,raw48,Min_PE_Cycles "
++    "-v 167,raw48,Max_Bad_Blocks_Per_Die "
++    "-v 168,raw48,Max_PE_Cycles "
++    "-v 169,raw48,Total_Bad_Blocks "
++    "-v 170,raw48,Grown_Bad_Blocks "
++    "-v 173,raw48,Average_PE_Cycles "
++    "-v 230,raw48,Media_Wearout_Indicator "
++    "-v 233,raw48,NAND_GiB_Written "
++  },
+   {
+     "StorFly CFast SATA 6Gbps SSDs",
+     // http://datasheet.octopart.com/VSFCS2CC060G-100-Virtium-datasheet-82287733.pdf

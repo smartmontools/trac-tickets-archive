@@ -1,0 +1,26 @@
+smartctl 7.1 2019-12-30 r5022 [x86_64-linux-5.5.0-2-amd64] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               Packard
+Product:              Bell Carbon
+Revision:             0000
+User Capacity:        1.500.301.910.016 bytes [1,50 TB]
+Logical block size:   512 bytes
+Device type:          disk
+Local Time is:        Wed Apr 29 20:08:43 2020 CEST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Disabled or Not Supported
+Read Cache is:        Unavailable
+Writeback Cache is:   Unavailable
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
+Device does not support Background scan results logging

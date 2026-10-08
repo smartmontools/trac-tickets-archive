@@ -1,0 +1,51 @@
+C:\Users\Administrator>smartctl -r ioctl,2 --scan
+ \\.\PhysicalDrive0: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "DELL    "
+    Product:  "PERC H730P Adp  "
+    Revision: "4.30"
+    Removable: No
+    BusType:   0x08
+  SMART_GET_VERSION failed, Error=1117
+ \\.\Scsi0:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1117
+ \\.\Scsi1:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1117
+ \\.\Scsi2:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1117
+  \\.\Scsi0:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi1:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi2:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi3:: Open failed, Error=2
+  \\.\Scsi4:: Open failed, Error=2
+  \\.\Scsi5:: Open failed, Error=2
+  \\.\Scsi6:: Open failed, Error=2
+  \\.\Scsi7:: Open failed, Error=2
+  \\.\Scsi8:: Open failed, Error=2
+  \\.\Scsi9:: Open failed, Error=2
+  \\.\Scsi10:: Open failed, Error=2
+  \\.\Scsi11:: Open failed, Error=2
+  \\.\Scsi12:: Open failed, Error=2
+  \\.\Scsi13:: Open failed, Error=2
+  \\.\Scsi14:: Open failed, Error=2
+  \\.\Scsi15:: Open failed, Error=2
+  \\.\Scsi16:: Open failed, Error=2
+  \\.\Scsi17:: Open failed, Error=2
+  \\.\Scsi18:: Open failed, Error=2
+  \\.\Scsi19:: Open failed, Error=2
+  \\.\Scsi20:: Open failed, Error=2
+  \\.\Scsi21:: Open failed, Error=2
+  \\.\Scsi22:: Open failed, Error=2
+  \\.\Scsi23:: Open failed, Error=2
+  \\.\Scsi24:: Open failed, Error=2
+  \\.\Scsi25:: Open failed, Error=2
+  \\.\Scsi26:: Open failed, Error=2
+  \\.\Scsi27:: Open failed, Error=2
+  \\.\Scsi28:: Open failed, Error=2
+  \\.\Scsi29:: Open failed, Error=2
+  \\.\Scsi30:: Open failed, Error=2
+  \\.\Scsi31:: Open failed, Error=2
+/dev/sda -d scsi # /dev/sda, SCSI device
