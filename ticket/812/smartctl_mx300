@@ -1,0 +1,25 @@
+#!/bin/bash
+smartctl \
+	-v 1,raw48,"Raw_read_error_rate"		\
+	-v 5,raw48,"Realloctd_NAND_blk_cnt"		\
+	-v 9,raw48,"Power-on_hours_count"		\
+	-v 12,raw48,"Power_cycle_count"			\
+	-v 171,raw48,"Program_fail_count"		\
+	-v 172,raw48,"Erase_fail_count"			\
+	-v 173,raw48,"Average_blk_erase_count"		\
+	-v 174,raw48,"Unexpctd_pwr-loss_count"		\
+	-v 180,raw48,"Unused_rsrv_NAND_blocks"		\
+	-v 183,raw48,"SATA_interface_dwnshft"		\
+	-v 184,raw48,"Error_correction_count"		\
+	-v 187,raw48,"Reported_unc_errors"		\
+	-v 196,raw48,"Reallocation_evnt_cnt"		\
+	-v 197,raw48,"Current_pend_ECC_cnt"		\
+	-v 198,raw48,"SMART_offln_err_cnt"		\
+	-v 199,raw48,"UDMA_CRC_error_count"		\
+	-v 202,raw48,"Percent_lifetime_rem"		\
+	-v 206,raw48,"Write_error_rate"			\
+	-v 210,raw48,"Succ_RAIN_recovery_cnt"		\
+	-v 246,raw48,"Cumul_host_sect_written"		\
+	-v 247,raw48,"Host_NAND_data_pgs_wrtn"		\
+	-v 248,raw48,"FTL_NAND_pgs_written"		\
+	$*

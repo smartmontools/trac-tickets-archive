@@ -1,0 +1,23 @@
+Index: smartd.cpp
+===================================================================
+--- smartd.cpp	(revision 4410)
++++ smartd.cpp	(working copy)
+@@ -3476,7 +3476,7 @@
+     PrintOut(LOG_INFO,"Device: %s, SMART health: passed\n", name);
+ 
+   // check temperature limits
+-  if (cfg.tempdiff || cfg.tempinfo || cfg.tempcrit || !cfg.attrlog_file.empty())
++  if (cfg.tempdiff || cfg.tempinfo || cfg.tempcrit)
+     CheckTemperature(cfg, state, currenttemp, triptemp);
+ 
+   // check if number of selftest errors has increased (note: may also DECREASE)
+@@ -3511,6 +3511,9 @@
+       scsiDecodeNonMediumErrPage(tBuf, &state.scsi_nonmedium_error.nme);
+       state.scsi_nonmedium_error.found=1;
+     }
++    // save temperature if not done by CheckTemperature() above
++    if (!(cfg.tempdiff || cfg.tempinfo || cfg.tempcrit))
++      state.temperature = currenttemp;
+   }
+   CloseDevice(scsidev, name);
+   return 0;
