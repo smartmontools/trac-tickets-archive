@@ -1,0 +1,23 @@
+//  { "TOSHIBA-VT180",
+//    "GB SATA Flash Drive", // tested with ...,
+//    "TOSHIBA-VT180",
+//    "","", 
+//    "-v 171,raw48,Available OP Sector Count "
+//  },
+  { "Toshiba-VT180", 
+    "TOSHIBA-VT180", // attributes from OCZ SSD utility
+    "", "", 
+    "-v 5,raw48,Accumulated_Runtime_Bad_Blocks "
+    "-v 171,raw48,Available_OP_Sector_Count " // Number of over provision blocks still available
+    "-v 174,raw48,Power_Cycle_Count_unplanned "
+    "-v 195,raw48,Total_Programing_Failures " // Total number of programming failures
+    "-v 196,raw48,Total_Erase_Failures " // Total number of programming failures
+    "-v 197,raw48,Total_Read_Failures " // Total number of programming failures
+    "-v 208,raw48,Average_Erase_Count "
+    "-v 210,raw48,SATA_CRC_Error_Count "
+    "-v 224,raw48,In_Warranty "
+    "-v 225,raw48,DAS_Polarity "
+    "-v 226,raw48,Partial_Pfail "
+    "-v 233,raw48,Lifetime_Remaining "
+    "-v 249,raw48,Total_NAND_Programming_Count " // (pages)
+  },

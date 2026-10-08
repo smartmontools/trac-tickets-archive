@@ -1,0 +1,31 @@
+From 7f0bb889e0dcf8af49580e5b05432f496f02255d Mon Sep 17 00:00:00 2001
+From: Shin'ichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+Date: Fri, 30 Jul 2021 15:49:09 +0900
+Subject: [PATCH] drivedb.h: Ultrastar DC HC550
+
+Signed-off-by: Shin'ichiro Kawasaki <shinichiro.kawasaki@wdc.com>
+---
+ smartmontools/drivedb.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/smartmontools/drivedb.h b/smartmontools/drivedb.h
+index ab0d67df..e3a41633 100644
+--- a/smartmontools/drivedb.h
++++ b/smartmontools/drivedb.h
+@@ -3548,6 +3548,13 @@ const drive_settings builtin_knowndrives[] = {
+     "", "",
+     "-v 22,raw48,Helium_Level"
+   },
++  { "Western Digital Ultrastar DC HC550",
++    "(WDC  ?)?WUH72181[68]ALE6L[14]",
++    "", "",
++    // The product spec describes the attribute ID 22 as "Internal Environmental
++    // status", but for historical reason, keep the description "Helium_Level".
++    "-v 22,raw48,Helium_Level"
++  },
+   { "HGST MegaScale 4000", // tested with HGST HMS5C4040ALE640/MPAOA580
+     "HGST HMS5C4040[AB]LE64[01]", // B = DC 4000.B
+     "", "", ""
+-- 
+2.31.1
+

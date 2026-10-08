@@ -1,0 +1,28 @@
+diff --git smartmontools/ChangeLog smartmontools/ChangeLog
+index f2ab4749..e6103527 100644
+--- smartmontools/ChangeLog
++++ smartmontools/ChangeLog
+@@ -1,5 +1,10 @@
+ $Id$
+ 
++2021-03-22  Martin Ziemer <horrad@horrad.de>
++
++	os_openbsd.cpp:
++		Apply conversion to seconds for timeouts in scsi_pass_through
++
+ 2021-03-08  Christian Franke  <franke@computer.org>
+ 
+ 	drivedb.h:
+diff --git smartmontools/os_openbsd.cpp smartmontools/os_openbsd.cpp
+index 1a20f049..04597b1f 100644
+--- smartmontools/os_openbsd.cpp
++++ smartmontools/os_openbsd.cpp
+@@ -266,7 +266,7 @@ bool openbsd_scsi_device::scsi_pass_through(scsi_cmnd_io * iop)
+   sc.databuf = (char *)iop->dxferp;
+   sc.datalen = iop->dxfer_len;
+   sc.senselen = iop->max_sense_len;
+-  sc.timeout = iop->timeout == 0 ? 60000 : iop->timeout;	/* XXX */
++  sc.timeout = (iop->timeout == 0 ? 60 : iop->timeout) * 1000;
+   sc.flags =
+     (iop->dxfer_dir == DXFER_NONE ? SCCMD_READ :
+     (iop->dxfer_dir == DXFER_FROM_DEVICE ? SCCMD_READ : SCCMD_WRITE));

@@ -1,0 +1,21 @@
+--- drivedb.h.ORI	2020-09-02 16:28:15.000000000 +0200
++++ drivedb.h	2021-02-18 09:54:29.537497611 +0100
+@@ -1028,6 +1028,18 @@
+     "-v 243,raw48,NAND_Writes_32MiB " // S3510/3610
+     "-F xerrorlba" // tested with SSDSC2BB600G4/D2010355
+   },
++  { "512GB SATA Flash Drive", // Apacer Gelumpe
++    "512GB SATA Flash Drive",
++    "SFDM106B",
++    "",
++    "-v 163,raw48,Max_Erase_Count "
++    "-v 164,raw48,Avg_Erase_Count "
++    "-v 166,raw48,Total_Later_Bad_BlkCnt "
++    "-v 167,raw48,SSD_Protect_Mode "
++    "-v 168,raw48,SATA_PHY_Error_Count "
++    "-v 175,raw48,Bad_Cluster_Table_Count "
++    "-v 192,raw48,Unexpected_Pwr_LossCnt "
++  },
+   { "Kingston branded X25-V SSDs", // fixed firmware
+     "KINGSTON SSDNow 40GB",
+     "2CV102(J[89A-Z]|[K-Z].)", // >= "2CV102J8"

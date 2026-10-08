@@ -1,0 +1,26 @@
+--- drivedb.h.ORI	2020-09-02 16:28:15.000000000 +0200
++++ drivedb.h	2021-02-19 07:02:48.139062924 +0100
+@@ -168,6 +168,23 @@
+     "-v 167,raw48,SSD_Protect_Mode "
+     "-v 168,raw48,SATA_PHY_Err_Ct "
+   },
++  { "Apacer SSD",					// tested with APS25AF7512G
++    "(016|032|064|128|256|512)GB SATA Flash Drive",	// https://www.mouser.de/datasheet/2/24/SM210-25_APS25AXXxxxG-XXTMXT_Spec_rev1%209-1280320.pdf
++    "SFDM106B",
++    "",
++    // "-v 9,raw24(raw8),Power_On_Hours "
++    // "-v 12,raw48,Power_Cycle_Count "
++    "-v 163,raw48,Max_Erase_Count "
++    "-v 164,raw48,Avg_Erase_Count "
++    "-v 166,raw48,Total_Later_Bad_BlkCnt "
++    "-v 167,raw48,SSD_Protect_Mode "
++    "-v 168,raw48,SATA_PHY_Error_Count "
++    "-v 175,raw48,Bad_Cluster_Table_Count "
++    "-v 192,raw48,Unexpected_Pwr_LossCnt "
++    // "-v 194,tempminmax,Temperature_Celsius "
++    // "-v 231,raw48,Temperature_Celsius,HDD "
++    // "-v 241,raw48,Total_LBAs_Written "
++  },
+   { "Apple SD/SM/TS...E/F SSDs", // SanDisk/Samsung/Toshiba?
+     "APPLE SSD (S[DM]|TS)0?(128|256|512|768)[EF]", // tested with APPLE SSD SD256E/1021AP, SD0128F/A223321
+      // APPLE SSD SM768E/CXM90A1Q, SM0512F/UXM2JA1Q, TS0256F/109L0704
