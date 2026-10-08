@@ -1,0 +1,319 @@
+Index: Makefile.am
+===================================================================
+--- Makefile.am	(revision 3892)
++++ Makefile.am	(working copy)
+@@ -102,7 +102,8 @@
+         dev_areca.cpp \
+         dev_areca.h \
+         dev_legacy.cpp \
+-        megaraid.h
++        megaraid.h \
++		aacraid.h
+ 
+ if OS_WIN32_MINGW
+ 
+@@ -161,7 +162,8 @@
+         dev_areca.cpp \
+         dev_areca.h \
+         dev_legacy.cpp \
+-        megaraid.h
++        megaraid.h \
++		aacraid.h
+ 
+ if OS_WIN32_MINGW
+ 
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 3892)
++++ os_linux.cpp	(working copy)
+@@ -80,6 +80,7 @@
+ #include "utility.h"
+ #include "cciss.h"
+ #include "megaraid.h"
++#include "aacraid.h"
+ 
+ #include "dev_interface.h"
+ #include "dev_ata_cmd_set.h"
+@@ -860,6 +861,260 @@
+ }
+ 
+ /////////////////////////////////////////////////////////////////////////////
++/// PMC AacRAID support
++
++#define SAT_ATA_PASSTHROUGH_12LEN 12
++#define SAT_ATA_PASSTHROUGH_16LEN 16
++
++#define DEF_SAT_ATA_PASSTHRU_SIZE 16
++#define ATA_RETURN_DESCRIPTOR     9
++
++class linux_aacraid_device
++:public   scsi_device,
++ public /*extends */   linux_smart_device
++{
++public:
++  linux_aacraid_device(smart_interface *intf, const char *name,
++    unsigned int channel, unsigned int device);
++
++  virtual ~linux_aacraid_device() throw();
++
++  virtual smart_device *autodetect_open();
++
++  virtual bool open();
++  virtual bool close();
++
++  virtual bool scsi_pass_through(scsi_cmnd_io *iop);
++private:
++  int afd;
++
++  //Id of the device
++  int aId;
++
++  //Channel(Lun) of the device
++  int aLun;
++};
++
++linux_aacraid_device::linux_aacraid_device(smart_interface *intf,
++  const char *dev_name ,unsigned int channel,unsigned int device)
++  : smart_device(intf,dev_name,"aacraid","aacraid"),
++    linux_smart_device(O_RDWR|O_NONBLOCK),
++    afd(-1)
++{
++
++    aLun = channel;
++    aId = device;
++    set_info().info_name=strprintf("%s [aacraid_disk_%02d_%d]",dev_name,channel,device);
++    set_info().dev_type = strprintf("aacraid,%d,%d",channel,device);
++
++}
++
++linux_aacraid_device::~linux_aacraid_device() throw()
++{
++    if(afd >=0)
++        ::close(afd);
++}
++
++smart_device * linux_aacraid_device::autodetect_open()
++{
++    int report = scsi_debugmode;
++
++    if(!open())
++        return this;
++
++    if(strcmp(get_req_type(),"aacraid"))
++        return this;
++
++    unsigned char req_buff[64] = {0,};
++    int req_len = 36;
++    if(scsiStdInquiry(this,req_buff,req_len)){
++        close();
++        set_err(EIO,"INQUIRY failed");
++    }
++
++    int avail_len = req_buff[4]+5;
++    int len = (avail_len < req_len?avail_len:req_len);
++    if (len<36)
++        return this;
++
++    if(report)
++        pout("Got AACRaid inquiry ..%s\n",req_buff);
++
++    //Use INQUIRY to detect the type of the device
++    {
++        ata_device * newdev = smi()->autodetect_sat_device(this,req_buff,len);
++        if(newdev){
++            return newdev;
++        }
++    }
++
++    return this;
++}
++
++bool linux_aacraid_device::open()
++{
++   int report =scsi_debugmode;
++
++   int err;
++   char line[128];
++   int mjr;
++   FILE  *fp =fopen("/proc/devices","r");
++
++   while(fgets(line,sizeof(line),fp) !=NULL)
++   {
++        int a=0;
++        if(strstr(line,"aac")!=NULL && sscanf(line,"%d aac%n",&mjr,&a) ==1)
++        {
++        	//Create misc device file in /dev/ used for communication with driver
++            a = mknod("/dev/aac",S_IFCHR,makedev(mjr,0));
++            if(report > 0)
++                pout("Creating /dev/aac = %d\n",(a >= 0 ? 0 :errno));
++            if(a>=0||errno ==EEXIST)
++                break;
++        }
++    }
++   if( (afd = ::open("/dev/aac",O_RDWR)) >=0 ) {
++        set_fd(afd);
++        return true;
++   }
++
++    err = errno;
++    linux_smart_device::close();
++    return set_err(err,"cannot open /dev/aac");
++}
++
++bool linux_aacraid_device::close()
++{
++
++   if(afd >= 0)
++       ::close(afd);
++
++   afd = -1;
++   set_fd(afd);
++
++   return true;
++}
++
++bool linux_aacraid_device::scsi_pass_through(scsi_cmnd_io *iop)
++{
++
++  int report = scsi_debugmode;
++
++  if (report > 0) {
++	  int k, j;
++	  const unsigned char * ucp = iop->cmnd;
++	  const char * np;
++	  char buff[256];
++	  const int sz = (int)sizeof(buff);
++
++	  np = scsi_get_opcode_name(ucp[0]);
++	  j = snprintf(buff, sz, " [%s: ", np ? np : "<unknown opcode>");
++	  for (k = 0; k < (int)iop->cmnd_len; ++k)
++		  j += snprintf(&buff[j], (sz > j ? (sz - j) : 0), "%02x ", ucp[k]);
++      if ((report > 1) &&
++    	 (DXFER_TO_DEVICE == iop->dxfer_dir) && (iop->dxferp)) {
++         int trunc = (iop->dxfer_len > 256) ? 1 : 0;
++
++         j += snprintf(&buff[j], (sz > j ? (sz - j) : 0), "]\n  Outgoing "
++                       "data, len=%d%s:\n", (int)iop->dxfer_len,
++                       (trunc ? " [only first 256 bytes shown]" : ""));
++         dStrHex((const char *)iop->dxferp,
++                  (trunc ? 256 : iop->dxfer_len) , 1);
++     }
++     else
++           j += snprintf(&buff[j], (sz > j ? (sz - j) : 0), "]\n");
++     pout("%s", buff);
++  }
++
++
++  int rc;
++  user_aac_reply *pReply;
++
++  //return test commands
++  if (iop->cmnd[0] == 0x00)
++	  return true;
++
++#ifdef ENVIRONMENT64
++  // Create user 64 bit request
++  user_aac_srb64  *pSrb;
++  uint8_t *pMalloc = (uint8_t *)malloc(sizeof(user_aac_srb64) + sizeof(user_aac_reply));
++
++  pSrb    = (user_aac_srb64*)(pMalloc);
++  pReply  = (user_aac_reply*)(pMalloc+sizeof(user_aac_srb64));
++
++#elif defined(ENVIRONMENT32)
++  //Create user 32 bit request
++  user_aac_srb32  *pSrb;
++  uint8_t *pMalloc = (uint8_t *)malloc(sizeof(user_aac_srb32) + sizeof(user_aac_reply));
++
++  pSrb   = (user_aac_srb32*)(pMalloc);
++  pReply  = (user_aac_reply*)(pMalloc+sizeof(user_aac_srb32));
++#endif
++
++
++  memset(pSrb,0,sizeof(pSrb));
++  memset(pReply,0,sizeof(pReply));
++
++  pSrb->function = SRB_FUNCTION_EXECUTE_SCSI;
++  //channel is 0 always
++  pSrb->channel  = 0;
++  pSrb->id       = aId;
++  pSrb->lun      = aLun;
++  pSrb->timeout = 0;
++
++  pSrb->retry_limit = 0;
++  pSrb->cdb_size    = iop->cmnd_len;
++
++  switch(iop->dxfer_dir){
++  	  case DXFER_NONE:
++  		  pSrb->flags = SRB_NoDataXfer;
++          break;
++      case DXFER_FROM_DEVICE:
++          pSrb->flags = SRB_DataIn;
++          break;
++      case DXFER_TO_DEVICE:
++          pSrb->flags = SRB_DataOut;
++          break;
++      default:
++          pout("aacraid: bad dxfer_dir\n");
++          return set_err(EINVAL, "aacraid: bad dxfer_dir\n");
++  }
++
++  if(iop->dxfer_len > 0){
++
++#ifdef ENVIRONMENT64
++	pSrb->sg64.count = 1;
++    pSrb->sg64.sg64[0].addr64.lo32 = ((intptr_t)iop->dxferp) & 0x00000000ffffffff;
++    pSrb->sg64.sg64[0].addr64.hi32 = ((intptr_t)iop->dxferp) >> 32;
++    pSrb->sg64.sg64[0].length = (uint32_t)iop->dxfer_len;
++    pSrb->count = sizeof(user_aac_srb64) + (sizeof(user_sgentry64)*(pSrb->sg64.count-1));
++#elif defined(ENVIRONMENT32)
++    pSrb->sg32.count =1;
++    pSrb->sg32.sg32[0].addr32 = (intptr_t)iop->dxferp;
++    pSrb->sg32.sg32[0].length = (uint32_t)iop->dxfer_len;
++    pSrb->count = sizeof(user_aac_srb32) + (sizeof(user_sgentry32)*(pSrb->sg32.count-1));
++#endif
++}
++
++  memcpy(pSrb->cdb,iop->cmnd,iop->cmnd_len);
++
++  rc=0;
++  errno=0;
++  rc=ioctl(afd,FSACTL_SEND_RAW_SRB,pSrb);
++  if(rc!=0 || pReply->srb_status != 0x01){
++	 if(pReply->srb_status == 0x08){
++	   return set_err(EIO, "aacraid: Device %d %d does not exist\n" ,aLun,aId );
++	  }
++	return set_err((errno ? errno : EIO), "aacraid result: %d.%d = %d/%d",
++		                    aLun, aId, errno,
++		                    pReply->srb_status);
++  }
++
++  return true;
++}
++
++
++/////////////////////////////////////////////////////////////////////////////
+ /// LSI MegaRAID support
+ 
+ class linux_megaraid_device
+@@ -2939,12 +3194,20 @@
+   if (sscanf(type, "megaraid,%d", &disknum) == 1) {
+     return new linux_megaraid_device(this, name, 0, disknum);
+   }
++
++  //aacraid?
++    unsigned int device;
++    if(sscanf(type,"aacraid,%d,%d",&channel,&device)==2)
++    {
++          return new linux_aacraid_device(this,name,channel,device);
++    }
++
+   return 0;
+ }
+ 
+ std::string linux_smart_interface::get_valid_custom_dev_types_str()
+ {
+-  return "marvell, areca,N/E, 3ware,N, hpt,L/M/N, megaraid,N"
++  return "marvell, areca,N/E, 3ware,N, hpt,L/M/N, megaraid,N aacraid,L,ID"
+ #ifdef HAVE_LINUX_CCISS_IOCTL_H
+                                               ", cciss,N"
+ #endif

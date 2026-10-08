@@ -1,0 +1,50 @@
+C:\>smartctl -d csmi -r ioctl,2 --scan
+ \\.\Scsi0:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) succeeded, bytes returned: 204
+CSMI_SAS_DRIVER_INFO:
+  Name:        "iaStorA"
+  Description: "Intel Rapid Storage Technology "
+  Revision:    12.8
+  IOCTL_SCSI_MINIPORT(CC_CSMI_20) succeeded, bytes returned: 2080
+CSMI_SAS_PHY_INFO: NumberOfPhys=6
+Phy[0] Port:   0x00
+  Type:        0x10, 0x10
+  InitProto:   0x01, 0x00
+  TargetProto: 0x01, 0x01
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 00 00 00 00 00 00
+Phy[1] Port:   0x01
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x01, 0x01
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 01 00 00 00 00 00
+Phy[2] Port:   0x02
+  Type:        0x10, 0x10
+  InitProto:   0x01, 0x00
+  TargetProto: 0x01, 0x01
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 02 00 00 00 00 00
+Phy[3] Port:   0x03
+  Type:        0x10, 0x10
+  InitProto:   0x01, 0x00
+  TargetProto: 0x01, 0x01
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 03 00 00 00 00 00
+Phy[4] Port:   0x04
+  Type:        0x10, 0x10
+  InitProto:   0x01, 0x00
+  TargetProto: 0x01, 0x01
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 04 00 00 00 00 00
+Phy[5] Port:   0x05
+  Type:        0x10, 0x10
+  InitProto:   0x01, 0x00
+  TargetProto: 0x01, 0x01
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 05 00 00 00 00 00
+/dev/csmi0,0 -d ata # /dev/csmi0,0, ATA device
+/dev/csmi0,2 -d ata # /dev/csmi0,2, ATA device
+/dev/csmi0,3 -d ata # /dev/csmi0,3, ATA device
+/dev/csmi0,4 -d ata # /dev/csmi0,4, ATA device
+/dev/csmi0,5 -d ata # /dev/csmi0,5, ATA device

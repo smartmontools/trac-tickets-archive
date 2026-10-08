@@ -1,0 +1,32 @@
+"Description","Value","ID","Attribute","Current Value","Threshold","Raw Value","Status"
+"OS","Windows 7",,,,,,
+"System Type","64",,,,,,
+"OS Major Version","6",,,,,,
+"OS Minor Version","1",,,,,,
+"OS Build Number","7601",,,,,,
+"OS CSD Version","Service Pack 1",,,,,,
+"Processor (CPU)","'Intel(R) Core(TM) i3-2310M CPU @ 2.10GHz'",,,,,,
+"CPU Count","4",,,,,,
+"Installed Memory (RAM)","6024",,,,,,
+"Computer Name","JULIENLE6420",,,,,,
+"Model","SanDisk SD7SB3Q128G",,,,,,
+"Serial Number","142223400121",,,,,,
+"Firmware Revision","X2150000",,,,,,
+"ATA Major Version","ATA8-ACS",,,,,,
+"ATA Minor Version","Reserved",,,,,,
+"SATA Generation","3",,,,,,
+"Worldwide Naming","5001B44C28C1D8B9",,,,,,
+"Supported Features","DSM (TRIM), SMART, Security, NCQ, APM",,,,,,
+"","","05","Reallocated Sector Count","100","","0","N/A"
+"","","09","Power On Hours","100","","0","N/A"
+"","","0C","Power Cycle Count","100","","6","N/A"
+"","","AB","Program Fail Count","100","","0","N/A"
+"","","AC","Erase Fail Count","100","","0","N/A"
+"","","AE","Unexpected Power Loss Count","100","","5","N/A"
+"","","B8","Reported Uncorrectable Errors","100","","0","N/A"
+"","","C2","Temperature","67","","33","N/A"
+"","","E6","N/A","100","","","N/A"
+"","","E8","Available Reserve Space","100","4","100","Pass"
+"","","E9","Media Wearout Indicator","100","","","N/A"
+"","","F1","LBA Sectors Written","253","","0","N/A"
+"","","F2","LBA Sectors Read","253","","119","N/A"

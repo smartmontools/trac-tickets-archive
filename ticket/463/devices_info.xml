@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<devicesList>
+    <deviceInfo name="SanDisk Extreme Solid State Drive">
+        <icon version="1">product_icon_extreme.png</icon>
+        <model>SanDisk SDSSDX060GG25</model>
+        <model>SanDisk SDSSDX120GG25</model>
+        <model>SanDisk SDSSDX240GG25</model>
+        <model>SanDisk SDSSDX480GG25</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk Extreme II Solid State Drive">
+        <icon version="1">product_icon_extremeII.png</icon>
+        <model>SanDisk SDSSDXP120G</model>
+        <model>SanDisk SDSSDXP240G</model>
+        <model>SanDisk SDSSDXP480G</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk ReadyCache Solid State Drive">
+        <icon version="1">product_icon_readycache.png</icon>
+        <model>SanDisk SDSSDRC032G</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk Solid State Drive">
+        <icon version="1">product_icon_SolidStateDrive.png</icon>
+        <model>SanDisk SDSSDP064G</model>
+        <model>SanDisk SDSSDP128G</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk Ultra Plus Solid State Drive">
+        <icon version="1">product_icon_ultraplus.png</icon>
+        <model>SanDisk SDSSDHP064G</model>
+        <model>SanDisk SDSSDHP128G</model>
+        <model>SanDisk SDSSDHP256G</model>
+        <model>SanDisk SDSSDH2064G</model>
+        <model>SanDisk SDSSDH2128G</model>
+        <model>SanDisk SDSSDH2256G</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk Extreme Pro Solid State Drive">
+        <icon version="1">product_icon_extremepro.png</icon>
+        <model>SanDisk SDSSDXPS240G</model>
+        <model>SanDisk SDSSDXPS480G</model>
+        <model>SanDisk SDSSDXPS960G</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk X300s Solid State Drive">
+        <icon version="1">product_icon_X300s.png</icon>
+        <model>SanDisk SD7??2Q*</model>
+        <model>SanDisk SD7??3Q*</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk X300 Solid State Drive">
+        <icon version="1">product_icon_x300.png</icon>
+        <model>SanDisk SD7??6S*</model>
+        <model>SanDisk SD7??7S*</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk Ultra II Solid State Drive">
+        <icon version="1">product_icon_UltraII.png</icon>
+        <model>SanDisk SDSSDHII*</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk X210 Solid State Drive">
+        <icon version="1">product_icon_X210.png</icon>
+        <model>SanDisk SD6SB2M????</model>
+        <model>SanDisk SD6SB2M?????????</model>
+        <model>SanDisk SD6SB2M???G????</model>
+        <model>SanDisk SD6SB2M-512G-1006</model>
+    </deviceInfo>
+    <deviceInfo name="SanDisk X110 Solid State Drive">
+        <icon version="1">product_icon_X110.png</icon>
+        <model>SanDisk SDSSDHP???G</model>
+        <model>SanDisk SD6S?1M???G</model>
+        <model>SanDisk SD6SF1M???GG56</model>
+        <model>SanDisk SD6S?1M???G????</model>
+        <model>SanDisk SDSSDHPM???GG56</model>
+	<model>SanDisk SD6S?1M???G1022I</model>
+  	<model>SanDisk SD6S?1M-???G-????</model>
+        <model>SanDisk X110 MSATA ???GB</model>
+        <model>SanDisk X110 M.2 2260 64GB</model>
+        <model>SanDisk X110 M.2 2260 ???GB</model>
+        <model>SanDisk X110 2.5 7MM ???GB</model>
+        <model>DX110???A5xnNMRI</model>
+    </deviceInfo>
+</devicesList>

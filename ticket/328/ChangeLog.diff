@@ -1,0 +1,15 @@
+--- ChangeLog	2014-04-21 10:58:14.922504075 -0700
++++ ../../smartmontools/ChangeLog	2014-04-23 00:33:02.864299660 -0700
+@@ -1,5 +1,12 @@
+ $Id: ChangeLog 3892 2014-04-18 20:28:10Z dpgilbert $
+ 
++2014-04-18  Raghava Aditya  <Raghava.Aditya@pmcs.com>
++
++	os_linux.cpp
++	- Added support for aacraid drivers
++	- Created a new interface for aacraid
++	         smartctl -d aacraid,L,ID /dev/sdx
++	          
+ 2014-04-18  Douglas Gilbert  <dgilbert@interlog.com>
+ 
+ 	scsicmds.cpp:
