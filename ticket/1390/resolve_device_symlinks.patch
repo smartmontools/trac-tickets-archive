@@ -1,0 +1,27 @@
+--- smartd.cpp	2019-12-29 16:10:18.000000000 +0300
++++ smartd.cpp	2020-11-04 15:07:44.114869500 +0300
+@@ -5376,6 +5376,24 @@
+ 
+     dev_config cfg = conf_entries[i];
+ 
++    // resolve symbolic links
++    struct stat buf;
++    if (lstat(cfg.dev_name.c_str(), &buf) != 0) {
++      perror(NULL);
++      PrintOut(LOG_WARNING, "Device: %s, stat call failed on path %s\n", cfg.name.c_str(), cfg.dev_name.c_str());
++    } else {
++      if (S_ISLNK(buf.st_mode)) {
++        char link_target[PATH_MAX];
++        if (realpath(cfg.dev_name.c_str(), link_target) == NULL) {
++          perror(NULL);
++          PrintOut(LOG_WARNING, "Device: %s, realpath call failed on path %s\n", cfg.name.c_str(), cfg.dev_name.c_str());
++        } else {
++          PrintOut(LOG_INFO, "Device: %s, link resolved to %s\n", cfg.name.c_str(), link_target);
++          cfg.dev_name = link_target;
++        }
++      }
++    }
++
+     if (cfg.ignore) {
+       // Store for is_duplicate_device() check and ignore
+       PrintOut(LOG_INFO, "Device: %s%s%s%s, ignored\n", cfg.name.c_str(),

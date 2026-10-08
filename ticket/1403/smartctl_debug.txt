@@ -1,0 +1,167 @@
+smartctl 7.1 2019-12-30 r5022 [x86_64-linux-5.4.72-gentoo] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=32 milliseconds  resid=242
+  Incoming data, len=10:
+ 00     00 00 00 06 00 80 83 b0  b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 02 47 00 00 00  53 61 6d 73 75 6e 67 20
+ 10     50 53 53 44 20 54 37 20  20 20 20 20 20 20 20 20
+ 20     30 20 20 20
+=== START OF INFORMATION SECTION ===
+Vendor:               Samsung
+Product:              PSSD T7
+Revision:             0
+Compliance:           SPC-4
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 00 74 70 6d af  00 00 02 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        1 000 204 886 016 bytes [1,00 TB]
+Logical block size:   512 bytes
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 b2 00 08 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 b2 00 04 00 80 00 00
+LU is fully provisioned
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 b1 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=64:
+ 00     00 b1 00 3c 00 01 00 00  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Rotation Rate:        Solid State Device
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=48
+  Incoming data, len=16:
+ 00     0f 00 00 00 1c 0a 00 00  00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=48
+  Incoming data, len=16:
+ 00     0f 00 00 00 1c 0a 00 00  00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=236
+  Incoming data, len=16:
+ 00     00 83 00 0c 01 03 00 08  50 00 00 00 00 00 00 01
+Logical Unit id:      0x5000000000000001
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=1 milliseconds  resid=233
+  Incoming data, len=19:
+ 00     00 80 00 0f 5a 33 36 39  30 30 34 4e 30 4b 4e 31
+ 10     54 35 53
+Serial number:        Z369004N0KN1T5S
+Device type:          disk
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 19 00 40 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=0 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+Local Time is:        Mon Nov 30 09:55:13 2020 CET
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Disabled or Not Supported
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 08 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 00 00 08 12 04 00  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=1 milliseconds  resid=4
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+Log Sense for supported pages failed [unsupported scsi opcode]
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 00 00 00 00 00 44 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=0 milliseconds  resid=68
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+Log Sense for supported pages failed (second attempt) [unsupported scsi opcode]
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 0a  00 00 00 00 00 00 00 00
+ 10     00 00
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=1 milliseconds  resid=8
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read defect list(10): 37 00 0c 00 00 00 00 00 04 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=0 milliseconds  resid=4
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+Read defect list (10) Failed: unsupported scsi opcode
+Error Counter logging not supported
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=0 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+Device does not support Self Test logging
+Device does not support Background scan results logging
