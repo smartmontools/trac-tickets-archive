@@ -1,0 +1,404 @@
+smartctl 6.5 2016-05-07 r4318 [i386-pc-solaris2.11] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Intel SSD D3-S4510
+Device Model:     INTEL SSDSC2KB240G8
+Serial Number:    --REDACTED--
+LU WWN Device Id: --REDACTED--
+Firmware Version: XCV10100
+User Capacity:    240,057,409,536 bytes [240 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ACS-3 T13/2161-D revision 5
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed Sep 29 19:25:42 2021 MEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    2) seconds.
+Offline data collection
+capabilities: 			 (0x79) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (   2) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   2) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   -O--CK   100   100   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    18491
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    11
+170 Available_Reservd_Space PO--CK   100   100   010    -    0
+171 Program_Fail_Count      -O--CK   100   100   000    -    0
+172 Erase_Fail_Count        -O--CK   100   100   000    -    0
+174 Unsafe_Shutdown_Count   -O--CK   100   100   000    -    11
+175 Power_Loss_Cap_Test     PO--CK   100   100   010    -    2743 (11 65535)
+183 SATA_Downshift_Count    -O--CK   100   100   000    -    0
+184 End-to-End_Error_Count  PO--CK   100   100   090    -    0
+187 Uncorrectable_Error_Cnt -O--CK   100   100   000    -    0
+190 Drive_Temperature       -O---K   069   066   000    -    31 (Min/Max 24/34)
+192 Unsafe_Shutdown_Count   -O--CK   100   100   000    -    11
+194 Temperature_Celsius     -O---K   100   100   000    -    31
+197 Pending_Sector_Count    -O--C-   100   100   000    -    0
+199 CRC_Error_Count         -OSRCK   100   100   000    -    0
+225 Host_Writes_32MiB       -O--CK   100   100   000    -    261789
+226 Workld_Media_Wear_Indic -O--CK   100   100   000    -    675
+227 Workld_Host_Reads_Perc  -O--CK   100   100   000    -    23
+228 Workload_Minutes        -O--CK   100   100   000    -    1109493
+232 Available_Reservd_Space PO--CK   100   100   010    -    0
+233 Media_Wearout_Indicator -O--CK   100   100   000    -    0
+234 Thermal_Throttle_Status -O--CK   100   100   000    -    0/0
+235 Power_Loss_Cap_Test     PO--CK   100   100   010    -    2743 (11 65535)
+241 Host_Writes_32MiB       -O--CK   100   100   000    -    261789
+242 Host_Reads_32MiB        -O--CK   100   100   000    -    80225
+243 NAND_Writes_32MiB       -O--CK   100   100   000    -    663191
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      8  Comprehensive SMART error log
+0x03       GPL     R/O     20  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      2  Extended self-test log
+0x08       GPL     R/O      2  Power Conditions log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  SATA NCQ Queued Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xb8       GPL,SL  VS       1  Device vendor specific log
+0xb9       GPL     VS    3336  Device vendor specific log
+0xb9       SL      VS       8  Device vendor specific log
+0xba       GPL     VS    1280  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      8  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (20 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (2 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%     11185         -
+# 2  Short offline       Completed without error       00%     11185         -
+# 3  Short offline       Completed without error       00%     11017         -
+# 4  Short offline       Completed without error       00%     10016         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                    31 Celsius
+Power Cycle Min/Max Temperature:     24/34 Celsius
+Lifetime    Min/Max Temperature:     10/37 Celsius
+Under/Over Temperature Limit Count:   0/0
+Vendor specific:
+00 00 2c 01 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/73 Celsius
+Min/Max Temperature Limit:            0/73 Celsius
+Temperature History Size (Index):    478 (112)
+
+Index    Estimated Time   Temperature Celsius
+ 113    2021-09-29 11:28    30  ***********
+ 114    2021-09-29 11:29    30  ***********
+ 115    2021-09-29 11:30    30  ***********
+ 116    2021-09-29 11:31    31  ************
+ 117    2021-09-29 11:32    31  ************
+ 118    2021-09-29 11:33    30  ***********
+ 119    2021-09-29 11:34    31  ************
+ 120    2021-09-29 11:35    31  ************
+ 121    2021-09-29 11:36    31  ************
+ 122    2021-09-29 11:37    30  ***********
+ 123    2021-09-29 11:38    30  ***********
+ 124    2021-09-29 11:39    30  ***********
+ 125    2021-09-29 11:40    31  ************
+ 126    2021-09-29 11:41    31  ************
+ 127    2021-09-29 11:42    30  ***********
+ 128    2021-09-29 11:43    30  ***********
+ 129    2021-09-29 11:44    30  ***********
+ 130    2021-09-29 11:45    31  ************
+ 131    2021-09-29 11:46    31  ************
+ 132    2021-09-29 11:47    31  ************
+ 133    2021-09-29 11:48    30  ***********
+ ...    ..(  7 skipped).    ..  ***********
+ 141    2021-09-29 11:56    30  ***********
+ 142    2021-09-29 11:57    31  ************
+ 143    2021-09-29 11:58    30  ***********
+ 144    2021-09-29 11:59    31  ************
+ 145    2021-09-29 12:00    31  ************
+ 146    2021-09-29 12:01    31  ************
+ 147    2021-09-29 12:02    30  ***********
+ 148    2021-09-29 12:03    30  ***********
+ 149    2021-09-29 12:04    31  ************
+ 150    2021-09-29 12:05    30  ***********
+ ...    ..(  6 skipped).    ..  ***********
+ 157    2021-09-29 12:12    30  ***********
+ 158    2021-09-29 12:13    31  ************
+ 159    2021-09-29 12:14    30  ***********
+ 160    2021-09-29 12:15    29  **********
+ 161    2021-09-29 12:16    29  **********
+ 162    2021-09-29 12:17    30  ***********
+ 163    2021-09-29 12:18    30  ***********
+ 164    2021-09-29 12:19    30  ***********
+ 165    2021-09-29 12:20    31  ************
+ 166    2021-09-29 12:21    30  ***********
+ 167    2021-09-29 12:22    31  ************
+ ...    ..(  5 skipped).    ..  ************
+ 173    2021-09-29 12:28    31  ************
+ 174    2021-09-29 12:29    30  ***********
+ 175    2021-09-29 12:30    30  ***********
+ 176    2021-09-29 12:31    30  ***********
+ 177    2021-09-29 12:32    31  ************
+ 178    2021-09-29 12:33    30  ***********
+ ...    ..(  8 skipped).    ..  ***********
+ 187    2021-09-29 12:42    30  ***********
+ 188    2021-09-29 12:43    29  **********
+ 189    2021-09-29 12:44    31  ************
+ 190    2021-09-29 12:45    30  ***********
+ 191    2021-09-29 12:46    30  ***********
+ 192    2021-09-29 12:47    31  ************
+ 193    2021-09-29 12:48    31  ************
+ 194    2021-09-29 12:49    31  ************
+ 195    2021-09-29 12:50    29  **********
+ 196    2021-09-29 12:51    29  **********
+ 197    2021-09-29 12:52    31  ************
+ 198    2021-09-29 12:53    31  ************
+ 199    2021-09-29 12:54    31  ************
+ 200    2021-09-29 12:55    30  ***********
+ 201    2021-09-29 12:56    31  ************
+ 202    2021-09-29 12:57    30  ***********
+ 203    2021-09-29 12:58    31  ************
+ 204    2021-09-29 12:59    31  ************
+ 205    2021-09-29 13:00    30  ***********
+ 206    2021-09-29 13:01    30  ***********
+ 207    2021-09-29 13:02    31  ************
+ ...    ..(  2 skipped).    ..  ************
+ 210    2021-09-29 13:05    31  ************
+ 211    2021-09-29 13:06    30  ***********
+ 212    2021-09-29 13:07    30  ***********
+ 213    2021-09-29 13:08    30  ***********
+ 214    2021-09-29 13:09    31  ************
+ 215    2021-09-29 13:10    31  ************
+ 216    2021-09-29 13:11    30  ***********
+ 217    2021-09-29 13:12    31  ************
+ 218    2021-09-29 13:13    30  ***********
+ 219    2021-09-29 13:14    31  ************
+ 220    2021-09-29 13:15    30  ***********
+ 221    2021-09-29 13:16    30  ***********
+ 222    2021-09-29 13:17    31  ************
+ ...    ..(  2 skipped).    ..  ************
+ 225    2021-09-29 13:20    31  ************
+ 226    2021-09-29 13:21    30  ***********
+ 227    2021-09-29 13:22    30  ***********
+ 228    2021-09-29 13:23    31  ************
+ 229    2021-09-29 13:24    30  ***********
+ ...    ..( 18 skipped).    ..  ***********
+ 248    2021-09-29 13:43    30  ***********
+ 249    2021-09-29 13:44    31  ************
+ 250    2021-09-29 13:45    30  ***********
+ ...    ..(  8 skipped).    ..  ***********
+ 259    2021-09-29 13:54    30  ***********
+ 260    2021-09-29 13:55    31  ************
+ 261    2021-09-29 13:56    30  ***********
+ ...    ..(  4 skipped).    ..  ***********
+ 266    2021-09-29 14:01    30  ***********
+ 267    2021-09-29 14:02    29  **********
+ 268    2021-09-29 14:03    30  ***********
+ 269    2021-09-29 14:04    30  ***********
+ 270    2021-09-29 14:05    30  ***********
+ 271    2021-09-29 14:06    31  ************
+ 272    2021-09-29 14:07    30  ***********
+ ...    ..( 47 skipped).    ..  ***********
+ 320    2021-09-29 14:55    30  ***********
+ 321    2021-09-29 14:56    31  ************
+ 322    2021-09-29 14:57    30  ***********
+ ...    ..(  4 skipped).    ..  ***********
+ 327    2021-09-29 15:02    30  ***********
+ 328    2021-09-29 15:03    31  ************
+ 329    2021-09-29 15:04    30  ***********
+ ...    ..( 37 skipped).    ..  ***********
+ 367    2021-09-29 15:42    30  ***********
+ 368    2021-09-29 15:43    31  ************
+ 369    2021-09-29 15:44    31  ************
+ 370    2021-09-29 15:45    30  ***********
+ ...    ..(  2 skipped).    ..  ***********
+ 373    2021-09-29 15:48    30  ***********
+ 374    2021-09-29 15:49    31  ************
+ 375    2021-09-29 15:50    30  ***********
+ ...    ..( 14 skipped).    ..  ***********
+ 390    2021-09-29 16:05    30  ***********
+ 391    2021-09-29 16:06    31  ************
+ 392    2021-09-29 16:07    30  ***********
+ ...    ..(  5 skipped).    ..  ***********
+ 398    2021-09-29 16:13    30  ***********
+ 399    2021-09-29 16:14    31  ************
+ 400    2021-09-29 16:15    30  ***********
+ ...    ..( 16 skipped).    ..  ***********
+ 417    2021-09-29 16:32    30  ***********
+ 418    2021-09-29 16:33    31  ************
+ 419    2021-09-29 16:34    30  ***********
+ ...    ..( 23 skipped).    ..  ***********
+ 443    2021-09-29 16:58    30  ***********
+ 444    2021-09-29 16:59    31  ************
+ 445    2021-09-29 17:00    30  ***********
+ ...    ..(  2 skipped).    ..  ***********
+ 448    2021-09-29 17:03    30  ***********
+ 449    2021-09-29 17:04    31  ************
+ 450    2021-09-29 17:05    30  ***********
+ 451    2021-09-29 17:06    30  ***********
+ 452    2021-09-29 17:07    30  ***********
+ 453    2021-09-29 17:08    31  ************
+ 454    2021-09-29 17:09    30  ***********
+ ...    ..( 14 skipped).    ..  ***********
+ 469    2021-09-29 17:24    30  ***********
+ 470    2021-09-29 17:25    31  ************
+ 471    2021-09-29 17:26    31  ************
+ 472    2021-09-29 17:27    29  **********
+ 473    2021-09-29 17:28    30  ***********
+ 474    2021-09-29 17:29    31  ************
+ 475    2021-09-29 17:30    30  ***********
+ 476    2021-09-29 17:31    31  ************
+ 477    2021-09-29 17:32    30  ***********
+ ...    ..(  7 skipped).    ..  ***********
+   7    2021-09-29 17:40    30  ***********
+   8    2021-09-29 17:41    29  **********
+   9    2021-09-29 17:42    30  ***********
+ ...    ..( 17 skipped).    ..  ***********
+  27    2021-09-29 18:00    30  ***********
+  28    2021-09-29 18:01    31  ************
+  29    2021-09-29 18:02    30  ***********
+ ...    ..( 15 skipped).    ..  ***********
+  45    2021-09-29 18:18    30  ***********
+  46    2021-09-29 18:19    29  **********
+  47    2021-09-29 18:20    30  ***********
+ ...    ..( 33 skipped).    ..  ***********
+  81    2021-09-29 18:54    30  ***********
+  82    2021-09-29 18:55    31  ************
+  83    2021-09-29 18:56    30  ***********
+ ...    ..(  7 skipped).    ..  ***********
+  91    2021-09-29 19:04    30  ***********
+  92    2021-09-29 19:05    31  ************
+  93    2021-09-29 19:06    30  ***********
+  94    2021-09-29 19:07    30  ***********
+  95    2021-09-29 19:08    30  ***********
+  96    2021-09-29 19:09    31  ************
+  97    2021-09-29 19:10    30  ***********
+ ...    ..( 14 skipped).    ..  ***********
+ 112    2021-09-29 19:25    30  ***********
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 2) ==
+0x01  0x008  4              11  ---  Lifetime Power-On Resets
+0x01  0x018  6     17156650456  ---  Logical Sectors Written
+0x01  0x020  6       365791365  ---  Number of Write Commands
+0x01  0x028  6      5257673792  ---  Logical Sectors Read
+0x01  0x030  6       128073255  ---  Number of Read Commands
+0x01  0x038  6      2146670570  ---  Date and Time TimeStamp
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               0  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              31  ---  Current Temperature
+0x05  0x010  1              30  ---  Average Short Term Temperature
+0x05  0x018  1              29  ---  Average Long Term Temperature
+0x05  0x020  1              37  ---  Highest Temperature
+0x05  0x028  1              24  ---  Lowest Temperature
+0x05  0x030  1              35  ---  Highest Average Short Term Temperature
+0x05  0x038  1              25  ---  Lowest Average Short Term Temperature
+0x05  0x040  1              30  ---  Highest Average Long Term Temperature
+0x05  0x048  1              28  ---  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              73  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1               0  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4               1  ---  Number of Hardware Resets
+0x06  0x010  4               0  ---  Number of ASR Events
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               0  ---  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x0002  4            0  R_ERR response for data FIS
+0x0003  4            0  R_ERR response for device-to-host data FIS
+0x0004  4            0  R_ERR response for host-to-device data FIS
+0x0005  4            0  R_ERR response for non-data FIS
+0x0006  4            0  R_ERR response for device-to-host non-data FIS
+0x0007  4            0  R_ERR response for host-to-device non-data FIS
+0x000a  4            1  Device-to-host register FISes sent due to a COMRESET
+0x000b  4            0  CRC errors within host-to-device FIS
+0x000d  4            0  Non-CRC errors within host-to-device FIS
+

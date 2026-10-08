@@ -1,0 +1,13 @@
+diff --git a/smartmontools/os_linux.cpp b/smartmontools/os_linux.cpp
+index 1f42574e..2bdae685 100644
+--- a/smartmontools/os_linux.cpp
++++ b/smartmontools/os_linux.cpp
+@@ -1216,7 +1216,7 @@ private:
+ linux_megaraid_device::linux_megaraid_device(smart_interface *intf,
+   const char *dev_name, unsigned int tgt)
+  : smart_device(intf, dev_name, "megaraid", "megaraid"),
+-   linux_smart_device(O_RDWR | O_NONBLOCK),
++   linux_smart_device(O_RDONLY | O_NONBLOCK),
+    m_disknum(tgt), m_hba(0),
+    m_fd(-1), pt_cmd(0)
+ {

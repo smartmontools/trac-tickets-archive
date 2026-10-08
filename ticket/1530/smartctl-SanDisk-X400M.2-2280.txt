@@ -1,0 +1,370 @@
+smartctl 7.3 2021-09-14 r5236 [i686-w64-mingw32-w10-21H1(64)] (CircleCI)
+Copyright (C) 2002-21, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SanDisk X400 M.2 2280 256GB
+Serial Number:    165338423824
+LU WWN Device Id: 5 001b44 4a6e86a34
+Firmware Version: X4130012
+User Capacity:    256,060,514,304 bytes [256 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Form Factor:      M.2
+TRIM Command:     Available, deterministic, zeroed
+Device is:        Not in smartctl database 7.2/5236
+ATA Version is:   ACS-2 T13/2015-D revision 3
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed Oct 06 14:57:32 2021 EDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     16 (intermediate level with standby)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x11) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  10) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 4
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   -O--CK   100   100   ---    -    0
+  9 Power_On_Hours          -O--CK   100   100   ---    -    7903
+ 12 Power_Cycle_Count       -O--CK   100   100   ---    -    1351
+175 Program_Fail_Count_Chip -O--CK   100   100   ---    -    0
+176 Erase_Fail_Count_Chip   -O--CK   100   100   ---    -    0
+177 Wear_Leveling_Count     -O--CK   100   100   ---    -    15
+178 Used_Rsvd_Blk_Cnt_Chip  -O--CK   100   100   ---    -    0
+179 Used_Rsvd_Blk_Cnt_Tot   -O--CK   100   100   ---    -    0
+180 Unused_Rsvd_Blk_Cnt_Tot PO--CK   100   100   004    -    10370
+181 Program_Fail_Cnt_Total  -O--CK   100   100   ---    -    0
+182 Erase_Fail_Count_Total  -O--CK   100   100   ---    -    0
+187 Reported_Uncorrect      -O--CK   100   100   ---    -    0
+194 Temperature_Celsius     -O---K   071   062   ---    -    29 (Min/Max 3/62)
+195 Hardware_ECC_Recovered  -O--CK   100   100   ---    -    0
+199 UDMA_CRC_Error_Count    -O--CK   100   100   ---    -    1
+230 Unknown_SSD_Attribute   -O--CK   100   100   ---    -    5888434636123
+238 Unknown_Attribute       -O--CK   095   100   ---    -    15785206
+241 Total_LBAs_Written      ----CK   253   253   ---    -    16940688390
+242 Total_LBAs_Read         ----CK   253   253   ---    -    19433496113
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      2  Comprehensive SMART error log
+0x03       GPL     R/O      1  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xde       GPL     VS       8  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%      7903         -
+# 2  Short offline       Completed without error       00%      7903         -
+# 3  Short offline       Completed without error       00%      7903         -
+# 4  Short offline       Completed without error       00%      5372         -
+# 5  Short offline       Completed without error       00%      5372         -
+# 6  Short offline       Completed without error       00%      5372         -
+# 7  Short offline       Completed without error       00%         1         -
+
+Selective Self-tests/Logging not supported
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       257 (0x0101)
+Device State:                        Active (0)
+Current Temperature:                    35 Celsius
+Power Cycle Min/Max Temperature:     25/40 Celsius
+Lifetime    Min/Max Temperature:     25/40 Celsius
+Specified Max Operating Temperature:    35 Celsius
+Under/Over Temperature Limit Count:   0/0
+Vendor specific:
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+01 00 01 00 01 00 00 00 00 00 00 00 00 00 00 00
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:     -10/70 Celsius
+Min/Max Temperature Limit:           -15/90 Celsius
+Temperature History Size (Index):    256 (208)
+
+Index    Estimated Time   Temperature Celsius
+ 209    2021-10-06 10:42    39  ********************
+ 210    2021-10-06 10:43    40  *********************
+ 211    2021-10-06 10:44    40  *********************
+ 212    2021-10-06 10:45    39  ********************
+ 213    2021-10-06 10:46    39  ********************
+ 214    2021-10-06 10:47    38  *******************
+ 215    2021-10-06 10:48    39  ********************
+ 216    2021-10-06 10:49    40  *********************
+ 217    2021-10-06 10:50    40  *********************
+ 218    2021-10-06 10:51    39  ********************
+ 219    2021-10-06 10:52    39  ********************
+ 220    2021-10-06 10:53    40  *********************
+ 221    2021-10-06 10:54    38  *******************
+ 222    2021-10-06 10:55    38  *******************
+ 223    2021-10-06 10:56    38  *******************
+ 224    2021-10-06 10:57    37  ******************
+ 225    2021-10-06 10:58    38  *******************
+ ...    ..(  5 skipped).    ..  *******************
+ 231    2021-10-06 11:04    38  *******************
+ 232    2021-10-06 11:05    39  ********************
+ ...    ..(  7 skipped).    ..  ********************
+ 240    2021-10-06 11:13    39  ********************
+ 241    2021-10-06 11:14    40  *********************
+ 242    2021-10-06 11:15    39  ********************
+ 243    2021-10-06 11:16    40  *********************
+ ...    ..( 10 skipped).    ..  *********************
+ 254    2021-10-06 11:27    40  *********************
+ 255    2021-10-06 11:28    35  ****************
+   0    2021-10-06 11:29    36  *****************
+   1    2021-10-06 11:30    33  **************
+   2    2021-10-06 11:31    32  *************
+   3    2021-10-06 11:32    31  ************
+   4    2021-10-06 11:33    29  **********
+   5    2021-10-06 11:34    29  **********
+   6    2021-10-06 11:35    29  **********
+   7    2021-10-06 11:36    30  ***********
+   8    2021-10-06 11:37    29  **********
+ ...    ..(  3 skipped).    ..  **********
+  12    2021-10-06 11:41    29  **********
+  13    2021-10-06 11:42    30  ***********
+  14    2021-10-06 11:43    30  ***********
+  15    2021-10-06 11:44    30  ***********
+  16    2021-10-06 11:45    29  **********
+  17    2021-10-06 11:46    28  *********
+  18    2021-10-06 11:47    28  *********
+  19    2021-10-06 11:48    29  **********
+  20    2021-10-06 11:49    29  **********
+  21    2021-10-06 11:50    29  **********
+  22    2021-10-06 11:51    30  ***********
+  23    2021-10-06 11:52    29  **********
+  24    2021-10-06 11:53    29  **********
+  25    2021-10-06 11:54    30  ***********
+  26    2021-10-06 11:55    29  **********
+  27    2021-10-06 11:56    30  ***********
+  28    2021-10-06 11:57    30  ***********
+  29    2021-10-06 11:58    29  **********
+  30    2021-10-06 11:59    29  **********
+  31    2021-10-06 12:00    28  *********
+  32    2021-10-06 12:01    28  *********
+  33    2021-10-06 12:02    29  **********
+ ...    ..(  3 skipped).    ..  **********
+  37    2021-10-06 12:06    29  **********
+  38    2021-10-06 12:07    30  ***********
+  39    2021-10-06 12:08    29  **********
+  40    2021-10-06 12:09    30  ***********
+  41    2021-10-06 12:10    32  *************
+  42    2021-10-06 12:11    30  ***********
+  43    2021-10-06 12:12    30  ***********
+  44    2021-10-06 12:13    30  ***********
+  45    2021-10-06 12:14    29  **********
+  46    2021-10-06 12:15    28  *********
+ ...    ..(  2 skipped).    ..  *********
+  49    2021-10-06 12:18    28  *********
+  50    2021-10-06 12:19    29  **********
+ ...    ..(  2 skipped).    ..  **********
+  53    2021-10-06 12:22    29  **********
+  54    2021-10-06 12:23    30  ***********
+  55    2021-10-06 12:24    29  **********
+  56    2021-10-06 12:25    30  ***********
+  57    2021-10-06 12:26    30  ***********
+  58    2021-10-06 12:27    29  **********
+  59    2021-10-06 12:28    30  ***********
+  60    2021-10-06 12:29    29  **********
+  61    2021-10-06 12:30    28  *********
+ ...    ..(  2 skipped).    ..  *********
+  64    2021-10-06 12:33    28  *********
+  65    2021-10-06 12:34    29  **********
+  66    2021-10-06 12:35    29  **********
+  67    2021-10-06 12:36    29  **********
+  68    2021-10-06 12:37    31  ************
+  69    2021-10-06 12:38    29  **********
+ ...    ..(  2 skipped).    ..  **********
+  72    2021-10-06 12:41    29  **********
+  73    2021-10-06 12:42    30  ***********
+  74    2021-10-06 12:43    29  **********
+  75    2021-10-06 12:44    29  **********
+  76    2021-10-06 12:45    30  ***********
+  77    2021-10-06 12:46    28  *********
+  78    2021-10-06 12:47    28  *********
+  79    2021-10-06 12:48    28  *********
+  80    2021-10-06 12:49    29  **********
+ ...    ..(  5 skipped).    ..  **********
+  86    2021-10-06 12:55    29  **********
+  87    2021-10-06 12:56    30  ***********
+  88    2021-10-06 12:57    30  ***********
+  89    2021-10-06 12:58    29  **********
+  90    2021-10-06 12:59    29  **********
+  91    2021-10-06 13:00    30  ***********
+  92    2021-10-06 13:01    29  **********
+  93    2021-10-06 13:02    29  **********
+  94    2021-10-06 13:03    28  *********
+  95    2021-10-06 13:04    28  *********
+  96    2021-10-06 13:05    29  **********
+ ...    ..(  3 skipped).    ..  **********
+ 100    2021-10-06 13:09    29  **********
+ 101    2021-10-06 13:10    30  ***********
+ ...    ..(  4 skipped).    ..  ***********
+ 106    2021-10-06 13:15    30  ***********
+ 107    2021-10-06 13:16    29  **********
+ 108    2021-10-06 13:17    30  ***********
+ 109    2021-10-06 13:18    30  ***********
+ 110    2021-10-06 13:19    29  **********
+ 111    2021-10-06 13:20    28  *********
+ 112    2021-10-06 13:21    28  *********
+ 113    2021-10-06 13:22    29  **********
+ ...    ..(  4 skipped).    ..  **********
+ 118    2021-10-06 13:27    29  **********
+ 119    2021-10-06 13:28    30  ***********
+ 120    2021-10-06 13:29    29  **********
+ 121    2021-10-06 13:30    29  **********
+ 122    2021-10-06 13:31    29  **********
+ 123    2021-10-06 13:32    31  ************
+ 124    2021-10-06 13:33    32  *************
+ 125    2021-10-06 13:34    33  **************
+ ...    ..(  2 skipped).    ..  **************
+ 128    2021-10-06 13:37    33  **************
+ 129    2021-10-06 13:38    31  ************
+ 130    2021-10-06 13:39    33  **************
+ 131    2021-10-06 13:40    33  **************
+ 132    2021-10-06 13:41    34  ***************
+ 133    2021-10-06 13:42    34  ***************
+ 134    2021-10-06 13:43    35  ****************
+ 135    2021-10-06 13:44    35  ****************
+ 136    2021-10-06 13:45    35  ****************
+ 137    2021-10-06 13:46    34  ***************
+ 138    2021-10-06 13:47    35  ****************
+ ...    ..(  2 skipped).    ..  ****************
+ 141    2021-10-06 13:50    35  ****************
+ 142    2021-10-06 13:51    34  ***************
+ 143    2021-10-06 13:52    34  ***************
+ 144    2021-10-06 13:53    33  **************
+ 145    2021-10-06 13:54    32  *************
+ ...    ..(  4 skipped).    ..  *************
+ 150    2021-10-06 13:59    32  *************
+ 151    2021-10-06 14:00    34  ***************
+ 152    2021-10-06 14:01    34  ***************
+ 153    2021-10-06 14:02    33  **************
+ 154    2021-10-06 14:03    34  ***************
+ ...    ..(  2 skipped).    ..  ***************
+ 157    2021-10-06 14:06    34  ***************
+ 158    2021-10-06 14:07    35  ****************
+ 159    2021-10-06 14:08    32  *************
+ 160    2021-10-06 14:09    32  *************
+ 161    2021-10-06 14:10    32  *************
+ 162    2021-10-06 14:11    33  **************
+ ...    ..(  4 skipped).    ..  **************
+ 167    2021-10-06 14:16    33  **************
+ 168    2021-10-06 14:17    32  *************
+ 169    2021-10-06 14:18    30  ***********
+ 170    2021-10-06 14:19    29  **********
+ 171    2021-10-06 14:20    29  **********
+ 172    2021-10-06 14:21    30  ***********
+ ...    ..(  4 skipped).    ..  ***********
+ 177    2021-10-06 14:26    30  ***********
+ 178    2021-10-06 14:27    29  **********
+ 179    2021-10-06 14:28    28  *********
+ 180    2021-10-06 14:29    29  **********
+ ...    ..(  2 skipped).    ..  **********
+ 183    2021-10-06 14:32    29  **********
+ 184    2021-10-06 14:33    30  ***********
+ ...    ..(  4 skipped).    ..  ***********
+ 189    2021-10-06 14:38    30  ***********
+ 190    2021-10-06 14:39    28  *********
+ 191    2021-10-06 14:40    29  **********
+ 192    2021-10-06 14:41    29  **********
+ 193    2021-10-06 14:42    29  **********
+ 194    2021-10-06 14:43    30  ***********
+ ...    ..(  5 skipped).    ..  ***********
+ 200    2021-10-06 14:49    30  ***********
+ 201    2021-10-06 14:50    32  *************
+ 202    2021-10-06 14:51    35  ****************
+ 203    2021-10-06 14:52    31  ************
+ 204    2021-10-06 14:53    30  ***********
+ 205    2021-10-06 14:54    34  ***************
+ 206    2021-10-06 14:55    35  ****************
+ 207    2021-10-06 14:56    35  ****************
+ 208    2021-10-06 14:57    35  ****************
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4            1351  ---  Lifetime Power-On Resets
+0x01  0x010  4            1084  ---  Power-on Hours
+0x01  0x018  6     16940688390  ---  Logical Sectors Written
+0x01  0x020  6       404967240  ---  Number of Write Commands
+0x01  0x028  6     19433496113  ---  Logical Sectors Read
+0x01  0x030  6       516671829  ---  Number of Read Commands
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               2  N--  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x0002  4            0  R_ERR response for data FIS
+0x0005  4            0  R_ERR response for non-data FIS
+0x000a  4          281  Device-to-host register FISes sent due to a COMRESET
+
