@@ -1,0 +1,31 @@
+smartctl 7.1 2019-12-30 r5022 [FreeBSD 12.1-RELEASE-p12 amd64] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               FUJITSU
+Product:              MBA3073RC
+Revision:             D305
+Compliance:           SPC-3
+User Capacity:        73,407,820,800 bytes [73.4 GB]
+Logical block size:   512 bytes
+Rotation Rate:        15000 rpm
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Sat Feb  6 14:25:29 2021 CET
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Disabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Elements in grown defect list: 0
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
+Device does not support Background scan results logging

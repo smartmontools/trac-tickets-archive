@@ -1,0 +1,62 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.11.0-gentoo-x86_64] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+sdf -> /sys/class/scsi_host/host8/proc_name: "megaraid_sas"
+=== START OF INFORMATION SECTION ===
+Vendor:               HP
+Product:              VO007680JWCNK
+Revision:             HPD8
+Compliance:           SPC-4
+User Capacity:        7,681,501,126,656 bytes [7.68 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Logical Unit id:      0x50000f0a47b02100
+Serial number:        S3DFNX0JB00388
+Device type:          disk
+Transport protocol:   SAS (SPL-4)
+Local Time is:        Sat May 17 11:05:27 2025 CEST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 3 (sub-pages: 0)
+SMART Health Status: OK
+
+Percentage used endurance indicator: 0%
+Current Drive Temperature:     42 C
+Drive Trip Temperature:        60 C
+
+Accumulated power on time, hours:minutes 15652:32
+Manufactured in week 46 of year 2017
+Accumulated start-stop cycles:  42
+Specified load-unload count over device lifetime:  0
+Accumulated load-unload cycles:  0
+  >>> Sense buffer, len=26:
+ 00     72 01 1c 00 00 00 00 12  02 06 00 00 80 00 00 00
+ 10     03 02 00 00 80 04 00 21  1c 00
+  status=2: [desc] sense_key=1 asc=1c ascq=0
+Read defect list (12) Failed: unknown error
+Grown defect list length=1 bytes [unknown number of elements]
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0          0.000           0
+write:         0        0         0         0          0         60.398           0
+
+Non-medium error count:       21
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -   15638                 - [-   -    -]
+# 2  Background long   Completed                   -   15447                 - [-   -    -]
+# 3  Background long   Completed                   -   15425                 - [-   -    -]
+
+Long (extended) Self-test duration: 1333 seconds [22.2 minutes]
+

@@ -1,0 +1,101 @@
+Load module index
+Network interface NamePolicy= disabled on kernel command line, ignoring.
+Parsed configuration file /usr/lib/systemd/network/99-default.link
+Created link configuration context.
+Reading rules file: /usr/lib/udev/rules.d/01-md-raid-creating.rules
+Reading rules file: /etc/udev/rules.d/40-usb_modeswitch.rules
+Reading rules file: /usr/lib/udev/rules.d/50-firmware.rules
+Reading rules file: /etc/udev/rules.d/50-net-wlan0_start-hostapd.rules
+Reading rules file: /usr/lib/udev/rules.d/50-udev-default.rules
+Reading rules file: /usr/lib/udev/rules.d/55-dm.rules
+Reading rules file: /usr/lib/udev/rules.d/56-dm-parts.rules
+Reading rules file: /usr/lib/udev/rules.d/60-block.rules
+Reading rules file: /usr/lib/udev/rules.d/60-bridge-network-interface.rules
+Reading rules file: /usr/lib/udev/rules.d/60-cdrom_id.rules
+Reading rules file: /usr/lib/udev/rules.d/60-crda.rules
+Reading rules file: /usr/lib/udev/rules.d/60-drm.rules
+Reading rules file: /usr/lib/udev/rules.d/60-evdev.rules
+Reading rules file: /usr/lib/udev/rules.d/60-input-id.rules
+Reading rules file: /usr/lib/udev/rules.d/60-kpartx.rules
+Reading rules file: /usr/lib/udev/rules.d/60-libgphoto2-6.rules
+Reading rules file: /usr/lib/udev/rules.d/60-libsane.rules
+Reading rules file: /usr/lib/udev/rules.d/60-persistent-alsa.rules
+Reading rules file: /usr/lib/udev/rules.d/60-persistent-input.rules
+Reading rules file: /usr/lib/udev/rules.d/60-persistent-storage-dm.rules
+Reading rules file: /usr/lib/udev/rules.d/60-persistent-storage-tape.rules
+Reading rules file: /usr/lib/udev/rules.d/60-persistent-storage.rules
+Reading rules file: /usr/lib/udev/rules.d/60-persistent-v4l.rules
+Reading rules file: /usr/lib/udev/rules.d/60-sensor.rules
+Reading rules file: /usr/lib/udev/rules.d/60-serial.rules
+Reading rules file: /usr/lib/udev/rules.d/63-md-raid-arrays.rules
+Reading rules file: /usr/lib/udev/rules.d/64-btrfs-dm.rules
+Reading rules file: /usr/lib/udev/rules.d/64-btrfs.rules
+Reading rules file: /usr/lib/udev/rules.d/64-md-raid-assembly.rules
+Reading rules file: /usr/lib/udev/rules.d/68-del-part-nodes.rules
+Reading rules file: /usr/lib/udev/rules.d/69-cd-sensors.rules
+Reading rules file: /usr/lib/udev/rules.d/69-md-clustered-confirm-device.rules
+Reading rules file: /usr/lib/udev/rules.d/70-joystick.rules
+Reading rules file: /usr/lib/udev/rules.d/70-mouse.rules
+Reading rules file: /usr/lib/udev/rules.d/70-power-switch.rules
+Reading rules file: /usr/lib/udev/rules.d/70-touchpad.rules
+Reading rules file: /usr/lib/udev/rules.d/70-uaccess.rules
+Reading rules file: /usr/lib/udev/rules.d/71-seat.rules
+Reading rules file: /usr/lib/udev/rules.d/73-seat-late.rules
+Reading rules file: /usr/lib/udev/rules.d/73-special-net-names.rules
+Reading rules file: /usr/lib/udev/rules.d/73-usb-net-by-mac.rules
+Reading rules file: /usr/lib/udev/rules.d/75-net-description.rules
+Reading rules file: /usr/lib/udev/rules.d/75-probe_mtd.rules
+Reading rules file: /usr/lib/udev/rules.d/78-sound-card.rules
+Reading rules file: /usr/lib/udev/rules.d/80-debian-compat.rules
+Reading rules file: /usr/lib/udev/rules.d/80-drivers.rules
+Reading rules file: /usr/lib/udev/rules.d/80-ifupdown.rules
+Reading rules file: /usr/lib/udev/rules.d/80-net-setup-link.rules
+Reading rules file: /usr/lib/udev/rules.d/85-hdparm.rules
+Reading rules file: /usr/lib/udev/rules.d/85-hplj10xx.rules
+Reading rules file: /usr/lib/udev/rules.d/85-hwclock.rules
+Reading rules file: /usr/lib/udev/rules.d/85-regulatory.rules
+Reading rules file: /usr/lib/udev/rules.d/90-console-setup.rules
+Reading rules file: /usr/lib/udev/rules.d/95-cd-devices.rules
+Reading rules file: /usr/lib/udev/rules.d/95-dm-notify.rules
+Reading rules file: /usr/lib/udev/rules.d/99-systemd.rules
+Rules contain 49152 bytes tokens (4096 * 12 bytes), 16812 bytes strings
+2964 strings (34356 bytes), 2076 de-duplicated (18433 bytes), 889 trie nodes used
+Invalid inotify descriptor.
+Starting 'ata_id --export /dev/sda'
+Process 'ata_id --export /dev/sda' failed with exit code 2.
+Unload module index
+Unloaded link configuration context.
+This program is for debugging only, it does not run any program
+specified by a RUN key. It may show incorrect results, because
+some values may be different, or not available at a simulation run.
+
+DEVPATH=/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb2/2-2/2-2:1.0/host0/target0:0:0/0:0:0:0/block/sda
+DEVNAME=/dev/sda
+DEVTYPE=disk
+MAJOR=8
+MINOR=0
+ACTION=add
+SUBSYSTEM=block
+ID_VENDOR=USB
+ID_VENDOR_ENC=USB\x20\x20\x20\x20\x20
+ID_VENDOR_ID=154b
+ID_MODEL=3.0
+ID_MODEL_ENC=3.0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+ID_MODEL_ID=8001
+ID_REVISION=0102
+ID_SERIAL=USB_3.0_DD564198838DA-0:0
+ID_SERIAL_SHORT=DD564198838DA
+ID_TYPE=disk
+ID_INSTANCE=0:0
+ID_BUS=usb
+ID_USB_INTERFACES=:080650:080662:
+ID_USB_INTERFACE_NUM=00
+ID_USB_DRIVER=uas
+DEVLINKS=/dev/disk/by-id/usb-USB_3.0_DD564198838DA-0:0 /dev/disk/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:2:1.0-scsi-0:0:0:0
+ID_PATH=platform-fd500000.pcie-pci-0000:01:00.0-usb-0:2:1.0-scsi-0:0:0:0
+ID_PATH_TAG=platform-fd500000_pcie-pci-0000_01_00_0-usb-0_2_1_0-scsi-0_0_0_0
+ID_PART_TABLE_UUID=60f8aa6e-ce6e-434c-a872-fa5879d698ad
+ID_PART_TABLE_TYPE=gpt
+TAGS=:systemd:
+USEC_INITIALIZED=4785327
+run: '/lib/udev/hdparm'

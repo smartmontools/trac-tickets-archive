@@ -1,0 +1,402 @@
+smartctl -r ioctl,2 -a /dev/sdl
+smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.4.106-1-pve] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+sdl -> /sys/class/scsi_host/host1/proc_name: "mpt2sas"
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 12 9f 01 10 02  48 47 53 54 20 20 20 20
+ 10     48 55 53 4d 4d 33 32 38  30 41 53 53 32 30 34 20
+ 20     5a 31 32 38
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=232
+  Incoming data, len=20:
+ 00     00 00 00 10 00 03 80 83  86 87 88 8a 8d 90 91 b0
+ 10     b1 b2 c3 d2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 12 9f 01 10 02  48 47 53 54 20 20 20 20
+ 10     48 55 53 4d 4d 33 32 38  30 41 53 53 32 30 34 20
+ 20     5a 31 32 38
+=== START OF INFORMATION SECTION ===
+Vendor:               HGST
+Product:              HUSMM3280ASS204
+Revision:             Z128
+Compliance:           SPC-4
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 00 5d 26 ce af  00 00 02 00 00 03 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        800,166,076,416 bytes [800 GB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 b2 00 08 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 b2 00 04 00 e6 01 00
+LU is resource provisioned, LBPRZ=1
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 b1 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=64:
+ 00     00 b1 00 3c 00 01 00 53  03 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 5d 26 ce b0  00 00 02 00 9c 0a 10 06
+ 10     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 5d 26 ce b0  00 00 02 00 9c 0a bf 0f
+ 10     ff ff ff ff ff ff ff ff
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=176
+  Incoming data, len=76:
+ 00     00 83 00 48 01 03 00 08  50 00 cc a0 9c 06 5a 40
+ 10     61 93 00 08 50 00 cc a0  9c 06 5a 41 61 94 00 04
+ 20     00 00 00 01 61 a3 00 08  50 00 cc a0 9c 06 5a 43
+ 30     63 a8 00 18 6e 61 61 2e  35 30 30 30 43 43 41 30
+ 40     39 43 30 36 35 41 34 33  00 00 00 00
+Logical Unit id:      0x5000cca09c065a40
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=232
+  Incoming data, len=20:
+ 00     00 80 00 10 20 20 20 20  20 20 20 20 37 31 56 33
+ 10     48 39 45 58
+Serial number:        71V3H9EX
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Sun Apr 11 12:31:32 2021 PDT
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     00 00 00 12
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 00 00 00 00 00 16 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=22:
+ 00     00 00 00 12 00 02 03 05  06 0d 0e 0f 10 11 15 17
+ 10     18 19 1a 2f 30 37
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 ff 00 00 00 3e fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=16048
+  Incoming data, len=76:
+ 00     40 ff 00 48 00 00 00 ff  02 00 02 ff 03 00 03 ff
+ 10     05 00 05 ff 06 00 06 ff  0d 00 0d ff 0e 00 0e ff
+ 20     0f 00 0f ff 10 00 10 ff  11 00 11 ff 15 00 15 ff
+ 30     17 00 17 ff 18 00 18 ff  19 00 19 ff 1a 00 1a ff
+ 40     2f 00 2f ff 30 00 30 ff  37 00 37 ff
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 8 (sub-pages: 0)
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     2f 00 00 4c
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 6f 00 00 00 00 00 50 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=80:
+ 00     2f 00 00 4c 00 00 03 08  00 00 1f 46 28 00 1f 00
+ 10     00 01 03 04 5d 53 00 00  00 02 03 04 5d 54 00 00
+ 20     00 03 03 04 5d 57 00 00  00 04 03 04 5d 28 00 00
+ 30     00 05 03 04 0b 06 00 00  00 06 03 04 5d 56 00 00
+ 40     00 07 03 04 5d 55 00 00  00 08 03 04 5d 20 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 18  00 00 00 00 00 00 00 00
+ 10     00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 1f 00 01 43 02 00 46
+SMART Health Status: OK
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 51 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     11 00 00 08
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 51 00 00 00 00 00 0c 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=12:
+ 00     11 00 00 08 00 01 03 04  00 00 00 00
+Percentage used endurance indicator: 0%
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 1f 00 01 43 02 00 46
+Current Drive Temperature:     31 C
+Drive Trip Temperature:        70 C
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 55 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=40 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     15 00 00 10
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 55 00 00 00 00 00 14 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=44 milliseconds  resid=0
+  Incoming data, len=20:
+ 00     15 00 00 10 00 00 03 0c  00 01 7b e7 00 00 00 00
+ 10     00 00 00 00
+Accumulated power on time, hours:minutes 1620:55
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 4e 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     0e 00 00 34
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 4e 00 00 00 00 00 38 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=56:
+ 00     0e 00 00 34 00 01 41 06  32 30 31 39 32 35 00 02
+ 10     01 06 32 30 31 39 32 35  00 03 43 04 00 00 00 00
+ 20     00 04 43 04 00 00 00 00  00 05 43 04 00 00 00 00
+ 30     00 06 43 04 00 00 00 00
+Manufactured in week 25 of year 2019
+Specified cycle count over device lifetime:  0
+Accumulated start-stop cycles:  0
+Specified load-unload count over device lifetime:  0
+Accumulated load-unload cycles:  0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+  scsi_status=0x2, sg_transport_status=0x0, sg_driver_status=0x8
+  sg_info=0x1  sg_duration=8 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 0e 00 00 00 00 00 00
+  >>> Sense buffer, len=32:
+ 00     70 00 01 00 00 00 00 18  00 00 00 00 1c 02 00 c0
+ 10     00 01 00 00 17 48 00 00  00 00 00 00 00 00 00 00
+  status=2: sense_key=1 asc=1c ascq=2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 77 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     37 00 00 30
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 77 00 00 00 00 00 34 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=52:
+ 00     37 00 00 30 00 00 00 2c  00 00 06 54 00 00 02 c7
+ 10     2c 3b 0a 28 00 00 01 75  88 29 60 00 28 00 00 00
+ 20     00 00 00 00 00 01 13 8b  7b 00 00 00 00 02 a6 20
+ 30     30 00 00 00
+Vendor (Seagate Cache) information
+  Blocks sent to initiator = 745607127891968
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 43 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     03 00 00 54
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 43 00 00 00 00 00 58 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=88:
+ 00     03 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00
+ 40     00 05 00 08 00 00 02 c7  2c 3b 0a 28 00 06 00 08
+ 50     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 42 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     02 00 00 54
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 42 00 00 00 00 00 58 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=88:
+ 00     02 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00
+ 40     00 05 00 08 00 00 01 75  88 29 60 00 00 06 00 08
+ 50     00 00 00 00 00 00 00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 45 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     05 00 00 54
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 45 00 00 00 00 00 58 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=88:
+ 00     05 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00
+ 40     00 05 00 08 00 00 00 00  00 00 00 00 00 06 00 08
+ 50     00 00 00 00 00 00 00 00
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0       3054.464           0
+write:         0        0         0         0          0       1604.307           0
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 46 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     06 00 00 0c
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 46 00 00 00 00 00 10 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=16:
+ 00     06 00 00 0c 00 00 00 08  00 00 00 00 00 00 00 00
+
+Non-medium error count:        0
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 5d 26 ce b0  00 00 02 00 8a 0a 08 00
+ 10     00 80 00 00 00 00 05 28
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 18  00 00 00 00 00 00 00 00
+ 10     00 00
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     10 00 01 90
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 06 4a ff ff ff ff
+ 10     ff ff ff ff 00 00 00 01  00 02 03 10 40 00 06 34
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10
+ 30     20 00 06 32 ff ff ff ff  ff ff ff ff 00 00 00 01
+ 40     00 04 03 10 20 00 06 1a  ff ff ff ff ff ff ff ff
+ 50     00 00 00 00 00 05 03 10  20 00 06 02 ff ff ff ff
+ 60     ff ff ff ff 00 00 00 01  00 06 03 10 20 00 05 ea
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10
+ 80     20 00 05 d2 ff ff ff ff  ff ff ff ff 00 00 00 01
+ 90     00 08 03 10 20 00 05 ba  ff ff ff ff ff ff ff ff
+ a0     00 00 00 00 00 09 03 10  20 00 05 a2 ff ff ff ff
+ b0     ff ff ff ff 00 00 00 01  00 0a 03 10 40 00 05 8c
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10
+ d0     20 00 05 8a ff ff ff ff  ff ff ff ff 00 00 00 01
+ e0     00 0c 03 10 20 00 05 72  ff ff ff ff ff ff ff ff
+ f0     00 00 00 00 00 0d 03 10  20 00 05 5a ff ff ff ff
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -    1610                 - [-   -    -]
+# 2  Background long   Completed                   -    1588                 - [-   -    -]
+# 3  Background short  Completed                   -    1586                 - [-   -    -]
+# 4  Background short  Completed                   -    1562                 - [-   -    -]
+# 5  Background short  Completed                   -    1538                 - [-   -    -]
+# 6  Background short  Completed                   -    1514                 - [-   -    -]
+# 7  Background short  Completed                   -    1490                 - [-   -    -]
+# 8  Background short  Completed                   -    1466                 - [-   -    -]
+# 9  Background short  Completed                   -    1442                 - [-   -    -]
+#10  Background long   Completed                   -    1420                 - [-   -    -]
+#11  Background short  Completed                   -    1418                 - [-   -    -]
+#12  Background short  Completed                   -    1394                 - [-   -    -]
+#13  Background short  Completed                   -    1370                 - [-   -    -]
+#14  Background short  Completed                   -    1346                 - [-   -    -]
+#15  Background short  Completed                   -    1322                 - [-   -    -]
+#16  Background short  Completed                   -    1298                 - [-   -    -]
+#17  Background short  Completed                   -    1274                 - [-   -    -]
+#18  Background long   Completed                   -    1251                 - [-   -    -]
+#19  Background short  Completed                   -    1250                 - [-   -    -]
+#20  Background short  Completed                   -    1226                 - [-   -    -]
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 5d 26 ce b0  00 00 02 00 8a 0a 08 00
+ 10     00 80 00 00 00 00 05 28
+
+Long (extended) Self-test duration: 1320 seconds [22.0 minutes]

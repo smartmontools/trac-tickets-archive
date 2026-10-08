@@ -1,0 +1,306 @@
+diff --git a/atacmds.cpp b/atacmds.cpp
+index b0b1d2b..fdb33cb 100644
+--- a/atacmds.cpp
++++ b/atacmds.cpp
+@@ -2414,7 +2414,8 @@ int ataSetSCTTempInterval(ata_device * device, unsigned interval, bool persisten
+ 
+ // Get/Set SCT Error Recovery Control
+ static int ataGetSetSCTErrorRecoveryControltime(ata_device * device, unsigned type,
+-                                                bool set, unsigned short & time_limit)
++                                                bool set, unsigned short & time_limit,
++                                                bool power_on, bool mfg_default)
+ {
+   // Check initial status
+   ata_sct_status_response sts;
+@@ -2432,7 +2433,17 @@ static int ataGetSetSCTErrorRecoveryControltime(ata_device * device, unsigned ty
+   ata_sct_error_recovery_control_command cmd; memset(&cmd, 0, sizeof(cmd));
+   // CAUTION: DO NOT CHANGE THIS VALUE (SOME ACTION CODES MAY ERASE DISK)
+   cmd.action_code    = 3; // Error Recovery Control command
+-  cmd.function_code  = (set ? 1 : 2); // 1=Set timer, 2=Get timer
++
++  // 1=Set timer, 2=Get timer, 3=Set Power-on timer, 4=Get Power-on timer, 5=Restore mfg default
++  if (mfg_default) {
++    cmd.function_code = 5;
++  } else if (power_on) {
++    cmd.function_code = (set ? 3 : 4);
++  } else {
++    cmd.function_code = (set ? 1 : 2);
++  }
++  unsigned short saved_function_code = cmd.function_code;
++
+   cmd.selection_code = type; // 1=Read timer, 2=Write timer
+   if (set)
+     cmd.time_limit   = time_limit;
+@@ -2469,7 +2480,7 @@ static int ataGetSetSCTErrorRecoveryControltime(ata_device * device, unsigned ty
+   if (ataReadSCTStatus(device, &sts))
+     return -1;
+ 
+-  if (!(sts.ext_status_code == 0 && sts.action_code == 3 && sts.function_code == (set ? 1 : 2))) {
++  if (!(sts.ext_status_code == 0 && sts.action_code == 3 && sts.function_code == saved_function_code)) {
+     pout("Unexpected SCT status 0x%04x (action_code=%u, function_code=%u)\n",
+       sts.ext_status_code, sts.action_code, sts.function_code);
+     return -1;
+@@ -2498,15 +2509,16 @@ static int ataGetSetSCTErrorRecoveryControltime(ata_device * device, unsigned ty
+ }
+ 
+ // Get SCT Error Recovery Control
+-int ataGetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short & time_limit)
++int ataGetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short & time_limit, bool power_on)
+ {
+-  return ataGetSetSCTErrorRecoveryControltime(device, type, false/*get*/, time_limit);
++  return ataGetSetSCTErrorRecoveryControltime(device, type, false/*get*/, time_limit, power_on, false);
+ }
+ 
+ // Set SCT Error Recovery Control
+-int ataSetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short time_limit)
++int ataSetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short time_limit,
++                                      bool power_on, bool mfg_default)
+ {
+-  return ataGetSetSCTErrorRecoveryControltime(device, type, true/*set*/, time_limit);
++  return ataGetSetSCTErrorRecoveryControltime(device, type, true/*set*/, time_limit, power_on, mfg_default);
+ }
+ 
+ 
+diff --git a/atacmds.h b/atacmds.h
+index 94c9ae9..9e81377 100644
+--- a/atacmds.h
++++ b/atacmds.h
+@@ -545,7 +545,7 @@ STATIC_ASSERT(sizeof(ata_sct_status_response) == 512);
+ struct ata_sct_error_recovery_control_command
+ {
+   unsigned short action_code;       // 3 = Error Recovery Control
+-  unsigned short function_code;     // 1 = Set, 2 = Return
++  unsigned short function_code;     // 1 = Set Current, 2 = Return Current, 3 = Set Power-on, 4 = Return Power-on, 5 = Restore Default
+   unsigned short selection_code;    // 1 = Read Timer, 2 = Write Timer
+   unsigned short time_limit;        // If set: Recovery time limit in 100ms units
+   unsigned short words004_255[252]; // reserved
+@@ -792,8 +792,8 @@ int ataReadSCTTempHist(ata_device * device, ata_sct_temperature_history_table *
+ int ataSetSCTTempInterval(ata_device * device, unsigned interval, bool persistent);
+ 
+ // Get/Set SCT Error Recovery Control
+-int ataGetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short & time_limit);
+-int ataSetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short time_limit);
++int ataGetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short & time_limit, bool power_on);
++int ataSetSCTErrorRecoveryControltime(ata_device * device, unsigned type, unsigned short time_limit, bool power_on, bool mfg_default);
+ 
+ 
+ /* Enable/Disable SMART on device */
+diff --git a/ataprint.cpp b/ataprint.cpp
+index 335ef64..bcc435d 100644
+--- a/ataprint.cpp
++++ b/ataprint.cpp
+@@ -3128,25 +3128,28 @@ static int ataPrintSCTTempHist(const ata_sct_temperature_history_table * tmh)
+ }
+ 
+ // Print SCT Error Recovery Control timers
+-static void ataPrintSCTErrorRecoveryControl(bool set, unsigned short read_timer, unsigned short write_timer)
++static void ataPrintSCTErrorRecoveryControl(bool set, unsigned short read_timer, unsigned short write_timer, bool power_on, bool mfg_default = false)
+ {
++  const char* power_on_str = (power_on ? "Power-on " : "");
+   json::ref jref = jglb["ata_sct_erc"];
+-  jout("SCT Error Recovery Control%s:\n", (set ? " set to" : ""));
++  jout("SCT Error Recovery Control%s:%s\n", (set ? " set to" : ""), (mfg_default ? " default values." : ""));
+ 
+-  jref["read"]["enabled"] = !!read_timer;
+-  if (!read_timer)
+-    jout("           Read: Disabled\n");
+-  else {
+-    jout("           Read: %6d (%0.1f seconds)\n", read_timer, read_timer/10.0);
+-    jref["read"]["deciseconds"] = read_timer;
+-  }
++  if (!mfg_default) {
++    jref["read"]["enabled"] = !!read_timer;
++    if (!read_timer)
++      jout("           %sRead: Disabled\n", power_on_str);
++    else {
++      jout("           %sRead: %6d (%0.1f seconds)\n", power_on_str, read_timer, read_timer/10.0);
++      jref["read"]["deciseconds"] = read_timer;
++    }
+ 
+-  jref["write"]["enabled"] = !!write_timer;
+-  if (!write_timer)
+-    jout("          Write: Disabled\n");
+-  else {
+-    jout("          Write: %6d (%0.1f seconds)\n", write_timer, write_timer/10.0);
+-    jref["write"]["deciseconds"] = write_timer;
++    jref["write"]["enabled"] = !!write_timer;
++    if (!write_timer)
++      jout("          %sWrite: Disabled\n", power_on_str);
++    else {
++      jout("          %sWrite: %6d (%0.1f seconds)\n", power_on_str, write_timer, write_timer/10.0);
++      jref["write"]["deciseconds"] = write_timer;
++    }
+   }
+ }
+ 
+@@ -4348,8 +4351,8 @@ int ataPrintMain (ata_device * device, const ata_print_options & options)
+       bool sct_erc_get = options.sct_erc_get;
+       if (options.sct_erc_set) {
+         // Set SCT Error Recovery Control
+-        if (   ataSetSCTErrorRecoveryControltime(device, 1, options.sct_erc_readtime )
+-            || ataSetSCTErrorRecoveryControltime(device, 2, options.sct_erc_writetime)) {
++        if (   ataSetSCTErrorRecoveryControltime(device, 1, options.sct_erc_readtime, options.sct_erc_power_on, options.sct_erc_mfg_default )
++            || ataSetSCTErrorRecoveryControltime(device, 2, options.sct_erc_writetime, options.sct_erc_power_on, options.sct_erc_mfg_default)) {
+           pout("SCT (Set) Error Recovery Control command failed\n");
+           if (!(   (options.sct_erc_readtime == 70 && options.sct_erc_writetime == 70)
+                 || (options.sct_erc_readtime ==  0 && options.sct_erc_writetime ==  0)))
+@@ -4359,24 +4362,24 @@ int ataPrintMain (ata_device * device, const ata_print_options & options)
+         }
+         else if (!sct_erc_get)
+           ataPrintSCTErrorRecoveryControl(true, options.sct_erc_readtime,
+-            options.sct_erc_writetime);
++            options.sct_erc_writetime, options.sct_erc_power_on, options.sct_erc_mfg_default);
+       }
+ 
+       if (sct_erc_get) {
+         // Print SCT Error Recovery Control
+         unsigned short read_timer, write_timer;
+-        if (   ataGetSCTErrorRecoveryControltime(device, 1, read_timer )
+-            || ataGetSCTErrorRecoveryControltime(device, 2, write_timer)) {
++        if (   ataGetSCTErrorRecoveryControltime(device, 1, read_timer, options.sct_erc_power_on )
++            || ataGetSCTErrorRecoveryControltime(device, 2, write_timer, options.sct_erc_power_on)) {
+           pout("SCT (Get) Error Recovery Control command failed\n");
+           if (options.sct_erc_set) {
+             pout("The previous SCT (Set) Error Recovery Control command succeeded\n");
+             ataPrintSCTErrorRecoveryControl(true, options.sct_erc_readtime,
+-              options.sct_erc_writetime);
++              options.sct_erc_writetime, options.sct_erc_power_on);
+           }
+           failuretest(OPTIONAL_CMD, returnval|=FAILSMART);
+         }
+         else
+-          ataPrintSCTErrorRecoveryControl(false, read_timer, write_timer);
++          ataPrintSCTErrorRecoveryControl(false, read_timer, write_timer, options.sct_erc_power_on);
+       }
+       pout("\n");
+     }
+diff --git a/ataprint.h b/ataprint.h
+index 638db1e..2e007e4 100644
+--- a/ataprint.h
++++ b/ataprint.h
+@@ -58,6 +58,8 @@ struct ata_print_options
+   bool sct_erc_get;
+   bool sct_erc_set;
+   unsigned sct_erc_readtime, sct_erc_writetime;
++  bool sct_erc_power_on;
++  bool sct_erc_mfg_default;
+   bool sataphy, sataphy_reset;
+ 
+   bool smart_disable, smart_enable;
+@@ -125,6 +127,8 @@ struct ata_print_options
+       sct_erc_get(false),
+       sct_erc_set(false),
+       sct_erc_readtime(0), sct_erc_writetime(0),
++      sct_erc_power_on(false),
++      sct_erc_mfg_default(false),
+       sataphy(false), sataphy_reset(false),
+       smart_disable(false), smart_enable(false),
+       smart_auto_offl_disable(false), smart_auto_offl_enable(false),
+diff --git a/smartctl.8.in b/smartctl.8.in
+index dad017a..a511bc4 100644
+--- a/smartctl.8.in
++++ b/smartctl.8.in
+@@ -1491,7 +1491,7 @@ Otherwise, the setting is volatile and will be reverted to the last
+ non-volatile setting by the next hard reset.  The default interval
+ is vendor specific, typical values are 1, 2, or 5 minutes.
+ .Sp
+-.I scterc[,READTIME,WRITETIME]
++.I scterc[,READTIME,WRITETIME][,p|r]
+ \- [ATA only] prints values and descriptions of the SCT Error Recovery
+ Control settings.
+ These are equivalent to TLER (as used by Western Digital), CCTL (as used
+@@ -1500,6 +1500,14 @@ READTIME and WRITETIME arguments (deciseconds) set the specified values.
+ Values of 0 disable the feature, other values less than 65 are probably not
+ supported.
+ For RAID configurations, this is typically set to 70,70 deciseconds.
++If \*(Aq,p\*(Aq is specified with read and write time values, these
++time values will be persistent over a power-on reset.  If \*(Aq,p\*(Aq is 
++specified without read and write time values, the persistent over power-on
++values will be returned.
++If \*(Aq,r\*(Aq is specified, all SCT timer settings are restored to the
++manufacturer's default value.
++The \*(Aq,p\*(Aq and \*(Aq,r\*(Aq options require the device to support ACS-4
++or higher.
+ .Sp
+ .I devstat[,PAGE]
+ \- [ATA only] prints values and descriptions of the ATA Device Statistics
+diff --git a/smartctl.cpp b/smartctl.cpp
+index d4db32b..b0bf682 100644
+--- a/smartctl.cpp
++++ b/smartctl.cpp
+@@ -176,7 +176,7 @@ static void Usage()
+ "        Show device log. TYPE: error, selftest, selective, directory[,g|s],\n"
+ "        xerror[,N][,error], xselftest[,N][,selftest], background,\n"
+ "        sasphy[,reset], sataphy[,reset], scttemp[sts,hist],\n"
+-"        scttempint,N[,p], scterc[,N,M], devstat[,N], defects[,N], ssd,\n"
++"        scttempint,N[,p], scterc[,N,M][,p|r], devstat[,N], defects[,N], ssd,\n"
+ "        gplog,N[,RANGE], smartlog,N[,RANGE], nvmelog,N,SIZE\n\n"
+ "  -v N,OPTION , --vendorattribute=N,OPTION                            (ATA)\n"
+ "        Set display OPTION for vendor Attribute N (see man page)\n\n"
+@@ -243,7 +243,7 @@ static std::string getvalidarglist(int opt)
+            "xerror[,N][,error], xselftest[,N][,selftest], "
+            "background, sasphy[,reset], sataphy[,reset], "
+            "scttemp[sts,hist], scttempint,N[,p], "
+-           "scterc[,N,M], devstat[,N], defects[,N], ssd, "
++           "scterc[,N,M][,p|r], devstat[,N], defects[,N], ssd, "
+            "gplog,N[,RANGE], smartlog,N[,RANGE], "
+            "nvmelog,N,SIZE";
+   case 'P':
+@@ -615,16 +615,37 @@ static int parse_options(int argc, char** argv, const char * & type,
+           badarg = true;
+ 
+       } else if (!strncmp(optarg, "scterc,", sizeof("scterc,")-1)) {
+-        unsigned rt = ~0, wt = ~0; int n = -1;
+-        sscanf(optarg,"scterc,%u,%u%n", &rt, &wt, &n);
+-        if (n == (int)strlen(optarg) && rt <= 999 && wt <= 999) {
++        ataopts.sct_erc_power_on = false;
++        ataopts.sct_erc_mfg_default = false;
++        unsigned rt = ~0, wt = ~0; char opt = 0; int n = -1;
++        sscanf(optarg,"scterc,%u,%u,%c%n", &rt, &wt, &opt, &n);
++        if (n == (int)strlen(optarg) && rt <= 999 && wt <= 999 && toupper(opt) == 'P') {
+           ataopts.sct_erc_set = true;
+           ataopts.sct_erc_readtime = rt;
+           ataopts.sct_erc_writetime = wt;
++          ataopts.sct_erc_power_on = true;
+         }
+         else {
+-          snprintf(extraerror, sizeof(extraerror), "Option -l scterc,[READTIME,WRITETIME] syntax error\n");
+-          badarg = true;
++          sscanf(optarg,"scterc,%u,%u%n", &rt, &wt, &n);
++          if (n == (int)strlen(optarg) && rt <= 999 && wt <= 999) {
++            ataopts.sct_erc_set = true;
++            ataopts.sct_erc_readtime = rt;
++            ataopts.sct_erc_writetime = wt;
++          } else {
++             sscanf(optarg,"scterc,%c%n", &opt, &n);
++             if (n == (int)strlen(optarg) && (toupper(opt) == 'P' || toupper(opt) == 'R')) {
++               if (toupper(opt) == 'R') {
++                 ataopts.sct_erc_set = true;
++                 ataopts.sct_erc_mfg_default = true;
++               } else { /* P */
++                 ataopts.sct_erc_get = true;
++                 ataopts.sct_erc_power_on = true;
++               }
++             } else {
++               snprintf(extraerror, sizeof(extraerror), "Option -l scterc,[READTIME,WRITETIME][,P|R] syntax error\n");
++               badarg = true;
++             }
++          }
+         }
+       } else if (   !strncmp(optarg, "gplog,"   , sizeof("gplog,"   )-1)
+                  || !strncmp(optarg, "smartlog,", sizeof("smartlog,")-1)) {
+diff --git a/smartd.cpp b/smartd.cpp
+index c352dde..45b2fe9 100644
+--- a/smartd.cpp
++++ b/smartd.cpp
+@@ -2313,8 +2313,8 @@ static int ATADeviceScan(dev_config & cfg, dev_state & state, ata_device * atade
+     else if (locked)
+       PrintOut(LOG_INFO, "Device: %s, no SCT support if ATA Security is LOCKED, ignoring -l scterc\n",
+                name);
+-    else if (   ataSetSCTErrorRecoveryControltime(atadev, 1, cfg.sct_erc_readtime )
+-             || ataSetSCTErrorRecoveryControltime(atadev, 2, cfg.sct_erc_writetime))
++    else if (   ataSetSCTErrorRecoveryControltime(atadev, 1, cfg.sct_erc_readtime, false, false )
++             || ataSetSCTErrorRecoveryControltime(atadev, 2, cfg.sct_erc_writetime, false, false))
+       PrintOut(LOG_INFO, "Device: %s, set of SCT Error Recovery Control failed\n", name);
+     else
+       PrintOut(LOG_INFO, "Device: %s, SCT Error Recovery Control set to: Read: %u, Write: %u\n",
