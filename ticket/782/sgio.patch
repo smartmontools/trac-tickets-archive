@@ -1,0 +1,227 @@
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 4535)
++++ os_linux.cpp	(working copy)
+@@ -63,6 +63,7 @@
+ #include <scsi/scsi.h>
+ #include <scsi/scsi_ioctl.h>
+ #include <scsi/sg.h>
++#include <linux/bsg.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/ioctl.h>
+@@ -511,11 +512,14 @@
+ #endif
+ 
+ #define SG_IO_PRESENT_UNKNOWN 0
+-#define SG_IO_PRESENT_YES 1
+ #define SG_IO_PRESENT_NO 2
++#define SG_IO_PRESENT_V3 3
++#define SG_IO_PRESENT_V4 4
+ 
+ static int sg_io_cmnd_io(int dev_fd, struct scsi_cmnd_io * iop, int report,
+                          int unknown);
++static int sg_io_cmnd_v4(int dev_fd, struct scsi_cmnd_io * iop, int report,
++                         int unknown);
+ static int sisc_cmnd_io(int dev_fd, struct scsi_cmnd_io * iop, int report);
+ 
+ static int sg_io_state = SG_IO_PRESENT_UNKNOWN;
+@@ -524,6 +528,161 @@
+  * function uses the SG_IO ioctl. Return 0 if command issued successfully
+  * (various status values should still be checked). If the SCSI command
+  * cannot be issued then a negative errno value is returned. */
++static int sg_io_cmnd_v4(int dev_fd, struct scsi_cmnd_io * iop, int report,
++                         int unknown)
++{
++#ifndef SG_IO
++    ARGUSED(dev_fd); ARGUSED(iop); ARGUSED(report);
++    return -ENOTTY;
++#else
++    struct sg_io_v4 io_hdr;
++
++    if (report > 0) {
++        int k, j;
++        const unsigned char * ucp = iop->cmnd;
++        const char * np;
++        char buff[256];
++        const int sz = (int)sizeof(buff);
++
++        np = scsi_get_opcode_name(ucp[0]);
++        j = snprintf(buff, sz, " [%s: ", np ? np : "<unknown opcode>");
++        for (k = 0; k < (int)iop->cmnd_len; ++k)
++            j += snprintf(&buff[j], (sz > j ? (sz - j) : 0), "%02x ", ucp[k]);
++        if ((report > 1) &&
++            (DXFER_TO_DEVICE == iop->dxfer_dir) && (iop->dxferp)) {
++            int trunc = (iop->dxfer_len > 256) ? 1 : 0;
++
++            snprintf(&buff[j], (sz > j ? (sz - j) : 0), "]\n  Outgoing "
++                     "data, len=%d%s:\n", (int)iop->dxfer_len,
++                     (trunc ? " [only first 256 bytes shown]" : ""));
++            dStrHex((const char *)iop->dxferp,
++                    (trunc ? 256 : iop->dxfer_len) , 1);
++        }
++        else
++            snprintf(&buff[j], (sz > j ? (sz - j) : 0), "]\n");
++        pout("%s", buff);
++    }
++    memset(&io_hdr, 0, sizeof(struct sg_io_v4));
++    io_hdr.guard = 'Q';
++    io_hdr.request_len = iop->cmnd_len;
++    io_hdr.request = __u64(iop->cmnd);
++    io_hdr.max_response_len = iop->max_sense_len;
++    io_hdr.response = __u64(iop->sensep);
++    /* sg_io_hdr interface timeout has millisecond units. Timeout of 0
++       defaults to 60 seconds. */
++    io_hdr.timeout = ((0 == iop->timeout) ? 60 : iop->timeout) * 1000;
++    switch (iop->dxfer_dir) {
++        case DXFER_NONE:
++            break;
++        case DXFER_FROM_DEVICE:
++            io_hdr.din_xfer_len = iop->dxfer_len;
++            io_hdr.din_xferp = __u64(iop->dxferp);
++            break;
++        case DXFER_TO_DEVICE:
++            io_hdr.dout_xfer_len = iop->dxfer_len;
++            io_hdr.dout_xferp = __u64(iop->dxferp);
++            break;
++        default:
++            pout("do_scsi_cmnd_v4: bad dxfer_dir\n");
++            return -EINVAL;
++    }
++    iop->resp_sense_len = 0;
++    iop->scsi_status = 0;
++    iop->resid = 0;
++    if (ioctl(dev_fd, SG_IO, &io_hdr) < 0) {
++        if (report && (! unknown))
++            pout("  SG_IO ioctl failed, errno=%d [%s]\n", errno,
++                 strerror(errno));
++        return -errno;
++    }
++    switch (iop->dxfer_dir) {
++        case DXFER_NONE:
++            iop->resid = 0;
++            break;
++        case DXFER_FROM_DEVICE:
++            iop->resid = io_hdr.din_resid;
++            break;
++        case DXFER_TO_DEVICE:
++            iop->resid = io_hdr.dout_resid;
++            break;
++    }
++    iop->scsi_status = io_hdr.device_status;
++    if (report > 0) {
++        pout("  scsi_status=0x%x, host_status=0x%x, driver_status=0x%x\n"
++             "  info=0x%x  duration=%d milliseconds  resid=%d\n", io_hdr.device_status,
++             io_hdr.transport_status, io_hdr.driver_status, io_hdr.info,
++             io_hdr.duration, iop->resid);
++        if (report > 1) {
++            if (DXFER_FROM_DEVICE == iop->dxfer_dir) {
++                int trunc, len;
++
++		len = iop->dxfer_len - iop->resid;
++		trunc = (len > 256) ? 1 : 0;
++                if (len > 0) {
++                    pout("  Incoming data, len=%d%s:\n", len,
++                         (trunc ? " [only first 256 bytes shown]" : ""));
++                    dStrHex((const char*)iop->dxferp, (trunc ? 256 : len),
++                            1);
++                } else
++                    pout("  Incoming data trimmed to nothing by resid\n");
++            }
++        }
++    }
++
++    if (io_hdr.info & SG_INFO_CHECK) { /* error or warning */
++        int masked_driver_status = (LSCSI_DRIVER_MASK & io_hdr.driver_status);
++
++        if (0 != io_hdr.transport_status) {
++            if ((LSCSI_DID_NO_CONNECT == io_hdr.transport_status) ||
++                (LSCSI_DID_BUS_BUSY == io_hdr.transport_status) ||
++                (LSCSI_DID_TIME_OUT == io_hdr.transport_status))
++                return -ETIMEDOUT;
++            else
++               /* Check for DID_ERROR - workaround for aacraid driver quirk */
++               if (LSCSI_DID_ERROR != io_hdr.transport_status) {
++                       return -EIO; /* catch all if not DID_ERR */
++               }
++        }
++        if (0 != masked_driver_status) {
++            if (LSCSI_DRIVER_TIMEOUT == masked_driver_status)
++                return -ETIMEDOUT;
++            else if (LSCSI_DRIVER_SENSE != masked_driver_status)
++                return -EIO;
++        }
++        if (LSCSI_DRIVER_SENSE == masked_driver_status)
++            iop->scsi_status = SCSI_STATUS_CHECK_CONDITION;
++        iop->resp_sense_len = io_hdr.response_len;
++        if ((SCSI_STATUS_CHECK_CONDITION == iop->scsi_status) &&
++            iop->sensep && (iop->resp_sense_len > 0)) {
++            if (report > 1) {
++                pout("  >>> Sense buffer, len=%d:\n",
++                     (int)iop->resp_sense_len);
++                dStrHex((const char *)iop->sensep, iop->resp_sense_len , 1);
++            }
++        }
++        if (report) {
++            if (SCSI_STATUS_CHECK_CONDITION == iop->scsi_status && iop->sensep) {
++                if ((iop->sensep[0] & 0x7f) > 0x71)
++                    pout("  status=%x: [desc] sense_key=%x asc=%x ascq=%x\n",
++                         iop->scsi_status, iop->sensep[1] & 0xf,
++                         iop->sensep[2], iop->sensep[3]);
++                else
++                    pout("  status=%x: sense_key=%x asc=%x ascq=%x\n",
++                         iop->scsi_status, iop->sensep[2] & 0xf,
++                         iop->sensep[12], iop->sensep[13]);
++            }
++            else
++                pout("  status=0x%x\n", iop->scsi_status);
++        }
++    }
++    return 0;
++#endif
++}
++
++/* Preferred implementation for issuing SCSI commands in linux. This
++ * function uses the SG_IO ioctl. Return 0 if command issued successfully
++ * (various status values should still be checked). If the SCSI command
++ * cannot be issued then a negative errno value is returned. */
+ static int sg_io_cmnd_io(int dev_fd, struct scsi_cmnd_io * iop, int report,
+                          int unknown)
+ {
+@@ -810,16 +969,23 @@
+     case SG_IO_PRESENT_UNKNOWN:
+         /* ignore report argument */
+         if (0 == (res = sg_io_cmnd_io(dev_fd, iop, report, 1))) {
+-            sg_io_state = SG_IO_PRESENT_YES;
++            sg_io_state = SG_IO_PRESENT_V3;
+             return 0;
+         } else if ((-ENODEV == res) || (-EACCES == res) || (-EPERM == res))
+             return res;         /* wait until we see a device */
++        if (0 == (res = sg_io_cmnd_v4(dev_fd, iop, report, 1))) {
++            sg_io_state = SG_IO_PRESENT_V4;
++            return 0;
++        } else if ((-ENODEV == res) || (-EACCES == res) || (-EPERM == res))
++            return res;         /* wait until we see a device */
+         sg_io_state = SG_IO_PRESENT_NO;
+         /* drop through by design */
+     case SG_IO_PRESENT_NO:
+         return sisc_cmnd_io(dev_fd, iop, report);
+-    case SG_IO_PRESENT_YES:
++    case SG_IO_PRESENT_V3:
+         return sg_io_cmnd_io(dev_fd, iop, report, 0);
++    case SG_IO_PRESENT_V4:
++        return sg_io_cmnd_v4(dev_fd, iop, report, 0);
+     default:
+         pout(">>>> do_scsi_cmnd_io: bad sg_io_state=%d\n", sg_io_state);
+         sg_io_state = SG_IO_PRESENT_UNKNOWN;
+@@ -3199,6 +3365,10 @@
+   if (str_starts_with(test_name, "scsi/"))
+     return new linux_scsi_device(this, name, "");
+ 
++  // form /dev/bsg/* or bsg/*
++  if (str_starts_with(test_name, "bsg/"))
++    return new linux_scsi_device(this, name, "");
++
+   // form /dev/ns* or ns*
+   if (str_starts_with(test_name, "ns"))
+     return new linux_scsi_device(this, name, "");

@@ -1,0 +1,89 @@
+smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.10.0-327.13.1.el7.x86_64] (local build)
+Copyright (C) 2002-13, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               TOSHIBA
+Product:              PX04SRB384
+Revision:             AM04
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Device type:          disk
+Transport protocol:   SAS
+Local Time is:        Thu Nov 17 22:02:05 2016 UTC
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Disabled or Not Supported
+Read Cache is:        Enabled
+Writeback Cache is:   Disabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+SS Media used endurance indicator: 0%
+Current Drive Temperature:     25 C
+Drive Trip Temperature:        64 C
+
+Manufactured in week 03 of year 2016
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0         13.971           0
+write:         0        0         0         0          0      27084.072           0
+verify:        0        0         0         0          0          5.649           0
+
+Non-medium error count:      227
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                  96    5270                 - [-   -    -]
+# 2  Background short  Completed                  96      12                 - [-   -    -]
+# 3  Background long   Completed                  96      11                 - [-   -    -]
+Long (extended) Self Test duration: 1800 seconds [30.0 minutes]
+
+Background scan results log
+  Status: no scans active
+    Accumulated power on time, hours:minutes 5270:25 [316225 minutes]
+    Number of background scans performed: 0,  scan progress: 0.00%
+    Number of background medium scans performed: 0
+
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 2
+  number of phys = 1
+  phy identifier = 0
+    attached device type: expander device
+    attached reason: SMP phy control function
+    reason: loss of dword synchronization
+    negotiated logical link rate: reserved [11]
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=1
+    SAS address = 0x50000396cc89c2f6
+    attached SAS address = 0x500056b3edadbaff
+    attached phy identifier = 2
+    Invalid DWORD count = 4
+    Running disparity error count = 4
+    Loss of DWORD synchronization = 1
+    Phy reset problem = 0
+relative target port id = 2
+  generation code = 2
+  number of phys = 1
+  phy identifier = 1
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x50000396cc89c2f7
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+

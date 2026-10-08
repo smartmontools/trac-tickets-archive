@@ -1,0 +1,16 @@
+usb 2-1: new SuperSpeed USB device number 2 using xhci_hcd
+usb-storage 2-1:1.0: USB Mass Storage device detected
+scsi host2: usb-storage 2-1:1.0
+usbcore: registered new interface driver usb-storage
+usbcore: registered new interface driver uas
+scsi 2:0:0:0: Direct-Access     WD       Passport X 107D  1073 PQ: 0 ANSI: 6
+sd 2:0:0:0: Attached scsi generic sg2 type 0
+sd 2:0:0:0: [sdb] Spinning up disk...
+......ready
+sd 2:0:0:0: [sdb] 3906963456 512-byte logical blocks: (2.00 TB/1.82 TiB)
+sd 2:0:0:0: [sdb] Write Protect is off
+sd 2:0:0:0: [sdb] Mode Sense: 53 00 10 08
+sd 2:0:0:0: [sdb] No Caching mode page found
+sd 2:0:0:0: [sdb] Assuming drive cache: write through
+ sdb: sdb1
+sd 2:0:0:0: [sdb] Attached SCSI disk

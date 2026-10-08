@@ -1,0 +1,145 @@
+Description: Add machine-readable output format
+--- smartmontools-6.5.orig/ataprint.cpp
++++ smartmontools-6.5/ataprint.cpp
+@@ -1014,8 +1014,12 @@ static void PrintSmartAttribWithThres(co
+   bool brief  = !!(format & ata_print_options::FMT_BRIEF);
+   bool hexid  = !!(format & ata_print_options::FMT_HEX_ID);
+   bool hexval = !!(format & ata_print_options::FMT_HEX_VAL);
++  bool machine = !!(format & ata_print_options::FMT_MACHINE);
+   bool needheader = true;
+ 
++  if (machine)
++	needheader = false;
++
+   // step through all vendor attributes
+   for (int i = 0; i < NUMBER_ATA_SMART_ATTRIBUTES; i++) {
+     const ata_smart_attribute & attr = data->vendor_attributes[i];
+@@ -1049,30 +1053,46 @@ static void PrintSmartAttribWithThres(co
+     }
+ 
+     // Format value, worst, threshold
+-    std::string valstr, worstr, threstr;
+-    if (state > ATTRSTATE_NO_NORMVAL)
+-      valstr = (!hexval ? strprintf("%.3d",   attr.current)
++    std::string idstr, valstr, worstr, threstr;
++    if (!machine) {
++	if (state > ATTRSTATE_NO_NORMVAL)
++	    valstr = (!hexval ? strprintf("%.3d",   attr.current)
+                         : strprintf("0x%02x", attr.current));
+-    else
+-      valstr = (!hexval ? "---" : "----");
+-    if (!(defs[attr.id].flags & ATTRFLAG_NO_WORSTVAL))
+-      worstr = (!hexval ? strprintf("%.3d",   attr.worst)
++	else
++	    valstr = (!hexval ? "---" : "----");
++	if (!(defs[attr.id].flags & ATTRFLAG_NO_WORSTVAL))
++	    worstr = (!hexval ? strprintf("%.3d",   attr.worst)
+                         : strprintf("0x%02x", attr.worst));
+-    else
+-      worstr = (!hexval ? "---" : "----");
+-    if (state > ATTRSTATE_NO_THRESHOLD)
+-      threstr = (!hexval ? strprintf("%.3d",   threshold)
++	else
++	    worstr = (!hexval ? "---" : "----");
++	if (state > ATTRSTATE_NO_THRESHOLD)
++	    threstr = (!hexval ? strprintf("%.3d",   threshold)
+                          : strprintf("0x%02x", threshold));
+-    else
+-      threstr = (!hexval ? "---" : "----");
+-
+-    // Print line for each valid attribute
+-    std::string idstr = (!hexid ? strprintf("%3d",    attr.id)
+-                                : strprintf("0x%02x", attr.id));
++	else
++	    threstr = (!hexval ? "---" : "----");
++	// Print line for each valid attribute
++	idstr = (!hexid ? strprintf("%3d",    attr.id)
++                        : strprintf("0x%02x", attr.id));
++    } else {
++	    valstr  = strprintf("%d", attr.current);
++	    worstr  = strprintf("%d", attr.worst);
++	    threstr = strprintf("%d", threshold);
++	    idstr   = strprintf("%d", attr.id);
++    }
+     std::string attrname = ata_get_smart_attr_name(attr.id, defs, rpm);
+     std::string rawstr = ata_format_attr_raw_value(attr, defs);
+ 
+-    if (!brief)
++    if (machine)
++      pout("%s,%s,0x%04x,%s,%s,%s,%s,%s,%s,%s\n",
++           idstr.c_str(), attrname.c_str(), attr.flags,
++           valstr.c_str(), worstr.c_str(), threstr.c_str(),
++           (ATTRIBUTE_FLAGS_PREFAILURE(attr.flags) ? "Pre-fail" : "Old_age"),
++           (ATTRIBUTE_FLAGS_ONLINE(attr.flags)     ? "Always"   : "Offline"),
++           (state == ATTRSTATE_FAILED_NOW  ? "FAILING_NOW" :
++            state == ATTRSTATE_FAILED_PAST ? "In_the_past"
++                                           : "-") ,
++            rawstr.c_str());
++    else if (!brief)
+       pout("%s %-24s0x%04x   %-4s  %-4s  %-4s   %-10s%-9s%-12s%s\n",
+            idstr.c_str(), attrname.c_str(), attr.flags,
+            valstr.c_str(), worstr.c_str(), threstr.c_str(),
+@@ -3049,8 +3069,9 @@ int ataPrintMain (ata_device * device, c
+     smart_val_ok = false;
+   }
+ 
+-  // all this for a newline!
+-  if (   options.smart_disable           || options.smart_enable
++  if (!(options.output_format & ata_print_options::FMT_MACHINE)) {
++    // all this for a newline!
++    if (   options.smart_disable           || options.smart_enable
+       || options.smart_auto_save_disable || options.smart_auto_save_enable
+       || options.smart_auto_offl_disable || options.smart_auto_offl_enable
+       || options.set_aam || options.set_apm || options.set_lookahead
+@@ -3058,14 +3079,15 @@ int ataPrintMain (ata_device * device, c
+       || options.sct_wcache_reorder_set)
+     pout("\n");
+ 
+-  // START OF READ-ONLY OPTIONS APART FROM -V and -i
+-  if (   options.smart_check_status  || options.smart_general_values
++    // START OF READ-ONLY OPTIONS APART FROM -V and -i
++    if (   options.smart_check_status  || options.smart_general_values
+       || options.smart_vendor_attrib || options.smart_error_log
+       || options.smart_selftest_log  || options.smart_selective_selftest_log
+       || options.smart_ext_error_log || options.smart_ext_selftest_log
+       || options.sct_temp_sts        || options.sct_temp_hist               )
+-    pout("=== START OF READ SMART DATA SECTION ===\n");
+-  
++	pout("=== START OF READ SMART DATA SECTION ===\n");
++  }
++
+   // Check SMART status
+   if (options.smart_check_status) {
+ 
+--- smartmontools-6.5.orig/ataprint.h
++++ smartmontools-6.5/ataprint.h
+@@ -81,7 +81,7 @@ struct ata_print_options
+   unsigned sct_temp_int;
+   bool sct_temp_int_pers;
+ 
+-  enum { FMT_BRIEF = 0x01, FMT_HEX_ID = 0x02, FMT_HEX_VAL = 0x04 };
++  enum { FMT_BRIEF = 0x01, FMT_HEX_ID = 0x02, FMT_HEX_VAL = 0x04, FMT_MACHINE = 0x08 };
+   unsigned char output_format; // FMT_* flags
+ 
+   firmwarebug_defs firmwarebugs; // -F options
+--- smartmontools-6.5.orig/smartctl.cpp
++++ smartmontools-6.5/smartctl.cpp
+@@ -825,6 +825,8 @@ static const char * parse_options(int ar
+         ataopts.output_format |= ata_print_options::FMT_HEX_ID;
+       else if (!strcmp(optarg, "hex,val"))
+         ataopts.output_format |= ata_print_options::FMT_HEX_VAL;
++      else if (!strcmp(optarg, "machine"))
++        ataopts.output_format |= ata_print_options::FMT_MACHINE;
+       else
+         badarg = true;
+       break;
+@@ -1096,7 +1098,8 @@ static const char * parse_options(int ar
+     }
+ 
+   // From here on, normal operations...
+-  printslogan();
++  if (!(ataopts.output_format & ata_print_options::FMT_MACHINE))
++    printslogan();
+   
+   // Warn if the user has provided no device name
+   if (argc-optind<1){
