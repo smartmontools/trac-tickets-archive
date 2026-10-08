@@ -1,0 +1,346 @@
+smartctl 6.7 2017-11-08 r4609 [x86_64-linux-4.13.11-1-ARCH] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SanDisk SD8SN8U-256G-1006
+Serial Number:    171616802488
+LU WWN Device Id: 5 001b44 8b4a94ecc
+Firmware Version: X4120006
+User Capacity:    256,060,514,304 bytes [256 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      < 1.8 inches
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-2 T13/2015-D revision 3
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Fri Nov 10 01:04:08 2017 +03
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     254 (maximum performance)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x53) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  21) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 32
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR-K   100   100   050    -    15
+  5 Reallocated_Sector_Ct   PO--CK   100   100   005    -    0
+  9 Power_On_Hours          -O--CK   100   100   ---    -    1366
+ 12 Power_Cycle_Count       -O--CK   100   100   ---    -    335
+171 Unknown_Attribute       -O--CK   100   100   ---    -    0
+172 Unknown_Attribute       -O--CK   100   100   ---    -    0
+173 Unknown_Attribute       -O--CK   091   091   005    -    69
+174 Unknown_Attribute       -O--CK   100   100   ---    -    65
+176 Erase_Fail_Count_Chip   -O---K   100   100   ---    -    2176
+181 Program_Fail_Cnt_Total  -O---K   100   100   ---    -    0
+183 Runtime_Bad_Block       -O--CK   100   100   ---    -    1
+184 End-to-End_Error        PO-RCK   100   100   097    -    0
+187 Reported_Uncorrect      -O--CK   100   100   ---    -    0
+188 Command_Timeout         -O--CK   100   100   ---    -    0
+194 Temperature_Celsius     -O---K   047   067   ---    -    47 (Min/Max 16/67)
+198 Offline_Uncorrectable   ----CK   100   100   ---    -    0
+199 UDMA_CRC_Error_Count    -O--CK   100   100   ---    -    0
+201 Unknown_SSD_Attribute   PO---K   091   091   005    -    38654705733
+230 Unknown_SSD_Attribute   -O--CK   100   100   ---    -    12210778343765
+241 Total_LBAs_Written      -O--CK   100   100   ---    -    597871
+242 Total_LBAs_Read         -O--CK   100   100   ---    -    424675
+243 Unknown_Attribute       -O--CK   100   100   ---    -    2285006
+244 Unknown_Attribute       -O--CK   000   100   ---    -    0
+249 Unknown_Attribute       -O--CK   100   100   ---    -    17563
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      2  Comprehensive SMART error log
+0x03       GPL     R/O      1  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xde       GPL     VS       8  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%      1366         -
+# 2  Extended offline    Completed without error       00%       944         -
+# 3  Short offline       Completed without error       00%       944         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       257 (0x0101)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                    49 Celsius
+Power Cycle Min/Max Temperature:     28/59 Celsius
+Lifetime    Min/Max Temperature:     28/59 Celsius
+Lifetime    Average Temperature:        49 Celsius
+Under/Over Temperature Limit Count:   0/0
+Vendor specific:
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+01 00 01 00 01 00 00 00 00 00 00 00 00 00 00 00
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/70 Celsius
+Min/Max Temperature Limit:           -15/90 Celsius
+Temperature History Size (Index):    256 (35)
+
+Index    Estimated Time   Temperature Celsius
+  36    2017-11-09 20:49    46  ***************************
+ ...    ..( 13 skipped).    ..  ***************************
+  50    2017-11-09 21:03    46  ***************************
+  51    2017-11-09 21:04    47  ****************************
+ ...    ..(  4 skipped).    ..  ****************************
+  56    2017-11-09 21:09    47  ****************************
+  57    2017-11-09 21:10    46  ***************************
+ ...    ..( 24 skipped).    ..  ***************************
+  82    2017-11-09 21:35    46  ***************************
+  83    2017-11-09 21:36    45  **************************
+  84    2017-11-09 21:37    47  ****************************
+  85    2017-11-09 21:38    46  ***************************
+ ...    ..(  4 skipped).    ..  ***************************
+  90    2017-11-09 21:43    46  ***************************
+  91    2017-11-09 21:44    45  **************************
+  92    2017-11-09 21:45    46  ***************************
+ ...    ..(  3 skipped).    ..  ***************************
+  96    2017-11-09 21:49    46  ***************************
+  97    2017-11-09 21:50    45  **************************
+  98    2017-11-09 21:51    45  **************************
+  99    2017-11-09 21:52    46  ***************************
+ ...    ..(  3 skipped).    ..  ***************************
+ 103    2017-11-09 21:56    46  ***************************
+ 104    2017-11-09 21:57    45  **************************
+ ...    ..( 17 skipped).    ..  **************************
+ 122    2017-11-09 22:15    45  **************************
+ 123    2017-11-09 22:16    46  ***************************
+ 124    2017-11-09 22:17    45  **************************
+ 125    2017-11-09 22:18    45  **************************
+ 126    2017-11-09 22:19    46  ***************************
+ 127    2017-11-09 22:20    45  **************************
+ ...    ..(  5 skipped).    ..  **************************
+ 133    2017-11-09 22:26    45  **************************
+ 134    2017-11-09 22:27    46  ***************************
+ 135    2017-11-09 22:28    45  **************************
+ ...    ..( 13 skipped).    ..  **************************
+ 149    2017-11-09 22:42    45  **************************
+ 150    2017-11-09 22:43    50  *******************************
+ 151    2017-11-09 22:44    53  **********************************
+ 152    2017-11-09 22:45    54  ***********************************
+ 153    2017-11-09 22:46    52  *********************************
+ 154    2017-11-09 22:47    52  *********************************
+ 155    2017-11-09 22:48    49  ******************************
+ 156    2017-11-09 22:49    48  *****************************
+ 157    2017-11-09 22:50    48  *****************************
+ 158    2017-11-09 22:51    47  ****************************
+ 159    2017-11-09 22:52    46  ***************************
+ ...    ..( 27 skipped).    ..  ***************************
+ 187    2017-11-09 23:20    46  ***************************
+ 188    2017-11-09 23:21    45  **************************
+ ...    ..(  2 skipped).    ..  **************************
+ 191    2017-11-09 23:24    45  **************************
+ 192    2017-11-09 23:25    46  ***************************
+ 193    2017-11-09 23:26    46  ***************************
+ 194    2017-11-09 23:27    45  **************************
+ 195    2017-11-09 23:28    46  ***************************
+ 196    2017-11-09 23:29    28  *********
+ 197    2017-11-09 23:30    31  ************
+ 198    2017-11-09 23:31    25  ******
+ 199    2017-11-09 23:32    26  *******
+ 200    2017-11-09 23:33    28  *********
+ 201    2017-11-09 23:34    27  ********
+ 202    2017-11-09 23:35    29  **********
+ 203    2017-11-09 23:36    30  ***********
+ 204    2017-11-09 23:37    28  *********
+ 205    2017-11-09 23:38    30  ***********
+ 206    2017-11-09 23:39    28  *********
+ 207    2017-11-09 23:40    32  *************
+ 208    2017-11-09 23:41    31  ************
+ 209    2017-11-09 23:42    36  *****************
+ 210    2017-11-09 23:43    37  ******************
+ 211    2017-11-09 23:44    40  *********************
+ 212    2017-11-09 23:45    41  **********************
+ 213    2017-11-09 23:46    42  ***********************
+ 214    2017-11-09 23:47    43  ************************
+ 215    2017-11-09 23:48    43  ************************
+ 216    2017-11-09 23:49    44  *************************
+ 217    2017-11-09 23:50    44  *************************
+ 218    2017-11-09 23:51    44  *************************
+ 219    2017-11-09 23:52    45  **************************
+ 220    2017-11-09 23:53    40  *********************
+ 221    2017-11-09 23:54    36  *****************
+ 222    2017-11-09 23:55    39  ********************
+ 223    2017-11-09 23:56    41  **********************
+ 224    2017-11-09 23:57    42  ***********************
+ 225    2017-11-09 23:58    40  *********************
+ 226    2017-11-09 23:59    41  **********************
+ 227    2017-11-10 00:00    41  **********************
+ 228    2017-11-10 00:01    38  *******************
+ 229    2017-11-10 00:02    41  **********************
+ 230    2017-11-10 00:03    42  ***********************
+ 231    2017-11-10 00:04    43  ************************
+ 232    2017-11-10 00:05    44  *************************
+ 233    2017-11-10 00:06    43  ************************
+ 234    2017-11-10 00:07    42  ***********************
+ 235    2017-11-10 00:08    42  ***********************
+ 236    2017-11-10 00:09    45  **************************
+ 237    2017-11-10 00:10    45  **************************
+ 238    2017-11-10 00:11    42  ***********************
+ 239    2017-11-10 00:12    43  ************************
+ 240    2017-11-10 00:13    43  ************************
+ 241    2017-11-10 00:14    40  *********************
+ 242    2017-11-10 00:15    41  **********************
+ 243    2017-11-10 00:16    42  ***********************
+ 244    2017-11-10 00:17    43  ************************
+ 245    2017-11-10 00:18    43  ************************
+ 246    2017-11-10 00:19    43  ************************
+ 247    2017-11-10 00:20    47  ****************************
+ 248    2017-11-10 00:21    47  ****************************
+ 249    2017-11-10 00:22    49  ******************************
+ 250    2017-11-10 00:23    43  ************************
+ 251    2017-11-10 00:24    41  **********************
+ 252    2017-11-10 00:25    39  ********************
+ 253    2017-11-10 00:26    41  **********************
+ 254    2017-11-10 00:27    39  ********************
+ 255    2017-11-10 00:28    42  ***********************
+   0    2017-11-10 00:29    43  ************************
+   1    2017-11-10 00:30    41  **********************
+   2    2017-11-10 00:31    43  ************************
+   3    2017-11-10 00:32    43  ************************
+   4    2017-11-10 00:33    41  **********************
+   5    2017-11-10 00:34    38  *******************
+   6    2017-11-10 00:35    38  *******************
+   7    2017-11-10 00:36    40  *********************
+   8    2017-11-10 00:37    46  ***************************
+   9    2017-11-10 00:38    52  *********************************
+  10    2017-11-10 00:39    57  **************************************
+  11    2017-11-10 00:40    59  ****************************************
+  12    2017-11-10 00:41    59  ****************************************
+  13    2017-11-10 00:42    55  ************************************
+  14    2017-11-10 00:43    54  ***********************************
+  15    2017-11-10 00:44    53  **********************************
+  16    2017-11-10 00:45    52  *********************************
+  17    2017-11-10 00:46    52  *********************************
+  18    2017-11-10 00:47    52  *********************************
+  19    2017-11-10 00:48    51  ********************************
+ ...    ..(  3 skipped).    ..  ********************************
+  23    2017-11-10 00:52    51  ********************************
+  24    2017-11-10 00:53    52  *********************************
+ ...    ..(  2 skipped).    ..  *********************************
+  27    2017-11-10 00:56    52  *********************************
+  28    2017-11-10 00:57    53  **********************************
+ ...    ..(  2 skipped).    ..  **********************************
+  31    2017-11-10 01:00    53  **********************************
+  32    2017-11-10 01:01    54  ***********************************
+  33    2017-11-10 01:02    54  ***********************************
+  34    2017-11-10 01:03    48  *****************************
+  35    2017-11-10 01:04    49  ******************************
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4             335  ---  Lifetime Power-On Resets
+0x01  0x010  4             391  ---  Power-on Hours
+0x01  0x018  6               0  ---  Logical Sectors Written
+0x01  0x020  6     19591037140  ---  Number of Write Commands
+0x01  0x028  6     13915795028  ---  Logical Sectors Read
+0x01  0x030  6               0  ---  Number of Read Commands
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               0  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              62  ---  Current Temperature
+0x05  0x020  1              62  ---  Highest Temperature
+0x05  0x028  1              23  ---  Lowest Temperature
+0x05  0x038  1               0  ---  Lowest Average Short Term Temperature
+0x05  0x058  1              70  ---  Specified Maximum Operating Temperature
+0x05  0x068  1               0  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4             824  ---  Number of Hardware Resets
+0x06  0x010  4             372  ---  Number of ASR Events
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               9  N--  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x0002  4            0  R_ERR response for data FIS
+0x0005  4            0  R_ERR response for non-data FIS
+0x000a  4            6  Device-to-host register FISes sent due to a COMRESET
+
