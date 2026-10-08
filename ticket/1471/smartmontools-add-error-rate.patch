@@ -1,0 +1,70 @@
+Index: atacmds.cpp
+===================================================================
+--- atacmds.cpp	(revision 5214)
++++ atacmds.cpp	(working copy)
+@@ -120,6 +120,7 @@
+   {"msec24hour32"   , RAWFMT_MSEC24_HOUR32},
+   {"tempminmax"     , RAWFMT_TEMPMINMAX},
+   {"temp10x"        , RAWFMT_TEMP10X},
++  {"errorsperops"   , RAWFMT_ERRORS16_PER_OPS32},
+ };
+ 
+ const unsigned num_format_names = sizeof(format_names)/sizeof(format_names[0]);
+@@ -2117,6 +2118,11 @@
+     s = strprintf("%d.%d", word[0]/10, word[0]%10);
+     break;
+ 
++  case RAWFMT_ERRORS16_PER_OPS32:
++    // first 16 bits are #errors, last 32 bits are #operations
++    s = strprintf("%u (%u ops)", word[2], word[1] << 16 | word[0]);
++    break;
++
+   default:
+     s = "?"; // Should not happen
+     break;
+Index: atacmds.h
+===================================================================
+--- atacmds.h	(revision 5214)
++++ atacmds.h	(working copy)
+@@ -667,6 +667,7 @@
+   RAWFMT_MSEC24_HOUR32,
+   RAWFMT_TEMPMINMAX,
+   RAWFMT_TEMP10X,
++  RAWFMT_ERRORS16_PER_OPS32,
+ };
+ 
+ // Attribute flags
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 5214)
++++ drivedb.h	(working copy)
+@@ -4089,8 +4089,12 @@
+       // ST4000DM004-2CV104/0001 (TRIM: no), ST4000DM005-2DP166/0001, ST8000DM004-2CX188/0001
+     "ST(2000DM00[589]|3000DM007|4000DM00[45]|6000DM003|8000DM004)-.*",
+     "", "",
++    "-v 1,errorsperops "
++    "-v 7,errorsperops "
++    "-v 188,raw16 "
++    "-v 195,errorsperops "
+     "-v 200,raw48,Pressure_Limit "
+-    "-v 188,raw16 -v 240,msec24hour32"
++    "-v 240,msec24hour32 "
+   },
+   { "Seagate Desktop HDD.15", // tested with ST4000DM000-1CD168/CC43, ST5000DM000-1FK178/CC44,
+       // ST6000DM001-1XY17Z/CC48
+Index: smartctl.8.in
+===================================================================
+--- smartctl.8.in	(revision 5214)
++++ smartctl.8.in	(working copy)
+@@ -1701,6 +1701,11 @@
+ .I temp10x
+ \- Raw Attribute is ten times the disk temperature in Celsius.
+ .Sp
++.I errorsperops
++\- Raw Attribute contains number of errors in the first 16 bits and
++the number of operations in the last 32 bits. This format is used for 
++error rates (like attributes 1, 7, or 195) by some Seagate drives.
++.Sp
+ .I raw16(raw16)
+ \- Print the raw attribute as a 16-bit value and two optional
+ 16-bit values if these words are nonzero.  This is the default
