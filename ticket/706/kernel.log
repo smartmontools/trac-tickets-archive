@@ -1,0 +1,21 @@
+[221290.528122] usb 3-1: new high-speed USB device number 20 using ehci-pci
+[221290.662568] usb 3-1: New USB device found, idVendor=0bc2, idProduct=3322
+[221290.662576] usb 3-1: New USB device strings: Mfr=2, Product=3, SerialNumber=1
+[221290.662582] usb 3-1: Product: Expansion Desk
+[221290.662587] usb 3-1: Manufacturer: Seagate
+[221290.662592] usb 3-1: SerialNumber: <snip>
+[221291.197881] usbcore: registered new interface driver usb-storage
+[221291.200139] scsi host4: uas
+[221291.200451] usbcore: registered new interface driver uas
+[221291.202030] scsi 4:0:0:0: Direct-Access     Seagate  Expansion Desk   9401 PQ: 0 ANSI: 6
+[221291.233064] sd 4:0:0:0: Attached scsi generic sg2 type 0
+[221291.233569] sd 4:0:0:0: [sdb] Spinning up disk...
+[221292.236152] ........
+[221300.268138] .....ready
+[221304.284723] sd 4:0:0:0: [sdb] 9767541167 512-byte logical blocks: (5.00 TB/4.55 TiB)
+[221304.315711] sd 4:0:0:0: [sdb] Write Protect is off
+[221304.315716] sd 4:0:0:0: [sdb] Mode Sense: 4f 00 00 00
+[221304.316333] sd 4:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[221304.408491]  sdb: sdb1 sdb2
+[221304.411698] sd 4:0:0:0: [sdb] Attached SCSI disk
+[221304.998622] fuse init (API version 7.24)

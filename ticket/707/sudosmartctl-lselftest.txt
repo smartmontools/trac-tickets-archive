@@ -1,0 +1,16 @@
+sudo smartctl -l selftest -d sat /dev/sdb
+[sudo] Passwort für trever: 
+smartctl 6.5 2016-01-24 r4214 [x86_64-linux-4.5.0-2-amd64] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF READ SMART DATA SECTION ===
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%        10         -
+# 2  Conveyance offline  Completed without error       00%         0         -
+# 3  Short offline       Completed without error       00%         0         -
+
+sudo hdparm -N /dev/sda
+
+/dev/sda:
+ max sectors   = 937703088/937703088, HPA is disabled

@@ -1,0 +1,533 @@
+smartctl 6.5 2016-05-07 r4318 [x86_64-w64-mingw32-win10] (sf-6.5-1)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     TOSHIBA HDWE160
+Serial Number:    364HK35DF56D
+LU WWN Device Id: 5 000039 6ebf00702
+Firmware Version: FS2A
+User Capacity:    6.001.175.126.016 bytes [6,00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    7200 rpm
+Form Factor:      3.5 inches
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA8-ACS (minor revision not indicated)
+SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Sun Jul 24 21:25:34 2016 WEDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     128 (minimum power consumption without standby)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 636) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     PO-R--   100   100   050    -    0
+  2 Throughput_Performance  P-S---   100   100   050    -    0
+  3 Spin_Up_Time            POS--K   100   100   001    -    10123
+  4 Start_Stop_Count        -O--CK   100   100   000    -    28
+  5 Reallocated_Sector_Ct   PO--CK   100   100   050    -    0
+  7 Seek_Error_Rate         PO-R--   100   100   050    -    0
+  8 Seek_Time_Performance   P-S---   100   100   050    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    24
+ 10 Spin_Retry_Count        PO--CK   100   100   030    -    0
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    20
+191 G-Sense_Error_Rate      -O--CK   100   100   000    -    0
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    6
+193 Load_Cycle_Count        -O--CK   100   100   000    -    34
+194 Temperature_Celsius     -O---K   100   100   000    -    28 (Min/Max 20/40)
+196 Reallocated_Event_Count -O--CK   100   100   000    -    0
+197 Current_Pending_Sector  -O--CK   100   100   000    -    0
+198 Offline_Uncorrectable   ----CK   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -O--CK   200   253   000    -    0
+220 Disk_Shift              -O----   100   100   000    -    0
+222 Loaded_Hours            -O--CK   100   100   000    -    19
+223 Load_Retry_Count        -O--CK   100   100   000    -    0
+224 Load_Friction           -O---K   100   100   000    -    0
+226 Load-in_Time            -OS--K   100   100   000    -    200
+240 Head_Flying_Hours       P-----   100   100   001    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O     51  Comprehensive SMART error log
+0x03       GPL     R/O     64  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x08       GPL     R/O      2  Power Conditions log
+0x09           SL  R/W      1  Selective self-test log
+0x0c       GPL     R/O   2048  Pending Defects log
+0x10       GPL     R/O      1  SATA NCQ Queued Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x24       GPL     R/O  12288  Current Device Internal Status Data log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa7       GPL     VS       8  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (64 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%        24         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+SCT Support Level:                   1
+Device State:                        Active (0)
+Current Temperature:                    28 Celsius
+Power Cycle Min/Max Temperature:     23/30 Celsius
+Lifetime    Min/Max Temperature:     20/40 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      5/55 Celsius
+Min/Max Temperature Limit:            5/55 Celsius
+Temperature History Size (Index):    478 (326)
+
+Index    Estimated Time   Temperature Celsius
+ 327    2016-07-24 13:28    29  **********
+ 328    2016-07-24 13:29    29  **********
+ 329    2016-07-24 13:30    30  ***********
+ 330    2016-07-24 13:31    30  ***********
+ 331    2016-07-24 13:32    30  ***********
+ 332    2016-07-24 13:33    31  ************
+ 333    2016-07-24 13:34    31  ************
+ 334    2016-07-24 13:35    31  ************
+ 335    2016-07-24 13:36    32  *************
+ ...    ..(  3 skipped).    ..  *************
+ 339    2016-07-24 13:40    32  *************
+ 340    2016-07-24 13:41     ?  -
+ 341    2016-07-24 13:42    30  ***********
+ 342    2016-07-24 13:43    30  ***********
+ 343    2016-07-24 13:44    30  ***********
+ 344    2016-07-24 13:45    31  ************
+ 345    2016-07-24 13:46    31  ************
+ 346    2016-07-24 13:47    32  *************
+ 347    2016-07-24 13:48    32  *************
+ 348    2016-07-24 13:49     ?  -
+ 349    2016-07-24 13:50    22  ***
+ 350    2016-07-24 13:51    22  ***
+ 351    2016-07-24 13:52    23  ****
+ 352    2016-07-24 13:53    23  ****
+ 353    2016-07-24 13:54    24  *****
+ 354    2016-07-24 13:55    25  ******
+ 355    2016-07-24 13:56    25  ******
+ 356    2016-07-24 13:57    26  *******
+ 357    2016-07-24 13:58    26  *******
+ 358    2016-07-24 13:59    27  ********
+ 359    2016-07-24 14:00    27  ********
+ 360    2016-07-24 14:01    27  ********
+ 361    2016-07-24 14:02    28  *********
+ 362    2016-07-24 14:03    28  *********
+ 363    2016-07-24 14:04    28  *********
+ 364    2016-07-24 14:05    29  **********
+ 365    2016-07-24 14:06    29  **********
+ 366    2016-07-24 14:07    30  ***********
+ 367    2016-07-24 14:08    30  ***********
+ 368    2016-07-24 14:09    30  ***********
+ 369    2016-07-24 14:10    31  ************
+ 370    2016-07-24 14:11    31  ************
+ 371    2016-07-24 14:12    31  ************
+ 372    2016-07-24 14:13    32  *************
+ ...    ..(  2 skipped).    ..  *************
+ 375    2016-07-24 14:16    32  *************
+ 376    2016-07-24 14:17    33  **************
+ ...    ..(  2 skipped).    ..  **************
+ 379    2016-07-24 14:20    33  **************
+ 380    2016-07-24 14:21    34  ***************
+ ...    ..(  2 skipped).    ..  ***************
+ 383    2016-07-24 14:24    34  ***************
+ 384    2016-07-24 14:25    35  ****************
+ ...    ..(  3 skipped).    ..  ****************
+ 388    2016-07-24 14:29    35  ****************
+ 389    2016-07-24 14:30    36  *****************
+ ...    ..(  6 skipped).    ..  *****************
+ 396    2016-07-24 14:37    36  *****************
+ 397    2016-07-24 14:38    37  ******************
+ ...    ..(  9 skipped).    ..  ******************
+ 407    2016-07-24 14:48    37  ******************
+ 408    2016-07-24 14:49    38  *******************
+ ...    ..( 52 skipped).    ..  *******************
+ 461    2016-07-24 15:42    38  *******************
+ 462    2016-07-24 15:43    39  ********************
+ 463    2016-07-24 15:44    38  *******************
+ 464    2016-07-24 15:45    39  ********************
+ ...    ..(  4 skipped).    ..  ********************
+ 469    2016-07-24 15:50    39  ********************
+ 470    2016-07-24 15:51    38  *******************
+ 471    2016-07-24 15:52    39  ********************
+ 472    2016-07-24 15:53    39  ********************
+ 473    2016-07-24 15:54    38  *******************
+ ...    ..(  7 skipped).    ..  *******************
+   3    2016-07-24 16:02    38  *******************
+   4    2016-07-24 16:03     ?  -
+   5    2016-07-24 16:04    23  ****
+   6    2016-07-24 16:05    24  *****
+   7    2016-07-24 16:06    24  *****
+   8    2016-07-24 16:07    25  ******
+   9    2016-07-24 16:08    26  *******
+  10    2016-07-24 16:09    26  *******
+  11    2016-07-24 16:10    27  ********
+  12    2016-07-24 16:11    27  ********
+  13    2016-07-24 16:12    27  ********
+  14    2016-07-24 16:13    28  *********
+  15    2016-07-24 16:14    28  *********
+  16    2016-07-24 16:15    29  **********
+  17    2016-07-24 16:16    29  **********
+  18    2016-07-24 16:17    30  ***********
+  19    2016-07-24 16:18     ?  -
+  20    2016-07-24 16:19    23  ****
+  21    2016-07-24 16:20    24  *****
+  22    2016-07-24 16:21    24  *****
+  23    2016-07-24 16:22    25  ******
+  24    2016-07-24 16:23    26  *******
+  25    2016-07-24 16:24    26  *******
+  26    2016-07-24 16:25    27  ********
+  27    2016-07-24 16:26    27  ********
+  28    2016-07-24 16:27    28  *********
+  29    2016-07-24 16:28    28  *********
+  30    2016-07-24 16:29    29  **********
+  31    2016-07-24 16:30    29  **********
+  32    2016-07-24 16:31    29  **********
+  33    2016-07-24 16:32    30  ***********
+  34    2016-07-24 16:33    30  ***********
+  35    2016-07-24 16:34    31  ************
+  36    2016-07-24 16:35    31  ************
+  37    2016-07-24 16:36    31  ************
+  38    2016-07-24 16:37    32  *************
+ ...    ..(  2 skipped).    ..  *************
+  41    2016-07-24 16:40    32  *************
+  42    2016-07-24 16:41    33  **************
+ ...    ..(  3 skipped).    ..  **************
+  46    2016-07-24 16:45    33  **************
+  47    2016-07-24 16:46    34  ***************
+  48    2016-07-24 16:47    34  ***************
+  49    2016-07-24 16:48     ?  -
+  50    2016-07-24 16:49    22  ***
+  51    2016-07-24 16:50    23  ****
+  52    2016-07-24 16:51    24  *****
+  53    2016-07-24 16:52    25  ******
+  54    2016-07-24 16:53    25  ******
+  55    2016-07-24 16:54    26  *******
+  56    2016-07-24 16:55    27  ********
+  57    2016-07-24 16:56    27  ********
+  58    2016-07-24 16:57    27  ********
+  59    2016-07-24 16:58    28  *********
+  60    2016-07-24 16:59    28  *********
+  61    2016-07-24 17:00    29  **********
+  62    2016-07-24 17:01    29  **********
+  63    2016-07-24 17:02    30  ***********
+  64    2016-07-24 17:03    30  ***********
+  65    2016-07-24 17:04    30  ***********
+  66    2016-07-24 17:05    31  ************
+  67    2016-07-24 17:06    31  ************
+  68    2016-07-24 17:07    32  *************
+ ...    ..(  4 skipped).    ..  *************
+  73    2016-07-24 17:12    32  *************
+  74    2016-07-24 17:13    33  **************
+ ...    ..(  3 skipped).    ..  **************
+  78    2016-07-24 17:17    33  **************
+  79    2016-07-24 17:18    34  ***************
+ ...    ..(  3 skipped).    ..  ***************
+  83    2016-07-24 17:22    34  ***************
+  84    2016-07-24 17:23     ?  -
+  85    2016-07-24 17:24    22  ***
+  86    2016-07-24 17:25    23  ****
+  87    2016-07-24 17:26    24  *****
+  88    2016-07-24 17:27    24  *****
+  89    2016-07-24 17:28    25  ******
+  90    2016-07-24 17:29    26  *******
+  91    2016-07-24 17:30    26  *******
+  92    2016-07-24 17:31    27  ********
+  93    2016-07-24 17:32    27  ********
+  94    2016-07-24 17:33    28  *********
+  95    2016-07-24 17:34    28  *********
+  96    2016-07-24 17:35    28  *********
+  97    2016-07-24 17:36    29  **********
+  98    2016-07-24 17:37    29  **********
+  99    2016-07-24 17:38    30  ***********
+ 100    2016-07-24 17:39    30  ***********
+ 101    2016-07-24 17:40    30  ***********
+ 102    2016-07-24 17:41    31  ************
+ ...    ..(  2 skipped).    ..  ************
+ 105    2016-07-24 17:44    31  ************
+ 106    2016-07-24 17:45     ?  -
+ 107    2016-07-24 17:46    30  ***********
+ 108    2016-07-24 17:47    31  ************
+ 109    2016-07-24 17:48    31  ************
+ 110    2016-07-24 17:49    31  ************
+ 111    2016-07-24 17:50    32  *************
+ ...    ..(  4 skipped).    ..  *************
+ 116    2016-07-24 17:55    32  *************
+ 117    2016-07-24 17:56    33  **************
+ ...    ..(  4 skipped).    ..  **************
+ 122    2016-07-24 18:01    33  **************
+ 123    2016-07-24 18:02    34  ***************
+ ...    ..(  5 skipped).    ..  ***************
+ 129    2016-07-24 18:08    34  ***************
+ 130    2016-07-24 18:09     ?  -
+ 131    2016-07-24 18:10    26  *******
+ 132    2016-07-24 18:11    27  ********
+ 133    2016-07-24 18:12    27  ********
+ 134    2016-07-24 18:13    27  ********
+ 135    2016-07-24 18:14    28  *********
+ 136    2016-07-24 18:15    28  *********
+ 137    2016-07-24 18:16    29  **********
+ 138    2016-07-24 18:17    29  **********
+ 139    2016-07-24 18:18    30  ***********
+ 140    2016-07-24 18:19    30  ***********
+ 141    2016-07-24 18:20    30  ***********
+ 142    2016-07-24 18:21    31  ************
+ 143    2016-07-24 18:22    31  ************
+ 144    2016-07-24 18:23    31  ************
+ 145    2016-07-24 18:24    32  *************
+ ...    ..(  5 skipped).    ..  *************
+ 151    2016-07-24 18:30    32  *************
+ 152    2016-07-24 18:31    33  **************
+ ...    ..(  3 skipped).    ..  **************
+ 156    2016-07-24 18:35    33  **************
+ 157    2016-07-24 18:36    34  ***************
+ ...    ..( 10 skipped).    ..  ***************
+ 168    2016-07-24 18:47    34  ***************
+ 169    2016-07-24 18:48    35  ****************
+ ...    ..( 13 skipped).    ..  ****************
+ 183    2016-07-24 19:02    35  ****************
+ 184    2016-07-24 19:03     ?  -
+ 185    2016-07-24 19:04    30  ***********
+ 186    2016-07-24 19:05     ?  -
+ 187    2016-07-24 19:06    22  ***
+ 188    2016-07-24 19:07    22  ***
+ 189    2016-07-24 19:08    23  ****
+ 190    2016-07-24 19:09    24  *****
+ 191    2016-07-24 19:10    24  *****
+ 192    2016-07-24 19:11    25  ******
+ 193    2016-07-24 19:12    26  *******
+ 194    2016-07-24 19:13    26  *******
+ 195    2016-07-24 19:14    27  ********
+ 196    2016-07-24 19:15    27  ********
+ 197    2016-07-24 19:16    27  ********
+ 198    2016-07-24 19:17    28  *********
+ 199    2016-07-24 19:18    28  *********
+ 200    2016-07-24 19:19    29  **********
+ 201    2016-07-24 19:20    29  **********
+ 202    2016-07-24 19:21    30  ***********
+ 203    2016-07-24 19:22    30  ***********
+ 204    2016-07-24 19:23    30  ***********
+ 205    2016-07-24 19:24    31  ************
+ ...    ..(  2 skipped).    ..  ************
+ 208    2016-07-24 19:27    31  ************
+ 209    2016-07-24 19:28    32  *************
+ ...    ..(  5 skipped).    ..  *************
+ 215    2016-07-24 19:34    32  *************
+ 216    2016-07-24 19:35    33  **************
+ ...    ..(  9 skipped).    ..  **************
+ 226    2016-07-24 19:45    33  **************
+ 227    2016-07-24 19:46     ?  -
+ 228    2016-07-24 19:47    32  *************
+ 229    2016-07-24 19:48    32  *************
+ 230    2016-07-24 19:49    33  **************
+ ...    ..(  4 skipped).    ..  **************
+ 235    2016-07-24 19:54    33  **************
+ 236    2016-07-24 19:55    34  ***************
+ ...    ..(  6 skipped).    ..  ***************
+ 243    2016-07-24 20:02    34  ***************
+ 244    2016-07-24 20:03    35  ****************
+ 245    2016-07-24 20:04    35  ****************
+ 246    2016-07-24 20:05    35  ****************
+ 247    2016-07-24 20:06     ?  -
+ 248    2016-07-24 20:07    22  ***
+ 249    2016-07-24 20:08    23  ****
+ 250    2016-07-24 20:09    24  *****
+ 251    2016-07-24 20:10    24  *****
+ 252    2016-07-24 20:11    25  ******
+ 253    2016-07-24 20:12    26  *******
+ 254    2016-07-24 20:13    26  *******
+ 255    2016-07-24 20:14    27  ********
+ 256    2016-07-24 20:15    27  ********
+ 257    2016-07-24 20:16    28  *********
+ 258    2016-07-24 20:17    28  *********
+ 259    2016-07-24 20:18    29  **********
+ 260    2016-07-24 20:19    29  **********
+ 261    2016-07-24 20:20    29  **********
+ 262    2016-07-24 20:21     ?  -
+ 263    2016-07-24 20:22    23  ****
+ 264    2016-07-24 20:23    24  *****
+ 265    2016-07-24 20:24    24  *****
+ 266    2016-07-24 20:25    25  ******
+ 267    2016-07-24 20:26    26  *******
+ 268    2016-07-24 20:27    26  *******
+ 269    2016-07-24 20:28    27  ********
+ 270    2016-07-24 20:29    27  ********
+ 271    2016-07-24 20:30    28  *********
+ 272    2016-07-24 20:31    28  *********
+ 273    2016-07-24 20:32    29  **********
+ 274    2016-07-24 20:33    29  **********
+ 275    2016-07-24 20:34    29  **********
+ 276    2016-07-24 20:35    30  ***********
+ 277    2016-07-24 20:36     ?  -
+ 278    2016-07-24 20:37    22  ***
+ 279    2016-07-24 20:38    23  ****
+ 280    2016-07-24 20:39    23  ****
+ 281    2016-07-24 20:40    24  *****
+ 282    2016-07-24 20:41    25  ******
+ 283    2016-07-24 20:42    25  ******
+ 284    2016-07-24 20:43    26  *******
+ 285    2016-07-24 20:44    27  ********
+ ...    ..(  2 skipped).    ..  ********
+ 288    2016-07-24 20:47    27  ********
+ 289    2016-07-24 20:48    28  *********
+ 290    2016-07-24 20:49    28  *********
+ 291    2016-07-24 20:50    29  **********
+ 292    2016-07-24 20:51     ?  -
+ 293    2016-07-24 20:52    28  *********
+ 294    2016-07-24 20:53    29  **********
+ ...    ..( 12 skipped).    ..  **********
+ 307    2016-07-24 21:06    29  **********
+ 308    2016-07-24 21:07    30  ***********
+ 309    2016-07-24 21:08    30  ***********
+ 310    2016-07-24 21:09    29  **********
+ ...    ..(  3 skipped).    ..  **********
+ 314    2016-07-24 21:13    29  **********
+ 315    2016-07-24 21:14     ?  -
+ 316    2016-07-24 21:15    23  ****
+ 317    2016-07-24 21:16    24  *****
+ 318    2016-07-24 21:17    25  ******
+ 319    2016-07-24 21:18    25  ******
+ 320    2016-07-24 21:19    25  ******
+ 321    2016-07-24 21:20    26  *******
+ 322    2016-07-24 21:21    26  *******
+ 323    2016-07-24 21:22    27  ********
+ 324    2016-07-24 21:23    27  ********
+ 325    2016-07-24 21:24    27  ********
+ 326    2016-07-24 21:25    28  *********
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 2) ==
+0x01  0x008  4              20  ---  Lifetime Power-On Resets
+0x01  0x010  4              24  ---  Power-on Hours
+0x01  0x018  6      1153449949  ---  Logical Sectors Written
+0x01  0x020  6         4513176  ---  Number of Write Commands
+0x01  0x028  6         5716343  ---  Logical Sectors Read
+0x01  0x030  6           25574  ---  Number of Read Commands
+0x02  =====  =               =  ===  == Free-Fall Statistics (rev 1) ==
+0x02  0x010  4               0  ---  Overlimit Shock Events
+0x03  =====  =               =  ===  == Rotating Media Statistics (rev 1) ==
+0x03  0x008  4              22  ---  Spindle Motor Power-on Hours
+0x03  0x010  4              19  ---  Head Flying Hours
+0x03  0x018  4              34  ---  Head Load Events
+0x03  0x020  4               0  ---  Number of Reallocated Logical Sectors
+0x03  0x028  4               0  ---  Read Recovery Attempts
+0x03  0x030  4               0  ---  Number of Mechanical Start Failures
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               2  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              28  ---  Current Temperature
+0x05  0x010  1              33  N--  Average Short Term Temperature
+0x05  0x018  1               -  N--  Average Long Term Temperature
+0x05  0x020  1              40  ---  Highest Temperature
+0x05  0x028  1              20  ---  Lowest Temperature
+0x05  0x030  1              33  N--  Highest Average Short Term Temperature
+0x05  0x038  1              33  N--  Lowest Average Short Term Temperature
+0x05  0x040  1               -  N--  Highest Average Long Term Temperature
+0x05  0x048  1               -  N--  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              55  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1               5  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4              32  ---  Number of Hardware Resets
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x0002  4            0  R_ERR response for data FIS
+0x0003  4            0  R_ERR response for device-to-host data FIS
+0x0004  4            0  R_ERR response for host-to-device data FIS
+0x0005  4            0  R_ERR response for non-data FIS
+0x0006  4            0  R_ERR response for device-to-host non-data FIS
+0x0007  4            0  R_ERR response for host-to-device non-data FIS
+0x0008  4            0  Device-to-host non-data FIS retries
+0x0009  4            6  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  4            5  Device-to-host register FISes sent due to a COMRESET
+0x000b  4            0  CRC errors within host-to-device FIS
+0x000d  4            0  Non-CRC errors within host-to-device FIS
+0x000f  4            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  4            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  4            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  4            0  R_ERR response for host-to-device non-data FIS, non-CRC
+

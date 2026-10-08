@@ -1,0 +1,141 @@
+smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.4.9-300.fc23.x86_64] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=8 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 05 02 1f 00 00 00  4a 4d 69 63 72 6f 6e 20
+ 10     48 2f 57 20 52 41 49 44  35 20 20 20 20 20 20 20
+ 20     00 00 00 00
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=212
+  Incoming data, len=40:
+ 00     00 00 05 02 1f 00 00 00  4a 4d 69 63 72 6f 6e 20
+ 10     48 2f 57 20 52 41 49 44  35 20 20 20 20 20 20 20
+ 20     00 00 00 00 6a 35 35 31
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 05 02 1f 00 00 00  4a 4d 69 63 72 6f 6e 20
+ 10     48 2f 57 20 52 41 49 44  35 20 20 20 20 20 20 20
+ 20     00 00 00 00
+=== START OF INFORMATION SECTION ===
+Vendor:               JMicron
+Product:              H/W RAID5
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     ff ff ff ff 00 00 02 00
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 04 17 ec ff ff  00 00 02 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        9,001,613,918,208 bytes [9.00 TB]
+Logical block size:   512 bytes
+ [mode sense(6): 1a 00 84 00 40 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=1 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+Vital Product Data (VPD) INQUIRY failed [3]
+Vital Product Data (VPD) INQUIRY failed [3]
+Device type:          disk
+ [mode sense(6): 1a 00 19 00 40 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+Local Time is:        Thu Jun  9 10:12:37 2016 IDT
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+SMART support is:     Unavailable - device lacks SMART capability.
+ [unsupported field in scsi command]
+ [mode sense(6): 1a 00 08 00 40 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=1 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+Read Cache is:        Unavailable
+Writeback Cache is:   Unavailable
+
+=== START OF READ SMART DATA SECTION ===
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=4
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+Log Sense for supported pages failed [unsupported scsi opcode]
+ [log sense: 4d 00 40 00 00 00 00 00 44 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=1 milliseconds  resid=68
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+Log Sense for supported pages failed (second attempt) [unsupported scsi opcode]
+ [request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 0a  00 00 00 00 00 00 00 00
+ 10     00 00
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+ [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=8
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+ [read defect list(10): 37 00 0c 00 00 00 00 00 04 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=4
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 20 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=20 ascq=0
+Read defect list (10) Failed: unsupported scsi opcode
+Error Counter logging not supported
+
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x2, host_status=0x0, driver_status=0x8
+  info=0x1  duration=0 milliseconds  resid=64
+  Incoming data trimmed to nothing by resid
+  >>> Sense buffer, len=18:
+ 00     70 00 05 00 00 00 00 0a  00 00 00 00 24 00 00 00
+ 10     00 00
+  status=2: sense_key=5 asc=24 ascq=0
+Device does not support Self Test logging
+Device does not support Background scan results logging
