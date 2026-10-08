@@ -1,0 +1,347 @@
+smartctl 6.5 2016-05-07 r4318 [Darwin 16.7.0 x86_64] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     ST6000NM0004-1FT17Z
+Firmware Version: NN01
+User Capacity:    6,001,175,126,016 bytes [6.00 TB]
+Sector Size:      4096 bytes logical/physical
+Rotation Rate:    7200 rpm
+Form Factor:      3.5 inches
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-3 (minor revision not indicated)
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Mon Aug 28 07:12:05 2017 PDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Unknown
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(   80) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 629) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   2) minutes.
+SCT capabilities: 	       (0x50bd)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 10
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR--   070   057   044    -    11769186
+  3 Spin_Up_Time            PO----   089   089   000    -    0
+  4 Start_Stop_Count        -O--CK   100   100   020    -    199
+  5 Reallocated_Sector_Ct   PO--CK   100   100   010    -    0
+  7 Seek_Error_Rate         POSR--   060   060   030    -    1180037
+  9 Power_On_Hours          -O--CK   100   100   000    -    168
+ 10 Spin_Retry_Count        PO--C-   100   100   097    -    0
+ 12 Power_Cycle_Count       -O--CK   100   100   020    -    190
+184 End-to-End_Error        -O--CK   100   100   099    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+188 Command_Timeout         -O--CK   100   100   000    -    0
+189 High_Fly_Writes         -O-RCK   100   100   000    -    0
+190 Airflow_Temperature_Cel -O---K   070   060   045    -    30 (Min/Max 24/30)
+191 G-Sense_Error_Rate      -O--CK   100   100   000    -    322
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    1
+193 Load_Cycle_Count        -O--CK   100   100   000    -    463
+194 Temperature_Celsius     -O---K   030   040   000    -    30 (0 16 0 0 0)
+195 Hardware_ECC_Recovered  -O-RC-   046   042   000    -    11769186
+197 Current_Pending_Sector  -O--C-   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   200   200   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+ATA_READ_LOG_EXT (addr=0x00:0x00, page=0, n=1) failed: 48-bit ATA commands not implemented
+Read GP Log Directory failed
+
+SMART Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00           SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      5  Comprehensive SMART error log
+0x04           SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x08           SL  R/O      2  Power Conditions log
+0x09           SL  R/W      1  Selective self-test log
+0x30           SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f      SL  R/W     16  Host vendor specific log
+0xa1           SL  VS      20  Device vendor specific log
+0xa8-0xa9      SL  VS     136  Device vendor specific log
+0xc1           SL  VS      10  Device vendor specific log
+0xc3           SL  VS       8  Device vendor specific log
+0xc7           SL  VS       1  Device vendor specific log
+0xd1           SL  VS       8  Device vendor specific log
+0xe0           SL  R/W      1  SCT Command/Status
+0xe1           SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%       168         -
+# 2  Short offline       Aborted by host               90%       164         -
+# 3  Short offline       Aborted by host               90%       164         -
+# 4  Short offline       Aborted by host               90%       149         -
+# 5  Short offline       Aborted by host               90%       145         -
+# 6  Short offline       Aborted by host               90%       121         -
+# 7  Short offline       Aborted by host               90%        92         -
+# 8  Short offline       Aborted by host               90%        92         -
+# 9  Short offline       Aborted by host               90%        92         -
+#10  Short offline       Aborted by host               90%        90         -
+#11  Short offline       Aborted by host               90%        89         -
+#12  Short offline       Aborted by host               90%        89         -
+#13  Short offline       Aborted by host               90%        89         -
+#14  Short offline       Aborted by host               90%        89         -
+#15  Short offline       Aborted by host               90%        89         -
+#16  Short offline       Aborted by host               90%        89         -
+#17  Short offline       Aborted by host               90%        88         -
+#18  Short offline       Aborted by host               90%        85         -
+#19  Short offline       Aborted by host               90%        84         -
+#20  Short offline       Aborted by host               90%        84         -
+#21  Short offline       Aborted by host               90%        84         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       522 (0x020a)
+SCT Support Level:                   1
+Device State:                        Active (0)
+Current Temperature:                    27 Celsius
+Power Cycle Min/Max Temperature:     24/24 Celsius
+Lifetime    Min/Max Temperature:     16/40 Celsius
+Under/Over Temperature Limit Count:   0/1
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         3 minutes
+Temperature Logging Interval:        59 minutes
+Min/Max recommended Temperature:      0/ 0 Celsius
+Min/Max Temperature Limit:            0/ 0 Celsius
+Temperature History Size (Index):    128 (51)
+
+Index    Estimated Time   Temperature Celsius
+  52    2017-08-23 01:29     ?  -
+  53    2017-08-23 02:28    26  *******
+  54    2017-08-23 03:27     ?  -
+  55    2017-08-23 04:26    27  ********
+  56    2017-08-23 05:25     ?  -
+  57    2017-08-23 06:24    21  **
+  58    2017-08-23 07:23     ?  -
+  59    2017-08-23 08:22    31  ************
+  60    2017-08-23 09:21     ?  -
+  61    2017-08-23 10:20    23  ****
+  62    2017-08-23 11:19     ?  -
+  63    2017-08-23 12:18    17  -
+  64    2017-08-23 13:17     ?  -
+  65    2017-08-23 14:16    18  -
+  66    2017-08-23 15:15     ?  -
+  67    2017-08-23 16:14    19  -
+  68    2017-08-23 17:13     ?  -
+  69    2017-08-23 18:12    23  ****
+  70    2017-08-23 19:11     ?  -
+  71    2017-08-23 20:10    24  *****
+  72    2017-08-23 21:09     ?  -
+  73    2017-08-23 22:08    31  ************
+  74    2017-08-23 23:07     ?  -
+  75    2017-08-24 00:06    22  ***
+  76    2017-08-24 01:05     ?  -
+  77    2017-08-24 02:04    34  ***************
+  78    2017-08-24 03:03     ?  -
+  79    2017-08-24 04:02    29  **********
+  80    2017-08-24 05:01     ?  -
+  81    2017-08-24 06:00    28  *********
+  82    2017-08-24 06:59     ?  -
+  83    2017-08-24 07:58    28  *********
+  84    2017-08-24 08:57     ?  -
+  85    2017-08-24 09:56    28  *********
+  86    2017-08-24 10:55     ?  -
+  87    2017-08-24 11:54    28  *********
+  88    2017-08-24 12:53     ?  -
+  89    2017-08-24 13:52    19  -
+  90    2017-08-24 14:51     ?  -
+  91    2017-08-24 15:50    26  *******
+  92    2017-08-24 16:49     ?  -
+  93    2017-08-24 17:48    20  *
+  94    2017-08-24 18:47     ?  -
+  95    2017-08-24 19:46    22  ***
+  96    2017-08-24 20:45     ?  -
+  97    2017-08-24 21:44    24  *****
+  98    2017-08-24 22:43     ?  -
+  99    2017-08-24 23:42    25  ******
+ 100    2017-08-25 00:41     ?  -
+ 101    2017-08-25 01:40    20  *
+ 102    2017-08-25 02:39     ?  -
+ 103    2017-08-25 03:38    20  *
+ 104    2017-08-25 04:37     ?  -
+ 105    2017-08-25 05:36    26  *******
+ 106    2017-08-25 06:35     ?  -
+ 107    2017-08-25 07:34    26  *******
+ 108    2017-08-25 08:33     ?  -
+ 109    2017-08-25 09:32    22  ***
+ 110    2017-08-25 10:31     ?  -
+ 111    2017-08-25 11:30    21  **
+ 112    2017-08-25 12:29     ?  -
+ 113    2017-08-25 13:28    24  *****
+ 114    2017-08-25 14:27     ?  -
+ 115    2017-08-25 15:26    21  **
+ 116    2017-08-25 16:25     ?  -
+ 117    2017-08-25 17:24    22  ***
+ 118    2017-08-25 18:23    31  ************
+ 119    2017-08-25 19:22     ?  -
+ 120    2017-08-25 20:21    27  ********
+ 121    2017-08-25 21:20     ?  -
+ 122    2017-08-25 22:19    20  *
+ 123    2017-08-25 23:18     ?  -
+ 124    2017-08-26 00:17    24  *****
+ 125    2017-08-26 01:16     ?  -
+ 126    2017-08-26 02:15    24  *****
+ 127    2017-08-26 03:14     ?  -
+   0    2017-08-26 04:13    28  *********
+   1    2017-08-26 05:12    34  ***************
+   2    2017-08-26 06:11    34  ***************
+   3    2017-08-26 07:10     ?  -
+   4    2017-08-26 08:09    22  ***
+   5    2017-08-26 09:08     ?  -
+   6    2017-08-26 10:07    22  ***
+   7    2017-08-26 11:06     ?  -
+   8    2017-08-26 12:05    23  ****
+   9    2017-08-26 13:04     ?  -
+  10    2017-08-26 14:03    32  *************
+  11    2017-08-26 15:02     ?  -
+  12    2017-08-26 16:01    21  **
+  13    2017-08-26 17:00     ?  -
+  14    2017-08-26 17:59    21  **
+  15    2017-08-26 18:58     ?  -
+  16    2017-08-26 19:57    29  **********
+  17    2017-08-26 20:56     ?  -
+  18    2017-08-26 21:55    30  ***********
+  19    2017-08-26 22:54     ?  -
+  20    2017-08-26 23:53    34  ***************
+  21    2017-08-27 00:52     ?  -
+  22    2017-08-27 01:51    32  *************
+  23    2017-08-27 02:50     ?  -
+  24    2017-08-27 03:49    21  **
+  25    2017-08-27 04:48     ?  -
+  26    2017-08-27 05:47    21  **
+  27    2017-08-27 06:46     ?  -
+  28    2017-08-27 07:45    25  ******
+  29    2017-08-27 08:44     ?  -
+  30    2017-08-27 09:43    26  *******
+  31    2017-08-27 10:42     ?  -
+  32    2017-08-27 11:41    26  *******
+  33    2017-08-27 12:40    39  ********************
+  34    2017-08-27 13:39    40  *********************
+  35    2017-08-27 14:38    40  *********************
+  36    2017-08-27 15:37    39  ********************
+  37    2017-08-27 16:36    39  ********************
+  38    2017-08-27 17:35    38  *******************
+  39    2017-08-27 18:34    38  *******************
+  40    2017-08-27 19:33     ?  -
+  41    2017-08-27 20:32    29  **********
+  42    2017-08-27 21:31     ?  -
+  43    2017-08-27 22:30    30  ***********
+  44    2017-08-27 23:29     ?  -
+  45    2017-08-28 00:28    28  *********
+  46    2017-08-28 01:27     ?  -
+  47    2017-08-28 02:26    23  ****
+  48    2017-08-28 03:25     ?  -
+  49    2017-08-28 04:24    23  ****
+  50    2017-08-28 05:23     ?  -
+  51    2017-08-28 06:22    24  *****
+
+SMART WRITE LOG does not return COUNT and LBA_LOW register
+SCT (Get) Error Recovery Control command failed
+
+Device Statistics (SMART Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 2) ==
+0x01  0x008  4             190  ---  Lifetime Power-On Resets
+0x01  0x010  4             168  ---  Power-on Hours
+0x01  0x018  6       762506950  ---  Logical Sectors Written
+0x01  0x020  6        11625842  ---  Number of Write Commands
+0x01  0x028  6     17263347555  ---  Logical Sectors Read
+0x01  0x030  6         1677235  ---  Number of Read Commands
+0x01  0x038  6               -  ---  Date and Time TimeStamp
+0x03  =====  =               =  ===  == Rotating Media Statistics (rev 1) ==
+0x03  0x008  4       504565120  N--  Spindle Motor Power-on Hours
+0x03  0x010  4       504565094  N--  Head Flying Hours
+0x03  0x018  4             463  ---  Head Load Events
+0x03  0x020  4               0  ---  Number of Reallocated Logical Sectors
+0x03  0x028  4               0  ---  Read Recovery Attempts
+0x03  0x030  4               0  ---  Number of Mechanical Start Failures
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               0  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              27  N--  Current Temperature
+0x05  0x010  1              30  N--  Average Short Term Temperature
+0x05  0x018  1              24  N--  Average Long Term Temperature
+0x05  0x020  1              40  N--  Highest Temperature
+0x05  0x028  1              16  N--  Lowest Temperature
+0x05  0x030  1              33  N--  Highest Average Short Term Temperature
+0x05  0x038  1               2  N--  Lowest Average Short Term Temperature
+0x05  0x040  1              26  N--  Highest Average Long Term Temperature
+0x05  0x048  1               0  N--  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              55  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1              13  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+ATA_READ_LOG_EXT (addr=0x11:0x00, page=0, n=1) failed: 48-bit ATA commands not implemented
+Read SATA Phy Event Counters failed
+

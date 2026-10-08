@@ -1,0 +1,14 @@
+Index: scsiata.cpp
+===================================================================
+--- scsiata.cpp	(revision 4440)
++++ scsiata.cpp	(working copy)
+@@ -524,7 +524,8 @@
+ 
+   // Check for SAT "VENDOR"
+   int inqsize = inqdata[4] + 5;
+-  bool sat = (inqsize >= 36 && !memcmp(inqdata + 8, "ATA     ", 8));
++  bool cciss = !strcmp(scsidev->get_dev_type(), "cciss");
++  bool sat = (!cciss && inqsize >= 36 && !memcmp(inqdata + 8, "ATA     ", 8));
+ 
+   // Change interface
+   hide_ata(!sat);

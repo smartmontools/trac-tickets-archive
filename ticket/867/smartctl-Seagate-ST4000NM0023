@@ -1,0 +1,121 @@
+smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.4.75-loc] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST4000NM0023
+Revision:             0003
+Compliance:           SPC-4
+User Capacity:        4,000,787,030,016 bytes [4.00 TB]
+Logical block size:   512 bytes
+LU is fully provisioned
+Rotation Rate:        7200 rpm
+Form Factor:          3.5 inches
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Mon Aug 28 07:36:17 2017 PDT
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     39 C
+Drive Trip Temperature:        40 C
+
+Manufactured in week 43 of year 2013
+Specified cycle count over device lifetime:  10000
+Accumulated start-stop cycles:  217
+Specified load-unload count over device lifetime:  300000
+Accumulated load-unload cycles:  1482
+Elements in grown defect list: 3
+
+Vendor (Seagate) cache information
+  Blocks sent to initiator = 1820284864
+  Blocks received from initiator = 3344349675
+  Blocks read from cache and sent to initiator = 46541887
+  Number of read and write commands whose size <= segment size = 32784521
+  Number of read and write commands whose size > segment size = 855654
+
+Vendor (Seagate/Hitachi) factory information
+  number of hours powered up = 30883.95
+  number of minutes until next internal SMART test = 36
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:   2816389502        0         0  2816389502          0        931.986           0
+write:         0        0         0         0          0      41073.661           0
+
+Non-medium error count:        0
+
+
+[GLTSD (Global Logging Target Save Disable) set. Enable Save with '-S on']
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -   30883                 - [-   -    -]
+
+Long (extended) Self Test duration: 32700 seconds [545.0 minutes]
+
+Background scan results log
+  Status: waiting until BMS interval timer expires
+    Accumulated power on time, hours:minutes 30883:57 [1853037 minutes]
+    Number of background scans performed: 413,  scan progress: 0.00%
+    Number of background medium scans performed: 413
+
+   #  when        lba(hex)    [sk,asc,ascq]    reassign_status
+   1 29408:32  000000004dd36872  [1,18,1]   Successfully reassigned
+   2 29480:08  000000004dd35cad  [1,18,1]   Successfully reassigned
+   3 29480:08  000000004dd37437  [1,18,1]   Successfully reassigned
+
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 36
+  number of phys = 1
+  phy identifier = 0
+    attached device type: SAS or SATA device
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; 6 Gbps
+    attached initiator port: ssp=1 stp=1 smp=1
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5000c50057a1620d
+    attached SAS address = 0x500605b009a1aa62
+    attached phy identifier = 2
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 39
+    Phy reset problem = 0
+    Phy event descriptors:
+     Invalid word count: 0
+     Running disparity error count: 0
+     Loss of dword synchronization count: 39
+     Phy reset problem count: 0
+relative target port id = 2
+  generation code = 36
+  number of phys = 1
+  phy identifier = 1
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5000c50057a1620e
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+    Phy event descriptors:
+     Invalid word count: 0
+     Running disparity error count: 0
+     Loss of dword synchronization count: 0
+     Phy reset problem count: 0
+

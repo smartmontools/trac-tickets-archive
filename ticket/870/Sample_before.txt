@@ -1,0 +1,154 @@
+C:\smartmontools\bin>smartctl.exe --scan
+/dev/sdb -d scsi # /dev/sdb, SCSI device
+/dev/sdc -d scsi # /dev/sdc, SCSI device
+/dev/sdd -d ata # /dev/sdd, ATA device
+
+C:\smartmontools\bin>smartctl.exe -A /dev/sdb
+smartctl 6.5 2016-05-07 r4318 [x86_64-w64-mingw32-2008r2-sp1] (sf-6.5-1)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF READ SMART DATA SECTION ===
+Current Drive Temperature:     38 C
+Drive Trip Temperature:        63 C
+
+Manufactured in week 39 of year 2014
+Specified cycle count over device lifetime:  0
+Accumulated start-stop cycles:  6398
+defect list format 6 unknown
+Elements in grown defect list: 0
+
+
+C:\smartmontools\bin>smartctl.exe -x /dev/sdb
+smartctl 6.5 2016-05-07 r4318 [x86_64-w64-mingw32-2008r2-sp1] (sf-6.5-1)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SanDisk
+Product:              DOPE1920S5xnNMRI
+Revision:             P018
+Compliance:           SPC-4
+User Capacity:        1,950,389,400,960 bytes [1.95 TB]
+Logical block size:   520 bytes
+Physical block size:  4160 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Logical Unit id:      0x5001173100309154
+Serial number:        FG00F2HW
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Tue Oct 17 14:10:49 2017 IST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Disabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Percentage used endurance indicator: 1%
+Current Drive Temperature:     38 C
+Drive Trip Temperature:        63 C
+
+Manufactured in week 39 of year 2014
+Specified cycle count over device lifetime:  0
+Accumulated start-stop cycles:  6398
+defect list format 6 unknown
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0          1.020           0
+write:         0        0         0         0          0          0.708           0
+verify:        0        0         0         0          0          2.430           0
+
+Non-medium error count:    30781
+
+No self-tests have been logged
+
+Background scan results log
+  Status: no scans active
+    Accumulated power on time, hours:minutes 3396:42 [203802 minutes]
+    Number of background scans performed: 0,  scan progress: 0.00%
+    Number of background medium scans performed: 0
+
+   #  when        lba(hex)    [sk,asc,ascq]    reassign_status
+   1    0:00  0000000000000000  [0,0,0]   Reserved [0x0]
+
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 1
+  number of phys = 1
+  phy identifier = 0
+    attached device type: SAS or SATA device
+    attached reason: loss of dword synchronization
+    reason: power on
+    negotiated logical link rate: phy enabled; 6 Gbps
+    attached initiator port: ssp=1 stp=1 smp=1
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5001173100309155
+    attached SAS address = 0x500605b0091c3bf0
+    attached phy identifier = 4
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+    Phy event descriptors:
+     Invalid word count: 0
+     Running disparity error count: 0
+     Loss of dword synchronization count: 0
+     Phy reset problem count: 0
+  phy identifier = 0
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x2
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 4
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+relative target port id = 2
+  generation code = 1
+  number of phys = 1
+  phy identifier = 1
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5001173100309156
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+    Phy event descriptors:
+     Invalid word count: 0
+     Running disparity error count: 0
+     Loss of dword synchronization count: 0
+     Phy reset problem count: 0
+  phy identifier = 0
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x2
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 4
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+

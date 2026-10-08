@@ -1,0 +1,160 @@
+bash-4.1# ?./smartctl -i ?/dev/sda
+2	smartctl 6.6 2017-03-11 r4410 [x86_64-linux-2.6.32-431.el6.x86_64] (local build)
+3	Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+4	 
+5	=== START OF INFORMATION SECTION ===
+6	Vendor:               SanDisk
+7	Product:              LT0400MO
+8	Revision:             D416
+9	Compliance:           SPC-4
+10	User Capacity:        400,000,000,512 bytes [400 GB]
+11	Logical block size:   512 bytes
+12	LU is resource provisioned, LBPRZ=1
+13	Rotation Rate:        Solid State Device
+14	Form Factor:          2.5 inches
+15	Logical Unit id:      0x5001e820027d0588
+16	Serial number:        41747848
+17	Device type:          disk
+18	Transport protocol:   SAS (SPL-3)
+19	Local Time is:        Fri Jun 23 22:03:49 2017 IST
+20	SMART support is:     Available - device has SMART capability.
+21	SMART support is:     Enabled
+22	Temperature Warning:  Disabled or Not Supported
+23	 
+24	-bash-4.1# ?./smartctl -i ?/dev/sdc
+25	smartctl 6.6 2017-03-11 r4410 [x86_64-linux-2.6.32-431.el6.x86_64] (local build)
+26	Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+27	 
+28	=== START OF INFORMATION SECTION ===
+29	Vendor:               HP
+30	Product:              MO1600JVYPR
+31	Revision:             HPD5
+32	Compliance:           SPC-4
+33	User Capacity:        1,600,321,314,800 bytes [1.60 TB]
+34	Logical block size:   520 bytes
+35	LU is resource provisioned, LBPRZ=1
+36	Rotation Rate:        Solid State Device
+37	Form Factor:          2.5 inches
+38	Logical Unit id:      0x5001173d0280bdd4
+39	Serial number:        41991636
+40	Device type:          disk
+41	Transport protocol:   SAS (SPL-3)
+42	Local Time is:        Fri Jun 23 22:04:00 2017 IST
+43	SMART support is:     Available - device has SMART capability.
+44	SMART support is:     Enabled
+45	Temperature Warning:  Enabled
+46	 
+47	-bash-4.1# ?./smartctl -i ?/dev/sde
+48	smartctl 6.6 2017-03-11 r4410 [x86_64-linux-2.6.32-431.el6.x86_64] (local build)
+49	Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+50	 
+51	=== START OF INFORMATION SECTION ===
+52	Vendor:               SanDisk
+53	Product:              LT0900RO
+54	Revision:             T50K
+55	Compliance:           SPC-4
+56	User Capacity:        900,185,481,216 bytes [900 GB]
+57	Logical block size:   512 bytes
+58	LU is resource provisioned, LBPRZ=1
+59	Rotation Rate:        Solid State Device
+60	Form Factor:          2.5 inches
+61	Logical Unit id:      0x5001e8200281cad4
+62	Serial number:        42060500
+63	Device type:          disk
+64	Transport protocol:   SAS (SPL-3)
+65	Local Time is:        Fri Jun 23 22:04:03 2017 IST
+66	SMART support is:     Available - device has SMART capability.
+67	SMART support is:     Enabled
+68	Temperature Warning:  Disabled or Not Supported
+69	 
+70	-bash-4.1# ?./smartctl -A ?/dev/sda
+71	smartctl 6.6 2017-03-11 r4410 [x86_64-linux-2.6.32-431.el6.x86_64] (local build)
+72	Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+73	 
+74	=== START OF READ SMART DATA SECTION ===
+75	Current Drive Temperature:     36 C
+76	Drive Trip Temperature:        60 C
+77	 
+78	Manufactured in week 48 of year 2009
+79	Specified cycle count over device lifetime:  100000
+80	Accumulated start-stop cycles:  7
+81	ID#  ATTRIBUTE_NAME                         VALUE         THRESH          WORST
+82	1    Raw_Read_Err_Rate                      0             0               0
+83	5    Reallocated_Blk_Ct                     0             97397           0
+84	9    POH_in_Life_Time                       3791          0               0
+85	12   Power_Cycle_Ct                         9413          0               0
+86	13   ECC_Rate                               0             0               0
+87	179  Used_Rsvd_Blk_Ct_Total                 811           88386           0
+88	180  Unused_Rsvd_Blk_Ct_Total               87575         0               0
+89	181  Program_Fail_Ct                        0             0               0
+90	182  Erase_Fail_Ct                          0             0               0
+91	194  Temperature                            36            85              0
+92	195  UEC                                    0             0               0
+93	198  Offline_Scan_UEC                       0             0               0
+94	199  CRC_Err_Ct                             7135          0               0
+95	201  Volatile_Memory_Fail                   0             1               0
+96	202  Exception_Mode_Status                  0             1               0
+97	233  Write_Cmnd_Ct                          4294967295    0               0
+98	240  Link_Err_Event                         0             0               0
+99	245  Remaining_Device_Life                  99            0               0
+100	255  Smart_Tests                            0             1               0
+101	-bash-4.1# ?./smartctl -A ?/dev/sdc
+102	smartctl 6.6 2017-03-11 r4410 [x86_64-linux-2.6.32-431.el6.x86_64] (local build)
+103	Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+104	 
+105	=== START OF READ SMART DATA SECTION ===
+106	Current Drive Temperature:     37 C
+107	Drive Trip Temperature:        60 C
+108	 
+109	Manufactured in week 23 of year 2015
+110	ID#  ATTRIBUTE_NAME                         VALUE         THRESH          WORST
+111	3    POH_in_Life_Time                       74735         0               0
+112	4    Power_Cycle_Ct                         130           0               0
+113	5    Smart_Temp_Timestamps                  0             0               0
+114	16   General_HW_Fail_Predict                0             0               0
+115	20   Excessive_Reassigns                    1             1               0
+116	50   Excessive_Read_Err_Rate                0             0               0
+117	66   Excessive_Write_Err_Rate               0             0               0
+118	115  Endurance_Limit_Met                    21            0               0
+119	-bash-4.1# ?./smartctl -A ?/dev/sde
+120	smartctl 6.6 2017-03-11 r4410 [x86_64-linux-2.6.32-431.el6.x86_64] (local build)
+121	Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+122	 
+123	=== START OF READ SMART DATA SECTION ===
+124	Current Drive Temperature:     35 C
+125	Drive Trip Temperature:        60 C
+126	 
+127	Manufactured in week 09 of year 2015
+128	Specified cycle count over device lifetime:  100000
+129	Accumulated start-stop cycles:  10146
+130	ID#  ATTRIBUTE_NAME                         VALUE         THRESH          WORST
+131	1    Reallocated_Blk_Ct                     1             162371          0
+132	2    Temperature                            35            85              0
+133	3    POH_in_LifeTime                        6723          0               0
+134	4    Power_Cycle_Ct                         10027         0               0
+135	5    Program_Fail_Ct                        1             0               0
+136	6    Erase_Fail_Ct                          0             0               0
+137	7    Uncorrectable_Err_Ct                   1             0               0
+138	8    Write_Cmnd_Ct                          86286283      0               0
+139	9    Smart_Test                             0             1               0
+140	10   Raw_Read_Err_Rate                      0             0               0
+141	11   Ecc_Rate                               0             0               0
+142	12   Program_Fail_Ct_Port                   0             0               0
+143	13   Erase_Fail_Ct_Port                     0             0               0
+144	14   Wear_Leveling                          0             0               0
+145	15   Used_Rsvd_Blk_Ct_Port                  290           6547            0
+146	16   Used_Rsvd_Blk_Ct_Total                 1310          32735           0
+147	17   Unused_Rsvd_Blk_Ct_Total               31425         0               0
+148	18   Hardware_Fail_Ct                       0             1               0
+149	19   Offline_Scan_UEC                       0             0               0
+150	20   CRC_Err_Ct                             2             0               0
+151	21   Volatile_Memory_Fail                   0             0               0
+152	22   Unused_Rsvd_Blk_Ct_Port                6257          0               0
+153	23   Read_Err_Rate                          0             0               0
+154	24   Write_Err_Rate                         0             0               0
+155	25   Endurance_Limit                        0             0               0
+156	26   Start_Unit_Time                        18            0               0
+157	28   CBC_Health                             0             100             0
+158	29   Exception_Mode_Status                  0             0               0
+159	30   Link_Err_Event                         4             0               0
+160	31   Remaining_Device_Life                  100           0               0

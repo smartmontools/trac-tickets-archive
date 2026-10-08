@@ -1,0 +1,600 @@
+diff -Naurw ../smart-patch-old/drivedb.h smart-patch-old/drivedb.h
+--- ../smart-patch-old/drivedb.h	2017-08-11 20:04:13.100934096 +0530
++++ smart-patch-old/drivedb.h	2017-08-11 20:46:26.883875406 +0530
+@@ -1391,6 +1391,101 @@
+   //"-v 242,raw48,Total_LBAs_Read "
+     "-v 244,raw48,Thermal_Throttle "
+   },
++  { "Sandisk SAS Optimus2 and Ultrastar ss200 ESS SSDs",
++    "SD[A-Z0-9]{2}[O1][A-Z0-9]{3}-?[0-9]{3,4}[GT]-?[C5][A-Za-z0-9]{3}",
++    "","",
++    "-v 1,raw48,Raw_Read_Err_Rate "
++    "-v 2,raw48,Flash_ROM_Check "
++    "-v 5,raw16(raw16),Reallocated_Blk_Ct "
++    "-v 9,raw48,Power_ON_Hours "
++    "-v 12,raw48,Power_Cycle_Ct "
++    "-v 13,raw48,ECC_Rate "
++    "-v 29,raw48,Pwr_Fail_Backup_Circuit "
++    "-v 32,raw48,Avg_Write_Amplification "
++    "-v 177,raw48,Drive_Life_Remain% "
++    "-v 178,raw48,Drive_Life_Remain_x100 "
++    "-v 180,raw48,Unused_Reserved_Blk_Ct "
++    "-v 181,raw48,Program_Fail_Ct "
++    "-v 182,raw48,Erase_Fail_Ct "
++    "-v 190,raw48,Drive_Temp_Warning "
++    "-v 194,raw48,Drive_Temperature "
++    "-v 195,raw48,UECC_Ct "
++    "-v 198,raw48,Offline_Scan_UEC "
++    "-v 233,raw48,Number_Of_LBA_Written "
++    "-v 235,raw48,Power_Fail_Backup_Health "
++    "-v 245,raw48,DriveLife_Used% "
++    "-v 246,raw48,DriveLife_Used%x100 "
++  },
++  { "Sandisk SAS Lightning Gen II DELL ESS SSDs",
++  "LT[A-Z0-9]{4,6}",
++  "[DE][A-Z0-9]{3}", "",
++  "-v 1,raw48,Raw_Read_Err_Rate "
++  "-v 5,raw48,Reallocated_Blk_Ct "
++  "-v 9,raw48,POH_in_Life_Time "
++  "-v 12,raw48,Power_Cycle_Ct "
++  "-v 13,raw48,ECC_Rate "
++  "-v 115,raw48,Endurance_Limit_Met "
++  "-v 179,raw48,Used_Rsvd_Blk_Ct_Total  "
++  "-v 180,raw48,Unused_Rsvd_Blk_Ct_Total "
++  "-v 181,raw48,Program_Fail_Ct "
++  "-v 182,raw48,Erase_Fail_Ct "
++  "-v 194,raw48,Temperature "
++  "-v 195,raw48,UEC "
++  "-v 198,raw48,Offline_Scan_UEC "
++  "-v 199,raw48,CRC_Err_Ct "
++  "-v 201,raw48,Volatile_Memory_Fail "
++  "-v 202,raw48,Exception_Mode_Status "
++  "-v 233,raw48,Write_Cmnd_Ct "
++  "-v 240,raw48,Link_Err_Event "
++  "-v 245,raw48,Remaining_Device_Life "
++  "-v 255,raw48,Smart_Tests "
++  },
++  { "Sandisk SAS Lightning Gen II Generic ESS SSDs",
++    "LT[A-Z0-9]{4,6}",
++    "","",
++    "-v 1,raw48,Reallocated_Blk_Ct "
++    "-v 2,raw48,Temperature "
++    "-v 3,raw16(raw16),POH_in_LifeTime "
++    "-v 4,raw48,Power_Cycle_Ct "
++    "-v 5,raw48,Program_Fail_Ct "
++    "-v 6,raw48,Erase_Fail_Ct "
++    "-v 7,raw48,Uncorrectable_Err_Ct "
++    "-v 8,raw48,Write_Cmnd_Ct "
++    "-v 9,raw48,Smart_Test "
++    "-v 10,raw48,Raw_Read_Err_Rate "
++    "-v 11,raw48,Ecc_Rate "
++    "-v 12,raw48,Program_Fail_Ct_Port "
++    "-v 13,raw48,Erase_Fail_Ct_Port "
++    "-v 14,raw48,Wear_Leveling "
++    "-v 15,raw48,Used_Rsvd_Blk_Ct_Port "
++    "-v 16,raw48,Used_Rsvd_Blk_Ct_Total "
++    "-v 17,raw48,Unused_Rsvd_Blk_Ct_Total "
++    "-v 18,raw48,Hardware_Fail_Ct "
++    "-v 19,raw48,Offline_Scan_UEC  "
++    "-v 20,raw48,CRC_Err_Ct  "
++    "-v 21,raw48,Volatile_Memory_Fail  "
++    "-v 22,raw48,Unused_Rsvd_Blk_Ct_Port "
++    "-v 23,raw48,Read_Err_Rate  "
++    "-v 24,raw48,Write_Err_Rate  "
++    "-v 25,raw48,Endurance_Limit "
++    "-v 26,raw48,Start_Unit_Time  "
++    "-v 28,raw48,CBC_Health  "
++    "-v 29,raw48,Exception_Mode_Status  "
++    "-v 30,raw48,Link_Err_Event  "
++    "-v 31,raw48,Remaining_Device_Life  "
++  },
++  { "Sandisk SAS Lightning Gen II HP ESS SSDs",
++    "[EM][KO][A-Z0-9]{9}",
++    "","",
++    "-v 3,raw48,POH_in_Life_Time "
++    "-v 4,raw48,Power_Cycle_Ct "
++    "-v 5,raw48,Smart_Temp_Timestamps "
++    "-v 16,raw48,General_HW_Fail_Predict "
++    "-v 20,raw48,Excessive_Reassigns "
++    "-v 50,raw48,Excessive_Read_Err_Rate "
++    "-v 66,raw48,Excessive_Write_Err_Rate "
++    "-v 115,raw48,Endurance_Limit_Met "
++  },
+   { "SiliconMotion based SSDs", // SM2246EN (Transcend TS6500)
+     "CT(120|250|500|1000)BX100SSD1|" // Crucial BX100, tested with CT250BX100SSD1/MU02,
+       // CT500BX100SSD1/MU02, CT1000BX100SSD1/MU02
+diff -Naurw ../smart-patch-old/knowndrives.cpp smart-patch-old/knowndrives.cpp
+--- ../smart-patch-old/knowndrives.cpp	2017-08-11 18:24:00.668073362 +0530
++++ smart-patch-old/knowndrives.cpp	2017-08-11 19:31:25.121979680 +0530
+@@ -581,6 +581,33 @@
+   return dbentry;
+ }
+ 
++// Searches drive database and sets preset vendor attribute
++// options in defs and firmwarebugs.
++// Values that have already been set will not be changed.
++// Returns pointer to database entry or nullptr if none found
++const drive_settings * scsi_lookup_drive_apply_presets(
++    char * driveModel, int driveModelLen, char * fwRev, int fwRevLen, ata_vendor_attr_defs & defs)
++{
++	// get the drive's model/firmware strings
++	char model[MODEL_STRING_LENGTH + 1], firmware[FIRMWARE_STRING_LENGTH + 1];
++    firmwarebug_defs firmwarebugs;
++
++    snprintf(model, driveModelLen, "%s", driveModel);
++    snprintf(firmware, fwRevLen, "%s", fwRev);
++
++	// Look up the drive in knowndrives[].
++	const drive_settings * dbentry = lookup_drive(model, firmware);
++	if (!dbentry)
++		return 0;
++
++    if (*dbentry->presets) {
++        // Apply presets
++        if (!parse_presets(dbentry->presets, defs, firmwarebugs))
++            pout("Syntax error in preset option string \"%s\"\n", dbentry->presets);
++    }
++
++    return dbentry;
++}
+ 
+ /////////////////////////////////////////////////////////////////////////////
+ // Parser for drive database files
+diff -Naurw ../smart-patch-old/knowndrives.h smart-patch-old/knowndrives.h
+--- ../smart-patch-old/knowndrives.h	2017-08-11 18:24:35.739072550 +0530
++++ smart-patch-old/knowndrives.h	2017-08-11 19:34:49.841974938 +0530
+@@ -60,7 +60,8 @@
+ const drive_settings * lookup_drive_apply_presets(
+   const ata_identify_device * drive, ata_vendor_attr_defs & defs,
+   firmwarebug_defs & firmwarebugs);
+-
++const drive_settings * scsi_lookup_drive_apply_presets(
++    char * driveModel, int driveModelLen, char * fwRev,int fwRevLen, ata_vendor_attr_defs & defs);
+ // Get path for additional database file
+ const char * get_drivedb_path_add();
+ 
+diff -Naurw ../smart-patch-old/scsicmds.cpp smart-patch-old/scsicmds.cpp
+--- ../smart-patch-old/scsicmds.cpp	2017-08-11 18:25:00.379071979 +0530
++++ smart-patch-old/scsicmds.cpp	2017-08-11 19:36:23.399972771 +0530
+@@ -514,6 +514,7 @@
+     io_hdr.dxferp = pBuf;
+     cdb[0] = LOG_SENSE;
+     cdb[2] = 0x40 | (pagenum & 0x3f);  /* Page control (PC)==1 */
++    cdb[3] = subpagenum;
+     cdb[7] = (pageLen >> 8) & 0xff;
+     cdb[8] = pageLen & 0xff;
+     io_hdr.cmnd = cdb;
+diff -Naurw ../smart-patch-old/scsiprint.cpp smart-patch-old/scsiprint.cpp
+--- ../smart-patch-old/scsiprint.cpp	2017-08-11 18:23:35.175073953 +0530
++++ smart-patch-old/scsiprint.cpp	2017-08-11 20:52:59.552866310 +0530
+@@ -37,6 +37,7 @@
+ #include "scsiprint.h"
+ #include "smartctl.h"
+ #include "utility.h"
++#include "knowndrives.h"
+ 
+ #define GBUF_SIZE 65535
+ 
+@@ -1452,6 +1453,62 @@
+         "0xf"
+ };
+ 
++static int
++scsi_get_drive_data(scsi_device * device, scsi_device_info * device_info)
++{
++    int err, len, req_len, avail_len;
++    char product[16 + 1], revision[4 + 1];
++    int transport = -1;
++
++    memset(gBuf, 0, 96);
++    req_len = 36;
++    if ((err = scsiStdInquiry(device, gBuf, req_len))) {
++        print_on();
++        pout("Standard Inquiry (36 bytes) failed [%s]\n", scsiErrString(err));
++        pout("Retrying with a 64 byte Standard Inquiry\n");
++        print_off();
++        /* Marvell controllers fail on a 36 bytes StdInquiry, but 64 suffices */
++        req_len = 64;
++        if ((err = scsiStdInquiry(device, gBuf, req_len))) {
++            print_on();
++            pout("Standard Inquiry (64 bytes) failed [%s]\n",
++                scsiErrString(err));
++            print_off();
++            return 1;
++        }
++    }
++
++    avail_len = gBuf[4] + 5;
++    len = (avail_len < req_len) ? avail_len : req_len;
++
++    if (len < 36) {
++        print_on();
++        pout("Short INQUIRY response\n");
++        print_off();
++        return 1;
++    }
++
++    if (0 != strncmp((char *)&gBuf[8], "ATA", 3)) {
++        scsi_format_id_string(product, (const unsigned char *)&gBuf[16], 16);
++        scsi_format_id_string(revision, (const unsigned char *)&gBuf[32], 4);
++        snprintf((char*)device_info->model, sizeof(device_info->model), "%s", product);
++        snprintf((char*)device_info->fw_rev, sizeof(device_info->fw_rev), "%s", revision);
++    }
++
++    if (0 == (err = scsiInquiryVpd(device, SCSI_VPD_DEVICE_IDENTIFICATION,
++        gBuf, 252))) {
++        char s[256];
++        len = gBuf[3];
++        scsi_decode_lu_dev_id(gBuf + 4, len, s, sizeof(s), &transport);
++        if (strlen(s) > 0){
++            sscanf(s, "%llx", &device_info->WWNLun);
++        }
++    }
++    return 0;
++}
++
++
++
+ /* Returns 0 on success, 1 on general error and 2 for early, clean exit */
+ static int
+ scsiGetDriveInfo(scsi_device * device, UINT8 * peripheral_type, bool all)
+@@ -1881,6 +1938,241 @@
+         pout("Drive Trip Temperature:        %d C\n", trip);
+     pout("\n");
+ }
++int check_wdc_valid_paramcode(uint16_t id)
++{
++    uint16_t i = 0;
++    struct
++    {
++        uint16_t paramCode;
++    }
++    paramList[] =
++    {
++        { WDC_PARAM_ID_POWER_ON_TIME },
++        { WDC_PARAM_ID_POWER_CYCLE_COUNT },
++        { WDC_PARAM_ID_SMART_TEMP_TIMESTAMPS },
++        { WDC_PARAM_ID_GEN_HW_FAIL },
++        { WDC_PARAM_ID_EXCESSIVE_REASSIGNS },
++        { WDC_PARAM_ID_START_UNIT_TIME },
++        { WDC_PARAM_ID_EXCESSIVE_RD_ERR_RATE },
++        { WDC_PARAM_ID_EXCESSIVE_WR_ERR_RATE },
++        { WDC_PARAM_ID_ENDURANCE_LIMIT_MET },
++    };
++
++    for (; i < sizeof(paramList) / sizeof(paramList[0]); i++){
++        if (id == paramList[i].paramCode)
++            return 1;
++    }
++    return 0;
++}
++
++bool match_wdc_regex(const char * pattern, const char * str)
++{
++    regular_expression regex;
++
++    if (!regex.compile(pattern, REG_EXTENDED)) {
++        pout("Internal error: unable to compile WDC regular expression \"%s\": %s\n",
++            pattern, regex.get_errmsg());
++        return false;
++    }
++    return regex.full_match(str);
++}
++
++bool is_wdc_drive(uint64_t WWNLun)
++{
++    // Check for WDC Drive using IEEE Registered Name
++    if (((WWNLun & 0XF000000000000000LL) >> 60) == 0x5){
++        if ((((WWNLun & 0x0FFFFFF000000000LL) >> 36) == 0x1e82)
++            || (((WWNLun & 0x0FFFFFF000000000LL) >> 36) == 0x1b44)
++            || (((WWNLun & 0x0FFFFFF000000000LL) >> 36) == 0x1173))
++        {
++            return true;
++        }
++    }
++    return false;
++}
++
++static void
++scsi_print_smart_data(scsi_smart_attribute *smartData, const ata_vendor_attr_defs & attribute_defs)
++{
++    char current[0x100], threshold[0x100], worst[0x100];
++    int i = 0;
++
++    pout("ID#  ATTRIBUTE_NAME                         VALUE         THRESH          WORST\n");
++    for (i = 1; i <= smartData->numberofAttributes; i++){
++        memset(current, 0, sizeof(current));
++        memset(threshold, 0, sizeof(threshold));
++        memset(worst, 0, sizeof(worst));
++
++        snprintf(current, sizeof(current), "%u", smartData[i].current);
++        snprintf(threshold, sizeof(threshold), "%u", smartData[i].threshold);
++        snprintf(worst, sizeof(worst), "%u", smartData[i].worst);
++        std::string attrname = ata_get_smart_attr_name(smartData[i].id, attribute_defs, 0);
++
++        pout("%-3d  %-24s               %-10s\t  %-10s\t  %-10s \n", smartData[i].id, attrname.c_str(), current, threshold, worst);
++    }
++}
++
++/*Read smartData from IELogPage and smartdata LogPage*/
++int
++scsi_read_wdc_smart_values(scsi_device * device, scsi_smart_attribute *smartData, scsi_smart_settings *scsiSmartSetting)
++{
++    UINT8 *tBuf = NULL;
++    int err, i = 1;
++    UINT8 *buffAddress = NULL;
++    UINT8 smartDataLen = 0;
++    UINT32 buffLength = 0;
++
++    if (!device || !smartData || !scsiSmartSetting){
++        return EINVAL;
++    }
++
++    tBuf = (UINT8*)calloc(1, 4);
++
++    if ((err = scsiLogSense(device, scsiSmartSetting->logPageCode, scsiSmartSetting->logSubpageCode, tBuf,
++        4, 0))) {
++        pout("Log Sense failed to get page length, IE page [%s]\n", scsiErrString(err));
++        return err;
++    }
++
++    buffLength = ((tBuf[2] << 8) | tBuf[3]) + 4;
++
++    memset(&tBuf, 0, sizeof(tBuf));
++    tBuf = (UINT8*)calloc(1, buffLength);
++
++    if ((err = scsiLogSense(device, scsiSmartSetting->logPageCode, scsiSmartSetting->logSubpageCode, tBuf,
++        buffLength, 0))) {
++        pout("Log Sense failed, IE page [%s]\n", scsiErrString(err));
++        return err;
++    }
++
++    buffAddress = tBuf + scsiSmartSetting->parameterStartOffset;
++    buffLength = buffLength - 4;
++
++    while (buffAddress <= (tBuf + buffLength) && i < (WDC_NUMBER_SCSI_SMART_ATTRIBUTES_MAX - 1)){
++        swap2((char*)&buffAddress[scsiSmartSetting->parameterIdOffset]);
++        swap4((char*)&buffAddress[scsiSmartSetting->thresholdValueOffset]);
++        swap4((char*)&buffAddress[scsiSmartSetting->currentValueOffset]);
++        swap4((char*)&buffAddress[scsiSmartSetting->worstValueOffset]);
++
++        memcpy(&smartData[i].id, &buffAddress[scsiSmartSetting->parameterIdOffset], 2);
++        //HP FW specific
++        if (strncmp(scsiSmartSetting->customerName, "HP", strlen("HP")) == 0) {
++            if (smartData[i].id == 6){
++                smartDataLen = buffAddress[scsiSmartSetting->bufferAddressOffset];
++                buffAddress += scsiSmartSetting->parameterValueLength + 4;
++                // for all the parameters in 6
++                while (smartDataLen) {
++                    smartData[i].id = *buffAddress++;
++                    if (!check_wdc_valid_paramcode(smartData[i].id)){
++                        buffAddress += 3;
++                        smartDataLen -= 4;
++                        continue;
++                    }
++                    smartData[i].threshold = *buffAddress++;
++                    smartData[i].current = *buffAddress++;
++                    smartData[i].worst = *buffAddress++;
++                    smartDataLen -= 4;
++                    i++;
++                }
++                break;
++            }
++            else{
++                smartData[i].threshold = 0;
++                memcpy(&smartData[i].current, &buffAddress[scsiSmartSetting->currentValueOffset], 4);
++                smartData[i].worst = 0;
++            }
++        }
++        else{
++            memcpy(&smartData[i].threshold, &buffAddress[scsiSmartSetting->thresholdValueOffset], 4);
++            memcpy(&smartData[i].current, &buffAddress[scsiSmartSetting->currentValueOffset], 4);
++            memcpy(&smartData[i].worst, &buffAddress[scsiSmartSetting->worstValueOffset], 4);
++        }
++
++        if (scsiSmartSetting->bufferAddressOffset)
++            buffAddress += buffAddress[scsiSmartSetting->bufferAddressOffset] + scsiSmartSetting->parameterValueLength;
++        else
++            buffAddress += scsiSmartSetting->parameterValueLength;
++
++        i++;
++    }
++    smartData->numberofAttributes = i - 1;
++
++    if (!buffAddress)
++        free(buffAddress);
++
++    return 0;
++}
++
++static void
++scsi_print_wdc_smart_attributes(scsi_device * device, scsi_device_info * drive)
++{
++    struct scsi_smart_attribute smartData[WDC_NUMBER_SCSI_SMART_ATTRIBUTES_MAX];
++    UINT8 dataBuffer[0x100];
++    scsi_smart_settings scsiSmartSetting;
++    const drive_settings * dbentry = 0;
++    ata_vendor_attr_defs attribute_defs;
++
++    memset(&smartData, 0, sizeof(scsi_smart_attribute));
++    memset(&scsiSmartSetting, 0, sizeof(scsi_smart_settings));
++    scsiSmartSetting.customerName = (char*)calloc(1, 20);
++
++    memset(dataBuffer, 0, sizeof(dataBuffer));
++    if (0 == scsiInquiryVpd(device, WDC_SCSI_SMART_DRIVE_INFO_PAGE, dataBuffer, sizeof(dataBuffer))){
++        memcpy((void*)drive->model, dataBuffer + WDC_SCSI_MODEL_NO_OFFSET, 16);
++    }
++
++    dbentry = scsi_lookup_drive_apply_presets(drive->model, sizeof(drive->model), drive->fw_rev, sizeof(drive->fw_rev), attribute_defs);
++    if (!dbentry)
++    {
++        pout("Drive model not present in drivedb.h: %s\n\n", device->get_errmsg());
++        return;
++    }
++
++    //Sandisk-WDC Lightning Gen II 
++    if ((match_wdc_regex("LT[A-Z0-9]{4,6}", drive->model) || (match_wdc_regex("[EM][KO][A-Z0-9]{9}", drive->model)))) {
++        memset(dataBuffer, 0, sizeof(dataBuffer));
++        if (0 == scsiInquiryVpd(device, WDC_SCSI_VPD_ASCII_INFO_PAGE, dataBuffer, sizeof(dataBuffer))) {
++            if (dataBuffer[0xE9] == 0x40 || dataBuffer[0xE9] == 0x45 || dataBuffer[0xE9] == 0x46){
++                memcpy(scsiSmartSetting.customerName, dataBuffer + WDC_CUSTOMER_NAME_OFFSET, 10);
++
++                if (strncmp(scsiSmartSetting.customerName, "DELL", strlen("DELL")) == 0){
++
++                    scsiSmartSetting = { IE_LPAGE, 0, WDC_SMART_DATA_PARAMETER_START_OFFSET,
++                                         WDC_SMART_DATA_THRESHOLD_OFFSET_DELL, WDC_SMART_DATA_CURRENT_OFFSET_DELL,
++                                         WDC_SMART_DATA_WORST_OFFSET_DELL, WDC_SMART_DATA_PARAMETER_LENGTH,
++                                         WDC_SMART_DATA_BUFFER_ADDRESS_OFFSET, 0, "DELL" };
++                }
++                else if (strncmp(scsiSmartSetting.customerName, "HP", strlen("HP")) == 0){
++
++                    scsiSmartSetting = { IE_LPAGE, 0, WDC_SMART_DATA_PARAMETER_START_OFFSET,
++                                         WDC_SMART_DATA_THRESHOLD_OFFSET_HP, WDC_SMART_DATA_CURRENT_OFFSET_HP,
++                                         WDC_SMART_DATA_WORST_OFFSET_HP, WDC_SMART_DATA_PARAMETER_LENGTH,
++                                         WDC_SMART_DATA_BUFFER_ADDRESS_OFFSET, 0, "HP" };
++                }
++                else{
++
++                    scsiSmartSetting = { IE_LPAGE, 0, WDC_SMART_DATA_PARAMETER_START_OFFSET,
++                                         WDC_SMART_DATA_THRESHOLD_OFFSET_GENERIC, WDC_SMART_DATA_CURRENT_OFFSET_GENERIC,
++                                         WDC_SMART_DATA_WORST_OFFSET_GENERIC, WDC_SMART_DATA_PARAMETER_LENGTH_GENERIC, 0, 0, "Generic" };
++                }
++            }
++        }
++    }
++    else{
++        // Sandisk-WDC Optimus2 and Ultrastar ss200
++            scsiSmartSetting = { WDC_SMART_DATA_LOG_PAGE_CODE, WDC_SMART_DATA_LOG_SUBPAGE_CODE, WDC_SMART_DATA_PARAMETER_START_OFFSET,
++                                 WDC_SMART_DATA_THRESHOLD_OFFSET_ULTRASTAR, WDC_SMART_DATA_CURRENT_OFFSET_ULTRASTAR,
++                                 WDC_SMART_DATA_WORST_OFFSET_ULTRASTAR, WDC_SMART_DATA_PARAMETER_LENGTH, WDC_SMART_DATA_BUFFER_ADDRESS_OFFSET,
++                                 0, "" };
++        }
++
++    if (scsi_read_wdc_smart_values(device, smartData, &scsiSmartSetting)) {
++        pout("Read SMART Data failed: %s\n\n", device->get_errmsg());
++        return;
++    }
++
++    scsi_print_smart_data(smartData, attribute_defs);
++}
+ 
+ /* Main entry point used by smartctl command. Return 0 for success */
+ int
+@@ -1893,7 +2185,7 @@
+     struct scsi_sense_disect sense_info;
+     bool is_disk;
+     bool is_tape;
+-
++    scsi_device_info device_info;
+     bool any_output = options.drive_info;
+ 
+     if (supported_vpd_pages_p) {
+@@ -1901,6 +2193,7 @@
+         supported_vpd_pages_p = NULL;
+     }
+     supported_vpd_pages_p = new supported_vpd_pages(device);
++    memset(&device_info, 0, sizeof(scsi_device_info));
+ 
+     res = scsiGetDriveInfo(device, &peripheral_type, options.drive_info);
+     if (res) {
+@@ -2041,6 +2334,13 @@
+             failuretest(OPTIONAL_CMD, returnval|=res);
+         any_output = true;
+     }
++       res = scsi_get_drive_data(device, &device_info);
++    if (res != 0)
++    {
++        pout("unable to get drive data");
++        return -1;
++    }
++
+     if (options.smart_vendor_attrib) {
+         if (! checkedSupportedLogPages)
+             scsiGetSupportedLogPages(device);
+@@ -2048,6 +2348,8 @@
+             scsiPrintTemp(device);
+         if (gStartStopLPage)
+             scsiGetStartStopData(device);
++        if (gSmartLPage && is_wdc_drive(device_info.WWNLun))
++            scsi_print_wdc_smart_attributes(device, &device_info);
+         if (is_disk) {
+             scsiPrintGrownDefectListLen(device);
+             if (gSeagateCacheLPage)
+diff -Naurw ../smart-patch-old/scsiprint.h smart-patch-old/scsiprint.h
+--- ../smart-patch-old/scsiprint.h	2017-08-11 18:25:24.610071418 +0530
++++ smart-patch-old/scsiprint.h	2017-08-11 19:42:09.655964751 +0530
+@@ -30,6 +30,41 @@
+ #define SCSI_PRINT_H_
+ 
+ #define SCSIPRINT_H_CVSID "$Id: scsiprint.h 4120 2015-08-27 16:12:21Z chrfranke $\n"
++/*Sandisk-WDC vendor specific pages */
++#define WDC_SMART_DATA_LOG_PAGE_CODE                0x3e
++#define WDC_SMART_DATA_LOG_SUBPAGE_CODE             0x3f
++#define WDC_SCSI_VPD_ASCII_INFO_PAGE                0x3
++#define WDC_SCSI_SMART_DRIVE_INFO_PAGE              0xE9
++#define WDC_SCSI_MODEL_NO_OFFSET                    0xA0
++
++/*Sandisk-WDC smart parameters info OEMs specific */
++#define WDC_SMART_DATA_PARAMETER_START_OFFSET       16
++#define WDC_SMART_DATA_PARAMETER_LENGTH             4
++#define WDC_SMART_DATA_PARAMETER_LENGTH_GENERIC     40
++#define WDC_SMART_DATA_BUFFER_ADDRESS_OFFSET        3
++#define WDC_SMART_DATA_THRESHOLD_OFFSET_ULTRASTAR   16
++#define WDC_SMART_DATA_CURRENT_OFFSET_ULTRASTAR     8
++#define WDC_SMART_DATA_WORST_OFFSET_ULTRASTAR       12
++#define WDC_SMART_DATA_THRESHOLD_OFFSET_DELL        13
++#define WDC_SMART_DATA_CURRENT_OFFSET_DELL          5
++#define WDC_SMART_DATA_WORST_OFFSET_DELL            9
++#define WDC_SMART_DATA_THRESHOLD_OFFSET_HP          0
++#define WDC_SMART_DATA_CURRENT_OFFSET_HP            4
++#define WDC_SMART_DATA_WORST_OFFSET_HP              0
++#define WDC_SMART_DATA_THRESHOLD_OFFSET_GENERIC     16
++#define WDC_SMART_DATA_CURRENT_OFFSET_GENERIC       20
++#define WDC_SMART_DATA_WORST_OFFSET_GENERIC         24
++#define WDC_CUSTOMER_NAME_OFFSET                    0xCA
++#define WDC_PARAM_ID_POWER_ON_TIME                  3 
++#define WDC_PARAM_ID_POWER_CYCLE_COUNT              4 
++#define WDC_PARAM_ID_SMART_TEMP_TIMESTAMPS          5 
++#define WDC_PARAM_ID_GEN_HW_FAIL                    16 
++#define WDC_PARAM_ID_EXCESSIVE_REASSIGNS            20 
++#define WDC_PARAM_ID_START_UNIT_TIME                22 
++#define WDC_PARAM_ID_EXCESSIVE_RD_ERR_RATE          50 
++#define WDC_PARAM_ID_EXCESSIVE_WR_ERR_RATE          66 
++#define WDC_PARAM_ID_ENDURANCE_LIMIT_MET            115 
++#define WDC_NUMBER_SCSI_SMART_ATTRIBUTES_MAX        42
+ 
+ // Options for scsiPrintMain
+ struct scsi_print_options
+@@ -77,6 +112,32 @@
+     { }
+ };
+ 
++struct scsi_smart_attribute {
++    uint16_t id;
++    UINT32 current;
++    UINT32 threshold;
++    UINT32 worst;
++    UINT8 numberofAttributes;
++};
++
++struct scsi_smart_settings{
++    UINT8 logPageCode;
++    UINT8 logSubpageCode;
++    UINT8 parameterStartOffset;
++    UINT8 thresholdValueOffset;
++    UINT8 currentValueOffset;
++    UINT8 worstValueOffset;
++    UINT8 parameterValueLength;
++    UINT8 bufferAddressOffset;
++    UINT8 parameterIdOffset;
++    char * customerName;
++};
++
++struct scsi_device_info {
++    char  model[16 + 1];
++    char  fw_rev[4 + 1];
++    uint64_t  WWNLun;
++};
+ int scsiPrintMain(scsi_device * device, const scsi_print_options & options);
+ 
+ #endif
