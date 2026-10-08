@@ -1,0 +1,480 @@
+smartctl 6.6 2016-05-31 r4324 [x86_64-linux-4.13.0-17-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     HITACHI HTS723216L9SA60
+Serial Number:    090917FC1220NCHSYZ6G
+LU WWN Device Id: 5 000cca 586d8fc8f
+Firmware Version: FC2ZC50B
+User Capacity:    160,041,885,696 bytes [160 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    7200 rpm
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA8-ACS T13/1699-D revision 3f
+SATA Version is:  SATA 2.6, 1.5 Gb/s
+Local Time is:    Sat Dec  9 16:54:31 2017 EST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Disabled
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  645) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  51) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     PO-R--   100   100   062    -    0
+  2 Throughput_Performance  P-S---   100   100   040    -    0
+  3 Spin_Up_Time            POS---   253   253   033    -    1
+  4 Start_Stop_Count        -O--C-   099   099   000    -    1816
+  5 Reallocated_Sector_Ct   PO--CK   100   100   005    -    0
+  7 Seek_Error_Rate         PO-R--   100   100   067    -    0
+  8 Seek_Time_Performance   P-S---   100   100   040    -    0
+  9 Power_On_Hours          -O--C-   080   080   000    -    9044
+ 10 Spin_Retry_Count        PO--C-   100   100   060    -    0
+ 12 Power_Cycle_Count       -O--CK   099   099   000    -    1794
+191 G-Sense_Error_Rate      -O-R--   100   100   000    -    0
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    2411462698
+193 Load_Cycle_Count        -O--C-   080   080   000    -    204346
+194 Temperature_Celsius     -O----   166   166   000    -    33 (Min/Max 13/52)
+196 Reallocated_Event_Count -O--CK   100   100   000    -    0
+197 Current_Pending_Sector  -O---K   100   100   000    -    0
+198 Offline_Uncorrectable   ---R--   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -O-R--   200   200   000    -    0
+223 Load_Retry_Count        -O-R--   099   099   000    -    65536
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      1  Comprehensive SMART error log
+0x03       GPL     R/O      1  Ext. Comprehensive SMART error log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  SATA NCQ Queued Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa2           SL  VS       1  Device vendor specific log
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+Device Error Count: 8 (device log contains only the most recent 4 errors)
+	CR     = Command Register
+	FEATR  = Features Register
+	COUNT  = Count (was: Sector Count) Register
+	LBA_48 = Upper bytes of LBA High/Mid/Low Registers ]  ATA-8
+	LH     = LBA High (was: Cylinder High) Register    ]   LBA
+	LM     = LBA Mid (was: Cylinder Low) Register      ] Register
+	LL     = LBA Low (was: Sector Number) Register     ]
+	DV     = Device (was: Device/Head) Register
+	DC     = Device Control Register
+	ER     = Error register
+	ST     = Status register
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 8 [3] occurred at disk power-on lifetime: 3 hours (0 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  10 -- 51 00 01 00 00 12 a1 c2 1f e0 00  Error: IDNF at LBA = 0x12a1c21f = 312590879
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  24 ff ff 00 01 00 00 12 a1 c2 1f e0 00     00:01:09.000  READ SECTOR(S) EXT
+  25 ff ff 00 01 00 00 12 a1 c2 1f e0 00     00:01:09.000  READ DMA EXT
+  34 ff ff 00 01 00 00 00 00 00 00 e0 00     00:01:08.900  WRITE SECTORS(S) EXT
+  25 ff ff 00 01 00 00 00 00 00 00 e0 00     00:01:08.900  READ DMA EXT
+  25 ff ff 00 01 00 00 00 00 3b 10 e0 00     00:01:08.900  READ DMA EXT
+
+Error 7 [2] occurred at disk power-on lifetime: 3 hours (0 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  10 -- 51 00 01 00 00 12 a1 c2 1f e0 00  Error: IDNF 1 sectors at LBA = 0x12a1c21f = 312590879
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 ff ff 00 01 00 00 12 a1 c2 1f e0 00     00:01:09.000  READ DMA EXT
+  34 ff ff 00 01 00 00 00 00 00 00 e0 00     00:01:08.900  WRITE SECTORS(S) EXT
+  25 ff ff 00 01 00 00 00 00 00 00 e0 00     00:01:08.900  READ DMA EXT
+  25 ff ff 00 01 00 00 00 00 3b 10 e0 00     00:01:08.900  READ DMA EXT
+  25 ff ff 00 01 00 00 00 00 00 3f e0 00     00:01:08.900  READ DMA EXT
+
+Error 6 [1] occurred at disk power-on lifetime: 3 hours (0 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  10 -- 51 00 01 00 00 12 a1 c2 1f e0 00  Error: IDNF at LBA = 0x12a1c21f = 312590879
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  24 ff ff 00 01 00 00 12 a1 c2 1f e0 00     00:01:08.800  READ SECTOR(S) EXT
+  25 ff ff 00 01 00 00 12 a1 c2 1f e0 00     00:01:08.700  READ DMA EXT
+  34 ff ff 00 01 00 00 00 00 00 00 e0 00     00:01:08.700  WRITE SECTORS(S) EXT
+  35 ff ff 00 01 00 00 00 00 3b 1f e0 00     00:01:08.700  WRITE DMA EXT
+  35 ff ff 00 01 00 00 00 00 3b 1e e0 00     00:01:08.700  WRITE DMA EXT
+
+Error 5 [0] occurred at disk power-on lifetime: 3 hours (0 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  10 -- 51 00 01 00 00 12 a1 c2 1f e0 00  Error: IDNF 1 sectors at LBA = 0x12a1c21f = 312590879
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 ff ff 00 01 00 00 12 a1 c2 1f e0 00     00:01:08.700  READ DMA EXT
+  34 ff ff 00 01 00 00 00 00 00 00 e0 00     00:01:08.700  WRITE SECTORS(S) EXT
+  35 ff ff 00 01 00 00 00 00 3b 1f e0 00     00:01:08.700  WRITE DMA EXT
+  35 ff ff 00 01 00 00 00 00 3b 1e e0 00     00:01:08.700  WRITE DMA EXT
+  35 ff ff 00 01 00 00 00 00 3b 1d e0 00     00:01:08.700  WRITE DMA EXT
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%      9044         -
+# 2  Vendor (0x50)       Completed without error       00%      3409         -
+# 3  Short offline       Completed without error       00%      3409         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       256 (0x0100)
+SCT Support Level:                   1
+Device State:                        Active (0)
+Current Temperature:                    33 Celsius
+Power Cycle Min/Max Temperature:     24/34 Celsius
+Lifetime    Min/Max Temperature:     13/52 Celsius
+Lifetime    Average Temperature:        33 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      5/60 Celsius
+Min/Max Temperature Limit:           -40/65 Celsius
+Temperature History Size (Index):    478 (384)
+
+Index    Estimated Time   Temperature Celsius
+ 385    2017-12-09 08:57    43  ************************
+ 386    2017-12-09 08:58    43  ************************
+ 387    2017-12-09 08:59    43  ************************
+ 388    2017-12-09 09:00    45  **************************
+ 389    2017-12-09 09:01    45  **************************
+ 390    2017-12-09 09:02    45  **************************
+ 391    2017-12-09 09:03    46  ***************************
+ 392    2017-12-09 09:04    47  ****************************
+ ...    ..(  2 skipped).    ..  ****************************
+ 395    2017-12-09 09:07    47  ****************************
+ 396    2017-12-09 09:08    48  *****************************
+ 397    2017-12-09 09:09    48  *****************************
+ 398    2017-12-09 09:10    48  *****************************
+ 399    2017-12-09 09:11    49  ******************************
+ ...    ..(  3 skipped).    ..  ******************************
+ 403    2017-12-09 09:15    49  ******************************
+ 404    2017-12-09 09:16    48  *****************************
+ 405    2017-12-09 09:17    48  *****************************
+ 406    2017-12-09 09:18    48  *****************************
+ 407    2017-12-09 09:19    49  ******************************
+ 408    2017-12-09 09:20    49  ******************************
+ 409    2017-12-09 09:21    49  ******************************
+ 410    2017-12-09 09:22    50  *******************************
+ 411    2017-12-09 09:23    50  *******************************
+ 412    2017-12-09 09:24    49  ******************************
+ 413    2017-12-09 09:25    50  *******************************
+ ...    ..(  3 skipped).    ..  *******************************
+ 417    2017-12-09 09:29    50  *******************************
+ 418    2017-12-09 09:30    51  ********************************
+ 419    2017-12-09 09:31    51  ********************************
+ 420    2017-12-09 09:32    52  *********************************
+ 421    2017-12-09 09:33    51  ********************************
+ 422    2017-12-09 09:34    52  *********************************
+ 423    2017-12-09 09:35    52  *********************************
+ 424    2017-12-09 09:36    50  *******************************
+ 425    2017-12-09 09:37    50  *******************************
+ 426    2017-12-09 09:38    49  ******************************
+ 427    2017-12-09 09:39    47  ****************************
+ 428    2017-12-09 09:40    47  ****************************
+ 429    2017-12-09 09:41    46  ***************************
+ ...    ..(  3 skipped).    ..  ***************************
+ 433    2017-12-09 09:45    46  ***************************
+ 434    2017-12-09 09:46    47  ****************************
+ 435    2017-12-09 09:47    47  ****************************
+ 436    2017-12-09 09:48    48  *****************************
+ 437    2017-12-09 09:49    49  ******************************
+ 438    2017-12-09 09:50    49  ******************************
+ 439    2017-12-09 09:51    48  *****************************
+ ...    ..(  9 skipped).    ..  *****************************
+ 449    2017-12-09 10:01    48  *****************************
+ 450    2017-12-09 10:02    47  ****************************
+ 451    2017-12-09 10:03    47  ****************************
+ 452    2017-12-09 10:04    48  *****************************
+ ...    ..( 55 skipped).    ..  *****************************
+  30    2017-12-09 11:00    48  *****************************
+  31    2017-12-09 11:01    49  ******************************
+ ...    ..( 77 skipped).    ..  ******************************
+ 109    2017-12-09 12:19    49  ******************************
+ 110    2017-12-09 12:20    50  *******************************
+ 111    2017-12-09 12:21    50  *******************************
+ 112    2017-12-09 12:22    50  *******************************
+ 113    2017-12-09 12:23    49  ******************************
+ 114    2017-12-09 12:24    49  ******************************
+ 115    2017-12-09 12:25    49  ******************************
+ 116    2017-12-09 12:26    48  *****************************
+ ...    ..(  3 skipped).    ..  *****************************
+ 120    2017-12-09 12:30    48  *****************************
+ 121    2017-12-09 12:31    25  ******
+ 122    2017-12-09 12:32    25  ******
+ 123    2017-12-09 12:33    26  *******
+ 124    2017-12-09 12:34    27  ********
+ 125    2017-12-09 12:35    27  ********
+ 126    2017-12-09 12:36    28  *********
+ ...    ..(  2 skipped).    ..  *********
+ 129    2017-12-09 12:39    28  *********
+ 130    2017-12-09 12:40    29  **********
+ ...    ..(  6 skipped).    ..  **********
+ 137    2017-12-09 12:47    29  **********
+ 138    2017-12-09 12:48    30  ***********
+ ...    ..( 10 skipped).    ..  ***********
+ 149    2017-12-09 12:59    30  ***********
+ 150    2017-12-09 13:00    31  ************
+ 151    2017-12-09 13:01    32  *************
+ 152    2017-12-09 13:02    32  *************
+ 153    2017-12-09 13:03    32  *************
+ 154    2017-12-09 13:04    33  **************
+ 155    2017-12-09 13:05    33  **************
+ 156    2017-12-09 13:06    33  **************
+ 157    2017-12-09 13:07    34  ***************
+ 158    2017-12-09 13:08    34  ***************
+ 159    2017-12-09 13:09    34  ***************
+ 160    2017-12-09 13:10    35  ****************
+ ...    ..(  9 skipped).    ..  ****************
+ 170    2017-12-09 13:20    35  ****************
+ 171    2017-12-09 13:21    34  ***************
+ 172    2017-12-09 13:22    33  **************
+ 173    2017-12-09 13:23    33  **************
+ 174    2017-12-09 13:24    33  **************
+ 175    2017-12-09 13:25    32  *************
+ ...    ..(  3 skipped).    ..  *************
+ 179    2017-12-09 13:29    32  *************
+ 180    2017-12-09 13:30    31  ************
+ ...    ..( 23 skipped).    ..  ************
+ 204    2017-12-09 13:54    31  ************
+ 205    2017-12-09 13:55    25  ******
+ 206    2017-12-09 13:56    26  *******
+ 207    2017-12-09 13:57    30  ***********
+ 208    2017-12-09 13:58    33  **************
+ 209    2017-12-09 13:59    35  ****************
+ 210    2017-12-09 14:00    37  ******************
+ 211    2017-12-09 14:01    38  *******************
+ 212    2017-12-09 14:02    39  ********************
+ 213    2017-12-09 14:03    40  *********************
+ 214    2017-12-09 14:04    40  *********************
+ 215    2017-12-09 14:05    41  **********************
+ 216    2017-12-09 14:06    41  **********************
+ 217    2017-12-09 14:07    41  **********************
+ 218    2017-12-09 14:08    42  ***********************
+ 219    2017-12-09 14:09    42  ***********************
+ 220    2017-12-09 14:10    43  ************************
+ 221    2017-12-09 14:11    43  ************************
+ 222    2017-12-09 14:12    44  *************************
+ ...    ..(  6 skipped).    ..  *************************
+ 229    2017-12-09 14:19    44  *************************
+ 230    2017-12-09 14:20    43  ************************
+ 231    2017-12-09 14:21    43  ************************
+ 232    2017-12-09 14:22    27  ********
+ 233    2017-12-09 14:23    28  *********
+ 234    2017-12-09 14:24    31  ************
+ 235    2017-12-09 14:25    34  ***************
+ 236    2017-12-09 14:26    36  *****************
+ 237    2017-12-09 14:27    37  ******************
+ 238    2017-12-09 14:28    38  *******************
+ 239    2017-12-09 14:29    39  ********************
+ 240    2017-12-09 14:30    40  *********************
+ 241    2017-12-09 14:31    41  **********************
+ 242    2017-12-09 14:32    41  **********************
+ 243    2017-12-09 14:33    41  **********************
+ 244    2017-12-09 14:34    42  ***********************
+ 245    2017-12-09 14:35    43  ************************
+ 246    2017-12-09 14:36    43  ************************
+ 247    2017-12-09 14:37    43  ************************
+ 248    2017-12-09 14:38    44  *************************
+ ...    ..(  3 skipped).    ..  *************************
+ 252    2017-12-09 14:42    44  *************************
+ 253    2017-12-09 14:43    26  *******
+ 254    2017-12-09 14:44    26  *******
+ 255    2017-12-09 14:45    30  ***********
+ 256    2017-12-09 14:46    33  **************
+ 257    2017-12-09 14:47    35  ****************
+ 258    2017-12-09 14:48    19  -
+ 259    2017-12-09 14:49    19  -
+ 260    2017-12-09 14:50    22  ***
+ 261    2017-12-09 14:51    25  ******
+ 262    2017-12-09 14:52    26  *******
+ 263    2017-12-09 14:53    28  *********
+ 264    2017-12-09 14:54    29  **********
+ 265    2017-12-09 14:55    30  ***********
+ 266    2017-12-09 14:56    31  ************
+ 267    2017-12-09 14:57    33  **************
+ 268    2017-12-09 14:58    33  **************
+ 269    2017-12-09 14:59    34  ***************
+ 270    2017-12-09 15:00    35  ****************
+ 271    2017-12-09 15:01    36  *****************
+ 272    2017-12-09 15:02    37  ******************
+ 273    2017-12-09 15:03    39  ********************
+ 274    2017-12-09 15:04    40  *********************
+ 275    2017-12-09 15:05    41  **********************
+ 276    2017-12-09 15:06    42  ***********************
+ 277    2017-12-09 15:07    43  ************************
+ 278    2017-12-09 15:08    17  -
+ 279    2017-12-09 15:09    17  -
+ 280    2017-12-09 15:10    18  -
+ 281    2017-12-09 15:11    19  -
+ 282    2017-12-09 15:12    20  *
+ 283    2017-12-09 15:13    22  ***
+ 284    2017-12-09 15:14    24  *****
+ 285    2017-12-09 15:15    25  ******
+ 286    2017-12-09 15:16    27  ********
+ 287    2017-12-09 15:17    28  *********
+ 288    2017-12-09 15:18    29  **********
+ 289    2017-12-09 15:19    30  ***********
+ 290    2017-12-09 15:20    31  ************
+ 291    2017-12-09 15:21    31  ************
+ 292    2017-12-09 15:22    32  *************
+ 293    2017-12-09 15:23    32  *************
+ 294    2017-12-09 15:24    33  **************
+ 295    2017-12-09 15:25    33  **************
+ 296    2017-12-09 15:26    33  **************
+ 297    2017-12-09 15:27    34  ***************
+ 298    2017-12-09 15:28    34  ***************
+ 299    2017-12-09 15:29    34  ***************
+ 300    2017-12-09 15:30    35  ****************
+ ...    ..(  3 skipped).    ..  ****************
+ 304    2017-12-09 15:34    35  ****************
+ 305    2017-12-09 15:35    36  *****************
+ ...    ..(  3 skipped).    ..  *****************
+ 309    2017-12-09 15:39    36  *****************
+ 310    2017-12-09 15:40    37  ******************
+ ...    ..(  7 skipped).    ..  ******************
+ 318    2017-12-09 15:48    37  ******************
+ 319    2017-12-09 15:49    38  *******************
+ ...    ..(  8 skipped).    ..  *******************
+ 328    2017-12-09 15:58    38  *******************
+ 329    2017-12-09 15:59    39  ********************
+ ...    ..(  3 skipped).    ..  ********************
+ 333    2017-12-09 16:03    39  ********************
+ 334    2017-12-09 16:04    18  -
+ 335    2017-12-09 16:05    18  -
+ 336    2017-12-09 16:06    19  -
+ 337    2017-12-09 16:07    24  *****
+ 338    2017-12-09 16:08    24  *****
+ 339    2017-12-09 16:09    25  ******
+ 340    2017-12-09 16:10    25  ******
+ 341    2017-12-09 16:11    26  *******
+ 342    2017-12-09 16:12    27  ********
+ 343    2017-12-09 16:13    27  ********
+ 344    2017-12-09 16:14    28  *********
+ 345    2017-12-09 16:15    28  *********
+ 346    2017-12-09 16:16    28  *********
+ 347    2017-12-09 16:17    29  **********
+ ...    ..(  3 skipped).    ..  **********
+ 351    2017-12-09 16:21    29  **********
+ 352    2017-12-09 16:22    30  ***********
+ ...    ..(  3 skipped).    ..  ***********
+ 356    2017-12-09 16:26    30  ***********
+ 357    2017-12-09 16:27    31  ************
+ ...    ..( 15 skipped).    ..  ************
+ 373    2017-12-09 16:43    31  ************
+ 374    2017-12-09 16:44    32  *************
+ 375    2017-12-09 16:45    33  **************
+ 376    2017-12-09 16:46    33  **************
+ 377    2017-12-09 16:47    33  **************
+ 378    2017-12-09 16:48    32  *************
+ 379    2017-12-09 16:49    32  *************
+ 380    2017-12-09 16:50    32  *************
+ 381    2017-12-09 16:51    33  **************
+ 382    2017-12-09 16:52    33  **************
+ 383    2017-12-09 16:53    34  ***************
+ 384    2017-12-09 16:54    34  ***************
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0009  2            0  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  2            0  Device-to-host register FISes sent due to a COMRESET
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+
