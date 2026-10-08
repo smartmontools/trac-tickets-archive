@@ -1,0 +1,105 @@
+C:\Program Files\smartmontools\bin>smartctl.exe -a /dev/sda -d "aacraid,0,0,0"
+smartctl 7.2 2020-12-30 r5155 [x86_64-w64-mingw32-2008r2-sp1] (sf-7.2-1)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST3600057SS
+Revision:             0008
+Compliance:           SPC-3
+User Capacity:        600 127 266 816 bytes [600 GB]
+Logical block size:   512 bytes
+Rotation Rate:        15000 rpm
+Form Factor:          3.5 inches
+Logical Unit id:      0x5000c5006ba09c8f
+Serial number:        6SL73RGS0000N4090M0G
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Fri Aug 20 13:44:51 2021 RTZST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     40 C
+Drive Trip Temperature:        68 C
+
+Accumulated power on time, hours:minutes 16338:23
+Elements in grown defect list: 1
+
+Vendor (Seagate Cache) information
+  Blocks sent to initiator = 2106025579
+  Blocks received from initiator = 3353860931
+  Blocks read from cache and sent to initiator = 134344711
+  Number of read and write commands whose size <= segment size = 164240160
+  Number of read and write commands whose size > segment size = 0
+
+Vendor (Seagate/Hitachi) factory information
+  number of hours powered up = 16338,38
+  number of minutes until next internal SMART test = 51
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Tot
+al
+               ECC          rereads/    errors   algorithm      processed    unc
+orrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  err
+ors
+read:   81053123        0         0  81053123   81053123       1078,285
+  0
+write:         0        0         3         3         14      41353,811
+  0
+verify:  3037414        0         0   3037414    3037414          0,000
+  0
+
+Non-medium error count:        0
+
+[GLTSD (Global Logging Target Save Disable) set. Enable Save with '-S on']
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [
+SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -   16332                 - [
+-   -    -]
+# 2  Background short  Completed                   -   16308                 - [
+-   -    -]
+# 3  Background long   Completed                   -   16293                 - [
+-   -    -]
+# 4  Background short  Completed                   -   16292                 - [
+-   -    -]
+# 5  Background long   Completed                   -   16270                 - [
+-   -    -]
+# 6  Background short  Completed                   -   16268                 - [
+-   -    -]
+# 7  Background short  Completed                   -   16268                 - [
+-   -    -]
+# 8  Background short  Completed                   -   16268                 - [
+-   -    -]
+# 9  Background short  Completed                   -   16268                 - [
+-   -    -]
+#10  Background short  Completed                   -   16268                 - [
+-   -    -]
+#11  Background short  Completed                   -   16267                 - [
+-   -    -]
+#12  Background long   Completed                   -   16249                 - [
+-   -    -]
+#13  Background long   Completed                   -   16247                 - [
+-   -    -]
+#14  Background short  Completed                   -   16246                 - [
+-   -    -]
+#15  Background short  Completed                   -   16246                 - [
+-   -    -]
+#16  Background short  Completed                   -   16246                 - [
+-   -    -]
+#17  Background short  Completed                   -   16246                 - [
+-   -    -]
+#18  Background short  Completed                   -   16245                 - [
+-   -    -]
+#19  Background short  Completed                   -   16245                 - [
+-   -    -]
+#20  Background short  Completed                   -   16245                 - [
+-   -    -]
+
+Long (extended) Self-test duration: 6400 seconds [106,7 minutes]

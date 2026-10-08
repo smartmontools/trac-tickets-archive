@@ -1,0 +1,18 @@
+smartctl 7.2 2020-12-30 r5155 [x86_64-w64-mingw32-w10-b19043] (sf-7.2-1)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+\\.\PhysicalDrive3: successfully opened (without admin rights)
+  GetDevicePowerState() succeeded, state=1
+\\.\PhysicalDrive3: successfully opened
+
+REPORT-IOCTL: Device=/dev/sdd Command=CHECK POWER MODE
+ Input:   FR=...., SC=...., LL=...., LM=...., LH=...., DEV=...., CMD=0xe5
+  GetDevicePowerState() succeeded, state=1
+  IOCTL_ATA_PASS_THROUGH failed, Error=50
+    Input : CMD=0xe5, FR=0x00, SC=0x00, SN=0x00, CL=0x00, CH=0x00, SEL=0x00
+  IOCTL_IDE_PASS_THROUGH failed, Error=50
+    Input : CMD=0xe5, FR=0x00, SC=0x00, SN=0x00, CL=0x00, CH=0x00, SEL=0x00
+ Output: ERR=0x00, SC=0xff, LL=0x00, LM=0x00, LH=0x00, DEV=0x00, STS=0xe5
+REPORT-IOCTL: Device=/dev/sdd Command=CHECK POWER MODE returned 0
+Sector Count Register (BASE-16): ff
+Device is in ACTIVE or IDLE mode

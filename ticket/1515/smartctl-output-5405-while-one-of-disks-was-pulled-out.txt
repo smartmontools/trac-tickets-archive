@@ -1,0 +1,772 @@
+Konstantin Kuznetsov, [20.08.21 14:08]
+C:\Program Files\smartmontools\bin>smartctl -r ioctl,2 -d "aacraid,0,0,0" -a /de
+v/sda
+smartctl 7.2 2020-12-30 r5155 [x86_64-w64-mingw32-2008r2-sp1] (sf-7.2-1)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+\\.\Scsi4: [aacraid_disk_00_00_0] [SCSI]: Device open changed type from 'sat,aut
+o+aacraid,0,0,0' to 'aacraid,0,0,0'
+buff  [inquiry: 12 01 00 00 fc 00 ]
+
+  Incoming data, len=252, resid=0:
+ 00     00 00 00 0c 00 80 82 83  86 b1 c0 c1 c2 c3 d1 d2
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST3600057SS
+Revision:             0008
+Compliance:           SPC-3
+buff  [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+
+  Incoming data, len=32, resid=0:
+ 00     00 00 00 00 45 dd 2f af  00 00 02 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        600 127 266 816 bytes [600 GB]
+Logical block size:   512 bytes
+buff  [inquiry: 12 01 b1 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     00 b1 00 3c 3a 98 00 02  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Rotation Rate:        15000 rpm
+Form Factor:          3.5 inches
+buff  [mode sense(6): 1a 00 1c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 9c 0a 10 06
+ 10     00 00 00 00 00 00 00 01  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+buff  [mode sense(6): 1a 00 5c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 9c 0a 9d 0f
+ 10     ff ff ff ff ff ff ff ff  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+buff  [inquiry: 12 01 83 00 fc 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=252, resid=0:
+ 00     00 83 00 48 01 03 00 08  50 00 c5 00 6b a0 9c 8f
+ 10     61 93 00 08 50 00 c5 00  6b a0 9c 8d 61 94 00 04
+ 20     00 00 00 01 61 a3 00 08  50 00 c5 00 6b a0 9c 8c
+ 30     03 28 00 18 6e 61 61 2e  35 30 30 30 43 35 30 30
+ 40     36 42 41 30 39 43 38 43  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+Logical Unit id:      0x5000c5006ba09c8f
+buff  [inquiry: 12 01 80 00 fc 00 ]
+
+  Incoming data, len=252, resid=0:
+ 00     00 80 00 14 36 53 4c 37  33 52 47 53 30 30 30 30
+ 10     4e 34 30 39 30 4d 30 47  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+Serial number:        6SL73RGS0000N4090M0G
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Fri Aug 20 14:07:07 2021 RTZST
+buff  [test unit ready: 00 00 00 00 00 00 ]
+
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+buff  [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     00 00 00 0c
+buff  [log sense: 4d 00 40 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     00 00 00 0c 00 02 03 05  06 0d 10 15 18 37 38 3e
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 0 (sub-page
+s: 0)
+buff  [request sense: 03 00 00 00 12 00 ]
+
+  Incoming data, len=18, resid=0:
+ 00     70 00 00 00 00 00 00 0a  00 00 00 00 00 00 00 00
+ 10     00 00
+buff  [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     0d 00 00 0c
+buff  [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     0d 00 00 0c 00 00 03 02  00 29 00 01 03 02 00 44
+SMART Health Status: OK
+
+buff  [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     0d 00 00 0c
+buff  [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     0d 00 00 0c 00 00 03 02  00 28 00 01 03 02 00 44
+Current Drive Temperature:     40 C
+Drive Trip Temperature:        68 C
+
+buff  [log sense: 4d 00 55 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     15 00 00 40
+buff  [log sense: 4d 00 55 00 00 00 00 00 44 00 ]
+
+  Incoming data, len=68, resid=0:
+ 00     15 00 00 40 00 00 03 0c  00 0e f5 65 00 08 00 e4
+ 10     00 00 03 44 00 01 03 14  00 0d e8 f3 51 18 01 00
+ 20     00 42 05 09 00 00 00 00  00 01 c2 89 00 02 03 14
+ 30     00 0e b2 90 51 17 01 00  00 42 05 0a 00 00 00 00
+ 40     00 01 c2 8a
+Accumulated power on time, hours:minutes 16338:45
+buff  [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+
+  Incoming data, len=8, resid=0:
+ 00     00 0c 00 00 00 00 00 08
+Elements in grown defect list: 1
+
+buff  [log sense: 4d 00 77 00 00 00 00 00 04 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=4, resid=0:
+ 00     37 00 00 28
+buff  [log sense: 4d 00 77 00 00 00 00 00 2c 00 ]
+
+  Incoming data, len=44, resid=0:
+ 00     37 00 00 28 00 00 00 04  7d 87 9f e3 00 01 00 04
+ 10     c8 18 6d 2a 00 02 00 04  08 01 f0 27 00 03 00 04
+ 20     09 ca 32 ff 00 04 00 04  00 00 00 00
+Vendor (Seagate Cache) information
+  Blocks sent to initiator = 2106040291
+  Blocks received from initiator = 3357044010
+  Blocks read from cache and sent to initiator = 134344743
+  Number of read and write commands whose size <= segment size = 164246271
+  Number of read and write commands whose size > segment size = 0
+
+buff  [log sense: 4d 00 7e 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     3e 00 00 24
+buff  [log sense: 4d 00 7e 00 00 00 00 00 28 00 ]
+
+  Incoming data, len=40, resid=0:
+ 00     3e 00 00 24 00 00 00 04  00 0e f5 65 00 08 00 04
+ 10     00 00 00 1c 00 09 00 04  00 00 00 3c 00 0e 00 08
+ 20     00 00 35 7e fe 55 1a c3
+Vendor (Seagate/Hitachi) factory information
+  number of hours powered up = 16338,75
+  number of minutes until next internal SMART test = 28
+Vendor (Seagate/Hitachi) factory lpage: unknown parameter code [0x9]
+Vendor (Seagate/Hitachi) factory lpage: unknown parameter code [0xe]
+
+buff  [log sense: 4d 00 43 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     03 00 00 3c
+buff  [log sense: 4d 00 43 00 00 00 00 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     03 00 00 3c 00 00 00 04  04 d4 cd 59 00 01 00 04
+ 10     00 00 00 00 00 02 00 04  00 00 00 00 00 03 00 04
+ 20     04 d4 cd 59 00 04 00 04  04 d4 cd 59 00 05 00 08
+ 30     00 00 00 fb 0f 3f c6 00  00 06 00 04 00 00 00 00
+buff  [log sense: 4d 00 42 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     02 00 00 34
+buff  [log sense: 4d 00 42 00 00 00 00 00 38 00 ]
+
+  Incoming data, len=56, resid=0:
+ 00     02 00 00 34 00 01 00 04  00 00 00 00 00 02 00 04
+ 10     00 00 00 03 00 03 00 04  00 00 00 03 00 04 00 04
+ 20     00 00 00 0e 00 05 00 08  00 00 25 9c d0 a0 be 00
+ 30     00 06 00 04 00 00 00 00
+buff  [log sense: 4d 00 45 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     05 00 00 3c
+buff  [log sense: 4d 00 45 00 00 00 00 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     05 00 00 3c 00 00 00 04  00 2e 58 e6 00 01 00 04
+ 10     00 00 00 00 00 02 00 04  00 00 00 00 00 03 00 04
+ 20     00 2e 58 e6 00 04 00 04  00 2e 58 e6 00 05 00 08
+ 30     00 00 00 00 00 00 00 00  00 06 00 04 00 00 00 00
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Tot
+al
+               ECC          rereads/    errors   algorithm      processed    unc
+orrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  err
+ors
+read:   81055065        0         0  81055065   81055065       1078,293
+  0
+write:         0        0         3         3         14      41355,445
+  0
+verify:  3037414        0         0   3037414    3037414          0,000
+  0
+buff  [log sense: 4d 00 46 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     06 00 00 08
+buff  [log sense: 4d 00 46 00 00 00 00 00 0c 00 ]
+
+  Incoming data, len=12, resid=0:
+ 00     06 00 00 08 00 00 00 04  00 00 00 00
+
+Non-medium error count:        0
+
+buff  [mode sense(6): 1a 00 0a 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 8a 0a 02 00
+ 10     00 00 00 00 00 00 19 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+
+[GLTSD (Global Logging Target Save Disable) set. Enable Save with '-S on']
+buff  [request sense: 03 00 00 00 12 00 ]
+
+  Incoming data, len=18, resid=0:
+ 00     70 00 00 00 00 00 00 0a  00 00 00 00 00 00 00 00
+ 10     00 00
+buff  [log sense: 4d 00 50 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     10 00 01 90
+buff  [log sense: 4d 00 50 00 00 00 00 01 94 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=404, resid=0 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 3f cc ff ff ff ff
+ 10     ff ff ff ff 00 00 00 00  00 02 03 10 20 00 3f b4
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10
+ 30     40 00 3f a5 ff ff ff ff  ff ff ff ff 00 00 00 00
+ 40     00 04 03 10 20 00 3f a4  ff ff ff ff ff ff ff ff
+ 50     00 00 00 00 00 05 03 10  40 00 3f 8e ff ff ff ff
+ 60     ff ff ff ff 00 00 00 00  00 06 03 10 20 00 3f 8c
+ 70     ff ff ff ff ff ff ff ff  00 00 00 00 00 07 03 10
+ 80     20 00 3f 8c ff ff ff ff  ff ff ff ff 00 00 00 00
+ 90     00 08 03 10 20 00 3f 8c  ff ff ff ff ff ff ff ff
+ a0     00 00 00 00 00 09 03 10  20 00 3f 8c ff ff ff ff
+ b0     ff ff ff ff 00 00 00 00  00 0a 03 10 20 00 3f 8c
+ c0     ff ff ff ff ff ff ff ff  00 00 00 00 00 0b 03 10
+ d0     20 00 3f 8b ff ff ff ff  ff ff ff ff 00 00 00 00
+ e0     00 0c 03 10 40 00 3f 79  ff ff ff ff ff ff ff ff
+ f0     00 00 00 00 00 0d 03 10  40 00 3f 77 ff ff ff ff
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [
+SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -   16332                 - [
+-   -    -]
+# 2  Background short  Completed                   -   16308                 - [
+-   -    -]
+# 3  Background long   Completed                   -   16293                 - [
+-   -    -]
+# 4  Background short  Completed                   -   16292                 - [
+-   -    -]
+# 5  Background long   Completed                   -   16270                 - [
+-   -    -]
+# 6  Background short  Completed                   -   16268                 - [
+-   -    -]
+# 7  Background short  Completed                   -   16268                 - [
+-   -    -]
+# 8  Background short  Completed                   -   16268                 - [
+-   -    -]
+# 9  Background short  Completed                   -   16268                 - [
+-   -    -]
+#10  Background short  Completed                   -   16268                 - [
+-   -    -]
+#11  Background short  Completed                   -   16267                 - [
+-   -    -]
+#12  Background long   Completed                   -   16249                 - [
+-   -    -]
+#13  Background long   Completed                   -   16247                 - [
+-   -    -]
+#14  Background short  Completed                   -   16246                 - [
+-   -    -]
+#15  Background short  Completed                   -   16246                 - [
+-   -    -]
+#16  Background short  Completed                   -   16246                 - [
+-   -    -]
+#17  Background short  Completed                   -   16246                 - [
+-   -    -]
+#18  Background short  Completed                   -   16245                 - [
+-   -    -]
+#19  Background short  Completed                   -   16245                 - [
+-   -    -]
+#20  Background short  Completed                   -   16245                 - [
+-   -    -]
+buff  [mode sense(6): 1a 00 0a 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 8a 0a 02 00
+ 10     00 00 00 00 00 00 19 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+
+Long (extended) Self-test duration: 6400 seconds [106,7 minutes]
+
+
+C:\Program Files\smartmontools\bin>smartctl -r ioctl,2 -d "aacraid,0,0,1" -a /de
+v/sda
+smartctl 7.2 2020-12-30 r5155 [x86_64-w64-mingw32-2008r2-sp1] (sf-7.2-1)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+\\.\Scsi4: [aacraid_disk_00_00_1] [SCSI]: Device open changed type from 'sat,aut
+o+aacraid,0,0,1' to 'aacraid,0,0,1'
+buff  [inquiry: 12 01 00 00 fc 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=252, resid=0:
+ 00     00 00 00 0c 00 80 82 83  86 b1 c0 c1 c2 c3 d1 d2
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST3600057SS
+Revision:             0008
+Compliance:           SPC-3
+buff  [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+
+  Incoming data, len=32, resid=0:
+ 00     00 00 00 00 45 dd 2f af  00 00 02 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        600 127 266 816 bytes [600 GB]
+Logical block size:   512 bytes
+buff  [inquiry: 12 01 b1 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     00 b1 00 3c 3a 98 00 02  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Rotation Rate:        15000 rpm
+Form Factor:          3.5 inches
+buff  [mode sense(6): 1a 00 1c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 9c 0a 10 06
+ 10     00 00 00 00 00 00 00 01  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+buff  [mode sense(6): 1a 00 5c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 9c 0a 9d 0f
+ 10     ff ff ff ff ff ff ff ff  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+buff  [inquiry: 12 01 83 00 fc 00 ]
+
+  Incoming data, len=252, resid=0:
+ 00     00 83 00 48 01 03 00 08  50 00 c5 00 68 67 a0 07
+ 10     61 93 00 08 50 00 c5 00  68 67 a0 05 61 94 00 04
+ 20     00 00 00 01 61 a3 00 08  50 00 c5 00 68 67 a0 04
+ 30     03 28 00 18 6e 61 61 2e  35 30 30 30 43 35 30 30
+ 40     36 38 36 37 41 30 30 34  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+Logical Unit id:      0x5000c5006867a007
+buff  [inquiry: 12 01 80 00 fc 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=252, resid=0:
+ 00     00 80 00 14 36 53 4c 36  4a 35 31 4e 30 30 30 30
+ 10     4e 33 34 36 31 39 5a 33  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+Serial number:        6SL6J51N0000N34619Z3
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Fri Aug 20 14:07:19 2021 RTZST
+buff  [test unit ready: 00 00 00 00 00 00 ]
+
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+buff  [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     00 00 00 0c
+buff  [log sense: 4d 00 40 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     00 00 00 0c 00 02 03 05  06 0d 10 15 18 37 38 3e
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 0 (sub-page
+s: 0)
+buff  [request sense: 03 00 00 00 12 00 ]
+
+  Incoming data, len=18, resid=0:
+ 00     70 00 00 00 00 00 00 0a  00 00 00 00 00 00 00 00
+ 10     00 00
+buff  [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     0d 00 00 0c
+buff  [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     0d 00 00 0c 00 00 03 02  00 27 00 01 03 02 00 44
+SMART Health Status: OK
+
+buff  [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     0d 00 00 0c
+buff  [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     0d 00 00 0c 00 00 03 02  00 27 00 01 03 02 00 44
+Current Drive Temperature:     39 C
+Drive Trip Temperature:        68 C
+
+buff  [log sense: 4d 00 55 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     15 00 4b 28
+buff  [log sense: 4d 00 55 00 00 00 00 3e fc 00 ]
+
+*** stack smashing detected ***:  terminated
+
+C:\Program Files\smartmontools\bin>smartctl -r ioctl,2 -d "aacraid,0,0,2" -a /de
+v/sda
+smartctl 7.2 2020-12-30 r5155 [x86_64-w64-mingw32-2008r2-sp1] (sf-7.2-1)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+\\.\Scsi4: [aacraid_disk_00_00_2] [SCSI]: Device open changed type from 'sat,aut
+o+aacraid,0,0,2' to 'aacraid,0,0,2'
+buff  [inquiry: 12 01 00 00 fc 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=252, resid=0:
+ 00     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST3600057SS
+Revision:             0008
+Compliance:           SPC-3
+buff  [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+
+  Incoming data, len=32, resid=0:
+ 00     00 00 00 00 45 dd 2f af  00 00 02 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        600 127 266 816 bytes [600 GB]
+Logical block size:   512 bytes
+buff  [mode sense(6): 1a 00 84 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+scsiModePageOffset: response length too short, resp_len=1 offset=4 bd_len=0
+buff  [mode sense(6): 1a 00 1c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+scsiModePageOffset: response length too short, resp_len=1 offset=4 bd_len=0
+>> Terminate command early due to bad response to IEC mode page
+A mandatory SMART command failed: exiting. To continue, add one or more '-T perm
+issive' options.
+
+C:\Program Files\smartmontools\bin>smartctl -r ioctl,2 -d "aacraid,0,0,3" -a /de
+v/sda
+smartctl 7.2 2020-12-30 r5155 [x86_64-w64-mingw32-2008r2-sp1] (sf-7.2-1)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+\\.\Scsi4: [aacraid_disk_00_00_3] [SCSI]: Device open changed type from 'sat,aut
+o+aacraid,0,0,3' to 'aacraid,0,0,3'
+buff  [inquiry: 12 01 00 00 fc 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=252, resid=0:
+ 00     00 00 00 0c 00 80 82 83  86 b1 c0 c1 c2 c3 d1 d2
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+buff  [inquiry: 12 00 00 00 24 00 ]
+
+  Incoming data, len=36, resid=0:
+ 00     20 00 05 12 8b 00 10 02  53 45 41 47 41 54 45 20
+ 10     53 54 33 36 30 30 30 35  37 53 53 20 20 20 20 20
+ 20     30 30 30 38
+=== START OF INFORMATION SECTION ===
+Vendor:               SEAGATE
+Product:              ST3600057SS
+Revision:             0008
+Compliance:           SPC-3
+buff  [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+
+  Incoming data, len=32, resid=0:
+ 00     00 00 00 00 45 dd 2f af  00 00 02 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        600 127 266 816 bytes [600 GB]
+Logical block size:   512 bytes
+buff  [inquiry: 12 01 b1 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     00 b1 00 3c 3a 98 00 02  00 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Rotation Rate:        15000 rpm
+Form Factor:          3.5 inches
+buff  [mode sense(6): 1a 00 1c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 9c 0a 10 06
+ 10     00 00 00 00 00 00 00 01  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+buff  [mode sense(6): 1a 00 5c 00 40 00 ]
+
+  Incoming data, len=64, resid=0:
+ 00     17 00 10 08 45 dd 2f b0  00 00 02 00 9c 0a 9d 0f
+ 10     ff ff ff ff ff ff ff ff  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+buff  [inquiry: 12 01 83 00 fc 00 ]
+
+  Incoming data, len=252, resid=0:
+ 00     00 83 00 48 01 03 00 08  50 00 c5 00 48 63 b2 b3
+ 10     61 93 00 08 50 00 c5 00  48 63 b2 b1 61 94 00 04
+ 20     00 00 00 01 61 a3 00 08  50 00 c5 00 48 63 b2 b0
+ 30     03 28 00 18 6e 61 61 2e  35 30 30 30 43 35 30 30
+ 40     34 38 36 33 42 32 42 30  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+Logical Unit id:      0x5000c5004863b2b3
+buff  [inquiry: 12 01 80 00 fc 00 ]
+
+Konstantin Kuznetsov, [20.08.21 14:08]
+Incoming data, len=252, resid=0:
+ 00     00 80 00 14 36 53 4c 33  37 30 52 54 30 30 30 30
+ 10     42 32 32 30 41 32 54 30  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 40     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 50     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 60     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 90     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ a0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ b0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ e0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ f0     00 00 00 00 00 00 00 00  00 00 00 00
+Serial number:        6SL370RT0000B220A2T0
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Fri Aug 20 14:07:30 2021 RTZST
+buff  [test unit ready: 00 00 00 00 00 00 ]
+
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+buff  [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     00 00 00 0c
+buff  [log sense: 4d 00 40 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     00 00 00 0c 00 02 03 05  06 0d 10 15 18 37 38 3e
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 0 (sub-page
+s: 0)
+buff  [request sense: 03 00 00 00 12 00 ]
+
+  Incoming data, len=18, resid=0:
+ 00     70 00 00 00 00 00 00 0a  00 00 00 00 00 00 00 00
+ 10     00 00
+buff  [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     0d 00 00 0c
+buff  [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     0d 00 00 0c 00 00 03 02  00 2a 00 01 03 02 00 44
+SMART Health Status: OK
+
+buff  [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     0d 00 00 0c
+buff  [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+
+  Incoming data, len=16, resid=0:
+ 00     0d 00 00 0c 00 00 03 02  00 2a 00 01 03 02 00 44
+Current Drive Temperature:     42 C
+Drive Trip Temperature:        68 C
+
+buff  [log sense: 4d 00 55 00 00 00 00 00 04 00 ]
+
+  Incoming data, len=4, resid=0:
+ 00     15 00 5a b8
+buff  [log sense: 4d 00 55 00 00 00 00 3e fc 00 ]
+
+*** stack smashing detected ***:  terminated
