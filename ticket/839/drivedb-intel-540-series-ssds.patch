@@ -1,0 +1,38 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 4430)
++++ drivedb.h	(working copy)
+@@ -1068,6 +1068,33 @@
+     "-v 242,raw48,Host_Reads_32MiB "
+     "-v 249,raw48,NAND_Writes_1GiB"
+   },
++  { "Intel 540 Series SSDs", // tested with INTEL SSDSC2KW480H6
++    "INTEL SSDSC[2K]KW(120|180|240|256|360|480|010)H6?",
++    "", "",
++    "-F nologdir "
++  //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
++  //"-v 9,raw24(raw8),Power_On_Hours "
++  //"-v 12,raw48,Power_Cycle_Count "
++    "-v 170,raw48,Reserve_Block_Count "
++    "-v 171,raw48,Program_Fail_Count "
++    "-v 172,raw48,Erase_Fail_Count "
++    "-v 183,raw48,SATA_Downshift_Count "
++  //"-v 184,raw48,End-to-End_Error "
++  //"-v 187,raw48,Reported_Uncorrect "
++    "-v 190,raw48,Airflow_Temperature_Cel "
++    "-v 192,raw48,Unsafe_Shutdown_Count "
++    "-v 199,raw48,CRC_Error_Count "      // FW >= 4Px10362
++    "-v 225,raw48,Host_Writes "
++    "-v 226,raw48,Workld_Media_Wear_Indic " // Timed Workload Media Wear Indicator (percent*1024)
++    "-v 227,raw48,Workld_Host_Reads_Perc "  // Timed Workload Host Reads Percentage
++    "-v 228,raw48,Workload_Minutes " // 226,227,228 can be reset by 'smartctl -t vendor,0x40'
++  //"-v 232,raw48,Available_Reservd_Space "
++  //"-v 233,raw48,Media_Wearout_Indicator "
++  //"-v 241,raw48,Total_LBAs_Written "
++  //"-v 242,raw48,Total_LBAs_Read "
++    "-v 249,raw48,Total_NAND_Writes "
++    "-v 252,raw48,Vendor_Specific"
++  },  
+   { "Intel 330/335 Series SSDs", // tested with INTEL SSDSC2CT180A3/300i, SSDSC2CT240A3/300i,
+       // INTEL SSDSC2CT240A4/335t
+     "INTEL SSDSC2CT(060|120|180|240)A[34]", // A4 = 335 Series

@@ -1,0 +1,159 @@
+From 0469a4b4e7f384b3b72e1fc47839959804b2406f Mon Sep 17 00:00:00 2001
+From: Jonwhan Choi <jhbird.choi@gmail.com>
+Date: Tue, 21 Mar 2017 02:29:37 +0900
+Subject: [PATCH] Enable/Disable the certain device features by specifying
+ feature value and sector count value.
+
+Signed-off-by: Jonwhan Choi <jhbird.choi@gmail.com>
+---
+ ataprint.cpp  | 12 +++++++++++-
+ ataprint.h    |  5 ++++-
+ smartctl.8.in |  5 +++++
+ smartctl.cpp  | 34 +++++++++++++++++++++++++++-------
+ 4 files changed, 47 insertions(+), 9 deletions(-)
+
+diff --git a/ataprint.cpp b/ataprint.cpp
+index 8b27de4..28e6c02 100644
+--- a/ataprint.cpp
++++ b/ataprint.cpp
+@@ -2898,7 +2898,7 @@ int ataPrintMain (ata_device * device, const ata_print_options & options)
+   if (   options.smart_disable           || options.smart_enable
+       || options.smart_auto_save_disable || options.smart_auto_save_enable
+       || options.smart_auto_offl_disable || options.smart_auto_offl_enable
+-      || options.set_aam || options.set_apm || options.set_lookahead
++      || options.set_aam || options.set_apm || options.set_features || options.set_lookahead
+       || options.set_wcache || options.set_security_freeze || options.set_standby
+       || options.sct_wcache_reorder_set || options.sct_wcache_sct_set || options.set_dsn)
+     pout("=== START OF ENABLE/DISABLE COMMANDS SECTION ===\n");
+@@ -2976,6 +2976,16 @@ int ataPrintMain (ata_device * device, const ata_print_options & options)
+       pout("DSN %sabled\n", (enable ? "en" : "dis"));
+   }
+ 
++  // Enable/Disable Features
++  if (options.set_features) {
++    if (!ata_set_features(device, options.set_features_feature, options.set_features_scount)) {
++        pout("Features[0x%x] Sector Count[0x%x] failed: %s\n", options.set_features_feature, options.set_features_scount, device->get_errmsg());
++        returnval |= FAILSMART;
++    }
++    else
++      pout("Features[0x%x] Sector Count[0x%x]\n", options.set_features_feature, options.set_features_scount);
++  }
++
+   // Enable/Disable write cache reordering
+   if (options.sct_wcache_reorder_set) {
+     bool enable = (options.sct_wcache_reorder_set > 0);
+diff --git a/ataprint.h b/ataprint.h
+index b8ccf1f..7722613 100644
+--- a/ataprint.h
++++ b/ataprint.h
+@@ -115,6 +115,9 @@ struct ata_print_options
+   bool sct_wcache_sct_set_pers; // persistent or volatile
+   bool get_dsn; // print DSN status
+   int set_dsn; // disable(02h), enable(01h) DSN
++  int set_features; // Enable/Disable the SET FEATRUE command
++  int set_features_feature; // feature value for the SET FEATURE command
++  int set_features_scount; // sector count value for the SET FEATURE command
+ 
+   ata_print_options()
+     : drive_info(false),
+@@ -156,7 +159,7 @@ struct ata_print_options
+       sct_wcache_reorder_set_pers(false),
+       sct_wcache_sct_get(false), sct_wcache_sct_set(0),
+       sct_wcache_sct_set_pers(false),
+-      get_dsn(false), set_dsn(0)
++      get_dsn(false), set_dsn(0), set_features(0)
+     { }
+ };
+ 
+diff --git a/smartctl.8.in b/smartctl.8.in
+index 103fb71..4f755bb 100644
+--- a/smartctl.8.in
++++ b/smartctl.8.in
+@@ -1012,6 +1012,11 @@ The read cache is usually enabled by default.
+ Gets/sets the DSN feature (if supported).
+ The dsn is usually disabled by default.
+ 
++.I features,0xFEATURE[,0xCOUNT]
++\- [ATA only]
++Enable or disable the certain device features by specifying feature value
++and sector count value. Use with care.
++
+ .TP
+ .B SMART READ AND DISPLAY DATA OPTIONS:
+ .TP
+diff --git a/smartctl.cpp b/smartctl.cpp
+index 5f663b5..988d1c0 100644
+--- a/smartctl.cpp
++++ b/smartctl.cpp
+@@ -87,7 +87,7 @@ static void Usage()
+ "  --identify[=[w][nvb]]\n"
+ "         Show words and bits from IDENTIFY DEVICE data                (ATA)\n\n"
+ "  -g NAME, --get=NAME\n"
+-"        Get device setting: all, aam, apm, dsn, lookahead, security, wcache, rcache, wcreorder, wcache-sct\n\n"
++"        Get device setting: all, aam, apm, dsn, features, lookahead, security, wcache, rcache, wcreorder, wcache-sct\n\n"
+ "  -a, --all\n"
+ "         Show all SMART information for device\n\n"
+ "  -x, --xall\n"
+@@ -122,7 +122,8 @@ static void Usage()
+ "        Enable/disable Attribute autosave on device (on/off)\n\n"
+ "  -s NAME[,VALUE], --set=NAME[,VALUE]\n"
+ "        Enable/disable/change device setting: aam,[N|off], apm,[N|off],\n"
+-"        dsn,[on|off], lookahead,[on|off], security-freeze, standby,[N|off|now],\n"
++"        dsn,[on|off], features,0xFEATURE[,0xCOUNT], lookahead,[on|off], \n"
++"        security-freeze, standby,[N|off|now],\n"
+ "        wcache,[on|off], rcache,[on|off], wcreorder,[on|off[,p]]\n"
+ "        wcache-sct,[ata|on|off[,p]]\n\n"
+   );
+@@ -226,8 +227,8 @@ static std::string getvalidarglist(int opt)
+   case 'g':
+     return "aam, apm, dsn, lookahead, security, wcache, rcache, wcreorder, wcache-sct";
+   case opt_set:
+-    return "aam,[N|off], apm,[N|off], dsn,[on|off], lookahead,[on|off], security-freeze, "
+-           "standby,[N|off|now], wcache,[on|off], rcache,[on|off], wcreorder,[on|off[,p]], "
++    return "aam,[N|off], apm,[N|off], dsn,[on|off], features,0xFEATURE[,0xCOUNT], lookahead,[on|off], "
++           "security-freeze, standby,[N|off|now], wcache,[on|off], rcache,[on|off], wcreorder,[on|off[,p]], "
+            "wcache-sct,[ata|on|off[,p]]";
+   case 's':
+     return getvalidarglist(opt_smart)+", "+getvalidarglist(opt_set);
+@@ -888,9 +889,25 @@ static const char * parse_options(int argc, char** argv,
+                   strcmp(name, "wcreorder") != 0)
+                 badarg = true;
+             }
+-            on  = !strncmp(optarg+n2, "on", len2);
+-            off = !strncmp(optarg+n2, "off", len2);
+-            ata = !strncmp(optarg+n2, "ata", len2);
++
++            if (!strcmp(name, "features")) {
++              int feature, scount;
++              if (sscanf(optarg + n2, "%x,%x", &feature, &scount) == 2) {
++                if ((feature < 0 || feature > 0xff) ||
++                    (scount < 0 || scount > 0xff)) {
++                  badarg = true;
++                } else {
++                   ataopts.set_features_feature = feature;
++                   ataopts.set_features_scount = scount;
++                }
++              } else {
++                badarg = true;
++              }
++            } else {
++              on  = !strncmp(optarg+n2, "on", len2);
++              off = !strncmp(optarg+n2, "off", len2);
++              ata = !strncmp(optarg+n2, "ata", len2);
++            }
+           }
+           if (n3 != len)
+             val = ~0U;
+@@ -1021,6 +1038,9 @@ static const char * parse_options(int argc, char** argv,
+             else
+               badarg = true;
+           }
++          else if (!strcmp(name, "features")) {
++              ataopts.set_features = 1;
++          }
+           else
+             badarg = true;
+         }
+-- 
+2.5.0
+

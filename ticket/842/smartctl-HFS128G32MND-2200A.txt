@@ -1,0 +1,286 @@
+smartctl 6.5 2016-01-24 r4214 [x86_64-linux-4.8.0-52-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Warning: DEFAULT entry missing in drive database file(s)
+=== START OF INFORMATION SECTION ===
+Device Model:     HFS128G32MND-2200A
+Firmware Version: 20200L00
+User Capacity:    128.035.676.160 bytes [128 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA8-ACS (minor revision not indicated)
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Sat May 27 16:01:04 2017 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     254 (maximum performance)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Unavailable
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(   10) seconds.
+Offline data collection
+capabilities: 			 (0x19) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0002)	Does not save SMART data before
+					entering power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (   8) minutes.
+
+SMART Attributes Data Structure revision number: 0
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR--   166   166   006    -    0
+  5 Reallocated_Sector_Ct   -O--CK   253   253   036    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    157
+ 12 Power_Cycle_Count       -O--CK   100   100   020    -    438
+100 Unknown_Attribute       -O--CK   100   100   000    -    258368
+170 Unknown_Attribute       -O--CK   100   100   000    -    62
+171 Unknown_Attribute       -O--CK   253   253   000    -    0
+172 Unknown_Attribute       -O--CK   253   253   000    -    0
+174 Unknown_Attribute       ----CK   100   100   000    -    19
+175 Program_Fail_Count_Chip -O--CK   253   253   000    -    0
+176 Erase_Fail_Count_Chip   -O--CK   253   253   000    -    0
+177 Wear_Leveling_Count     -O--CK   100   100   000    -    4
+178 Used_Rsvd_Blk_Cnt_Chip  -O--CK   100   100   000    -    25
+180 Unused_Rsvd_Blk_Cnt_Tot -O--CK   100   100   000    -    1938
+183 Runtime_Bad_Block       -O--CK   253   253   000    -    0
+187 Reported_Uncorrect      -O--CK   253   253   000    -    0
+188 Command_Timeout         -O--CK   253   253   000    -    0
+191 Unknown_SSD_Attribute   -O--CK   253   253   000    -    0
+194 Temperature_Celsius     -O----   030   000   000    -    30 (Min/Max 16/48)
+195 Hardware_ECC_Recovered  -O--CK   253   253   000    -    0
+199 UDMA_CRC_Error_Count    -O--CK   253   253   000    -    0
+201 Unknown_SSD_Attribute   -OSR--   100   100   000    -    0
+204 Soft_ECC_Correction     -OSR--   100   100   ---    -    0
+212 Unknown_Attribute       -O--CK   100   100   ---    -    471
+231 Temperature_Celsius     PO--CK   253   253   ---    -    0
+234 Unknown_Attribute       -O--CK   100   100   ---    -    414
+241 Total_LBAs_Written      -O--CK   100   100   ---    -    377
+242 Total_LBAs_Read         -O--CK   100   100   ---    -    624
+250 Read_Error_Retry_Rate   -O--CK   253   253   ---    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      4  Comprehensive SMART error log
+0x03       GPL     R/O      5  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      2  Extended self-test log
+0x10       GPL     R/O      1  SATA NCQ Queued Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+
+SMART Extended Comprehensive Error Log Version: 1 (5 sectors)
+Device Error Count: 1548 (device log contains only the most recent 20 errors)
+	CR     = Command Register
+	FEATR  = Features Register
+	COUNT  = Count (was: Sector Count) Register
+	LBA_48 = Upper bytes of LBA High/Mid/Low Registers ]  ATA-8
+	LH     = LBA High (was: Cylinder High) Register    ]   LBA
+	LM     = LBA Mid (was: Cylinder Low) Register      ] Register
+	LL     = LBA Low (was: Sector Number) Register     ]
+	DV     = Device (was: Device/Head) Register
+	DC     = Device Control Register
+	ER     = Error register
+	ST     = Status register
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 1548 [7] occurred at disk power-on lifetime: 152 hours (6 days + 8 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.110  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.110  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.110  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.110  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.110  READ DMA EXT
+
+Error 1547 [6] occurred at disk power-on lifetime: 151 hours (6 days + 7 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.120  READ DMA EXT
+
+Error 1546 [5] occurred at disk power-on lifetime: 151 hours (6 days + 7 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.120  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.120  READ DMA EXT
+
+Error 1545 [4] occurred at disk power-on lifetime: 150 hours (6 days + 6 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.240  READ DMA EXT
+
+Error 1544 [3] occurred at disk power-on lifetime: 150 hours (6 days + 6 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.240  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.240  READ DMA EXT
+
+Error 1543 [2] occurred at disk power-on lifetime: 150 hours (6 days + 6 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.080  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.080  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.080  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.080  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.080  READ DMA EXT
+
+Error 1542 [1] occurred at disk power-on lifetime: 139 hours (5 days + 19 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.220  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.220  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.220  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.220  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.220  READ DMA EXT
+
+Error 1541 [0] occurred at disk power-on lifetime: 139 hours (5 days + 19 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  00 -- 00 00 00 00 00 00 00 00 00 00 ff   at LBA = 0x00000000 = 0
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 00 40 00 00 0c 4b 4a 40 40 40     00:00:15.060  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 4a 00 40 40     00:00:15.060  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 c0 40 40     00:00:15.060  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 80 40 40     00:00:15.060  READ DMA EXT
+  25 00 00 00 40 00 00 0c 4b 49 40 40 40     00:00:15.060  READ DMA EXT
+
+SMART Extended Self-test Log Version: 1 (2 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%       157         -
+# 2  Short offline       Completed without error       00%         0         -
+# 3  Short offline       Completed without error       00%         0         -
+
+Selective Self-tests/Logging not supported
+
+SCT Commands not supported
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (empty) ==
+0x04  =====  =               =  ===  == General Errors Statistics (empty) ==
+0x05  =====  =               =  ===  == Temperature Statistics (empty) ==
+0x06  =====  =               =  ===  == Transport Statistics (empty) ==
+0x07  =====  =               =  ===  == Solid State Device Statistics (empty) ==
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x000a  2            2  Device-to-host register FISes sent due to a COMRESET
+

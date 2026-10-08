@@ -1,0 +1,249 @@
+smartctl 5.41 2011-06-09 r3365 [x86_64-linux-3.2.0-79-generic] (local build)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+/dev/sda [megaraid_disk_00] [SAT]: Device open changed type from 'megaraid' to 'sat'
+=== START OF INFORMATION SECTION ===
+Device Model:     INTEL SSDSC2KW240H6
+Firmware Version: LSF036C
+User Capacity:    240.057.409.536 bytes [240 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   10
+ATA Standard is:  Not recognized. Minor revision code: 0xffff
+Local Time is:    Sat May  6 09:44:20 2017 EEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+Warning: This result is based on an Attribute check.
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x53) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  15) minutes.
+SCT capabilities: 	       (0x0039)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   -O--CK   100   100   000    -    1
+  9 Power_On_Hours          -O--CK   100   100   000    -    29
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    4
+170 Unknown_Attribute       PO--CK   099   099   010    -    0
+171 Unknown_Attribute       -O--CK   100   100   010    -    0
+172 Unknown_Attribute       -O--CK   100   100   010    -    0
+174 Unknown_Attribute       -O--CK   100   100   000    -    1
+183 Runtime_Bad_Block       -O--CK   100   100   000    -    0
+184 End-to-End_Error        PO--CK   100   100   090    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+190 Airflow_Temperature_Cel -O--CK   015   029   000    -    15 (Min/Max 13/29)
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    1
+199 UDMA_CRC_Error_Count    -O--CK   100   100   000    -    0
+225 Load_Cycle_Count        -O--CK   100   100   000    -    15716
+226 Load-in_Time            -O--CK   100   100   000    -    0
+227 Torq-amp_Count          -O--CK   100   100   000    -    0
+228 Power-off_Retract_Count -O--CK   100   100   000    -    0
+232 Available_Reservd_Space PO--CK   099   099   010    -    0
+233 Media_Wearout_Indicator -O--CK   100   100   000    -    0
+241 Total_LBAs_Written      -O--CK   100   100   000    -    15716
+242 Total_LBAs_Read         -O--CK   100   100   000    -    189460
+249 Unknown_Attribute       -O--CK   100   100   000    -    389
+252 Unknown_Attribute       -O--CK   100   100   000    -    1
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+GP/S  Log at address 0x00 has    1 sectors [Log Directory]
+GP/S  Log at address 0x01 has    1 sectors [Summary SMART error log]
+GP/S  Log at address 0x02 has    1 sectors [Comprehensive SMART error log]
+GP/S  Log at address 0x03 has    1 sectors [Ext. Comprehensive SMART error log]
+GP/S  Log at address 0x04 has    8 sectors [Device Statistics]
+GP/S  Log at address 0x06 has    1 sectors [SMART self-test log]
+GP/S  Log at address 0x07 has    1 sectors [Extended self-test log]
+GP/S  Log at address 0x09 has    1 sectors [Selective self-test log]
+GP/S  Log at address 0x10 has    1 sectors [NCQ Command Error]
+GP/S  Log at address 0x11 has    1 sectors [SATA Phy Event Counters]
+GP/S  Log at address 0x30 has    9 sectors [Reserved]
+GP/S  Log at address 0x80 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x81 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x82 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x83 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x84 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x85 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x86 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x87 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x88 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x89 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x90 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x91 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x92 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x93 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x94 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x95 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x96 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x97 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x98 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x99 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0xdf has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xe0 has    1 sectors [SCT Command/Status]
+GP/S  Log at address 0xe1 has    1 sectors [SCT Data Transfer]
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%        29         -
+# 2  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 3  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 4  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 5  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 6  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 7  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 8  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+# 9  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#10  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#11  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#12  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#13  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#14  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#15  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#16  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#17  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#18  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+#19  Vendor (0xff)       Self-test routine in progress 150%     65535         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN         MIN_LBA         MAX_LBA  CURRENT_TEST_STATUS
+    1  70403103932424  70403103932424  Not_testing
+    2  70403103932424  70403103932424  Not_testing
+    3  70403103932424  70403103932424  Not_testing
+    4  70403103932424  70403103932424  Not_testing
+    5  70403103932424  70403103932424  Not_testing
+Selective self-test flags (0x4008):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       0 (0x0000)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                    20 Celsius
+Power Cycle Min/Max Temperature:     18/33 Celsius
+Lifetime    Min/Max Temperature:     18/36 Celsius
+Under/Over Temperature Limit Count:   0/0
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/100 Celsius
+Min/Max Temperature Limit:            0/100 Celsius
+Temperature History Size (Index):    128 (73)
+
+Index    Estimated Time   Temperature Celsius
+  74    2017-05-06 07:37    20  *
+  75    2017-05-06 07:38    20  *
+  76    2017-05-06 07:39    21  **
+  77    2017-05-06 07:40    20  *
+ ...    ..(  3 skipped).    ..  *
+  81    2017-05-06 07:44    20  *
+  82    2017-05-06 07:45    21  **
+  83    2017-05-06 07:46    20  *
+ ...    ..(  4 skipped).    ..  *
+  88    2017-05-06 07:51    20  *
+  89    2017-05-06 07:52    21  **
+  90    2017-05-06 07:53    20  *
+ ...    ..(  2 skipped).    ..  *
+  93    2017-05-06 07:56    20  *
+  94    2017-05-06 07:57    21  **
+  95    2017-05-06 07:58    20  *
+  96    2017-05-06 07:59    21  **
+  97    2017-05-06 08:00    20  *
+ ...    ..( 12 skipped).    ..  *
+ 110    2017-05-06 08:13    20  *
+ 111    2017-05-06 08:14    21  **
+ 112    2017-05-06 08:15    20  *
+ ...    ..(  2 skipped).    ..  *
+ 115    2017-05-06 08:18    20  *
+ 116    2017-05-06 08:19    26  *******
+ 117    2017-05-06 08:20    28  *********
+ 118    2017-05-06 08:21    31  ************
+ 119    2017-05-06 08:22    30  ***********
+ 120    2017-05-06 08:23    30  ***********
+ 121    2017-05-06 08:24    20  *
+ ...    ..( 36 skipped).    ..  *
+  30    2017-05-06 09:01    20  *
+  31    2017-05-06 09:02    21  **
+  32    2017-05-06 09:03    20  *
+ ...    ..(  2 skipped).    ..  *
+  35    2017-05-06 09:06    20  *
+  36    2017-05-06 09:07    21  **
+  37    2017-05-06 09:08    20  *
+ ...    ..(  4 skipped).    ..  *
+  42    2017-05-06 09:13    20  *
+  43    2017-05-06 09:14    21  **
+  44    2017-05-06 09:15    20  *
+ ...    ..(  8 skipped).    ..  *
+  53    2017-05-06 09:24    20  *
+  54    2017-05-06 09:25    26  *******
+  55    2017-05-06 09:26    26  *******
+  56    2017-05-06 09:27    26  *******
+  57    2017-05-06 09:28    30  ***********
+  58    2017-05-06 09:29    30  ***********
+  59    2017-05-06 09:30    21  **
+  60    2017-05-06 09:31    20  *
+ ...    ..( 12 skipped).    ..  *
+  73    2017-05-06 09:44    20  *
+
+Error Write SCT (Get) Error Recovery Control Command failed: ATA return descriptor not supported by controller firmware
+Warning: device does not support SCT (Get) Error Recovery Control command
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0005  2            0  R_ERR response for non-data FIS
+0x000a  2            2  Device-to-host register FISes sent due to a COMRESET
+
