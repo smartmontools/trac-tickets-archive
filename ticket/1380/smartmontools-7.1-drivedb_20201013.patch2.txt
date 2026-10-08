@@ -1,0 +1,39 @@
+--- smartmontools-7.1/drivedb.h.20200920	2020-09-20 15:45:41.000000000 +0000
++++ smartmontools-7.1/drivedb.h	2020-10-13 18:50:48.049599928 +0000
+@@ -2118,13 +2150,33 @@
+   //"-v 250,raw48,Read_Error_Retry_Rate " // ADATA SU800/Q0913A
+     "-v 251,raw48,Unkn_SiliconMotion_Attr" // ADATA SU800/Q0913A
+   },
++  // Refs #9023#note-9
++  //
++  { "Supermicro SATA DOM (SuperDOM)",
++    "SuperMicro SSD", // Supermicro SSD-DM032-SMCMVN1, tested with SuperMicro SSD/SOB20R
++    "SOB20R",
++    "",
++    "-v 1,raw48,Raw_Read_Error_Rate "
++    "-v 15,raw48,User_Capacity_Sector_Count "
++    "-v 160,raw48,Not_In_Use "
++    "-v 161,raw48,Not_In_Use "
++    "-v 163,raw48,Not_In_Use "
++    "-v 164,raw48,Not_In_Use "
++    "-v 165,raw48,Not_In_Use "
++    "-v 166,raw48,Minimum_PE_Cycles_TLC "
++    "-v 167,raw48,Not_In_Use "
++    "-v 168,raw48,Maximum_PE_Cycles_TLC "
++    "-v 231,raw48,SSD_Life_Left "
++    "-v 233,raw48,NAND_Writes_1GiB "
++    "-v 241,raw48,Lifetime_Writes_GiB "
++    "-v 242,raw48,Lifetime_Reads_GiB "
++  },
+   { "Silicon Motion based OEM SSDs", // Like 'Silicon Motion based SSDs' but with FW detection
+     "Intenso SSD|" // tested with Intenso SSD/Q1107A0
+     "Intenso  SSD Sata III|" // Sata III High, tested with Intenso  SSD Sata III/P0510E
+     "KingFast|" // KingFast F6M, tested with KingFast/P0725A
+-    "SPCC M\\.2 SSD|" // Silicon Power 2280 M55, tested with SPCC M.2 SSD/Q0627A0
+-    "SuperMicro SSD", // Supermicro SSD-DM032-SMCMVN1, tested with SuperMicro SSD/SOB20R
+-    "P0510E|P0725A|Q0627A0|Q1107A0|SOB20R",
++    "SPCC M\\.2 SSD", // Silicon Power 2280 M55, tested with SPCC M.2 SSD/Q0627A0
++    "P0510E|P0725A|Q0627A0|Q1107A0",
+     "",
+     "-v 148,raw48,Total_SLC_Erase_Ct "
+     "-v 149,raw48,Max_SLC_Erase_Ct "

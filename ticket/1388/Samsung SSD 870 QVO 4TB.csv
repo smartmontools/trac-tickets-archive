@@ -1,0 +1,18 @@
+﻿S.M.A.R.T.,10/25/2020
+Model Name,Samsung SSD 870 QVO 4TB
+Drive Type, SATA
+Result,ID,Description,Threshold,Current Value,Worst Value,Raw Data,Status,
+,5,Reallocated Sector Count,10,100,100,0,OK
+,9,Power-on Hours,0,99,99,39,OK
+,12,Power-on Count,0,99,99,11,OK
+,177,Wear Leveling Count,0,100,100,0,OK
+,179,Used Reserved Block Count (total),10,100,100,0,OK
+,181,Program Fail Count (total),10,100,100,0,OK
+,182,Erase Fail Count (total),10,100,100,0,OK
+,183,Runtime Bad Count (total),10,100,100,0,OK
+,187,Uncorrectable Error Count,0,100,100,0,OK
+,190,Airflow Temperature,0,74,50,26,OK
+,195,ECC Error Rate,0,200,200,0,OK
+,199,CRC Error Count,0,100,100,0,OK
+,235,POR Recovery Count,0,99,99,6,OK
+,241,Total LBAs Written,0,99,99,983887006,OK

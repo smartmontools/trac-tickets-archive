@@ -1,0 +1,122 @@
+smartctl 7.1 2020-09-20 r5086 [x86_64-linux-3.10.0-1127.13.1.el7.x86_64] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Novachips Scalar SSD
+Device Model:     SCALAR-04T
+Serial Number:    965F6C8E4F5B707
+LU WWN Device Id: 5 123456 542373037
+Firmware Version: NV.R1200
+User Capacity:    4,000,787,005,440 bytes [4.00 TB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ATA8-ACS (minor revision not indicated)
+SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Fri Oct 16 18:18:00 2020 UTC
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Unavailable
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      ( 121)	The previous self-test completed having
+					the read element of the test failed.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x1d) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Abort Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   0) minutes.
+Extended self-test routine
+recommended polling time: 	 (   0) minutes.
+
+SMART Attributes Data Structure revision number: 11
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Unknown_NS_Attribute    -O--CK   100   100   000    -    110
+  9 Power_On_Hours          -O--CK   100   100   000    -    36332
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    5
+ 13 Unknown_NS_Attribute    -O--CK   100   100   000    -    456
+181 Program_Failure_Blk_Ct  -O--CK   100   100   000    -    0
+184 Initial_Bad_Block_Count -O--CK   200   200   000    -    1903
+187 Read_Failure_Blk_Ct     -O--CK   100   100   000    -    0
+190 Temperature_Celsius     -O--CK   039   100   000    -    39
+199 SATA_CRC_Error_Count    -O--CK   100   100   099    -    0
+200 Write_Commands_Tot_Ct   -O--CK   100   100   000    -    6130534647
+201 Read_Commands_Tot_Ct    -O--CK   100   100   000    -    6482440802
+202 Unknown_NS_Attribute    -O--CK   100   100   000    -    5383538988740
+204 Unknown_NS_Attribute    -O--CK   100   100   000    -    1525291205702
+209 Remaining_Lifetime_Perc -O--CK   076   000   000    -    76
+210 Erase_Count             -O--CK   100   100   000    -    4660085587968
+213 Maximum_PE_Cycles_Ct    -O--CK   100   100   000    -    3000
+225 Unknown_NS_Attribute    -O--CK   100   100   000    -    54
+226 Flush_Commands_Tot_Ct   -O--CK   100   100   000    -    281474976710655
+227 Unknown_NS_Attribute    -O--CK   100   100   000    -    3580392117784
+228 Unknown_NS_Attribute    -O--CK   100   100   000    -    163829659648
+229 Unknown_NS_Attribute    -O--CK   100   100   000    -    137438953472
+230 Spare_Block_Count       -O--CK   100   100   000    -    21121
+241 Unknown_NS_Attribute    -O--CK   100   100   000    -    5411983966592
+242 Unknown_NS_Attribute    -O--CK   100   100   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01       GPL,SL  R/O      1  Summary SMART error log
+0x02       GPL,SL  R/O     51  Comprehensive SMART error log
+0x03       GPL,SL  R/O     29  Ext. Comprehensive SMART error log
+0x06       GPL,SL  R/O      1  SMART self-test log
+0x07       GPL,SL  R/O      1  Extended self-test log
+0x09       GPL,SL  R/W      1  Selective self-test log
+0x10       GPL,SL  R/O      1  NCQ Command Error log
+0x11       GPL,SL  R/O      1  SATA Phy Event Counters log
+0x80       GPL,SL  R/W     32  Host vendor specific log
+0xa0       GPL,SL  VS       1  Device vendor specific log
+
+SMART Extended Comprehensive Error Log Version: 0 (29 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 0 (1 sectors)
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+Selective Self-tests/Logging not supported
+
+SCT Commands not supported
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+
