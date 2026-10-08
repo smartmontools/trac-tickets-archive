@@ -1,0 +1,24 @@
+SMART Info
+ID,Attribute Name,Raw Values
+0x09,Power on hours,3675
+0x0C,Power on/off cycles,2258
+0xA7,Protect Mode,0
+0xA8,SATA PHY error count,0
+0xAC,Erase Failure Count,0
+0xAD,Max Erase Cnt,55
+0xAD,Avg Erase Cnt,16
+0xB5,Program Fail Count,0
+0xBB,UNC Error Count,0
+0xC0,Unexpected Power Loss Count,55
+0xC2,Current Temp,54
+0xC2,Min Temp,21
+0xC2,Max Temp,86
+0xC4,Total Later Bad Block Count,0
+0xDA,CRC Error Count,0
+0xE7,SSD life left,99
+0xE9,NAND Write (GB),5619
+0xF1,Host Write (GB),5693
+0xF2,Host Read (GB),4874
+0xF4,Avg Erase Count,16
+0xF5,Max Erase Count,55
+0xF6,Raw Data,0x0000000af9a0

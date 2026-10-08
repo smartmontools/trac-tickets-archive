@@ -1,0 +1,12 @@
+--- drivedb.h.orig	2020-07-15 12:42:43.408397412 -0300
++++ drivedb.h	2020-07-15 12:46:33.003755173 -0300
+@@ -684,7 +684,8 @@
+   },
+   { "Phison Driven SSDs", // see MKP_521_Phison_SMART_attribute.pdf
+     "BP4 mSATA SSD|" // MyDigital BP4, tested with BP4 mSATA SSD/S8FM06.9
+-    "Corsair Force LE200 SSD|" // tested with Corsair Force LE200 SSD/SBFM10, .../SBFM60.9
++    "Corsair Force LE(200)? SSD|" // tested with Corsair Force LE200 SSD/SBFM10, .../SBFM60.9,
++      // Corsair Force LE SSD/SAFC11.0
+     "GIGABYTE GP-GSTFS31((120|240|256|480)G|100T)NTD|" // tested with GIGABYTE GP-GSTFS31120GNTD/SBFM61.3
+     "GOODRAM IRIDIUM PRO|" // tested with GOODRAM IRIDIUM PRO/SAFM01.5
+     "IR-SSDPR-S25A-(120|240|480|960)|" // Goodram IRIDM, tested with IR-SSDPR-S25A-120/SBFM91.3,

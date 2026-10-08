@@ -1,0 +1,33 @@
+--- drivedb.h.orig	2020-07-15 12:42:43.408397412 -0300
++++ drivedb.h	2020-07-16 00:06:45.727040873 -0300
+@@ -684,7 +684,8 @@
+   },
+   { "Phison Driven SSDs", // see MKP_521_Phison_SMART_attribute.pdf
+     "BP4 mSATA SSD|" // MyDigital BP4, tested with BP4 mSATA SSD/S8FM06.9
+-    "Corsair Force LE200 SSD|" // tested with Corsair Force LE200 SSD/SBFM10, .../SBFM60.9
++    "Corsair Force LE(200)? SSD|" // tested with Corsair Force LE200 SSD/SBFM10, .../SBFM60.9,
++      // Corsair Force LE SSD/SAFC11.0
+     "GIGABYTE GP-GSTFS31((120|240|256|480)G|100T)NTD|" // tested with GIGABYTE GP-GSTFS31120GNTD/SBFM61.3
+     "GOODRAM IRIDIUM PRO|" // tested with GOODRAM IRIDIUM PRO/SAFM01.5
+     "IR-SSDPR-S25A-(120|240|480|960)|" // Goodram IRIDM, tested with IR-SSDPR-S25A-120/SBFM91.3,
+@@ -719,16 +720,18 @@
+     "-v 7,raw48,Not_In_Use "
+     "-v 8,raw48,Not_In_Use "
+   //"-v 9,raw24(raw8),Power_On_Hours "
+-    "-v 5,raw48,Retired_Block_Count "
++    "-v 5,raw48,Later_Bad_Block_Count "
+   //"-v 9,raw24(raw8),Power_On_Hours "
+     "-v 10,raw48,Not_In_Use "
+   //"-v 12,raw48,Power_Cycle_Count "
++    "-v 162,raw48,Early_Bad_Block_Count "
+     "-v 167,raw48,Write_Protect_Mode " // DC500
+     "-v 168,raw48,SATA_Phy_Error_Count "
+     "-v 169,raw48,Bad_Block_Rate " // DC500
+-    "-v 170,raw24/raw24:z54z10,Bad_Blk_Ct_Erl/Lat " // Early bad block/Later bad block
++    "-v 170,raw48,Spare_Block_Count "
+     "-v 172,raw48,Erase_Fail_Count " // DC500
+     "-v 173,raw16(avg16),MaxAvgErase_Ct "
++    "-v 174,raw48,Unsafe_Shutdown_Count "
+     "-v 175,raw48,Not_In_Use "
+     "-v 181,raw48,Program_Fail_Count " // DC500
+     "-v 182,raw48,Erase_Fail_Count " // DC500

@@ -1,0 +1,71 @@
+Device Name  : /dev/sdd
+
+ ID  Attribute Name                Attribute Data Units
+
+ 1   Raw Read Error Rate           0		Errors/Page
+                    
+ 5   Retired NAND Blocks           0		NAND Blocks
+                    
+ 9   Power On Hours Count          2		Hours
+                          
+ 12  Power Cycle Count             1		Cycles
+                         
+ 170 Reserved block count          0		Blocks
+                         
+ 171 Program Fail Count            0		NAND Page Program Failures
+     
+ 172 Erase Fail Count              0		NAND Block Erase Failures
+      
+ 173 Average Block-Erase Count     1		Erases
+                         
+ 174 Unexpected Power Loss Count   0		Unexpected Power Loss events
+   
+ 180 Unused reserved block count   18961	Blocks
+                      
+ 183 SATA Interface Downshift      0		Downshifts
+                     
+ 184 Error Correction Count        0		Correction Events
+              
+ 187 Reported Uncorrectable Errors 0		ECC Correction Failures
+        
+ 188 Command Timeouts              0		Outstanding Commands Since      
+                                                Last Reset
+                        
+ 194 Enclosure Temperature         33		Current Temperature (C)
+       
+                                   34		Highest Lifetime Temperature (C)
+
+ 195 Cumulative Corrected ECC      0		Corrected ECC
+                  
+ 196 Reallocation Event Count      0		Events
+                         
+ 197 Current Pending Sector Count  0		512 Byte Sectors
+               
+ 198 SMART Off-line Scan           0		Errors
+                         
+     Uncorrectable Errors          
+
+ 199 Ultra-DMA CRC Error Count     0		Errors
+                         
+ 202 Percentage Lifetime Remaining 100		% Lifetime Remaining
+         
+ 206 Write Error Rate              0		Program Fails/MB
+               
+ 210 RAIN Successful Recovery      0		TUs successfully recovered by
+ 
+     Page Count                                 RAIN
+
+ 211 Integrity Scan Complete Count 2		Count
+
+ 212 Integrity Scan Folding        0		Count
+                          
+     Completed Count               
+
+ 246 Cumulative Host Write         0		512 Byte Sectors
+               
+     Sector Count                  
+
+ 247 Host Program Page Count       0		NAND Page
+                      
+ 248 FTL Program Page Count        1203		NAND Page
+
