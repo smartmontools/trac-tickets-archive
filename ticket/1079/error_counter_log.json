@@ -1,0 +1,154 @@
+{
+  "json_format_version" : [
+    0,
+    1
+  ],
+  "smartctl" : {
+    "version" : [
+      6,
+      7
+    ],
+    "platform_info" : "x86_64-linux-3.10.0-229.el7.x86_64",
+    "build_info" : "(local build)",
+    "argv" : [
+      "smartctl",
+      "-a",
+      "--json=o",
+      "/dev/sdb"
+    ],
+    "output" : [
+      "smartctl 6.7 (build date Aug 30 2018) [x86_64-linux-3.10.0-229.el7.x86_64] (local build)",
+      "Copyright (C) 2002-18, Bruce Allen, Christian Franke, www.smartmontools.org",
+      "",
+      "=== START OF INFORMATION SECTION ===",
+      "Vendor:               SEAGATE",
+      "Product:              ST400FM0053",
+      "Revision:             0007",
+      "Compliance:           SPC-4",
+      "User Capacity:        400,088,457,216 bytes [400 GB]",
+      "Logical block size:   512 bytes",
+      "Physical block size:  4096 bytes",
+      "LB provisioning type: not reported [LBPME=1, LBPRZ=1]",
+      "Rotation Rate:        Solid State Device",
+      "Form Factor:          2.5 inches",
+      "Logical Unit id:      0x5000c500301a2433",
+      "Serial number:        Z3F01KCM0000Z3F01KCM",
+      "Device type:          disk",
+      "Transport protocol:   SAS (SPL-3)",
+      "Local Time is:        Sun Sep  2 23:15:26 2018 EDT",
+      "SMART support is:     Available - device has SMART capability.",
+      "SMART support is:     Enabled",
+      "Temperature Warning:  Enabled",
+      "",
+      "=== START OF READ SMART DATA SECTION ===",
+      "SMART Health Status: OK",
+      "",
+      "Percentage used endurance indicator: 2%",
+      "Current Drive Temperature:     34 C",
+      "Drive Trip Temperature:        60 C",
+      "",
+      "Manufactured in week 37 of year 2016",
+      "Specified cycle count over device lifetime:  10000",
+      "Accumulated start-stop cycles:  77",
+      "Elements in grown defect list: 0",
+      "",
+      "Vendor (Seagate Cache) information",
+      "  Blocks sent to initiator = 3346778763",
+      "  Blocks received from initiator = 3012241198",
+      "  Blocks read from cache and sent to initiator = 1009147024",
+      "  Number of read and write commands whose size <= segment size = 666377012",
+      "  Number of read and write commands whose size > segment size = 411192197",
+      "",
+      "Vendor (Seagate/Hitachi) factory information",
+      "  number of hours powered up = 9367.23",
+      "  number of minutes until next internal SMART test = 47",
+      "",
+      "Error counter log:",
+      "           Errors Corrected by           Total   Correction     Gigabytes    Total",
+      "               ECC          rereads/    errors   algorithm      processed    uncorrected",
+      "           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors",
+      "read:          0        0         0         0          0      10509.644           0",
+      "write:         0        0         0         0          0      67517.170           0",
+      "verify:        0        0         0         0          0          0.362           0",
+      "",
+      "Non-medium error count:        0",
+      "",
+      "No Self-tests have been logged",
+      ""
+    ],
+    "exit_status" : 0
+  },
+  "device" : {
+    "name" : "/dev/sdb",
+    "info_name" : "/dev/sdb",
+    "type" : "scsi",
+    "protocol" : "SCSI"
+  },
+  "vendor" : "SEAGATE",
+  "product" : "ST400FM0053",
+  "model_name" : "SEAGATE ST400FM0053",
+  "revision" : "0007",
+  "scsi_version" : "SPC-4",
+  "user_capacity" : {
+    "blocks" : {
+      "n" : 781422768,
+      "s" : "781422768"
+    },
+    "bytes" : {
+      "n" : 400088457216,
+      "s" : "400088457216"
+    }
+  },
+  "logical_block_size" : 512,
+  "physical_block_size" : 4096,
+  "rotation_rate" : 0,
+  "form_factor" : {
+    "scsi_value" : 3,
+    "name" : "2.5 inches"
+  },
+  "serial_number" : "Z3F01KCM0000Z3F01KCM",
+  "device_type" : {
+    "scsi_value" : 0,
+    "name" : "disk"
+  },
+  "local_time" : {
+    "time_t" : 1535944526,
+    "asctime" : "Sun Sep  2 23:15:26 2018 EDT"
+  },
+  "smart_status" : {
+    "passed" : true
+  },
+  "temperature" : {
+    "current" : 34,
+    "drive_trip" : 60
+  },
+  "scsi_error_counter_log" : {
+    "read" : {
+      "errors_corrected_by_eccfast" : 0,
+      "errors_corrected_by_eccdelayed" : 0,
+      "errors_corrected_by_rereads_rewrites" : 0,
+      "total_errors_corrected" : 0,
+      "correction_algorithm_invocations" : 0,
+      "gigabytes_processed" : "10509.644",
+      "total_uncorrected_errors" : 0
+    },
+    "write" : {
+      "errors_corrected_by_eccfast" : 0,
+      "errors_corrected_by_eccdelayed" : 0,
+      "errors_corrected_by_rereads_rewrites" : 0,
+      "total_errors_corrected" : 0,
+      "correction_algorithm_invocations" : 0,
+      "gigabytes_processed" : "67517.170",
+      "total_uncorrected_errors" : 0
+    },
+    "verify" : {
+      "errors_corrected_by_eccfast" : 0,
+      "errors_corrected_by_eccdelayed" : 0,
+      "errors_corrected_by_rereads_rewrites" : 0,
+      "total_errors_corrected" : 0,
+      "correction_algorithm_invocations" : 0,
+      "gigabytes_processed" : "0.362",
+      "total_uncorrected_errors" : 0
+    }
+  }
+}

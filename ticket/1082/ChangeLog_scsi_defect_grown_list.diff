@@ -1,0 +1,14 @@
+diff --git a/ChangeLog b/ChangeLog
+index ad78669..35bf0c5 100644
+--- a/ChangeLog
++++ b/ChangeLog
+@@ -1,5 +1,9 @@
+ $Id$
+ 
++2018-09-04 Rick Chen <juihsiang.chen@gmail.com>
++
++	scsiprint.cpp: Add JSON values 'scsi_grown_defect_list'.
++
+ 2018-09-02  Christian Franke  <franke@computer.org>
+ 
+ 	dev_intelliprop.h: Fix copyright info.

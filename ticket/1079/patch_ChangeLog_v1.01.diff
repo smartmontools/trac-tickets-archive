@@ -1,0 +1,23 @@
+diff --git a/ChangeLog b/ChangeLog
+index 53b5b2e..c6e6fe7 100644
+--- a/ChangeLog
++++ b/ChangeLog
+@@ -1,5 +1,18 @@
+ $Id$
+ 
++2018-08-29  Rick Chen <juihsiang.chen@gmail.com>
++
++	Add SCSI information to json normal output as below:
++	- Drive trip temperature
++	- Elements in grown defect
++	- Number of hours powered up
++	- Number of minutes until next internal SMART test
++	- Error counter log read/write/verify
++	- Accumulated power on time (minutes)
++	- Number of background scan performed
++	- Number of background medium scans performed
++	- Percentage used endurance indicator
++
+ 2018-08-20  Christian Franke  <franke@computer.org>
+ 
+ 	Add missing license headers to some source files.

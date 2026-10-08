@@ -1,0 +1,160 @@
+diff --git a/scsiprint.cpp b/scsiprint.cpp
+index cca0dcc..16d6066 100644
+--- a/scsiprint.cpp
++++ b/scsiprint.cpp
+@@ -332,8 +332,10 @@ scsiGetSmartData(scsi_device * device, bool attribs)
+         }
+         if (255 == triptemp)
+             pout("Drive Trip Temperature:        <not available>\n");
+-        else
+-            pout("Drive Trip Temperature:        %d C\n", triptemp);
++        else {
++            jout("Drive Trip Temperature:        %d C\n", triptemp);
++            jglb["temperature"]["drive_trip"] = triptemp;
++        }
+     }
+     pout("\n");
+     return err;
+@@ -609,14 +611,18 @@ scsiPrintGrownDefectListLen(scsi_device * device)
+             print_off();
+             break;
+     }
+-    if (0 == dl_len)
+-        pout("Elements in grown defect list: 0\n\n");
++    if (0 == dl_len) {
++        jout("Elements in grown defect list: 0\n\n");
++        jglb["scsi_elements_grown_list"] = 0;
++    }
+     else {
+         if (0 == div)
+             pout("Grown defect list length=%u bytes [unknown "
+                  "number of elements]\n\n", dl_len);
+-        else
+-            pout("Elements in grown defect list: %u\n\n", dl_len / div);
++        else {
++            jout("Elements in grown defect list: %u\n\n", dl_len / div);
++            jglb["scsi_elements_grown_list"] = dl_len;
++        }
+     }
+ }
+ 
+@@ -704,6 +710,7 @@ scsiPrintSeagateFactoryLPage(scsi_device * device)
+     int num, pl, pc, len, err, good, bad;
+     unsigned char * ucp;
+     uint64_t ull;
++    static const char * jname = "format_status";
+ 
+     if ((err = scsiLogSense(device, SEAGATE_FACTORY_LPAGE, 0, gBuf,
+                             LOG_RESP_LEN, 0))) {
+@@ -758,10 +765,12 @@ scsiPrintSeagateFactoryLPage(scsi_device * device)
+         pl = ucp[3] + 4;
+         good = 0;
+         switch (pc) {
+-        case 0: pout("  number of hours powered up");
++        case 0: jout("  number of hours powered up");
++            jname = "scsi_hours_powered_up";
+             good = 1;
+             break;
+-        case 8: pout("  number of minutes until next internal SMART test");
++        case 8: jout("  number of minutes until next internal SMART test");
++            jname = "scsi_minutes_next_smart_test";
+             good = 1;
+             break;
+         default:
+@@ -781,10 +790,14 @@ scsiPrintSeagateFactoryLPage(scsi_device * device)
+                 k = (int)sizeof(ull);
+             }
+             ull = sg_get_unaligned_be(k, xp + 0);
+-            if (0 == pc)
+-                pout(" = %.2f\n", ull / 60.0 );
+-            else
+-                pout(" = %" PRIu64 "\n", ull);
++            if (0 == pc) {
++                jout(" = %.2f\n", ull / 60.0 );
++                jglb[jname] = strprintf("%.2f", ull / 60.0);
++            }
++            else {
++                jout(" = %" PRIu64 "\n", ull);
++                jglb[jname] = ull;
++            }
+         }
+         num -= pl;
+         ucp += pl;
+@@ -828,19 +841,31 @@ scsiPrintErrorCounterLog(scsi_device * device)
+              "algorithm      processed    uncorrected\n");
+         pout("           fast | delayed   rewrites  corrected  "
+              "invocations   [10^9 bytes]  errors\n");
++
++        json::ref jref = jglb["scsi_error_counter_log"];
+         for (int k = 0; k < 3; ++k) {
+             if (! found[k])
+                 continue;
+             ecp = &errCounterArr[k];
+             static const char * const pageNames[3] =
+                                  {"read:   ", "write:  ", "verify: "};
+-            pout("%s%8" PRIu64 " %8" PRIu64 "  %8" PRIu64 "  %8" PRIu64
++            static const char * jpageNames[3] =
++                                 {"read", "write", "verify"};
++            jout("%s%8" PRIu64 " %8" PRIu64 "  %8" PRIu64 "  %8" PRIu64
+                  "   %8" PRIu64, pageNames[k], ecp->counter[0],
+                  ecp->counter[1], ecp->counter[2], ecp->counter[3],
+                  ecp->counter[4]);
+             double processed_gb = ecp->counter[5] / 1000000000.0;
+-            pout("   %12.3f    %8" PRIu64 "\n", processed_gb,
++            jout("   %12.3f    %8" PRIu64 "\n", processed_gb,
+                  ecp->counter[6]);
++            // Error counter log info
++            jref[jpageNames[k]]["errors_corrected_by_eccfast"] = ecp->counter[0];
++            jref[jpageNames[k]]["errors_corrected_by_eccdelayed"] = ecp->counter[1];
++            jref[jpageNames[k]]["errors_corrected_by_rereads_rewrites"] = ecp->counter[2];
++            jref[jpageNames[k]]["total_errors_corrected"] = ecp->counter[3];
++            jref[jpageNames[k]]["correction_algorithm_invocations"] = ecp->counter[4];
++            jref[jpageNames[k]]["gigabytes_processed"] = strprintf("%.3f", processed_gb);
++            jref[jpageNames[k]]["total_uncorrected_errors"] = ecp->counter[6];
+         }
+     }
+     else
+@@ -1175,14 +1200,17 @@ scsiPrintBackgroundResults(scsi_device * device)
+             else
+                 pout("unknown [0x%x] background scan status value\n", j);
+             j = sg_get_unaligned_be32(ucp + 4);
+-            pout("    Accumulated power on time, hours:minutes %d:%02d "
++            jout("    Accumulated power on time, hours:minutes %d:%02d "
+                  "[%d minutes]\n", (j / 60), (j % 60), j);
+-            pout("    Number of background scans performed: %d,  ",
++            jglb["scsi_accumulated_power_on_time_minutes"] = j;
++            jout("    Number of background scans performed: %d,  ",
+                  sg_get_unaligned_be16(ucp + 10));
++            jglb["scsi_number_sacns_performed"] = sg_get_unaligned_be16(ucp + 10);
+             pout("scan progress: %.2f%%\n",
+                  (double)sg_get_unaligned_be16(ucp + 12) * 100.0 / 65536.0);
+-            pout("    Number of background medium scans performed: %d\n",
++            jout("    Number of background medium scans performed: %d\n",
+                  sg_get_unaligned_be16(ucp + 14));
++            jglb["scsi_number_medium_scans_performed"] = sg_get_unaligned_be16(ucp + 14);
+             break;
+         default:
+             if (noheader) {
+@@ -1274,7 +1302,8 @@ scsiPrintSSMedia(scsi_device * device)
+                 print_off();
+                 return FAILSMART;
+             }
+-            pout("Percentage used endurance indicator: %d%%\n", ucp[7]);
++            jout("Percentage used endurance indicator: %d%%\n", ucp[7]);
++            jglb["scsi_percentage_used_endurance_indicator"] = ucp[7];
+         default:        /* ignore other parameter codes */
+             break;
+         }
+@@ -2224,8 +2253,10 @@ scsiPrintTemp(scsi_device * device)
+     }
+     if (255 == trip)
+         pout("Drive Trip Temperature:        <not available>\n");
+-    else
+-        pout("Drive Trip Temperature:        %d C\n", trip);
++    else {
++        jout("Drive Trip Temperature:        %d C\n", trip);
++        jglb["temperature"]["drive_trip"] = trip;
++    }
+     pout("\n");
+ }
+ 

@@ -1,0 +1,137 @@
+diff --git a/scsiprint.cpp b/scsiprint.cpp
+index cca0dcc..755b6ba 100644
+--- a/scsiprint.cpp
++++ b/scsiprint.cpp
+@@ -333,7 +333,10 @@ scsiGetSmartData(scsi_device * device, bool attribs)
+         if (255 == triptemp)
+             pout("Drive Trip Temperature:        <not available>\n");
+         else
++        {
+             pout("Drive Trip Temperature:        %d C\n", triptemp);
++            jglb["temperature"]["drive_trip"] = triptemp;
++        }
+     }
+     pout("\n");
+     return err;
+@@ -610,13 +613,19 @@ scsiPrintGrownDefectListLen(scsi_device * device)
+             break;
+     }
+     if (0 == dl_len)
++    {
+         pout("Elements in grown defect list: 0\n\n");
++        jglb["elements_grown_list"] = 0;
++    }
+     else {
+         if (0 == div)
+             pout("Grown defect list length=%u bytes [unknown "
+                  "number of elements]\n\n", dl_len);
+         else
++        {
+             pout("Elements in grown defect list: %u\n\n", dl_len / div);
++            jglb["elements_grown_list"] = dl_len;
++        }
+     }
+ }
+ 
+@@ -704,6 +713,7 @@ scsiPrintSeagateFactoryLPage(scsi_device * device)
+     int num, pl, pc, len, err, good, bad;
+     unsigned char * ucp;
+     uint64_t ull;
++    static const char * jname = "format_status";
+ 
+     if ((err = scsiLogSense(device, SEAGATE_FACTORY_LPAGE, 0, gBuf,
+                             LOG_RESP_LEN, 0))) {
+@@ -759,9 +769,11 @@ scsiPrintSeagateFactoryLPage(scsi_device * device)
+         good = 0;
+         switch (pc) {
+         case 0: pout("  number of hours powered up");
++            jname = "hours_powered_up";
+             good = 1;
+             break;
+         case 8: pout("  number of minutes until next internal SMART test");
++            jname = "minutes_next_smart_test";
+             good = 1;
+             break;
+         default:
+@@ -782,9 +794,15 @@ scsiPrintSeagateFactoryLPage(scsi_device * device)
+             }
+             ull = sg_get_unaligned_be(k, xp + 0);
+             if (0 == pc)
++            {
+                 pout(" = %.2f\n", ull / 60.0 );
++                jglb[jname] = strprintf("%.2f", ull / 60.0);
++            }
+             else
++            {
+                 pout(" = %" PRIu64 "\n", ull);
++                jglb[jname] = ull;
++            }
+         }
+         num -= pl;
+         ucp += pl;
+@@ -828,12 +846,15 @@ scsiPrintErrorCounterLog(scsi_device * device)
+              "algorithm      processed    uncorrected\n");
+         pout("           fast | delayed   rewrites  corrected  "
+              "invocations   [10^9 bytes]  errors\n");
++
+         for (int k = 0; k < 3; ++k) {
+             if (! found[k])
+                 continue;
+             ecp = &errCounterArr[k];
+             static const char * const pageNames[3] =
+                                  {"read:   ", "write:  ", "verify: "};
++            static const char * jpageNames[3] =
++                                 {"read", "write", "verify"};
+             pout("%s%8" PRIu64 " %8" PRIu64 "  %8" PRIu64 "  %8" PRIu64
+                  "   %8" PRIu64, pageNames[k], ecp->counter[0],
+                  ecp->counter[1], ecp->counter[2], ecp->counter[3],
+@@ -841,6 +862,14 @@ scsiPrintErrorCounterLog(scsi_device * device)
+             double processed_gb = ecp->counter[5] / 1000000000.0;
+             pout("   %12.3f    %8" PRIu64 "\n", processed_gb,
+                  ecp->counter[6]);
++            // Error counter log info
++            jglb["error_counter_log"][jpageNames[k]]["errors_corrected_by_eccfast"] = ecp->counter[0];
++            jglb["error_counter_log"][jpageNames[k]]["errors_corrected_by_eccdelayed"] = ecp->counter[1];
++            jglb["error_counter_log"][jpageNames[k]]["errors_corrected_by_rereads_rewrites"] = ecp->counter[2];
++            jglb["error_counter_log"][jpageNames[k]]["total_errors_corrected"] = ecp->counter[3];
++            jglb["error_counter_log"][jpageNames[k]]["correction_algorithm_invocations"] = ecp->counter[4];
++            jglb["error_counter_log"][jpageNames[k]]["gigabytes_processed"] = strprintf("%.3f", processed_gb);
++            jglb["error_counter_log"][jpageNames[k]]["total_uncorrected_errors"] = ecp->counter[6];
+         }
+     }
+     else
+@@ -1177,12 +1206,15 @@ scsiPrintBackgroundResults(scsi_device * device)
+             j = sg_get_unaligned_be32(ucp + 4);
+             pout("    Accumulated power on time, hours:minutes %d:%02d "
+                  "[%d minutes]\n", (j / 60), (j % 60), j);
++            jglb["accumulated_power_on_time_minutes"] = j;
+             pout("    Number of background scans performed: %d,  ",
+                  sg_get_unaligned_be16(ucp + 10));
++            jglb["number_sacns_performed"] = sg_get_unaligned_be16(ucp + 10);
+             pout("scan progress: %.2f%%\n",
+                  (double)sg_get_unaligned_be16(ucp + 12) * 100.0 / 65536.0);
+             pout("    Number of background medium scans performed: %d\n",
+                  sg_get_unaligned_be16(ucp + 14));
++            jglb["number_medium_scans_performed"] = sg_get_unaligned_be16(ucp + 14);
+             break;
+         default:
+             if (noheader) {
+@@ -1275,6 +1307,7 @@ scsiPrintSSMedia(scsi_device * device)
+                 return FAILSMART;
+             }
+             pout("Percentage used endurance indicator: %d%%\n", ucp[7]);
++            jglb["percentage_used_endurance_indicator"] = ucp[7];
+         default:        /* ignore other parameter codes */
+             break;
+         }
+@@ -2225,7 +2258,10 @@ scsiPrintTemp(scsi_device * device)
+     if (255 == trip)
+         pout("Drive Trip Temperature:        <not available>\n");
+     else
++    {
+         pout("Drive Trip Temperature:        %d C\n", trip);
++        jglb["temperature"]["drive_trip"] = trip;
++    }
+     pout("\n");
+ }
+ 

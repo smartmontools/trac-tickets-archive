@@ -1,0 +1,16 @@
+diff --git a/ChangeLog b/ChangeLog
+index 53b5b2e..cbc62c0 100644
+--- a/ChangeLog
++++ b/ChangeLog
+@@ -1,5 +1,11 @@
+ $Id$
+ 
++2018-08-29  Rick Chen <juihsiang.chen@gmail.com>
++
++	Add SCSI information to json normal output as below:
++	- Drive trip temperature
++	- Error counter log read/write/verify
++
+ 2018-08-20  Christian Franke  <franke@computer.org>
+ 
+ 	Add missing license headers to some source files.
