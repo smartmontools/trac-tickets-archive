@@ -1,0 +1,45 @@
+From 5bfa0f7563058dd743ca934f2bdc287a5c794d01 Mon Sep 17 00:00:00 2001
+From: Jonghwan Choi <jhbird.choi@gmail.com>
+Date: Tue, 11 Oct 2016 14:37:06 +0900
+Subject: [PATCH] ataprint.cpp Print missing the Valid Value bit in
+ ACS-3 Device Statistics Flags
+
+Signed-off-by: Jonghwan Choi <jhbird.choi@gmail.com>
+---
+ ataprint.cpp | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/ataprint.cpp b/ataprint.cpp
+index 593e2cb..74cb09c 100644
+--- a/ataprint.cpp
++++ b/ataprint.cpp
+@@ -1539,10 +1539,11 @@ static void print_device_statistics_page(const unsigned char * data, int page)
+       valstr[0] = '-'; valstr[1] = 0;
+     }
+ 
+-    pout("0x%02x  0x%03x  %d %15s  %c%c%c%c %s\n",
++    pout("0x%02x  0x%03x  %d %15s  %c%c%c%c%c %s\n",
+       page, offset,
+       abs(size),
+       valstr,
++      ((flags & 0x40) ? 'V' : '-'), // valid value
+       ((flags & 0x20) ? 'N' : '-'), // normalized statistics
+       ((flags & 0x10) ? 'D' : '-'), // supports DSN (ACS-3)
+       ((flags & 0x08) ? 'C' : '-'), // monitored condition met (ACS-3)
+@@ -1650,9 +1651,10 @@ static bool print_device_statistics(ata_device * device, unsigned nsectors,
+       print_device_statistics_page(pages_buf.data() + offset, page);
+     }
+ 
+-    pout("%32s|||_ C monitored condition met\n", "");
+-    pout("%32s||__ D supports DSN\n", "");
+-    pout("%32s|___ N normalized value\n\n", "");
++    pout("%32s||||_ C monitored condition met\n", "");
++    pout("%32s|||__ D supports DSN\n", "");
++    pout("%32s||___ N normalized value\n", "");
++    pout("%32s|____ V valid value\n\n", "");
+   }
+ 
+   return true;
+-- 
+2.5.0
+

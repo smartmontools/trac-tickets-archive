@@ -1,0 +1,5 @@
+smartctl 6.5 2016-01-24 r4214 [x86_64-linux-4.4.0-45-generic] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Warning: DEFAULT entry missing in drive database file(s)
+Smartctl open device: /dev/sda failed: Permission denied

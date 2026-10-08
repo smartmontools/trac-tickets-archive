@@ -1,0 +1,30 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 4366)
++++ drivedb.h	(working copy)
+@@ -3155,6 +3155,25 @@
+     "ST6[468]022CF",
+     "", "", ""
+   },
++  { "WD Blue PC SSD",
++    "WDC WDS...[TG]1B0[AB].*", // it might be good for all WD SSD
++    "", "", // all extra attribute is raw48 until otherwise proven
++    "-v 165,raw48,Block_Erase_Count "
++    "-v 166,raw48,Minimum_PE_Cycles "
++    "-v 167,raw48,Max_Bad_Blocks_per_Die "
++    "-v 168,raw48,Maximum_PE_Cycles "
++    "-v 169,raw48,Total_Bad_Blocks "
++    "-v 170,raw48,Grown_Bad_Blocks "
++    "-v 171,raw48,Program_Fail_Count "
++    "-v 172,raw48,Erase_Fail_Count "
++    "-v 173,raw48,Average_PE_Cycles "
++    "-v 174,raw48,Unexpected_Power_Loss "
++    "-v 230,raw48,Media_Wearout_Indicator "
++    "-v 234,raw48,NAND_GB_Written_SLC "  //233 NAND GB Written TLC
++    "-v 241,raw48,Total_GB_Written "
++    "-v 242,raw48,Total_GB_Read "
++    "-v 244,raw48,Temp_Throttle_Status "
++  },
+   { "Western Digital Protege",
+   /* Western Digital drives with this comment all appear to use Attribute 9 in
+    * a  non-standard manner.  These entries may need to be updated when it

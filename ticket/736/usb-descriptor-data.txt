@@ -1,0 +1,165 @@
+
+    =========================== USB Port5 ===========================
+
+Connection Status        : 0x01 (Device is connected)
+Port Chain               : 3-5
+
+      ======================== USB Device ========================
+
+        +++++++++++++++++ Device Information ++++++++++++++++++
+Device Description       : USB Mass Storage Device
+Device Path              : \\?\usb#vid_1058&pid_259d#57583331413436374c4a3958#{a5dcbf10-6530-11d2-901f-00c04fb951ed}
+Device ID                : USB\VID_1058&PID_259D\57583331413436374C4A3958
+Driver KeyName           : {36fc9e60-c465-11cf-8056-444553540000}\0053 (GUID_DEVCLASS_USB)
+Driver                   : C:\Windows\system32\DRIVERS\USBSTOR.SYS (Version: 6.1.7601.19144  Date: 2016-02-03)
+Driver Inf               : C:\Windows\inf\usbstor.inf
+Legacy BusType           : PNPBus
+Class                    : USB
+Service                  : USBSTOR
+Enumerator               : USB
+Location Info            : Port_#0005.Hub_#0001
+Location IDs             : PCIROOT(0)#PCI(1400)#USBROOT(0)#USB(5)
+Container ID             : {745a4c10-79f1-59d8-8d0a-df43d181b50a}
+Manufacturer Info        : Compatible USB storage device
+Capabilities             : 0xD4 (Removable, UniqueID, RawDeviceOK, SurpriseRemovalOK)
+Address                  : 5
+Problem Code             : 0
+Power State              : D0 (supported: D0, D3, wake from D0)
+ Child Device 1          : Disk drive (Disk2)
+  Device ID              : USBSTOR\DISK&VEN_WD&PROD_MY_PASSPORT_259D&REV_1005\57583331413436374C4A3958&0
+  Class                  : DiskDrive
+ Child Device 2          : WD SES Device
+  Device ID              : USBSTOR\OTHER&VEN_WD&PROD_SES_DEVICE&REV_1005\57583331413436374C4A3958&1
+  Class                  : WDC_SAM
+
+        ---------------- Connection Information ---------------
+Connection Index         : 0x05 (5)
+Connection Status        : 0x01 (DeviceConnected)
+Current Config Value     : 0x01
+Device Address           : 0x06 (6)
+Is Hub                   : 0x00 (no)
+Number Of Open Pipes     : 0x02 (2)
+Device Bus Speed         : 0x03 (SuperSpeed)
+Pipe0ScheduleOffset      : 0x00 (0)
+Pipe1ScheduleOffset      : 0x00 (0)
+
+        ------------------ Device Descriptor ------------------
+bLength                  : 0x12 (18 bytes)
+bDescriptorType          : 0x01 (Device Descriptor)
+bcdUSB                   : 0x300 (USB Version 3.00)
+bDeviceClass             : 0x00 (defined by the interface descriptors)
+bDeviceSubClass          : 0x00
+bDeviceProtocol          : 0x00
+bMaxPacketSize0          : 0x09 (9 bytes)
+idVendor                 : 0x1058 (Western Digital Technologies, Inc.)
+idProduct                : 0x259D
+bcdDevice                : 0x1005
+iManufacturer            : 0x02 (String Descriptor 2)
+ Language 0x0409         : "Western Digital"
+iProduct                 : 0x03 (String Descriptor 3)
+ Language 0x0409         : "My Passport 259D"
+iSerialNumber            : 0x01 (String Descriptor 1)
+ Language 0x0409         : "57583331413436374C4A3958"
+bNumConfigurations       : 0x01
+
+        ------------------ String Descriptors -----------------
+             ------ String Descriptor 0 ------
+bLength                  : 0x04 (4 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language ID[0]           : 0x0409 (English - United States)
+             ------ String Descriptor 1 ------
+bLength                  : 0x32 (50 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "57583331413436374C4A3958"
+             ------ String Descriptor 2 ------
+bLength                  : 0x20 (32 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "Western Digital"
+             ------ String Descriptor 3 ------
+bLength                  : 0x22 (34 bytes)
+bDescriptorType          : 0x03 (String Descriptor)
+Language 0x0409          : "My Passport 259D"
+
+        -------------- Configuration Descriptor ---------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x02 (Configuration Descriptor)
+wTotalLength             : 0x002C (44 bytes)
+bNumInterfaces           : 0x01
+bConfigurationValue      : 0x01
+iConfiguration           : 0x00 (No String Descriptor)
+bmAttributes             : 0x80
+ D7: Reserved, set 1     : 0x01
+ D6: Self Powered        : 0x00 (no)
+ D5: Remote Wakeup       : 0x00 (no)
+ D4..0: Reserved, set 0  : 0x00
+MaxPower                 : 0x70 (896 mA)
+
+        ---------------- Interface Descriptor -----------------
+bLength                  : 0x09 (9 bytes)
+bDescriptorType          : 0x04 (Interface Descriptor)
+bInterfaceNumber         : 0x00
+bAlternateSetting        : 0x00
+bNumEndpoints            : 0x02 (2 Endpoints)
+bInterfaceClass          : 0x08 (Mass Storage)
+bInterfaceSubClass       : 0x06 (SCSI transparent command set)
+bInterfaceProtocol       : 0x50 (Bulk­Only Transport)
+iInterface               : 0x00 (No String Descriptor)
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x81 (Direction=IN  EndpointID=1)
+bmAttributes             : 0x02 (TransferType=Bulk)
+wMaxPacketSize           : 0x0400bInterval                : 0x00 (never NAKs)
+
+        ------ SuperSpeed Endpoint Companion Descriptor -------
+bLength                  : 0x06 (6 bytes)
+bDescriptorType          : 0x30
+bMaxBurst                : 0x0F (up to 16 packets per burst)
+bmAttributes             : 0x00 (The bulk endpoint does not define streams)
+wBytesPerInterval        : 0x0000
+
+        ----------------- Endpoint Descriptor -----------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x05 (Endpoint Descriptor)
+bEndpointAddress         : 0x02 (Direction=OUT  EndpointID=2)
+bmAttributes             : 0x02 (TransferType=Bulk)
+wMaxPacketSize           : 0x0400bInterval                : 0x00 (never NAKs)
+
+        ------ SuperSpeed Endpoint Companion Descriptor -------
+bLength                  : 0x06 (6 bytes)
+bDescriptorType          : 0x30
+bMaxBurst                : 0x0F (up to 16 packets per burst)
+bmAttributes             : 0x00 (The bulk endpoint does not define streams)
+wBytesPerInterval        : 0x0000
+
+        -------- Binary Object Store (BOS) Descriptor ---------
+bLength                  : 0x05 (5 bytes)
+bDescriptorType          : 0x0F
+wTotalLength             : 0x0016 (22 bytes)
+bNumDeviceCaps           : 0x02
+
+        ------------- USB 2.0 Extension Descriptor ------------
+bLength                  : 0x07 (7 bytes)
+bDescriptorType          : 0x10
+bDevCapabilityType       : 0x02 (USB 2.0 Extension)
+bmAttributes             : 0xF41E
+ LPMCapable              : 1 (Link Power Management protocol is supported)
+ BESLAndAlternateHIRD    : 1 (BESL & Alternate HIRD definitions are supported)
+ BaselineBESLValid       : 1 (valid)
+ DeepBESLValid           : 1 (valid)
+ BaselineBESL            : 4 (400 µs)
+ DeepBESL                : 15 (10000 µs)
+
+        ----- SuperSpeed USB Device Capability Descriptor -----
+bLength                  : 0x0A (10 bytes)
+bDescriptorType          : 0x10
+bDevCapabilityType       : 0x03
+bmAttributes             : 0x00
+ Bit 0 Reserved          : 0x00
+ Bit 1 LTM Capable       : 0x00 (no)
+ Bit 7:2 Reserved        : 0x00
+wSpeedsSupported         : 0x0E (Full-Speed, High-Speed, SuperSpeed)
+bFunctionalitySupport    : 0x01 (lowest speed with all the functionality is 'Full-Speed')
+bU1DevExitLat            : 0x0A   (less than 10 µs)
+wU2DevExitLat            : 0x07FF (less than 2047 µs)
