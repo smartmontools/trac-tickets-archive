@@ -1,0 +1,304 @@
+smartctl 6.5 2016-05-07 r4318 [x86_64-linux-4.8.8-200.fc24.x86_64] (local build)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     LITEON LMH-256V2M-11 MSATA 256GB
+Serial Number:    TW02HNG655085657B8PE
+Firmware Version: FM8110C
+User Capacity:    256,060,514,304 bytes [256 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Form Factor:      mSATA
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-2 (minor revision not indicated)
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Fri Jan 13 10:17:31 2017 CST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM level is:     128 (quiet), recommended: 254
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, frozen [SEC2]
+Write SCT (Get) Feature Control Command failed: scsi error badly formed scsi parameters
+Wt Cache Reorder: Unknown (SCT Feature Control command failed)
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x11) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (  10) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   PO----   100   100   000    -    0
+  9 Power_On_Hours          -O----   100   100   000    -    1262
+ 12 Power_Cycle_Count       PO----   100   100   000    -    86
+175 Program_Fail_Count_Chip PO----   100   100   000    -    0
+176 Erase_Fail_Count_Chip   PO----   100   100   000    -    0
+177 Wear_Leveling_Count     PO----   100   100   000    -    5
+178 Used_Rsvd_Blk_Cnt_Chip  PO----   100   100   000    -    0
+179 Used_Rsvd_Blk_Cnt_Tot   PO----   100   100   000    -    0
+180 Unused_Rsvd_Blk_Cnt_Tot PO----   100   100   000    -    146
+181 Program_Fail_Cnt_Total  PO----   100   100   000    -    0
+182 Erase_Fail_Count_Total  PO----   100   100   000    -    0
+187 Reported_Uncorrect      PO----   100   100   000    -    0
+195 Hardware_ECC_Recovered  PO----   100   100   000    -    0
+241 Total_LBAs_Written      PO----   100   100   000    -    36725
+242 Total_LBAs_Read         PO----   100   100   000    -    12857
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01       GPL,SL  R/O      1  Summary SMART error log
+0x02       GPL,SL  R/O      1  Comprehensive SMART error log
+0x03       GPL,SL  R/O      1  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06       GPL,SL  R/O      1  SMART self-test log
+0x07       GPL,SL  R/O      1  Extended self-test log
+0x09       GPL,SL  R/W      1  Selective self-test log
+0x10       GPL,SL  R/O      1  SATA NCQ Queued Error log
+0x11       GPL,SL  R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%      1262         -
+# 2  Short offline       Completed without error       00%         0         -
+
+Selective Self-tests/Logging not supported
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       0 (0x0000)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                  0 Celsius
+Power Cycle Max Temperature:          0 Celsius
+Lifetime    Max Temperature:          0 Celsius
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         0 minutes
+Temperature Logging Interval:        0 minutes
+Min/Max recommended Temperature:      0/100 Celsius
+Min/Max Temperature Limit:            0/100 Celsius
+Temperature History Size (Index):    128 (127)
+
+Index    Estimated Time   Temperature Celsius
+   0    2017-01-13 08:10     0  -
+   1    2017-01-13 08:11     ?  -
+   2    2017-01-13 08:12     0  -
+   3    2017-01-13 08:13    -118  -
+   4    2017-01-13 08:14     0  -
+   5    2017-01-13 08:15    56  *************************************
+   6    2017-01-13 08:16     8  -
+   7    2017-01-13 08:17    32  *************
+   8    2017-01-13 08:18     8  -
+   9    2017-01-13 08:19    32  *************
+  10    2017-01-13 08:20    64  ***************************************+
+  11    2017-01-13 08:21    32  *************
+  12    2017-01-13 08:22    65  ***************************************+
+  13    2017-01-13 08:23     8  -
+  14    2017-01-13 08:24    10  -
+  15    2017-01-13 08:25     0  -
+  16    2017-01-13 08:26    16  -
+  17    2017-01-13 08:27    24  *****
+  18    2017-01-13 08:28    64  ***************************************+
+  19    2017-01-13 08:29     0  -
+  20    2017-01-13 08:30     0  -
+  21    2017-01-13 08:31    -124  -
+  22    2017-01-13 08:32     0  -
+  23    2017-01-13 08:33     1  -
+  24    2017-01-13 08:34     0  -
+  25    2017-01-13 08:35    -104  -
+  26    2017-01-13 08:36     0  -
+  27    2017-01-13 08:37     0  -
+  28    2017-01-13 08:38    34  ***************
+  29    2017-01-13 08:39    -126  -
+  30    2017-01-13 08:40     0  -
+  31    2017-01-13 08:41     0  -
+  32    2017-01-13 08:42     2  -
+  33    2017-01-13 08:43    -126  -
+  34    2017-01-13 08:44     0  -
+  35    2017-01-13 08:45     2  -
+  36    2017-01-13 08:46     2  -
+  37    2017-01-13 08:47    -112  -
+  38    2017-01-13 08:48    64  ***************************************+
+  39    2017-01-13 08:49     0  -
+  40    2017-01-13 08:50     0  -
+  41    2017-01-13 08:51    19  -
+  42    2017-01-13 08:52     0  -
+  43    2017-01-13 08:53     4  -
+  44    2017-01-13 08:54     0  -
+  45    2017-01-13 08:55    66  ***************************************+
+  46    2017-01-13 08:56     0  -
+  47    2017-01-13 08:57     0  -
+  48    2017-01-13 08:58     0  -
+  49    2017-01-13 08:59    34  ***************
+  50    2017-01-13 09:00     0  -
+  51    2017-01-13 09:01    56  *************************************
+  52    2017-01-13 09:02     0  -
+  53    2017-01-13 09:03     8  -
+  54    2017-01-13 09:04     0  -
+  55    2017-01-13 09:05     2  -
+  56    2017-01-13 09:06     2  -
+  57    2017-01-13 09:07     0  -
+  58    2017-01-13 09:08     0  -
+  59    2017-01-13 09:09    37  ******************
+  60    2017-01-13 09:10    64  ***************************************+
+  61    2017-01-13 09:11    68  ***************************************+
+  62    2017-01-13 09:12     0  -
+  63    2017-01-13 09:13    65  ***************************************+
+  64    2017-01-13 09:14    64  ***************************************+
+  65    2017-01-13 09:15    95  ***************************************+
+  66    2017-01-13 09:16     0  -
+  67    2017-01-13 09:17    69  ***************************************+
+  68    2017-01-13 09:18     ?  -
+  69    2017-01-13 09:19    -126  -
+  70    2017-01-13 09:20     0  -
+  71    2017-01-13 09:21     2  -
+  72    2017-01-13 09:22     0  -
+  73    2017-01-13 09:23     1  -
+  74    2017-01-13 09:24     0  -
+  75    2017-01-13 09:25     0  -
+  76    2017-01-13 09:26     0  -
+  77    2017-01-13 09:27    44  *************************
+  78    2017-01-13 09:28     0  -
+  79    2017-01-13 09:29     0  -
+  80    2017-01-13 09:30     ?  -
+  81    2017-01-13 09:31     ?  -
+  82    2017-01-13 09:32     0  -
+  83    2017-01-13 09:33     9  -
+  84    2017-01-13 09:34     0  -
+  85    2017-01-13 09:35    -74  -
+  86    2017-01-13 09:36     0  -
+  87    2017-01-13 09:37    -64  -
+  88    2017-01-13 09:38     0  -
+  89    2017-01-13 09:39     4  -
+  90    2017-01-13 09:40     0  -
+  91    2017-01-13 09:41     ?  -
+  92    2017-01-13 09:42     ?  -
+  93    2017-01-13 09:43     2  -
+  94    2017-01-13 09:44     0  -
+ ...    ..(  3 skipped).    ..  -
+  98    2017-01-13 09:48     0  -
+  99    2017-01-13 09:49     1  -
+ 100    2017-01-13 09:50     0  -
+ 101    2017-01-13 09:51     8  -
+ 102    2017-01-13 09:52     0  -
+ 103    2017-01-13 09:53     4  -
+ 104    2017-01-13 09:54     0  -
+ 105    2017-01-13 09:55     0  -
+ 106    2017-01-13 09:56     8  -
+ 107    2017-01-13 09:57     5  -
+ 108    2017-01-13 09:58    65  ***************************************+
+ 109    2017-01-13 09:59     ?  -
+ 110    2017-01-13 10:00     0  -
+ 111    2017-01-13 10:01    -127  -
+ 112    2017-01-13 10:02    32  *************
+ 113    2017-01-13 10:03     1  -
+ 114    2017-01-13 10:04     1  -
+ 115    2017-01-13 10:05    24  *****
+ 116    2017-01-13 10:06     0  -
+ 117    2017-01-13 10:07    -120  -
+ 118    2017-01-13 10:08     0  -
+ 119    2017-01-13 10:09     ?  -
+ 120    2017-01-13 10:10     8  -
+ 121    2017-01-13 10:11    -95  -
+ 122    2017-01-13 10:12     0  -
+ 123    2017-01-13 10:13    69  ***************************************+
+ 124    2017-01-13 10:14     0  -
+ 125    2017-01-13 10:15     0  -
+ 126    2017-01-13 10:16     0  -
+ 127    2017-01-13 10:17    96  ***************************************+
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 2) ==
+0x01  0x008  4              86  ---  Lifetime Power-On Resets
+0x01  0x010  4            1262  ---  Power-on Hours
+0x01  0x018  6      2406834551  ---  Logical Sectors Written
+0x01  0x020  6        42617494  ---  Number of Write Commands
+0x01  0x028  6       842641526  ---  Logical Sectors Read
+0x01  0x030  6        10476817  ---  Number of Read Commands
+0x02  =====  =               =  ===  == Free-Fall Statistics (empty) ==
+0x03  =====  =               =  ===  == Rotating Media Statistics (empty) ==
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4              19  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              55  ---  Current Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4             219  ---  Number of Hardware Resets
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               0  ---  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x0008  2            0  Device-to-host non-data FIS retries
+0x0009  2            0  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  2            5  Device-to-host register FISes sent due to a COMRESET
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+
