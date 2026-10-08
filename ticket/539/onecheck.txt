@@ -1,0 +1,21 @@
+smartd 6.3 2014-07-26 r3976 [x86_64-w64-mingw32-win7-sp1] (sf-6.3-1)
+Copyright (C) 2002-14, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Opened configuration file C:/Program Files/smartd/smartd.conf
+Configuration file C:/Program Files/smartd/smartd.conf was parsed, found DEVICESCAN, scanning devices
+Device: /dev/sda, opened
+Device: /dev/sda, ST500DM002-1BD142, S/N:Z2AEX5NZ, WWN:5-000c50-03f0dee23, FW:KC44, 500 GB
+Device: /dev/sda, found in smartd database: Seagate Barracuda 7200.14 (AF)
+Device: /dev/sda, is SMART capable. Adding to "monitor" list.
+Device: /dev/csmi0,0, opened
+Device: /dev/csmi0,0, ST500DM002-1BD142, S/N:Z2AEX5NZ, WWN:5-000c50-03f0dee23, FW:KC44, 500 GB
+Device: /dev/csmi0,0, found in smartd database: Seagate Barracuda 7200.14 (AF)
+Device: /dev/csmi0,0, is SMART capable. Adding to "monitor" list.
+Device: /dev/csmi0,5, opened
+Device: /dev/csmi0,5, packet devices [this device CD/DVD] not SMART capable
+Unable to register ATA device /dev/csmi0,5 at line 5 of file C:/Program Files/smartd/smartd.conf
+Monitoring 2 ATA and 0 SCSI devices
+Device: /dev/sda, opened ATA device
+Device: /dev/csmi0,0, opened ATA device
+Started with '-q onecheck' option. All devices sucessfully checked once.
+smartd is exiting (exit status 0)

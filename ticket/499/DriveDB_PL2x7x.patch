@@ -1,0 +1,36 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 4011)
++++ drivedb.h	(working copy)
+@@ -3276,12 +3276,30 @@
+     "",
+     "-d usbjmicron,0" // Port number is required
+   },
+-  { "USB: ; Prolific PL2773", // USB->SATA
++  { "USB: ; Prolific PL2571", // USB2.0->SATA_II
++    "0x067b:0x2571",
++    "",
++    "",
++    "-d usbprolific"
++  },
++  { "USB: ; Prolific PL2771", // USB3.0->SATA_II
++    "0x067b:0x2771",
++    "",
++    "",
++    "-d usbprolific"
++  },
++  { "USB: ; Prolific PL2773", // USB3.0->SATA_II
+     "0x067b:0x2773",
+     "",
+     "",
+     "-d usbprolific"
+   },
++  { "USB: ; Prolific PL2775", // USB3.0->2xSATA_II
++    "0x067b:0x2775",
++    "",
++    "",
++    "-d usbprolific"
++  },
+   { "USB: ; Prolific PL3507", // USB+IEE1394->PATA
+     "0x067b:0x3507",
+     "", // 0x0001

@@ -1,0 +1,60 @@
+D:\temp\smartmontools\smartmontools650\bin>TestStandby.cmd
+
+SET DISK SLEEP TIMEOUT TO 1 MINUTE
+
+Press Y when disk "sdc" is in standby (OFF)
+
+21:53:55  0:ON  1:OFF 2:OFF 3:OFF	<-- disk 2 is spun off (OK)
+21:54:00  0:ON  1:OFF 2:OFF 3:OFF	<-- "
+21:54:05  0:ON  1:OFF 2:OFF 3:OFF	<-- "
+
+smartctl 6.5 2016-05-01 r4314 [x86_64-w64-mingw32-win7-sp1] (daily-20160501)
+Copyright (C) 2002-16, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ \\.\PhysicalDrive2: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "(null)"
+    Product:  "ST31500341AS"
+    Revision: "CC1H"
+    Removable: No
+    BusType:   0x0b
+\\.\PhysicalDrive2: successfully opened (without admin rights)
+  GetDevicePowerState() succeeded, state=1
+\\.\PhysicalDrive2: successfully opened
+
+REPORT-IOCTL: Device=sdc Command=CHECK POWER MODE
+ Input:   FR=...., SC=...., LL=...., LM=...., LH=...., DEV=...., CMD=0xe5
+  GetDevicePowerState() succeeded, state=1
+  IOCTL_ATA_PASS_THROUGH suceeded, bytes returned: 48
+    Input : CMD=0xe5, FR=0x00, SC=0x00, SN=0x00, CL=0x00, CH=0x00, SEL=0x00
+    Output: STS=0x50,ERR=0x00, SC=0x00, SN=0x00, CL=0x00, CH=0x00, SEL=0xe0
+ [Duration: 0.013s]
+ Output: ERR=0x00, SC=0x00, LL=0x00, LM=0x00, LH=0x00, DEV=0xe0, STS=0x50
+REPORT-IOCTL: Device=sdc Command=CHECK POWER MODE returned 0
+Sector Count Register (BASE-16): 00
+Device is in STANDBY mode, exit(2)
+
+WATCH FOR DISK SPIN ON AND OFF
+
+Press Y to finish
+
+21:54:08  0:ON  1:OFF 2:ON  3:OFF	<-- disk 2 is spun off (Windows thinks it is ON)
+21:54:13  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:18  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:23  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:29  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:34  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:39  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:44  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:49  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:54:54  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:55:00  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:55:05  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:55:10  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:55:15  0:ON  1:OFF 2:ON  3:OFF	<-- "
+21:55:20  0:ON  1:OFF 2:OFF 3:OFF	<-- disk 2 is spun on
+21:55:25  0:ON  1:OFF 2:OFF 3:OFF	<-- "
+21:55:31  0:ON  1:OFF 2:OFF 3:OFF	<-- disk 2 is spun off
+21:55:36  0:ON  1:OFF 2:OFF 3:OFF	<-- "
+
+RESET DISK SLEEP TIMER TO ITS NORMAL VALUE
