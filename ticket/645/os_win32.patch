@@ -1,0 +1,624 @@
+Index: os_win32.cpp
+===================================================================
+diff --git a/trunk/smartmontools/os_win32.cpp b/trunk/smartmontools/os_win32.cpp
+--- a/trunk/smartmontools/os_win32.cpp	(revision 4109)
++++ b/trunk/smartmontools/os_win32.cpp	(working copy)
+@@ -415,7 +415,512 @@
+ 
+ 
+ /////////////////////////////////////////////////////////////////////////////
++// Highpoint support
+ 
++#pragma pack(push, 1)
++
++typedef struct _TIME_RECORD {
++  uint32_t        seconds:6;      /* 0 - 59 */
++  uint32_t        minutes:6;      /* 0 - 59 */
++  uint32_t        month:4;        /* 1 - 12 */
++  uint32_t        hours:6;        /* 0 - 59 */
++  uint32_t        day:5;          /* 1 - 31 */
++  uint32_t        year:5;         /* 0=2000, 31=2031 */
++} TIME_RECORD;
++
++typedef struct _CONTROLLER_INFO_V2 {
++  uint8_t ChipType;                    /* chip type */
++  uint8_t InterruptLevel;              /* IRQ level */
++  uint8_t NumBuses;                    /* bus count */
++  uint8_t ChipFlags;
++
++  uint8_t szProductID[36];/* product name */
++  uint8_t szVendorID[36]; /* vender name */
++
++  uint32_t GroupId;                    /* low 32bit of vbus pointer the controller belongs
++                                        * the master controller has CHIP_MASTER flag set*/
++  uint8_t  pci_tree;
++  uint8_t  pci_bus;
++  uint8_t  pci_device;
++  uint8_t  pci_function;
++
++  uint32_t ExFlags;
++} CONTROLLER_INFO_V2, *PCONTROLLER_INFO_V2;
++
++typedef struct _HPT_ARRAY_INFO_V4 {
++  uint8_t      Name[16];/* array name */
++  uint8_t      Description[64];        /* array description */
++  uint8_t      CreateManager[16];      /* who created it */
++  TIME_RECORD CreateTime;             /* when created it */
++
++  uint8_t      ArrayType;              /* array type */
++  uint8_t      BlockSizeShift;         /* stripe size */
++  uint8_t      nDisk;                  /* member count: Number of ID in Members[] */
++  uint8_t      SubArrayType;
++
++  uint32_t     Flags;                  /* working flags, see ARRAY_FLAG_XXX */
++
++  uint32_t     RebuildingProgress;
++  uint64_t     RebuiltSectors; /* rebuilding point (LBA) for single member */
++
++  uint32_t    TransformSource;
++  uint32_t    TransformTarget;   /* destination device ID */
++  uint32_t     TransformingProgress;
++  uint32_t     Signature;          /* persistent identification*/
++  uint8_t       SectorSizeShift; /*sector size = 512B<<SectorSizeShift*/
++  uint8_t       reserved2[7];
++  uint64_t     Critical_Members;
++  uint32_t     Members[64];  /* member array/disks */
++} HPT_ARRAY_INFO_V4, *PHPT_ARRAY_INFO_V4;
++
++typedef struct _IDENTIFY_DATA2 {
++  uint16_t GeneralConfiguration;
++  uint16_t NumberOfCylinders;
++  uint16_t Reserved1;
++  uint16_t NumberOfHeads;
++  uint16_t UnformattedBytesPerTrack;
++  uint16_t UnformattedBytesPerSector;
++  uint8_t  SasAddress[8];
++  uint16_t SerialNumber[10];
++  uint16_t BufferType;
++  uint16_t BufferSectorSize;
++  uint16_t NumberOfEccBytes;
++  uint16_t FirmwareRevision[4];
++  uint16_t ModelNumber[20];
++  uint8_t  MaximumBlockTransfer;
++  uint8_t  VendorUnique2;
++  uint16_t DoubleWordIo;
++  uint16_t Capabilities;
++  uint16_t Reserved2;
++  uint8_t  VendorUnique3;
++  uint8_t  PioCycleTimingMode;
++  uint8_t  VendorUnique4;
++  uint8_t  DmaCycleTimingMode;
++  uint16_t TranslationFieldsValid;
++  uint16_t NumberOfCurrentCylinders;
++  uint16_t NumberOfCurrentHeads;
++  uint16_t CurrentSectorsPerTrack;
++  uint32_t CurrentSectorCapacity;
++  uint16_t CurrentMultiSectorSetting;
++  uint32_t UserAddressableSectors;
++  uint8_t  SingleWordDMASupport;
++  uint8_t  SingleWordDMAActive;
++  uint8_t  MultiWordDMASupport;
++  uint8_t  MultiWordDMAActive;
++  uint8_t  AdvancedPIOModes;
++  uint8_t  Reserved4;
++  uint16_t MinimumMWXferCycleTime;
++  uint16_t RecommendedMWXferCycleTime;
++  uint16_t MinimumPIOCycleTime;
++  uint16_t MinimumPIOCycleTimeIORDY;
++  uint16_t Reserved5[2];
++  uint16_t ReleaseTimeOverlapped;
++  uint16_t ReleaseTimeServiceCommand;
++  uint16_t MajorRevision;
++  uint16_t MinorRevision;
++} __attribute__((packed)) IDENTIFY_DATA2, *PIDENTIFY_DATA2;
++
++typedef struct _DEVICE_INFO_V2 {
++  uint8_t   ControllerId;          /* controller id */
++  uint8_t   PathId;                /* bus */
++  uint8_t   TargetId;              /* id */
++  uint8_t   DeviceModeSetting;     /* Current Data Transfer mode: 0-4 PIO 0-4 */
++                                   /* 5-7 MW DMA0-2, 8-13 UDMA0-5             */
++  uint8_t   DeviceType;            /* device type */
++  uint8_t   UsableMode;            /* highest usable mode */
++
++#ifdef __BIG_ENDIAN_BITFIELD
++  uint8_t   NCQEnabled: 1;
++  uint8_t   NCQSupported: 1;
++  uint8_t   TCQEnabled: 1;
++  uint8_t   TCQSupported: 1;
++  uint8_t   WriteCacheEnabled: 1;
++  uint8_t   WriteCacheSupported: 1;
++  uint8_t   ReadAheadEnabled: 1;
++  uint8_t   ReadAheadSupported: 1;
++  uint8_t   reserved6: 6;
++  uint8_t   SpinUpMode: 2;
++#else
++  uint8_t   ReadAheadSupported: 1;
++  uint8_t   ReadAheadEnabled: 1;
++  uint8_t   WriteCacheSupported: 1;
++  uint8_t   WriteCacheEnabled: 1;
++  uint8_t   TCQSupported: 1;
++  uint8_t   TCQEnabled: 1;
++  uint8_t   NCQSupported: 1;
++  uint8_t   NCQEnabled: 1;
++  uint8_t   SpinUpMode: 2;
++  uint8_t   reserved6: 6;
++#endif
++
++  uint32_t     Flags;              /* working flags, see DEVICE_FLAG_XXX */
++
++  IDENTIFY_DATA2 IdentifyData;    /* Identify Data of this device */
++
++  uint64_t TotalFree;
++  uint64_t MaxFree;
++  uint64_t BadSectors;
++  uint32_t ParentArrays[8];
++
++  //#define DEVICE_FLAG_SATA            0x00000010 /* SATA or SAS device */
++  //#define DEVICE_FLAG_ON_PM_PORT      0x00000020 /* PM port */
++  //#define DEVICE_FLAG_SAS             0x00000040 /* SAS device */
++  // #define DEVICE_FLAG_SSD			0x00000100 /* SSD device */   ////////////////////////////////////////
++
++  bool is_sata() const { return 0 != (Flags & 0x00000010); }
++  bool is_sas() const { return 0 != (Flags & 0x00000040); }
++  bool is_ssd() const { return 0 != (Flags & 0x00000100); }
++}
++__attribute__((packed)) DEVICE_INFO_V2, *PDEVICE_INFO_V2, DEVICE_INFO_V3, *PDEVICE_INFO_V3;
++
++typedef struct _LOGICAL_DEVICE_INFO_V4 {
++  uint32_t    dwSize;
++  uint8_t      revision;
++  uint8_t      reserved[7];
++
++  uint8_t      Type;                   /* LDT_ARRAY or LDT_DEVICE */
++  uint8_t      CachePolicy;            /* refer to CACHE_POLICY_xxx */
++  uint8_t      VBusId;                 /* vbus sequence in vbus_list */
++  uint8_t      TargetId;               /* OS target id. Value 0xFF is invalid */
++                                       /* OS disk name: HPT DISK $VBusId_$TargetId */
++  uint64_t     Capacity;               /* array capacity */
++  uint32_t    ParentArray;            /* for physical device, don't use this field.
++                                       * use ParentArrays field in DEVICE_INFO_V2 instead.
++                                       */
++  uint32_t     TotalIOs;
++  uint32_t     TobalMBs;
++  uint32_t     IOPerSec;
++  uint32_t     MBPerSec;
++
++  union {
++    HPT_ARRAY_INFO_V4 array;
++    DEVICE_INFO_V3 device;
++  } __attribute__((packed)) u;
++}
++__attribute__((packed)) LOGICAL_DEVICE_INFO_V4, *PLOGICAL_DEVICE_INFO_V4;
++
++typedef struct _IDE_PASS_THROUGH_HEADER {
++  uint32_t idDisk;             /* disk ID */
++  uint8_t     bFeaturesReg;     /* feature register */
++  uint8_t     bSectorCountReg;  /* IDE sector count register. */
++  uint8_t     bLbaLowReg;       /* IDE LBA low value. */
++  uint8_t     bLbaMidReg;       /* IDE LBA mid register. */
++  uint8_t     bLbaHighReg;      /* IDE LBA high value. */
++  uint8_t     bDriveHeadReg;    /* IDE drive/head register. */
++  uint8_t     bCommandReg;      /* Actual IDE command. Checked for validity by driver. */
++  uint8_t     nSectors;         /* data size in sectors, if the command has data transfer */
++  uint8_t     protocol;         /* IO_COMMAND_(READ,WRITE) or zero for non-DATA */
++  uint8_t     reserve[3];
++  #define IDE_PASS_THROUGH_buffer(p) ((uint8_t *)(p) + sizeof(IDE_PASS_THROUGH_HEADER))
++  /* uint8_t     DataBuffer[0]; */
++
++  //#define IO_COMMAND_READ     1
++  //#define IO_COMMAND_WRITE    2
++  void setNone() { protocol = 0; }
++  void setRead() { protocol = 1; }
++  void setWrite() { protocol = 2; }
++}
++IDE_PASS_THROUGH_HEADER, *PIDE_PASS_THROUGH_HEADER;
++
++typedef struct _HPT_SCSI_PASSTHROUGH_IN {
++  uint32_t idDisk;
++  uint8_t   protocol;
++  uint8_t   reserve1;
++  uint8_t   reserve2;
++  uint8_t   cdbLength;
++  uint8_t   cdb[16];
++  uint32_t  dataLength;
++  /* data follows, if any */
++
++  //#define IO_COMMAND_READ     1
++  //#define IO_COMMAND_WRITE    2
++  void setNone() { protocol = 0; }
++  void setRead() { protocol = 1; }
++  void setWrite() { protocol = 2; }
++}
++HPT_SCSI_PASSTHROUGH_IN, *PHPT_SCSI_PASSTHROUGH_IN;
++
++typedef struct _HPT_SCSI_PASSTHROUGH_OUT {
++  uint8_t   scsiStatus;
++  uint8_t   reserve1;
++  uint8_t   reserve2;
++  uint8_t   reserve3;
++  uint32_t  dataLength;
++  /* data/sense follows if any */
++}
++HPT_SCSI_PASSTHROUGH_OUT, *PHPT_SCSI_PASSTHROUGH_OUT;
++
++#pragma pack(pop)
++
++class hptdev
++{
++public:
++  HMODULE hlib;
++  
++  hptdev() {
++    hlib = NULL;
++  }
++  ~hptdev() {
++    if (hlib) {
++      FreeLibrary(hlib);
++      hlib = NULL;
++    }
++  }
++  
++  uint32_t get_version() {
++    if (hlib == NULL)
++      hlib = LoadLibrary("hptdev.dll");
++    if (hlib) {
++      typedef uint32_t (* func_t)(void);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_get_version");
++      if (pfn != NULL) {
++        return pfn();
++      }
++    }
++    return 0;
++  }
++  
++  int get_controller_count() {
++    if (hlib) {
++      typedef int (* func_t)(void);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_get_controller_count");
++      if (pfn != NULL) {
++        return pfn();
++      }
++    }
++    return 0;
++  }
++  
++  int get_physical_devices(uint32_t *pIds, int nMaxCount) {
++    if (hlib) {
++      typedef int (* func_t)(uint32_t *pIds, int nMaxCount);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_get_physical_devices");
++      if (pfn != NULL) {
++        return pfn(pIds, nMaxCount);
++      }
++    }
++    return 0;
++  }
++  
++  int get_controller_info_v2(int id, PCONTROLLER_INFO_V2 pInfo) {
++    if (hlib) {
++      typedef int (* func_t)(int id, PCONTROLLER_INFO_V2 pInfo);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_get_controller_info_v2");
++      if (pfn != NULL) {
++        return pfn(id, pInfo);
++      }
++    }
++    return -1;
++  }
++  
++  int get_device_info_v4(uint32_t id, PLOGICAL_DEVICE_INFO_V4 pInfo) {
++    if (hlib) {
++      typedef int (* func_t)(uint32_t id, PLOGICAL_DEVICE_INFO_V4 pInfo);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_get_device_info_v4");
++      if (pfn != NULL) {
++        return pfn(id, pInfo);
++      }
++    }
++    return -1;
++  }
++
++  int ide_pass_through(PIDE_PASS_THROUGH_HEADER p) {
++    if (hlib) {
++      typedef int (* func_t)(PIDE_PASS_THROUGH_HEADER p);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_ide_pass_through");
++      if (pfn != NULL) {
++        return pfn(p);
++      }
++    }
++    return -1;
++  }
++  
++  int scsi_passthrough(PHPT_SCSI_PASSTHROUGH_IN in, uint32_t insize,
++    PHPT_SCSI_PASSTHROUGH_OUT out, uint32_t outsize
++  ) {
++    if (hlib) {
++      typedef int (* func_t)(PHPT_SCSI_PASSTHROUGH_IN in, uint32_t insize,
++        PHPT_SCSI_PASSTHROUGH_OUT out, uint32_t outsize);
++      func_t pfn = (func_t)GetProcAddress(hlib, "hpt_scsi_passthrough");
++      if (pfn != NULL) {
++        return pfn(in, insize, out, outsize);
++      }
++    }
++    return -1;
++  }
++  
++};
++
++static hptdev hptIf;
++
++class win_hpt_ata_device
++: virtual public /*extends*/ smart_device,
++  virtual public /*implements*/ ata_device
++{
++protected:
++  int idDisk;
++  
++public:
++  win_hpt_ata_device(smart_interface * intf, const char * dev_name,
++    const char * req_type)
++  : smart_device(intf, dev_name, "hpt-ata", req_type)
++  {
++    if (sscanf(dev_name, "/dev/hpt%u", &idDisk) == 1) {
++      // ok
++    }
++    else if (sscanf(dev_name, "hpt%u", &idDisk) == 1) {
++      // ok
++    }
++    else idDisk = -1; // invalid
++  }
++
++  virtual bool open() { return is_open(); }
++
++  virtual bool close() { return true; }
++
++  virtual bool is_open() const { return hptIf.get_version() != 0 && idDisk >= 0; }
++  
++  virtual bool ata_pass_through(const ata_cmd_in & in, ata_cmd_out & out) {
++    // [IDE_PASS_THROUGH_HEADER in]
++    // +[in buff] if write
++    // +[IDE_PASS_THROUGH_HEADER out]
++    // +[out buff] if read
++    
++    const bool readdata = in.direction == ata_cmd_in::data_in;
++    const bool writedata = in.direction == ata_cmd_in::data_out;
++    const size_t cbInDat = writedata ? in.size : 0;
++    const size_t cbInAll = sizeof(IDE_PASS_THROUGH_HEADER) +cbInDat;
++    const size_t cbOutDat = readdata ? in.size : 0;
++    const size_t cbOutAll = sizeof(IDE_PASS_THROUGH_HEADER) +cbOutDat;
++    uint8_t *blk = reinterpret_cast<uint8_t *>(malloc(cbInAll +cbOutAll));
++    if (!blk) {
++      return set_err(ENOMEM, "malloc failure");
++    }
++    memset(blk, -1, cbInAll +cbOutAll);
++    
++    PIDE_PASS_THROUGH_HEADER thruIn = reinterpret_cast<PIDE_PASS_THROUGH_HEADER>(blk);
++    void *datIn = blk +sizeof(IDE_PASS_THROUGH_HEADER);
++    PIDE_PASS_THROUGH_HEADER thruOut = reinterpret_cast<PIDE_PASS_THROUGH_HEADER>(blk +cbInAll);
++    void *datOut = blk +cbInAll +sizeof(IDE_PASS_THROUGH_HEADER);
++    
++    thruIn->idDisk = idDisk;
++    thruIn->bCommandReg = in.in_regs.command;
++    thruIn->bFeaturesReg = in.in_regs.features;
++    thruIn->bLbaLowReg = in.in_regs.lba_low;
++    thruIn->bLbaMidReg = in.in_regs.lba_mid;
++    thruIn->bLbaHighReg = in.in_regs.lba_high;
++    thruIn->bDriveHeadReg = in.in_regs.device;
++    thruIn->bSectorCountReg = in.in_regs.sector_count;
++    if (false) { }
++    else if (readdata) thruIn->setRead();
++    else if (writedata) thruIn->setWrite();
++    else thruIn->setNone();
++    thruIn->nSectors = in.in_regs.sector_count;
++    
++    memcpy(datIn, in.buffer, cbInDat);
++    
++    bool ok = false;
++    int ret = hptIf.ide_pass_through(thruIn);
++    if (ret == 0) {
++      ata_out_regs_48bit &r = out.out_regs;
++      r.error           = thruOut->bFeaturesReg;
++      r.sector_count_16 = thruOut->bSectorCountReg;
++      r.lba_low_16      = thruOut->bLbaLowReg;
++      r.lba_mid_16      = thruOut->bLbaMidReg;
++      r.lba_high_16     = thruOut->bLbaHighReg;
++      r.device          = thruOut->bDriveHeadReg;
++      r.status          = thruOut->bCommandReg;
++      memcpy(in.buffer, datOut, cbOutDat);
++      ok = true;
++    }
++    else {
++      set_err(EIO);
++    }
++    free(blk);
++    return ok; 
++  }
++};
++
++class win_hpt_scsi_device
++: virtual public /*extends*/ smart_device,
++  virtual public /*extends*/ scsi_device
++{
++protected:
++  int idDisk;
++  
++public:
++  win_hpt_scsi_device(smart_interface * intf, const char * dev_name,
++    const char * req_type)
++  : smart_device(intf, dev_name, "hpt-scsi", req_type)
++  {
++    if (sscanf(dev_name, "/dev/hpt%u", &idDisk) == 1) {
++      // ok
++    }
++    else if (sscanf(dev_name, "hpt%u", &idDisk) == 1) {
++      // ok
++    }
++    else idDisk = -1; // invalid
++  }
++  
++  virtual bool open() { return is_open(); }
++
++  virtual bool close() { return true; }
++
++  virtual bool is_open() const { return hptIf.get_version() != 0 && idDisk >= 0; }
++  
++  virtual bool scsi_pass_through(struct scsi_cmnd_io *iop) {
++    const bool readdata = iop->dxfer_dir == DXFER_FROM_DEVICE;
++    const bool writedata = iop->dxfer_dir == DXFER_TO_DEVICE;
++    
++    const size_t cbInDat = writedata?iop->dxfer_len:0;
++    const size_t cbInAll = sizeof(HPT_SCSI_PASSTHROUGH_IN) +cbInDat;
++    const size_t cbOutDat = readdata?iop->dxfer_len:0;
++    const size_t cbOutAll = sizeof(HPT_SCSI_PASSTHROUGH_OUT) +cbOutDat;
++    
++    PHPT_SCSI_PASSTHROUGH_IN thruIn = reinterpret_cast<PHPT_SCSI_PASSTHROUGH_IN>(malloc(cbInAll));
++    PHPT_SCSI_PASSTHROUGH_OUT thruOut = reinterpret_cast<PHPT_SCSI_PASSTHROUGH_OUT>(malloc(cbOutAll));
++      
++    if (!thruIn || !thruOut) {
++      if (thruIn) free(thruIn);
++      if (thruOut) free(thruOut);
++      return set_err(ENOMEM, "malloc failure");
++    }
++    
++    memset(thruIn, -1, cbInAll);
++    memset(thruOut, -1, cbOutAll);
++    
++    thruIn->idDisk = idDisk;
++    thruIn->setNone();
++    if (readdata) thruIn->setRead();
++    if (writedata) thruIn->setWrite();
++    thruIn->cdbLength = iop->cmnd_len;
++    memcpy(thruIn->cdb, iop->cmnd, iop->cmnd_len);
++    thruIn->dataLength = iop->dxfer_len;
++    
++    memcpy(&thruIn[1], iop->dxferp, cbInDat);
++    
++    bool ok = false;
++    int ret = hptIf.scsi_passthrough(thruIn, cbInAll, thruOut, cbOutAll);
++    if (ret == 0) {
++      memcpy(iop->dxferp, &thruOut[1], cbOutDat);
++      
++      iop->scsi_status = thruOut->scsiStatus;
++      iop->resp_sense_len = thruOut->dataLength;
++      iop->resid = 0;
++      ok = true;
++    }
++    else {
++      set_err(EIO);
++    }
++    
++    free(thruIn);
++    free(thruOut);
++    return ok;
++  }
++};
++
++/////////////////////////////////////////////////////////////////////////////
++
+ class csmi_device
+ : virtual public /*extends*/ smart_device
+ {
+@@ -928,6 +1433,12 @@
+     return 0;
+   }
+ 
++  // Highpoint ?
++  if (stricmp(type, "hpt-ata") == 0)
++    return new win_hpt_ata_device(this, name, "hpt-ata");
++  if (stricmp(type, "hpt-scsi") == 0)
++    return new win_hpt_scsi_device(this, name, "hpt-scsi");
++
+   return 0;
+ }
+ 
+@@ -949,6 +1460,25 @@
+   if (str_starts_with(testname, "csmi"))
+     return new win_csmi_device(this, name, "");
+ 
++  if (str_starts_with(testname, "hpt")) {
++    if (hptIf.get_version() != 0) {
++      LOGICAL_DEVICE_INFO_V4 info;
++      if (hptIf.get_device_info_v4(atoi(testname +3), &info) != 0) {
++        // err
++      }
++      else if (!info.u.device.is_sata() && !info.u.device.is_sas()) {
++        // no hdd
++      }
++      else {
++        return info.u.device.is_sas()
++          ? static_cast<smart_device *>(new win_hpt_scsi_device(this, name, "hpt-scsi"))
++          : static_cast<smart_device *>(new win_hpt_ata_device(this, name, "hpt-ata"))
++          ;
++      }
++    }
++    return 0;
++  }
++
+   int phydrive = -1;
+   win_dev_type type = get_dev_type(name, phydrive);
+ 
+@@ -1007,12 +1537,12 @@
+   }
+ 
+   // Set valid types
+-  bool ata, scsi, sat, usb, csmi;
++  bool ata, scsi, sat, usb, csmi, hpt;
+   if (!type) {
+-    ata = scsi = usb = sat = csmi = true;
++    ata = scsi = usb = sat = csmi = hpt = true;
+   }
+   else {
+-    ata = scsi = usb = sat = csmi = false;
++    ata = scsi = usb = sat = csmi = hpt = false;
+     if (!strcmp(type, "ata"))
+       ata = true;
+     else if (!strcmp(type, "scsi"))
+@@ -1023,9 +1553,11 @@
+       usb = true;
+     else if (!strcmp(type, "csmi"))
+       csmi = true;
++    else if (!strcmp(type, "hpt"))
++      hpt = true;
+     else {
+       set_err(EINVAL,
+-              "Invalid type '%s', valid arguments are: ata[,pd], scsi[,pd], sat[,pd], usb[,pd], csmi, pd",
++              "Invalid type '%s', valid arguments are: ata[,pd], scsi[,pd], sat[,pd], usb[,pd], csmi, hpt, pd",
+               type);
+       return false;
+     }
+@@ -1139,6 +1671,37 @@
+       }
+     }
+   }
++  if (hpt) {
++    // Scan hpt devices
++    if (hptIf.get_version() != 0) {
++      const int maxids = 100;
++      uint32_t ids[maxids];
++      int nCtrl = hptIf.get_controller_count();
++      int nPhys = hptIf.get_physical_devices(ids, maxids);
++      for (int iC = 0; iC < nCtrl; iC++) {
++        CONTROLLER_INFO_V2 conInfo;
++        if (hptIf.get_controller_info_v2(iC, &conInfo) != 0)
++          continue;
++        for (int iP = 0; iP < nPhys; iP++) {
++          LOGICAL_DEVICE_INFO_V4 info;
++          if (hptIf.get_device_info_v4(ids[iP], &info) != 0)
++            continue;
++          if (info.u.device.ControllerId != iC)
++            continue;
++          if (!info.u.device.is_sata() && !info.u.device.is_sas())
++            continue;
++          
++          snprintf(name, sizeof(name)-1, "/dev/hpt%d"
++            , ids[iP]
++            );
++          devlist.push_back( info.u.device.is_sas()
++            ? static_cast<smart_device *>(new win_hpt_scsi_device(this, name, "hpt-scsi"))
++            : static_cast<smart_device *>(new win_hpt_ata_device(this, name, "hpt-ata"))
++            );
++        }
++      }
++    }
++  }
+   return true;
+ }
+ 
