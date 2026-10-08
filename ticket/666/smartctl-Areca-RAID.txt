@@ -1,0 +1,41 @@
+smartctl 6.4 2015-06-04 r4109 [x86_64-linux-4.4.3-gentoo] (local build)
+Copyright (C) 2002-15, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               Areca
+Product:              ARC-1222-VOL#000
+Revision:             R001
+User Capacity:        13,999,997,190,144 bytes [13.9 TB]
+Logical block size:   512 bytes
+Rotation Rate:        10000 rpm
+Device type:          disk
+Transport protocol:   Fibre channel (FCP-2)
+Local Time is:        Mon Mar 14 11:12:18 2016 CET
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Disabled or Not Supported
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     30 C
+Drive Trip Temperature:        25 C
+
+Manufactured in week 30 of year 2002
+Specified cycle count over device lifetime:  4278190080
+Accumulated start-stop cycles:  256
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0          0.000           0
+write:         0        0         0         0          0          0.000           0
+
+Non-medium error count:        0
+
+Device does not support Self Test logging
+Device does not support Background scan results logging

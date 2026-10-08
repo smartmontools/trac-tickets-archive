@@ -1,0 +1,397 @@
+smartctl 5.41 2011-06-09 r3365 [x86_64-linux-3.19.3] (local build)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     Crucial_CT256M550SSD3
+Firmware Version: MU01
+User Capacity:    256,060,514,304 bytes [256 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 6
+Local Time is:    Mon Mar 14 13:35:24 2016 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x03)	Offline data collection activity
+					is in progress.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  385) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (   3) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   3) minutes.
+SCT capabilities: 	       (0x0035)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR-K   100   100   000    -    0
+  5 Reallocated_Sector_Ct   PO--CK   100   100   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    8787
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    8
+171 Unknown_Attribute       -O--CK   100   100   000    -    0
+172 Unknown_Attribute       -O--CK   100   100   000    -    0
+173 Unknown_Attribute       -O--CK   100   100   000    -    14
+174 Unknown_Attribute       -O--CK   100   100   000    -    1
+180 Unused_Rsvd_Blk_Cnt_Tot PO--CK   000   000   000    -    2159
+183 Runtime_Bad_Block       -O--CK   100   100   000    -    0
+184 End-to-End_Error        -O--CK   100   100   000    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+194 Temperature_Celsius     -O---K   057   047   000    -    43 (Min/Max 26/53)
+196 Reallocated_Event_Count -O--CK   100   100   000    -    16
+197 Current_Pending_Sector  -O--CK   100   100   000    -    0
+198 Offline_Uncorrectable   ----CK   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -O--CK   100   100   000    -    0
+202 Data_Address_Mark_Errs  P---CK   100   100   000    -    0
+206 Flying_Height           -OSR--   100   100   000    -    0
+210 Unknown_Attribute       -O--CK   100   100   000    -    0
+246 Unknown_Attribute       -O--CK   100   100   000    -    633478184
+247 Unknown_Attribute       -O--CK   100   100   000    -    22960008
+248 Unknown_Attribute       -O--CK   100   100   000    -    246666195
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+GP/S  Log at address 0x00 has    1 sectors [Log Directory]
+SMART Log at address 0x01 has    1 sectors [Summary SMART error log]
+SMART Log at address 0x02 has   51 sectors [Comprehensive SMART error log]
+GP    Log at address 0x03 has 16383 sectors [Ext. Comprehensive SMART error log]
+GP/S  Log at address 0x04 has  255 sectors [Device Statistics]
+SMART Log at address 0x06 has    1 sectors [SMART self-test log]
+GP    Log at address 0x07 has    1 sectors [Extended self-test log]
+SMART Log at address 0x09 has    1 sectors [Selective self-test log]
+GP    Log at address 0x10 has    1 sectors [NCQ Command Error]
+GP    Log at address 0x11 has    1 sectors [SATA Phy Event Counters]
+GP    Log at address 0x13 has    1 sectors [Reserved for Serial ATA]
+GP    Log at address 0x24 has  429 sectors [Reserved]
+GP    Log at address 0x25 has  145 sectors [Reserved]
+GP/S  Log at address 0x30 has    9 sectors [Reserved]
+GP/S  Log at address 0x80 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x81 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x82 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x83 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x84 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x85 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x86 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x87 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x88 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x89 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x90 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x91 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x92 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x93 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x94 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x95 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x96 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x97 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x98 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x99 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9f has   16 sectors [Host vendor specific log]
+GP    Log at address 0xa0 has 2000 sectors [Device vendor specific log]
+SMART Log at address 0xa0 has  208 sectors [Device vendor specific log]
+GP/S  Log at address 0xa1 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa2 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa3 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa4 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa5 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa6 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa7 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa8 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xa9 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xaa has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xab has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xac has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xad has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xae has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xaf has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb0 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb1 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb2 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb3 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb4 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb5 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb6 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb7 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb8 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xb9 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xba has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xbb has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xbc has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xbd has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xbe has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xbf has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc0 has   80 sectors [Device vendor specific log]
+GP/S  Log at address 0xc1 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc2 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc3 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc4 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc5 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc6 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc7 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc8 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xc9 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xca has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xcb has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xcc has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xcd has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xce has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xcf has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd0 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd1 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd2 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd3 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd4 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd5 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd6 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd7 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd8 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xd9 has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xda has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xdb has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xdc has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xdd has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xde has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xdf has    1 sectors [Device vendor specific log]
+GP/S  Log at address 0xe0 has    1 sectors [SCT Command/Status]
+GP/S  Log at address 0xe1 has    1 sectors [SCT Data Transfer]
+
+SMART Extended Comprehensive Error Log size 16383 not supported
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Vendor (0xff)       Completed without error       00%      8787         -
+# 2  Vendor (0xff)       Completed without error       00%      8757         -
+# 3  Vendor (0xff)       Completed without error       00%      8718         -
+# 4  Vendor (0xff)       Completed without error       00%      8680         -
+# 5  Vendor (0xff)       Completed without error       00%      8641         -
+# 6  Vendor (0xff)       Completed without error       00%      8603         -
+# 7  Vendor (0xff)       Completed without error       00%      8566         -
+# 8  Vendor (0xff)       Completed without error       00%      8528         -
+# 9  Vendor (0xff)       Completed without error       00%      8490         -
+#10  Vendor (0xff)       Completed without error       00%      8452         -
+#11  Vendor (0xff)       Completed without error       00%      8414         -
+#12  Vendor (0xff)       Completed without error       00%      8376         -
+#13  Vendor (0xff)       Completed without error       00%      8339         -
+#14  Vendor (0xff)       Completed without error       00%      8301         -
+#15  Vendor (0xff)       Completed without error       00%      8263         -
+#16  Vendor (0xff)       Completed without error       00%      8225         -
+#17  Vendor (0xff)       Completed without error       00%      8187         -
+#18  Vendor (0xff)       Completed without error       00%      8149         -
+#19  Vendor (0xff)       Completed without error       00%      8111         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Completed [00% left] (195551232-195616767)
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+SCT Support Level:                   0
+Device State:                        SMART Off-line Data Collection executing in background (4)
+Current Temperature:                    43 Celsius
+Power Cycle Min/Max Temperature:     26/53 Celsius
+Lifetime    Min/Max Temperature:     26/53 Celsius
+Under/Over Temperature Limit Count:   0/0
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/70 Celsius
+Min/Max Temperature Limit:           -5/75 Celsius
+Temperature History Size (Index):    478 (130)
+
+Index    Estimated Time   Temperature Celsius
+ 131    2016-03-14 05:38    43  ************************
+ ...    ..(  9 skipped).    ..  ************************
+ 141    2016-03-14 05:48    43  ************************
+ 142    2016-03-14 05:49    42  ***********************
+ 143    2016-03-14 05:50    42  ***********************
+ 144    2016-03-14 05:51    43  ************************
+ ...    ..( 22 skipped).    ..  ************************
+ 167    2016-03-14 06:14    43  ************************
+ 168    2016-03-14 06:15    42  ***********************
+ 169    2016-03-14 06:16    43  ************************
+ 170    2016-03-14 06:17    43  ************************
+ 171    2016-03-14 06:18    43  ************************
+ 172    2016-03-14 06:19    42  ***********************
+ ...    ..(  2 skipped).    ..  ***********************
+ 175    2016-03-14 06:22    42  ***********************
+ 176    2016-03-14 06:23    43  ************************
+ ...    ..(  8 skipped).    ..  ************************
+ 185    2016-03-14 06:32    43  ************************
+ 186    2016-03-14 06:33    42  ***********************
+ 187    2016-03-14 06:34    43  ************************
+ 188    2016-03-14 06:35    43  ************************
+ 189    2016-03-14 06:36    42  ***********************
+ 190    2016-03-14 06:37    42  ***********************
+ 191    2016-03-14 06:38    43  ************************
+ 192    2016-03-14 06:39    43  ************************
+ 193    2016-03-14 06:40    43  ************************
+ 194    2016-03-14 06:41    42  ***********************
+ ...    ..(  2 skipped).    ..  ***********************
+ 197    2016-03-14 06:44    42  ***********************
+ 198    2016-03-14 06:45    43  ************************
+ 199    2016-03-14 06:46    43  ************************
+ 200    2016-03-14 06:47    43  ************************
+ 201    2016-03-14 06:48    42  ***********************
+ ...    ..(  3 skipped).    ..  ***********************
+ 205    2016-03-14 06:52    42  ***********************
+ 206    2016-03-14 06:53    43  ************************
+ 207    2016-03-14 06:54    43  ************************
+ 208    2016-03-14 06:55    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 220    2016-03-14 07:07    42  ***********************
+ 221    2016-03-14 07:08    43  ************************
+ 222    2016-03-14 07:09    42  ***********************
+ ...    ..( 27 skipped).    ..  ***********************
+ 250    2016-03-14 07:37    42  ***********************
+ 251    2016-03-14 07:38    43  ************************
+ 252    2016-03-14 07:39    43  ************************
+ 253    2016-03-14 07:40    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 265    2016-03-14 07:52    42  ***********************
+ 266    2016-03-14 07:53    43  ************************
+ 267    2016-03-14 07:54    43  ************************
+ 268    2016-03-14 07:55    42  ***********************
+ ...    ..( 26 skipped).    ..  ***********************
+ 295    2016-03-14 08:22    42  ***********************
+ 296    2016-03-14 08:23    43  ************************
+ 297    2016-03-14 08:24    43  ************************
+ 298    2016-03-14 08:25    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 310    2016-03-14 08:37    42  ***********************
+ 311    2016-03-14 08:38    43  ************************
+ ...    ..(  2 skipped).    ..  ************************
+ 314    2016-03-14 08:41    43  ************************
+ 315    2016-03-14 08:42    42  ***********************
+ ...    ..(  9 skipped).    ..  ***********************
+ 325    2016-03-14 08:52    42  ***********************
+ 326    2016-03-14 08:53    43  ************************
+ ...    ..(  7 skipped).    ..  ************************
+ 334    2016-03-14 09:01    43  ************************
+ 335    2016-03-14 09:02    42  ***********************
+ ...    ..(  4 skipped).    ..  ***********************
+ 340    2016-03-14 09:07    42  ***********************
+ 341    2016-03-14 09:08    43  ************************
+ 342    2016-03-14 09:09    43  ************************
+ 343    2016-03-14 09:10    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 355    2016-03-14 09:22    42  ***********************
+ 356    2016-03-14 09:23    43  ************************
+ ...    ..(  2 skipped).    ..  ************************
+ 359    2016-03-14 09:26    43  ************************
+ 360    2016-03-14 09:27    42  ***********************
+ ...    ..(  9 skipped).    ..  ***********************
+ 370    2016-03-14 09:37    42  ***********************
+ 371    2016-03-14 09:38    43  ************************
+ 372    2016-03-14 09:39    43  ************************
+ 373    2016-03-14 09:40    43  ************************
+ 374    2016-03-14 09:41    42  ***********************
+ ...    ..( 10 skipped).    ..  ***********************
+ 385    2016-03-14 09:52    42  ***********************
+ 386    2016-03-14 09:53    43  ************************
+ ...    ..(  2 skipped).    ..  ************************
+ 389    2016-03-14 09:56    43  ************************
+ 390    2016-03-14 09:57    42  ***********************
+ 391    2016-03-14 09:58    43  ************************
+ 392    2016-03-14 09:59    42  ***********************
+ 393    2016-03-14 10:00    42  ***********************
+ 394    2016-03-14 10:01    43  ************************
+ 395    2016-03-14 10:02    43  ************************
+ 396    2016-03-14 10:03    42  ***********************
+ ...    ..(  4 skipped).    ..  ***********************
+ 401    2016-03-14 10:08    42  ***********************
+ 402    2016-03-14 10:09    43  ************************
+ 403    2016-03-14 10:10    43  ************************
+ 404    2016-03-14 10:11    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 416    2016-03-14 10:23    42  ***********************
+ 417    2016-03-14 10:24    43  ************************
+ 418    2016-03-14 10:25    43  ************************
+ 419    2016-03-14 10:26    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 431    2016-03-14 10:38    42  ***********************
+ 432    2016-03-14 10:39    43  ************************
+ ...    ..(  4 skipped).    ..  ************************
+ 437    2016-03-14 10:44    43  ************************
+ 438    2016-03-14 10:45    42  ***********************
+ ...    ..(  7 skipped).    ..  ***********************
+ 446    2016-03-14 10:53    42  ***********************
+ 447    2016-03-14 10:54    43  ************************
+ 448    2016-03-14 10:55    43  ************************
+ 449    2016-03-14 10:56    42  ***********************
+ ...    ..(  7 skipped).    ..  ***********************
+ 457    2016-03-14 11:04    42  ***********************
+ 458    2016-03-14 11:05    43  ************************
+ 459    2016-03-14 11:06    43  ************************
+ 460    2016-03-14 11:07    42  ***********************
+ 461    2016-03-14 11:08    42  ***********************
+ 462    2016-03-14 11:09    43  ************************
+ 463    2016-03-14 11:10    43  ************************
+ 464    2016-03-14 11:11    42  ***********************
+ ...    ..( 11 skipped).    ..  ***********************
+ 476    2016-03-14 11:23    42  ***********************
+ 477    2016-03-14 11:24    43  ************************
+ ...    ..( 22 skipped).    ..  ************************
+  22    2016-03-14 11:47    43  ************************
+  23    2016-03-14 11:48    42  ***********************
+  24    2016-03-14 11:49    43  ************************
+ ...    ..(105 skipped).    ..  ************************
+ 130    2016-03-14 13:35    43  ************************
+
+Warning: device does not support SCT Error Recovery Control command
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x000a  4           27  Device-to-host register FISes sent due to a COMRESET
+

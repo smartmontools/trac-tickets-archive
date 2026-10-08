@@ -1,0 +1,16 @@
+smartctl 5.41 2011-06-09 r3365 [x86_64-linux-3.19.3] (local build)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+Vendor:               LSI     
+Product:              SMC3108         
+Revision:             4.27
+User Capacity:        511,570,870,272 bytes [511 GB]
+Logical block size:   512 bytes
+Device type:          disk
+Local Time is:        Mon Mar 14 13:34:24 2016 CET
+Device does not support SMART
+
+Error Counter logging not supported
+Device does not support Self Test logging
+Device does not support Background scan results logging
+scsiPrintSasPhy Log Sense Failed [unsupported scsi opcode]

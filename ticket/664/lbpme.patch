@@ -1,0 +1,19 @@
+diff --git a/scsiprint.cpp b/scsiprint.cpp
+index 70fb083..8d22c19 100644
+--- a/scsiprint.cpp
++++ b/scsiprint.cpp
+@@ -1588,8 +1588,12 @@ scsiGetDriveInfo(scsi_device * device, UINT8 * peripheral_type, bool all)
+                 lbprz = !! (lb_prov_resp[5] & 0x4);
+             switch (prov_type) {
+             case 0:
+-                pout("LB provisioning type: unreported, LBPME=%d, LBPRZ=%d\n",
+-                     lbpme, lbprz);
++                if (-1 == lbpme)
++                    pout("LB provisioning type: unreported, LBPRZ=%d\n",
++                         lbprz);
++                else if (1 == lbpme)
++                    pout("Logical block provisioning enabled, LBPRZ=%d\n",
++                         lbprz);
+                 break;
+             case 1:
+                 pout("LU is resource provisioned, LBPRZ=%d\n", lbprz);

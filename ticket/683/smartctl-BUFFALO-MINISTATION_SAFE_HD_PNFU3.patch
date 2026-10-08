@@ -1,0 +1,17 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(revision 4302)
++++ drivedb.h	(working copy)
+@@ -3462,6 +3462,12 @@
+     "",
+     "-d sat"
+   },
++  { "USB: Buffalo MiniStation Safe HD-PNFU3; ", // 1TB
++    "0x0411:0x0251",
++    "",
++    "",
++    "-d sat"
++  },
+   // LG Electronics
+   { "USB: LG Mini HXD5; JMicron",
+     "0x043e:0x70f1",
