@@ -1,0 +1,16 @@
+diff -u a/drivedb.h b/drivedb.h
+--- a/drivedb.h	2015-04-30 15:12:56.609424000 +0100
++++ b/drivedb.h	2015-04-30 15:52:42.496088341 +0100
+@@ -3965,6 +3965,12 @@
+     "",
+     "-d usbjmicron,x"
+   },
++  { "USB: ; JMicron JMS566", // USB3->SATA
++    "0x152d:0x3569",
++    "",
++    "",
++    "-d sat"
++  },
+   { "USB: ; JMicron JMS567", // USB2/3->SATA
+     "0x152d:0x3562",
+     "", // 0x0310, StarTech S358BU33ERM (port multiplier, ticket #508)

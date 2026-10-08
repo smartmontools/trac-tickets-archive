@@ -1,0 +1,20 @@
+Index: drivedb.h
+===================================================================
+--- drivedb.h	(révision 4183)
++++ drivedb.h	(copie de travail)
+@@ -873,9 +873,13 @@
+     "-v 242,raw48,Host_Reads_32MiB "
+     "-v 249,raw48,NAND_Writes_1GiB"
+   },
+-  { "Intel 530 Series SSDs", // tested with INTEL SSDSC2BW180A4/DC12, SSDSC2BW240A4/DC12,
++  { "Intel 530/535 Series SSDs", // tested with INTEL SSDSC2BW180A4/DC12, SSDSC2BW240A4/DC12,
+       // INTEL SSDMCEAW120A4/DC33, INTEL SSDMCEAW240A4/DC33
+-    "INTEL SSD(MCEA|SC2B)W(080|120|180|240|360|480)A4", // MCEA = mSATA
++      // INTEL SSDSC2BW240H6/RG21
++    "INTEL SSD(MCEA|SC2B|SCKJ)W(056|080|120|180|240|360|480)(A4|H6)", // A4 = 530, H6 = 535
++                                                                     // SC2B = 53x (2.5-inch)
++                                                                     // MCEA = 530 (mSATA)
++                                                                     // SCKJ = 535 (M.2)
+     "", "",
+   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
+     "-v 9,msec24hour32,Power_On_Hours_and_Msec "

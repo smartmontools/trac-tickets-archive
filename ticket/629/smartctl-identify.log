@@ -1,0 +1,279 @@
+smartctl 6.4 2015-06-04 r4109 [x86_64-linux-4.2.3-300.fc23.x86_64] (local build)
+Copyright (C) 2002-15, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== ATA IDENTIFY DATA ===
+Word     Bit     Value   Description
+
+   0      -     0x0040   General configuration
+   0      6          1   Not removable controller and/or device [OBS-6]
+
+   1      -     0x3fff   Cylinders [OBS-6]
+
+   2      -     0xc837   Specific configuration (0x37c8/738c/8c73/c837)
+
+   3      -     0x0010   Heads [OBS-6]
+
+   6      -     0x003f   Sectors per track [OBS-6]
+
+  10-19   -     .        Serial number (String)
+  10-13   .     0x5048:574c:3533:3730  "PHWL5370"
+  14-17   .     0x3030:4148:3438:3051  "00AH480Q"
+  18-19   .     0x474e:2020            "GN  "
+
+  23-26   -     .        Firmware revision (String)
+  23-26   .     0x4432:3031:3033:3730  "D2010370"
+
+  27-46   -     .        Model number (String)
+  27-30   .     0x494e:5445:4c20:5353  "INTEL SS"
+  31-34   .     0x4453:4332:4242:3438  "DSC2BB48"
+  35-38   .     0x3047:3420:2020:2020  "0G4     "
+  39-42   .     0x2020:2020:2020:2020  "        "
+  43-46   .     0x2020:2020:2020:2020  "        "
+
+  47      -     0x8001   READ/WRITE MULTIPLE support
+  47     15:8     0x80   Must be set to 0x80
+  47      7:0     0x01   Maximum sectors per DRQ on READ/WRITE MULTIPLE
+
+  48      -     0x4000   Trusted Computing feature set options
+  48     15:14     0x1   Must be set to 0x1
+
+  49      -     0x2f00   Capabilities
+  49     13          1   Standard standby timer values supported
+  49     11          1   IORDY supported
+  49     10          1   IORDY may be disabled
+  49      9          1   LBA supported
+  49      8          1   DMA supported
+
+  50      -     0x4000   Capabilities
+  50     15:14     0x1   Must be set to 0x1
+
+  53      -     0x0007   Field validity / Free-fall Control
+  53      2          1   Word 88 (Ultra DMA modes) is valid
+  53      1          1   Words 64-70 (PIO modes) are valid
+  53      0          1   Words 54-58 (CHS) are valid [OBS-6]
+
+  54      -     0x3fff   Current cylinders [OBS-6]
+
+  55      -     0x0010   Current heads [OBS-6]
+
+  56      -     0x003f   Current sectors per track [OBS-6]
+
+  57-58   -     .        Current capacity in sectors (DWord) [OBS-6]
+  57-58   .     0xfc10:00fb  (16514064)
+
+  59      -     0xbf01   Sanitize Device - READ/WRITE MULTIPLE support
+  59     15          1   BLOCK ERASE EXT supported
+  59     13          1   CRYPTO SCRAMBLE EXT supported
+  59     12          1   Sanitize Device feature set supported
+  59     11          1   Cmds during sanitize as specified by this standard
+  59     10          1   SANITIZE ANTIFREEZE LOCK EXT supported
+  59      9          1   Reserved
+  59      8          1   Bits 7:0 are valid
+  59      7:0     0x01   Current sectors per DRQ on READ/WRITE MULTIPLE
+
+  60-61   -     .        User addressable sectors for 28-bit commands (DWord)
+  60-61   .     0xffff:0fff  (268435455)
+
+  63      -     0x0007   Multiword DMA modes
+  63      2          1   Multiword DMA mode 2 and below supported
+  63      1          1   Multiword DMA mode 1 and below supported
+  63      0          1   Multiword DMA mode 0 supported
+
+  64      -     0x0003   PIO modes
+  64      1          1   PIO mode 4 supported
+  64      0          1   PIO mode 3 supported
+
+  65      -     0x0078   Minimum Multiword DMA cycle time per word in ns
+
+  66      -     0x0078   Recommended Multiword DMA cycle time in ns
+
+  67      -     0x0078   Minimum PIO cycle time without flow control in ns
+
+  68      -     0x0078   Minimum PIO cycle time with IORDY flow control in ns
+
+  69      -     0x4030   Additional support
+  69     14          1   Deterministic data after trim supported
+  69      5          1   Trimmed LBA range(s) returning zeroed data supported
+  69      4          1   Device encrypts all user data
+
+  75      -     0x001f   Queue depth
+  75      4:0     0x1f   Maximum queue depth - 1
+
+  76      -     0x850e   Serial ATA capabilities
+  76     15          1   READ LOG DMA EXT as equiv to READ LOG EXT supported
+  76     10          1   Phy Event Counters supported
+  76      8          1   NCQ feature set supported
+  76      3          1   SATA Gen3 signaling speed (6.0 Gb/s) supported
+  76      2          1   SATA Gen2 signaling speed (3.0 Gb/s) supported
+  76      1          1   SATA Gen1 signaling speed (1.5 Gb/s) supported
+
+  77      -     0x0006   Serial ATA additional capabilities
+  77      3:1      0x3   Current Serial ATA signal speed
+
+  78      -     0x0040   Serial ATA features supported
+  78      6          1   Software Settings Preservation supported
+
+  79      -     0x0040   Serial ATA features enabled
+  79      6          1   Software Settings Preservation enabled
+
+  80      -     0x03fc   Major version number
+  80      9          1   ACS-2 supported
+  80      8          1   ATA8-ACS supported
+  80      7          1   ATA/ATAPI-7 supported
+  80      6          1   ATA/ATAPI-6 supported
+  80      5          1   ATA/ATAPI-5 supported
+  80      4          1   ATA/ATAPI-4 supported [OBS-8]
+  80      3          1   ATA-3 supported [OBS-7]
+  80      2          1   ATA-2 supported [OBS-6]
+
+  81      -     0x0110   Minor version number
+
+  82      -     0x746b   Commands and feature sets supported
+  82     14          1   NOP supported
+  82     13          1   READ BUFFER supported
+  82     12          1   WRITE BUFFER supported
+  82     10          1   HPA feature set supported [OBS-ACS-3]
+  82      6          1   Read look-ahead supported
+  82      5          1   Volatile write cache supported
+  82      3          1   Power Management feature set supported
+  82      1          1   Security feature set supported
+  82      0          1   SMART feature set supported
+
+  83      -     0x7501   Commands and feature sets supported
+  83     15:14     0x1   Must be set to 0x1
+  83     13          1   FLUSH CACHE EXT supported
+  83     12          1   FLUSH CACHE supported
+  83     10          1   48-bit Address feature set supported
+  83      8          1   SET MAX security extension supported [OBS-ACS-3]
+  83      0          1   DOWNLOAD MICROCODE supported
+
+  84      -     0x6163   Commands and feature sets supported
+  84     15:14     0x1   Must be set to 0x1
+  84     13          1   IDLE IMMEDIATE with UNLOAD feature supported
+  84      8          1   64-bit World Wide Name supported
+  84      6          1   WRITE DMA/MULTIPLE FUA EXT supported
+  84      5          1   GPL feature set supported
+  84      1          1   SMART self-test supported
+  84      0          1   SMART error logging supported
+
+  85      -     0x7469   Commands and feature sets supported or enabled
+  85     14          1   NOP supported
+  85     13          1   READ BUFFER supported
+  85     12          1   WRITE BUFFER supported
+  85     10          1   HPA feature set supported [OBS-ACS-3]
+  85      6          1   Read look-ahead enabled
+  85      5          1   Write cache enabled
+  85      3          1   Power Management feature set supported
+  85      0          1   SMART feature set enabled
+
+  86      -     0xb401   Commands and feature sets supported or enabled
+  86     15          1   Words 119-120 are valid
+  86     13          1   FLUSH CACHE EXT supported
+  86     12          1   FLUSH CACHE supported
+  86     10          1   48-bit Address features set supported
+  86      0          1   DOWNLOAD MICROCODE supported
+
+  87      -     0x6163   Commands and feature sets supported or enabled
+  87     15:14     0x1   Must be set to 0x1
+  87     13          1   IDLE IMMEDIATE with UNLOAD FEATURE supported
+  87      8          1   64-bit World Wide Name supported
+  87      6          1   WRITE DMA/MULTIPLE FUA EXT supported
+  87      5          1   GPL feature set supported
+  87      1          1   SMART self-test supported
+  87      0          1   SMART error logging supported
+
+  88      -     0x407f   Ultra DMA modes
+  88     14          1   Ultra DMA mode 6 selected
+  88      6          1   Ultra DMA mode 6 and below supported
+  88      5          1   Ultra DMA mode 5 and below supported
+  88      4          1   Ultra DMA mode 4 and below supported
+  88      3          1   Ultra DMA mode 3 and below supported
+  88      2          1   Ultra DMA mode 2 and below supported
+  88      1          1   Ultra DMA mode 1 and below supported
+  88      0          1   Ultra DMA mode 0 supported
+
+  89      -     0x0002   SECURITY ERASE UNIT time
+  89     14:0   0x0002   SECURITY ERASE UNIT time value
+
+  90      -     0x0002   ENHANCED SECURITY ERASE UNIT time
+  90     14:0   0x0002   ENHANCED SECURITY ERASE UNIT time value
+
+  92      -     0xfffe   Master Password Identifier
+
+ 100-103  -     .        User addressable sectors for 48-bit commands (QWord)
+ 100-103  .     0x36b0:37e4:0000:0000  (937703088)
+
+ 105      -     0x0004   Max blocks of LBA Range Entries per DS MANAGEMENT cmd
+
+ 106      -     0x6003   Physical sector size / logical sector size
+ 106     15:14     0x1   Must be set to 0x1
+ 106     13          1   Multiple logical sectors per physical sector
+ 106      3:0      0x3   2^X logical sectors per physical sector
+
+ 108-111  -     .        64-bit World Wide Name
+ 108-111  .     0x55cd:2e40:4c5f:4ff7
+
+ 119      -     0x405c   Commands and feature sets supported
+ 119     15:14     0x1   Must be set to 0x1
+ 119      6          1   Sense Data Reporting feature set supported
+ 119      4          1   DOWNLOAD MICROCODE with mode 3 supported
+ 119      3          1   READ/WRITE LOG DMA EXT supported
+ 119      2          1   WRITE UNCORRECTABLE EXT supported
+
+ 120      -     0x401c   Commands and feature sets supported or enabled
+ 120     15:14     0x1   Must be set to 0x1
+ 120      4          1   DOWNLOAD MICROCODE with mode 3 supported
+ 120      3          1   READ/WRITE LOG DMA EXT supported
+ 120      2          1   WRITE UNCORRECTABLE EXT supported
+
+ 128      -     0x0029   Security status
+ 128      5          1   Enhanced security erase supported
+ 128      3          1   Security frozen
+ 128      0          1   Security supported
+
+ 129-159  -     .        Vendor specific
+ 129-132  .     0x001c:0000:0000:0000
+ 133-159  .     0x0000:0000:0000:00...
+
+ 168      -     0x0003   Form factor
+ 168      3:0      0x3   Nominal form factor: -, 5.25, 3.5, 2.5, 1.8, <1.8
+
+ 169      -     0x0001   DATA SET MANAGEMENT command support
+ 169      0          1   Trim bit in DATA SET MANAGEMENT command supported
+
+ 176-205  -     .        Current media serial number (String)
+ 176-179  .     0x2020:2020:2020:2020  "        "
+ 180-183  .     0x2020:2020:2020:2020  "        "
+ 184-187  .     0x2020:2020:2020:2020  "        "
+ 188-191  .     0x2020:2020:2020:2020  "        "
+ 192-195  .     0x2020:2020:2020:2020  "        "
+ 196-199  .     0x2020:2020:2020:2020  "        "
+ 200-203  .     0x2020:2020:2020:2020  "        "
+ 204-205  .     0x2020:2020            "    "
+
+ 206      -     0x003d   SCT Command Transport
+ 206      5          1   SCT Data Tables supported
+ 206      4          1   SCT Feature Control supported
+ 206      3          1   SCT Error Recovery Control supported
+ 206      2          1   SCT Write Same supported
+ 206      0          1   SCT Command Transport supported
+
+ 209      -     0x4000   Alignment of logical sectors
+ 209     15:14     0x1   Must be set to 0x1
+
+ 217      -     0x0001   Nominal media rotation rate
+
+ 222      -     0x101f   Transport major version number
+ 222     15:12     0x1   Transport: 0x0 = Parallel, 0x1 = Serial, 0xe = PCIe
+ 222      4          1   Reserved    | SATA 2.6
+ 222      3          1   Reserved    | SATA 2.5
+ 222      2          1   Reserved    | SATA II: Extensions
+ 222      1          1   ATA/ATAPI-7 | SATA 1.0a
+ 222      0          1   ATA8-APT    | ATA8-AST
+
+ 234      -     0x0001   Minimum blocks per DOWNLOAD MICROCODE mode 3 command
+
+ 255      -     0xf2a5   Integrity word
+ 255     15:8     0xf2   Checksum
+ 255      7:0     0xa5   Signature
+

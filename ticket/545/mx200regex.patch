@@ -1,0 +1,12 @@
+diff -u a/drivedb.h b/drivedb.h
+--- a/drivedb.h	2015-04-30 15:10:24.128192000 +0100
++++ b/drivedb.h	2015-04-30 15:12:56.609424526 +0100
+@@ -272,7 +272,7 @@
+   },
+   { "Crucial/Micron MX100/MX200/M5x0/M600 Client SSDs",
+     "Crucial_CT(128|256|512)MX100SSD1|"// tested with Crucial_CT256MX100SSD1/MU01
+-    "Crucial_CT(256|512|1024)MX200SSD[1346]|" // tested with Crucial_CT1024MX200SSD1/MU01
++    "Crucial_CT(250|500|1000)MX200SSD[1346]|" // tested with Crucial_CT1024MX200SSD1/MU01
+     "Crucial_CT(120|240|480|960)M500SSD1|" // tested with Crucial_CT960M500SSD1/MU03
+     "Crucial_CT(128|256|512|1024)M550SSD[13]|" // tested with Crucial_CT512M550SSD3/MU01, Crucial_CT1024M550SSD1/MU01
+     "Micron_M500_MTFDDA[KTV](120|240|480|960)MAV|"// tested with Micron_M500_MTFDDAK960MAV/MU05

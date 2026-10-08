@@ -1,0 +1,238 @@
+smartctl 6.3 2014-07-26 r3976 [x86_64-linux-4.0.1-1-ARCH] (local build)
+Copyright (C) 2002-14, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Crucial/Micron MX100/MX200/M5x0/M600 Client SSDs
+Device Model:     Crucial_CT500MX200SSD1
+Firmware Version: MU01
+User Capacity:    500,107,862,016 bytes [500 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   ACS-3 (unknown minor revision code: 0x011b)
+SATA Version is:  SATA >3.1, 6.0 Gb/s (current: 3.0 Gb/s)
+Local Time is:    Thu Apr 30 21:49:00 2015 WEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     254 (maximum performance)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x80)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		( 1325) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (   7) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   3) minutes.
+SCT capabilities: 	       (0x0035)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR-K   100   100   000    -    0
+  5 Reallocate_NAND_Blk_Cnt PO--CK   100   100   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    113
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    49
+171 Program_Fail_Count      -O--CK   100   100   000    -    0
+172 Erase_Fail_Count        -O--CK   100   100   000    -    0
+173 Ave_Block-Erase_Count   -O--CK   100   100   000    -    0
+174 Unexpect_Power_Loss_Ct  -O--CK   100   100   000    -    2
+180 Unused_Reserve_NAND_Blk PO--CK   000   000   000    -    5534
+183 SATA_Interfac_Downshift -O--CK   100   100   000    -    19
+184 Error_Correction_Count  -O--CK   100   100   000    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+194 Temperature_Celsius     -O---K   062   056   000    -    38 (Min/Max 19/44)
+196 Reallocated_Event_Count -O--CK   100   100   000    -    0
+197 Current_Pending_Sector  -O--CK   100   100   000    -    0
+198 Offline_Uncorrectable   ----CK   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -O--CK   100   100   000    -    0
+202 Percent_Lifetime_Used   P---CK   100   100   000    -    0
+206 Write_Error_Rate        -OSR--   100   100   000    -    0
+210 Success_RAIN_Recov_Cnt  -O--CK   100   100   000    -    0
+246 Total_Host_Sector_Write -O--CK   100   100   000    -    555932614
+247 Host_Program_Page_Count -O--CK   100   100   000    -    17373450
+248 Bckgnd_Program_Page_Cnt -O--CK   100   100   000    -    3419864
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O     51  Comprehensive SMART error log
+0x03       GPL     R/O  16383  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters
+0x13       GPL     R/O      1  SATA NCQ Send and Receive log
+0x24       GPL     R/O  16000  Current Device Internal Status Data log
+0x25       GPL     R/O  16000  Saved Device Internal Status Data log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa0       GPL     VS    2000  Device vendor specific log
+0xa0       SL      VS     208  Device vendor specific log
+0xa1-0xbf  GPL,SL  VS       1  Device vendor specific log
+0xc0       GPL,SL  VS      80  Device vendor specific log
+0xc1-0xdf  GPL,SL  VS       1  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log size 16383 not supported
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%         0         -
+# 2  Short offline       Completed without error       00%         0         -
+# 3  Conveyance offline  Completed without error       00%         0         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                    38 Celsius
+Power Cycle Min/Max Temperature:     23/38 Celsius
+Lifetime    Min/Max Temperature:     19/44 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/70 Celsius
+Min/Max Temperature Limit:           -5/75 Celsius
+Temperature History Size (Index):    478 (213)
+
+Index    Estimated Time   Temperature Celsius
+ 214    2015-04-30 13:52    37  ******************
+ ...    ..( 19 skipped).    ..  ******************
+ 234    2015-04-30 14:12    37  ******************
+ 235    2015-04-30 14:13    38  *******************
+ ...    ..( 55 skipped).    ..  *******************
+ 291    2015-04-30 15:09    38  *******************
+ 292    2015-04-30 15:10    37  ******************
+ ...    ..( 86 skipped).    ..  ******************
+ 379    2015-04-30 16:37    37  ******************
+ 380    2015-04-30 16:38     ?  -
+ 381    2015-04-30 16:39    37  ******************
+ ...    ..(  8 skipped).    ..  ******************
+ 390    2015-04-30 16:48    37  ******************
+ 391    2015-04-30 16:49    38  *******************
+ ...    ..( 75 skipped).    ..  *******************
+ 467    2015-04-30 18:05    38  *******************
+ 468    2015-04-30 18:06     ?  -
+ 469    2015-04-30 18:07    38  *******************
+ ...    ..(  7 skipped).    ..  *******************
+ 477    2015-04-30 18:15    38  *******************
+   0    2015-04-30 18:16    36  *****************
+ ...    ..(  5 skipped).    ..  *****************
+   6    2015-04-30 18:22    36  *****************
+   7    2015-04-30 18:23    37  ******************
+ ...    ..( 43 skipped).    ..  ******************
+  51    2015-04-30 19:07    37  ******************
+  52    2015-04-30 19:08    36  *****************
+ ...    ..( 17 skipped).    ..  *****************
+  70    2015-04-30 19:26    36  *****************
+  71    2015-04-30 19:27    37  ******************
+ ...    ..( 18 skipped).    ..  ******************
+  90    2015-04-30 19:46    37  ******************
+  91    2015-04-30 19:47    38  *******************
+ ...    ..( 81 skipped).    ..  *******************
+ 173    2015-04-30 21:09    38  *******************
+ 174    2015-04-30 21:10    37  ******************
+ ...    ..( 38 skipped).    ..  ******************
+ 213    2015-04-30 21:49    37  ******************
+
+SCT Error Recovery Control command not supported
+
+Device Statistics (GP Log 0x04)
+Page Offset Size         Value  Description
+  1  =====  =                =  == General Statistics (rev 2) ==
+  1  0x008  4               49  Lifetime Power-On Resets
+  1  0x010  4              113  Power-on Hours
+  1  0x018  6        555932614  Logical Sectors Written
+  1  0x020  6          5675990  Number of Write Commands
+  1  0x028  6        276600158  Logical Sectors Read
+  1  0x030  6          4774732  Number of Read Commands
+  4  =====  =                =  == General Errors Statistics (rev 1) ==
+  4  0x008  4                0  Number of Reported Uncorrectable Errors
+  4  0x010  4               21  Resets Between Cmd Acceptance and Completion
+  5  =====  =                =  == Temperature Statistics (rev 1) ==
+  5  0x008  1               38  Current Temperature
+  5  0x010  1               36  Average Short Term Temperature
+  5  0x018  1                -  Average Long Term Temperature
+  5  0x020  1               44  Highest Temperature
+  5  0x028  1               19  Lowest Temperature
+  5  0x030  1               37  Highest Average Short Term Temperature
+  5  0x038  1               35  Lowest Average Short Term Temperature
+  5  0x040  1                -  Highest Average Long Term Temperature
+  5  0x048  1                -  Lowest Average Long Term Temperature
+  5  0x050  4                0  Time in Over-Temperature
+  5  0x058  1               70  Specified Maximum Operating Temperature
+  5  0x060  4                0  Time in Under-Temperature
+  5  0x068  1                0  Specified Minimum Operating Temperature
+  6  =====  =                =  == Transport Statistics (rev 1) ==
+  6  0x008  4              335  Number of Hardware Resets
+  6  0x010  4              232  Number of ASR Events
+  6  0x018  4                0  Number of Interface CRC Errors
+  7  =====  =                =  == Solid State Device Statistics (rev 1) ==
+  7  0x008  1                0~ Percentage Used Endurance Indicator
+                              |_ ~ normalized value
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x000a  4           10  Device-to-host register FISes sent due to a COMRESET
+

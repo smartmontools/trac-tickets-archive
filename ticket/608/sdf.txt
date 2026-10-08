@@ -1,0 +1,280 @@
+smartctl 6.0 2012-10-10 r3643 [x86_64-linux-2.6.30.5-43.ami26.fc11.x86_64] (local build)
+Copyright (C) 2002-12, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 12 9f 01 30 02  48 47 53 54 20 20 20 20                        
+ 10     48 55 53 4d 4d 38 30 34  30 41 53 53 32 30 35 20                        
+ 20     44 32 35 32                                                             
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 12 9f 01 30 02  48 47 53 54 20 20 20 20                        
+ 10     48 55 53 4d 4d 38 30 34  30 41 53 53 32 30 35 20                        
+ 20     44 32 35 32                                                             
+Vendor:               HGST    
+Product:              HUSMM8040ASS205 
+Revision:             D252
+ [read capacity(10): 25 00 00 00 00 00 00 00 00 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     2e 93 90 af 00 00 02 00                                                 
+User Capacity:        400,088,457,216 bytes [400 GB]
+Logical block size:   512 bytes
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 2e 93 90 b0  00 00 02 00 9c 0a 10 06                        
+ 10     00 00 00 00 00 00 00 01                                                 
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 2e 93 90 b0  00 00 02 00 9c 0a bf 0f                        
+ 10     ff ff ff ff ff ff ff ff                                                 
+ [inquiry: 12 01 83 00 c8 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=124
+  Incoming data, len=76:
+ 00     00 83 00 48 01 03 00 08  50 00 cc a0 2b 1a 3e e4                        
+ 10     61 93 00 08 50 00 cc a0  2b 1a 3e e6 61 94 00 04                        
+ 20     00 00 00 02 61 a3 00 08  50 00 cc a0 2b 1a 3e e7                        
+ 30     63 a8 00 18 6e 61 61 2e  35 30 30 30 43 43 41 30                        
+ 40     32 42 31 41 33 45 45 37  00 00 00 00                                    
+Logical Unit id:      0x5000cca02b1a3ee4
+ [inquiry: 12 01 80 00 40 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=44
+  Incoming data, len=20:
+ 00     00 80 00 10 20 20 20 20  20 20 20 20 32 4c 56 47                        
+ 10     45 47 38 41                                                             
+Serial number:                2LVGEG8A
+Device type:          disk
+Transport protocol:   SAS
+Local Time is:        Thu Sep 10 18:49:38 2015 EDT
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+Device supports SMART and is Enabled
+Temperature Warning Enabled
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     00 00 00 12                                                             
+ [log sense: 4d 00 40 00 00 00 00 00 16 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=22:
+ 00     00 00 00 12 00 02 03 05  06 0d 0e 0f 10 11 15 17                        
+ 10     18 19 1a 2f 30 37                                                       
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     2f 00 00 4c                                                             
+ [log sense: 4d 00 6f 00 00 00 00 00 50 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=0
+  Incoming data, len=80:
+ 00     2f 00 00 4c 00 00 03 08  00 00 1b 46 32 00 00 00                        
+ 10     00 01 03 04 5d 53 00 00  00 02 03 04 5d 54 00 00                        
+ 20     00 03 03 04 5d 57 00 00  00 04 03 04 5d 28 00 00                        
+ 30     00 05 03 04 0b 06 08 00  00 06 03 04 5d 56 05 00                        
+ 40     00 07 03 04 5d 55 00 00  00 08 03 04 5d 20 00 00                        
+ [request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 18  00 00 00 00 00 00 00 00                        
+ 10     00 00                                                                   
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 1b 00 01 43 02 00 46                        
+SMART Health Status: OK
+ [log sense: 4d 00 51 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     11 00 00 08                                                             
+ [log sense: 4d 00 51 00 00 00 00 00 0c 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=12:
+ 00     11 00 00 08 00 01 03 04  00 00 00 08                                    
+SS Media used endurance indicator: 8%
+
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     0d 00 00 0c                                                             
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=0
+  Incoming data, len=16:
+ 00     0d 00 00 0c 00 00 43 02  00 1b 00 01 43 02 00 46                        
+Current Drive Temperature:     27 C
+Drive Trip Temperature:        70 C
+ [log sense: 4d 00 4e 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     0e 00 00 34                                                             
+ [log sense: 4d 00 4e 00 00 00 00 00 38 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=56:
+ 00     0e 00 00 34 00 01 41 06  32 30 31 34 31 34 00 02                        
+ 10     01 06 32 30 31 34 31 34  00 03 43 04 00 00 00 00                        
+ 20     00 04 43 04 00 00 00 00  00 05 43 04 00 00 00 00                        
+ 30     00 06 43 04 00 00 00 00                                                 
+Manufactured in week 14 of year 2014
+Specified cycle count over device lifetime:  0
+Accumulated start-stop cycles:  0
+Specified load-unload count over device lifetime:  0
+Accumulated load-unload cycles:  0
+ [read defect list(10): 37 00 0c 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     00 0e 00 00                                                             
+defect list format 6 unknown
+Elements in grown defect list: 0
+ [log sense: 4d 00 77 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     37 00 00 30                                                             
+ [log sense: 4d 00 77 00 00 00 00 00 34 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=52:
+ 00     37 00 00 30 00 00 00 2c  00 00 25 d8 00 05 4c 5e                        
+ 10     3c e0 34 00 00 03 4c cd  a6 4d e8 00 32 00 00 00                        
+ 20     00 00 00 00 14 5b 0b 82  88 00 00 00 0e b3 38 92                        
+ 30     69 00 00 00                                                             
+Vendor (Seagate) cache information
+  Blocks sent to initiator = 1059252538840186880
+ [log sense: 4d 00 43 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     03 00 00 54                                                             
+ [log sense: 4d 00 43 00 00 00 00 00 58 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=88:
+ 00     03 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00                        
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08                        
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00                        
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00                        
+ 40     00 05 00 08 00 05 4c 5e  3c e0 34 00 00 06 00 08                        
+ 50     00 00 00 00 00 00 00 00                                                 
+ [log sense: 4d 00 42 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     02 00 00 54                                                             
+ [log sense: 4d 00 42 00 00 00 00 00 58 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=88:
+ 00     02 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00                        
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08                        
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00                        
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00                        
+ 40     00 05 00 08 00 03 4c cd  a6 4d e8 00 00 06 00 08                        
+ 50     00 00 00 00 00 00 00 00                                                 
+ [log sense: 4d 00 45 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     05 00 00 54                                                             
+ [log sense: 4d 00 45 00 00 00 00 00 58 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=88:
+ 00     05 00 00 54 00 00 00 08  00 00 00 00 00 00 00 00                        
+ 10     00 01 00 08 00 00 00 00  00 00 00 00 00 02 00 08                        
+ 20     00 00 00 00 00 00 00 00  00 03 00 08 00 00 00 00                        
+ 30     00 00 00 00 00 04 00 08  00 00 00 00 00 00 00 00                        
+ 40     00 05 00 08 00 00 00 00  00 00 00 00 00 06 00 08                        
+ 50     00 00 00 00 00 00 00 00                                                 
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0    1491342.516           0
+write:         0        0         0         0          0     928871.072           0
+ [log sense: 4d 00 46 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     06 00 00 0c                                                             
+ [log sense: 4d 00 46 00 00 00 00 00 10 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=16:
+ 00     06 00 00 0c 00 00 00 08  00 00 00 00 00 00 00 00                        
+
+Non-medium error count:        0
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=1 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 2e 93 90 b0  00 00 02 00 8a 0a 00 00                        
+ 10     00 00 00 00 00 00 0a d6                                                 
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     10 00 01 90                                                             
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=0
+  Incoming data, len=404 [only first 256 bytes shown]:
+ 00     10 00 01 90 00 01 03 10  20 00 25 b4 ff ff ff ff                        
+ 10     ff ff ff ff 00 00 00 01  00 02 03 10 4f 01 00 00                        
+ 20     ff ff ff ff ff ff ff ff  00 00 00 00 00 03 03 10                        
+ 30     42 08 00 00 ff ff ff ff  ff ff ff ff 00 00 00 01                        
+ 40     00 04 03 10 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 50     00 00 00 00 00 05 03 10  00 00 00 00 00 00 00 00                        
+ 60     00 00 00 00 00 00 00 00  00 06 03 10 00 00 00 00                        
+ 70     00 00 00 00 00 00 00 00  00 00 00 00 00 07 03 10                        
+ 80     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ 90     00 08 03 10 00 00 00 00  00 00 00 00 00 00 00 00                        
+ a0     00 00 00 00 00 09 03 10  00 00 00 00 00 00 00 00                        
+ b0     00 00 00 00 00 00 00 00  00 0a 03 10 00 00 00 00                        
+ c0     00 00 00 00 00 00 00 00  00 00 00 00 00 0b 03 10                        
+ d0     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00                        
+ e0     00 0c 03 10 00 00 00 00  00 00 00 00 00 00 00 00                        
+ f0     00 00 00 00 00 0d 03 10  00 00 00 00 00 00 00 00                        
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -    9652                 - [-   -    -]
+# 2  Background long   Self test in progress ...   1     NOW                 - [-   -    -]
+# 3  Background long   Aborted (device reset ?)    8       0                 - [-   -    -]
+
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x0, host_status=0x0, driver_status=0x0
+  info=0x0  duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 2e 93 90 b0  00 00 02 00 8a 0a 00 00                        
+ 10     00 00 00 00 00 00 0a d6                                                 
+Long (extended) Self Test duration: 2774 seconds [46.2 minutes]

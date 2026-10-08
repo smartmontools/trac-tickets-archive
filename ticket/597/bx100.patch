@@ -1,0 +1,44 @@
+diff -u a/drivedb.h b/drivedb.h
+--- a/drivedb.h	2015-07-28 20:51:09.348989348 +0100
++++ b/drivedb.h	2015-07-28 21:40:38.627680846 +0100
+@@ -270,6 +270,40 @@
+     "-v 202,raw48,Perc_Rated_Life_Used "
+     "-v 206,raw48,Write_Error_Rate"
+   },
++  { "Crucial/Micron BX100 Client SSDs",
++    "CT(120|250|500|1000)BX100SSD1", //Tested with CT250BX100SSD1
++    "", "",
++    //"-v 1,raw48,Raw_Read_Error_Rate " //(Errors/Page)
++    //"-v 5,raw16(raw16),Reallocated_Sectors_Count " //(NAND Blocks)
++    //"-v 9,raw48,Power_On_Hours_Count " //(Hours)
++    //"-v 12,raw48,Power_Cycle_Count " //(Power Cycles)
++    "-v 160,raw48,Uncorrectable_Sector_Ct " //Uncorrectable_Sector_Count (Errors)
++    "-v 161,raw48,Valid_Spare_Block_Cnt " //Valid_Spare_Blocks (Spare Blocks)
++    "-v 163,raw48,Initial_Bad_Block_Count " //Initial_Invalid_Blocks (Bad Blocks)
++    "-v 164,raw48,Total_Erase_Count " //(Erase Operations)
++    "-v 165,raw48,Maximum_Erase_Count " //(Erase Operations)
++    "-v 166,raw48,Minimum_Erase_Count " //(Erase Operations)
++    "-v 167,raw48,Average_Erase_Count " //Average_Block_Erase_Count (Erase Operations)
++    "-v 168,raw48,Max_Erase_Count_of_Spec " //(Erase Operations)
++    "-v 169,raw48,Remaining_Lifetime_Perc " //Percentage_Lifetime_Remaining (Percent)
++    //"-v 175,raw48,Worst_Program_Fail_Count " //(Program Failures)
++    //"-v 176,raw48,Worst_Erase_Fail_Count " //(Erase Failures)
++    //"-v 177,raw48,Total_Wearlevel_Count " //(Events)
++    "-v 178,raw48,Runtime_Invalid_Blk_Cnt " //Runtime_Invalid_Block_Count (Blocks)
++    //"-v 181,raw48,Program_Fail_Count " //(Program Failures)
++    //"-v 182,raw48,Erase_Fail_Count " //(Erase Failures)
++    //"-v 192,raw48,Power-off_Retract_Count " //(Power Loss Events)
++    //"-v 194,tempminmax,Enclosure_Temperature " //(Current Temperature (C))
++    //"-v 195,raw48,Hardware_ECC_Recovered " //(Corrected ECC)
++    //"-v 196,raw16(raw16),Reallocation_Event_Count " //(Events)
++    //"-v 197,raw48,Current_Pending_Sector_Count " //(512 Byte Sectors)
++    //"-v 198,raw48,SMART_Off-line_Scan_Uncorrectable_Errors " //(Pages)
++    //"-v 199,raw48,Ultra-DMA_CRC_Error_Count " //(Errors)
++    //"-v 232,raw48,Available_Reserved_Space " //(% Spare Blocks Remaining)
++    //"-v 241,raw48,Total_LBA_Write " //(32MB Units)
++    //"-v 242,raw48,Total_LBA_Read " //(32MB Units)
++    "-v 245,raw48,Total_Flash_Write_Count " //(32MB Units)
++  },
+   { "Crucial/Micron MX100/MX200/M5x0/M600 Client SSDs",
+     "Crucial_CT(128|256|512)MX100SSD1|"// tested with Crucial_CT256MX100SSD1/MU01
+     "Crucial_CT(200|256|500|512|1000|1024)MX200SSD[1346]|" // tested with Crucial_CT500MX200SSD1/MU01,

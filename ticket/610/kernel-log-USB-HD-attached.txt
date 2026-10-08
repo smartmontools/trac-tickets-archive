@@ -1,0 +1,39 @@
+Sep 19 20:33:29 localhost kernel: [15179.592559] usb 1-4: new high-speed USB device number 31 using xhci_hcd
+Sep 19 20:33:29 localhost kernel: usb 1-4: new high-speed USB device number 31 using xhci_hcd
+Sep 19 20:33:30 localhost kernel: [15179.880084] usb 1-4: new high-speed USB device number 32 using xhci_hcd
+Sep 19 20:33:30 localhost kernel: usb 1-4: new high-speed USB device number 32 using xhci_hcd
+Sep 19 20:33:30 localhost kernel: [15180.047638] usb 1-4: New USB device found, idVendor=4971, idProduct=8017
+Sep 19 20:33:30 localhost kernel: [15180.047652] usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Sep 19 20:33:30 localhost kernel: [15180.047659] usb 1-4: Product: USB to ATA/ATAPI Bridge
+Sep 19 20:33:30 localhost kernel: [15180.047665] usb 1-4: Manufacturer: JMicron
+Sep 19 20:33:30 localhost kernel: [15180.047670] usb 1-4: SerialNumber: 111122223333
+Sep 19 20:33:30 localhost kernel: usb 1-4: New USB device found, idVendor=4971, idProduct=8017
+Sep 19 20:33:30 localhost kernel: usb 1-4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Sep 19 20:33:30 localhost kernel: [15180.054888] scsi host18: uas
+Sep 19 20:33:30 localhost kernel: [15180.055664] scsi 18:0:0:0: Direct-Access     TOSHIBA  MD04ACA500       8104 PQ: 0 ANSI: 6
+Sep 19 20:33:30 localhost kernel: [15180.057143] sd 18:0:0:0: Attached scsi generic sg2 type 0
+Sep 19 20:33:30 localhost kernel: [15180.057283] sd 18:0:0:0: [sdb] Spinning up disk...
+Sep 19 20:33:30 localhost kernel: usb 1-4: Product: USB to ATA/ATAPI Bridge
+Sep 19 20:33:30 localhost kernel: usb 1-4: Manufacturer: JMicron
+Sep 19 20:33:30 localhost kernel: usb 1-4: SerialNumber: 111122223333
+Sep 19 20:33:30 localhost kernel: scsi host18: uas
+Sep 19 20:33:30 localhost kernel: scsi 18:0:0:0: Direct-Access     TOSHIBA  MD04ACA500       8104 PQ: 0 ANSI: 6
+Sep 19 20:33:30 localhost kernel: sd 18:0:0:0: Attached scsi generic sg2 type 0
+Sep 19 20:33:30 localhost kernel: sd 18:0:0:0: [sdb] Spinning up disk...
+Sep 19 20:33:30 localhost mtp-probe: checking bus 1, device 32: "/sys/devices/pci0000:00/0000:00:04.0/0000:02:00.0/usb1/1-4"
+Sep 19 20:33:30 localhost mtp-probe: bus: 1, device: 32 was not an MTP device
+Sep 19 20:33:37 localhost kernel: [15181.057228] .......ready
+Sep 19 20:33:37 localhost kernel: [15187.058066] sd 18:0:0:0: [sdb] 9767541168 512-byte logical blocks: (5.00 TB/4.54 TiB)
+Sep 19 20:33:37 localhost kernel: [15187.058076] sd 18:0:0:0: [sdb] 4096-byte physical blocks
+Sep 19 20:33:37 localhost kernel: [15187.058658] sd 18:0:0:0: [sdb] Write Protect is off
+Sep 19 20:33:37 localhost kernel: [15187.058666] sd 18:0:0:0: [sdb] Mode Sense: 53 00 00 08
+Sep 19 20:33:37 localhost kernel: .......ready
+Sep 19 20:33:37 localhost kernel: [15187.059021] sd 18:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Sep 19 20:33:37 localhost kernel: sd 18:0:0:0: [sdb] 9767541168 512-byte logical blocks: (5.00 TB/4.54 TiB)
+Sep 19 20:33:37 localhost kernel: sd 18:0:0:0: [sdb] 4096-byte physical blocks
+Sep 19 20:33:37 localhost kernel: sd 18:0:0:0: [sdb] Write Protect is off
+Sep 19 20:33:37 localhost kernel: sd 18:0:0:0: [sdb] Mode Sense: 53 00 00 08
+Sep 19 20:33:37 localhost kernel: sd 18:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+Sep 19 20:33:37 localhost kernel: [15187.137770] sd 18:0:0:0: [sdb] Attached SCSI disk
+Sep 19 20:33:37 localhost kernel: sd 18:0:0:0: [sdb] Attached SCSI disk
+
