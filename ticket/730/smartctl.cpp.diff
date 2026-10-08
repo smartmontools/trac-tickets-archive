@@ -1,0 +1,113 @@
+Index: smartctl.cpp
+===================================================================
+--- smartctl.cpp	(revision 4335)
++++ smartctl.cpp	(working copy)
+@@ -45,6 +45,7 @@
+ #include "atacmds.h"
+ #include "dev_interface.h"
+ #include "ataprint.h"
++#include "intelliprop.h"
+ #include "knowndrives.h"
+ #include "scsicmds.h"
+ #include "scsiprint.h"
+@@ -174,6 +175,9 @@
+ "        Do test in captive mode (along with -t)\n\n"
+ "  -X, --abort\n"
+ "        Abort any non-captive test on device\n\n"
++"========================================= INTELLIPROP SPECIFIC COMMAND======\n\n"
++"  --iprop-routecmd=[0-3]\n"
++"        Select which drive/port routed commands should be sent to.\n\n"
+ );
+   std::string examples = smi()->get_app_examples("smartctl");
+   if (!examples.empty())
+@@ -181,7 +185,7 @@
+ }
+ 
+ // Values for  --long only options, see parse_options()
+-enum { opt_identify = 1000, opt_scan, opt_scan_open, opt_set, opt_smart };
++enum { opt_identify = 1000, opt_scan, opt_scan_open, opt_set, opt_smart, opt_iprop_routecmd };
+ 
+ /* Returns a string containing a formatted list of the valid arguments
+    to the option opt or empty on failure. Note 'v' case different */
+@@ -231,6 +235,8 @@
+     return getvalidarglist(opt_smart)+", "+getvalidarglist(opt_set);
+   case opt_identify:
+     return "n, wn, w, v, wv, wb";
++  case opt_iprop_routecmd:
++    return "0, 1, 2, 3"; 
+   case 'v':
+   default:
+     return "";
+@@ -309,6 +315,7 @@
+     { "set",             required_argument, 0, opt_set },
+     { "scan",            no_argument,       0, opt_scan      },
+     { "scan-open",       no_argument,       0, opt_scan_open },
++    { "iprop-routecmd",  required_argument, 0, opt_iprop_routecmd },
+     { 0,                 0,                 0, 0   }
+   };
+ 
+@@ -635,6 +642,22 @@
+       }
+       break;
+ 
++    case opt_iprop_routecmd:
++      ataopts.iprop_args.issue_intelliprop_cmd = true;
++      ataopts.iprop_args.is_routed_cmd = true;
++      if (optarg) {
++        for (int i = 0; optarg[i]; i++) {
++          switch (optarg[i]) {
++            case '0': ataopts.iprop_args.drive_select = 0; break;
++            case '1': ataopts.iprop_args.drive_select = 1; break;
++            case '2': ataopts.iprop_args.drive_select = 2; break;
++            case '3': ataopts.iprop_args.drive_select = 3; break;
++            default: badarg = true;
++          }
++        }
++      }
++      break;
++
+     case 'a':
+       ataopts.drive_info           = scsiopts.drive_info          = nvmeopts.drive_info          = true;
+       ataopts.smart_check_status   = scsiopts.smart_check_status  = nvmeopts.smart_check_status  = true;
+@@ -1055,7 +1078,8 @@
+       pout("=======> INVALID ARGUMENT TO -%s: %s\n",
+         (optchar == opt_identify ? "-identify" :
+          optchar == opt_set ? "-set" :
+-         optchar == opt_smart ? "-smart" : optstr), optarg);
++         optchar == opt_smart ? "-smart" :
++         optchar == opt_iprop_routecmd ? "-iprop_routecmd" : optstr), optarg);
+       printvalidarglistmessage(optchar);
+       if (extraerror[0])
+ 	pout("=======> %s", extraerror);
+@@ -1367,19 +1391,24 @@
+ 
+   // now call appropriate ATA or SCSI routine
+   int retval = 0;
+-  if (print_type_only)
++  if (print_type_only){
+     pout("%s: Device of type '%s' [%s] opened\n",
+          dev->get_info_name(), dev->get_dev_type(), get_protocol_info(dev.get()));
+-  else if (dev->is_ata())
+-    retval = ataPrintMain(dev->to_ata(), ataopts);
+-  else if (dev->is_scsi())
++  } else if (dev->is_ata()) {
++      //If the command is specific to an IntelliProp controller, go to the proper handling
++    if (ataopts.iprop_args.issue_intelliprop_cmd) {
++      retval = iprop_main_ata(dev->to_ata(), ataopts.iprop_args);
++    } else {
++      retval = ataPrintMain(dev->to_ata(), ataopts);
++    }
++  } else if (dev->is_scsi()) {
+     retval = scsiPrintMain(dev->to_scsi(), scsiopts);
+-  else if (dev->is_nvme())
++  } else if (dev->is_nvme()) {
+     retval = nvmePrintMain(dev->to_nvme(), nvmeopts);
+-  else
++  } else {
+     // we should never fall into this branch!
+     pout("%s: Neither ATA, SCSI nor NVMe device\n", dev->get_info_name());
+-
++  }
+   dev->close();
+   return retval;
+ }

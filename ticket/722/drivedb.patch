@@ -1,0 +1,12 @@
+--- drivedb.h.org	2016-08-03 11:52:03.484588150 +0300
++++ drivedb.h	2016-08-03 11:58:06.702385107 +0300
+@@ -652,7 +652,8 @@
+   },
+   {
+     "OCZ Trion SSDs",
+-    "OCZ-TRION1[05]0", // tested with OCZ-TRION100/SAFM11.2A, TRION150/SAFZ72.2
++    "OCZ-TRION1[05]0|"  // tested with OCZ-TRION100/SAFM11.2A, TRION150/SAFZ72.2
++    "TOSHIBA-TR1[05]0", // tested with TOSHIBA-TR150/SAFZ12.3
+     "", "",
+   //"-v 9,raw24(raw8),Power_On_Hours "
+   //"-v 12,raw48,Power_Cycle_Count "

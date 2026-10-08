@@ -1,0 +1,26 @@
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 4335)
++++ ChangeLog	(working copy)
+@@ -1,5 +1,21 @@
+ $Id$
++2016-08-18  Casey Biemiller <cbiemiller@intelliprop.com>
+ 
++    ataprint.h: Added iprop_args to act as an interface for IntelliProp
++	controller specific commands.
++
++	atacmds.cpp/h: Added GPL Write log to the available ata commands.
++
++	smartctl.cpp/.h, smartctl.8.in: Added the option --iprop-routecmd.
++	The option --iprop-routecmd is used for routing commands, like
++	SMART commands, to specific ports on a raid device with an
++	Intelliprop controller.
++
++    Makefile.am: Added intelliprop.cpp/h to the list of files.
++
++	Added intelliprop.cpp/.h to handle commands specific to
++	IntelliProp controllers.
++
+ 2016-08-17  Christian Franke  <franke@computer.org>
+ 
+ 	AUTHORS: Add Song Liu.

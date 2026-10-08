@@ -1,0 +1,20 @@
+Index: ataprint.h
+===================================================================
+--- ataprint.h	(revision 4335)
++++ ataprint.h	(working copy)
+@@ -28,6 +28,7 @@
+ #define ATAPRINT_H_CVSID "$Id$\n"
+ 
+ #include <vector>
++#include "intelliprop.h" // iprop_args
+ 
+ // Request to dump a GP or SMART log
+ struct ata_log_request
+@@ -87,6 +88,7 @@
+   firmwarebug_defs firmwarebugs; // -F options
+   bool fix_swapped_id; // Fix swapped ID strings returned by some buggy drivers
+ 
++  intelliprop_args iprop_args; //Handles information for Intelliprop specific commands
+   ata_vendor_attr_defs attribute_defs; // -v options
+ 
+   bool ignore_presets; // Ignore presets from drive database

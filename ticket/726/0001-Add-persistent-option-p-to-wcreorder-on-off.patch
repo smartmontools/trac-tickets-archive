@@ -1,0 +1,119 @@
+From 33a848aa2dcda073e0b07a315eae9e4a121727a7 Mon Sep 17 00:00:00 2001
+From: Song Liu <songliubraving@fb.com>
+Date: Thu, 11 Aug 2016 16:34:17 -0700
+Subject: [PATCH] Add persistent option ",p" to wcreorder,on|off
+
+Similar to wcache-sct, we can make wcreorder setting persistent
+through SCT Feature Control.
+---
+ trunk/smartmontools/ataprint.cpp  | 5 +++--
+ trunk/smartmontools/ataprint.h    | 2 ++
+ trunk/smartmontools/smartctl.8.in | 4 ++--
+ trunk/smartmontools/smartctl.cpp  | 8 +++++---
+ 4 files changed, 12 insertions(+), 7 deletions(-)
+
+diff --git a/trunk/smartmontools/ataprint.cpp b/trunk/smartmontools/ataprint.cpp
+index aa81cf0..134635b 100644
+--- a/trunk/smartmontools/ataprint.cpp
++++ b/trunk/smartmontools/ataprint.cpp
+@@ -2941,12 +2941,13 @@ int ataPrintMain (ata_device * device, const ata_print_options & options)
+       pout("Write cache reordering %sable failed: SCT not supported if ATA Security is LOCKED\n",
+         (enable ? "en" : "dis"));
+     else if (ataGetSetSCTWriteCacheReordering(device,
+-               enable, false /*persistent*/, true /*set*/) < 0) {
++               enable, options.sct_wcache_reorder_set_pers, true /*set*/) < 0) {
+       pout("Write cache reordering %sable failed: %s\n", (enable ? "en" : "dis"), device->get_errmsg());
+       returnval |= FAILSMART;
+     }
+     else
+-      pout("Write cache reordering %sabled\n", (enable ? "en" : "dis"));
++      pout("Write cache reordering %sabled (%s)\n", (enable ? "en" : "dis"),
++           (options.sct_wcache_reorder_set_pers ? "persistent" : "volatile"));
+   }
+ 
+   // Enable/Disable write cache in SCT
+diff --git a/trunk/smartmontools/ataprint.h b/trunk/smartmontools/ataprint.h
+index 230ce22..d3459db 100644
+--- a/trunk/smartmontools/ataprint.h
++++ b/trunk/smartmontools/ataprint.h
+@@ -108,6 +108,7 @@ struct ata_print_options
+   int set_wcache; // disable(-1), enable(1) write cache
+   bool sct_wcache_reorder_get; // print write cache reordering status
+   int sct_wcache_reorder_set; // disable(-1), enable(1) write cache reordering
++  bool sct_wcache_reorder_set_pers;
+   bool sct_wcache_sct_get; // print SCT Feature Control of write cache status
+   int sct_wcache_sct_set; // determined by ata set features command(1), force enable(2), force disable(3)
+   bool sct_wcache_sct_set_pers; // persistent or volatile
+@@ -149,6 +150,7 @@ struct ata_print_options
+       get_security(false), set_security_freeze(false),
+       get_wcache(false), set_wcache(0),
+       sct_wcache_reorder_get(false), sct_wcache_reorder_set(0),
++      sct_wcache_reorder_set_pers(false),
+       sct_wcache_sct_get(false), sct_wcache_sct_set(0),
+       sct_wcache_sct_set_pers(false)
+     { }
+diff --git a/trunk/smartmontools/smartctl.8.in b/trunk/smartmontools/smartctl.8.in
+index 372f331..34db906 100644
+--- a/trunk/smartmontools/smartctl.8.in
++++ b/trunk/smartmontools/smartctl.8.in
+@@ -957,7 +957,7 @@ the setting of wcache[,on|off] is ignored by the drive. SCT Feature Control
+ usually sets write cache as "Controlled by ATA" by default. If ´,p´ is
+ specified, the setting is preserved across power cycles.
+ 
+-.I wcreorder[,on|off]
++.I wcreorder[,on|off[,p]]
+ \- [ATA only] Gets/sets Write Cache Reordering.
+ If it is disabled (off), disk write scheduling is executed on a 
+ first-in-first-out (FIFO) basis. If Write Cache Reordering is enabled (on),
+@@ -965,7 +965,7 @@ then disk write scheduling may be reordered by the drive. If write cache is
+ disabled, the current Write Cache Reordering state is remembered but has
+ no effect on non-cached writes, which are always written in the order received.
+ The state of Write Cache Reordering has no effect on either NCQ or LCQ queued
+-commands.
++commands. If ´,p´ is specified, the setting is preserved across power cycles.
+ 
+ .I rcache[,on|off]
+ \- [SCSI only] Gets/sets the \'Read Cache Disable\' (RCE) bit.
+diff --git a/trunk/smartmontools/smartctl.cpp b/trunk/smartmontools/smartctl.cpp
+index 7660b9c..129b041 100644
+--- a/trunk/smartmontools/smartctl.cpp
++++ b/trunk/smartmontools/smartctl.cpp
+@@ -123,7 +123,7 @@ static void Usage()
+ "  -s NAME[,VALUE], --set=NAME[,VALUE]\n"
+ "        Enable/disable/change device setting: aam,[N|off], apm,[N|off],\n"
+ "        lookahead,[on|off], security-freeze, standby,[N|off|now],\n"
+-"        wcache,[on|off], rcache,[on|off], wcreorder,[on|off]\n"
++"        wcache,[on|off], rcache,[on|off], wcreorder,[on|off[,p]]\n"
+ "        wcache-sct,[ata|on|off[,p]]\n\n"
+   );
+   printf(
+@@ -225,7 +225,7 @@ static std::string getvalidarglist(int opt)
+     return "aam, apm, lookahead, security, wcache, rcache, wcreorder, wcache-sct";
+   case opt_set:
+     return "aam,[N|off], apm,[N|off], lookahead,[on|off], security-freeze, "
+-           "standby,[N|off|now], wcache,[on|off], rcache,[on|off], wcreorder,[on|off], "
++           "standby,[N|off|now], wcache,[on|off], rcache,[on|off], wcreorder,[on|off[,p]], "
+            "wcache-sct,[ata|on|off[,p]]";
+   case 's':
+     return getvalidarglist(opt_smart)+", "+getvalidarglist(opt_set);
+@@ -872,7 +872,8 @@ static const char * parse_options(int argc, char** argv,
+               len2 = strlen(optarg+n2) - 2;
+ 
+               // the ,p option only works for set of SCT Feature Control command
+-              if (strcmp(name, "wcache-sct") != 0)
++              if (strcmp(name, "wcache-sct") != 0 &&
++                  strcmp(name, "wcreorder") != 0)
+                 badarg = true;
+             }
+             on  = !strncmp(optarg+n2, "on", len2);
+@@ -924,6 +925,7 @@ static const char * parse_options(int argc, char** argv,
+               badarg = true;
+           }
+           else if (!strcmp(name, "wcreorder")) {
++            ataopts.sct_wcache_reorder_set_pers = persistent;
+             if (get) {
+               ataopts.sct_wcache_reorder_get = true;
+             }
+-- 
+2.8.0.rc2
+

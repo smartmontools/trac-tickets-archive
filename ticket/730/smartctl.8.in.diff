@@ -1,0 +1,17 @@
+Index: smartctl.8.in
+===================================================================
+--- smartctl.8.in	(revision 4335)
++++ smartctl.8.in	(working copy)
+@@ -772,8 +772,11 @@
+ \- check the device unless it is in SLEEP, STANDBY or IDLE mode.
+ In the IDLE state, most disks are still spinning, so this is probably
+ not what you want.
+-
+ .TP
++.B \-\-iprop\-routecmd=[0-3]
++[ATA only] Controls the active port on IntelliProp raid controllers which
++support the "Command Routing Protocol."
++.TP
+ .B SMART FEATURE ENABLE/DISABLE COMMANDS:
+ .IP
+ .B Note: 

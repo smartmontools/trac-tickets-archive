@@ -1,0 +1,1198 @@
+Index: Makefile.am
+===================================================================
+--- Makefile.am	(revision 4335)
++++ Makefile.am	(working copy)
+@@ -174,6 +174,7 @@
+         dev_legacy.cpp \
+         linux_nvme_ioctl.h \
+         freebsd_nvme_ioctl.h \
++        netbsd_nvme_ioctl.h \
+         megaraid.h
+ 
+ if OS_WIN32_MINGW
+Index: netbsd_nvme_ioctl.h
+===================================================================
+--- netbsd_nvme_ioctl.h	(nonexistent)
++++ netbsd_nvme_ioctl.h	(working copy)
+@@ -0,0 +1,183 @@
++/*	$NetBSD: nvmereg.h,v 1.1 2016/05/01 10:21:02 nonaka Exp $	*/
++/*	$OpenBSD: nvmereg.h,v 1.10 2016/04/14 11:18:32 dlg Exp $ */
++
++/*
++ * Copyright (c) 2014 David Gwynne <dlg@openbsd.org>
++ *
++ * Permission to use, copy, modify, and distribute this software for any
++ * purpose with or without fee is hereby granted, provided that the above
++ * copyright notice and this permission notice appear in all copies.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
++ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
++ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
++ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
++ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
++ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
++ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
++ */
++
++#include <sys/param.h>
++
++struct nvme_sge {
++	uint8_t		id;
++	uint8_t		_reserved[15];
++} __packed __aligned(8);
++
++struct nvme_sqe {
++	uint8_t		opcode;
++	uint8_t		flags;
++	uint16_t	cid;
++
++	uint32_t	nsid;
++
++	uint8_t		_reserved[8];
++
++	uint64_t	mptr;
++
++	union {
++		uint64_t	prp[2];
++		struct nvme_sge	sge;
++	} __packed	entry;
++
++	uint32_t	cdw10;
++	uint32_t	cdw11;
++	uint32_t	cdw12;
++	uint32_t	cdw13;
++	uint32_t	cdw14;
++	uint32_t	cdw15;
++} __packed __aligned(8);
++
++struct nvme_cqe {
++	uint32_t	cdw0;
++
++	uint32_t	_reserved;
++
++	uint16_t	sqhd; /* SQ Head Pointer */
++	uint16_t	sqid; /* SQ Identifier */
++
++	uint16_t	cid; /* Command Identifier */
++	uint16_t	flags;
++#define NVME_CQE_DNR		__BIT(15)
++#define NVME_CQE_M		__BIT(14)
++#define NVME_CQE_SCT(_f)	((_f) & (0x07 << 8))
++#define  NVME_CQE_SCT_GENERIC		(0x00 << 8)
++#define  NVME_CQE_SCT_COMMAND		(0x01 << 8)
++#define  NVME_CQE_SCT_MEDIAERR		(0x02 << 8)
++#define  NVME_CQE_SCT_VENDOR		(0x07 << 8)
++#define NVME_CQE_SC(_f)		((_f) & (0x7f << 1))
++#define  NVME_CQE_SC_SUCCESS		(0x00 << 1)
++#define  NVME_CQE_SC_INVALID_OPCODE	(0x01 << 1)
++#define  NVME_CQE_SC_INVALID_FIELD	(0x02 << 1)
++#define  NVME_CQE_SC_CID_CONFLICT	(0x03 << 1)
++#define  NVME_CQE_SC_DATA_XFER_ERR	(0x04 << 1)
++#define  NVME_CQE_SC_ABRT_BY_NO_PWR	(0x05 << 1)
++#define  NVME_CQE_SC_INTERNAL_DEV_ERR	(0x06 << 1)
++#define  NVME_CQE_SC_CMD_ABRT_REQD	(0x07 << 1)
++#define  NVME_CQE_SC_CMD_ABDR_SQ_DEL	(0x08 << 1)
++#define  NVME_CQE_SC_CMD_ABDR_FUSE_ERR	(0x09 << 1)
++#define  NVME_CQE_SC_CMD_ABDR_FUSE_MISS	(0x0a << 1)
++#define  NVME_CQE_SC_INVALID_NS		(0x0b << 1)
++#define  NVME_CQE_SC_CMD_SEQ_ERR	(0x0c << 1)
++#define  NVME_CQE_SC_INVALID_LAST_SGL	(0x0d << 1)
++#define  NVME_CQE_SC_INVALID_NUM_SGL	(0x0e << 1)
++#define  NVME_CQE_SC_DATA_SGL_LEN	(0x0f << 1)
++#define  NVME_CQE_SC_MDATA_SGL_LEN	(0x10 << 1)
++#define  NVME_CQE_SC_SGL_TYPE_INVALID	(0x11 << 1)
++#define  NVME_CQE_SC_LBA_RANGE		(0x80 << 1)
++#define  NVME_CQE_SC_CAP_EXCEEDED	(0x81 << 1)
++#define  NVME_CQE_NS_NOT_RDY		(0x82 << 1)
++#define  NVME_CQE_RSV_CONFLICT		(0x83 << 1)
++#define NVME_CQE_PHASE		__BIT(0)
++} __packed __aligned(8);
++
++/*-
++ * Copyright (C) 2012-2013 Intel Corporation
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
++ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++ * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
++ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
++ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
++ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
++ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++ * SUCH DAMAGE.
++ *
++ * $FreeBSD: head/sys/dev/nvme/nvme.h 296617 2016-03-10 17:13:10Z mav $
++ */
++
++#define	NVME_PASSTHROUGH_CMD		_IOWR('n', 0, struct nvme_pt_command)
++
++#define	nvme_completion_is_error(cpl)					\
++	((NVME_CQE_SC((cpl)->flags) != NVME_CQE_SC_SUCCESS)   		\
++	    || (NVME_CQE_SCT((cpl)->flags) != NVME_CQE_SCT_GENERIC))
++
++struct nvme_pt_command {
++
++	/*
++	 * cmd is used to specify a passthrough command to a controller or
++	 *  namespace.
++	 *
++	 * The following fields from cmd may be specified by the caller:
++	 *	* opcode
++	 *	* nsid (namespace id) - for admin commands only
++	 *	* cdw10-cdw15
++	 *
++	 * Remaining fields must be set to 0 by the caller.
++	 */
++	struct nvme_sqe		cmd;
++
++	/*
++	 * cpl returns completion status for the passthrough command
++	 *  specified by cmd.
++	 *
++	 * The following fields will be filled out by the driver, for
++	 *  consumption by the caller:
++	 *	* cdw0
++	 *	* flags (except for phase)
++	 *
++	 * Remaining fields will be set to 0 by the driver.
++	 */
++	struct nvme_cqe		cpl;
++
++	/* buf is the data buffer associated with this passthrough command. */
++	void			*buf;
++
++	/*
++	 * len is the length of the data buffer associated with this
++	 *  passthrough command.
++	 */
++	uint32_t		len;
++
++	/*
++	 * is_read = 1 if the passthrough command will read data into the
++	 *  supplied buffer from the controller.
++	 *
++	 * is_read = 0 if the passthrough command will write data from the
++	 *  supplied buffer to the controller.
++	 */
++	uint32_t		is_read;
++
++	/*
++	 * timeout (unit: ms)
++	 *
++	 * 0: use default timeout value
++	 */
++	uint32_t		timeout;
++};
++
++#define NVME_PREFIX		"/dev/nvme"
++#define NVME_NS_PREFIX		"ns"
+
+Property changes on: netbsd_nvme_ioctl.h
+___________________________________________________________________
+Added: svn:eol-style
+## -0,0 +1 ##
++native
+\ No newline at end of property
+Added: svn:keywords
+## -0,0 +1 ##
++Id
+\ No newline at end of property
+Index: os_netbsd.cpp
+===================================================================
+--- os_netbsd.cpp	(revision 4335)
++++ os_netbsd.cpp	(working copy)
+@@ -4,6 +4,7 @@
+  * Home page of code is: http://www.smartmontools.org
+  *
+  * Copyright (C) 2003-8 Sergey Svishchev <smartmontools-support@lists.sourceforge.net>
++ * Copyright (C) 2016 Kimihiro Nonaka
+  *
+  * This program is free software; you can redistribute it and/or modify
+  * it under the terms of the GNU General Public License as published by
+@@ -23,9 +24,13 @@
+ #include "utility.h"
+ #include "os_netbsd.h"
+ 
++#include <sys/utsname.h>
+ #include <errno.h>
+ #include <unistd.h>
+ 
++// based on "sys/dev/ic/nvmeio.h" from NetBSD kernel sources
++#include "netbsd_nvme_ioctl.h" // NVME_PASSTHROUGH_CMD, nvme_completion_is_error
++
+ const char * os_netbsd_cpp_cvsid = "$Id$"
+   OS_NETBSD_H_CVSID;
+ 
+@@ -32,7 +37,7 @@
+ enum warnings {
+   BAD_SMART, MAX_MSG
+ };
+-
++  
+ /* Utility function for printing warnings */
+ void
+ printwarning(int msgNo, const char *extra)
+@@ -54,317 +59,372 @@
+   return;
+ }
+ 
+-static const char *net_dev_prefix = "/dev/r";
++#define ARGUSED(x) ((void)(x))
++
++/////////////////////////////////////////////////////////////////////////////
++
++namespace os_netbsd { // No need to publish anything, name provided for Doxygen
++
++static const char *net_dev_prefix = "/dev/";
++static const char *net_dev_raw_prefix = "/dev/r";
+ static const char *net_dev_ata_disk = "wd";
+ static const char *net_dev_scsi_disk = "sd";
+ static const char *net_dev_scsi_tape = "enrst";
+ 
+-/* Guess device type (ATA or SCSI) based on device name */
+-int
+-guess_device_type(const char *dev_name)
++/////////////////////////////////////////////////////////////////////////////
++/// Implement shared open/close routines with old functions.
++
++class netbsd_smart_device
++: virtual public /*implements*/ smart_device
+ {
+-  int len;
+-  int dev_prefix_len = strlen(net_dev_prefix);
++public:
++  explicit netbsd_smart_device()
++    : smart_device(never_called),
++      m_fd(-1) { }
+ 
+-  if (!dev_name || !(len = strlen(dev_name)))
+-    return CONTROLLER_UNKNOWN;
++  virtual ~netbsd_smart_device() throw();
+ 
+-  if (!strncmp(net_dev_prefix, dev_name, dev_prefix_len)) {
+-    if (len <= dev_prefix_len)
+-      return CONTROLLER_UNKNOWN;
+-    else
+-      dev_name += dev_prefix_len;
+-  }
+-  if (!strncmp(net_dev_ata_disk, dev_name, strlen(net_dev_ata_disk)))
+-    return CONTROLLER_ATA;
++  virtual bool is_open() const;
+ 
+-  if (!strncmp(net_dev_scsi_disk, dev_name, strlen(net_dev_scsi_disk)))
+-    return CONTROLLER_SCSI;
++  virtual bool open();
+ 
+-  if (!strncmp(net_dev_scsi_tape, dev_name, strlen(net_dev_scsi_tape)))
+-    return CONTROLLER_SCSI;
++  virtual bool close();
+ 
+-  return CONTROLLER_UNKNOWN;
++protected:
++  /// Return filedesc for derived classes.
++  int get_fd() const
++    { return m_fd; }
++
++  void set_fd(int fd)
++    { m_fd = fd; }
++
++private:
++  int m_fd; ///< filedesc, -1 if not open.
++};
++
++netbsd_smart_device::~netbsd_smart_device() throw()
++{
++  if (m_fd >= 0)
++    os_netbsd::netbsd_smart_device::close();
+ }
+ 
+-int
+-get_dev_names(char ***names, const char *prefix)
++bool netbsd_smart_device::is_open() const
+ {
+-  char *disknames, *p, **mp;
+-  int n = 0;
+-  int sysctl_mib[2];
+-  size_t sysctl_len;
++  return (m_fd >= 0);
++}
+ 
+-  *names = NULL;
+ 
+-  sysctl_mib[0] = CTL_HW;
+-  sysctl_mib[1] = HW_DISKNAMES;
+-  if (-1 == sysctl(sysctl_mib, 2, NULL, &sysctl_len, NULL, 0)) {
+-    pout("Failed to get value of sysctl `hw.disknames'\n");
+-    return -1;
+-  }
+-  if (!(disknames = (char *)malloc(sysctl_len))) {
+-    pout("Out of memory constructing scan device list\n");
+-    return -1;
+-  }
+-  if (-1 == sysctl(sysctl_mib, 2, disknames, &sysctl_len, NULL, 0)) {
+-    pout("Failed to get value of sysctl `hw.disknames'\n");
+-    return -1;
+-  }
+-  if (!(mp = (char **) calloc(strlen(disknames) / 2, sizeof(char *)))) {
+-    pout("Out of memory constructing scan device list\n");
+-    return -1;
+-  }
+-  for (p = strtok(disknames, " "); p; p = strtok(NULL, " ")) {
+-    if (strncmp(p, prefix, strlen(prefix))) {
+-      continue;
++bool netbsd_smart_device::open()
++{
++  const char *dev = get_dev_name();
++  int fd;
++
++  if (is_scsi()) {
++    fd = ::open(dev,O_RDWR|O_NONBLOCK);
++    if (fd < 0 && errno == EROFS)
++      fd = ::open(dev,O_RDONLY|O_NONBLOCK);
++    if (fd < 0) {
++      set_err(errno);
++      return false;
+     }
+-    mp[n] = (char *)malloc(strlen(net_dev_prefix) + strlen(p) + 2);
+-    if (!mp[n]) {
+-      pout("Out of memory constructing scan device list\n");
+-      return -1;
++  } else if (is_ata() || is_nvme()) {
++    if ((fd = ::open(dev,O_RDWR|O_NONBLOCK))<0) {
++      set_err(errno);
++      return false;
+     }
+-    sprintf(mp[n], "%s%s%c", net_dev_prefix, p, 'a' + getrawpartition());
+-    n++;
+-  }
++  } else
++    return false;
+ 
+-  char ** tmp = (char **)realloc(mp, n * (sizeof(char *)));
+-  if (NULL == tmp) {
+-    pout("Out of memory constructing scan device list\n");
+-    free(mp);
+-    return -1;
+-  }
+-  else
+-    mp = tmp;
+-  *names = mp;
+-  return n;
++  set_fd(fd);
++  return true;
+ }
+ 
+-int
+-make_device_names(char ***devlist, const char *name)
++bool netbsd_smart_device::close()
+ {
+-  if (!strcmp(name, "SCSI"))
+-    return get_dev_names(devlist, net_dev_scsi_disk);
+-  else if (!strcmp(name, "ATA"))
+-    return get_dev_names(devlist, net_dev_ata_disk);
+-  else
+-    return 0;
++  int failed = 0;
++  // close device, if open
++  if (is_open())
++    failed=::close(get_fd());
++
++  set_fd(-1);
++
++  if(failed) return false;
++    else return true;
+ }
+ 
+-int
+-deviceopen(const char *pathname, char *type)
++/////////////////////////////////////////////////////////////////////////////
++/// Implement standard ATA support
++
++class netbsd_ata_device
++: public /*implements*/ ata_device,
++  public /*extends*/ netbsd_smart_device
+ {
+-  if (!strcmp(type, "SCSI")) {
+-    int fd = open(pathname, O_RDWR | O_NONBLOCK);
+-    if (fd < 0 && errno == EROFS)
+-      fd = open(pathname, O_RDONLY | O_NONBLOCK);
+-    return fd;
+-  } else if (!strcmp(type, "ATA"))
+-    return open(pathname, O_RDWR | O_NONBLOCK);
+-  else
+-    return -1;
++public:
++  netbsd_ata_device(smart_interface * intf, const char * dev_name, const char * req_type);
++  virtual bool ata_pass_through(const ata_cmd_in & in, ata_cmd_out & out);
++
++protected:
++  virtual int do_cmd(struct atareq* request, bool is_48bit_cmd);
++};
++
++netbsd_ata_device::netbsd_ata_device(smart_interface * intf, const char * dev_name, const char * req_type)
++: smart_device(intf, dev_name, "ata", req_type),
++  netbsd_smart_device()
++{
+ }
+ 
+-int
+-deviceclose(int fd)
++int netbsd_ata_device::do_cmd( struct atareq* request, bool is_48bit_cmd)
+ {
+-  return close(fd);
++  int fd = get_fd(), ret;
++  ARGUSED(is_48bit_cmd); // no support for 48 bit commands in the ATAIOCCOMMAND
++  ret = ioctl(fd, ATAIOCCOMMAND, request);
++  if (ret) set_err(errno);
++  return ret;
+ }
+ 
+-int
+-ata_command_interface(int fd, smart_command_set command, int select, char *data)
++bool netbsd_ata_device::ata_pass_through(const ata_cmd_in & in, ata_cmd_out & out)
+ {
++  bool ata_48bit = false; // no ata_48bit_support via ATAIOCCOMMAND
++
++  if (!ata_cmd_is_ok(in,
++    true,  // data_out_support
++    true,  // multi_sector_support
++    ata_48bit) 
++    ) {
++      set_err(ENOSYS, "48-bit ATA commands not implemented");
++      return false;
++    }
++
+   struct atareq req;
+-  unsigned char inbuf[DEV_BSIZE];
+-  int retval, copydata = 0;
++  memset(&req, 0, sizeof(req));
+ 
+-  memset(&req, 0, sizeof(req));
+   req.timeout = 1000;
++  req.command = in.in_regs.command;
++  req.features = in.in_regs.features;
++  req.sec_count = in.in_regs.sector_count;
++  req.sec_num = in.in_regs.lba_low;
++  req.head = in.in_regs.device;
++  req.cylinder = le16toh(in.in_regs.lba_mid | (in.in_regs.lba_high << 8));
+ 
+-  memset(&inbuf, 0, sizeof(inbuf));
+-
+-  switch (command) {
+-  case READ_VALUES:
+-    req.flags = ATACMD_READ;
+-    req.features = WDSM_RD_DATA;
+-    req.command = WDCC_SMART;
+-    req.databuf = (char *)inbuf;
+-    req.datalen = sizeof(inbuf);
+-    req.cylinder = WDSMART_CYL;
+-    copydata = 1;
+-    break;
+-  case READ_THRESHOLDS:
+-    req.flags = ATACMD_READ;
+-    req.features = WDSM_RD_THRESHOLDS;
+-    req.command = WDCC_SMART;
+-    req.databuf = (char *)inbuf;
+-    req.datalen = sizeof(inbuf);
+-    req.cylinder = WDSMART_CYL;
+-    copydata = 1;
+-    break;
+-  case READ_LOG:
+-    req.flags = ATACMD_READ;
+-    req.features = ATA_SMART_READ_LOG_SECTOR;	/* XXX missing from wdcreg.h */
+-    req.command = WDCC_SMART;
+-    req.databuf = (char *)inbuf;
+-    req.datalen = sizeof(inbuf);
+-    req.cylinder = WDSMART_CYL;
+-    req.sec_num = select;
+-    req.sec_count = 1;
+-    copydata = 1;
+-    break;
+-  case WRITE_LOG:
+-    memcpy(inbuf, data, 512);
+-    req.flags = ATACMD_WRITE;
+-    req.features = ATA_SMART_WRITE_LOG_SECTOR;	/* XXX missing from wdcreg.h */
+-    req.command = WDCC_SMART;
+-    req.databuf = (char *)inbuf;
+-    req.datalen = sizeof(inbuf);
+-    req.cylinder = WDSMART_CYL;
+-    req.sec_num = select;
+-    req.sec_count = 1;
+-    break;
+-  case IDENTIFY:
+-    req.flags = ATACMD_READ;
+-    req.command = WDCC_IDENTIFY;
+-    req.databuf = (char *)inbuf;
+-    req.datalen = sizeof(inbuf);
+-    copydata = 1;
+-    break;
+-  case PIDENTIFY:
+-    req.flags = ATACMD_READ;
+-    req.command = ATAPI_IDENTIFY_DEVICE;
+-    req.databuf = (char *)inbuf;
+-    req.datalen = sizeof(inbuf);
+-    copydata = 1;
+-    break;
+-  case ENABLE:
+-    req.flags = ATACMD_READREG;
+-    req.features = WDSM_ENABLE_OPS;
+-    req.command = WDCC_SMART;
+-    req.cylinder = WDSMART_CYL;
+-    break;
+-  case DISABLE:
+-    req.flags = ATACMD_READREG;
+-    req.features = WDSM_DISABLE_OPS;
+-    req.command = WDCC_SMART;
+-    req.cylinder = WDSMART_CYL;
+-    break;
+-  case AUTO_OFFLINE:
+-    /* NOTE: According to ATAPI 4 and UP, this command is obsolete */
+-    req.flags = ATACMD_READREG;
+-    req.features = ATA_SMART_AUTO_OFFLINE;	/* XXX missing from wdcreg.h */
+-    req.command = WDCC_SMART;
+-    req.cylinder = WDSMART_CYL;
+-    req.sec_count = select;
+-    break;
+-  case AUTOSAVE:
+-    req.flags = ATACMD_READREG;
+-    req.features = ATA_SMART_AUTOSAVE;	/* XXX missing from wdcreg.h */
+-    req.command = WDCC_SMART;
+-    req.cylinder = WDSMART_CYL;
+-    req.sec_count = select;
+-    break;
+-  case IMMEDIATE_OFFLINE:
+-    /* NOTE: According to ATAPI 4 and UP, this command is obsolete */
+-    req.flags = ATACMD_READREG;
+-    req.features = ATA_SMART_IMMEDIATE_OFFLINE;	/* XXX missing from wdcreg.h */
+-    req.command = WDCC_SMART;
+-    req.cylinder = WDSMART_CYL;
+-    req.sec_num = select;
+-    req.sec_count = 1;
+-    break;
+-  case STATUS:		/* should return 0 if SMART is enabled at all */
+-  case STATUS_CHECK:	/* should return 0 if disk's health is ok */
+-    req.flags = ATACMD_READREG;
+-    req.features = WDSM_STATUS;
+-    req.command = WDCC_SMART;
+-    req.cylinder = WDSMART_CYL;
+-    break;
+-  case CHECK_POWER_MODE:
+-    req.flags = ATACMD_READREG;
+-    req.command = WDCC_CHECK_PWR;
+-    break;
+-  default:
+-    pout("Unrecognized command %d in ata_command_interface()\n", command);
+-    errno = ENOSYS;
+-    return -1;
++  switch (in.direction) {
++    case ata_cmd_in::no_data:
++      req.flags = ATACMD_READREG;
++      break;
++    case ata_cmd_in::data_in:
++      req.flags = ATACMD_READ | ATACMD_READREG;
++      req.databuf = (char *)in.buffer;
++      req.datalen = in.size;
++      break;
++    case ata_cmd_in::data_out:
++      req.flags = ATACMD_WRITE | ATACMD_READREG;
++      req.databuf = (char *)in.buffer;
++      req.datalen = in.size;
++      break;
++    default:
++      return set_err(ENOSYS);
+   }
+ 
+-  if (command == STATUS_CHECK || command == AUTOSAVE || command == AUTO_OFFLINE) {
+-    char buf[512];
++  clear_err();
++  errno = 0;
++  if (do_cmd(&req, in.in_regs.is_48bit_cmd()))
++      return false;
++  if (req.retsts != ATACMD_OK)
++      return set_err(EIO, "request failed, error code 0x%02x", req.retsts);
+ 
+-    unsigned const short normal = WDSMART_CYL, failed = 0x2cf4;
++  out.out_regs.error = req.error;
++  out.out_regs.sector_count = req.sec_count;
++  out.out_regs.lba_low = req.sec_num;
++  out.out_regs.device = req.head;
++  out.out_regs.lba_mid = le16toh(req.cylinder);
++  out.out_regs.lba_high = le16toh(req.cylinder) >> 8;
++  out.out_regs.status = req.command;
+ 
+-    if ((retval = ioctl(fd, ATAIOCCOMMAND, &req))) {
+-      perror("Failed command");
+-      return -1;
+-    }
+-    if (req.retsts != ATACMD_OK) {
+-      return -1;
+-    }
+-    /* Cyl low and Cyl high unchanged means "Good SMART status" */
+-    if (req.cylinder == normal)
+-      return 0;
++  // Command specific processing
++  if (in.in_regs.command == ATA_SMART_CMD
++       && in.in_regs.features == ATA_SMART_STATUS
++       && in.out_needed.lba_high)
++  {
++    unsigned const char normal_lo=0x4f, normal_hi=0xc2;
++    unsigned const char failed_lo=0xf4, failed_hi=0x2c;
+ 
+-    /* These values mean "Bad SMART status" */
+-    if (req.cylinder == failed)
+-      return 1;
++    // Cyl low and Cyl high unchanged means "Good SMART status"
++    if (!(out.out_regs.lba_mid==normal_lo && out.out_regs.lba_high==normal_hi)
++    // These values mean "Bad SMART status"
++        && !(out.out_regs.lba_mid==failed_lo && out.out_regs.lba_high==failed_hi))
+ 
+-    /* We haven't gotten output that makes sense; 
+-     * print out some debugging info */
+-    snprintf(buf, sizeof(buf),
+-      "CMD=0x%02x\nFR =0x%02x\nNS =0x%02x\nSC =0x%02x\nCL =0x%02x\nCH =0x%02x\nRETURN =0x%04x\n",
+-      (int) req.command, (int) req.features, (int) req.sec_count, (int) req.sec_num,
+-      (int) (le16toh(req.cylinder) & 0xff), (int) ((le16toh(req.cylinder) >> 8) & 0xff),
+-      (int) req.error);
+-    printwarning(BAD_SMART, buf);
+-    return 0;
++    {
++      // We haven't gotten output that makes sense; print out some debugging info
++      char buf[512];
++      snprintf(buf, sizeof(buf),
++        "CMD=0x%02x\nFR =0x%02x\nNS =0x%02x\nSC =0x%02x\nCL =0x%02x\nCH =0x%02x\nRETURN =0x%04x\n",
++        (int)req.command,
++        (int)req.features,
++        (int)req.sec_count,
++        (int)req.sec_num,
++        (int)(le16toh(req.cylinder) & 0xff),
++        (int)((le16toh(req.cylinder) >> 8) & 0xff),
++        (int)req.error);
++      printwarning(BAD_SMART,buf);
++      out.out_regs.lba_high = failed_hi; 
++      out.out_regs.lba_mid = failed_lo;
++    }
+   }
+ 
+-  retval = ioctl(fd, ATAIOCCOMMAND, &req);
+-  if (retval < 0) {
+-    perror("Failed command");
+-    return -1;
++  return true;
++}
++
++/////////////////////////////////////////////////////////////////////////////
++/// NVMe support
++
++class netbsd_nvme_device
++: public /*implements*/ nvme_device,
++  public /*extends*/ netbsd_smart_device
++{
++public:
++  netbsd_nvme_device(smart_interface * intf, const char * dev_name,
++    const char * req_type, unsigned nsid);
++
++  virtual bool open();
++
++  virtual bool nvme_pass_through(const nvme_cmd_in & in, nvme_cmd_out & out);
++};
++
++netbsd_nvme_device::netbsd_nvme_device(smart_interface * intf, const char * dev_name,
++  const char * req_type, unsigned nsid)
++: smart_device(intf, dev_name, "nvme", req_type),
++  nvme_device(nsid),
++  netbsd_smart_device()
++{
++}
++
++bool netbsd_nvme_device::open()
++{
++  const char *dev = get_dev_name();
++  if (strncmp(dev, NVME_PREFIX, strlen(NVME_PREFIX))) {
++  	set_err(EINVAL, "NVMe controller controller/namespace ids must begin with '%s'", 
++  		NVME_PREFIX);
++  	return false;
+   }
+-  if (req.retsts != ATACMD_OK) {
+-    return -1;
++  
++  int nsid = -1, ctrlid = -1;
++  char tmp;
++  
++  if(sscanf(dev, NVME_PREFIX"%d%c", &ctrlid, &tmp) == 1)
++  {
++  	if(ctrlid < 0) {
++  		set_err(EINVAL, "Invalid NVMe controller number");
++  		return false;
++  	}
++  	nsid = 0xFFFFFFFF; // broadcast id
+   }
++  else if (sscanf(dev, NVME_PREFIX"%d"NVME_NS_PREFIX"%d%c", 
++  	&ctrlid, &nsid, &tmp) == 2) 
++  {
++  	if(ctrlid < 0 || nsid <= 0) {
++  		set_err(EINVAL, "Invalid NVMe controller/namespace number");
++  		return false;
++  	}
++  }
++  else {
++  	set_err(EINVAL, "Invalid NVMe controller/namespace syntax");
++  	return false;
++  }
++  
++  // we should always open controller, not namespace device
++  char	full_path[64];
++  snprintf(full_path, sizeof(full_path), NVME_PREFIX"%d", ctrlid);
++  
++  int fd; 
++  if ((fd = ::open(full_path, O_RDWR))<0) {
++    set_err(errno);
++    return false;
++  }
++  set_fd(fd);
++  
++  if (!get_nsid()) {
++    set_nsid(nsid);
++  }
++  
++  return true;
++}
+ 
+-  if (command == CHECK_POWER_MODE)
+-    data[0] = req.sec_count;
++bool netbsd_nvme_device::nvme_pass_through(const nvme_cmd_in & in, nvme_cmd_out & out)
++{
++  // nvme_passthru_cmd pt;
++  struct nvme_pt_command pt;
++  memset(&pt, 0, sizeof(pt));
+ 
+-  if (copydata)
+-    memcpy(data, inbuf, 512);
++  pt.cmd.opcode = in.opcode;
++  pt.cmd.nsid = in.nsid;
++  pt.buf = in.buffer;
++  pt.len = in.size;
++  pt.cmd.cdw10 = in.cdw10;
++  pt.cmd.cdw11 = in.cdw11;
++  pt.cmd.cdw12 = in.cdw12;
++  pt.cmd.cdw13 = in.cdw13;
++  pt.cmd.cdw14 = in.cdw14;
++  pt.cmd.cdw15 = in.cdw15;
++  pt.is_read = 1; // should we use in.direction()?
++  
++  int status = ioctl(get_fd(), NVME_PASSTHROUGH_CMD, &pt);
+ 
+-  return 0;
++  if (status < 0)
++    return set_err(errno, "NVME_PASSTHROUGH_CMD: %s", strerror(errno));
++
++  out.result=pt.cpl.cdw0; // Command specific result (DW0)
++
++  if (nvme_completion_is_error(&pt.cpl))
++    return set_nvme_err(out, nvme_completion_is_error(&pt.cpl));
++
++  return true;
+ }
+ 
+-int
+-do_scsi_cmnd_io(int fd, struct scsi_cmnd_io * iop, int report)
++/////////////////////////////////////////////////////////////////////////////
++/// Standard SCSI support
++
++class netbsd_scsi_device
++: public /*implements*/ scsi_device,
++  public /*extends*/ netbsd_smart_device
+ {
++public:
++  netbsd_scsi_device(smart_interface * intf, const char * dev_name, const char * req_type);
++
++  virtual bool scsi_pass_through(scsi_cmnd_io * iop);
++};
++
++netbsd_scsi_device::netbsd_scsi_device(smart_interface * intf,
++  const char * dev_name, const char * req_type)
++: smart_device(intf, dev_name, "scsi", req_type),
++  netbsd_smart_device()
++{
++}
++
++bool netbsd_scsi_device::scsi_pass_through(scsi_cmnd_io * iop)
++{
+   struct scsireq sc;
++  int fd = get_fd();
+ 
+-  if (report > 0) {
+-    size_t k;
++  if (scsi_debugmode) {
++    unsigned int k;
++    const unsigned char * ucp = iop->cmnd;
++    const char * np;
+ 
+-    const unsigned char *ucp = iop->cmnd;
+-    const char *np;
+-
+     np = scsi_get_opcode_name(ucp[0]);
+     pout(" [%s: ", np ? np : "<unknown opcode>");
+     for (k = 0; k < iop->cmnd_len; ++k)
+       pout("%02x ", ucp[k]);
+-    if ((report > 1) &&
++    if ((scsi_debugmode > 1) && 
+       (DXFER_TO_DEVICE == iop->dxfer_dir) && (iop->dxferp)) {
+-      int trunc = (iop->dxfer_len > 256) ? 1 : 0;
++    int trunc = (iop->dxfer_len > 256) ? 1 : 0;
+ 
+-      pout("]\n  Outgoing data, len=%d%s:\n", (int) iop->dxfer_len,
+-	(trunc ? " [only first 256 bytes shown]" : ""));
+-      dStrHex(iop->dxferp, (trunc ? 256 : iop->dxfer_len), 1);
+-    } else
+-      pout("]");
++    pout("]\n  Outgoing data, len=%d%s:\n", (int)iop->dxfer_len,
++      (trunc ? " [only first 256 bytes shown]" : ""));
++    dStrHex(iop->dxferp, (trunc ? 256 : iop->dxfer_len) , 1);
++      }
++      else
++        pout("]\n");
+   }
++
+   memset(&sc, 0, sizeof(sc));
+   memcpy(sc.cmd, iop->cmnd, iop->cmnd_len);
+   sc.cmdlen = iop->cmnd_len;
+@@ -377,8 +437,10 @@
+     (iop->dxfer_dir == DXFER_FROM_DEVICE ? SCCMD_READ : SCCMD_WRITE));
+ 
+   if (ioctl(fd, SCIOCCOMMAND, &sc) < 0) {
+-    warn("error sending SCSI ccb");
+-    return -1;
++    if (scsi_debugmode) {
++      pout("  error sending SCSI ccb\n");
++    }
++    return set_err(EIO);
+   }
+   iop->resid = sc.datalen - sc.datalen_used;
+   iop->scsi_status = sc.status;
+@@ -386,7 +448,7 @@
+     memcpy(iop->sensep, sc.sense, sc.senselen_used);
+     iop->resp_sense_len = sc.senselen_used;
+   }
+-  if (report > 0) {
++  if (scsi_debugmode) {
+     int trunc;
+ 
+     pout("  status=0\n");
+@@ -398,43 +460,277 @@
+   }
+   switch (sc.retsts) {
+     case SCCMD_OK:
+-      return 0;
++      break;
+     case SCCMD_TIMEOUT:
+-      return -ETIMEDOUT;
++      return set_err(ETIMEDOUT);
+     case SCCMD_BUSY:
+-      return -EBUSY;
++      return set_err(EBUSY);
+     default:
+-      return -EIO;
++      return set_err(EIO);
+   }
++
++  return true;
+ }
+ 
+-/* print examples for smartctl */
+-void 
+-print_smartctl_examples()
++/////////////////////////////////////////////////////////////////////////////
++/// Implement platform interface with old functions.
++
++class netbsd_smart_interface
++: public /*implements*/ smart_interface
+ {
+-  char p;
++public:
++  virtual std::string get_os_version_str();
+ 
+-  p = 'a' + getrawpartition();
+-  printf("=================================================== SMARTCTL EXAMPLES =====\n\n");
++  virtual std::string get_app_examples(const char * appname);
++
++  virtual bool scan_smart_devices(smart_device_list & devlist, const char * type,
++    const char * pattern = 0);
++
++protected:
++  virtual ata_device * get_ata_device(const char * name, const char * type);
++
++  virtual scsi_device * get_scsi_device(const char * name, const char * type);
++ 
++  virtual nvme_device * get_nvme_device(const char * name, const char * type,
++    unsigned nsid);
++
++  virtual smart_device * autodetect_smart_device(const char * name);
++
++  virtual smart_device * get_custom_smart_device(const char * name, const char * type);
++
++  virtual std::string get_valid_custom_dev_types_str();
++
++private:
++  int get_dev_names(char ***, const char *);
++};
++
++
++//////////////////////////////////////////////////////////////////////
++
++std::string netbsd_smart_interface::get_os_version_str()
++{
++  struct utsname osname;
++  uname(&osname);
++  return strprintf("%s %s %s", osname.sysname, osname.release, osname.machine);
++}
++
++std::string netbsd_smart_interface::get_app_examples(const char * appname)
++{
++  if (!strcmp(appname, "smartctl")) {
++    char p;
++
++    p = 'a' + getrawpartition();
++    return strprintf(
++        "=================================================== SMARTCTL EXAMPLES =====\n\n"
+ #ifdef HAVE_GETOPT_LONG
+-  printf(
+-    "  smartctl -a /dev/wd0%c                      (Prints all SMART information)\n\n"
+-    "  smartctl --smart=on --offlineauto=on --saveauto=on /dev/wd0%c\n"
+-    "                                              (Enables SMART on first disk)\n\n"
+-    "  smartctl -t long /dev/wd0%c             (Executes extended disk self-test)\n\n"
+-    "  smartctl --attributes --log=selftest --quietmode=errorsonly /dev/wd0%c\n"
+-    "                                      (Prints Self-Test & Attribute errors)\n",
+-    p, p, p, p
+-    );
++      "  smartctl -a /dev/wd0%c                      (Prints all SMART information)\n\n"
++      "  smartctl --smart=on --offlineauto=on --saveauto=on /dev/wd0%c\n"
++      "                                              (Enables SMART on first disk)\n\n"
++      "  smartctl -t long /dev/wd0%c             (Executes extended disk self-test)\n\n"
++      "  smartctl --attributes --log=selftest --quietmode=errorsonly /dev/wd0%c\n"
++      "                                      (Prints Self-Test & Attribute errors)\n"
+ #else
+-  printf(
+-    "  smartctl -a /dev/wd0%c                     (Prints all SMART information)\n"
+-    "  smartctl -s on -o on -S on /dev/wd0%c        (Enables SMART on first disk)\n"
+-    "  smartctl -t long /dev/wd0%c            (Executes extended disk self-test)\n"
+-    "  smartctl -A -l selftest -q errorsonly /dev/wd0%c"
+-    "                                      (Prints Self-Test & Attribute errors)\n",
+-    p, p, p, p
+-    );
++      "  smartctl -a /dev/wd0%c                     (Prints all SMART information)\n"
++      "  smartctl -s on -o on -S on /dev/wd0%c        (Enables SMART on first disk)\n"
++      "  smartctl -t long /dev/wd0%c            (Executes extended disk self-test)\n"
++      "  smartctl -A -l selftest -q errorsonly /dev/wd0%c"
++      "                                      (Prints Self-Test & Attribute errors)\n"
+ #endif
+-  return;
++      , p, p, p, p);
++  }
++  return "";
+ }
++
++ata_device * netbsd_smart_interface::get_ata_device(const char * name, const char * type)
++{
++  return new netbsd_ata_device(this, name, type);
++}
++
++scsi_device * netbsd_smart_interface::get_scsi_device(const char * name, const char * type)
++{
++  return new netbsd_scsi_device(this, name, type);
++}
++
++nvme_device * netbsd_smart_interface::get_nvme_device(const char * name, const char * type,
++  unsigned nsid)
++{
++  return new netbsd_nvme_device(this, name, type, nsid);
++}
++
++int netbsd_smart_interface::get_dev_names(char ***names, const char *prefix)
++{
++  char *disknames, *p, **mp;
++  int n = 0;
++  int sysctl_mib[2];
++  size_t sysctl_len;
++
++  *names = NULL;
++
++  sysctl_mib[0] = CTL_HW;
++  sysctl_mib[1] = HW_DISKNAMES;
++  if (-1 == sysctl(sysctl_mib, 2, NULL, &sysctl_len, NULL, 0)) {
++    pout("Failed to get value of sysctl `hw.disknames'\n");
++    return -1;
++  }
++  if (!(disknames = (char *)malloc(sysctl_len))) {
++    pout("Out of memory constructing scan device list\n");
++    return -1;
++  }
++  if (-1 == sysctl(sysctl_mib, 2, disknames, &sysctl_len, NULL, 0)) {
++    pout("Failed to get value of sysctl `hw.disknames'\n");
++    return -1;
++  }
++  if (!(mp = (char **) calloc(strlen(disknames) / 2, sizeof(char *)))) {
++    pout("Out of memory constructing scan device list\n");
++    return -1;
++  }
++  for (p = strtok(disknames, " "); p; p = strtok(NULL, " ")) {
++    if (strncmp(p, prefix, strlen(prefix))) {
++      continue;
++    }
++    mp[n] = (char *)malloc(strlen(net_dev_raw_prefix) + strlen(p) + 2);
++    if (!mp[n]) {
++      pout("Out of memory constructing scan device list\n");
++      return -1;
++    }
++    sprintf(mp[n], "%s%s%c", net_dev_raw_prefix, p, 'a' + getrawpartition());
++    n++;
++  }
++
++  char ** tmp = (char **)realloc(mp, n * (sizeof(char *)));
++  if (NULL == tmp) {
++    pout("Out of memory constructing scan device list\n");
++    free(mp);
++    return -1;
++  }
++  else
++    mp = tmp;
++  *names = mp;
++  return n;
++}
++
++bool netbsd_smart_interface::scan_smart_devices(smart_device_list & devlist,
++  const char * type, const char * pattern /*= 0*/)
++{
++  if (pattern) {
++    set_err(EINVAL, "DEVICESCAN with pattern not implemented yet");
++    return false;
++  }
++
++  if (type == NULL)
++    type = "";
++
++  // Make namelists
++  char * * atanames = 0; int numata = 0;
++  if (!strcmp(type, "ata")) {
++    numata = get_dev_names(&atanames, net_dev_ata_disk);
++    if (numata < 0) {
++      set_err(ENOMEM);
++      return false;
++    }
++  }
++
++  char * * scsinames = 0; int numscsi = 0;
++  char * * scsitapenames = 0; int numscsitape = 0;
++  if (!strcmp(type, "scsi")) {
++    numscsi = get_dev_names(&scsinames, net_dev_scsi_disk);
++    if (numscsi < 0) {
++      set_err(ENOMEM);
++      return false;
++    }
++    numscsitape = get_dev_names(&scsitapenames, net_dev_scsi_tape);
++    if (numscsitape < 0) {
++      set_err(ENOMEM);
++      return false;
++    }
++  }
++
++  // Add to devlist
++  int i;
++  for (i = 0; i < numata; i++) {
++    ata_device * atadev = get_ata_device(atanames[i], type);
++    if (atadev)
++      devlist.push_back(atadev);
++    free(atanames[i]);
++  }
++  if(numata) free(atanames);
++
++  for (i = 0; i < numscsi; i++) {
++    scsi_device * scsidev = get_scsi_device(scsinames[i], type);
++    if (scsidev)
++      devlist.push_back(scsidev);
++    free(scsinames[i]);
++  }
++  if(numscsi) free(scsinames);
++
++  for (i = 0; i < numscsitape; i++) {
++    scsi_device * scsidev = get_scsi_device(scsitapenames[i], type);
++    if (scsidev)
++      devlist.push_back(scsidev);
++    free(scsitapenames[i]);
++  }
++  if(numscsitape) free(scsitapenames);
++
++  return true;
++}
++
++smart_device * netbsd_smart_interface::autodetect_smart_device(const char * name)
++{
++  const char * test_name = name;
++
++  // if dev_name null, or string length zero
++  if (!name || !*name)
++    return 0;
++
++  // Dereference symlinks
++  struct stat st;
++  std::string pathbuf;
++  if (!lstat(name, &st) && S_ISLNK(st.st_mode)) {
++    char * p = realpath(name, (char *)0);
++    if (p) {
++      pathbuf = p;
++      free(p);
++      test_name = pathbuf.c_str();
++    }
++  }
++
++  if (str_starts_with(test_name, net_dev_raw_prefix)) {
++    test_name += strlen(net_dev_raw_prefix);
++    if (!strncmp(net_dev_ata_disk, test_name, strlen(net_dev_ata_disk)))
++      return new netbsd_ata_device(this, test_name, "ata");
++    if (!strncmp(net_dev_scsi_disk, test_name, strlen(net_dev_scsi_disk)))
++      return new netbsd_scsi_device(this, test_name, "scsi");
++    if (!strncmp(net_dev_scsi_tape, test_name, strlen(net_dev_scsi_tape)))
++      return new netbsd_scsi_device(this, test_name, "scsi");
++  } else if (str_starts_with(test_name, net_dev_prefix)) {
++    if(!strncmp(NVME_PREFIX, test_name, strlen(NVME_PREFIX)))
++      return new netbsd_nvme_device(this, test_name, "nvme",
++        0 /* use default nsid */);
++  }
++
++  // device type unknown
++  return 0;
++}
++
++smart_device * netbsd_smart_interface::get_custom_smart_device(const char * name, const char * type)
++{
++  ARGUSED(name);
++  ARGUSED(type);
++  return 0;
++}
++
++std::string netbsd_smart_interface::get_valid_custom_dev_types_str()
++{
++  return "";
++}
++
++} // namespace
++
++/////////////////////////////////////////////////////////////////////////////
++/// Initialize platform interface and register with smi()
++
++void smart_interface::init()
++{
++  static os_netbsd::netbsd_smart_interface the_interface;
++  smart_interface::set(&the_interface);
++}

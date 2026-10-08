@@ -1,0 +1,445 @@
+#################################################################################
+# hwinfo --disk
+47: IDE 00.0: 10600 Disk                                        
+  [Created at block.243]
+  UDI: /org/freedesktop/Hal/devices/storage_serial_TOSHIBA_THNSNJ512GCST_Y3FSHIMOMNULL
+  Unique ID: 3OxL.zfxCMx4fxg5
+  Parent ID: x7x8.45KnxGrxJ9x
+  SysFS ID: /class/block/sda
+  SysFS BusID: 0:0:0:0
+  SysFS Device Link: /devices/pci0000:00/0000:00:1f.2/ata1/host0/target0:0:0/0:0:0:0
+  Hardware Class: disk
+  Model: "TOSHIBA THNSNJ51"
+  Vendor: "TOSHIBA"
+  Device: "THNSNJ51"
+  Revision: "JTRA"
+  Serial ID: "Y3FSHIMOMNULL"
+  Driver: "ahci", "sd"
+  Driver Modules: "ahci"
+  Device File: /dev/sda
+  Device Files: /dev/sda, /dev/disk/by-id/ata-TOSHIBA_THNSNJ512GCST_Y3FSHIMOMNULL, /dev/disk/by-id/scsi-SATA_TOSHIBA_THNSNJ5_Y3FSHIMOMNULL, /dev/disk/by-id/wwn-0x500080diskydisk, /dev/disk/by-path/pci-0000:00:1f.2-scsi-0:0:0:0
+  Device Number: block 8:0-8:15
+  BIOS id: 0x80
+  Geometry (Logical): CHS 62260/255/63
+  Size: 1000215216 sectors a 512 bytes
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+  Attached to: #22 (SATA controller)
+
+
+#################################################################################
+# hwinfo --storage-ctrl
+29: PCI 1f.2: 0106 SATA controller (AHCI 1.0)                   
+  [Created at pci.318]
+  UDI: /org/freedesktop/Hal/devices/pci_8086_3b2f
+  Unique ID: x7x8.45KnxGrxJ9x
+  SysFS ID: /devices/pci0000:00/0000:00:1f.2
+  SysFS BusID: 0000:00:1f.2
+  Hardware Class: storage
+  Model: "Intel Ibex Peak 6 port SATA AHCI Controller"
+  Vendor: pci 0x8086 "Intel Corporation"
+  Device: pci 0x3b2f "Ibex Peak 6 port SATA AHCI Controller"
+  SubVendor: pci 0x17aa "Lenovo"
+  SubDevice: pci 0x2168 
+  Revision: 0x06
+  Driver: "ahci"
+  Driver Modules: "ahci"
+  I/O Ports: 0x1818-0x181f (rw)
+  I/O Ports: 0x180c-0x180f (rw)
+  I/O Ports: 0x1810-0x1817 (rw)
+  I/O Ports: 0x1808-0x180b (rw)
+  I/O Ports: 0x1840-0x185f (rw)
+  Memory Range: 0xf2627000-0xf26277ff (rw,non-prefetchable)
+  IRQ: 53 (939404 events)
+  Module Alias: "pci:v00008086d00003B2Fsv000017AAsd00002168bc01sc06i01"
+  Driver Info #0:
+    Driver Status: ahci is active
+    Driver Activation Cmd: "modprobe ahci"
+  Config Status: cfg=new, avail=yes, need=no, active=unknown
+
+
+
+
+#################################################################################
+# smartctl -q noserial -x /dev/sda | tee /tmp/smartctl-TOSHIBA-THNSNJ512GCST.txt
+
+smartctl 5.41 2011-06-09 r3365 [x86_64-linux-3.13.0-92-generic] (local build)
+Copyright (C) 2002-11 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Device Model:     TOSHIBA THNSNJ512GCST
+Firmware Version: JTRA0102
+User Capacity:    512,110,190,592 bytes [512 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   9
+ATA Standard is:  Exact ATA specification draft version not indicated
+Local Time is:    Tue Aug  2 13:59:16 2016 EDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  19) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     -O-R--   100   100   000    -    0
+  2 Throughput_Performance  P-S---   100   100   050    -    0
+  3 Spin_Up_Time            POS---   100   100   050    -    0
+  5 Reallocated_Sector_Ct   PO--C-   100   100   050    -    0
+  7 Seek_Error_Rate         PO-R--   100   100   050    -    0
+  8 Seek_Time_Performance   P-S---   100   100   050    -    0
+  9 Power_On_Hours          -O--C-   100   100   000    -    16925
+ 10 Spin_Retry_Count        PO--C-   100   100   050    -    0
+ 12 Power_Cycle_Count       -O--C-   100   100   000    -    662
+167 Unknown_Attribute       -O---K   100   100   000    -    0
+168 Unknown_Attribute       -O--C-   100   100   000    -    213
+169 Unknown_Attribute       PO--C-   100   100   010    -    100
+173 Unknown_Attribute       -O--C-   190   190   000    -    0
+175 Program_Fail_Count_Chip PO--C-   100   100   010    -    0
+192 Power-Off_Retract_Count -O--C-   100   100   000    -    271
+194 Temperature_Celsius     PO---K   066   046   020    -    34 (Min/Max 12/54)
+197 Current_Pending_Sector  -O--C-   100   100   000    -    0
+240 Head_Flying_Hours       PO--C-   100   100   050    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+GP/S  Log at address 0x00 has    1 sectors [Log Directory]
+SMART Log at address 0x01 has    1 sectors [Summary SMART error log]
+SMART Log at address 0x02 has   51 sectors [Comprehensive SMART error log]
+GP    Log at address 0x03 has   64 sectors [Ext. Comprehensive SMART error log]
+GP/S  Log at address 0x04 has    8 sectors [Device Statistics]
+SMART Log at address 0x06 has    1 sectors [SMART self-test log]
+GP    Log at address 0x07 has    1 sectors [Extended self-test log]
+SMART Log at address 0x09 has    1 sectors [Selective self-test log]
+GP    Log at address 0x10 has    1 sectors [NCQ Command Error]
+GP    Log at address 0x11 has    1 sectors [SATA Phy Event Counters]
+GP/S  Log at address 0x30 has    9 sectors [Reserved]
+GP/S  Log at address 0x80 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x81 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x82 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x83 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x84 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x85 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x86 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x87 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x88 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x89 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x8f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x90 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x91 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x92 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x93 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x94 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x95 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x96 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x97 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x98 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x99 has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9a has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9b has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9c has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9d has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9e has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0x9f has   16 sectors [Host vendor specific log]
+GP/S  Log at address 0xe0 has    1 sectors [SCT Command/Status]
+GP/S  Log at address 0xe1 has    1 sectors [SCT Data Transfer]
+
+SMART Extended Comprehensive Error Log Version: 1 (64 sectors)
+Device Error Count: 213
+	CR     = Command Register
+	FEATR  = Features Register
+	COUNT  = Count (was: Sector Count) Register
+	LBA_48 = Upper bytes of LBA High/Mid/Low Registers ]  ATA-8
+	LH     = LBA High (was: Cylinder High) Register    ]   LBA
+	LM     = LBA Mid (was: Cylinder Low) Register      ] Register
+	LL     = LBA Low (was: Sector Number) Register     ]
+	DV     = Device (was: Device/Head) Register
+	DC     = Device Control Register
+	ER     = Error register
+	ST     = Status register
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 213 [212] occurred at disk power-on lifetime: 119 hours (4 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 1a 8e c4 72 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x1a8ec472 = 445564018
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 1a 8e c4 72 e0 08     05:36:23.874  READ DMA EXT
+  25 00 00 01 00 00 00 1a 8e c3 72 e0 08     05:36:23.873  READ DMA EXT
+  25 00 00 01 00 00 00 1a 8e c2 72 e0 08     05:36:23.872  READ DMA EXT
+  25 00 00 01 00 00 00 1a 8e c1 72 e0 08     05:36:23.872  READ DMA EXT
+  25 00 00 01 00 00 00 1a 8e c0 72 e0 08     05:36:23.871  READ DMA EXT
+
+Error 212 [211] occurred at disk power-on lifetime: 119 hours (4 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 1a 54 ee 72 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x1a54ee72 = 441773682
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 1a 54 ee 72 e0 08     05:36:00.537  READ DMA EXT
+  25 00 00 01 00 00 00 1a 54 ed 72 e0 08     05:36:00.537  READ DMA EXT
+  25 00 00 01 00 00 00 1a 54 ec 72 e0 08     05:36:00.536  READ DMA EXT
+  25 00 00 01 00 00 00 1a 54 eb 72 e0 08     05:36:00.536  READ DMA EXT
+  25 00 00 01 00 00 00 1a 54 ea 72 e0 08     05:36:00.535  READ DMA EXT
+
+Error 211 [210] occurred at disk power-on lifetime: 119 hours (4 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 19 4d 73 72 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x194d7372 = 424506226
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 19 4d 73 72 e0 08     05:34:33.697  READ DMA EXT
+  25 00 00 01 00 00 00 19 4d 72 72 e0 08     05:34:33.696  READ DMA EXT
+  25 00 00 01 00 00 00 19 4d 71 72 e0 08     05:34:33.696  READ DMA EXT
+  25 00 00 01 00 00 00 19 4d 70 72 e0 08     05:34:33.695  READ DMA EXT
+  25 00 00 01 00 00 00 19 4d 6f 72 e0 08     05:34:33.694  READ DMA EXT
+
+Error 210 [209] occurred at disk power-on lifetime: 119 hours (4 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 02 00 00 00 19 29 ee 72 e0 08  Error: ICRC, ABRT 512 sectors at LBA = 0x1929ee72 = 422178418
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 02 00 00 00 19 29 ee 72 e0 08     05:15:58.020  READ DMA EXT
+  35 00 00 04 00 00 00 1b 6f 86 f2 e0 08     05:15:58.018  WRITE DMA EXT
+  35 00 00 04 00 00 00 1b 6f 82 f2 e0 08     05:15:58.015  WRITE DMA EXT
+  35 00 00 04 00 00 00 1b 6f 7e f2 e0 08     05:15:58.013  WRITE DMA EXT
+  35 00 00 04 00 00 00 1b 6f 7a f2 e0 08     05:15:58.011  WRITE DMA EXT
+
+Error 209 [208] occurred at disk power-on lifetime: 118 hours (4 days + 22 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 27 03 3b 80 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x27033b80 = 654523264
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 27 03 3b 80 e0 08     04:40:17.891  READ DMA EXT
+  25 00 00 01 00 00 00 27 03 3a 80 e0 08     04:40:17.890  READ DMA EXT
+  25 00 00 01 00 00 00 27 03 39 80 e0 08     04:40:17.889  READ DMA EXT
+  25 00 00 01 00 00 00 27 03 38 80 e0 08     04:40:17.888  READ DMA EXT
+  25 00 00 01 00 00 00 27 03 37 80 e0 08     04:40:17.887  READ DMA EXT
+
+Error 208 [207] occurred at disk power-on lifetime: 118 hours (4 days + 22 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 26 ca 74 80 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x26ca7480 = 650802304
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 26 ca 74 80 e0 08     04:38:51.810  READ DMA EXT
+  25 00 00 01 00 00 00 26 ca 73 80 e0 08     04:38:51.809  READ DMA EXT
+  25 00 00 01 00 00 00 26 ca 72 80 e0 08     04:38:51.808  READ DMA EXT
+  25 00 00 01 00 00 00 26 ca 71 80 e0 08     04:38:51.807  READ DMA EXT
+  25 00 00 01 00 00 00 26 ca 70 80 e0 08     04:38:51.806  READ DMA EXT
+
+Error 207 [206] occurred at disk power-on lifetime: 118 hours (4 days + 22 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 26 4a 84 80 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x264a8480 = 642417792
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 26 4a 84 80 e0 08     04:38:19.936  READ DMA EXT
+  25 00 00 01 00 00 00 26 4a 83 80 e0 08     04:38:19.935  READ DMA EXT
+  25 00 00 01 00 00 00 26 4a 82 80 e0 08     04:38:19.934  READ DMA EXT
+  25 00 00 01 00 00 00 26 4a 81 80 e0 08     04:38:19.933  READ DMA EXT
+  25 00 00 01 00 00 00 26 4a 80 80 e0 08     04:38:19.932  READ DMA EXT
+
+Error 206 [205] occurred at disk power-on lifetime: 118 hours (4 days + 22 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 51 01 00 00 00 25 cb b7 00 e0 08  Error: ICRC, ABRT 256 sectors at LBA = 0x25cbb700 = 634107648
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  25 00 00 01 00 00 00 25 cb b7 00 e0 08     04:22:30.355  READ DMA EXT
+  25 00 00 01 00 00 00 25 cb b6 00 e0 08     04:22:30.348  READ DMA EXT
+  25 00 00 01 00 00 00 25 cb b5 00 e0 08     04:22:30.340  READ DMA EXT
+  25 00 00 01 00 00 00 25 cb b4 00 e0 08     04:22:30.332  READ DMA EXT
+  25 00 00 01 00 00 00 25 cb b3 00 e0 08     04:22:30.325  READ DMA EXT
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%     16925         -
+# 2  Short offline       Completed without error       00%       855         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       3 (0x0003)
+SCT Support Level:                   0
+Device State:                        Active (0)
+Current Temperature:                    34 Celsius
+Power Cycle Min/Max Temperature:     27/39 Celsius
+Lifetime    Min/Max Temperature:     12/54 Celsius
+Under/Over Temperature Limit Count:   0/0
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      5/40 Celsius
+Min/Max Temperature Limit:            0/80 Celsius
+Temperature History Size (Index):    128 (100)
+
+Index    Estimated Time   Temperature Celsius
+ 101    2016-08-02 11:52    39  ********************
+ 102    2016-08-02 11:53    38  *******************
+ 103    2016-08-02 11:54    37  ******************
+ 104    2016-08-02 11:55    37  ******************
+ 105    2016-08-02 11:56    36  *****************
+ 106    2016-08-02 11:57    36  *****************
+ 107    2016-08-02 11:58    35  ****************
+ ...    ..(  2 skipped).    ..  ****************
+ 110    2016-08-02 12:01    35  ****************
+ 111    2016-08-02 12:02    34  ***************
+ ...    ..(  7 skipped).    ..  ***************
+ 119    2016-08-02 12:10    34  ***************
+ 120    2016-08-02 12:11    33  **************
+ ...    ..( 98 skipped).    ..  **************
+  91    2016-08-02 13:50    33  **************
+  92    2016-08-02 13:51    35  ****************
+  93    2016-08-02 13:52    37  ******************
+  94    2016-08-02 13:53    36  *****************
+  95    2016-08-02 13:54    35  ****************
+  96    2016-08-02 13:55    35  ****************
+  97    2016-08-02 13:56    34  ***************
+ ...    ..(  2 skipped).    ..  ***************
+ 100    2016-08-02 13:59    34  ***************
+
+SCT Error Recovery Control:
+           Read:    600 (60.0 seconds)
+          Write:    600 (60.0 seconds)
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0002  4            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  4            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x0008  2            0  Device-to-host non-data FIS retries
+0x0009  4         9899  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  4           20  Device-to-host register FISes sent due to a COMRESET
+0x000b  4            0  CRC errors within host-to-device FIS
+0x000d  4            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										RUNNING  GDLVM7
