@@ -1,0 +1,11 @@
+--- drivedb.h.4731      2018-06-15 18:58:16.982990064 +0200
++++ drivedb.h   2018-06-15 19:03:46.774042545 +0200
+@@ -3850,7 +3850,7 @@
+     "", "", ""
+   },
+   { "Western Digital VelociRaptor (AF)", // tested with WDC WD1000DHTZ-04N21V0/04.06A00
+-    "WDC WD(2500H|5000H|1000D)HTZ-.*",
++    "WDC WD(2500H|5000B|5000H|1000D)HTZ-.*",
+     "", "", ""
+   },
+   { "Western Digital Scorpio EIDE",
