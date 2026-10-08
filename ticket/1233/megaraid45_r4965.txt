@@ -1,0 +1,101 @@
+smartctl -r ioctl,2 -a /dev/bus/0 -d megaraid,45
+
+smartctl 7.1 2019-10-05 r4965 [x86_64-linux-4.14.35-1818.1.6.el7uek.x86_64] (CircleCI)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Creating /dev/megaraid_sas_ioctl_node = 17
+ [inquiry: 12 00 00 00 24 00 ]
+Got MegaRAID inquiry.. HGST    HUH721212AL5204 C3D0
+ [inquiry: 12 01 00 00 fc 00 ]
+ [inquiry: 12 00 00 00 24 00 ]
+=== START OF INFORMATION SECTION ===
+Vendor:               HGST
+Product:              HUH721212AL5204
+Revision:             C3D0
+Compliance:           SPC-4
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+User Capacity:        12,000,138,625,024 bytes [12.0 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+ [inquiry: 12 01 b2 00 08 00 ]
+LU is fully provisioned
+ [inquiry: 12 01 b1 00 40 00 ]
+Rotation Rate:        7200 rpm
+Form Factor:          3.5 inches
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+ [inquiry: 12 01 83 00 fc 00 ]
+Logical Unit id:      0x5000cca2530a8e40
+ [inquiry: 12 01 80 00 fc 00 ]
+Serial number:        8DG5TYVZ
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Fri Oct 11 12:23:38 2019 VLAT
+ [test unit ready: 00 00 00 00 00 00 ]
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 40 00 00 00 00 00 16 00 ]
+ [log sense: 4d 00 40 ff 00 00 00 3e fc 00 ]
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 6 (sub-pages: 0)
+ [log sense: 4d 00 6f 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 6f 00 00 00 00 00 14 00 ]
+ [request sense: 03 00 00 00 12 00 ]
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+SMART Health Status: OK
+
+ [log sense: 4d 00 48 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 48 00 00 00 00 00 38 00 ]
+Format data out: <not available>
+Grown defects during certification <not available>
+Total blocks reassigned during format <not available>
+Total new blocks reassigned <not available>
+Power on minutes since format <not available>
+ [log sense: 4d 00 4d 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 4d 00 00 00 00 00 10 00 ]
+Current Drive Temperature:     29 C
+Drive Trip Temperature:        85 C
+
+ [log sense: 4d 00 4e 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 4e 00 00 00 00 00 38 00 ]
+Manufactured in week 43 of year 2017
+Specified cycle count over device lifetime:  50000
+Accumulated start-stop cycles:  1
+Specified load-unload count over device lifetime:  600000
+Accumulated load-unload cycles:  338
+ [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+Elements in grown defect list: 0
+
+ [log sense: 4d 00 77 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 77 00 00 00 00 00 34 00 ]
+Vendor (Seagate Cache) information
+  Blocks sent to initiator = 2548516622696448
+
+ [log sense: 4d 00 43 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 43 00 00 00 00 00 58 00 ]
+ [log sense: 4d 00 42 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 42 00 00 00 00 00 58 00 ]
+ [log sense: 4d 00 45 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 45 00 00 00 00 00 58 00 ]
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0   18151063     759174.162           0
+write:         0        0         0         0      78528      80183.439           0
+verify:        0        0         0         0        575          0.146           0
+ [log sense: 4d 00 46 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 46 00 00 00 00 00 10 00 ]
+
+Non-medium error count:        0
+
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+ [request sense: 03 00 00 00 12 00 ]
+ [log sense: 4d 00 50 00 00 00 00 00 04 00 ]
+ [log sense: 4d 00 50 00 00 00 00 01 94 00 ]
+No Self-tests have been logged
+

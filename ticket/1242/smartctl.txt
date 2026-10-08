@@ -1,0 +1,171 @@
+ \\.\PhysicalDrive0: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "NVMe    "
+    Product:  "INTEL SSDPE2KX04"
+    Revision: "0131"
+    Removable: No
+    BusType:   0x08
+  SMART_GET_VERSION succeeded, bytes returned: 24
+    Vers = 1.1, Caps = 0x7, DeviceMap = 0x00
+ \\.\PhysicalDrive1: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "NVMe    "
+    Product:  "INTEL SSDPE2KX02"
+    Revision: "0120"
+    Removable: No
+    BusType:   0x08
+  SMART_GET_VERSION succeeded, bytes returned: 24
+    Vers = 1.1, Caps = 0x7, DeviceMap = 0x01
+ \\.\Scsi0:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1117
+ \\.\Scsi1:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) succeeded, bytes returned: 204
+CSMI_SAS_DRIVER_INFO:
+  Name:        "iaStorE"
+  Description: "Intel Virtual RAID on CPU"
+  Revision:    6.1
+  IOCTL_SCSI_MINIPORT(CC_CSMI_20) succeeded, bytes returned: 2080
+CSMI_SAS_PHY_INFO: NumberOfPhys=6
+Phy[0] Port:   0
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x00
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 00 00 00 00 00 00
+Phy[1] Port:   1
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x01
+  PhyIdent:    0x01, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 01 00 00 00 00 00
+Phy[2] Port:   2
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x02
+  PhyIdent:    0x02, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 02 00 00 00 00 00
+Phy[3] Port:   3
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x03
+  PhyIdent:    0x03, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 03 00 00 00 00 00
+Phy[4] Port:   4
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x04
+  PhyIdent:    0x04, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 04 00 00 00 00 00
+Phy[5] Port:   5
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x05
+  PhyIdent:    0x05, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 05 00 00 00 00 00
+ \\.\Scsi2:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) succeeded, bytes returned: 204
+CSMI_SAS_DRIVER_INFO:
+  Name:        "iaStorE"
+  Description: "Intel Virtual RAID on CPU"
+  Revision:    6.1
+  IOCTL_SCSI_MINIPORT(CC_CSMI_20) succeeded, bytes returned: 2080
+CSMI_SAS_PHY_INFO: NumberOfPhys=8
+Phy[0] Port:   0
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x00
+  PhyIdent:    0x00, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 00 00 00 00 00 00
+Phy[1] Port:   1
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x01
+  PhyIdent:    0x01, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 01 00 00 00 00 00
+Phy[2] Port:   2
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x02
+  PhyIdent:    0x02, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 02 00 00 00 00 00
+Phy[3] Port:   3
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x03
+  PhyIdent:    0x03, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 03 00 00 00 00 00
+Phy[4] Port:   4
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x04
+  PhyIdent:    0x04, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 04 00 00 00 00 00
+Phy[5] Port:   5
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x05
+  PhyIdent:    0x05, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 05 00 00 00 00 00
+Phy[6] Port:   6
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x06
+  PhyIdent:    0x06, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 06 00 00 00 00 00
+Phy[7] Port:   7
+  Type:        0x10, 0x00
+  InitProto:   0x01, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x07
+  PhyIdent:    0x07, 0x00
+  SASAddress:  00 00 00 00 00 00 00 00, 00 00 07 00 00 00 00 00
+  \\.\Scsi0:: successfully opened
+  \\.\Scsi1:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi2:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi3:: Open failed, Error=2
+  \\.\Scsi4:: Open failed, Error=2
+  \\.\Scsi5:: Open failed, Error=2
+  \\.\Scsi6:: Open failed, Error=2
+  \\.\Scsi7:: Open failed, Error=2
+  \\.\Scsi8:: Open failed, Error=2
+  \\.\Scsi9:: Open failed, Error=2
+  \\.\Scsi10:: Open failed, Error=2
+  \\.\Scsi11:: Open failed, Error=2
+  \\.\Scsi12:: Open failed, Error=2
+  \\.\Scsi13:: Open failed, Error=2
+  \\.\Scsi14:: Open failed, Error=2
+  \\.\Scsi15:: Open failed, Error=2
+  \\.\Scsi16:: Open failed, Error=2
+  \\.\Scsi17:: Open failed, Error=2
+  \\.\Scsi18:: Open failed, Error=2
+  \\.\Scsi19:: Open failed, Error=2
+  \\.\Scsi20:: Open failed, Error=2
+  \\.\Scsi21:: Open failed, Error=2
+  \\.\Scsi22:: Open failed, Error=2
+  \\.\Scsi23:: Open failed, Error=2
+  \\.\Scsi24:: Open failed, Error=2
+  \\.\Scsi25:: Open failed, Error=2
+  \\.\Scsi26:: Open failed, Error=2
+  \\.\Scsi27:: Open failed, Error=2
+  \\.\Scsi28:: Open failed, Error=2
+  \\.\Scsi29:: Open failed, Error=2
+  \\.\Scsi30:: Open failed, Error=2
+  \\.\Scsi31:: Open failed, Error=2
+/dev/sda -d ata # /dev/sda, ATA device
+/dev/sdb -d ata # /dev/sdb, ATA device
+/dev/nvme0 -d nvme # /dev/nvme0, NVMe device

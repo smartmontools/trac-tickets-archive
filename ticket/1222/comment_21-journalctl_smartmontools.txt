@@ -1,0 +1,31 @@
+$ journalctl --no-hostname --utc -xo short-iso --boot 0 --unit=smartmontools
+
+
+2024-05-25T14:44:49+0000 systemd[1]: Starting smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon...
+░░ Subject: A start job for unit smartmontools.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit smartmontools.service has begun execution.
+░░ 
+░░ The job identifier is 157.
+2024-05-25T14:44:49+0000 smartd[834]: smartd 7.4 2023-08-01 r5530 [x86_64-linux-6.8.4-3-pve] (local build)
+2024-05-25T14:44:49+0000 smartd[834]: Opened configuration file /etc/smartd.conf
+2024-05-25T14:44:49+0000 smartd[834]: Drive: DEVICESCAN, implied '-a' Directive on line 18 of file /etc/smartd.conf
+2024-05-25T14:44:49+0000 smartd[834]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, opened
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, Samsung SSD 960 PRO 512GB, S/N:***************, FW:2B6QCXP7, 512 GB
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Samsung_SSD_960_PRO_512GB-***************.nvme.state
+2024-05-25T14:44:49+0000 smartd[834]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, NVMe error [1], count 4811, status 0x421a: Feature Identifier Not Saveable
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, NVMe error count increased from 4808 to 4812 (1 new, 3 ignored, 0 unknown)
+2024-05-25T14:44:49+0000 smartd[834]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Samsung_SSD_960_PRO_512GB-***************.nvme.state
+2024-05-25T14:44:49+0000 systemd[1]: Started smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon.
+░░ Subject: A start job for unit smartmontools.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit smartmontools.service has finished successfully.
+░░ 
+░░ The job identifier is 157.

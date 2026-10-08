@@ -1,0 +1,127 @@
+smartctl 6.6 (build date Sep 24 2019) [x86_64-linux-4.19.62-mod-std-ipv6-64-rescue] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SAMSUNG
+Product:              MZILS3T8HMLH/007
+Revision:             GXL0
+Compliance:           SPC-4
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Logical Unit id:      0x5002538a985d9c20
+Serial number:        S3M5NX0K505108
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Tue Sep 24 16:34:26 2019 BST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Percentage used endurance indicator: 0%
+Current Drive Temperature:     33 C
+Drive Trip Temperature:        70 C
+
+Manufactured in week 21 of year 2018
+Accumulated start-stop cycles:  24
+Specified load-unload count over device lifetime:  0
+Accumulated load-unload cycles:  0
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:          0        0         0         0          0        777.428           0
+write:         0        0         0         0          0       4861.125           0
+
+Non-medium error count: 15893874
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -    8317                 - [-   -    -]
+# 2  Background short  Completed                   -    8316                 - [-   -    -]
+# 3  Background short  Completed                   -    7580                 - [-   -    -]
+# 4  Background short  Completed                   -    7579                 - [-   -    -]
+# 5  Background short  Completed                   -    7326                 - [-   -    -]
+# 6  Background short  Completed                   -    7326                 - [-   -    -]
+# 7  Background short  Completed                   -    6366                 - [-   -    -]
+# 8  Background short  Completed                   -    6366                 - [-   -    -]
+# 9  Background short  Completed                   -    5505                 - [-   -    -]
+#10  Background short  Completed                   -    5505                 - [-   -    -]
+#11  Background short  Completed                   -    5149                 - [-   -    -]
+#12  Background short  Completed                   -    5148                 - [-   -    -]
+#13  Background short  Completed                   -    5134                 - [-   -    -]
+#14  Background short  Completed                   -    5134                 - [-   -    -]
+#15  Background short  Completed                   -    5127                 - [-   -    -]
+#16  Background short  Completed                   -    5126                 - [-   -    -]
+#17  Background short  Completed                   -    5115                 - [-   -    -]
+#18  Background short  Completed                   -    5114                 - [-   -    -]
+#19  Background short  Completed                   -    4241                 - [-   -    -]
+#20  Background short  Completed                   -    4241                 - [-   -    -]
+
+Long (extended) Self Test duration: 3600 seconds [60.0 minutes]
+
+Background scan results log
+  Status: scan is active
+    Accumulated power on time, hours:minutes 9224:23 [553463 minutes]
+    Number of background scans performed: 11,  scan progress: 71.19%
+    Number of background medium scans performed: 11
+
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 109
+  number of phys = 1
+  phy identifier = 0
+    attached device type: expander device
+    attached reason: SMP phy control function
+    reason: loss of dword synchronization
+    negotiated logical link rate: phy enabled; 12 Gbps
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=1
+    SAS address = 0x5002538a985d9c22
+    attached SAS address = 0x5003048026d0cd7f
+    attached phy identifier = 12
+    Invalid DWORD count = 1297
+    Running disparity error count = 1295
+    Loss of DWORD synchronization = 8
+    Phy reset problem = 0
+    Phy event descriptors:
+     Received ERROR  count: 14
+     Received address frame error count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Received retry-class OPEN_REJECT count: 0
+     Received SSP frame error count: 0
+relative target port id = 2
+  generation code = 109
+  number of phys = 1
+  phy identifier = 1
+    attached device type: expander device
+    attached reason: SMP phy control function
+    reason: loss of dword synchronization
+    negotiated logical link rate: phy enabled; 12 Gbps
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=1
+    SAS address = 0x5002538a985d9c23
+    attached SAS address = 0x5003048026d042ff
+    attached phy identifier = 12
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization = 0
+    Phy reset problem = 0
+    Phy event descriptors:
+     Received ERROR  count: 0
+     Received address frame error count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Received retry-class OPEN_REJECT count: 5
+     Received SSP frame error count: 0
+

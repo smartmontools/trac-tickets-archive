@@ -1,0 +1,163 @@
+smartctl 7.0 2019-08-20 r4949 [x86_64-linux-4.19.62-mod-std-ipv6-64-rescue] (local build)
+Copyright (C) 2002-18, Bruce Allen, Christian Franke, www.smartmontools.org
+
+sda -> /sys/class/scsi_host/host0/proc_name: "mpt3sas"
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 12 c5 01 10 03  53 41 4d 53 55 4e 47 20
+ 10     4d 5a 49 4c 53 33 54 38  48 4d 4c 48 2f 30 30 37
+ 20     47 58 4c 30
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 00 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=236
+  Incoming data, len=16:
+ 00     00 00 00 0c 00 80 83 86  87 88 8d 90 91 b0 b1 b2
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 00 00 00 24 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=36:
+ 00     00 00 06 12 c5 01 10 03  53 41 4d 53 55 4e 47 20
+ 10     4d 5a 49 4c 53 33 54 38  48 4d 4c 48 2f 30 30 37
+ 20     47 58 4c 30
+=== START OF INFORMATION SECTION ===
+Vendor:               SAMSUNG
+Product:              MZILS3T8HMLH/007
+Revision:             GXL0
+Compliance:           SPC-4
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read capacity(16): 9e 10 00 00 00 00 00 00 00 00 00 00 00 20 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=32:
+ 00     00 00 00 01 bf 1f 72 af  00 00 02 00 00 03 c0 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 b2 00 08 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 b2 00 04 00 e6 01 00
+LU is resource provisioned, LBPRZ=1
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 b1 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=64:
+ 00     00 b1 00 3c 00 01 00 03  03 00 00 00 00 00 00 00
+ 10     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 20     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+ 30     00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 1c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 ff ff ff ff  00 00 02 00 9c 0a 11 06
+ 10     00 00 00 00 00 00 00 01
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 5c 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 ff ff ff ff  00 00 02 00 9c 0a bf 0f
+ 10     ff ff ff ff ff ff ff ff
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 83 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=176
+  Incoming data, len=76:
+ 00     00 83 00 48 01 03 00 08  50 02 53 8a 98 5d 9c 20
+ 10     61 93 00 08 50 02 53 8a  98 5d 9c 22 61 94 00 04
+ 20     00 00 00 01 61 a3 00 08  50 02 53 8a 98 5d 9c 21
+ 30     03 28 00 18 6e 61 61 2e  35 30 30 32 35 33 38 41
+ 40     39 38 35 44 39 43 32 31  00 00 00 00
+Logical Unit id:      0x5002538a985d9c20
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [inquiry: 12 01 80 00 fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=228
+  Incoming data, len=24:
+ 00     00 80 00 14 53 33 4d 35  4e 58 30 4b 35 30 35 31
+ 10     30 38 20 20 20 20 20 20
+Serial number:        S3M5NX0K505108
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Tue Sep 24 16:35:09 2019 BST
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [test unit ready: 00 00 00 00 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 08 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=32
+  Incoming data, len=32:
+ 00     1f 00 10 08 ff ff ff ff  00 00 02 00 88 12 04 00
+ 10     ff ff 00 00 ff ff ff ff  00 ff 00 ff 00 00 00 00
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 00 00 00 00 00 04 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=4:
+ 00     00 00 00 0e
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 00 00 00 00 00 12 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     00 00 00 0e 00 02 03 05  06 0d 0e 0f 10 11 15 18
+ 10     1a 2f
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [log sense: 4d 00 40 ff 00 00 00 3e fc 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=16112
+  Incoming data, len=12:
+ 00     40 ff 00 04 00 ff 34 ff  00 00 00 00
+scsiGetSupportedLogPages: number of unreported (standard) log pages: 0 (sub-pages: 0)
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [request sense: 03 00 00 00 12 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=0
+  Incoming data, len=18:
+ 00     70 00 00 00 00 00 00 10  00 00 00 00 00 00 00 80
+ 10     00 00
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [read defect list(12): b7 0c 00 00 00 00 00 00 00 08 00 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=4 milliseconds  resid=0
+  Incoming data, len=8:
+ 00     00 0c 00 01 00 00 00 00
+Elements in grown defect list: 0
+
+Error Counter logging not supported
+
+>>>> do_scsi_cmnd_io: sg_io_ver=3
+ [mode sense(6): 1a 00 0a 00 40 00 ]
+  scsi_status=0x0, sg_transport_status=0x0, sg_driver_status=0x0
+  sg_info=0x0  sg_duration=0 milliseconds  resid=40
+  Incoming data, len=24:
+ 00     17 00 10 08 ff ff ff ff  00 00 02 00 8a 0a 04 10
+ 10     00 00 00 00 00 00 0e 10
+Device does not support Self Test logging
+Device does not support Background scan results logging

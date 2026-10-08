@@ -1,0 +1,16 @@
+--- /tmp/drivedb.h	2019-09-07 12:03:13.170537982 +0200
++++ /var/lib/smartmontools/drivedb/drivedb.h	2019-09-07 12:01:51.770880611 +0200
+@@ -5204,6 +5204,13 @@
+     "",
+     "-d sat"
+   },
++  // Brain Actuated Technologies
++  { "USB: ; Atech", // ICY BOX 2x Raid enclosure IB-RD2253-U31
++    "0x1234:0x5678",
++    "", // 0x0100
++    "",
++    "-d sat,12"
++  },
+   // ADATA
+   { "USB: ADATA; ",
+     "0x125f:0xa(11|13|15|31|35|75)a", // 0xa11a: Classic CH11 1TB, 0xa13a: NH13 1TB,

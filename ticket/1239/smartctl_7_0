@@ -1,0 +1,36 @@
+smartctl 7.0 2019-08-20 r4949 [x86_64-linux-4.19.62-mod-std-ipv6-64-rescue] (local build)
+Copyright (C) 2002-18, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               SAMSUNG
+Product:              MZILS3T8HMLH/007
+Revision:             GXL0
+Compliance:           SPC-4
+User Capacity:        3,840,755,982,336 bytes [3.84 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is resource provisioned, LBPRZ=1
+Rotation Rate:        Solid State Device
+Form Factor:          2.5 inches
+Logical Unit id:      0x5002538a985d9c20
+Serial number:        S3M5NX0K505108
+Device type:          disk
+Transport protocol:   SAS (SPL-3)
+Local Time is:        Tue Sep 24 16:35:01 2019 BST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Elements in grown defect list: 0
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
+Device does not support Background scan results logging
