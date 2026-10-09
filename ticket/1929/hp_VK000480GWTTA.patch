@@ -1,0 +1,12 @@
+--- /var/lib/smartmontools/drivedb/drivedb.h    2025-02-03 16:40:07.826619214 +0000
++++ /var/lib/smartmontools/drivedb/drivedb.h    2025-02-09 20:15:23.174587715 +0000
+@@ -1741,7 +1741,8 @@
+       // INTEL SSDSC2KB038T7/SCV10121, INTEL SSDSC2KG240G7/SCV10100,
+       // INTEL SSDSC2KB480GZ/7CV10100, INTEL SSDSC2KB076T8/XCV10132,
+       // SOLIDIGM SSDSC2KB960GZ/7CV10130
+-    "(INTEL|SOLIDIGM) SSDSC(2K|KK)(B|G)(240G|480G|960G|019T|038T|076T)[78Z].?",
++    "(INTEL|SOLIDIGM) SSDSC(2K|KK)(B|G)(240G|480G|960G|019T|038T|076T)[78Z].?|"
++    "VK00(0240GWTSV|0480GWTTA|0960GWTTB|1920GWTTC|3840GWTTD)", // HP OEM Certified Intel drive
+     "", "",
+   //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
+   //"-v 9,raw24(raw8),Power_On_Hours "

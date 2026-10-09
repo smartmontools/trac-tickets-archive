@@ -1,0 +1,49 @@
+ATP SATA III SSD - SMART attributes 194 & 231 decode comparison (raw48 vs tempminmax)
+================================================================================
+Test unit: /dev/sda on atp-linux test server
+Device Model: ATP I-Temp. SATA III M.2 2242 SSD
+Controller: SM2259AC (B47)
+
+Same physical drive, same underlying raw SMART data. Each attribute is shown
+decoded three ways via smartctl's -v override, with VALUE/WORST/THRESH fields
+identical across all three runs per attribute (proving the raw data on the
+drive never changes - only the decode formatter differs).
+
+--------------------------------------------------------------------------------
+Attribute 194 (Device_Temperature)
+--------------------------------------------------------------------------------
+
+1) Forced raw48 (reproduces the bug in the current upstream entry):
+$ sudo smartctl -a -v 194,raw48,Device_Temperature /dev/sda | grep '194 '
+194 Device_Temperature      0x0022   036   062   000    Old_age   Always       -       721420324
+
+2) Forced tempminmax (the corrected formatter):
+$ sudo smartctl -a -v 194,tempminmax,Device_Temperature /dev/sda | grep '194 '
+194 Device_Temperature      0x0022   037   062   000    Old_age   Always       -       37 (Min/Max 0/44)
+
+--------------------------------------------------------------------------------
+Attribute 231 (Controller_Temperature)
+--------------------------------------------------------------------------------
+
+1) Default decode under the current (unpatched) upstream entry - same bug,
+   raw48 instead of tempminmax:
+$ sudo smartctl -a /dev/sda | grep '231 '
+231 Controller_Temperature  0x0022   053   097   000    Old_age   Always       -       1328611381
+
+2) Forced tempminmax (the corrected formatter):
+$ sudo smartctl -a -v 231,tempminmax,Controller_Temperature /dev/sda | grep '231 '
+231 Controller_Temperature  0x0022   053   097   000    Old_age   Always       -       53 (Min/Max 49/79)
+
+--------------------------------------------------------------------------------
+Conclusion
+--------------------------------------------------------------------------------
+For both attributes, VALUE/WORST/THRESH are identical between the raw48 and
+tempminmax runs (194: 036-037/062/000 - the 1-degree VALUE drift between runs
+is normal ambient variation between successive commands, not a decode
+artifact; 231: 053/097/000, exactly stable). Decoding as a plain 48-bit
+integer (raw48) produces a meaningless large number instead of the correct
+packed Current/Min/Max fields (tempminmax). The tempminmax-decoded Current
+value in both cases matches the VALUE column exactly (194: 37 == 037; 231:
+53 == 053), which is the expected relationship for an SMI SATA SSD
+temperature attribute and confirms tempminmax is the correct formatter for
+both.

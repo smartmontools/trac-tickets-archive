@@ -1,0 +1,51 @@
+ATP SATA III SSD - SMART attribute 194 decode comparison (raw48 vs tempminmax)
+================================================================================
+Test unit: /dev/sda on atp-linux test server
+Device Model: ATP I-Temp. SATA III M.2 2242 SSD
+Controller: SM2259AC (B47)
+
+Same physical drive, same underlying raw SMART data, two different decode
+formatters applied via smartctl's -v override to demonstrate the bug and the
+fix, with VALUE / WORST / THRESH fields identical between the two runs
+(proving the raw data is unchanged - only the decode differs).
+
+--------------------------------------------------------------------------------
+1) DEFAULT decode (this drive currently falls under a family with no 194
+   override, so smartctl's generic built-in decode applies - CORRECT):
+--------------------------------------------------------------------------------
+$ sudo smartctl -a /dev/sda | grep -A2 -i 'START OF INFORMATION\|194 \|Device Model'
+
+=== START OF INFORMATION SECTION ===
+Device Model:     ATP I-Temp. SATA III M.2 2242 SSD
+Serial Number:    [No Information Found]
+LU WWN Device Id: 8 888888 88888888d
+--
+194 Temperature_Celsius     0x0022   036   062   000    Old_age   Always       -       36 (Min/Max 0/43)
+195 Hardware_ECC_Recovered  0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0032   100   100   000    Old_age   Always       -       0
+
+--------------------------------------------------------------------------------
+2) FORCED raw48 decode (reproduces the bug present in the
+   "ATP SATA III aMLC M.2 2242/80 Embedded SSDs" drivedb.h entry, which uses
+   "-v 194,raw48,Device_Temperature" - INCORRECT):
+--------------------------------------------------------------------------------
+$ sudo smartctl -a -v 194,raw48,Device_Temperature /dev/sda | grep '194 '
+
+194 Device_Temperature      0x0022   036   062   000    Old_age   Always       -       721420324
+
+--------------------------------------------------------------------------------
+3) FORCED tempminmax decode (the corrected formatter, proposed in the patch):
+--------------------------------------------------------------------------------
+$ sudo smartctl -a -v 194,tempminmax,Device_Temperature /dev/sda | grep '194 '
+
+194 Device_Temperature      0x0022   036   062   000    Old_age   Always       -       36 (Min/Max 0/43)
+
+--------------------------------------------------------------------------------
+Conclusion
+--------------------------------------------------------------------------------
+VALUE (036) / WORST (062) / THRESH (000) are identical across all three runs -
+the underlying raw SMART attribute data on the drive never changes. Decoding
+byte offset 0 as a plain 48-bit integer (raw48) produces a meaningless large
+number (721420324) instead of the correct packed
+Current/Min/Max-temperature fields (tempminmax). This confirms the fix is a
+pure decode-formatter correction with no risk to any other field.
