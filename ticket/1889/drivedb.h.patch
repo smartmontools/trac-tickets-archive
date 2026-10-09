@@ -1,0 +1,11 @@
+--- drivedb.h	2024-10-07 09:50:02.588453613 +0200
++++ drivedb.h.new	2024-10-07 10:26:19.355461290 +0200
+@@ -3709,7 +3709,7 @@
+     "", "", ""
+   },
+   { "Hitachi Deskstar 7K2000",
+-    "Hitachi HDS722020ALA330",
++    "(Hitachi )?HDS722020ALA330( RSD HUA)?",
+     "", "", ""
+   },
+   { "Hitachi Deskstar 7K3000", // tested with Hitachi HDS723030ALA640/MKAOA3B0,
