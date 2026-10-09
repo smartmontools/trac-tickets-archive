@@ -1,0 +1,51 @@
+71c71
+<   { "VERSION: 7.3/5571 2023-12-31 16:44:16 $Id$",
+---
+>   { "VERSION: 7.3/5571 2024-01-07 16:44:16 $Id$",
+3964c3964,3966
+<   { "Toshiba MG04ACA... Enterprise HDD", // tested with TOSHIBA MD04ACA500/FP1A,
+---
+>   // For Toshiba MG-Series see:
+>   // https://www.toshiba-storage.com/wp-content/uploads/2018/04/TOSHIBA_16046_DS_MGSeries_server_04-10.pdf
+>   { "Toshiba MG04-Series Enterprise HDD (Air/CMR)", // tested with TOSHIBA MD04ACA500/FP1A,
+3966c3968
+<     "TOSHIBA MG04ACA[23456]00([AEN].?)?",
+---
+>     "TOSHIBA MG04[AS]CA[23456]0[0E][AEN]Y?",
+3973c3975
+<   { "Toshiba MG06ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG06ACA800E/4303,
+---
+>   { "Toshiba MG06-Series Enterprise Capacity HDD (Air/CMR)", // tested with TOSHIBA MG06ACA800E/4303,
+3975c3977
+<     "TOSHIBA MG06ACA([68]00|10T)[AE]Y?",
+---
+>     "TOSHIBA MG06[AS]CA([68]00|10T)[AE]Y?",
+3978c3980
+<   { "Toshiba MG07ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG07ACA14TE/0101
+---
+>   { "Toshiba MG07-Series Enterprise Capacity HDD (Helium/CMR)", // tested with TOSHIBA MG07ACA14TE/0101
+3984,3986c3986,3993
+<   { "Toshiba MG08ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG08ACA14TE/0102,
+<       // TOSHIBA MG08ACA16TE/0102
+<     "TOSHIBA MG08ACA1[46]T[AE]Y?",
+---
+>   { "Toshiba MG08-Series Enterprise Capacity HDD (Air/CMR)", // tested with TOSHIBA MG08ADA800E/4304
+>       // TOSHIBA MG08ADA800E/4304
+>     "TOSHIBA MG08[AS][CD][AP][864]00[AEN]Y?",
+>     "", "", ""
+>   },
+>   { "Toshiba MG08-Series Enterprise Capacity HDD (Helium/CMR)", // tested with TOSHIBA MG08ACA14TE/0102
+>       // TOSHIBA MG08ACA14TE/0102
+>     "TOSHIBA MG08[AS]CA1[246]T[AE]Y?",
+3991,3992c3998,3999
+<   { "Toshiba MG09ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG09ACA18TE/0102
+<     "TOSHIBA MG09ACA1[68]T[AE]Y?",
+---
+>   { "Toshiba MG09-Series Enterprise Capacity HDD (Helium/MAMR)", // tested with TOSHIBA MG09ACA18TE/0102
+>     "TOSHIBA MG09[AS]CA1[68]T[AE]Y?",
+3998,3999c4005,4006
+<   { "Toshiba MG10ACA... Enterprise Capacity HDD", // tested with TOSHIBA MG10ACA20TE/0102
+<     "TOSHIBA MG10ACA20T[AE]Y?",
+---
+>   { "Toshiba MG10-Series Enterprise Capacity HDD (Helium/MAMR)", // tested with TOSHIBA MG10ACA20TE/0102
+>     "TOSHIBA MG10[AS][CF]A[12][028]T[AE]Y?",

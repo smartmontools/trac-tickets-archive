@@ -1,0 +1,63 @@
+--- drivedb.h	2023-07-31 10:31:18.000000000 -0400
++++ drivedb_new.h	2024-01-22 05:08:12.000000000 -0500
+@@ -2381,7 +2381,7 @@
+   //"-v 194,tempminmax,Temperature_Celsius"
+   },
+   { "SSSTC ERX GD/CD Series SSDs", // Marvel DEAN 2.1
+-    "(SSSTC|SATA) ER[2-9]-[CG]D(240|480|960|1920)A?|" // tested with SSSTC ER2-GD480/E4N23021,
++    "(SSSTC|SATA) ER[2-9]-[CG]D(240|480|960|1920|3840)A?|" // tested with SSSTC ER2-GD480/E4N23021,
+       // SSSTC ER2-CD1920A/E5MN401, SSSTC ER3-GD240/F2MRD0F, SSSTC ER3-CD960A/F3MRD0Y
+     "AF[2-9]MA31DT[ED]LT(240|480|960|1920)A?", // tested with AF2MA31DTDLT240A/F2M96T0
+     "","",
+@@ -2395,32 +2395,41 @@
+     "-v 172,raw48,Erase_Fail_Count "
+     "-v 173,raw48,Average_PE_Count "
+     "-v 174,raw48,Unexpect_Power_Loss_Ct "
+-    "-v 175,raw48,PwrLoss_ProtectionFail "
+-  //"-v 176,raw48,Erase_Fail_Count_Chip "
++    "-v 175,raw48,PLP_Failure "
++    "-v 176,raw48,Erase_Fail_Count_Chip "
+   //"-v 177,raw48,Wear_Leveling_Count "
+   //"-v 178,raw48,Used_Rsvd_Blk_Cnt_Chip "
+   //"-v 179,raw48,Used_Rsvd_Blk_Cnt_Tot "
+-    "-v 180,raw48,Over-Provisioning_Rate "
+-  //"-v 181,raw48,Program_Fail_Cnt_Total "
+-  //"-v 182,raw48,Erase_Fail_Count_Total "
++    "-v 180,raw48,Over_Previsioning_Rate "
++    "-v 181,raw48,Sys_Percent_Life_Remain "
++    "-v 182,raw48,Heavy_GC_Log "
+     "-v 183,raw48,SATA_Iface_Downshift "
+   //"-v 184,raw48,End-to-End_Error "
+   //"-v 187,raw48,Reported_Uncorrect "
+   //"-v 188,raw48,Command_Timeout "
++    "-v 189,raw48,Maximum_Erase_Count "
++    "-v 190,raw48,Drive_Temperature "
++    "-v 191,raw48,Mininum_Erase_Count "
+   //"-v 194,tempminmax,Temperature_Celsius "
+-  //"-v 195,raw48,Hardware_ECC_Recovered "
++    "-v 195,raw48,ECC_rate "
+   //"-v 198,raw48,Offline_Uncorrectable "
+   //"-v 199,raw48,UDMA_CRC_Error_Count "
+     "-v 202,raw48,Percent_Lifetime_Remain "
+-    "-v 210,raw48,Raid_Success_Recover_Ct "
++    "-v 210,raw48,RAID_Suc_recover_tu_cnt "
+     "-v 229,raw48,PLP_Failure "
+-    "-v 231,raw48,Remaining_Lifetime_Perc "
++    "-v 231,raw48,Percent_Lifetime_Remain "
+   //"-v 232,raw48,Available_Reservd_Space "
+-  //"-v 233,raw48,Media_Wearout_Indicator "
++    "-v 233,raw48,Percent_Lifetime_Remain "
+     "-v 234,raw48,Thermal_Throttle_Status "
+   //"-v 241,raw48,Total_LBAs_Written "
+   //"-v 242,raw48,Total_LBAs_Read "
+-    "-v 243,raw48,NAND_Writes_GiB "
++    "-v 243,raw48,Total_NAND_Written "
++    "-v 244,raw48,SoC_Data_Path_Prot_Det "
++    "-v 245,raw48,Thermal_Sensor_Health "
++    "-v 246,raw48,Heavy_Read_Retry_count "
++    "-v 247,raw48,NOR_Health "
++    "-v 248,raw48,Cross_Temp_Duration "
++    "-v 249,raw48,SSD_Health "
+   },
+   { "STEC Mach2 CompactFlash Cards", // tested with STEC M2P CF 1.0.0/K1385MS
+     "STEC M2P CF 1.0.0",

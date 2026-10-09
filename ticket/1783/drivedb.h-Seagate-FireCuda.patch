@@ -1,0 +1,17 @@
+diff --git a/smartmontools/drivedb.h b/smartmontools/drivedb.h
+index 23beb950..cfd8c27a 100644
+--- a/smartmontools/drivedb.h
++++ b/smartmontools/drivedb.h
+@@ -5816,6 +5816,12 @@ const drive_settings builtin_knowndrives[] = {
+     "",
+     "-d usbcypress"
+   },
++  { "USB: Seagate FireCuda Gaming SSD; ASMedia ASM2364",
++    "0x0bc2:0xaa1a",
++    "", // 0x0100
++    "",
++    "-d sntasmedia"
++  },
+   { "USB: Seagate FreeAgent; ",
+     "0x0bc2:0x(3008|50(31|a1))",
+     "",
