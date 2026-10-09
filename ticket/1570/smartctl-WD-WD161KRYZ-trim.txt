@@ -1,0 +1,3 @@
+  69     14          0   Deterministic data after trim supported
+  69      5          0   Trimmed LBA range(s) returning zeroed data supported
+ 169      0          0   Trim bit in DATA SET MANAGEMENT command supported

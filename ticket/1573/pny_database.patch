@@ -1,0 +1,22 @@
+--- drivedb.h.orig	2022-03-05 15:16:01.856308103 +0000
++++ drivedb.h	2022-03-05 15:19:53.301035700 +0000
+@@ -772,7 +772,8 @@
+     "SSD PHISON 256GB PS3110-S10C|" // tested with SSD PHISON 256GB PS3110-S10C/SAFM12.2
+     "SSDPR-CX400-(128|256|512|1024)|" // Goodram CX400, tested with SSDPR-CX400-512/SBFM61.3
+     "TEAM L3 EVO SSD (120|240|480|960)GB|" // TEAM L3 EVO SSD 120GB/SBFM11.0
+-    "SSM28(128|256|512)GPTCB3B-S11[24]61[123]", // tested with SSM28256GPTCB3B-S112612/SBFM61.2
++    "SSM28(128|256|512)GPTCB3B-S11[24]61[123]|" // tested with SSM28256GPTCB3B-S112612/SBFM61.2
++    "PNY ELITE PSSD", // Tested with PNY Elite Portable SSD 240G
+     "", "",
+   //"-v 1,raw48,Raw_Read_Error_Rate "
+     "-v 2,raw48,Not_In_Use "
+@@ -6030,7 +6031,8 @@
+   },
+   // PNY
+   { "USB: ; PNY",
+-    "0x154b:0x5678",
++    "0x154b:0x5678|"
++    "0x154b:0xf009",
+     "", // 0x5408
+     "",
+     "-d sat"

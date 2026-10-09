@@ -1,0 +1,59 @@
+smartctl 7.3 2022-02-28 r5338 [x86_64-w64-mingw32-w11-21H2] (sf-7.3-1)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     WDC WD4005FZBX-00K5WB0
+Serial Number:    V1JRUHWG
+LU WWN Device Id: 5 000cca 0bce68ef1
+Firmware Version: 01.01A01
+User Capacity:    4,000,787,030,016 bytes [4.00 TB]
+Sector Size:      4096 bytes logical/physical
+Rotation Rate:    7200 rpm
+Form Factor:      3.5 inches
+Device is:        Not in smartctl database 7.3/5319
+ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Fri Apr 01 21:37:54 2022 EDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     254 (maximum performance)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Write SCT (Get) Feature Control Command failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=1117
+Wt Cache Reorder: Unknown (SCT Feature Control command failed)
+
+Read SMART Data failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=1117
+
+=== START OF READ SMART DATA SECTION ===
+SMART Status command failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=1117
+SMART overall-health self-assessment test result: UNKNOWN!
+SMART Status, Attributes and Thresholds cannot be read.
+
+Read SMART Log Directory failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=55
+
+ATA_READ_LOG_EXT (addr=0x00:0x00, page=0, n=1) failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=55
+Read GP Log Directory failed
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+
+Read SMART Error Log failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=55
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+Read SMART Self-test Log failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=55
+
+Selective Self-tests/Logging not supported
+
+Read SCT Status failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=55
+
+SCT Error Recovery Control command not supported
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+ATA_READ_LOG_EXT (addr=0x11:0x00, page=0, n=1) failed: IOCTL_SCSI_PASS_THROUGH_DIRECT failed, Error=55
+Read SATA Phy Event Counters failed

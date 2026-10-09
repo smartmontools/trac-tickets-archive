@@ -1,0 +1,2 @@
+> lsusb -d 154b:
+Bus 002 Device 002: ID 154b:f009 PNY PNY ELITE PSSD
