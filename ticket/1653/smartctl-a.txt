@@ -1,0 +1,53 @@
+[root@localhost ~]# ./smartctl -a /dev/bsg/sssraid16 -d sssraid,0,8
+smartctl 7.3.1 2022-02-28 r5338 [x86_64-linux-3.10.0-1160.el7.x86_64] (local build)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               TOSHIBA
+Product:              AL15SEB060N
+Revision:             3101
+Compliance:           SPC-4
+User Capacity:        600,127,266,816 bytes [600 GB]
+Logical block size:   512 bytes
+Rotation Rate:        10500 rpm
+Form Factor:          2.5 inches
+Logical Unit id:      0x5000039b48736e9d
+Serial number:        Y1Q0A02KFYVH
+Device type:          disk
+Transport protocol:   SAS (SPL-4)
+Local Time is:        Thu Oct 20 20:28:07 2022 CST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     34 C
+Drive Trip Temperature:        65 C
+
+Accumulated power on time, hours:minutes 3191:05
+Manufactured in week 47 of year 2021
+Specified cycle count over device lifetime:  50000
+Accumulated start-stop cycles:  54
+Specified load-unload count over device lifetime:  600000
+Accumulated load-unload cycles:  3598
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:     157946        0         0         0          0      89503.057           0
+write:         0        0         0         0          0        171.652           0
+verify:        0        0         0         0          0          0.118           0
+
+Non-medium error count:       33
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background long   Completed                   -       5                 - [-   -    -]
+# 2  Background short  Completed                   -       4                 - [-   -    -]
+
+Long (extended) Self-test duration: 3917 seconds [65.3 minutes]

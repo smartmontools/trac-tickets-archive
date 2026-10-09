@@ -1,0 +1,11 @@
+[root@localhost ~]# ./smartctl --scan
+/dev/sda -d scsi # /dev/sda, SCSI device
+/dev/sdb -d scsi # /dev/sdb, SCSI device
+/dev/sdc -d scsi # /dev/sdc, SCSI device
+/dev/sdd -d scsi # /dev/sdd, SCSI device
+/dev/sde -d scsi # /dev/sde, SCSI device
+/dev/sdf -d scsi # /dev/sdf, SCSI device
+/dev/bsg/sssraid15 -d sssraid,0,8 # /dev/bsg/sssraid15 [sssraid_disk_00_08], SCSI device
+/dev/bsg/sssraid15 -d sssraid,0,9 # /dev/bsg/sssraid15 [sssraid_disk_00_09], SCSI device
+/dev/bsg/sssraid16 -d sssraid,0,8 # /dev/bsg/sssraid16 [sssraid_disk_00_08], SCSI device
+/dev/bsg/sssraid16 -d sssraid,0,9 # /dev/bsg/sssraid16 [sssraid_disk_00_09], SCSI device

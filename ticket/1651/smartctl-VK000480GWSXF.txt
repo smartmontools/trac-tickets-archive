@@ -1,0 +1,650 @@
+smartctl 7.1 2019-12-30 r5022 [x86_64-linux-5.4.0-125-generic] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF OFFLINE IMMEDIATE AND SELF-TEST SECTION ===
+Sending command: "Execute SMART Short self-test routine immediately in off-line mode".
+Drive command "Execute SMART Short self-test routine immediately in off-line mode" successful.
+Testing has begun.
+Please wait 2 minutes for test to complete.
+Test will complete after Fri Sep 23 03:47:10 2022 UTC
+Use smartctl -X to abort test.
+installer@s0286-3:~$ smartctl -x /dev/sda
+smartctl 7.1 2019-12-30 r5022 [x86_64-linux-5.4.0-125-generic] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Smartctl open device: /dev/sda failed: Permission denied
+installer@s0286-3:~$ sudo smartctl -x /dev/sda
+smartctl 7.1 2019-12-30 r5022 [x86_64-linux-5.4.0-125-generic] (local build)
+Copyright (C) 2002-19, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     VK000480GWSXF
+Serial Number:    1939240AF79D
+LU WWN Device Id: 5 00a075 1240af79d
+Firmware Version: HPG2
+User Capacity:    480,103,981,056 bytes [480 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-3 T13/2161-D revision 5
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Fri Sep 23 03:49:05 2022 UTC
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Disabled
+DSN feature is:   Unavailable
+ATA Security is:  Unavailable
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x05)	Offline data collection activity
+					was aborted by an interrupting command from host.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever
+					been run.
+Total time to complete Offline
+data collection: 		( 1161) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (   6) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   3) minutes.
+SCT capabilities: 	       (0x0035)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR--   100   100   050    -    0
+  5 Reallocated_Sector_Ct   PO--CK   100   100   010    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    219
+ 11 Unknown_SSD_Attribute   -O--C-   100   100   000    -    23
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    26
+171 Unknown_Attribute       -O--CK   100   100   000    -    0
+172 Unknown_Attribute       -O--CK   100   100   000    -    0
+173 Unknown_Attribute       PO--CK   100   100   010    -    1
+174 Unknown_Attribute       -O--CK   100   100   000    -    23
+175 Program_Fail_Count_Chip PO--CK   100   100   001    -    0
+180 Unused_Rsvd_Blk_Cnt_Tot PO-RCK   100   100   001    -    0
+184 End-to-End_Error        -O--CK   100   100   000    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+188 Command_Timeout         -O--CK   100   100   000    -    32
+194 Temperature_Celsius     -O---K   079   072   000    -    21 (Min/Max 20/28)
+196 Reallocated_Event_Count PO--CK   100   100   001    -    0
+197 Current_Pending_Sector  -O--C-   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   100   100   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x03       GPL     R/O  16383  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x07       GPL     R/O      1  Extended self-test log
+0x08       GPL     R/O      2  Power Conditions log
+0x09           SL  R/W      1  Selective self-test log
+0x0c       GPL     R/O     16  Pending Defects log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL     R/O      9  IDENTIFY DEVICE data log
+0x80       GPL     R/W     16  Host vendor specific log
+0x81-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa0       GPL     VS   35328  Device vendor specific log
+0xa1       GPL,SL  VS       4  Device vendor specific log
+0xa3       GPL     VS   13824  Device vendor specific log
+0xa4       GPL     VS     354  Device vendor specific log
+0xa4       SL      VS      98  Device vendor specific log
+0xa5       GPL     VS    8000  Device vendor specific log
+0xa5       SL      VS      64  Device vendor specific log
+0xa6       GPL     VS    8000  Device vendor specific log
+0xa6       SL      VS      64  Device vendor specific log
+0xb5           SL  VS       1  Device vendor specific log
+0xb6       GPL     VS    8193  Device vendor specific log
+0xbb       GPL     VS       1  Device vendor specific log
+0xd0       GPL     VS       1  Device vendor specific log
+0xd7       GPL     VS       1  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (16383 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%       219         -
+# 2  Vendor (0xff)       Completed without error       00%       219         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Completed [00% left] (96484608-96550143)
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+Device State:                        Active (0)
+Current Temperature:                    21 Celsius
+Power Cycle Min/Max Temperature:     21/28 Celsius
+Lifetime    Min/Max Temperature:     20/28 Celsius
+Specified Max Operating Temperature:    60 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/60 Celsius
+Min/Max Temperature Limit:           -5/75 Celsius
+Temperature History Size (Index):    478 (281)
+
+Index    Estimated Time   Temperature Celsius
+ 282    2022-09-22 19:52    23  ****
+ 283    2022-09-22 19:53    23  ****
+ 284    2022-09-22 19:54    22  ***
+ 285    2022-09-22 19:55    22  ***
+ 286    2022-09-22 19:56    22  ***
+ 287    2022-09-22 19:57    23  ****
+ 288    2022-09-22 19:58    23  ****
+ 289    2022-09-22 19:59    23  ****
+ 290    2022-09-22 20:00    22  ***
+ 291    2022-09-22 20:01    22  ***
+ 292    2022-09-22 20:02    22  ***
+ 293    2022-09-22 20:03    23  ****
+ 294    2022-09-22 20:04    23  ****
+ 295    2022-09-22 20:05    23  ****
+ 296    2022-09-22 20:06    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 299    2022-09-22 20:09    22  ***
+ 300    2022-09-22 20:10    23  ****
+ 301    2022-09-22 20:11    23  ****
+ 302    2022-09-22 20:12    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 305    2022-09-22 20:15    22  ***
+ 306    2022-09-22 20:16    23  ****
+ 307    2022-09-22 20:17    23  ****
+ 308    2022-09-22 20:18    23  ****
+ 309    2022-09-22 20:19    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 312    2022-09-22 20:22    22  ***
+ 313    2022-09-22 20:23    23  ****
+ 314    2022-09-22 20:24    23  ****
+ 315    2022-09-22 20:25    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 318    2022-09-22 20:28    22  ***
+ 319    2022-09-22 20:29    23  ****
+ 320    2022-09-22 20:30    23  ****
+ 321    2022-09-22 20:31    23  ****
+ 322    2022-09-22 20:32    22  ***
+ 323    2022-09-22 20:33    22  ***
+ 324    2022-09-22 20:34    22  ***
+ 325    2022-09-22 20:35    23  ****
+ 326    2022-09-22 20:36    23  ****
+ 327    2022-09-22 20:37    23  ****
+ 328    2022-09-22 20:38    22  ***
+ 329    2022-09-22 20:39    22  ***
+ 330    2022-09-22 20:40    22  ***
+ 331    2022-09-22 20:41    23  ****
+ 332    2022-09-22 20:42    23  ****
+ 333    2022-09-22 20:43    23  ****
+ 334    2022-09-22 20:44    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 337    2022-09-22 20:47    22  ***
+ 338    2022-09-22 20:48    23  ****
+ 339    2022-09-22 20:49    23  ****
+ 340    2022-09-22 20:50    23  ****
+ 341    2022-09-22 20:51    22  ***
+ 342    2022-09-22 20:52    22  ***
+ 343    2022-09-22 20:53    22  ***
+ 344    2022-09-22 20:54    23  ****
+ 345    2022-09-22 20:55    23  ****
+ 346    2022-09-22 20:56    23  ****
+ 347    2022-09-22 20:57    22  ***
+ 348    2022-09-22 20:58    22  ***
+ 349    2022-09-22 20:59    22  ***
+ 350    2022-09-22 21:00    23  ****
+ 351    2022-09-22 21:01    23  ****
+ 352    2022-09-22 21:02    23  ****
+ 353    2022-09-22 21:03    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 356    2022-09-22 21:06    22  ***
+ 357    2022-09-22 21:07    23  ****
+ 358    2022-09-22 21:08    23  ****
+ 359    2022-09-22 21:09    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 362    2022-09-22 21:12    22  ***
+ 363    2022-09-22 21:13    23  ****
+ 364    2022-09-22 21:14    23  ****
+ 365    2022-09-22 21:15    23  ****
+ 366    2022-09-22 21:16    22  ***
+ 367    2022-09-22 21:17    22  ***
+ 368    2022-09-22 21:18    22  ***
+ 369    2022-09-22 21:19    23  ****
+ 370    2022-09-22 21:20    23  ****
+ 371    2022-09-22 21:21    23  ****
+ 372    2022-09-22 21:22    22  ***
+ 373    2022-09-22 21:23    22  ***
+ 374    2022-09-22 21:24    22  ***
+ 375    2022-09-22 21:25    23  ****
+ 376    2022-09-22 21:26    23  ****
+ 377    2022-09-22 21:27    23  ****
+ 378    2022-09-22 21:28    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 381    2022-09-22 21:31    22  ***
+ 382    2022-09-22 21:32    23  ****
+ 383    2022-09-22 21:33    23  ****
+ 384    2022-09-22 21:34    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 387    2022-09-22 21:37    22  ***
+ 388    2022-09-22 21:38    23  ****
+ 389    2022-09-22 21:39    23  ****
+ 390    2022-09-22 21:40    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 393    2022-09-22 21:43    22  ***
+ 394    2022-09-22 21:44    23  ****
+ 395    2022-09-22 21:45    23  ****
+ 396    2022-09-22 21:46    23  ****
+ 397    2022-09-22 21:47    22  ***
+ 398    2022-09-22 21:48    22  ***
+ 399    2022-09-22 21:49    22  ***
+ 400    2022-09-22 21:50    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 403    2022-09-22 21:53    23  ****
+ 404    2022-09-22 21:54    22  ***
+ 405    2022-09-22 21:55    22  ***
+ 406    2022-09-22 21:56    22  ***
+ 407    2022-09-22 21:57    23  ****
+ 408    2022-09-22 21:58    23  ****
+ 409    2022-09-22 21:59    23  ****
+ 410    2022-09-22 22:00    22  ***
+ 411    2022-09-22 22:01    22  ***
+ 412    2022-09-22 22:02    22  ***
+ 413    2022-09-22 22:03    23  ****
+ 414    2022-09-22 22:04    23  ****
+ 415    2022-09-22 22:05    23  ****
+ 416    2022-09-22 22:06    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 419    2022-09-22 22:09    22  ***
+ 420    2022-09-22 22:10    23  ****
+ 421    2022-09-22 22:11    23  ****
+ 422    2022-09-22 22:12    23  ****
+ 423    2022-09-22 22:13    22  ***
+ 424    2022-09-22 22:14    22  ***
+ 425    2022-09-22 22:15    22  ***
+ 426    2022-09-22 22:16    23  ****
+ 427    2022-09-22 22:17    23  ****
+ 428    2022-09-22 22:18    23  ****
+ 429    2022-09-22 22:19    22  ***
+ 430    2022-09-22 22:20    22  ***
+ 431    2022-09-22 22:21    22  ***
+ 432    2022-09-22 22:22    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 435    2022-09-22 22:25    23  ****
+ 436    2022-09-22 22:26    22  ***
+ 437    2022-09-22 22:27    22  ***
+ 438    2022-09-22 22:28    22  ***
+ 439    2022-09-22 22:29    23  ****
+ 440    2022-09-22 22:30    23  ****
+ 441    2022-09-22 22:31    23  ****
+ 442    2022-09-22 22:32    22  ***
+ 443    2022-09-22 22:33    22  ***
+ 444    2022-09-22 22:34    22  ***
+ 445    2022-09-22 22:35    23  ****
+ 446    2022-09-22 22:36    23  ****
+ 447    2022-09-22 22:37    23  ****
+ 448    2022-09-22 22:38    22  ***
+ 449    2022-09-22 22:39    22  ***
+ 450    2022-09-22 22:40    22  ***
+ 451    2022-09-22 22:41    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 454    2022-09-22 22:44    23  ****
+ 455    2022-09-22 22:45    22  ***
+ 456    2022-09-22 22:46    22  ***
+ 457    2022-09-22 22:47    22  ***
+ 458    2022-09-22 22:48    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 461    2022-09-22 22:51    23  ****
+ 462    2022-09-22 22:52    22  ***
+ 463    2022-09-22 22:53    22  ***
+ 464    2022-09-22 22:54    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 467    2022-09-22 22:57    23  ****
+ 468    2022-09-22 22:58    22  ***
+ ...    ..(  7 skipped).    ..  ***
+ 476    2022-09-22 23:06    22  ***
+ 477    2022-09-22 23:07    21  **
+   0    2022-09-22 23:08    23  ****
+   1    2022-09-22 23:09    23  ****
+   2    2022-09-22 23:10    23  ****
+   3    2022-09-22 23:11    22  ***
+ ...    ..(  2 skipped).    ..  ***
+   6    2022-09-22 23:14    22  ***
+   7    2022-09-22 23:15    23  ****
+   8    2022-09-22 23:16    23  ****
+   9    2022-09-22 23:17    23  ****
+  10    2022-09-22 23:18    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  13    2022-09-22 23:21    22  ***
+  14    2022-09-22 23:22    23  ****
+  15    2022-09-22 23:23    23  ****
+  16    2022-09-22 23:24    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  19    2022-09-22 23:27    22  ***
+  20    2022-09-22 23:28    23  ****
+  21    2022-09-22 23:29    23  ****
+  22    2022-09-22 23:30    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  25    2022-09-22 23:33    22  ***
+  26    2022-09-22 23:34    23  ****
+  27    2022-09-22 23:35    23  ****
+  28    2022-09-22 23:36    23  ****
+  29    2022-09-22 23:37    22  ***
+  30    2022-09-22 23:38    22  ***
+  31    2022-09-22 23:39    22  ***
+  32    2022-09-22 23:40    23  ****
+  33    2022-09-22 23:41    23  ****
+  34    2022-09-22 23:42    23  ****
+  35    2022-09-22 23:43    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  38    2022-09-22 23:46    22  ***
+  39    2022-09-22 23:47    23  ****
+  40    2022-09-22 23:48    23  ****
+  41    2022-09-22 23:49    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  44    2022-09-22 23:52    22  ***
+  45    2022-09-22 23:53    23  ****
+  46    2022-09-22 23:54    23  ****
+  47    2022-09-22 23:55    23  ****
+  48    2022-09-22 23:56    22  ***
+  49    2022-09-22 23:57    22  ***
+  50    2022-09-22 23:58    22  ***
+  51    2022-09-22 23:59    23  ****
+  52    2022-09-23 00:00    23  ****
+  53    2022-09-23 00:01    23  ****
+  54    2022-09-23 00:02    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  57    2022-09-23 00:05    22  ***
+  58    2022-09-23 00:06    23  ****
+  59    2022-09-23 00:07    23  ****
+  60    2022-09-23 00:08    23  ****
+  61    2022-09-23 00:09    22  ***
+  62    2022-09-23 00:10    22  ***
+  63    2022-09-23 00:11    22  ***
+  64    2022-09-23 00:12    23  ****
+  65    2022-09-23 00:13    23  ****
+  66    2022-09-23 00:14    23  ****
+  67    2022-09-23 00:15    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  70    2022-09-23 00:18    22  ***
+  71    2022-09-23 00:19    23  ****
+  72    2022-09-23 00:20    23  ****
+  73    2022-09-23 00:21    23  ****
+  74    2022-09-23 00:22    22  ***
+  75    2022-09-23 00:23    22  ***
+  76    2022-09-23 00:24    22  ***
+  77    2022-09-23 00:25    23  ****
+  78    2022-09-23 00:26    23  ****
+  79    2022-09-23 00:27    23  ****
+  80    2022-09-23 00:28    22  ***
+  81    2022-09-23 00:29    22  ***
+  82    2022-09-23 00:30    22  ***
+  83    2022-09-23 00:31    23  ****
+  84    2022-09-23 00:32    23  ****
+  85    2022-09-23 00:33    23  ****
+  86    2022-09-23 00:34    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  89    2022-09-23 00:37    22  ***
+  90    2022-09-23 00:38    23  ****
+  91    2022-09-23 00:39    23  ****
+  92    2022-09-23 00:40    22  ***
+ ...    ..(  2 skipped).    ..  ***
+  95    2022-09-23 00:43    22  ***
+  96    2022-09-23 00:44    23  ****
+  97    2022-09-23 00:45    23  ****
+  98    2022-09-23 00:46    23  ****
+  99    2022-09-23 00:47    22  ***
+ 100    2022-09-23 00:48    22  ***
+ 101    2022-09-23 00:49    22  ***
+ 102    2022-09-23 00:50    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 105    2022-09-23 00:53    23  ****
+ 106    2022-09-23 00:54    22  ***
+ 107    2022-09-23 00:55    22  ***
+ 108    2022-09-23 00:56    22  ***
+ 109    2022-09-23 00:57    23  ****
+ 110    2022-09-23 00:58    23  ****
+ 111    2022-09-23 00:59    23  ****
+ 112    2022-09-23 01:00    22  ***
+ 113    2022-09-23 01:01    22  ***
+ 114    2022-09-23 01:02    22  ***
+ 115    2022-09-23 01:03    23  ****
+ 116    2022-09-23 01:04    23  ****
+ 117    2022-09-23 01:05    23  ****
+ 118    2022-09-23 01:06    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 121    2022-09-23 01:09    22  ***
+ 122    2022-09-23 01:10    23  ****
+ 123    2022-09-23 01:11    23  ****
+ 124    2022-09-23 01:12    23  ****
+ 125    2022-09-23 01:13    22  ***
+ 126    2022-09-23 01:14    22  ***
+ 127    2022-09-23 01:15    22  ***
+ 128    2022-09-23 01:16    23  ****
+ 129    2022-09-23 01:17    23  ****
+ 130    2022-09-23 01:18    23  ****
+ 131    2022-09-23 01:19    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 134    2022-09-23 01:22    22  ***
+ 135    2022-09-23 01:23    23  ****
+ 136    2022-09-23 01:24    23  ****
+ 137    2022-09-23 01:25    23  ****
+ 138    2022-09-23 01:26    22  ***
+ 139    2022-09-23 01:27    22  ***
+ 140    2022-09-23 01:28    22  ***
+ 141    2022-09-23 01:29    23  ****
+ 142    2022-09-23 01:30    23  ****
+ 143    2022-09-23 01:31    23  ****
+ 144    2022-09-23 01:32    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 147    2022-09-23 01:35    22  ***
+ 148    2022-09-23 01:36    23  ****
+ 149    2022-09-23 01:37    23  ****
+ 150    2022-09-23 01:38    23  ****
+ 151    2022-09-23 01:39    22  ***
+ 152    2022-09-23 01:40    22  ***
+ 153    2022-09-23 01:41    22  ***
+ 154    2022-09-23 01:42    23  ****
+ 155    2022-09-23 01:43    23  ****
+ 156    2022-09-23 01:44    23  ****
+ 157    2022-09-23 01:45    22  ***
+ 158    2022-09-23 01:46    22  ***
+ 159    2022-09-23 01:47    22  ***
+ 160    2022-09-23 01:48    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 163    2022-09-23 01:51    23  ****
+ 164    2022-09-23 01:52    22  ***
+ 165    2022-09-23 01:53    22  ***
+ 166    2022-09-23 01:54    22  ***
+ 167    2022-09-23 01:55    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 170    2022-09-23 01:58    23  ****
+ 171    2022-09-23 01:59    22  ***
+ 172    2022-09-23 02:00    22  ***
+ 173    2022-09-23 02:01    22  ***
+ 174    2022-09-23 02:02    23  ****
+ 175    2022-09-23 02:03    23  ****
+ 176    2022-09-23 02:04    23  ****
+ 177    2022-09-23 02:05    22  ***
+ ...    ..(  9 skipped).    ..  ***
+ 187    2022-09-23 02:15    22  ***
+ 188    2022-09-23 02:16    21  **
+ 189    2022-09-23 02:17    21  **
+ 190    2022-09-23 02:18    21  **
+ 191    2022-09-23 02:19    22  ***
+ 192    2022-09-23 02:20    22  ***
+ 193    2022-09-23 02:21    21  **
+ 194    2022-09-23 02:22    21  **
+ 195    2022-09-23 02:23    21  **
+ 196    2022-09-23 02:24    22  ***
+ 197    2022-09-23 02:25    22  ***
+ 198    2022-09-23 02:26    21  **
+ 199    2022-09-23 02:27    22  ***
+ 200    2022-09-23 02:28    22  ***
+ 201    2022-09-23 02:29    23  ****
+ 202    2022-09-23 02:30    24  *****
+ 203    2022-09-23 02:31    24  *****
+ 204    2022-09-23 02:32    23  ****
+ 205    2022-09-23 02:33    23  ****
+ 206    2022-09-23 02:34    22  ***
+ ...    ..(  6 skipped).    ..  ***
+ 213    2022-09-23 02:41    22  ***
+ 214    2022-09-23 02:42    23  ****
+ 215    2022-09-23 02:43    24  *****
+ 216    2022-09-23 02:44    23  ****
+ 217    2022-09-23 02:45    23  ****
+ 218    2022-09-23 02:46    22  ***
+ 219    2022-09-23 02:47    22  ***
+ 220    2022-09-23 02:48    22  ***
+ 221    2022-09-23 02:49    23  ****
+ 222    2022-09-23 02:50    24  *****
+ 223    2022-09-23 02:51    24  *****
+ 224    2022-09-23 02:52    23  ****
+ 225    2022-09-23 02:53    23  ****
+ 226    2022-09-23 02:54    22  ***
+ 227    2022-09-23 02:55    22  ***
+ 228    2022-09-23 02:56    23  ****
+ 229    2022-09-23 02:57    23  ****
+ 230    2022-09-23 02:58    24  *****
+ 231    2022-09-23 02:59    23  ****
+ 232    2022-09-23 03:00    23  ****
+ 233    2022-09-23 03:01    22  ***
+ 234    2022-09-23 03:02    22  ***
+ 235    2022-09-23 03:03    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 238    2022-09-23 03:06    23  ****
+ 239    2022-09-23 03:07    22  ***
+ 240    2022-09-23 03:08    22  ***
+ 241    2022-09-23 03:09    22  ***
+ 242    2022-09-23 03:10    23  ****
+ 243    2022-09-23 03:11    23  ****
+ 244    2022-09-23 03:12    23  ****
+ 245    2022-09-23 03:13    22  ***
+ 246    2022-09-23 03:14    22  ***
+ 247    2022-09-23 03:15    22  ***
+ 248    2022-09-23 03:16    23  ****
+ ...    ..(  2 skipped).    ..  ****
+ 251    2022-09-23 03:19    23  ****
+ 252    2022-09-23 03:20    22  ***
+ 253    2022-09-23 03:21    22  ***
+ 254    2022-09-23 03:22    22  ***
+ 255    2022-09-23 03:23    23  ****
+ 256    2022-09-23 03:24    23  ****
+ 257    2022-09-23 03:25    23  ****
+ 258    2022-09-23 03:26    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 261    2022-09-23 03:29    22  ***
+ 262    2022-09-23 03:30    23  ****
+ 263    2022-09-23 03:31    23  ****
+ 264    2022-09-23 03:32    23  ****
+ 265    2022-09-23 03:33    22  ***
+ 266    2022-09-23 03:34    22  ***
+ 267    2022-09-23 03:35    22  ***
+ 268    2022-09-23 03:36    23  ****
+ 269    2022-09-23 03:37    23  ****
+ 270    2022-09-23 03:38    23  ****
+ 271    2022-09-23 03:39    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 274    2022-09-23 03:42    22  ***
+ 275    2022-09-23 03:43    23  ****
+ 276    2022-09-23 03:44    23  ****
+ 277    2022-09-23 03:45    22  ***
+ ...    ..(  2 skipped).    ..  ***
+ 280    2022-09-23 03:48    22  ***
+ 281    2022-09-23 03:49    23  ****
+
+SCT Error Recovery Control command not supported
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4              26  ---  Lifetime Power-On Resets
+0x01  0x010  4             219  ---  Power-on Hours
+0x01  0x018  6        81100023  ---  Logical Sectors Written
+0x01  0x020  6          383205  ---  Number of Write Commands
+0x01  0x028  6      3739578495  ---  Logical Sectors Read
+0x01  0x030  6         7601949  ---  Number of Read Commands
+0x01  0x038  6       791287890  ---  Date and Time TimeStamp
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4              32  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              21  ---  Current Temperature
+0x05  0x010  1              22  ---  Average Short Term Temperature
+0x05  0x018  1               -  ---  Average Long Term Temperature
+0x05  0x020  1              28  ---  Highest Temperature
+0x05  0x028  1              20  ---  Lowest Temperature
+0x05  0x030  1              24  ---  Highest Average Short Term Temperature
+0x05  0x038  1              22  ---  Lowest Average Short Term Temperature
+0x05  0x040  1               -  ---  Highest Average Long Term Temperature
+0x05  0x048  1               -  ---  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              60  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1               0  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4              79  ---  Number of Hardware Resets
+0x06  0x010  4              51  ---  Number of ASR Events
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               0  N--  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c)
+No Defects Logged
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  4            0  Command failed due to ICRC error
+0x0003  4            0  R_ERR response for device-to-host data FIS
+0x0004  4            0  R_ERR response for host-to-device data FIS
+0x0006  4            0  R_ERR response for device-to-host non-data FIS
+0x000a  4           10  Device-to-host register FISes sent due to a COMRESET
+0x000b  4            0  CRC errors within host-to-device FIS
+0x000d  4            0  Non-CRC errors within host-to-device FIS
+

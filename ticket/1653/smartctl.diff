@@ -1,0 +1,621 @@
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(revision 5419)
++++ ChangeLog	(working copy)
+@@ -1,5 +1,11 @@
+ $Id$
+ 
++<<<<<<< .mine
++2022-11-25 Steven Song <steven.song@3snic.com>
++
++	Add SSSRAID (3SNIC RAID Controller) support on Linux
++
++=======
+ 2022-11-22  Christian Franke  <franke@computer.org>
+ 
+ 	os_win32.cpp: Decode Windows 10 and 11 22H2 build numbers.
+@@ -327,6 +333,7 @@
+ 	should be reversed (and then put back in after the release,
+ 	for the next cycle). 
+ 
++>>>>>>> .r5419
+ 2022-02-28  Christian Franke  <franke@computer.org>
+ 
+ 	smartmontools 7.3
+Index: Makefile.am
+===================================================================
+--- Makefile.am	(revision 5419)
++++ Makefile.am	(working copy)
+@@ -115,7 +115,8 @@
+         dev_areca.h \
+         dev_legacy.cpp \
+         linux_nvme_ioctl.h \
+-        megaraid.h
++        megaraid.h \
++        sssraid.h
+ 
+ if OS_WIN32_MINGW
+ 
+@@ -188,7 +189,8 @@
+         linux_nvme_ioctl.h \
+         freebsd_nvme_ioctl.h \
+         netbsd_nvme_ioctl.h \
+-        megaraid.h
++        megaraid.h \
++        sssraid.h
+ 
+ if OS_POSIX
+ 
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 5419)
++++ os_linux.cpp	(working copy)
+@@ -73,6 +73,7 @@
+ #include "utility.h"
+ #include "cciss.h"
+ #include "megaraid.h"
++#include "sssraid.h"
+ #include "aacraid.h"
+ #include "nvmecmds.h"
+ 
+@@ -1375,6 +1376,138 @@
+ }
+ 
+ /////////////////////////////////////////////////////////////////////////////
++/// 3SNIC RAID support
++
++class linux_sssraid_device
++: public /* implements */ scsi_device,
++  public /* extends */ linux_smart_device
++{
++public:
++  linux_sssraid_device(smart_interface *intf, const char *name,
++    unsigned int eid, unsigned int sid);
++
++  virtual bool scsi_pass_through(scsi_cmnd_io *iop) override;
++
++private:
++  unsigned int m_eid;
++  unsigned int m_sid;
++
++  bool scsi_cmd(int cdbLen, void *cdb, int dataLen, void *data, int direction);
++};
++
++linux_sssraid_device::linux_sssraid_device(smart_interface *intf,
++  const char *dev_name, unsigned int eid, unsigned int sid)
++ : smart_device(intf, dev_name, "sssraid", "sssraid"),
++   linux_smart_device(O_RDWR | O_NONBLOCK),
++   m_eid(eid), m_sid(sid)
++{
++  set_info().info_name = strprintf("%s [sssraid_disk_%02d_%02d]", dev_name, eid, sid);
++  set_info().dev_type = strprintf("sssraid,%d,%d", eid, sid);
++}
++
++bool linux_sssraid_device::scsi_pass_through(scsi_cmnd_io *iop)
++{
++  int report = scsi_debugmode;
++  if (report > 0) {
++    int k, j;
++    const unsigned char * ucp = iop->cmnd;
++    const char * np;
++    char buff[256];
++    const int sz = (int)sizeof(buff);
++
++    np = scsi_get_opcode_name(ucp[0]);
++    j = snprintf(buff, sz, " [%s: ", np ? np : "<unknown opcode>");
++    for (k = 0; k < (int)iop->cmnd_len; ++k)
++      j += snprintf(&buff[j], (sz > j ? (sz - j) : 0), "%02x ", ucp[k]);
++    if ((report > 1) && (DXFER_TO_DEVICE == iop->dxfer_dir) && (iop->dxferp)) {
++      int trunc = (iop->dxfer_len > 256) ? 1 : 0;
++
++      snprintf(&buff[j], (sz > j ? (sz - j) : 0), "]\n  Outgoing "
++              "data, len=%d%s:\n", (int)iop->dxfer_len,
++              (trunc ? " [only first 256 bytes shown]" : ""));
++      dStrHex(iop->dxferp, (trunc ? 256 : iop->dxfer_len) , 1);
++    }
++    else
++      snprintf(&buff[j], (sz > j ? (sz - j) : 0), "]\n");
++    pout("%s", buff);
++  }
++
++  bool r = scsi_cmd(iop->cmnd_len, iop->cmnd,
++          iop->dxfer_len, iop->dxferp, iop->dxfer_dir);
++  return r;
++}
++
++/* Issue passthrough scsi commands to sssraid controllers */
++bool linux_sssraid_device::scsi_cmd(int cdbLen, void *cdb,
++  int dataLen, void *data, int dxfer_dir)
++{
++  struct sg_io_v4 io_hdr_v4;
++  struct cmd_scsi_passthrough scsi_param;
++  unsigned char sense_buff[96] = { 0 };
++  struct bsg_ioctl_cmd bsg_param;
++  memset(&io_hdr_v4, 0, sizeof(io_hdr_v4));
++  memset(&scsi_param, 0, sizeof(scsi_param));
++  memset(&bsg_param, 0, sizeof(bsg_param));
++  scsi_param.sense_buffer = sense_buff;
++  scsi_param.sense_buffer_len = 96;
++  scsi_param.cdb_len = cdbLen;
++  memcpy(scsi_param.cdb, cdb, cdbLen);
++  scsi_param.loc.enc_id = m_eid;
++  scsi_param.loc.slot_id = m_sid;
++
++  io_hdr_v4.guard = 'Q';
++  io_hdr_v4.protocol = BSG_PROTOCOL_SCSI;
++  io_hdr_v4.subprotocol = BSG_SUB_PROTOCOL_SCSI_TRANSPORT;
++  io_hdr_v4.response = (uintptr_t)sense_buff;
++  io_hdr_v4.max_response_len = ADM_SCSI_CDB_SENSE_MAX_LEN;
++  io_hdr_v4.request_len = sizeof(struct bsg_ioctl_cmd);
++  io_hdr_v4.request = (uintptr_t)(&bsg_param);
++  io_hdr_v4.timeout =  BSG_APPEND_TIMEOUT_MS + DEFAULT_CONMMAND_TIMEOUT_MS;
++
++  switch (dxfer_dir) {
++    case DXFER_NONE:
++    case DXFER_FROM_DEVICE:
++      io_hdr_v4.din_xferp = (uintptr_t)data;
++      io_hdr_v4.din_xfer_len = dataLen;
++      bsg_param.ioctl_pthru.opcode = ADM_RAID_READ;
++      break;
++    case DXFER_TO_DEVICE:
++      io_hdr_v4.dout_xferp = (uintptr_t)data;
++      io_hdr_v4.dout_xfer_len = dataLen;
++      bsg_param.ioctl_pthru.opcode = ADM_RAID_WRITE;
++      break;
++    default:
++      pout("scsi_cmd: bad dxfer_dir\n");
++      return set_err(EINVAL, "scsi_cmd: bad dxfer_dir\n");
++  }
++
++  bsg_param.msgcode = ADM_BSG_MSGCODE_SCSI_PTHRU;
++  bsg_param.ioctl_pthru.timeout_ms = DEFAULT_CONMMAND_TIMEOUT_MS;
++  bsg_param.ioctl_pthru.info_1.subopcode = ADM_CMD_SCSI_PASSTHROUGH;
++  bsg_param.ioctl_pthru.addr = (uintptr_t)data;
++  bsg_param.ioctl_pthru.data_len = dataLen;
++
++  bsg_param.ioctl_pthru.info_0.cdb_len = scsi_param.cdb_len;
++  bsg_param.ioctl_pthru.sense_addr = (uintptr_t)scsi_param.sense_buffer;
++  bsg_param.ioctl_pthru.info_0.res_sense_len = scsi_param.sense_buffer_len;
++  io_hdr_v4.response = (uintptr_t)scsi_param.sense_buffer;
++  io_hdr_v4.response_len = scsi_param.sense_buffer_len;
++  bsg_param.ioctl_pthru.info_3.eid = scsi_param.loc.enc_id;
++  bsg_param.ioctl_pthru.info_3.sid = scsi_param.loc.slot_id;
++  bsg_param.ioctl_pthru.info_4.did = scsi_param.loc.did;
++  bsg_param.ioctl_pthru.info_4.did_flag = scsi_param.loc.flag;
++
++  memcpy(&bsg_param.ioctl_pthru.cdw16, scsi_param.cdb, scsi_param.cdb_len);
++
++  int r = ioctl(get_fd(), SG_IO, &io_hdr_v4);
++  if (r < 0) {
++    return (r);
++  }
++
++  return true;
++}
++
++/////////////////////////////////////////////////////////////////////////////
+ /// CCISS RAID support
+ 
+ #ifdef HAVE_LINUX_CCISS_IOCTL_H
+@@ -2712,6 +2845,9 @@
+   int megasas_dcmd_cmd(int bus_no, uint32_t opcode, void *buf,
+     size_t bufsize, uint8_t *mbox, size_t mboxlen, uint8_t *statusp);
+   int megasas_pd_add_list(int bus_no, smart_device_list & devlist);
++  bool get_dev_sssraid(smart_device_list & devlist);
++  int sssraid_pd_add_list(int bus_no, smart_device_list & devlist);
++  int sssraid_pdlist_cmd(int bus_no, uint16_t start_idx, void *buf, size_t bufsize, uint8_t *statusp);
+ };
+ 
+ std::string linux_smart_interface::get_os_version_str()
+@@ -2892,6 +3028,42 @@
+   return true;
+ }
+ 
++// getting devices from 3SNIC Raid, if available
++bool linux_smart_interface::get_dev_sssraid(smart_device_list & devlist)
++{
++  /* Scanning of disks on sssraid device */
++  char line[128];
++  FILE * fp = NULL;
++
++  // getting bus numbers with 3snic sas devices
++  // we are using sysfs to get list of all scsi hosts
++  DIR * dp = opendir ("/sys/class/scsi_host/");
++  if (dp != NULL)
++  {
++    struct dirent *ep;
++    while ((ep = readdir (dp)) != NULL) {
++      unsigned int host_no = 0;
++      if (!sscanf(ep->d_name, "host%u", &host_no))
++        continue;
++      /* proc_name should be sssraid */
++      char sysfsdir[256];
++      snprintf(sysfsdir, sizeof(sysfsdir) - 1,
++        "/sys/class/scsi_host/host%u/proc_name", host_no);
++      if((fp = fopen(sysfsdir, "r")) == NULL)
++        continue;
++      if(fgets(line, sizeof(line), fp) != NULL && !strncmp(line,"sssraid",7)) {
++        sssraid_pd_add_list(host_no, devlist);
++      }
++      fclose(fp);
++    }
++    (void) closedir (dp);
++  } else { /* sysfs not mounted ? */
++    for(unsigned i = 0; i <=16; i++) // trying to add devices on first 16 buses
++      sssraid_pd_add_list(i, devlist);
++  }
++  return true;
++}
++
+ bool linux_smart_interface::scan_smart_devices(smart_device_list & devlist,
+   const smart_devtype_list & types, const char * pattern /*= 0*/)
+ {
+@@ -2948,6 +3120,8 @@
+ 
+     // get device list from the megaraid device
+     get_dev_megasas(devlist);
++    // get device list from the sssraid device
++    get_dev_sssraid(devlist);
+   }
+ 
+   if (type_nvme) {
+@@ -3074,6 +3248,102 @@
+   return (0);
+ }
+ 
++int
++linux_smart_interface::sssraid_pdlist_cmd(int bus_no, uint16_t start_idx_param, void *buf, size_t bufsize, uint8_t *statusp)
++{
++  struct sg_io_v4 io_hdr_v4;
++  unsigned char sense_buff[ADM_SCSI_CDB_SENSE_MAX_LEN] = { 0 };
++  struct bsg_ioctl_cmd bsg_param;
++  u8 cmd_param[24] = { 0 };
++
++  memset(&io_hdr_v4, 0, sizeof(io_hdr_v4));
++  memset(&bsg_param, 0, sizeof(bsg_param));
++  io_hdr_v4.guard = 'Q';
++  io_hdr_v4.protocol = BSG_PROTOCOL_SCSI;
++  io_hdr_v4.subprotocol = BSG_SUB_PROTOCOL_SCSI_TRANSPORT;
++  io_hdr_v4.response = (uintptr_t)sense_buff;
++  io_hdr_v4.max_response_len = ADM_SCSI_CDB_SENSE_MAX_LEN;
++  io_hdr_v4.request_len = sizeof(struct bsg_ioctl_cmd);
++  io_hdr_v4.request = (uintptr_t)(&bsg_param);
++  io_hdr_v4.timeout = BSG_APPEND_TIMEOUT_MS + DEFAULT_CONMMAND_TIMEOUT_MS;
++
++  if (bufsize >0)  {
++    io_hdr_v4.din_xferp = (uintptr_t)buf;
++    io_hdr_v4.din_xfer_len = bufsize;
++  }
++
++  bsg_param.msgcode = 0;
++  bsg_param.ioctl_r64.opcode = ADM_RAID_READ;
++  bsg_param.ioctl_r64.timeout_ms = DEFAULT_CONMMAND_TIMEOUT_MS;
++  bsg_param.ioctl_r64.info_0.subopcode = ADM_CMD_SHOW_PDLIST;
++  bsg_param.ioctl_r64.addr = (uintptr_t)buf;
++  bsg_param.ioctl_r64.info_1.data_len = bufsize;
++  bsg_param.ioctl_r64.data_len = bufsize;
++  bsg_param.ioctl_r64.info_1.param_len = sizeof(struct cmd_pdlist_idx);
++  memset(&cmd_param, 0, 24);
++  struct cmd_pdlist_idx *p_cmd_param = (struct cmd_pdlist_idx *)(&cmd_param);
++  p_cmd_param->start_idx = start_idx_param;
++  p_cmd_param->count = CMD_PDLIST_ONCE_NUM;
++  memcpy((u32*)&bsg_param.ioctl_r64.cdw10, cmd_param, sizeof(struct cmd_pdlist_idx));
++
++  int fd;
++  char line[128];
++  snprintf(line, sizeof(line) - 1, "/dev/bsg/sssraid%d", bus_no);
++  if ((fd = ::open(line, O_RDONLY)) < 0) {
++    pout("open %s error %d\n", line, fd);
++    return (errno);
++  }
++
++  int r = ioctl(fd, SG_IO, &io_hdr_v4);
++  ::close(fd);
++  if (r < 0) {
++    return (r);
++  }
++
++  if (statusp != NULL) {
++    *statusp = (io_hdr_v4.transport_status << 0x8) | io_hdr_v4.device_status;
++    pout("statusp = 0x%x\n", *statusp);
++    if (*statusp) {
++      pout("controller returns an error - 0x%x", *statusp);
++      return (-1);
++    }
++  }
++  return (0);
++}
++
++int
++linux_smart_interface::sssraid_pd_add_list(int bus_no, smart_device_list & devlist)
++{
++  unsigned disk_num = 0;
++  struct cmd_pdlist_entry pdlist[CMD_PDS_MAX_NUM];
++  while (disk_num < CMD_PDS_MAX_NUM) {
++    struct cmd_show_pdlist list;
++    memset(&list, 0, sizeof(list));
++    if (sssraid_pdlist_cmd(bus_no, disk_num, &list, sizeof(struct cmd_show_pdlist), NULL) < 0)
++    {
++      return (-1);
++    }
++    if (list.num == 0)
++      break;
++    memcpy(&pdlist[disk_num], list.disks, list.num * sizeof(struct cmd_pdlist_entry));
++    disk_num += list.num;
++    if (list.num < CMD_PDLIST_ONCE_NUM)
++      break;
++  }
++
++  // adding all SCSI devices
++  for (unsigned i = 0; i < disk_num; i++) {
++    if(!(pdlist[i].interface == ADM_DEVICE_TYPE_SATA || pdlist[i].interface == ADM_DEVICE_TYPE_SAS
++        || pdlist[i].interface == ADM_DEVICE_TYPE_NVME))
++      continue; /* non disk device found */
++    char line[128];
++    snprintf(line, sizeof(line) - 1, "/dev/bsg/sssraid%d", bus_no);
++    smart_device * dev = new linux_sssraid_device(this, line, (unsigned int)pdlist[i].enc_id, (unsigned int)pdlist[i].slot_id);
++    devlist.push_back(dev);
++  }
++  return (0);
++}
++
+ // Return kernel release as integer ("2.6.31" -> 206031)
+ static unsigned get_kernel_release()
+ {
+@@ -3331,6 +3601,12 @@
+     return new linux_megaraid_device(this, name, disknum);
+   }
+ 
++  // SSSRAID
++  unsigned eid = -1, sid = -1;
++  if (sscanf(type, "sssraid,%u,%u", &eid, &sid) == 2) {
++    return get_sat_device("sat,auto", new linux_sssraid_device(this, name, eid, sid));
++  }
++
+   //aacraid?
+   unsigned host, chan, device;
+   if (sscanf(type, "aacraid,%u,%u,%u", &host, &chan, &device) == 3) {
+@@ -3345,7 +3621,7 @@
+ 
+ std::string linux_smart_interface::get_valid_custom_dev_types_str()
+ {
+-  return "marvell, areca,N/E, 3ware,N, hpt,L/M/N, megaraid,N, aacraid,H,L,ID"
++  return "marvell, areca,N/E, 3ware,N, hpt,L/M/N, megaraid,N, aacraid,H,L,ID, sssraid,E,S"
+ #ifdef HAVE_LINUX_CCISS_IOCTL_H
+                                               ", cciss,N"
+ #endif
+Index: smartctl.8.in
+===================================================================
+--- smartctl.8.in	(revision 5419)
++++ smartctl.8.in	(working copy)
+@@ -532,6 +532,26 @@
+ .Sp
+ .\" %ENDIF OS Linux
+ .\" %IF OS Linux Windows Cygwin
++
++.I sssraid,E,S
++\- [Linux only] the device consists of one or more SCSI/SAS disks connected
++to a SSSRAID controller.  The non-negative integer E (in the range of 0 to
++8) denotes the enclosure and S (range 0 to 128) denotes the slot. 
++Use syntax such as:
++.\" %ENDIF OS Linux
++.\" %IF OS ALL
++.br
++Linux:
++.\" %ENDIF OS ALL
++.\" %IF OS Linux
++.br
++\fBsmartctl \-a \-d sssraid,0,1 /dev/bsg/sssraid0\fP
++.br
++It is possible to set RAID device name as /dev/bsg/sssraidN, where N is a SCSI bus
++number.
++.Sp
++.\" %ENDIF OS Linux
++
+ .I aacraid,H,L,ID
+ \- [Linux, Windows and Cygwin only] the device consists of one or more
+ SCSI/SAS or SATA disks connected to an AacRaid controller.
+Index: sssraid.h
+===================================================================
+--- sssraid.h	(revision 0)
++++ sssraid.h	(working copy)
+@@ -0,0 +1,198 @@
++/*
++ * sssraid.h
++ *
++ * Home page of code is: http://www.smartmontools.org
++ *
++ * Copyright (C) 2022 3SNIC Inc.
++ *
++ * SPDX-License-Identifier: GPL-2.0-or-later
++ */
++
++#ifndef _SSSRAID_H_
++#define _SSSRAID_H_
++#include <stdint.h>
++#define u8  uint8_t
++#define u16 uint16_t
++#define u32 uint32_t
++#define u64 uint64_t
++#define ADM_MAX_DATA_SIZE 0x1000U		// 4096
++#define ADM_SCSI_CDB_MAX_LEN 32
++#define ADM_SCSI_CDB_SENSE_MAX_LEN 96
++#define ADM_SCSI_CDB_SENSE_LEN32 32
++#define ADM_CMD_SHOW_PDLIST 0x502		// 1282
++#define ADM_CMD_SCSI_PASSTHROUGH 0x51e	// 1310
++#define BSG_APPEND_TIMEOUT_MS 600000
++#define DEFAULT_CONMMAND_TIMEOUT_MS 180000
++#define ADM_BSG_MSGCODE_SCSI_PTHRU  1
++
++#define ADM_RAID_SET 0xc0
++#define ADM_RAID_WRITE 0xc1
++#define ADM_RAID_READ 0xc2
++#define ADM_RAID_PARAM_WRITE 0xc3
++#define ADM_RAID_READ_FROM_CQE 0xc4
++
++// pdlist device type interface
++enum adm_pdlist_intf {
++    ADM_DEVICE_TYPE_SAS = 1,
++    ADM_DEVICE_TYPE_EXP = 2,
++    ADM_DEVICE_TYPE_SATA = 8,
++    ADM_DEVICE_TYPE_PLANE = 9,
++    ADM_DEVICE_TYPE_NVME = 10,
++    ADM_DEVICE_TYPE_UNKNOW,
++    ADM_DEVICE_TYPE_BUTT
++};
++
++struct cmd_pdlist_idx {
++    u16 start_idx;
++    u16 count;
++    u32 rsvd;
++};
++
++struct cmd_pdlist_entry {
++    u16 enc_id;
++    u16 slot_id;
++    u8 interface;
++    u8 media_type;
++    u8 logi_type;
++    u8 logi_status;
++	u32 reserve[26];
++};
++#define CMD_PDS_MAX_NUM 256U
++#define CMD_PDLIST_ONCE_NUM ((ADM_MAX_DATA_SIZE - 64) / sizeof(struct cmd_pdlist_entry))
++
++struct cmd_show_pdlist {
++    u16 num;
++    u16 rsvd0;
++    u32 rsvd1[15];
++    struct cmd_pdlist_entry disks[CMD_PDLIST_ONCE_NUM];
++};
++
++struct multi_disk_location {
++    u16 enc_id;
++    u16 slot_id;
++    u16 did;
++    u8 flag;
++    u8 rsvd;
++};
++
++struct cmd_scsi_passthrough {
++    struct multi_disk_location loc;
++    u8 lun;
++    u8 cdb_len;
++    u8 sense_buffer_len;
++    u8 rsvd0;
++    u8 cdb[32];
++    u32 rsvd1;
++    u8 *sense_buffer;
++};
++
++struct sssraid_passthru_common_cmd {
++	u8	opcode;
++	u8	flags;
++	u16	rsvd0;
++	u32	nsid;
++	union {
++		struct {
++			u16 subopcode;
++			u16 rsvd1;
++		} info_0;
++		u32 cdw2;
++	};
++	union {
++		struct {
++			u16 data_len;
++			u16 param_len;
++		} info_1;
++		u32 cdw3;
++	};
++	u64 metadata;
++
++	u64 addr;
++    u32 metadata_len;
++    u32 data_len;
++
++	u32 cdw10;
++	u32 cdw11;
++	u32 cdw12;
++	u32 cdw13;
++	u32 cdw14;
++	u32 cdw15;
++	u32 timeout_ms;
++	u32 result0;
++	u32 result1;
++};
++
++struct sssraid_ioq_passthru_cmd {
++	u8  opcode;
++	u8  flags;
++	u16 rsvd0;
++	u32 nsid;
++	union {
++		struct {
++			u16 res_sense_len;
++			u8  cdb_len;
++			u8  rsvd0;
++		} info_0;
++		u32 cdw2;
++	};
++	union {
++		struct {
++			u16 subopcode;
++			u16 rsvd1;
++		} info_1;
++		u32 cdw3;
++	};
++	union {
++		struct {
++			u16 rsvd;
++			u16 param_len;
++		} info_2;
++		u32 cdw4;
++	};
++	u32 cdw5;
++	u64 addr;
++	u64 prp2;
++	union {
++		struct {
++			u16 eid;
++			u16 sid;
++		} info_3;
++		u32 cdw10;
++	};
++	union {
++		struct {
++			u16 did;
++			u8  did_flag;
++			u8  rsvd2;
++		} info_4;
++		u32 cdw11;
++	};
++	u32 cdw12;
++	u32 cdw13;
++	u32 cdw14;
++	u32 data_len;
++	u32 cdw16;
++	u32 cdw17;
++	u32 cdw18;
++	u32 cdw19;
++	u32 cdw20;
++	u32 cdw21;
++	u32 cdw22;
++	u32 cdw23;
++	u64 sense_addr;
++	u32 cdw26[4];
++	u32 timeout_ms;
++	u32 result0;
++	u32 result1;
++};
++
++struct bsg_ioctl_cmd {
++    u32 msgcode;
++    u32 control;
++    union {
++        struct sssraid_passthru_common_cmd ioctl_r64;
++        struct sssraid_ioq_passthru_cmd ioctl_pthru;
++    };
++};
++
++#endif // _SSSRAID_H
+\ No newline at end of file

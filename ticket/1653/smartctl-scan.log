@@ -1,0 +1,10 @@
+/dev/sda -d scsi # /dev/sda, SCSI device
+/dev/sdb -d scsi # /dev/sdb, SCSI device
+/dev/sdc -d scsi # /dev/sdc, SCSI device
+/dev/sdd -d scsi # /dev/sdd, SCSI device
+/dev/bsg/sssraid0 -d sssraid,0,4 # /dev/bsg/sssraid0 [sssraid_disk_00_04], SCSI device
+/dev/bsg/sssraid0 -d sssraid,0,5 # /dev/bsg/sssraid0 [sssraid_disk_00_05], SCSI device
+/dev/bsg/sssraid0 -d sssraid,0,8 # /dev/bsg/sssraid0 [sssraid_disk_00_08], SCSI device
+/dev/bsg/sssraid0 -d sssraid,0,9 # /dev/bsg/sssraid0 [sssraid_disk_00_09], SCSI device
+/dev/bsg/sssraid0 -d sssraid,0,10 # /dev/bsg/sssraid0 [sssraid_disk_00_10], SCSI device
+/dev/bsg/sssraid0 -d sssraid,0,11 # /dev/bsg/sssraid0 [sssraid_disk_00_11], SCSI device

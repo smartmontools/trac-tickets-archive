@@ -1,0 +1,156 @@
+ \\.\PhysicalDrive0: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "HP      "
+    Product:  "LOGICAL VOLUME  "
+    Revision: "8.32"
+    Removable: No
+    BusType:   0x08
+  SMART_GET_VERSION failed, Error=1117
+ \\.\PhysicalDrive1: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "HP      "
+    Product:  "LOGICAL VOLUME  "
+    Revision: "8.32"
+    Removable: No
+    BusType:   0x08
+  SMART_GET_VERSION failed, Error=1117
+ \\.\PhysicalDrive2: successfully opened
+  IOCTL_STORAGE_QUERY_PROPERTY returns:
+    Vendor:   "HP      "
+    Product:  "LOGICAL VOLUME  "
+    Revision: "8.32"
+    Removable: No
+    BusType:   0x08
+  SMART_GET_VERSION failed, Error=1117
+ \\.\Scsi0:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1
+ \\.\Scsi1:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1
+ \\.\Scsi2:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) succeeded, bytes returned: 204
+CSMI_SAS_DRIVER_INFO:
+  Name:        "HpSAMD.sys"
+  Description: "Smart Array SAS/SATA Controller Media Driver"
+  Revision:    8.0
+  IOCTL_SCSI_MINIPORT(CC_CSMI_20) succeeded, bytes returned: 2080
+  IOCTL_SCSI_MINIPORT(CC_CSMI_10) failed, ReturnCode=2
+CSMI_SAS_PHY_INFO: NumberOfPhys=8
+Phy[0] Port:   0
+  Type:        0x10, 0x10
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x00
+  PhyIdent:    0x00, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c0, 30 01 43 80 32 ca fc c0
+Phy[1] Port:   1
+  Type:        0x10, 0x10
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x01
+  PhyIdent:    0x01, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c0, 30 01 43 80 32 ca fc c1
+Phy[2] Port:   2
+  Type:        0x10, 0x10
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x02
+  PhyIdent:    0x02, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c0, 30 01 43 80 32 ca fc c2
+Phy[3] Port:   3
+  Type:        0x10, 0x10
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x03
+  PhyIdent:    0x03, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c0, 30 01 43 80 32 ca fc c3
+Phy[4] Port:   4
+  Type:        0x10, 0x10
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x05
+  PhyIdent:    0x04, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c4, 30 01 43 80 32 ca fc c4
+Phy[5] Port:   5
+  Type:        0x10, 0x10
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x01
+  PortIdent:   0x04
+  PhyIdent:    0x05, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c4, 30 01 43 80 32 ca fc c5
+Phy[6] Port:   6
+  Type:        0x10, 0x00
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x00
+  PortIdent:   0xff
+  PhyIdent:    0x06, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c4, 00 00 00 00 00 00 00 00
+Phy[7] Port:   7
+  Type:        0x10, 0x00
+  InitProto:   0x0f, 0x00
+  TargetProto: 0x00, 0x00
+  PortIdent:   0xff
+  PhyIdent:    0x07, 0x00
+  SignalClass: 0x00, 0x00
+  Restricted:  0x00, 0x00
+  SASAddress:  50 01 43 80 32 ca fc c4, 00 00 00 00 00 00 00 00
+ \\.\Scsi3:: successfully opened
+  IOCTL_SCSI_MINIPORT(CC_CSMI_1) failed, Error=1117
+  \\.\Scsi0:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1
+  \\.\Scsi1:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1
+  \\.\Scsi2:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi3:: successfully opened
+  nvme probe failed: NVME_PASS_THROUGH failed, Error=1117
+  \\.\Scsi4:: Open failed, Error=2
+  \\.\Scsi5:: Open failed, Error=2
+  \\.\Scsi6:: Open failed, Error=2
+  \\.\Scsi7:: Open failed, Error=2
+  \\.\Scsi8:: Open failed, Error=2
+  \\.\Scsi9:: Open failed, Error=2
+  \\.\Scsi10:: Open failed, Error=2
+  \\.\Scsi11:: Open failed, Error=2
+  \\.\Scsi12:: Open failed, Error=2
+  \\.\Scsi13:: Open failed, Error=2
+  \\.\Scsi14:: Open failed, Error=2
+  \\.\Scsi15:: Open failed, Error=2
+  \\.\Scsi16:: Open failed, Error=2
+  \\.\Scsi17:: Open failed, Error=2
+  \\.\Scsi18:: Open failed, Error=2
+  \\.\Scsi19:: Open failed, Error=2
+  \\.\Scsi20:: Open failed, Error=2
+  \\.\Scsi21:: Open failed, Error=2
+  \\.\Scsi22:: Open failed, Error=2
+  \\.\Scsi23:: Open failed, Error=2
+  \\.\Scsi24:: Open failed, Error=2
+  \\.\Scsi25:: Open failed, Error=2
+  \\.\Scsi26:: Open failed, Error=2
+  \\.\Scsi27:: Open failed, Error=2
+  \\.\Scsi28:: Open failed, Error=2
+  \\.\Scsi29:: Open failed, Error=2
+  \\.\Scsi30:: Open failed, Error=2
+  \\.\Scsi31:: Open failed, Error=2
+/dev/sda -d scsi # /dev/sda, SCSI device
+/dev/sdb -d scsi # /dev/sdb, SCSI device
+/dev/sdc -d scsi # /dev/sdc, SCSI device
+/dev/csmi2,0 -d ata # /dev/csmi2,0, ATA device
+/dev/csmi2,1 -d ata # /dev/csmi2,1, ATA device
+/dev/csmi2,2 -d ata # /dev/csmi2,2, ATA device
+/dev/csmi2,3 -d ata # /dev/csmi2,3, ATA device
+/dev/csmi2,4 -d ata # /dev/csmi2,4, ATA device
+/dev/csmi2,5 -d ata # /dev/csmi2,5, ATA device

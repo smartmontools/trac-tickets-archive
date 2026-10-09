@@ -1,0 +1,119 @@
+smartctl pre-7.4 2022-12-05 r5422 [x86_64-linux-3.10.0-1160.el7.x86_64] (CircleCI)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               TOSHIBA
+Product:              AL15SEB060N
+Revision:             3101
+Compliance:           SPC-4
+User Capacity:        600,127,266,816 bytes [600 GB]
+Logical block size:   512 bytes
+Rotation Rate:        10500 rpm
+Form Factor:          2.5 inches
+Logical Unit id:      0x5000039b48736e9d
+Serial number:        Y1Q0A02KFYVH
+Device type:          disk
+Transport protocol:   SAS (SPL-4)
+Local Time is:        Wed Dec  7 09:37:12 2022 CST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Enabled
+Temperature Warning:  Enabled
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+
+Current Drive Temperature:     38 C
+Drive Trip Temperature:        65 C
+
+Manufactured in week 47 of year 2021
+Specified cycle count over device lifetime:  50000
+Accumulated start-stop cycles:  59
+Specified load-unload count over device lifetime:  600000
+Accumulated load-unload cycles:  5406
+Elements in grown defect list: 0
+
+Error counter log:
+           Errors Corrected by           Total   Correction     Gigabytes    Total
+               ECC          rereads/    errors   algorithm      processed    uncorrected
+           fast | delayed   rewrites  corrected  invocations   [10^9 bytes]  errors
+read:     221452        0         0         0          0     118978.756           0
+write:         0        0         0         0          0        203.179           0
+verify:        0        0         0         0          0         11.060           0
+
+Non-medium error count:       33
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background long   Completed                   -       5                 - [-   -    -]
+# 2  Background short  Completed                   -       4                 - [-   -    -]
+
+Long (extended) Self-test duration: 3917 seconds [65.3 minutes]
+
+Background scan results log
+  Status: waiting until BMS interval timer expires
+    Accumulated power on time, hours:minutes 4329:31 [259771 minutes]
+    Number of background scans performed: 196,  scan progress: 0.00%
+    Number of background medium scans performed: 0
+
+   #  when        lba(hex)    [sk,asc,ascq]    reassign_status
+   1  265:20  0000000000275eb5  [1,18,7]   Recovered via rewrite in-place
+   2  433:21  0000000000bd42ca  [1,18,7]   Recovered via rewrite in-place
+   3  721:31  0000000001566195  [1,18,7]   Recovered via rewrite in-place
+   4 1542:00  00000000000a8593  [1,18,7]   Recovered via rewrite in-place
+   5 2251:44  00000000000a858d  [1,18,7]   Recovered via rewrite in-place
+   6 3185:00  0000000000bd42c8  [1,18,7]   Recovered via rewrite in-place
+
+
+Protocol Specific port log page for SAS SSP
+relative target port id = 1
+  generation code = 2
+  number of phys = 1
+  phy identifier = 0
+    attached device type: SAS or SATA device
+    attached reason: power on
+    reason: loss of dword synchronization
+    negotiated logical link rate: phy enabled; 12 Gbps
+    attached initiator port: ssp=1 stp=1 smp=1
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5000039b48736e9e
+    attached SAS address = 0x5d8ffc3000000000
+    attached phy identifier = 3
+    Invalid DWORD count = 16
+    Running disparity error count = 16
+    Loss of DWORD synchronization count = 4
+    Phy reset problem count = 0
+    Phy event descriptors:
+     Elasticity buffer overflow count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Transmitted BREAK count: 0
+     Received BREAK count: 0
+     Transmitted SSP frame error count: 0
+     Received SSP frame error count: 0
+relative target port id = 2
+  generation code = 2
+  number of phys = 1
+  phy identifier = 1
+    attached device type: no device attached
+    attached reason: unknown
+    reason: unknown
+    negotiated logical link rate: phy enabled; unknown
+    attached initiator port: ssp=0 stp=0 smp=0
+    attached target port: ssp=0 stp=0 smp=0
+    SAS address = 0x5000039b48736e9f
+    attached SAS address = 0x0
+    attached phy identifier = 0
+    Invalid DWORD count = 0
+    Running disparity error count = 0
+    Loss of DWORD synchronization count = 0
+    Phy reset problem count = 0
+    Phy event descriptors:
+     Elasticity buffer overflow count: 0
+     Received abandon-class OPEN_REJECT count: 0
+     Transmitted BREAK count: 0
+     Received BREAK count: 0
+     Transmitted SSP frame error count: 0
+     Received SSP frame error count: 0
+
