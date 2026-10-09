@@ -1,0 +1,713 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.12.57+deb12-amd64] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     FORESEE 512GB SSD
+Serial Number:    LCC165J011733
+LU WWN Device Id: 5 000000 000000000
+Firmware Version: V1.2.7
+User Capacity:    512,110,190,592 bytes [512 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+Form Factor:      M.2
+TRIM Command:     Available, deterministic, zeroed
+Device is:        Not in smartctl database 7.3/6083
+ATA Version is:   ACS-2 (minor revision not indicated)
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed Feb  4 16:40:51 2026 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(   33) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (   2) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   2) minutes.
+SCT capabilities: 	       (0x0031)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 19
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   PO--C-   100   100   050    -    0
+  9 Power_On_Hours          -O--C-   100   100   000    -    973
+ 12 Power_Cycle_Count       -O--C-   100   100   000    -    139
+167 Unknown_Attribute       -O---K   100   100   000    -    0
+168 Unknown_Attribute       -O--C-   100   100   000    -    7
+169 Unknown_Attribute       PO--C-   096   096   010    -    12
+171 Unknown_Attribute       -O--CK   000   000   000    -    0
+172 Unknown_Attribute       -O--CK   000   000   000    -    0
+173 Unknown_Attribute       -O--C-   200   200   000    -    17180655624
+175 Program_Fail_Count_Chip -O---K   100   100   010    -    0
+177 Wear_Leveling_Count     -O--C-   100   100   000    -    0
+180 Unused_Rsvd_Blk_Cnt_Tot PO--CK   100   100   000    -    2920
+187 Reported_Uncorrect      -O--CK   100   000   000    -    0
+192 Power-Off_Retract_Count -O--C-   100   100   000    -    62
+194 Temperature_Celsius     -O---K   011   011   000    -    11
+199 UDMA_CRC_Error_Count    -O--C-   100   100   000    -    0
+206 Unknown_SSD_Attribute   -O--CK   200   200   000    -    4
+207 Unknown_SSD_Attribute   -O--CK   200   200   000    -    12
+208 Unknown_SSD_Attribute   -O--CK   200   200   000    -    8
+209 Unknown_SSD_Attribute   -O--CK   200   200   000    -    1
+210 Unknown_Attribute       -O--CK   200   200   000    -    33
+211 Unknown_Attribute       -O--CK   200   200   000    -    17
+231 Unknown_SSD_Attribute   PO---K   100   100   005    -    0
+241 Total_LBAs_Written      -O--CK   100   100   000    -    2603
+242 Total_LBAs_Read         -O--CK   100   100   000    -    1490
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O     51  Comprehensive SMART error log
+0x03       GPL     R/O     64  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (64 sectors)
+Device Error Count: 7
+	CR     = Command Register
+	FEATR  = Features Register
+	COUNT  = Count (was: Sector Count) Register
+	LBA_48 = Upper bytes of LBA High/Mid/Low Registers ]  ATA-8
+	LH     = LBA High (was: Cylinder High) Register    ]   LBA
+	LM     = LBA Mid (was: Cylinder Low) Register      ] Register
+	LL     = LBA Low (was: Sector Number) Register     ]
+	DV     = Device (was: Device/Head) Register
+	DC     = Device Control Register
+	ER     = Error register
+	ST     = Status register
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 7 [6] occurred at disk power-on lifetime: 24 hours (1 days + 0 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 98 00 00 05 0f 0f 48 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:33.700  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:32.800  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:32.800  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:32.700  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:32.700  FLUSH CACHE EXT
+
+Error 6 [5] occurred at disk power-on lifetime: 24 hours (1 days + 0 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 20 00 00 04 21 92 c8 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:13:02.100  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:13:01.900  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:13:01.900  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:13:01.900  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:13:01.900  FLUSH CACHE EXT
+
+Error 5 [4] occurred at disk power-on lifetime: 24 hours (1 days + 0 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 98 00 00 09 f2 e5 40 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:56.500  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:56.500  FLUSH CACHE EXT
+  06 00 01 00 01 00 00 00 00 00 00 e0 80     00:00:56.200  DATA SET MANAGEMENT
+  06 00 01 00 01 00 00 00 00 00 00 e0 80     00:00:56.200  DATA SET MANAGEMENT
+  06 00 01 00 01 00 00 00 00 00 00 e0 80     00:00:56.200  DATA SET MANAGEMENT
+
+Error 4 [3] occurred at disk power-on lifetime: 24 hours (1 days + 0 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 f8 00 00 09 16 b9 30 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ec 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:39.300  IDENTIFY DEVICE
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:39.300  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:39.300  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:39.300  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:39.300  FLUSH CACHE EXT
+
+Error 3 [2] occurred at disk power-on lifetime: 20 hours (0 days + 20 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 78 00 00 08 7c 16 80 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:58.600  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:58.600  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:58.300  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:58.300  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:58.300  FLUSH CACHE EXT
+
+Error 2 [1] occurred at disk power-on lifetime: 20 hours (0 days + 20 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 88 00 00 04 e7 3b 38 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:15.800  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:15.800  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:15.800  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:15.800  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:15.800  FLUSH CACHE EXT
+
+Error 1 [0] occurred at disk power-on lifetime: 7 hours (0 days + 7 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER -- ST COUNT  LBA_48  LH LM LL DV DC
+  -- -- -- == -- == == == -- -- -- -- --
+  84 -- 41 00 b0 00 00 05 74 31 85 40 00
+
+  Commands leading to the command that caused the error were:
+  CR FEATR COUNT  LBA_48  LH LM LL DV DC  Powered_Up_Time  Command/Feature_Name
+  -- == -- == -- == == == -- -- -- -- --  ---------------  --------------------
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:37.500  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:37.500  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:37.500  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:37.500  FLUSH CACHE EXT
+  ea 00 00 00 00 00 00 00 00 00 00 a0 80     00:00:37.500  FLUSH CACHE EXT
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%       973         -
+# 2  Short offline       Completed without error       00%       969         -
+# 3  Short offline       Aborted by host               00%       952         -
+# 4  Short offline       Aborted by host               00%        24         -
+# 5  Extended offline    Aborted by host               00%        24         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+Device State:                        Active (0)
+Current Temperature:                    36 Celsius
+Power Cycle Min/Max Temperature:      ?/48 Celsius
+Lifetime    Min/Max Temperature:      ?/ ? Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:     -127/127 Celsius
+Min/Max Temperature Limit:           -127/127 Celsius
+Temperature History Size (Index):    478 (156)
+
+Index    Estimated Time   Temperature Celsius
+ 157    2026-02-04 08:43    26  *******
+ 158    2026-02-04 08:44    34  ***************
+ 159    2026-02-04 08:45    26  *******
+ 160    2026-02-04 08:46    35  ****************
+ 161    2026-02-04 08:47    26  *******
+ 162    2026-02-04 08:48    24  *****
+ 163    2026-02-04 08:49    24  *****
+ 164    2026-02-04 08:50    26  *******
+ 165    2026-02-04 08:51    25  ******
+ 166    2026-02-04 08:52    25  ******
+ 167    2026-02-04 08:53    25  ******
+ 168    2026-02-04 08:54    28  *********
+ 169    2026-02-04 08:55    30  ***********
+ 170    2026-02-04 08:56    34  ***************
+ 171    2026-02-04 08:57    29  **********
+ 172    2026-02-04 08:58    26  *******
+ 173    2026-02-04 08:59    24  *****
+ 174    2026-02-04 09:00    26  *******
+ 175    2026-02-04 09:01    26  *******
+ 176    2026-02-04 09:02    24  *****
+ 177    2026-02-04 09:03    25  ******
+ 178    2026-02-04 09:04    24  *****
+ 179    2026-02-04 09:05    24  *****
+ 180    2026-02-04 09:06    26  *******
+ 181    2026-02-04 09:07    26  *******
+ 182    2026-02-04 09:08    26  *******
+ 183    2026-02-04 09:09    31  ************
+ 184    2026-02-04 09:10    31  ************
+ 185    2026-02-04 09:11    27  ********
+ 186    2026-02-04 09:12    26  *******
+ 187    2026-02-04 09:13    26  *******
+ 188    2026-02-04 09:14    28  *********
+ 189    2026-02-04 09:15    29  **********
+ 190    2026-02-04 09:16    26  *******
+ 191    2026-02-04 09:17    25  ******
+ 192    2026-02-04 09:18    26  *******
+ 193    2026-02-04 09:19    25  ******
+ 194    2026-02-04 09:20    25  ******
+ 195    2026-02-04 09:21    26  *******
+ 196    2026-02-04 09:22    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 199    2026-02-04 09:25    25  ******
+ 200    2026-02-04 09:26    30  ***********
+ 201    2026-02-04 09:27    33  **************
+ 202    2026-02-04 09:28    36  *****************
+ 203    2026-02-04 09:29    37  ******************
+ 204    2026-02-04 09:30    39  ********************
+ 205    2026-02-04 09:31    40  *********************
+ 206    2026-02-04 09:32    41  **********************
+ 207    2026-02-04 09:33    36  *****************
+ 208    2026-02-04 09:34    30  ***********
+ 209    2026-02-04 09:35    27  ********
+ 210    2026-02-04 09:36    27  ********
+ 211    2026-02-04 09:37    26  *******
+ 212    2026-02-04 09:38    48  *****************************
+ 213    2026-02-04 09:39    25  ******
+ 214    2026-02-04 09:40    25  ******
+ 215    2026-02-04 09:41    26  *******
+ 216    2026-02-04 09:42     ?  -
+ 217    2026-02-04 09:43    21  **
+ 218    2026-02-04 09:44     ?  -
+ 219    2026-02-04 09:45    32  *************
+ 220    2026-02-04 09:46     ?  -
+ 221    2026-02-04 09:47    31  ************
+ 222    2026-02-04 09:48     ?  -
+ 223    2026-02-04 09:49    24  *****
+ 224    2026-02-04 09:50    26  *******
+ 225    2026-02-04 09:51    26  *******
+ 226    2026-02-04 09:52    25  ******
+ 227    2026-02-04 09:53    24  *****
+ 228    2026-02-04 09:54    24  *****
+ 229    2026-02-04 09:55    26  *******
+ 230    2026-02-04 09:56    26  *******
+ 231    2026-02-04 09:57    26  *******
+ 232    2026-02-04 09:58    24  *****
+ 233    2026-02-04 09:59    26  *******
+ 234    2026-02-04 10:00    25  ******
+ ...    ..(  6 skipped).    ..  ******
+ 241    2026-02-04 10:07    25  ******
+ 242    2026-02-04 10:08    24  *****
+ 243    2026-02-04 10:09    25  ******
+ 244    2026-02-04 10:10    25  ******
+ 245    2026-02-04 10:11    24  *****
+ 246    2026-02-04 10:12    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 249    2026-02-04 10:15    25  ******
+ 250    2026-02-04 10:16    24  *****
+ 251    2026-02-04 10:17    25  ******
+ 252    2026-02-04 10:18    24  *****
+ 253    2026-02-04 10:19    24  *****
+ 254    2026-02-04 10:20    25  ******
+ 255    2026-02-04 10:21    25  ******
+ 256    2026-02-04 10:22    24  *****
+ 257    2026-02-04 10:23    25  ******
+ 258    2026-02-04 10:24    25  ******
+ 259    2026-02-04 10:25    25  ******
+ 260    2026-02-04 10:26    26  *******
+ 261    2026-02-04 10:27    25  ******
+ 262    2026-02-04 10:28    24  *****
+ 263    2026-02-04 10:29    25  ******
+ 264    2026-02-04 10:30    25  ******
+ 265    2026-02-04 10:31    25  ******
+ 266    2026-02-04 10:32    26  *******
+ 267    2026-02-04 10:33    25  ******
+ ...    ..(  4 skipped).    ..  ******
+ 272    2026-02-04 10:38    25  ******
+ 273    2026-02-04 10:39    24  *****
+ 274    2026-02-04 10:40    25  ******
+ 275    2026-02-04 10:41    24  *****
+ 276    2026-02-04 10:42    25  ******
+ ...    ..(  4 skipped).    ..  ******
+ 281    2026-02-04 10:47    25  ******
+ 282    2026-02-04 10:48    48  *****************************
+ 283    2026-02-04 10:49    25  ******
+ ...    ..(  8 skipped).    ..  ******
+ 292    2026-02-04 10:58    25  ******
+ 293    2026-02-04 10:59    26  *******
+ 294    2026-02-04 11:00    25  ******
+ ...    ..(  7 skipped).    ..  ******
+ 302    2026-02-04 11:08    25  ******
+ 303    2026-02-04 11:09    26  *******
+ 304    2026-02-04 11:10    25  ******
+ ...    ..(  5 skipped).    ..  ******
+ 310    2026-02-04 11:16    25  ******
+ 311    2026-02-04 11:17    26  *******
+ 312    2026-02-04 11:18    25  ******
+ 313    2026-02-04 11:19    25  ******
+ 314    2026-02-04 11:20    25  ******
+ 315    2026-02-04 11:21    24  *****
+ 316    2026-02-04 11:22    26  *******
+ 317    2026-02-04 11:23    25  ******
+ 318    2026-02-04 11:24    25  ******
+ 319    2026-02-04 11:25    26  *******
+ 320    2026-02-04 11:26    25  ******
+ ...    ..(  3 skipped).    ..  ******
+ 324    2026-02-04 11:30    25  ******
+ 325    2026-02-04 11:31    26  *******
+ 326    2026-02-04 11:32    25  ******
+ ...    ..(  7 skipped).    ..  ******
+ 334    2026-02-04 11:40    25  ******
+ 335    2026-02-04 11:41    26  *******
+ 336    2026-02-04 11:42    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 339    2026-02-04 11:45    25  ******
+ 340    2026-02-04 11:46    26  *******
+ 341    2026-02-04 11:47    25  ******
+ 342    2026-02-04 11:48    32  *************
+ 343    2026-02-04 11:49    25  ******
+ 344    2026-02-04 11:50    26  *******
+ 345    2026-02-04 11:51    26  *******
+ 346    2026-02-04 11:52    26  *******
+ 347    2026-02-04 11:53    25  ******
+ 348    2026-02-04 11:54    25  ******
+ 349    2026-02-04 11:55    26  *******
+ ...    ..(  2 skipped).    ..  *******
+ 352    2026-02-04 11:58    26  *******
+ 353    2026-02-04 11:59    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 356    2026-02-04 12:02    25  ******
+ 357    2026-02-04 12:03    26  *******
+ 358    2026-02-04 12:04    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 361    2026-02-04 12:07    25  ******
+ 362    2026-02-04 12:08    26  *******
+ 363    2026-02-04 12:09    25  ******
+ 364    2026-02-04 12:10    25  ******
+ 365    2026-02-04 12:11    26  *******
+ 366    2026-02-04 12:12    25  ******
+ 367    2026-02-04 12:13    26  *******
+ ...    ..(  2 skipped).    ..  *******
+ 370    2026-02-04 12:16    26  *******
+ 371    2026-02-04 12:17    25  ******
+ 372    2026-02-04 12:18    25  ******
+ 373    2026-02-04 12:19    26  *******
+ ...    ..(  2 skipped).    ..  *******
+ 376    2026-02-04 12:22    26  *******
+ 377    2026-02-04 12:23    25  ******
+ 378    2026-02-04 12:24    26  *******
+ 379    2026-02-04 12:25    26  *******
+ 380    2026-02-04 12:26    26  *******
+ 381    2026-02-04 12:27    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 384    2026-02-04 12:30    25  ******
+ 385    2026-02-04 12:31    26  *******
+ 386    2026-02-04 12:32    25  ******
+ 387    2026-02-04 12:33    25  ******
+ 388    2026-02-04 12:34    25  ******
+ 389    2026-02-04 12:35    26  *******
+ 390    2026-02-04 12:36    26  *******
+ 391    2026-02-04 12:37    25  ******
+ 392    2026-02-04 12:38    25  ******
+ 393    2026-02-04 12:39    26  *******
+ 394    2026-02-04 12:40    26  *******
+ 395    2026-02-04 12:41    26  *******
+ 396    2026-02-04 12:42    25  ******
+ 397    2026-02-04 12:43    25  ******
+ 398    2026-02-04 12:44    25  ******
+ 399    2026-02-04 12:45    26  *******
+ 400    2026-02-04 12:46    25  ******
+ 401    2026-02-04 12:47    26  *******
+ 402    2026-02-04 12:48     ?  -
+ 403    2026-02-04 12:49    26  *******
+ 404    2026-02-04 12:50    26  *******
+ 405    2026-02-04 12:51    25  ******
+ 406    2026-02-04 12:52    25  ******
+ 407    2026-02-04 12:53    26  *******
+ 408    2026-02-04 12:54    26  *******
+ 409    2026-02-04 12:55    25  ******
+ ...    ..(  2 skipped).    ..  ******
+ 412    2026-02-04 12:58    25  ******
+ 413    2026-02-04 12:59    26  *******
+ 414    2026-02-04 13:00    25  ******
+ 415    2026-02-04 13:01    26  *******
+ 416    2026-02-04 13:02    26  *******
+ 417    2026-02-04 13:03    26  *******
+ 418    2026-02-04 13:04    25  ******
+ 419    2026-02-04 13:05    25  ******
+ 420    2026-02-04 13:06    26  *******
+ 421    2026-02-04 13:07    25  ******
+ 422    2026-02-04 13:08    26  *******
+ 423    2026-02-04 13:09    25  ******
+ 424    2026-02-04 13:10    26  *******
+ 425    2026-02-04 13:11    25  ******
+ 426    2026-02-04 13:12    26  *******
+ 427    2026-02-04 13:13    26  *******
+ 428    2026-02-04 13:14    26  *******
+ 429    2026-02-04 13:15    25  ******
+ 430    2026-02-04 13:16    26  *******
+ ...    ..(  2 skipped).    ..  *******
+ 433    2026-02-04 13:19    26  *******
+ 434    2026-02-04 13:20    25  ******
+ 435    2026-02-04 13:21    26  *******
+ 436    2026-02-04 13:22    26  *******
+ 437    2026-02-04 13:23    25  ******
+ 438    2026-02-04 13:24    26  *******
+ 439    2026-02-04 13:25    26  *******
+ 440    2026-02-04 13:26    25  ******
+ 441    2026-02-04 13:27    25  ******
+ 442    2026-02-04 13:28    25  ******
+ 443    2026-02-04 13:29    26  *******
+ 444    2026-02-04 13:30    25  ******
+ 445    2026-02-04 13:31    26  *******
+ 446    2026-02-04 13:32    25  ******
+ 447    2026-02-04 13:33    26  *******
+ 448    2026-02-04 13:34    25  ******
+ 449    2026-02-04 13:35    26  *******
+ 450    2026-02-04 13:36    25  ******
+ 451    2026-02-04 13:37    26  *******
+ ...    ..(  3 skipped).    ..  *******
+ 455    2026-02-04 13:41    26  *******
+ 456    2026-02-04 13:42    25  ******
+ 457    2026-02-04 13:43    26  *******
+ ...    ..(  3 skipped).    ..  *******
+ 461    2026-02-04 13:47    26  *******
+ 462    2026-02-04 13:48    41  **********************
+ 463    2026-02-04 13:49    25  ******
+ 464    2026-02-04 13:50    26  *******
+ 465    2026-02-04 13:51    26  *******
+ 466    2026-02-04 13:52    25  ******
+ 467    2026-02-04 13:53    25  ******
+ 468    2026-02-04 13:54    26  *******
+ ...    ..(  2 skipped).    ..  *******
+ 471    2026-02-04 13:57    26  *******
+ 472    2026-02-04 13:58    25  ******
+ 473    2026-02-04 13:59    26  *******
+ 474    2026-02-04 14:00    26  *******
+ 475    2026-02-04 14:01    25  ******
+ 476    2026-02-04 14:02    25  ******
+ 477    2026-02-04 14:03    26  *******
+ ...    ..(  5 skipped).    ..  *******
+   5    2026-02-04 14:09    26  *******
+   6    2026-02-04 14:10    24  *****
+   7    2026-02-04 14:11    26  *******
+ ...    ..(  3 skipped).    ..  *******
+  11    2026-02-04 14:15    26  *******
+  12    2026-02-04 14:16    25  ******
+  13    2026-02-04 14:17    26  *******
+ ...    ..(  3 skipped).    ..  *******
+  17    2026-02-04 14:21    26  *******
+  18    2026-02-04 14:22    25  ******
+  19    2026-02-04 14:23    26  *******
+  20    2026-02-04 14:24    26  *******
+  21    2026-02-04 14:25    25  ******
+  22    2026-02-04 14:26    26  *******
+  23    2026-02-04 14:27    25  ******
+  24    2026-02-04 14:28    26  *******
+ ...    ..(  2 skipped).    ..  *******
+  27    2026-02-04 14:31    26  *******
+  28    2026-02-04 14:32    25  ******
+  29    2026-02-04 14:33    26  *******
+ ...    ..(  5 skipped).    ..  *******
+  35    2026-02-04 14:39    26  *******
+  36    2026-02-04 14:40    24  *****
+  37    2026-02-04 14:41    26  *******
+  38    2026-02-04 14:42     ?  -
+  39    2026-02-04 14:43    26  *******
+  40    2026-02-04 14:44    26  *******
+  41    2026-02-04 14:45     ?  -
+  42    2026-02-04 14:46    24  *****
+  43    2026-02-04 14:47     ?  -
+  44    2026-02-04 14:48    27  ********
+  45    2026-02-04 14:49    30  ***********
+  46    2026-02-04 14:50    30  ***********
+  47    2026-02-04 14:51    30  ***********
+  48    2026-02-04 14:52     ?  -
+  49    2026-02-04 14:53    25  ******
+  50    2026-02-04 14:54    29  **********
+  51    2026-02-04 14:55    31  ************
+  52    2026-02-04 14:56    32  *************
+  53    2026-02-04 14:57     ?  -
+  54    2026-02-04 14:58    29  **********
+  55    2026-02-04 14:59     ?  -
+  56    2026-02-04 15:00    32  *************
+  57    2026-02-04 15:01    32  *************
+  58    2026-02-04 15:02    31  ************
+  59    2026-02-04 15:03    29  **********
+  60    2026-02-04 15:04    33  **************
+  61    2026-02-04 15:05    36  *****************
+  62    2026-02-04 15:06    43  ************************
+  63    2026-02-04 15:07    32  *************
+  64    2026-02-04 15:08    30  ***********
+  65    2026-02-04 15:09    26  *******
+  66    2026-02-04 15:10    36  *****************
+  67    2026-02-04 15:11    36  *****************
+  68    2026-02-04 15:12    33  **************
+  69    2026-02-04 15:13    31  ************
+  70    2026-02-04 15:14    35  ****************
+  71    2026-02-04 15:15    43  ************************
+  72    2026-02-04 15:16    35  ****************
+  73    2026-02-04 15:17    36  *****************
+  74    2026-02-04 15:18    35  ****************
+  75    2026-02-04 15:19    35  ****************
+  76    2026-02-04 15:20    34  ***************
+  77    2026-02-04 15:21    33  **************
+  78    2026-02-04 15:22     ?  -
+  79    2026-02-04 15:23    30  ***********
+  80    2026-02-04 15:24     ?  -
+  81    2026-02-04 15:25    33  **************
+  82    2026-02-04 15:26    36  *****************
+  83    2026-02-04 15:27    37  ******************
+  84    2026-02-04 15:28    36  *****************
+  85    2026-02-04 15:29    35  ****************
+  86    2026-02-04 15:30    43  ************************
+  87    2026-02-04 15:31    42  ***********************
+  88    2026-02-04 15:32    44  *************************
+  89    2026-02-04 15:33    36  *****************
+  90    2026-02-04 15:34    35  ****************
+  91    2026-02-04 15:35    34  ***************
+  92    2026-02-04 15:36     ?  -
+ ...    ..(  8 skipped).    ..  -
+ 101    2026-02-04 15:45     ?  -
+ 102    2026-02-04 15:46    36  *****************
+ 103    2026-02-04 15:47    40  *********************
+ 104    2026-02-04 15:48    42  ***********************
+ 105    2026-02-04 15:49    43  ************************
+ 106    2026-02-04 15:50    42  ***********************
+ 107    2026-02-04 15:51    44  *************************
+ 108    2026-02-04 15:52    48  *****************************
+ 109    2026-02-04 15:53    48  *****************************
+ 110    2026-02-04 15:54    48  *****************************
+ 111    2026-02-04 15:55    47  ****************************
+ 112    2026-02-04 15:56    48  *****************************
+ 113    2026-02-04 15:57    47  ****************************
+ 114    2026-02-04 15:58    48  *****************************
+ 115    2026-02-04 15:59    47  ****************************
+ 116    2026-02-04 16:00    48  *****************************
+ 117    2026-02-04 16:01    48  *****************************
+ 118    2026-02-04 16:02    46  ***************************
+ 119    2026-02-04 16:03    47  ****************************
+ ...    ..(  2 skipped).    ..  ****************************
+ 122    2026-02-04 16:06    47  ****************************
+ 123    2026-02-04 16:07    46  ***************************
+ 124    2026-02-04 16:08    46  ***************************
+ 125    2026-02-04 16:09    47  ****************************
+ ...    ..(  2 skipped).    ..  ****************************
+ 128    2026-02-04 16:12    47  ****************************
+ 129    2026-02-04 16:13    46  ***************************
+ 130    2026-02-04 16:14    21  **
+ 131    2026-02-04 16:15    36  *****************
+ ...    ..(  4 skipped).    ..  *****************
+ 136    2026-02-04 16:20    36  *****************
+ 137    2026-02-04 16:21    35  ****************
+ 138    2026-02-04 16:22    35  ****************
+ 139    2026-02-04 16:23    36  *****************
+ ...    ..( 12 skipped).    ..  *****************
+ 152    2026-02-04 16:36    36  *****************
+ 153    2026-02-04 16:37    35  ****************
+ 154    2026-02-04 16:38    35  ****************
+ 155    2026-02-04 16:39    36  *****************
+ 156    2026-02-04 16:40    36  *****************
+
+SCT Error Recovery Control command not supported
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4             139  ---  Lifetime Power-On Resets
+0x01  0x010  4             973  ---  Power-on Hours
+0x01  0x018  6      5459109922  ---  Logical Sectors Written
+0x01  0x020  6        23333621  ---  Number of Write Commands
+0x01  0x028  6      3126457309  ---  Logical Sectors Read
+0x01  0x030  6        23973645  ---  Number of Read Commands
+0x01  0x038  6    879604964084  ---  Date and Time TimeStamp
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               1  N--  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            7  Command failed due to ICRC error
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x0008  2            0  Device-to-host non-data FIS retries
+0x0009  4            0  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  4            2  Device-to-host register FISes sent due to a COMRESET
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+
