@@ -1,0 +1,199 @@
+smartctl 7.5 2025-04-30 r5714 [FreeBSD 14.3-RELEASE i386] (local build)
+Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     QUANTUM FIREBALLlct10 10
+Serial Number:    872009418320
+Firmware Version: A03.0900
+User Capacity:    10,262,568,960 bytes [10.2 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database 7.5/5816
+ATA Version is:   ATA/ATAPI-4 T13/1153D revision 15
+Local Time is:    Sat Aug 16 01:12:18 2025 +05
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, frozen [SEC2]
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x80)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    1) seconds.
+Offline data collection
+capabilities: 			 (0x1b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					No General Purpose Logging support.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 (  10) minutes.
+
+SMART Attributes Data Structure revision number: 10
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     P--R-K   100   253   020    -    0
+  3 Spin_Up_Time            POS--K   079   079   020    -    2706
+  4 Start_Stop_Count        -O--CK   095   095   008    -    3752
+  5 Reallocated_Sector_Ct   PO--CK   100   100   020    -    0
+  7 Seek_Error_Rate         PO-R--   100   100   023    -    0
+  9 Power_On_Hours          -O--C-   090   090   001    -    7051
+ 11 Calibration_Retry_Count PO--C-   100   100   020    -    0
+ 12 Power_Cycle_Count       -O--CK   095   095   008    -    3742
+ 13 Read_Soft_Error_Rate    PO-R--   100   100   023    -    0
+199 UDMA_CRC_Error_Count    -O-RC-   199   199   000    -    1
+196 Reallocated_Event_Count ----C-   100   100   020    -    0
+197 Current_Pending_Sector  -O--CK   100   100   020    -    0
+198 Offline_Uncorrectable   ----C-   100   253   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+Read SMART Log Directory failed: Input/output error
+
+General Purpose Log Directory not supported
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+
+SMART Error Log Version: 1
+ATA Error Count: 6822 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 6822 occurred at disk power-on lifetime: 6924 hours (288 days + 12 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 d9 ae 51 88 52 f0  Error: UNC 174 sectors at LBA = 0x00528851 = 5408849
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 00 00 88 52 f0 00      00:02:53.303  READ DMA
+  c8 00 00 00 88 52 f0 00      00:02:51.970  READ DMA
+  c8 00 00 00 87 52 f0 00      00:02:51.965  READ DMA
+  c8 00 00 00 86 52 f0 00      00:02:51.958  READ DMA
+  c8 00 00 00 85 52 f0 00      00:02:51.953  READ DMA
+
+Error 6821 occurred at disk power-on lifetime: 6924 hours (288 days + 12 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 d9 ae 51 88 52 f0  Error: UNC 174 sectors at LBA = 0x00528851 = 5408849
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 00 00 88 52 f0 00      00:02:51.970  READ DMA
+  c8 00 00 00 87 52 f0 00      00:02:51.965  READ DMA
+  c8 00 00 00 86 52 f0 00      00:02:51.958  READ DMA
+  c8 00 00 00 85 52 f0 00      00:02:51.953  READ DMA
+  c8 00 00 00 84 52 f0 00      00:02:51.946  READ DMA
+
+Error 6820 occurred at disk power-on lifetime: 6924 hours (288 days + 12 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 d9 05 51 88 52 f0  Error: UNC 5 sectors at LBA = 0x00528851 = 5408849
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 08 4f 88 52 f0 00  49d+16:56:40.049  READ DMA
+  c8 00 08 4f 88 52 f0 00  49d+16:56:12.961  READ DMA
+  c8 00 08 47 88 52 f0 00  49d+16:56:12.960  READ DMA
+  c8 00 08 3f 88 52 f0 00  49d+16:56:12.959  READ DMA
+  c8 00 00 3f 89 52 f0 00  49d+16:56:12.925  READ DMA
+
+Error 6819 occurred at disk power-on lifetime: 6924 hours (288 days + 12 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 d9 05 51 88 52 f0  Error: UNC 5 sectors at LBA = 0x00528851 = 5408849
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 08 4f 88 52 f0 00  49d+16:56:12.961  READ DMA
+  c8 00 08 47 88 52 f0 00  49d+16:56:12.960  READ DMA
+  c8 00 08 3f 88 52 f0 00  49d+16:56:12.959  READ DMA
+  c8 00 00 3f 89 52 f0 00  49d+16:56:12.925  READ DMA
+  c8 00 00 3f 88 52 f0 00  49d+16:56:11.728  READ DMA
+
+Error 6818 occurred at disk power-on lifetime: 6924 hours (288 days + 12 hours)
+  When the command that caused the error occurred, the device was in an unknown state.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 d9 ed 51 88 52 f0  Error: UNC 237 sectors at LBA = 0x00528851 = 5408849
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  c8 00 00 3f 88 52 f0 00  49d+16:56:11.728  READ DMA
+  c8 00 50 ef 87 52 f0 00  49d+16:56:11.695  READ DMA
+  c8 00 30 af 87 52 f0 00  49d+16:56:11.694  READ DMA
+  c8 00 60 3f 87 52 f0 00  49d+16:56:11.689  READ DMA
+  c8 00 00 3f 86 52 f0 00  49d+16:56:11.687  READ DMA
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+SMART Self-test log structure revision number 0
+Warning: ATA Specification requires self-test log structure revision number = 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%      7042         -
+
+Selective Self-tests/Logging not supported
+
+SCT Commands not supported
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11) not supported
+

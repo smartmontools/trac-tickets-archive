@@ -1,0 +1,13 @@
+diff --git a/src/smartctl.8.in b/src/smartctl.8.in
+index b7944c2f..237aba69 100644
+--- a/src/smartctl.8.in
++++ b/src/smartctl.8.in
+@@ -1919,7 +1919,7 @@ byte-reversed order.  An indication that your Samsung disk needs this
+ option is that the self-test log is printed correctly, but there are a
+ very large number of errors in the SMART error log.  This is because
+ the error count is byte swapped.  Thus a disk with five errors
+-(0x0005) will appear to have 20480 errors (0x5000).
++(0x0005) will appear to have 1280 errors (0x0500).
+ .Sp
+ .I samsung3
+ \- Some Samsung disks (at least SP2514N with Firmware VF100-37) report

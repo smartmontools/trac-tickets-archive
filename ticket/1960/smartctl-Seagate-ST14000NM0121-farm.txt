@@ -1,0 +1,622 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.12.27+bpo-amd64] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     ST14000NM0121
+Serial Number:    ZKL2R90L
+LU WWN Device Id: 5 000c50 0e793ae4f
+Firmware Version: SN01
+User Capacity:    14,000,519,643,136 bytes [14.0 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    7200 rpm
+Form Factor:      3.5 inches
+Device is:        Not in smartctl database 7.3/5770
+ATA Version is:   ACS-4 (minor revision not indicated)
+SATA Version is:  SATA 3.3, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed Jul  2 15:22:41 2025 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Disabled
+ATA Security is:  Disabled, frozen [SEC2]
+Write SCT (Get) Feature Control Command failed: scsi error unsupported field in scsi command
+Wt Cache Reorder: Unknown (SCT Feature Control command failed)
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  567) seconds.
+Offline data collection
+capabilities: 			 (0x1b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 612) minutes.
+SCT capabilities: 	       (0x50bd)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 10
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR--   080   066   044    -    105952146
+  3 Spin_Up_Time            PO----   095   094   000    -    0
+  4 Start_Stop_Count        -O--CK   100   100   020    -    13
+  5 Reallocated_Sector_Ct   PO--CK   100   100   010    -    0
+  7 Seek_Error_Rate         POSR--   068   060   030    -    6297803
+  9 Power_On_Hours          -O--CK   100   100   000    -    28
+ 10 Spin_Retry_Count        PO--C-   100   100   097    -    0
+ 12 Power_Cycle_Count       -O--CK   100   100   020    -    12
+ 18 Unknown_Attribute       PO-R--   100   100   050    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+188 Command_Timeout         -O--CK   100   099   000    -    2
+190 Airflow_Temperature_Cel -O---K   064   047   000    -    36 (Min/Max 27/36)
+192 Power-Off_Retract_Count -O--CK   100   100   000    -    8
+193 Load_Cycle_Count        -O--CK   100   100   000    -    14
+194 Temperature_Celsius     -O---K   036   046   000    -    36 (0 24 0 0 0)
+197 Current_Pending_Sector  -O--C-   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   200   200   000    -    0
+200 Multi_Zone_Error_Rate   PO---K   100   100   001    -    0
+240 Head_Flying_Hours       ------   100   100   000    -    28 (54 42 0)
+241 Total_LBAs_Written      ------   100   253   000    -    1376
+242 Total_LBAs_Read         ------   100   253   000    -    350093679
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      5  Comprehensive SMART error log
+0x03       GPL     R/O      5  Ext. Comprehensive SMART error log
+0x04       GPL     R/O    256  Device Statistics log
+0x04       SL      R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x08       GPL     R/O      2  Power Conditions log
+0x0a       GPL     R/W      8  Device Statistics Notification
+0x0c       GPL     R/O   4096  Pending Defects log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x13       GPL     R/O      1  SATA NCQ Send and Receive log
+0x21       GPL     R/O      1  Write stream error log
+0x22       GPL     R/O      1  Read stream error log
+0x24       GPL     R/O      1  Current Device Internal Status Data log
+0x2f       GPL     R/O      1  Set Sector Configuration
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x47       GPL     R/O      1  Concurrent Positioning Ranges log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa1       GPL,SL  VS      40  Device vendor specific log
+0xa2       GPL     VS   16320  Device vendor specific log
+0xa4       GPL,SL  VS     160  Device vendor specific log
+0xa6       GPL     VS     192  Device vendor specific log
+0xa8-0xa9  GPL     VS     272  Device vendor specific log
+0xab       GPL     VS       1  Device vendor specific log
+0xad       GPL     VS      16  Device vendor specific log
+0xb1       GPL,SL  VS      40  Device vendor specific log
+0xb6       GPL     VS    1920  Device vendor specific log
+0xbe-0xbf  GPL     VS   65535  Device vendor specific log
+0xc1       GPL,SL  VS      16  Device vendor specific log
+0xc3       GPL,SL  VS      32  Device vendor specific log
+0xc7       GPL,SL  VS       8  Device vendor specific log
+0xc9       GPL,SL  VS       8  Device vendor specific log
+0xca       GPL,SL  VS      16  Device vendor specific log
+0xd1       GPL     VS     656  Device vendor specific log
+0xd2       GPL     VS   10000  Device vendor specific log
+0xd4       GPL     VS    2048  Device vendor specific log
+0xda       GPL,SL  VS       1  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (5 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%        22         -
+# 2  Short offline       Interrupted (host reset)      00%        10         -
+# 3  Extended offline    Completed without error       00%        10         -
+# 4  Short offline       Completed without error       00%         0         -
+
+Selective Self-tests/Logging not supported
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       522 (0x020a)
+Device State:                        Active (0)
+Current Temperature:                    36 Celsius
+Power Cycle Min/Max Temperature:     27/36 Celsius
+Lifetime    Min/Max Temperature:     24/53 Celsius
+Specified Max Operating Temperature:    70 Celsius
+Under/Over Temperature Limit Count:   0/0
+SMART Status:                        0xc24f (PASSED)
+Vendor specific:
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         5 minutes
+Temperature Logging Interval:        59 minutes
+Min/Max recommended Temperature:     10/40 Celsius
+Min/Max Temperature Limit:            5/70 Celsius
+Temperature History Size (Index):    128 (50)
+
+Index    Estimated Time   Temperature Celsius
+  51    2025-06-27 10:04     ?  -
+ ...    ..( 75 skipped).    ..  -
+ 127    2025-06-30 12:48     ?  -
+   0    2025-06-30 13:47    53  **********************************
+   1    2025-06-30 14:46     ?  -
+   2    2025-06-30 15:45    53  **********************************
+   3    2025-06-30 16:44     ?  -
+   4    2025-06-30 17:43    52  *********************************
+   5    2025-06-30 18:42     ?  -
+   6    2025-06-30 19:41    46  ***************************
+   7    2025-06-30 20:40     ?  -
+   8    2025-06-30 21:39    26  *******
+   9    2025-06-30 22:38    40  *********************
+  10    2025-06-30 23:37    42  ***********************
+ ...    ..(  2 skipped).    ..  ***********************
+  13    2025-07-01 02:34    42  ***********************
+  14    2025-07-01 03:33    41  **********************
+  15    2025-07-01 04:32    41  **********************
+  16    2025-07-01 05:31    41  **********************
+  17    2025-07-01 06:30    40  *********************
+  18    2025-07-01 07:29    40  *********************
+  19    2025-07-01 08:28     ?  -
+  20    2025-07-01 09:27    24  *****
+  21    2025-07-01 10:26     ?  -
+  22    2025-07-01 11:25    24  *****
+  23    2025-07-01 12:24     ?  -
+  24    2025-07-01 13:23    26  *******
+  25    2025-07-01 14:22     ?  -
+  26    2025-07-01 15:21    36  *****************
+  27    2025-07-01 16:20    38  *******************
+  28    2025-07-01 17:19    38  *******************
+  29    2025-07-01 18:18     ?  -
+  30    2025-07-01 19:17    26  *******
+  31    2025-07-01 20:16     ?  -
+  32    2025-07-01 21:15    28  *********
+  33    2025-07-01 22:14    39  ********************
+  34    2025-07-01 23:13    39  ********************
+  35    2025-07-02 00:12    38  *******************
+  36    2025-07-02 01:11    39  ********************
+  37    2025-07-02 02:10    38  *******************
+ ...    ..(  7 skipped).    ..  *******************
+  45    2025-07-02 10:02    38  *******************
+  46    2025-07-02 11:01     ?  -
+  47    2025-07-02 12:00    26  *******
+  48    2025-07-02 12:59    38  *******************
+  49    2025-07-02 13:58     ?  -
+  50    2025-07-02 14:57    27  ********
+
+SCT Error Recovery Control:
+           Read:    100 (10.0 seconds)
+          Write:    100 (10.0 seconds)
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4              12  ---  Lifetime Power-On Resets
+0x01  0x010  4              28  ---  Power-on Hours
+0x01  0x018  6            1376  ---  Logical Sectors Written
+0x01  0x020  6             160  ---  Number of Write Commands
+0x01  0x028  6       350089508  ---  Logical Sectors Read
+0x01  0x030  6          169490  ---  Number of Read Commands
+0x01  0x038  6               -  ---  Date and Time TimeStamp
+0x03  =====  =               =  ===  == Rotating Media Statistics (rev 1) ==
+0x03  0x008  4              27  ---  Spindle Motor Power-on Hours
+0x03  0x010  4              27  ---  Head Flying Hours
+0x03  0x018  4              14  ---  Head Load Events
+0x03  0x030  4               0  ---  Number of Mechanical Start Failures
+0x03  0x040  4               8  ---  Number of High Priority Unload Events
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x010  4               2  ---  Resets Between Cmd Acceptance and Completion
+0x04  0x018  4               0  -D-  Physical Element Status Changed
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              36  ---  Current Temperature
+0x05  0x010  1               -  ---  Average Short Term Temperature
+0x05  0x018  1               -  ---  Average Long Term Temperature
+0x05  0x020  1              42  ---  Highest Temperature
+0x05  0x028  1              27  ---  Lowest Temperature
+0x05  0x030  1               -  ---  Highest Average Short Term Temperature
+0x05  0x038  1               -  ---  Lowest Average Short Term Temperature
+0x05  0x040  1               -  ---  Highest Average Long Term Temperature
+0x05  0x048  1               -  ---  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              70  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1               5  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4              17  ---  Number of Hardware Resets
+0x06  0x010  4              10  ---  Number of ASR Events
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0xff  =====  =               =  ===  == Vendor Specific Statistics (rev 1) ==
+0xff  0x008  7               0  ---  Vendor Specific
+0xff  0x010  7               0  ---  Vendor Specific
+0xff  0x018  7               0  ---  Vendor Specific
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c)
+No Defects Logged
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x000a  2            2  Device-to-host register FISes sent due to a COMRESET
+0x0001  2            0  Command failed due to ICRC error
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+
+Seagate Field Access Reliability Metrics log (FARM) (GP Log 0xa6)
+	FARM Log Page 0: Log Header
+		FARM Log Version: 4.26
+		Pages Supported: 6
+		Log Size: 98304
+		Page Size: 16384
+		Heads Supported: 24
+		Number of Copies: 0
+		Reason for Frame Capture: 0
+	FARM Log Page 1: Drive Information
+		Serial Number: ZKL2R90L
+		World Wide Name: 0x5000c500e793ae4f
+		Device Interface: SATA
+		Device Capacity in Sectors: 27344764928
+		Physical Sector Size: 4096
+		Logical Sector Size: 512
+		Device Buffer Size: 268435456
+		Number of Heads: 16
+		Device Form Factor: 3.5 inches
+		Rotation Rate: 7200 rpm
+		Firmware Rev: SN01    
+		ATA Security State (ID Word 128): 0x01629
+		ATA Features Supported (ID Word 78): 0x016c8
+		ATA Features Enabled (ID Word 79): 0x0000000000000048
+		Power on Hours: 28
+		Spindle Power on Hours: 27
+		Head Flight Hours: 27
+		Head Load Events: 14
+		Power Cycle Count: 13
+		Hardware Reset Count: 17
+		Spin-up Time: 2 ms
+		Time to ready of the last power cycle: 16969 ms
+		Time drive is held in staggered spin: 0 ms
+		Model Number: ST14000NM0121                           
+		Drive Recording Type: CMR
+		Max Number of Available Sectors for Reassignment: 49152
+		Assembly Date (YYWW): 
+		Depopulation Head Mask: 0
+	FARM Log Page 2: Workload Statistics
+		Total Number of Read Commands: 169600
+		Total Number of Write Commands: 160
+		Total Number of Random Read Commands: 9193
+		Total Number of Random Write Commands: 160
+		Total Number Of Other Commands: 145282
+		Logical Sectors Written: 1376
+		Logical Sectors Read: 350093679
+		Number of dither events during current power cycle: 18
+		Number of times dither was held off during random workloads: 0
+		Number of times dither was held off during sequential workloads: 0
+		Number of Read commands from 0-3.125% of LBA space for last 3 SMART Summary Frames: 22181
+		Number of Read commands from 3.125-25% of LBA space for last 3 SMART Summary Frames: 39135
+		Number of Read commands from 25-75% of LBA space for last 3 SMART Summary Frames: 32950
+		Number of Read commands from 75-100% of LBA space for last 3 SMART Summary Frames: 65773
+		Number of Write commands from 0-3.125% of LBA space for last 3 SMART Summary Frames: 21
+		Number of Write commands from 3.125-25% of LBA space for last 3 SMART Summary Frames: 0
+		Number of Write commands from 25-75% of LBA space for last 3 SMART Summary Frames: 0
+		Number of Write commands from 75-100% of LBA space for last 3 SMART Summary Frames: 139
+	FARM Log Page 3: Error Statistics
+		Unrecoverable Read Errors: 0
+		Unrecoverable Write Errors: 0
+		Number of Reallocated Sectors: 0
+		Number of Read Recovery Attempts: 0
+		Number of Mechanical Start Failures: 0
+		Number of Reallocated Candidate Sectors: 0
+		Number of ASR Events: 10
+		Number of Interface CRC Errors: 0
+		Spin Retry Count: 0
+		Spin Retry Count Normalized: 100
+		Spin Retry Count Worst: 100
+		Number of IOEDC Errors (Raw): 0
+		CTO Count Total: 2
+		CTO Count Over 5s: 0
+		CTO Count Over 7.5s: 0
+		Total Flash LED (Assert) Events: 0
+		Index of the last Flash LED: 0
+		Flash LED Event 0:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 0 (hours): 0
+			Power Cycle Event 0: 0
+		Flash LED Event 1:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 1 (hours): 0
+			Power Cycle Event 1: 0
+		Flash LED Event 2:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 2 (hours): 0
+			Power Cycle Event 2: 0
+		Flash LED Event 3:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 3 (hours): 0
+			Power Cycle Event 3: 0
+		Flash LED Event 4:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 4 (hours): 0
+			Power Cycle Event 4: 0
+		Flash LED Event 5:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 5 (hours): 0
+			Power Cycle Event 5: 0
+		Flash LED Event 6:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 6 (hours): 0
+			Power Cycle Event 6: 0
+		Flash LED Event 7:
+			Event Information: 0x0000000000000000
+			Timestamp of Event 7 (hours): 0
+			Power Cycle Event 7: 0
+		Uncorrectable errors: 0
+		Cumulative Lifetime Unrecoverable Read errors due to ERC: 0
+		Cum Lifetime Unrecoverable by head 0:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 1:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 2:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 3:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 4:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 5:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 6:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 7:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 8:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 9:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 10:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 11:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 12:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 13:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 14:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+		Cum Lifetime Unrecoverable by head 15:
+			Cumulative Lifetime Unrecoverable Read Repeating: 0
+			Cumulative Lifetime Unrecoverable Read Unique: 0
+	FARM Log Page 4: Environment Statistics
+		Current Temperature (Celsius): 36
+		Highest Temperature: 42
+		Lowest Temperature: 27
+		Average Short Term Temperature: 0
+		Average Long Term Temperature: 0
+		Highest Average Short Term Temperature: 0
+		Lowest Average Short Term Temperature: 0
+		Highest Average Long Term Temperature: 0
+		Lowest Average Long Term Temperature: 0
+		Time In Over Temperature (minutes): 0
+		Time In Under Temperature (minutes): 0
+		Specified Max Operating Temperature: 70
+		Specified Min Operating Temperature: 5
+		Current Relative Humidity: 0
+		Current Motor Power: 4094
+		Current 12 volts: 11.891
+		Minimum 12 volts: 11.826
+		Maximum 12 volts: 12.285
+		Current 5 volts: 5.056
+		Minimum 5 volts: 4.951
+		Maximum 5 volts: 5.056
+		12V Power Average: 0.000
+		12V Power Minimum: 0.000
+		12V Power Maximum: 0.000
+		5V Power Average: 0.000
+		5V Power Minimum: 0.000
+		5V Power Maximum: 0.000
+	FARM Log Page 5: Reliability Statistics
+		Error Rate (SMART Attribute 1 Raw): 0x000000000650b392
+		Error Rate (SMART Attribute 1 Normalized): 80
+		Error Rate (SMART Attribute 1 Worst): 66
+		Seek Error Rate (SMART Attr 7 Raw): 0x00000000006018fd
+		Seek Error Rate (SMART Attr 7 Normalized): 68
+		Seek Error Rate (SMART Attr 7 Worst): 60
+		High Priority Unload Events: 8
+		Helium Pressure Threshold Tripped: 0
+		LBAs Corrected By Parity Sector: 0
+		DVGA Skip Write Detect by Head 0: 0
+		DVGA Skip Write Detect by Head 1: 0
+		DVGA Skip Write Detect by Head 2: 0
+		DVGA Skip Write Detect by Head 3: 0
+		DVGA Skip Write Detect by Head 4: 0
+		DVGA Skip Write Detect by Head 5: 0
+		DVGA Skip Write Detect by Head 6: 0
+		DVGA Skip Write Detect by Head 7: 0
+		DVGA Skip Write Detect by Head 8: 0
+		DVGA Skip Write Detect by Head 9: 0
+		DVGA Skip Write Detect by Head 10: 0
+		DVGA Skip Write Detect by Head 11: 0
+		DVGA Skip Write Detect by Head 12: 0
+		DVGA Skip Write Detect by Head 13: 0
+		DVGA Skip Write Detect by Head 14: 0
+		DVGA Skip Write Detect by Head 15: 0
+		RVGA Skip Write Detect by Head 0: 0
+		RVGA Skip Write Detect by Head 1: 0
+		RVGA Skip Write Detect by Head 2: 0
+		RVGA Skip Write Detect by Head 3: 0
+		RVGA Skip Write Detect by Head 4: 0
+		RVGA Skip Write Detect by Head 5: 0
+		RVGA Skip Write Detect by Head 6: 0
+		RVGA Skip Write Detect by Head 7: 0
+		RVGA Skip Write Detect by Head 8: 0
+		RVGA Skip Write Detect by Head 9: 0
+		RVGA Skip Write Detect by Head 10: 0
+		RVGA Skip Write Detect by Head 11: 0
+		RVGA Skip Write Detect by Head 12: 0
+		RVGA Skip Write Detect by Head 13: 0
+		RVGA Skip Write Detect by Head 14: 0
+		RVGA Skip Write Detect by Head 15: 0
+		FVGA Skip Write Detect by Head 0: 0
+		FVGA Skip Write Detect by Head 1: 0
+		FVGA Skip Write Detect by Head 2: 0
+		FVGA Skip Write Detect by Head 3: 0
+		FVGA Skip Write Detect by Head 4: 0
+		FVGA Skip Write Detect by Head 5: 0
+		FVGA Skip Write Detect by Head 6: 0
+		FVGA Skip Write Detect by Head 7: 0
+		FVGA Skip Write Detect by Head 8: 0
+		FVGA Skip Write Detect by Head 9: 0
+		FVGA Skip Write Detect by Head 10: 0
+		FVGA Skip Write Detect by Head 11: 0
+		FVGA Skip Write Detect by Head 12: 0
+		FVGA Skip Write Detect by Head 13: 0
+		FVGA Skip Write Detect by Head 14: 0
+		FVGA Skip Write Detect by Head 15: 0
+		Skip Write Detect Threshold Exceeded by Head 0: 0
+		Skip Write Detect Threshold Exceeded by Head 1: 0
+		Skip Write Detect Threshold Exceeded by Head 2: 0
+		Skip Write Detect Threshold Exceeded by Head 3: 0
+		Skip Write Detect Threshold Exceeded by Head 4: 0
+		Skip Write Detect Threshold Exceeded by Head 5: 0
+		Skip Write Detect Threshold Exceeded by Head 6: 0
+		Skip Write Detect Threshold Exceeded by Head 7: 0
+		Skip Write Detect Threshold Exceeded by Head 8: 0
+		Skip Write Detect Threshold Exceeded by Head 9: 0
+		Skip Write Detect Threshold Exceeded by Head 10: 0
+		Skip Write Detect Threshold Exceeded by Head 11: 0
+		Skip Write Detect Threshold Exceeded by Head 12: 0
+		Skip Write Detect Threshold Exceeded by Head 13: 0
+		Skip Write Detect Threshold Exceeded by Head 14: 0
+		Skip Write Detect Threshold Exceeded by Head 15: 0
+		Write Power On (hrs) by Head 0: 12
+		Write Power On (hrs) by Head 1: 12
+		Write Power On (hrs) by Head 2: 12
+		Write Power On (hrs) by Head 3: 0
+		Write Power On (hrs) by Head 4: 0
+		Write Power On (hrs) by Head 5: 0
+		Write Power On (hrs) by Head 6: 0
+		Write Power On (hrs) by Head 7: 0
+		Write Power On (hrs) by Head 8: 0
+		Write Power On (hrs) by Head 9: 0
+		Write Power On (hrs) by Head 10: 0
+		Write Power On (hrs) by Head 11: 0
+		Write Power On (hrs) by Head 12: 0
+		Write Power On (hrs) by Head 13: 0
+		Write Power On (hrs) by Head 14: 0
+		Write Power On (hrs) by Head 15: 0
+		MR Head Resistance from Head 0: 0
+		MR Head Resistance from Head 1: 0
+		MR Head Resistance from Head 2: 0
+		MR Head Resistance from Head 3: 0
+		MR Head Resistance from Head 4: 0
+		MR Head Resistance from Head 5: 0
+		MR Head Resistance from Head 6: 0
+		MR Head Resistance from Head 7: 0
+		MR Head Resistance from Head 8: 0
+		MR Head Resistance from Head 9: 0
+		MR Head Resistance from Head 10: 0
+		MR Head Resistance from Head 11: 0
+		MR Head Resistance from Head 12: 0
+		MR Head Resistance from Head 13: 0
+		MR Head Resistance from Head 14: 0
+		MR Head Resistance from Head 15: 0
+		Second MR Head Resistance by Head 0: 0
+		Second MR Head Resistance by Head 1: 0
+		Second MR Head Resistance by Head 2: 0
+		Second MR Head Resistance by Head 3: 0
+		Second MR Head Resistance by Head 4: 0
+		Second MR Head Resistance by Head 5: 0
+		Second MR Head Resistance by Head 6: 0
+		Second MR Head Resistance by Head 7: 0
+		Second MR Head Resistance by Head 8: 0
+		Second MR Head Resistance by Head 9: 0
+		Second MR Head Resistance by Head 10: 0
+		Second MR Head Resistance by Head 11: 0
+		Second MR Head Resistance by Head 12: 0
+		Second MR Head Resistance by Head 13: 0
+		Second MR Head Resistance by Head 14: 0
+		Second MR Head Resistance by Head 15: 0
+		Number of Reallocated Sectors by Head 0: 0
+		Number of Reallocated Sectors by Head 1: 0
+		Number of Reallocated Sectors by Head 2: 0
+		Number of Reallocated Sectors by Head 3: 0
+		Number of Reallocated Sectors by Head 4: 0
+		Number of Reallocated Sectors by Head 5: 0
+		Number of Reallocated Sectors by Head 6: 0
+		Number of Reallocated Sectors by Head 7: 0
+		Number of Reallocated Sectors by Head 8: 0
+		Number of Reallocated Sectors by Head 9: 0
+		Number of Reallocated Sectors by Head 10: 0
+		Number of Reallocated Sectors by Head 11: 0
+		Number of Reallocated Sectors by Head 12: 0
+		Number of Reallocated Sectors by Head 13: 0
+		Number of Reallocated Sectors by Head 14: 0
+		Number of Reallocated Sectors by Head 15: 0
+		Number of Reallocation Candidate Sectors by Head 0: 0
+		Number of Reallocation Candidate Sectors by Head 1: 0
+		Number of Reallocation Candidate Sectors by Head 2: 0
+		Number of Reallocation Candidate Sectors by Head 3: 0
+		Number of Reallocation Candidate Sectors by Head 4: 0
+		Number of Reallocation Candidate Sectors by Head 5: 0
+		Number of Reallocation Candidate Sectors by Head 6: 0
+		Number of Reallocation Candidate Sectors by Head 7: 0
+		Number of Reallocation Candidate Sectors by Head 8: 0
+		Number of Reallocation Candidate Sectors by Head 9: 0
+		Number of Reallocation Candidate Sectors by Head 10: 0
+		Number of Reallocation Candidate Sectors by Head 11: 0
+		Number of Reallocation Candidate Sectors by Head 12: 0
+		Number of Reallocation Candidate Sectors by Head 13: 0
+		Number of Reallocation Candidate Sectors by Head 14: 0
+		Number of Reallocation Candidate Sectors by Head 15: 0
+

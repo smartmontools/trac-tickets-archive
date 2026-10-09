@@ -1,0 +1,149 @@
+==========================================================================================
+ openSeaChest_SMART - openSeaChest drive utilities - NVMe Enabled
+ Copyright (c) 2014-2024 Seagate Technology LLC and/or its Affiliates, All Rights Reserved
+ openSeaChest_SMART Version: 2.3.2-6_2_0 X86_64
+ Build Date: Jun  9 2024
+ Today: Thu Jun 26 21:43:13 2025	User: root
+==========================================================================================
+
+/dev/sg3 - ST14000NM0121 - ZKL2R90L - SN01 - ATA
+	Model Number: ST14000NM0121
+	Serial Number: ZKL2R90L
+	Firmware Revision: SN01
+	World Wide Name: 5000C500E793AE4F
+	Date Of Manufacture: Week 0, 2000
+	Drive Capacity (TB/TiB): 14.00/12.73
+	Temperature Data:
+		Current Temperature (C): 38
+		Highest Temperature (C): 42
+		Lowest Temperature (C): 27
+	Power On Time:  22 hours 
+	Power On Hours: 22.00
+	MaxLBA: 27344764927
+	Native MaxLBA: Not Reported
+	Logical Sector Size (B): 512
+	Physical Sector Size (B): 4096
+	Sector Alignment: 0
+	Rotation Rate (RPM): 7200
+	Form Factor: 3.5"
+	Last DST information:
+		Time since last DST (hours): 0.00
+		DST Status/Result: 0x0
+		DST Test run: 0x1
+	Long Drive Self Test Time:  10 hours 12 minutes 
+	Interface speed:
+		Max Speed (Gb/s): 6.0
+		Negotiated Speed (Gb/s): 6.0
+	Annualized Workload Rate (TB/yr): 71.37
+	Total Bytes Read (GB): 179.23
+	Total Bytes Written (KB): 704.51
+	Encryption Support: Not Supported
+	Cache Size (MiB): 256.00
+	Read Look-Ahead: Enabled
+	Write Cache: Enabled
+	Low Current Spinup: Ultra Low Enabled
+	SMART Status: Good
+	ATA Security Information: Supported, Frozen
+	Firmware Download Support: Full, Segmented, Deferred
+	Number of Concurrent Ranges: 2
+	Specifications Supported:
+		ACS-4
+		ACS-3
+		ACS-2
+		ATA8-ACS
+		ATA/ATAPI-7
+		ATA/ATAPI-6
+		ATA/ATAPI-5
+		SATA 3.3
+		SATA 3.2
+		SATA 3.1
+		SATA 3.0
+		SATA 2.6
+		SATA 2.5
+		SATA II: Extensions
+		SATA 1.0a
+		ATA8-AST
+	Features Supported:
+		Sanitize
+		SATA NCQ
+		SATA Software Settings Preservation [Enabled]
+		SATA Device Initiated Power Management
+		Power Management
+		Security
+		SMART [Enabled]
+		48bit Address
+		HPA Security Extension
+		GPL
+		SMART Self-Test
+		SMART Error Logging
+		Write-Read-Verify
+		DSN
+		EPC [Enabled]
+		Sense Data Reporting [Enabled]
+		SCT Write Same
+		SCT Error Recovery Control
+		SCT Feature Control
+		SCT Data Tables
+		Host Logging
+		Set Sector Configuration
+		Storage Element Depopulation + Restore
+		Field Accessible Reliability Metrics (FARM)
+		Seagate In Drive Diagnostics (IDD)
+	Adapter Information:
+		Adapter Type: PCI
+		Vendor ID: 8086h
+		Product ID: A102h
+		Revision: 0031h
+=======Key======
+	Flags:
+	  P - pre-fail/warranty indicator
+	  O - online collection of data while device is running
+	  S - Performance degrades as current value decreases
+	  R - Error Rate - indicates tracking of an error rate
+	  C - Event Count - attribute represents a counter of events
+	  K - Self Preservation (saved across power-cycles)
+	Thresholds/Current/Worst:
+	  N/A - thresholds not available for this attribute/device
+	  AP  - threshold is always passing (value of zero)
+	  AF  - threshold is always failing (value of 255)
+	  INV - threshold is set to an invalid value (value of 254)
+	Other indicators:
+	  ? - See analyzed output for more information on an attribute's raw data
+	  ! - attribute is currently failing
+	  ^ - attribute has previously failed
+	  % - attribute is currently issuing a warning
+	  ~ - attribute has previously warned about its condition
+	Temperature:
+	  m = minimum
+	  M = maximum
+	  All temperatures are reported in Celcius unless otherwise specified.
+	Columns:
+	  CV - current value (Also called nominal value in specifications)
+	  WV - worst ever value
+	  TV - threshold value (requires support of thresholds data)
+	  Raw - raw data associated with the attribute. Vendor specific definition.
+     # Attribute Name:                     Flags:   CV: WV: TV: Raw:
+--------------------------------------------------------------------------------
+?    1 Read Error Rate                     POSR--   80  66  44  0               
+     3 Spin Up Time                        PO----   95  94  AP  00000000000000h 
+     4 Start/Stop Count                    -O--CK   100 100 20  11              
+     5 Retired Sectors Count               PO--CK   100 100 10  0               
+?    7 Seek Error Rate                     POSR--   68  60  30  0               
+?    9 Power On Hours                      -O--CK   100 100 AP  22              
+    10 Spin Retry Count                    PO--C-   100 100 97  00000000000000h 
+    12 Drive Power Cycle Count             -O--CK   100 100 20  10              
+    18 Head Health Self Assessment         PO-R--   100 100 50  00000000000000h 
+   187 Reported Un-correctable             -O--CK   100 100 AP  0               
+?  188 Command Timeout                     -O--CK   100 99  AP  2               
+?  190 Airflow Temperature                 -O---K   62  47  AP  38 (m/M 28/40)  
+   192 Emergency Retract Count             -O--CK   100 100 AP  8               
+   193 Load-Unload Count                   -O--CK   100 100 AP  12              
+?  194 Temperature                         -O---K   38  46  AP  38 (m/M 24/46)  
+   197 Pending-Sparing Count               -O--C-   100 100 AP  0               
+   198 Offline Uncorrectable Sector Count  ----C-   100 100 AP  0               
+   199 Ultra DMA CRC Error                 -OSRCK   200 200 AP  0               
+   200 Pressure Measurement Limit          PO---K   100 100 1   00000000000000h 
+?  240 Head Flight Hours                   ------   100 100 AP  22              
+   241 Lifetime Writes From Host           ------   100 253 AP  1376            
+   242 Lifetime Reads From Host            ------   100 253 AP  350067381       
+
