@@ -1,0 +1,13 @@
+ata8: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+ata8.00: ATA-11: AMD R5SL512G, V0929A0, max UDMA/133
+ata8.00: 1000215216 sectors, multi 1: LBA48 NCQ (depth 32), AA
+ata8.00: configured for UDMA/133
+scsi 7:0:0:0: Direct-Access     ATA      AMD R5SL512G     9A0  PQ: 0 ANSI: 5
+sd 7:0:0:0: Attached scsi generic sg0 type 0
+sd 7:0:0:0: [sda] 1000215216 512-byte logical blocks: (512 GB/477 GiB)
+sd 7:0:0:0: [sda] Write Protect is off
+sd 7:0:0:0: [sda] Mode Sense: 00 3a 00 00
+sd 7:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+sd 7:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+ sda:
+sd 7:0:0:0: [sda] Attached SCSI disk

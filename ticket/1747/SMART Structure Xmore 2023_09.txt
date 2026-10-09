@@ -1,0 +1,16 @@
+  { "Xmore Industrial SATA SSDs",
+    "(CFAST|SSD|MSATA|SLIMSATA|MSATAM|M2[ABCD]A)[0-9]{3}[GT]XA[CEI][MSTQ][MSTQ]-[0-9]{3}[HMNPSTZ]",
+    "", "",
+  //"-v 1,raw48,Raw_Read_Error_Rate "
+  //"-v 9,raw24(raw8),Power_On_Hours "
+  //"-v 12,raw48,Power_Cycle_Count "
+    "-v 168,raw48,SATA_Phy_Error_Count "
+    "-v 169,raw48,Bad_Block_Rate " // ((bad blocks * (100 / reserve blocks))
+    "-v 170,raw24/raw24:z54z10,Bad_Blk_Ct_Late_Early " // Later bad blocks / Early bad blocks (factory initial test) 
+    "-v 173,raw16(avg16),Max_Avg_Erase_Count " // highest single block count of all blocks / average count
+    "-v 192,raw48,Unexpect_Power_Loss_Ct "
+    "-v 194,tempminmax,Temperature_Celsius " // optional thermal sensor value, shows 33° if not installed
+    "-v 218,raw48,SATA_CRC_Error_Count "
+    "-v 231,raw48,Percent_Lifetime_Remain "
+    "-v 241,raw48,Host_Writes_GiB"
+  }
