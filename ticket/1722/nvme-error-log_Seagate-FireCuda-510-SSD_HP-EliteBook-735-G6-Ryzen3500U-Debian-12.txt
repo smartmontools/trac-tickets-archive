@@ -1,0 +1,948 @@
+$ nvme error-log /dev/nvme0
+Error Log Entries for device:nvme0 entries:63
+.................
+ Entry[ 0]   
+.................
+error_count     : 447
+sqid            : 0
+cmdid           : 0x8
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 1]   
+.................
+error_count     : 446
+sqid            : 0
+cmdid           : 0x7006
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 2]   
+.................
+error_count     : 445
+sqid            : 0
+cmdid           : 0xf006
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 3]   
+.................
+error_count     : 444
+sqid            : 0
+cmdid           : 0x8014
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 4]   
+.................
+error_count     : 443
+sqid            : 0
+cmdid           : 0xc012
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 5]   
+.................
+error_count     : 442
+sqid            : 0
+cmdid           : 0xb003
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 6]   
+.................
+error_count     : 441
+sqid            : 0
+cmdid           : 0x601a
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 7]   
+.................
+error_count     : 440
+sqid            : 0
+cmdid           : 0xc014
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 8]   
+.................
+error_count     : 439
+sqid            : 0
+cmdid           : 0x8003
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[ 9]   
+.................
+error_count     : 438
+sqid            : 0
+cmdid           : 0x4014
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[10]   
+.................
+error_count     : 437
+sqid            : 0
+cmdid           : 0xc002
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[11]   
+.................
+error_count     : 436
+sqid            : 0
+cmdid           : 0x5003
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[12]   
+.................
+error_count     : 435
+sqid            : 0
+cmdid           : 0x10
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[13]   
+.................
+error_count     : 434
+sqid            : 0
+cmdid           : 0xe
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0xffff
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[14]   
+.................
+error_count     : 433
+sqid            : 0
+cmdid           : 0x4
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[15]   
+.................
+error_count     : 432
+sqid            : 0
+cmdid           : 0xe
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0xffff
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[16]   
+.................
+error_count     : 431
+sqid            : 0
+cmdid           : 0x5007
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[17]   
+.................
+error_count     : 430
+sqid            : 0
+cmdid           : 0x5018
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[18]   
+.................
+error_count     : 429
+sqid            : 0
+cmdid           : 0x18
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[19]   
+.................
+error_count     : 428
+sqid            : 0
+cmdid           : 0xd01d
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[20]   
+.................
+error_count     : 427
+sqid            : 0
+cmdid           : 0x8014
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[21]   
+.................
+error_count     : 426
+sqid            : 0
+cmdid           : 0xd00a
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[22]   
+.................
+error_count     : 425
+sqid            : 0
+cmdid           : 0x14
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[23]   
+.................
+error_count     : 424
+sqid            : 0
+cmdid           : 0x9000
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[24]   
+.................
+error_count     : 423
+sqid            : 0
+cmdid           : 0x3005
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[25]   
+.................
+error_count     : 422
+sqid            : 0
+cmdid           : 0x3004
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[26]   
+.................
+error_count     : 421
+sqid            : 0
+cmdid           : 0x9016
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[27]   
+.................
+error_count     : 420
+sqid            : 0
+cmdid           : 0x6013
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[28]   
+.................
+error_count     : 419
+sqid            : 0
+cmdid           : 0x16
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[29]   
+.................
+error_count     : 418
+sqid            : 0
+cmdid           : 0x7010
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[30]   
+.................
+error_count     : 417
+sqid            : 0
+cmdid           : 0x2016
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[31]   
+.................
+error_count     : 416
+sqid            : 0
+cmdid           : 0xa016
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[32]   
+.................
+error_count     : 415
+sqid            : 0
+cmdid           : 0x300e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[33]   
+.................
+error_count     : 414
+sqid            : 0
+cmdid           : 0xb00e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[34]   
+.................
+error_count     : 413
+sqid            : 0
+cmdid           : 0x2015
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[35]   
+.................
+error_count     : 412
+sqid            : 0
+cmdid           : 0x200e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[36]   
+.................
+error_count     : 411
+sqid            : 0
+cmdid           : 0x3014
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[37]   
+.................
+error_count     : 410
+sqid            : 0
+cmdid           : 0x200d
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[38]   
+.................
+error_count     : 409
+sqid            : 0
+cmdid           : 0xb002
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[39]   
+.................
+error_count     : 408
+sqid            : 0
+cmdid           : 0xd00e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[40]   
+.................
+error_count     : 407
+sqid            : 0
+cmdid           : 0x4003
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[41]   
+.................
+error_count     : 406
+sqid            : 0
+cmdid           : 0xc012
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[42]   
+.................
+error_count     : 405
+sqid            : 0
+cmdid           : 0xe00e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[43]   
+.................
+error_count     : 404
+sqid            : 0
+cmdid           : 0x600e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[44]   
+.................
+error_count     : 403
+sqid            : 0
+cmdid           : 0xd00e
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[45]   
+.................
+error_count     : 402
+sqid            : 0
+cmdid           : 0xd012
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[46]   
+.................
+error_count     : 401
+sqid            : 0
+cmdid           : 0xe014
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[47]   
+.................
+error_count     : 400
+sqid            : 0
+cmdid           : 0xe00c
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[48]   
+.................
+error_count     : 399
+sqid            : 0
+cmdid           : 0xa00c
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[49]   
+.................
+error_count     : 398
+sqid            : 0
+cmdid           : 0x3008
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[50]   
+.................
+error_count     : 397
+sqid            : 0
+cmdid           : 0x600d
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[51]   
+.................
+error_count     : 396
+sqid            : 0
+cmdid           : 0x4
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[52]   
+.................
+error_count     : 395
+sqid            : 0
+cmdid           : 0xe
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0xffff
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[53]   
+.................
+error_count     : 394
+sqid            : 0
+cmdid           : 0xd
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[54]   
+.................
+error_count     : 393
+sqid            : 0
+cmdid           : 0xe
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0xffff
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[55]   
+.................
+error_count     : 392
+sqid            : 0
+cmdid           : 0xc
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[56]   
+.................
+error_count     : 391
+sqid            : 0
+cmdid           : 0xe
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0xffff
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[57]   
+.................
+error_count     : 390
+sqid            : 0
+cmdid           : 0x500b
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[58]   
+.................
+error_count     : 389
+sqid            : 0
+cmdid           : 0xe
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0xffff
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[59]   
+.................
+error_count     : 388
+sqid            : 0
+cmdid           : 0
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[60]   
+.................
+error_count     : 387
+sqid            : 0
+cmdid           : 0x6018
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[61]   
+.................
+error_count     : 386
+sqid            : 0
+cmdid           : 0x1010
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................
+ Entry[62]   
+.................
+error_count     : 385
+sqid            : 0
+cmdid           : 0x4
+status_field    : 0x2002(Invalid Field in Command: A reserved coded value or an unsupported value in a defined field)
+phase_tag       : 0
+parm_err_loc    : 0x28
+lba             : 0
+nsid            : 0
+vs              : 0
+trtype          : The transport type is not indicated or the error is not transport related.
+cs              : 0
+trtype_spec_info: 0
+.................

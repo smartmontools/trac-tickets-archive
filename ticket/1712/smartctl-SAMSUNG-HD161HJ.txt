@@ -1,0 +1,240 @@
+smartctl 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-21-amd64] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SAMSUNG HD161HJ
+Serial Number:    S0V3J9CQ533637
+LU WWN Device Id: 5 0000f0 09b533637
+Firmware Version: JF100-19
+User Capacity:    160,041,885,696 bytes [160 GB]
+Sector Size:      512 bytes logical/physical
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ATA/ATAPI-7, ATA8-ACS T13/1699-D revision 3b
+Local Time is:    Wed Apr  5 22:32:59 2023 CEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Disabled
+APM feature is:   Disabled
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x02)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		( 2964) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  50) minutes.
+SCT capabilities: 	       (0x003f)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR--   100   100   051    -    0
+  3 Spin_Up_Time            POS---   253   253   025    -    4416
+  4 Start_Stop_Count        -O--CK   099   099   000    -    1209
+  5 Reallocated_Sector_Ct   PO--CK   253   253   010    -    0
+  7 Seek_Error_Rate         POSR--   253   253   051    -    0
+  8 Seek_Time_Performance   P-S--K   253   253   015    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    6201
+ 10 Spin_Retry_Count        PO--CK   253   253   051    -    0
+ 11 Calibration_Retry_Count -O--C-   253   253   000    -    0
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    846
+ 13 Read_Soft_Error_Rate    -OSR--   100   100   000    -    5901031
+184 End-to-End_Error        PO--CK   253   253   099    -    0
+187 Reported_Uncorrect      -O--CK   253   253   000    -    0
+188 Command_Timeout         -O--CK   253   253   000    -    0
+190 Airflow_Temperature_Cel -O---K   157   112   000    -    27 (Min/Max 13/42)
+194 Temperature_Celsius     -O---K   148   112   000    -    30 (Min/Max 13/42)
+195 Hardware_ECC_Recovered  -O-RC-   100   100   000    -    5901031
+196 Reallocated_Event_Count -O--CK   253   253   000    -    0
+197 Current_Pending_Sector  -O--C-   253   253   000    -    0
+198 Offline_Uncorrectable   ----CK   253   253   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   200   200   000    -    0
+200 Multi_Zone_Error_Rate   -O-R--   253   100   000    -    0
+201 Soft_Read_Error_Rate    -O-R--   253   100   000    -    0
+202 Data_Address_Mark_Errs  -O--CK   253   253   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      2  Comprehensive SMART error log
+0x03       GPL     R/O      2  Ext. Comprehensive SMART error log
+0x06           SL  R/O      1  SMART self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (2 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%      6201         -
+# 2  Short offline       Completed without error       00%      6200         -
+# 3  Short offline       Completed without error       00%      6188         -
+# 4  Extended offline    Completed without error       00%      6138         -
+
+SMART Selective self-test log data structure revision number 0
+Note: revision number not 1 implies that no selective self-test has ever been run
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  2
+SCT Version (vendor specific):       256 (0x0100)
+Device State:                        Active (0)
+Current Temperature:                    30 Celsius
+Power Cycle Min/Max Temperature:     25/30 Celsius
+Lifetime    Min/Max Temperature:     13/44 Celsius
+Under/Over Temperature Limit Count:   0/0
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:     -4/72 Celsius
+Min/Max Temperature Limit:           -9/77 Celsius
+Temperature History Size (Index):    128 (92)
+
+Index    Estimated Time   Temperature Celsius
+  93    2023-04-05 20:25    32  *************
+  94    2023-04-05 20:26    32  *************
+  95    2023-04-05 20:27    31  ************
+  96    2023-04-05 20:28    31  ************
+  97    2023-04-05 20:29    30  ***********
+  98    2023-04-05 20:30    30  ***********
+  99    2023-04-05 20:31    30  ***********
+ 100    2023-04-05 20:32    29  **********
+ 101    2023-04-05 20:33    29  **********
+ 102    2023-04-05 20:34    29  **********
+ 103    2023-04-05 20:35    28  *********
+ ...    ..( 13 skipped).    ..  *********
+ 117    2023-04-05 20:49    28  *********
+ 118    2023-04-05 20:50    27  ********
+ ...    ..( 18 skipped).    ..  ********
+   9    2023-04-05 21:09    27  ********
+  10    2023-04-05 21:10    35  ****************
+  11    2023-04-05 21:11    13  -
+  12    2023-04-05 21:12    15  -
+  13    2023-04-05 21:13    16  -
+  14    2023-04-05 21:14    18  -
+  15    2023-04-05 21:15    18  -
+  16    2023-04-05 21:16    19  -
+  17    2023-04-05 21:17    20  *
+  18    2023-04-05 21:18    21  **
+  19    2023-04-05 21:19    21  **
+  20    2023-04-05 21:20    22  ***
+  21    2023-04-05 21:21    22  ***
+  22    2023-04-05 21:22    23  ****
+  23    2023-04-05 21:23    23  ****
+  24    2023-04-05 21:24    24  *****
+  25    2023-04-05 21:25    24  *****
+  26    2023-04-05 21:26    24  *****
+  27    2023-04-05 21:27    25  ******
+ ...    ..(  3 skipped).    ..  ******
+  31    2023-04-05 21:31    25  ******
+  32    2023-04-05 21:32    26  *******
+ ...    ..(  4 skipped).    ..  *******
+  37    2023-04-05 21:37    26  *******
+  38    2023-04-05 21:38    27  ********
+ ...    ..( 19 skipped).    ..  ********
+  58    2023-04-05 21:58    27  ********
+  59    2023-04-05 21:59    28  *********
+  60    2023-04-05 22:00    35  ****************
+  61    2023-04-05 22:01     ?  -
+  62    2023-04-05 22:02     ?  -
+  63    2023-04-05 22:03    25  ******
+  64    2023-04-05 22:04    25  ******
+  65    2023-04-05 22:05    26  *******
+  66    2023-04-05 22:06    27  ********
+  67    2023-04-05 22:07    26  *******
+  68    2023-04-05 22:08    27  ********
+  69    2023-04-05 22:09    27  ********
+  70    2023-04-05 22:10    27  ********
+  71    2023-04-05 22:11    26  *******
+  72    2023-04-05 22:12    27  ********
+  73    2023-04-05 22:13    28  *********
+  74    2023-04-05 22:14    28  *********
+  75    2023-04-05 22:15    29  **********
+  76    2023-04-05 22:16    29  **********
+  77    2023-04-05 22:17    29  **********
+  78    2023-04-05 22:18    30  ***********
+ ...    ..( 12 skipped).    ..  ***********
+  91    2023-04-05 22:31    30  ***********
+  92    2023-04-05 22:32    33  **************
+
+SCT Error Recovery Control:
+           Read: Disabled
+          Write: Disabled
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x0008  2            0  Device-to-host non-data FIS retries
+0x0009  2            0  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  2            0  Device-to-host register FISes sent due to a COMRESET
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+0x8001  2            0  Vendor specific
+

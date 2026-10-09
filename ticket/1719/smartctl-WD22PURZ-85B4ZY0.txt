@@ -1,0 +1,402 @@
+smartctl 7.2 2020-12-30 r5155 [aarch64-linux-6.1.12-rk3568-odroid] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     WDC WD22PURZ-85B4ZY0
+Firmware Version: 80.00A80
+User Capacity:    2,000,398,934,016 bytes [2.00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    5040 rpm
+Form Factor:      3.5 inches
+TRIM Command:     Available
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   ACS-3 T13/2161-D revision 5
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Sun Apr 23 01:17:58 2023 WEST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x80)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		( 1800) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 226) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   5) minutes.
+SCT capabilities: 	       (0x3039)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     POSR-K   200   200   051    -    0
+  3 Spin_Up_Time            POS--K   176   176   021    -    2175
+  4 Start_Stop_Count        -O--CK   100   100   000    -    8
+  5 Reallocated_Sector_Ct   PO--CK   200   200   140    -    0
+  7 Seek_Error_Rate         -OSR-K   100   253   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    57
+ 10 Spin_Retry_Count        -O--CK   100   253   000    -    0
+ 11 Calibration_Retry_Count -O--CK   100   253   000    -    0
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    3
+192 Power-Off_Retract_Count -O--CK   200   200   000    -    0
+193 Load_Cycle_Count        -O--CK   200   200   000    -    8
+194 Temperature_Celsius     -O---K   102   102   000    -    41
+196 Reallocated_Event_Count -O--CK   200   200   000    -    0
+197 Current_Pending_Sector  -O--CK   200   200   000    -    0
+198 Offline_Uncorrectable   ----CK   100   253   000    -    0
+199 UDMA_CRC_Error_Count    -O--CK   200   200   000    -    0
+200 Multi_Zone_Error_Rate   ---R--   200   200   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      5  Comprehensive SMART error log
+0x03       GPL     R/O      6  Ext. Comprehensive SMART error log
+0x04       GPL     R/O    256  Device Statistics log
+0x04       SL      R/O      8  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x0c       GPL     R/O   2048  Pending Defects log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x24       GPL     R/O    298  Current Device Internal Status Data log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa0-0xa7  GPL,SL  VS      16  Device vendor specific log
+0xa8-0xb6  GPL,SL  VS       1  Device vendor specific log
+0xb7       GPL,SL  VS      74  Device vendor specific log
+0xbd       GPL,SL  VS       1  Device vendor specific log
+0xc0       GPL,SL  VS       1  Device vendor specific log
+0xc1       GPL     VS      93  Device vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (6 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Short offline       Completed without error       00%        56         -
+# 2  Extended offline    Completed without error       00%         4         -
+# 3  Short offline       Completed without error       00%         0         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       258 (0x0102)
+Device State:                        Active (0)
+Current Temperature:                    41 Celsius
+Power Cycle Min/Max Temperature:     20/41 Celsius
+Lifetime    Min/Max Temperature:     20/41 Celsius
+Under/Over Temperature Limit Count:   0/0
+Vendor specific:
+01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/65 Celsius
+Min/Max Temperature Limit:           -41/85 Celsius
+Temperature History Size (Index):    478 (92)
+
+Index    Estimated Time   Temperature Celsius
+  93    2023-04-22 17:20    28  *********
+ ...    ..(114 skipped).    ..  *********
+ 208    2023-04-22 19:15    28  *********
+ 209    2023-04-22 19:16    29  **********
+ ...    ..( 23 skipped).    ..  **********
+ 233    2023-04-22 19:40    29  **********
+ 234    2023-04-22 19:41    28  *********
+ ...    ..( 90 skipped).    ..  *********
+ 325    2023-04-22 21:12    28  *********
+ 326    2023-04-22 21:13     ?  -
+ 327    2023-04-22 21:14    24  *****
+ 328    2023-04-22 21:15    24  *****
+ 329    2023-04-22 21:16    25  ******
+ 330    2023-04-22 21:17    26  *******
+ 331    2023-04-22 21:18    26  *******
+ 332    2023-04-22 21:19    27  ********
+ 333    2023-04-22 21:20    27  ********
+ 334    2023-04-22 21:21    28  *********
+ 335    2023-04-22 21:22    28  *********
+ 336    2023-04-22 21:23    28  *********
+ 337    2023-04-22 21:24    29  **********
+ 338    2023-04-22 21:25    29  **********
+ 339    2023-04-22 21:26    29  **********
+ 340    2023-04-22 21:27    30  ***********
+ 341    2023-04-22 21:28    30  ***********
+ 342    2023-04-22 21:29    31  ************
+ 343    2023-04-22 21:30    31  ************
+ 344    2023-04-22 21:31    31  ************
+ 345    2023-04-22 21:32    32  *************
+ 346    2023-04-22 21:33    32  *************
+ 347    2023-04-22 21:34    32  *************
+ 348    2023-04-22 21:35    33  **************
+ 349    2023-04-22 21:36     ?  -
+ 350    2023-04-22 21:37    33  **************
+ ...    ..(  4 skipped).    ..  **************
+ 355    2023-04-22 21:42    33  **************
+ 356    2023-04-22 21:43    34  ***************
+ ...    ..(  2 skipped).    ..  ***************
+ 359    2023-04-22 21:46    34  ***************
+ 360    2023-04-22 21:47    35  ****************
+ 361    2023-04-22 21:48    35  ****************
+ 362    2023-04-22 21:49    35  ****************
+ 363    2023-04-22 21:50     ?  -
+ 364    2023-04-22 21:51    36  *****************
+ 365    2023-04-22 21:52    36  *****************
+ 366    2023-04-22 21:53    35  ****************
+ 367    2023-04-22 21:54    36  *****************
+ ...    ..(  7 skipped).    ..  *****************
+ 375    2023-04-22 22:02    36  *****************
+ 376    2023-04-22 22:03    37  ******************
+ 377    2023-04-22 22:04    37  ******************
+ 378    2023-04-22 22:05    36  *****************
+ ...    ..(  2 skipped).    ..  *****************
+ 381    2023-04-22 22:08    36  *****************
+ 382    2023-04-22 22:09    35  ****************
+ ...    ..(  2 skipped).    ..  ****************
+ 385    2023-04-22 22:12    35  ****************
+ 386    2023-04-22 22:13    34  ***************
+ ...    ..(  3 skipped).    ..  ***************
+ 390    2023-04-22 22:17    34  ***************
+ 391    2023-04-22 22:18    33  **************
+ ...    ..(  4 skipped).    ..  **************
+ 396    2023-04-22 22:23    33  **************
+ 397    2023-04-22 22:24    32  *************
+ ...    ..(  5 skipped).    ..  *************
+ 403    2023-04-22 22:30    32  *************
+ 404    2023-04-22 22:31    31  ************
+ ...    ..(  7 skipped).    ..  ************
+ 412    2023-04-22 22:39    31  ************
+ 413    2023-04-22 22:40    30  ***********
+ ...    ..( 10 skipped).    ..  ***********
+ 424    2023-04-22 22:51    30  ***********
+ 425    2023-04-22 22:52    29  **********
+ ...    ..(  2 skipped).    ..  **********
+ 428    2023-04-22 22:55    29  **********
+ 429    2023-04-22 22:56     ?  -
+ 430    2023-04-22 22:57    29  **********
+ ...    ..(  2 skipped).    ..  **********
+ 433    2023-04-22 23:00    29  **********
+ 434    2023-04-22 23:01    30  ***********
+ 435    2023-04-22 23:02    30  ***********
+ 436    2023-04-22 23:03    30  ***********
+ 437    2023-04-22 23:04    31  ************
+ ...    ..(  2 skipped).    ..  ************
+ 440    2023-04-22 23:07    31  ************
+ 441    2023-04-22 23:08    32  *************
+ ...    ..(  4 skipped).    ..  *************
+ 446    2023-04-22 23:13    32  *************
+ 447    2023-04-22 23:14    33  **************
+ ...    ..(  3 skipped).    ..  **************
+ 451    2023-04-22 23:18    33  **************
+ 452    2023-04-22 23:19    34  ***************
+ ...    ..(  3 skipped).    ..  ***************
+ 456    2023-04-22 23:23    34  ***************
+ 457    2023-04-22 23:24    35  ****************
+ 458    2023-04-22 23:25    35  ****************
+ 459    2023-04-22 23:26    35  ****************
+ 460    2023-04-22 23:27    34  ***************
+ ...    ..(  2 skipped).    ..  ***************
+ 463    2023-04-22 23:30    34  ***************
+ 464    2023-04-22 23:31    33  **************
+ ...    ..(  4 skipped).    ..  **************
+ 469    2023-04-22 23:36    33  **************
+ 470    2023-04-22 23:37    32  *************
+ 471    2023-04-22 23:38    32  *************
+ 472    2023-04-22 23:39    32  *************
+ 473    2023-04-22 23:40     ?  -
+ 474    2023-04-22 23:41    32  *************
+ ...    ..(  5 skipped).    ..  *************
+   2    2023-04-22 23:47    32  *************
+   3    2023-04-22 23:48    33  **************
+   4    2023-04-22 23:49    33  **************
+   5    2023-04-22 23:50     ?  -
+   6    2023-04-22 23:51    20  *
+   7    2023-04-22 23:52    20  *
+   8    2023-04-22 23:53    20  *
+   9    2023-04-22 23:54    21  **
+  10    2023-04-22 23:55    21  **
+  11    2023-04-22 23:56    22  ***
+  12    2023-04-22 23:57    22  ***
+  13    2023-04-22 23:58    23  ****
+  14    2023-04-22 23:59    23  ****
+  15    2023-04-23 00:00    24  *****
+  16    2023-04-23 00:01    24  *****
+  17    2023-04-23 00:02    25  ******
+  18    2023-04-23 00:03    25  ******
+  19    2023-04-23 00:04    26  *******
+  20    2023-04-23 00:05    26  *******
+  21    2023-04-23 00:06    26  *******
+  22    2023-04-23 00:07    27  ********
+  23    2023-04-23 00:08    27  ********
+  24    2023-04-23 00:09    27  ********
+  25    2023-04-23 00:10    28  *********
+  26    2023-04-23 00:11    28  *********
+  27    2023-04-23 00:12    29  **********
+  28    2023-04-23 00:13    29  **********
+  29    2023-04-23 00:14    29  **********
+  30    2023-04-23 00:15    30  ***********
+ ...    ..(  2 skipped).    ..  ***********
+  33    2023-04-23 00:18    30  ***********
+  34    2023-04-23 00:19    31  ************
+  35    2023-04-23 00:20    31  ************
+  36    2023-04-23 00:21    31  ************
+  37    2023-04-23 00:22    32  *************
+ ...    ..(  3 skipped).    ..  *************
+  41    2023-04-23 00:26    32  *************
+  42    2023-04-23 00:27    33  **************
+ ...    ..(  3 skipped).    ..  **************
+  46    2023-04-23 00:31    33  **************
+  47    2023-04-23 00:32    34  ***************
+ ...    ..(  2 skipped).    ..  ***************
+  50    2023-04-23 00:35    34  ***************
+  51    2023-04-23 00:36    35  ****************
+ ...    ..(  5 skipped).    ..  ****************
+  57    2023-04-23 00:42    35  ****************
+  58    2023-04-23 00:43    36  *****************
+ ...    ..(  5 skipped).    ..  *****************
+  64    2023-04-23 00:49    36  *****************
+  65    2023-04-23 00:50    37  ******************
+  66    2023-04-23 00:51    37  ******************
+  67    2023-04-23 00:52    37  ******************
+  68    2023-04-23 00:53    38  *******************
+ ...    ..(  2 skipped).    ..  *******************
+  71    2023-04-23 00:56    38  *******************
+  72    2023-04-23 00:57    39  ********************
+ ...    ..(  4 skipped).    ..  ********************
+  77    2023-04-23 01:02    39  ********************
+  78    2023-04-23 01:03    40  *********************
+ ...    ..(  5 skipped).    ..  *********************
+  84    2023-04-23 01:09    40  *********************
+  85    2023-04-23 01:10    41  **********************
+ ...    ..(  6 skipped).    ..  **********************
+  92    2023-04-23 01:17    41  **********************
+
+SCT Error Recovery Control:
+           Read:     70 (7.0 seconds)
+          Write:     70 (7.0 seconds)
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4               3  ---  Lifetime Power-On Resets
+0x01  0x010  4              57  ---  Power-on Hours
+0x01  0x018  6      3625976819  ---  Logical Sectors Written
+0x01  0x020  6         5795810  ---  Number of Write Commands
+0x01  0x028  6      1052117661  ---  Logical Sectors Read
+0x01  0x030  6         4192464  ---  Number of Read Commands
+0x01  0x038  6       205200000  ---  Date and Time TimeStamp
+0x03  =====  =               =  ===  == Rotating Media Statistics (rev 1) ==
+0x03  0x008  4              55  ---  Spindle Motor Power-on Hours
+0x03  0x010  4              55  ---  Head Flying Hours
+0x03  0x018  4               8  ---  Head Load Events
+0x03  0x020  4               0  ---  Number of Reallocated Logical Sectors
+0x03  0x028  4               0  ---  Read Recovery Attempts
+0x03  0x030  4               0  ---  Number of Mechanical Start Failures
+0x03  0x038  4               0  ---  Number of Realloc. Candidate Logical Sectors
+0x03  0x040  4               0  ---  Number of High Priority Unload Events
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               0  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              41  ---  Current Temperature
+0x05  0x010  1              28  ---  Average Short Term Temperature
+0x05  0x018  1               -  ---  Average Long Term Temperature
+0x05  0x020  1              41  ---  Highest Temperature
+0x05  0x028  1              24  ---  Lowest Temperature
+0x05  0x030  1              29  ---  Highest Average Short Term Temperature
+0x05  0x038  1              28  ---  Lowest Average Short Term Temperature
+0x05  0x040  1               -  ---  Highest Average Long Term Temperature
+0x05  0x048  1               -  ---  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              65  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1               0  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4              15  ---  Number of Hardware Resets
+0x06  0x010  4               9  ---  Number of ASR Events
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0xff  =====  =               =  ===  == Vendor Specific Statistics (rev 1) ==
+0xff  0x008  7               0  ---  Vendor Specific
+0xff  0x010  7               0  ---  Vendor Specific
+0xff  0x018  7               0  ---  Vendor Specific
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c)
+No Defects Logged
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x0008  2            0  Device-to-host non-data FIS retries
+0x0009  2            2  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  2            4  Device-to-host register FISes sent due to a COMRESET
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x8000  4         5231  Vendor specific
+

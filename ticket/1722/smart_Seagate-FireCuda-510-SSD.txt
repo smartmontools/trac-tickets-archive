@@ -1,0 +1,412 @@
+# smartctl -a /dev/nvme0n1
+smartctl 7.3 2022-02-28 r5338 [x86_64-linux-6.3.0-v6.3] (local build)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Number:                       Seagate FireCuda 510 SSD ZP2000GM30001
+Serial Number:                      XXXXXXXX
+Firmware Version:                   STES1024
+PCI Vendor/Subsystem ID:            0x1bb1
+IEEE OUI Identifier:                0x0024cf
+Total NVM Capacity:                 2.000.398.934.016 [2,00 TB]
+Unallocated NVM Capacity:           0
+Controller ID:                      1
+NVMe Version:                       1.3
+Number of Namespaces:               1
+Namespace 1 Size/Capacity:          2.000.398.934.016 [2,00 TB]
+Namespace 1 Formatted LBA Size:     512
+Namespace 1 IEEE EUI-64:            0024cf 00f400432d
+Local Time is:                      Tue May  2 22:55:52 2023 CEST
+Firmware Updates (0x1e):            7 Slots, no Reset required
+Optional Admin Commands (0x0017):   Security Format Frmw_DL Self_Test
+Optional NVM Commands (0x005d):     Comp DS_Mngmt Wr_Zero Sav/Sel_Feat Timestmp
+Log Page Attributes (0x0c):         Ext_Get_Lg Telmtry_Lg
+Maximum Data Transfer Size:         512 Pages
+Warning  Comp. Temp. Threshold:     70 Celsius
+Critical Comp. Temp. Threshold:     90 Celsius
+
+Supported Power States
+St Op     Max   Active     Idle   RL RT WL WT  Ent_Lat  Ex_Lat
+ 0 +    10.73W       -        -    0  0  0  0        0       0
+ 1 +     7.69W       -        -    1  1  1  1        0       0
+ 2 +     6.18W       -        -    2  2  2  2        0       0
+ 3 -   0.0490W       -        -    3  3  3  3     2000    2000
+ 4 -   0.0018W       -        -    4  4  4  4    25000   25000
+
+Supported LBA Sizes (NSID 0x1)
+Id Fmt  Data  Metadt  Rel_Perf
+ 0 +     512       0         2
+ 1 -    4096       0         1
+
+=== START OF SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+SMART/Health Information (NVMe Log 0x02)
+Critical Warning:                   0x00
+Temperature:                        36 Celsius
+Available Spare:                    100%
+Available Spare Threshold:          5%
+Percentage Used:                    0%
+Data Units Read:                    10.889.990 [5,57 TB]
+Data Units Written:                 17.671.505 [9,04 TB]
+Host Read Commands:                 92.659.185
+Host Write Commands:                156.906.321
+Controller Busy Time:               640
+Power Cycles:                       4.809
+Power On Hours:                     3.257
+Unsafe Shutdowns:                   51
+Media and Data Integrity Errors:    0
+Error Information Log Entries:      345
+Warning  Comp. Temperature Time:    0
+Critical Comp. Temperature Time:    0
+
+Error Information (NVMe Log 0x01, 16 of 63 entries)
+Num   ErrCount  SQId   CmdId  Status  PELoc          LBA  NSID    VS
+  0        345     0  0x1000  0x4004  0x028            0     0     -
+  1        344     0  0xe010  0x4004  0x028            0     0     -
+  2        343     0  0x4012  0x4004  0x028            0     0     -
+  3        342     0  0x8019  0x4004  0x028            0     0     -
+  4        341     0  0x0016  0x4004  0x028            0     0     -
+  5        340     0  0xa014  0x4004  0x028            0     0     -
+  6        339     0  0x6012  0x4004  0x028            0     0     -
+  7        338     0  0x5016  0x4004  0x028            0     0     -
+  8        337     0  0x8008  0x4004  0x028            0     0     -
+  9        336     0  0xc00c  0x4004  0x028            0     0     -
+ 10        335     0  0xa008  0x4004  0x028            0     0     -
+ 11        334     0  0xa010  0x4004  0x028            0     0     -
+ 12        333     0  0x7010  0x4004  0x028            0     0     -
+ 13        332     0  0x0010  0x4004  0x028            0     0     -
+ 14        331     0  0x000e  0x4004      -            0     0     -
+ 15        330     0  0x3013  0x4004  0x028            0     0     -
+... (47 entries not read)
+
+
+
+
+# zgrep --color -Hn smartd /var/log/syslog*
+/var/log/syslog:1559:2023-05-01T16:45:52.427529+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 338 to 340
+/var/log/syslog:2171:2023-05-01T22:39:44.768926+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 340 to 341
+/var/log/syslog:2172:2023-05-01T22:39:44.769220+02:00 myhost smartd[680]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog:2173:2023-05-01T22:39:44.900889+02:00 myhost smartd[680]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog:2776:2023-05-01T23:41:17.677737+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 341 to 342
+/var/log/syslog:3665:2023-05-02T09:28:17.684784+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 342 to 343
+/var/log/syslog:4883:2023-05-02T22:49:46.146278+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 343 to 345
+/var/log/syslog:4884:2023-05-02T22:49:46.146589+02:00 myhost smartd[680]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog:4885:2023-05-02T22:49:46.267066+02:00 myhost smartd[680]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.1:8365:Apr 25 14:04:57 myhost smartd[752]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.23-v6.1.23-4-g9fa16ea135631-00004-g9fa16ea13563] (local build)
+/var/log/syslog.1:8366:Apr 25 14:04:57 myhost smartd[752]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:8370:Apr 25 14:04:57 myhost smartd[752]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:8425:Apr 25 14:04:57 myhost smartd[752]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:8426:Apr 25 14:04:57 myhost smartd[752]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:8429:Apr 25 14:04:57 myhost smartd[752]: Device: /dev/nvme0, opened
+/var/log/syslog.1:8430:Apr 25 14:04:57 myhost smartd[752]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:8431:Apr 25 14:04:57 myhost smartd[752]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:8432:Apr 25 14:04:57 myhost smartd[752]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:8433:Apr 25 14:04:57 myhost smartd[752]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:8434:Apr 25 14:04:57 myhost smartd[752]: Device: /dev/nvme0, number of Error Log entries increased from 321 to 322
+/var/log/syslog.1:8435:Apr 25 14:04:57 myhost smartd[752]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.1:8555:Apr 25 14:04:58 myhost smartd[752]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.1:8556:Apr 25 14:04:58 myhost smartd[752]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:9532:Apr 25 14:10:39 myhost smartd[752]: smartd received signal 15: Terminated
+/var/log/syslog.1:9539:Apr 25 14:10:39 myhost smartd[752]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:9541:Apr 25 14:10:39 myhost smartd[752]: smartd is exiting (exit status 0)
+/var/log/syslog.1:10994:Apr 25 14:11:47 myhost smartd[690]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.3.0-v6.3] (local build)
+/var/log/syslog.1:10995:Apr 25 14:11:47 myhost smartd[690]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:10996:Apr 25 14:11:47 myhost smartd[690]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:10997:Apr 25 14:11:47 myhost smartd[690]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:10998:Apr 25 14:11:47 myhost smartd[690]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:11002:Apr 25 14:11:47 myhost smartd[690]: Device: /dev/nvme0, opened
+/var/log/syslog.1:11012:Apr 25 14:11:47 myhost smartd[690]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:11013:Apr 25 14:11:47 myhost smartd[690]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:11017:Apr 25 14:11:47 myhost smartd[690]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:11018:Apr 25 14:11:47 myhost smartd[690]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:11019:Apr 25 14:11:47 myhost smartd[690]: Device: /dev/nvme0, number of Error Log entries increased from 322 to 324
+/var/log/syslog.1:11020:Apr 25 14:11:47 myhost smartd[690]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:12091:Apr 25 14:14:29 myhost smartd[690]: smartd received signal 15: Terminated
+/var/log/syslog.1:12093:Apr 25 14:14:29 myhost smartd[690]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:12095:Apr 25 14:14:29 myhost smartd[690]: smartd is exiting (exit status 0)
+/var/log/syslog.1:13537:Apr 25 14:15:14 myhost smartd[691]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.26-rc1-v6.1.25-99-ge4ff6ff54dea6-00099-ge4ff6ff54dea] (local build)
+/var/log/syslog.1:13538:Apr 25 14:15:14 myhost smartd[691]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:13539:Apr 25 14:15:14 myhost smartd[691]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:13540:Apr 25 14:15:14 myhost smartd[691]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:13541:Apr 25 14:15:14 myhost smartd[691]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:13543:Apr 25 14:15:14 myhost smartd[691]: Device: /dev/nvme0, opened
+/var/log/syslog.1:13544:Apr 25 14:15:14 myhost smartd[691]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:13547:Apr 25 14:15:14 myhost smartd[691]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:13548:Apr 25 14:15:14 myhost smartd[691]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:13549:Apr 25 14:15:14 myhost smartd[691]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:13550:Apr 25 14:15:14 myhost smartd[691]: Device: /dev/nvme0, number of Error Log entries increased from 324 to 326
+/var/log/syslog.1:13551:Apr 25 14:15:14 myhost smartd[691]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:14625:Apr 25 14:17:20 myhost smartd[691]: smartd received signal 15: Terminated
+/var/log/syslog.1:14629:Apr 25 14:17:20 myhost smartd[691]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:14631:Apr 25 14:17:20 myhost smartd[691]: smartd is exiting (exit status 0)
+/var/log/syslog.1:16188:Apr 25 14:17:56 myhost smartd[729]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-21-amd64] (local build)
+/var/log/syslog.1:16189:Apr 25 14:17:56 myhost smartd[729]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:16190:Apr 25 14:17:56 myhost smartd[729]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:16191:Apr 25 14:17:56 myhost smartd[729]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:16192:Apr 25 14:17:56 myhost smartd[729]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:16193:Apr 25 14:17:56 myhost smartd[729]: Device: /dev/nvme0, opened
+/var/log/syslog.1:16194:Apr 25 14:17:56 myhost smartd[729]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:16195:Apr 25 14:17:56 myhost smartd[729]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:16196:Apr 25 14:17:56 myhost smartd[729]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:16197:Apr 25 14:17:56 myhost smartd[729]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:16201:Apr 25 14:17:56 myhost smartd[729]: Device: /dev/nvme0, number of Error Log entries increased from 326 to 327
+/var/log/syslog.1:16203:Apr 25 14:17:56 myhost smartd[729]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:26834:Apr 28 15:22:35 myhost smartd[729]: smartd received signal 15: Terminated
+/var/log/syslog.1:26835:Apr 28 15:22:35 myhost smartd[729]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:26836:Apr 28 15:22:35 myhost smartd[729]: smartd is exiting (exit status 0)
+/var/log/syslog.1:26840:Apr 28 15:22:35 myhost smartd[179958]: smartd 7.3 2022-02-28 r5338 [x86_64-linux-5.10.0-21-amd64] (local build)
+/var/log/syslog.1:26841:Apr 28 15:22:35 myhost smartd[179958]: Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:26842:Apr 28 15:22:35 myhost smartd[179958]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:26843:Apr 28 15:22:35 myhost smartd[179958]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:26844:Apr 28 15:22:35 myhost smartd[179958]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:26845:Apr 28 15:22:35 myhost smartd[179958]: Device: /dev/nvme0, opened
+/var/log/syslog.1:26846:Apr 28 15:22:35 myhost smartd[179958]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:26847:Apr 28 15:22:35 myhost smartd[179958]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:26848:Apr 28 15:22:35 myhost smartd[179958]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:26849:Apr 28 15:22:35 myhost smartd[179958]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:26850:Apr 28 15:22:35 myhost smartd[179958]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:29298:2023-04-28T15:53:51.152543+02:00 myhost smartd[681]: smartd 7.3 2022-02-28 r5338 [x86_64-linux-6.3.0-v6.3] (local build)
+/var/log/syslog.1:29299:2023-04-28T15:53:51.152696+02:00 myhost smartd[681]: Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:29300:2023-04-28T15:53:51.152772+02:00 myhost smartd[681]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:29301:2023-04-28T15:53:51.154071+02:00 myhost smartd[681]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:29302:2023-04-28T15:53:51.154253+02:00 myhost smartd[681]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:29303:2023-04-28T15:53:51.154324+02:00 myhost smartd[681]: Device: /dev/nvme0, opened
+/var/log/syslog.1:29305:2023-04-28T15:53:51.155015+02:00 myhost smartd[681]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:29331:2023-04-28T15:53:51.156718+02:00 myhost smartd[681]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:29332:2023-04-28T15:53:51.156791+02:00 myhost smartd[681]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:29333:2023-04-28T15:53:51.156862+02:00 myhost smartd[681]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:29335:2023-04-28T15:53:51.157523+02:00 myhost smartd[681]: Device: /dev/nvme0, number of Error Log entries increased from 327 to 328
+/var/log/syslog.1:29336:2023-04-28T15:53:51.157635+02:00 myhost smartd[681]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.1:29486:2023-04-28T15:53:51.484678+02:00 myhost smartd[681]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.1:29487:2023-04-28T15:53:51.484987+02:00 myhost smartd[681]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:32326:2023-04-28T16:03:16.559481+02:00 myhost smartd[680]: smartd 7.3 2022-02-28 r5338 [x86_64-linux-6.3.0-v6.3] (local build)
+/var/log/syslog.1:32327:2023-04-28T16:03:16.559763+02:00 myhost smartd[680]: Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:32329:2023-04-28T16:03:16.561273+02:00 myhost smartd[680]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:32330:2023-04-28T16:03:16.562385+02:00 myhost smartd[680]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:32331:2023-04-28T16:03:16.562647+02:00 myhost smartd[680]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:32334:2023-04-28T16:03:16.565049+02:00 myhost smartd[680]: Device: /dev/nvme0, opened
+/var/log/syslog.1:32338:2023-04-28T16:03:16.565355+02:00 myhost smartd[680]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:32340:2023-04-28T16:03:16.566070+02:00 myhost smartd[680]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:32341:2023-04-28T16:03:16.566752+02:00 myhost smartd[680]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:32342:2023-04-28T16:03:16.566910+02:00 myhost smartd[680]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:32343:2023-04-28T16:03:16.567761+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 328 to 330
+/var/log/syslog.1:32344:2023-04-28T16:03:16.568678+02:00 myhost smartd[680]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:35862:2023-04-28T17:34:35.531914+02:00 myhost smartd[680]: smartd 7.3 2022-02-28 r5338 [x86_64-linux-6.3.0-v6.3] (local build)
+/var/log/syslog.1:35863:2023-04-28T17:34:35.532057+02:00 myhost smartd[680]: Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.1:35864:2023-04-28T17:34:35.532176+02:00 myhost smartd[680]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.1:35865:2023-04-28T17:34:35.532789+02:00 myhost smartd[680]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.1:35866:2023-04-28T17:34:35.532958+02:00 myhost smartd[680]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.1:35867:2023-04-28T17:34:35.533891+02:00 myhost smartd[680]: Device: /dev/nvme0, opened
+/var/log/syslog.1:35869:2023-04-28T17:34:35.534581+02:00 myhost smartd[680]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.1:35870:2023-04-28T17:34:35.535909+02:00 myhost smartd[680]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.1:35872:2023-04-28T17:34:35.537508+02:00 myhost smartd[680]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:35873:2023-04-28T17:34:35.537913+02:00 myhost smartd[680]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.1:35874:2023-04-28T17:34:35.538376+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 330 to 332
+/var/log/syslog.1:35875:2023-04-28T17:34:35.539099+02:00 myhost smartd[680]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.1:39622:2023-04-28T19:04:35.791891+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 332 to 334
+/var/log/syslog.1:44601:2023-04-29T02:13:21.036267+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 334 to 335
+/var/log/syslog.1:47853:2023-04-29T14:21:47.551629+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 335 to 336
+/var/log/syslog.1:49495:2023-04-30T21:46:36.296726+02:00 myhost smartd[680]: Device: /dev/nvme0, number of Error Log entries increased from 336 to 338
+/var/log/syslog.1:49496:2023-04-30T21:46:36.297111+02:00 myhost smartd[680]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.1:49497:2023-04-30T21:46:36.515798+02:00 myhost smartd[680]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.3.gz:7079:Apr 11 10:20:16 myhost smartd[686]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.22-v6.1.22-3-g95f7af2065d9-00003-g95f7af2065d9] (local build)
+/var/log/syslog.3.gz:7080:Apr 11 10:20:16 myhost smartd[686]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.3.gz:7081:Apr 11 10:20:16 myhost smartd[686]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.3.gz:7082:Apr 11 10:20:16 myhost smartd[686]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.3.gz:7083:Apr 11 10:20:16 myhost smartd[686]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.3.gz:7084:Apr 11 10:20:16 myhost smartd[686]: Device: /dev/nvme0, opened
+/var/log/syslog.3.gz:7085:Apr 11 10:20:16 myhost smartd[686]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.3.gz:7088:Apr 11 10:20:16 myhost smartd[686]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.3.gz:7089:Apr 11 10:20:16 myhost smartd[686]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:7090:Apr 11 10:20:16 myhost smartd[686]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.3.gz:7091:Apr 11 10:20:16 myhost smartd[686]: Device: /dev/nvme0, number of Error Log entries increased from 301 to 302
+/var/log/syslog.3.gz:7092:Apr 11 10:20:16 myhost smartd[686]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.3.gz:7214:Apr 11 10:20:17 myhost smartd[686]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.3.gz:7215:Apr 11 10:20:17 myhost smartd[686]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:9606:Apr 11 10:24:07 myhost smartd[686]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.23-rc3-v6.1.22-178-gf8a7fa4a96bb-00178-gf8a7fa4a96bb] (local build)
+/var/log/syslog.3.gz:9608:Apr 11 10:24:07 myhost smartd[686]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.3.gz:9609:Apr 11 10:24:07 myhost smartd[686]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.3.gz:9611:Apr 11 10:24:07 myhost smartd[686]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.3.gz:9612:Apr 11 10:24:07 myhost smartd[686]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.3.gz:9613:Apr 11 10:24:07 myhost smartd[686]: Device: /dev/nvme0, opened
+/var/log/syslog.3.gz:9614:Apr 11 10:24:07 myhost smartd[686]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.3.gz:9616:Apr 11 10:24:07 myhost smartd[686]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.3.gz:9617:Apr 11 10:24:07 myhost smartd[686]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:9618:Apr 11 10:24:07 myhost smartd[686]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.3.gz:9620:Apr 11 10:24:07 myhost smartd[686]: Device: /dev/nvme0, number of Error Log entries increased from 302 to 304
+/var/log/syslog.3.gz:9621:Apr 11 10:24:07 myhost smartd[686]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:11882:Apr 11 10:54:54 myhost smartd[743]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.23-rc3-v6.1.22-178-gf8a7fa4a96bb-00178-gf8a7fa4a96bb] (local build)
+/var/log/syslog.3.gz:11883:Apr 11 10:54:54 myhost smartd[743]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.3.gz:11885:Apr 11 10:54:54 myhost smartd[743]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.3.gz:11886:Apr 11 10:54:54 myhost smartd[743]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.3.gz:11887:Apr 11 10:54:54 myhost smartd[743]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.3.gz:11889:Apr 11 10:54:54 myhost smartd[743]: Device: /dev/nvme0, opened
+/var/log/syslog.3.gz:11890:Apr 11 10:54:54 myhost smartd[743]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.3.gz:11891:Apr 11 10:54:54 myhost smartd[743]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.3.gz:11892:Apr 11 10:54:54 myhost smartd[743]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:11893:Apr 11 10:54:54 myhost smartd[743]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.3.gz:11894:Apr 11 10:54:54 myhost smartd[743]: Device: /dev/nvme0, number of Error Log entries increased from 304 to 308
+/var/log/syslog.3.gz:11895:Apr 11 10:54:54 myhost smartd[743]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:13986:Apr 11 11:23:49 myhost smartd[753]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.23-rc3-v6.1.22-178-gf8a7fa4a96bb-00178-gf8a7fa4a96bb] (local build)
+/var/log/syslog.3.gz:13987:Apr 11 11:23:49 myhost smartd[753]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.3.gz:13988:Apr 11 11:23:49 myhost smartd[753]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.3.gz:13989:Apr 11 11:23:49 myhost smartd[753]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.3.gz:13991:Apr 11 11:23:49 myhost smartd[753]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.3.gz:13992:Apr 11 11:23:49 myhost smartd[753]: Device: /dev/nvme0, opened
+/var/log/syslog.3.gz:13993:Apr 11 11:23:49 myhost smartd[753]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.3.gz:13994:Apr 11 11:23:49 myhost smartd[753]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.3.gz:13995:Apr 11 11:23:49 myhost smartd[753]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:13996:Apr 11 11:23:49 myhost smartd[753]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.3.gz:14023:Apr 11 11:23:49 myhost smartd[753]: Device: /dev/nvme0, number of Error Log entries increased from 308 to 320
+/var/log/syslog.3.gz:14024:Apr 11 11:23:49 myhost smartd[753]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:15712:Apr 11 11:32:27 myhost smartd[728]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-21-amd64] (local build)
+/var/log/syslog.3.gz:15717:Apr 11 11:32:27 myhost smartd[728]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.3.gz:15718:Apr 11 11:32:27 myhost smartd[728]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.3.gz:15720:Apr 11 11:32:27 myhost smartd[728]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.3.gz:15721:Apr 11 11:32:27 myhost smartd[728]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.3.gz:15741:Apr 11 11:32:27 myhost smartd[728]: Device: /dev/nvme0, opened
+/var/log/syslog.3.gz:16284:Apr 11 11:32:27 myhost smartd[728]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.3.gz:16536:Apr 11 11:32:27 myhost smartd[728]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.3.gz:16537:Apr 11 11:32:27 myhost smartd[728]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.3.gz:16538:Apr 11 11:32:27 myhost smartd[728]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.3.gz:16539:Apr 11 11:32:27 myhost smartd[728]: Device: /dev/nvme0, number of Error Log entries increased from 320 to 321
+/var/log/syslog.3.gz:16542:Apr 11 11:32:27 myhost smartd[728]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:6191:Apr  3 17:34:29 myhost smartd[796]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-21-amd64] (local build)
+/var/log/syslog.4.gz:6192:Apr  3 17:34:29 myhost smartd[796]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.4.gz:6193:Apr  3 17:34:29 myhost smartd[796]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.4.gz:6194:Apr  3 17:34:29 myhost smartd[796]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.4.gz:6195:Apr  3 17:34:29 myhost smartd[796]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.4.gz:6196:Apr  3 17:34:29 myhost smartd[796]: Device: /dev/nvme0, opened
+/var/log/syslog.4.gz:6197:Apr  3 17:34:29 myhost smartd[796]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.4.gz:6200:Apr  3 17:34:29 myhost smartd[796]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.4.gz:6202:Apr  3 17:34:29 myhost smartd[796]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:6204:Apr  3 17:34:29 myhost smartd[796]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.4.gz:6205:Apr  3 17:34:29 myhost smartd[796]: Device: /dev/nvme0, number of Error Log entries increased from 272 to 287
+/var/log/syslog.4.gz:6206:Apr  3 17:34:29 myhost smartd[796]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.4.gz:6359:Apr  3 17:34:30 myhost smartd[796]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.4.gz:6360:Apr  3 17:34:30 myhost smartd[796]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:19369:Apr  6 09:29:27 myhost smartd[746]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.20-v6.1.20] (local build)
+/var/log/syslog.4.gz:19370:Apr  6 09:29:27 myhost smartd[746]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.4.gz:19371:Apr  6 09:29:27 myhost smartd[746]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.4.gz:19372:Apr  6 09:29:27 myhost smartd[746]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.4.gz:19374:Apr  6 09:29:27 myhost smartd[746]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.4.gz:19375:Apr  6 09:29:27 myhost smartd[746]: Device: /dev/nvme0, opened
+/var/log/syslog.4.gz:19376:Apr  6 09:29:27 myhost smartd[746]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.4.gz:19377:Apr  6 09:29:27 myhost smartd[746]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.4.gz:19379:Apr  6 09:29:28 myhost smartd[746]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:19381:Apr  6 09:29:28 myhost smartd[746]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.4.gz:19382:Apr  6 09:29:28 myhost smartd[746]: Device: /dev/nvme0, number of Error Log entries increased from 287 to 288
+/var/log/syslog.4.gz:19383:Apr  6 09:29:28 myhost smartd[746]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.4.gz:19528:Apr  6 09:29:28 myhost smartd[746]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.4.gz:19529:Apr  6 09:29:28 myhost smartd[746]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:22631:Apr  6 09:41:50 myhost smartd[742]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-6.1.22-v6.1.22-3-g95f7af2065d9-00003-g95f7af2065d9] (local build)
+/var/log/syslog.4.gz:22632:Apr  6 09:41:50 myhost smartd[742]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.4.gz:22634:Apr  6 09:41:50 myhost smartd[742]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.4.gz:22636:Apr  6 09:41:50 myhost smartd[742]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.4.gz:22637:Apr  6 09:41:50 myhost smartd[742]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.4.gz:22638:Apr  6 09:41:50 myhost smartd[742]: Device: /dev/nvme0, opened
+/var/log/syslog.4.gz:22639:Apr  6 09:41:50 myhost smartd[742]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.4.gz:22640:Apr  6 09:41:50 myhost smartd[742]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.4.gz:22641:Apr  6 09:41:50 myhost smartd[742]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:22642:Apr  6 09:41:50 myhost smartd[742]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.4.gz:22643:Apr  6 09:41:50 myhost smartd[742]: Device: /dev/nvme0, number of Error Log entries increased from 288 to 292
+/var/log/syslog.4.gz:22644:Apr  6 09:41:50 myhost smartd[742]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:24592:Apr  6 09:46:03 myhost smartd[742]: smartd received signal 15: Terminated
+/var/log/syslog.4.gz:24596:Apr  6 09:46:03 myhost smartd[742]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:24598:Apr  6 09:46:03 myhost smartd[742]: smartd is exiting (exit status 0)
+/var/log/syslog.4.gz:25168:Apr  6 09:47:00 myhost smartd[720]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-21-amd64] (local build)
+/var/log/syslog.4.gz:25169:Apr  6 09:47:00 myhost smartd[720]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.4.gz:25170:Apr  6 09:47:00 myhost smartd[720]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.4.gz:25171:Apr  6 09:47:00 myhost smartd[720]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.4.gz:25172:Apr  6 09:47:00 myhost smartd[720]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.4.gz:25175:Apr  6 09:47:00 myhost smartd[720]: Device: /dev/nvme0, opened
+/var/log/syslog.4.gz:25177:Apr  6 09:47:00 myhost smartd[720]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.4.gz:25178:Apr  6 09:47:00 myhost smartd[720]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.4.gz:25179:Apr  6 09:47:00 myhost smartd[720]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:25180:Apr  6 09:47:00 myhost smartd[720]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.4.gz:25181:Apr  6 09:47:00 myhost smartd[720]: Device: /dev/nvme0, number of Error Log entries increased from 292 to 297
+/var/log/syslog.4.gz:25182:Apr  6 09:47:00 myhost smartd[720]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:34894:Apr  8 22:47:44 myhost smartd[845]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-21-amd64] (local build)
+/var/log/syslog.4.gz:34895:Apr  8 22:47:44 myhost smartd[845]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.4.gz:34897:Apr  8 22:47:44 myhost smartd[845]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.4.gz:34898:Apr  8 22:47:44 myhost smartd[845]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.4.gz:34899:Apr  8 22:47:44 myhost smartd[845]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.4.gz:34900:Apr  8 22:47:44 myhost smartd[845]: Device: /dev/nvme0, opened
+/var/log/syslog.4.gz:34901:Apr  8 22:47:44 myhost smartd[845]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.4.gz:34902:Apr  8 22:47:44 myhost smartd[845]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.4.gz:34903:Apr  8 22:47:44 myhost smartd[845]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.4.gz:34904:Apr  8 22:47:44 myhost smartd[845]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.4.gz:34906:Apr  8 22:47:44 myhost smartd[845]: Device: /dev/nvme0, number of Error Log entries increased from 297 to 301
+/var/log/syslog.4.gz:34907:Apr  8 22:47:44 myhost smartd[845]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.4.gz:35055:Apr  8 22:47:45 myhost smartd[845]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.4.gz:35056:Apr  8 22:47:45 myhost smartd[845]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:2593:Feb 26 19:27:42 myhost smartd[698]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.8.18-custom] (local build)
+/var/log/syslog.6.gz:2594:Feb 26 19:27:42 myhost smartd[698]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.6.gz:2595:Feb 26 19:27:42 myhost smartd[698]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.6.gz:2596:Feb 26 19:27:42 myhost smartd[698]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.6.gz:2597:Feb 26 19:27:42 myhost smartd[698]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.6.gz:2598:Feb 26 19:27:42 myhost smartd[698]: Device: /dev/nvme0, opened
+/var/log/syslog.6.gz:2599:Feb 26 19:27:42 myhost smartd[698]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.6.gz:2600:Feb 26 19:27:42 myhost smartd[698]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.6.gz:2601:Feb 26 19:27:42 myhost smartd[698]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:2602:Feb 26 19:27:42 myhost smartd[698]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.6.gz:2603:Feb 26 19:27:42 myhost smartd[698]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:7480:Feb 26 19:41:35 myhost smartd[719]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-3-amd64] (local build)
+/var/log/syslog.6.gz:7481:Feb 26 19:41:35 myhost smartd[719]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.6.gz:7482:Feb 26 19:41:35 myhost smartd[719]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.6.gz:7483:Feb 26 19:41:35 myhost smartd[719]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.6.gz:7484:Feb 26 19:41:35 myhost smartd[719]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.6.gz:7487:Feb 26 19:41:35 myhost smartd[719]: Device: /dev/nvme0, opened
+/var/log/syslog.6.gz:7488:Feb 26 19:41:35 myhost smartd[719]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.6.gz:7491:Feb 26 19:41:35 myhost smartd[719]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.6.gz:7503:Feb 26 19:41:35 myhost smartd[719]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:7504:Feb 26 19:41:35 myhost smartd[719]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.6.gz:7506:Feb 26 19:41:35 myhost smartd[719]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:12629:Feb 26 20:05:18 myhost smartd[747]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.8.18-custom] (local build)
+/var/log/syslog.6.gz:12630:Feb 26 20:05:18 myhost smartd[747]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.6.gz:12631:Feb 26 20:05:18 myhost smartd[747]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.6.gz:12632:Feb 26 20:05:18 myhost smartd[747]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.6.gz:12633:Feb 26 20:05:18 myhost smartd[747]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.6.gz:12634:Feb 26 20:05:18 myhost smartd[747]: Device: /dev/nvme0, opened
+/var/log/syslog.6.gz:12635:Feb 26 20:05:18 myhost smartd[747]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.6.gz:12636:Feb 26 20:05:18 myhost smartd[747]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.6.gz:12637:Feb 26 20:05:18 myhost smartd[747]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:12638:Feb 26 20:05:18 myhost smartd[747]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.6.gz:12639:Feb 26 20:05:18 myhost smartd[747]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:20968:Feb 26 20:19:11 myhost smartd[682]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.9.0-4-amd64] (local build)
+/var/log/syslog.6.gz:20969:Feb 26 20:19:11 myhost smartd[682]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.6.gz:20970:Feb 26 20:19:11 myhost smartd[682]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.6.gz:20971:Feb 26 20:19:11 myhost smartd[682]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.6.gz:20972:Feb 26 20:19:11 myhost smartd[682]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.6.gz:20973:Feb 26 20:19:11 myhost smartd[682]: Device: /dev/nvme0, opened
+/var/log/syslog.6.gz:21003:Feb 26 20:19:11 myhost smartd[682]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.6.gz:21004:Feb 26 20:19:11 myhost smartd[682]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.6.gz:21005:Feb 26 20:19:11 myhost smartd[682]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:21006:Feb 26 20:19:11 myhost smartd[682]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.6.gz:21009:Feb 26 20:19:11 myhost smartd[682]: Device: /dev/nvme0, number of Error Log entries increased from 34 to 35
+/var/log/syslog.6.gz:21011:Feb 26 20:19:11 myhost smartd[682]: Sending warning via /usr/share/smartmontools/smartd-runner to root ...
+/var/log/syslog.6.gz:21133:Feb 26 20:19:11 myhost smartd[682]: Warning via /usr/share/smartmontools/smartd-runner to root: successful
+/var/log/syslog.6.gz:21134:Feb 26 20:19:11 myhost smartd[682]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:26234:Feb 26 20:27:04 myhost smartd[701]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.10.0-3-amd64] (local build)
+/var/log/syslog.6.gz:26235:Feb 26 20:27:04 myhost smartd[701]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.6.gz:26236:Feb 26 20:27:04 myhost smartd[701]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.6.gz:26237:Feb 26 20:27:04 myhost smartd[701]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.6.gz:26238:Feb 26 20:27:04 myhost smartd[701]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.6.gz:26239:Feb 26 20:27:04 myhost smartd[701]: Device: /dev/nvme0, opened
+/var/log/syslog.6.gz:26240:Feb 26 20:27:04 myhost smartd[701]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.6.gz:26241:Feb 26 20:27:04 myhost smartd[701]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.6.gz:26242:Feb 26 20:27:04 myhost smartd[701]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:26243:Feb 26 20:27:04 myhost smartd[701]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.6.gz:26244:Feb 26 20:27:04 myhost smartd[701]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:33078:Feb 26 21:42:43 myhost smartd[699]: smartd 7.2 2020-12-30 r5155 [x86_64-linux-5.8.18-custom] (local build)
+/var/log/syslog.6.gz:33079:Feb 26 21:42:43 myhost smartd[699]: Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+/var/log/syslog.6.gz:33080:Feb 26 21:42:43 myhost smartd[699]: Opened configuration file /etc/smartd.conf
+/var/log/syslog.6.gz:33081:Feb 26 21:42:43 myhost smartd[699]: Drive: DEVICESCAN, implied '-a' Directive on line 21 of file /etc/smartd.conf
+/var/log/syslog.6.gz:33082:Feb 26 21:42:43 myhost smartd[699]: Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+/var/log/syslog.6.gz:33083:Feb 26 21:42:43 myhost smartd[699]: Device: /dev/nvme0, opened
+/var/log/syslog.6.gz:33084:Feb 26 21:42:43 myhost smartd[699]: Device: /dev/nvme0, Seagate FireCuda 510 SSD ZP2000GM30001, S/N:XXXXXXXX, FW:STES1024, 2.00 TB
+/var/log/syslog.6.gz:33085:Feb 26 21:42:43 myhost smartd[699]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+/var/log/syslog.6.gz:33086:Feb 26 21:42:43 myhost smartd[699]: Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
+/var/log/syslog.6.gz:33087:Feb 26 21:42:43 myhost smartd[699]: Monitoring 0 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+/var/log/syslog.6.gz:33088:Feb 26 21:42:43 myhost smartd[699]: Device: /dev/nvme0, state written to /var/lib/smartmontools/smartd.Seagate_FireCuda_510_SSD_ZP2000GM30001-XXXXXXXX.nvme.state
