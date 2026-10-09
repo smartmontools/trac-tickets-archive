@@ -1,0 +1,302 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.11.0-21-generic] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     SSSTC ER4-CD7680A
+Serial Number:    [No Information Found]
+LU WWN Device Id: 0 000000 000000000
+Firmware Version: G62RD14
+User Capacity:    7,681,501,126,656 bytes [7.68 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+TRIM Command:     Available, deterministic
+Device is:        Not in smartctl database
+ATA Version is:   ACS-4 T13/BSR INCITS 529 revision 5
+SATA Version is:  SATA 3.2, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Thu Apr 24 10:01:34 2025 CST
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, frozen [SEC2]
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x15) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Abort Offline collection upon new
+					command.
+					No Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  70) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  5 Reallocated_Sector_Ct   -O--CK   100   100   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    306
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    3
+100 Unknown_Attribute       -O--CK   000   005   000    -    23
+171 Unknown_Attribute       -O--CK   100   100   000    -    0
+172 Unknown_Attribute       -O--CK   100   100   000    -    0
+173 Unknown_Attribute       -O--CK   100   100   000    -    20
+174 Unknown_Attribute       -O--CK   100   100   000    -    2
+175 Program_Fail_Count_Chip -O--CK   100   100   000    -    0
+176 Erase_Fail_Count_Chip   -O--CK   100   100   000    -    0
+177 Wear_Leveling_Count     -O--CK   100   100   000    -    13182
+178 Used_Rsvd_Blk_Cnt_Chip  -O--CK   100   100   000    -    0
+179 Used_Rsvd_Blk_Cnt_Tot   -O--CK   100   100   000    -    0
+180 Unused_Rsvd_Blk_Cnt_Tot -O--CK   100   100   000    -    47545
+183 Runtime_Bad_Block       -O--CK   100   100   000    -    0
+184 End-to-End_Error        -O--CK   100   100   000    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+188 Command_Timeout         -O--CK   100   100   000    -    0
+194 Temperature_Celsius     -O---K   100   100   000    -    43
+195 Hardware_ECC_Recovered  -OSRCK   100   100   000    -    0
+198 Offline_Uncorrectable   -O--CK   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   100   100   000    -    0
+229 Unknown_Attribute       PO--CK   100   100   001    -    256638976
+231 Unknown_SSD_Attribute   PO--CK   100   100   005    -    13182
+232 Available_Reservd_Space PO--CK   100   100   010    -    2499805330
+241 Total_LBAs_Written      -O--CK   100   100   000    -    5973937
+242 Total_LBAs_Read         -O--CK   100   100   000    -    5383427
+243 Unknown_Attribute       -O--CK   100   100   000    -    6061660
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O      2  Comprehensive SMART error log
+0x03       GPL     R/O      1  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      6  Device Statistics log
+0x06           SL  R/O      1  SMART self-test log
+0x07       GPL     R/O      1  Extended self-test log
+0x09           SL  R/W      1  Selective self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x61       GPL     R/O      1  Capacity/Model Number Mapping log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+0xe3       GPL,SL  -        1  Reserved
+
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (1 sectors)
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+Selective Self-tests/Logging not supported
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+Device State:                        Active (0)
+Current Temperature:                    43 Celsius
+Power Cycle Min/Max Temperature:     67/18 Celsius
+Lifetime    Min/Max Temperature:     67/18 Celsius
+Under/Over Temperature Limit Count:   0/0
+SMART Status:                        0xc24f (PASSED)
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:      0/100 Celsius
+Min/Max Temperature Limit:            0/100 Celsius
+Temperature History Size (Index):    128 (89)
+
+Index    Estimated Time   Temperature Celsius
+  90    2025-04-24 07:54    48  *****************************
+  91    2025-04-24 07:55    47  ****************************
+  92    2025-04-24 07:56    48  *****************************
+ ...    ..(  2 skipped).    ..  *****************************
+  95    2025-04-24 07:59    48  *****************************
+  96    2025-04-24 08:00    47  ****************************
+  97    2025-04-24 08:01    48  *****************************
+  98    2025-04-24 08:02    49  ******************************
+  99    2025-04-24 08:03    48  *****************************
+ 100    2025-04-24 08:04    48  *****************************
+ 101    2025-04-24 08:05    47  ****************************
+ 102    2025-04-24 08:06    48  *****************************
+ 103    2025-04-24 08:07    48  *****************************
+ 104    2025-04-24 08:08    48  *****************************
+ 105    2025-04-24 08:09    47  ****************************
+ 106    2025-04-24 08:10    46  ***************************
+ 107    2025-04-24 08:11    47  ****************************
+ 108    2025-04-24 08:12    48  *****************************
+ 109    2025-04-24 08:13    47  ****************************
+ 110    2025-04-24 08:14    47  ****************************
+ 111    2025-04-24 08:15    45  **************************
+ 112    2025-04-24 08:16    47  ****************************
+ ...    ..(  3 skipped).    ..  ****************************
+ 116    2025-04-24 08:20    47  ****************************
+ 117    2025-04-24 08:21    48  *****************************
+ 118    2025-04-24 08:22    48  *****************************
+ 119    2025-04-24 08:23    47  ****************************
+ 120    2025-04-24 08:24    46  ***************************
+ 121    2025-04-24 08:25    47  ****************************
+ 122    2025-04-24 08:26    48  *****************************
+ 123    2025-04-24 08:27    47  ****************************
+ 124    2025-04-24 08:28    47  ****************************
+ 125    2025-04-24 08:29    46  ***************************
+ 126    2025-04-24 08:30    47  ****************************
+ ...    ..(  4 skipped).    ..  ****************************
+   3    2025-04-24 08:35    47  ****************************
+   4    2025-04-24 08:36    48  *****************************
+   5    2025-04-24 08:37    47  ****************************
+   6    2025-04-24 08:38    47  ****************************
+   7    2025-04-24 08:39    47  ****************************
+   8    2025-04-24 08:40    48  *****************************
+   9    2025-04-24 08:41    47  ****************************
+ ...    ..(  4 skipped).    ..  ****************************
+  14    2025-04-24 08:46    47  ****************************
+  15    2025-04-24 08:47    46  ***************************
+  16    2025-04-24 08:48    46  ***************************
+  17    2025-04-24 08:49    47  ****************************
+  18    2025-04-24 08:50    47  ****************************
+  19    2025-04-24 08:51    46  ***************************
+  20    2025-04-24 08:52    45  **************************
+  21    2025-04-24 08:53    45  **************************
+  22    2025-04-24 08:54    46  ***************************
+  23    2025-04-24 08:55    47  ****************************
+  24    2025-04-24 08:56    46  ***************************
+  25    2025-04-24 08:57    46  ***************************
+  26    2025-04-24 08:58    45  **************************
+  27    2025-04-24 08:59    46  ***************************
+  28    2025-04-24 09:00    46  ***************************
+  29    2025-04-24 09:01    46  ***************************
+  30    2025-04-24 09:02    45  **************************
+  31    2025-04-24 09:03    46  ***************************
+ ...    ..(  2 skipped).    ..  ***************************
+  34    2025-04-24 09:06    46  ***************************
+  35    2025-04-24 09:07    45  **************************
+  36    2025-04-24 09:08    46  ***************************
+  37    2025-04-24 09:09    46  ***************************
+  38    2025-04-24 09:10    46  ***************************
+  39    2025-04-24 09:11    45  **************************
+  40    2025-04-24 09:12    45  **************************
+  41    2025-04-24 09:13    46  ***************************
+  42    2025-04-24 09:14    46  ***************************
+  43    2025-04-24 09:15    46  ***************************
+  44    2025-04-24 09:16    45  **************************
+  45    2025-04-24 09:17    45  **************************
+  46    2025-04-24 09:18    46  ***************************
+  47    2025-04-24 09:19    44  *************************
+  48    2025-04-24 09:20    43  ************************
+  49    2025-04-24 09:21    42  ***********************
+  50    2025-04-24 09:22    41  **********************
+  51    2025-04-24 09:23    40  *********************
+  52    2025-04-24 09:24    40  *********************
+  53    2025-04-24 09:25    40  *********************
+  54    2025-04-24 09:26    39  ********************
+ ...    ..(  3 skipped).    ..  ********************
+  58    2025-04-24 09:30    39  ********************
+  59    2025-04-24 09:31    38  *******************
+  60    2025-04-24 09:32    38  *******************
+  61    2025-04-24 09:33     ?  -
+  62    2025-04-24 09:34    37  ******************
+  63    2025-04-24 09:35    39  ********************
+  64    2025-04-24 09:36    40  *********************
+  65    2025-04-24 09:37    40  *********************
+  66    2025-04-24 09:38    41  **********************
+  67    2025-04-24 09:39    41  **********************
+  68    2025-04-24 09:40    41  **********************
+  69    2025-04-24 09:41    42  ***********************
+ ...    ..(  4 skipped).    ..  ***********************
+  74    2025-04-24 09:46    42  ***********************
+  75    2025-04-24 09:47    43  ************************
+ ...    ..( 13 skipped).    ..  ************************
+  89    2025-04-24 10:01    43  ************************
+
+Write SCT (Get) Error Recovery Control Command failed: scsi error badly formed scsi parameters
+SCT (Get) Error Recovery Control command failed
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4               3  ---  Lifetime Power-On Resets
+0x01  0x010  4             306  ---  Power-on Hours
+0x01  0x018  6    391507949700  ---  Logical Sectors Written
+0x01  0x020  6      3501921514  ---  Number of Write Commands
+0x01  0x028  6    352808330193  ---  Logical Sectors Read
+0x01  0x030  6      3339817081  ---  Number of Read Commands
+0x01  0x1f8  7               0  ---+ Unknown
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4               0  ---  Resets Between Cmd Acceptance and Completion
+0x04  0x018  4               0  ---  Physical Element Status Changed
+0x04  0x1f8  7               -  NDC+ Unknown
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              31  ---  Current Temperature
+0x05  0x020  1               0  ---  Highest Temperature
+0x05  0x028  1               0  ---  Lowest Temperature
+0x05  0x038  1               0  ---  Lowest Average Short Term Temperature
+0x05  0x058  1              70  ---  Specified Maximum Operating Temperature
+0x05  0x1f8  7               0  -D-+ Unknown
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4               0  ---  Number of Hardware Resets
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1               0  ---  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x0008  2            0  Device-to-host non-data FIS retries
+0x0009  2            7  Transition from drive PhyRdy to drive PhyNRdy
+0x000a  2            8  Device-to-host register FISes sent due to a COMRESET
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+
