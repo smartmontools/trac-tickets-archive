@@ -1,0 +1,27 @@
+  { "Swissbit X-86 Series m.2 SATA SSD",
+    "SFSA(010|020|040|080|160)GM1AO[12]TO-(I|C)-(5|6|8)(B|C|S)-[12]1P-STD",
+    "", "",
+	"-v 9,raw24(raw8),Power_On_Hours "
+	"-v 12,raw48,Power_Cycle_Count "
+	"-v 165,raw48,Maximum_Erase_Count "
+	"-v 167,raw48,Average_Erase_Count "
+	"-v 168,raw48,Rated_Erase_Count "
+	"-v 169,raw48,Power_On_Data_Repairs "
+	"-v 184,raw48,E2E_ErrCnt_Flash-SATA "
+	"-v 185,raw48,E2E_ErrCnt_SATA-Flash "
+	"-v 194,raw48,Temperature_Celsius "
+	"-v 195,raw48,Refreshes_Based_on_ECC "
+	"-v 196,raw48,Total_Spare_Block_Cnt "
+	"-v 198,raw48,Uncorretable_ECC_Erros "
+	"-v 199,raw48,Communication_Errors "
+	"-v 200,raw48,SATA_COM_Reset "
+	"-v 213,raw48,Spare_Block_Cnt_Worst  "
+	"-v 215,raw48,Trim_Status  "
+	"-v 229,raw48,Total_Flash_Block_Erases  "
+	"-v 232,raw48,Total_Read_Cnt "
+	"-v 241,raw48,Total_Host_LBA_Written "
+	"-v 242,raw48,Total_Host_LBA_Read "
+	"-v 243,raw48,Host_LBA_Write_Exp "
+	"-v 248,raw48,Remaining_Life "
+  },
+  

@@ -1,0 +1,105 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-w64-mingw32-w11-22H2] (sf-7.4-1)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Swissbit X-86 Series m.2 SATA SSD
+Device Model:     SFSA020GM1AO1TO-I-6B-11P-STD
+Serial Number:    00006019407497000015
+Firmware Version: AOR20008
+User Capacity:    20'014'718'976 bytes [20.0 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+TRIM Command:     Available, deterministic, zeroed
+Device is:        In smartctl database 7.3/5528
+ATA Version is:   ACS-4 (minor revision not indicated)
+SATA Version is:  SATA 3.3, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Wed Jan 17 14:40:22 2024 MZ
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM level is:     0 (reserved)
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Unavailable
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00) Offline data collection activity
+                                        was never started.
+                                        Auto Offline Data Collection: Disabled.
+Total time to complete Offline
+data collection:                (    0) seconds.
+Offline data collection
+capabilities:                    (0x00)         Offline data collection not supported.
+SMART capabilities:            (0x0003) Saves SMART data before entering
+                                        power-saving mode.
+                                        Supports SMART auto save timer.
+Error logging capability:        (0x00) Error logging supported.
+                                        General Purpose Logging supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+196 Total_Spare_Block_Cnt   PO--C-   100   100   025    -    18102617143
+213 Spare_Block_Cnt_Worst   PO--C-   100   100   025    -    9009365529
+229 Total_Flash_Block_Erases-O--C-   100   100   001    -    44217
+248 Remaining_Life          -O----   100   100   000    -    100
+  9 Power_On_Hours          -O----   100   100   000    -    0
+198 Uncorretable_ECC_Erros  -O-RC-   100   100   000    -    0
+169 Power_On_Data_Repairs   -O-RC-   100   100   000    -    0
+195 Refreshes_Based_on_ECC  -O--C-   100   100   000    -    0
+200 SATA_COM_Reset          -O--C-   100   100   000    -    23
+168 Rated_Erase_Count       ------   100   100   000    -    20000
+167 Average_Erase_Count     -O--C-   100   100   000    -    7
+165 Maximum_Erase_Count     -O--C-   100   100   000    -    30
+199 Communication_Errors    -O-RC-   100   100   000    -    0
+232 Total_Read_Cnt          -O--C-   100   100   000    -    11240
+ 12 Power_Cycle_Count       -O--C-   100   100   000    -    5
+241 Total_Host_LBA_Written  -O--C-   100   100   000    -    0
+242 Total_Host_LBA_Read     -O--C-   100   100   000    -    0
+215 Trim_Status             -O----   099   099   000    -    0
+194 Temperature_Celsius     -O----   033   113   000    -    7459617
+184 E2E_ErrCnt_Flash-SATA   -O-RC-   100   100   000    -    0
+185 E2E_ErrCnt_SATA-Flash   -O-RC-   100   100   000    -    0
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x01           SL  R/O      1  Summary SMART error log
+0x02           SL  R/O     50  Comprehensive SMART error log
+0x03       GPL     R/O     63  Ext. Comprehensive SMART error log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x12       GPL     R/O      1  SATA NCQ Non-Data log
+0x13       GPL     R/O      1  SATA NCQ Send and Receive log
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xa0       GPL,SL  VS       4  Device vendor specific log
+0xa1-0xa2  GPL,SL  VS       1  Device vendor specific log
+
+SMART Extended Comprehensive Error Log Version: 1 (63 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+SMART Self-test Log not supported
+
+Selective Self-tests/Logging not supported
+
+SCT Commands not supported
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11) not supported

@@ -1,0 +1,28 @@
+Configuration file /etc/smartd.conf was parsed, found DEVICESCAN, scanning devices
+Device: /dev/nvme0, opened
+Device: /dev/nvme0, Seagate FireCuda 530 ZP1000GM30013, S/N:XXXXXXXX, FW:SU6SM003, 1.00 TB
+Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+Device: /dev/nvme0, state read from /var/lib/smartmontools/smartd.Seagate_FireCuda_530_ZP1000GM30013-XXXXXXXX.nvme.state
+Device: /dev/nvme1, opened
+Device: /dev/nvme1, KINGSTON SFYRS1000G, S/N:XXXXXXXXXXXXXXXX, FW:EIFK31.6, 1.00 TB
+Device: /dev/nvme1, is SMART capable. Adding to "monitor" list.
+Device: /dev/nvme1, state read from /var/lib/smartmontools/smartd.KINGSTON_SFYRS1000G-XXXXXXXXXXXXXXXX.nvme.state
+Device: /dev/sda, type changed from 'scsi' to 'sat'
+Device: /dev/sda [SAT], opened
+Device: /dev/sda [SAT], Samsung SSD 860 EVO 1TB, S/N:XXXXXXXXXXXXXXX, WWN:5-002538-e406c202f, FW:RVT01B6Q, 1.00 TB
+Device: /dev/sda [SAT], found in smartd database 7.3/5528: Samsung based SSDs
+Device: /dev/sda [SAT], can't monitor Current_Pending_Sector count - no Attribute 197
+Device: /dev/sda [SAT], can't monitor Offline_Uncorrectable count - no Attribute 198
+Device: /dev/sda [SAT], is SMART capable. Adding to "monitor" list.
+Device: /dev/sda [SAT], state read from /var/lib/smartmontools/smartd.Samsung_SSD_860_EVO_1TB-XXXXXXXXXXXXXXX.ata.state
+Device: /dev/sdb, type changed from 'scsi' to 'sat'
+Device: /dev/sdb [SAT], opened
+Device: /dev/sdb [SAT], Samsung SSD 870 EVO 1TB, S/N:XXXXXXXXXXXXXXX, WWN:XXXXXXXXXXXXXXXXXX, FW:SVT01B6Q, 1.00 TB
+Device: /dev/sdb [SAT], found in smartd database 7.3/5528: Samsung based SSDs
+Device: /dev/sdb [SAT], can't monitor Current_Pending_Sector count - no Attribute 197
+Device: /dev/sdb [SAT], can't monitor Offline_Uncorrectable count - no Attribute 198
+Device: /dev/sdb [SAT], is SMART capable. Adding to "monitor" list.
+Device: /dev/sdb [SAT], state read from /var/lib/smartmontools/smartd.Samsung_SSD_870_EVO_1TB-S626NJ0R204227K.ata.state
+Device: /dev/nvme0, duplicate, ignored
+Device: /dev/nvme1, duplicate, ignored
+Monitoring 2 ATA/SATA, 0 SCSI/SAS and 2 NVMe devices

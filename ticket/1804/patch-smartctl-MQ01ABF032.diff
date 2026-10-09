@@ -1,0 +1,11 @@
+--- drivedb.h.20240130  2024-01-30 21:11:42.420913187 +0100
++++ drivedb.h   2024-01-30 21:13:24.174019217 +0100
+@@ -3926,7 +3926,7 @@
+     "", "", ""
+   },
+   { "Toshiba 2.5\" HDD MQ01ABF...", // tested with TOSHIBA MQ01ABF050/AM001J
+-    "TOSHIBA MQ01ABF(050|075|100)",
++    "TOSHIBA MQ01ABF(032|050|075|100)",
+     "", "", ""
+   },
+   { "Toshiba 2.5\" HDD MQ01UBB... (USB 3.0)", // tested with TOSHIBA MQ01UBB200/AY000U (0x0480:0xa100),
