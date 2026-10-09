@@ -1,0 +1,63 @@
+Nov 22 16:30:58 systemd[1]: Started smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon.
+░░ Subject: A start job for unit smartmontools.service has finished successfully
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A start job for unit smartmontools.service has finished successfully.
+░░ 
+░░ The job identifier is 112.
+Nov 22 16:30:58 smartd[1084]: smartd pre-7.5 2024-10-15 r5620 [x86_64-linux-6.9.10+bpo-amd64] (CircleCI)
+Nov 22 16:30:58 smartd[1084]: No configuration file /usr/local/etc/smartd.conf found, scanning devices
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda, type changed from 'scsi' to 'sat'
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda [SAT], opened
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda [SAT], WDC XXXX-XXXXXX, S/N:WD-XXXXXXXXXXXX, WWN:XXXXXXX, FW:XXXXX
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda [SAT], not found in smartd database 7.3/5614.
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda [SAT], is SMART capable. Adding to "monitor" list.
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda [SAT], state read from /var/log/WDC_XXXX_XXXXXX-WD_XXXXXXXXXXXX.ata.state
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb, type changed from 'scsi' to 'sat'
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], opened
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], WDC XXXX-XXXXXXXXX, S/N:XXXXX, WWN:XXXXXXXXX, FW:XXX
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], found in smartd database 7.3/5614: WD Blue / Red / Green SSDs
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], can't monitor Current_Pending_Sector count - no Attribute 197
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], can't monitor Offline_Uncorrectable count - no Attribute 198
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], is SMART capable. Adding to "monitor" list.
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], state read from /var/log/WDC_XXXX_XXXXXXXXX-XXXXX.ata.state
+Nov 22 16:30:58 smartd[1084]: Device: /dev/nvme0, opened
+Nov 22 16:30:58 smartd[1084]: Device: /dev/nvme0, Samsung SSD 960 PRO 512GB, S/N:XXXXXXXXX, FW:2B6QCXP7, 512 GB
+Nov 22 16:30:58 smartd[1084]: Device: /dev/nvme0, is SMART capable. Adding to "monitor" list.
+Nov 22 16:30:58 smartd[1084]: Device: /dev/nvme0, state read from /var/log/Samsung_SSD_960_PRO_512GB-XXXXXXXXX.nvme.state
+Nov 22 16:30:58 smartd[1084]: Monitoring 2 ATA/SATA, 0 SCSI/SAS and 1 NVMe devices
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 62 to 63
+Nov 22 16:30:58 smartd[1084]: Device: /dev/nvme0, NVMe error count increased from 5432 to 5434 (0 new, 2 ignored, 0 unknown)
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sda [SAT], state written to /var/log/WDC_XXXX_XXXXXX-WD_XXXXXXXXXXXX.ata.state
+Nov 22 16:30:58 smartd[1084]: Device: /dev/sdb [SAT], state written to /var/log/WDC_XXXX_XXXXXXXXX-XXXXX.ata.state
+Nov 22 16:30:58 smartd[1084]: Device: /dev/nvme0, state written to /var/log/Samsung_SSD_960_PRO_512GB-XXXXXXXXX.nvme.state
+Nov 22 17:00:58 smartd[1084]: Device: /dev/sdb [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 63 to 74
+Nov 22 17:00:58 smartd[1084]: Device: /dev/nvme0, NVMe error count increased from 5434 to 5435 (0 new, 1 ignored, 0 unknown)
+Nov 22 17:43:01 systemd[1]: Stopping smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon...
+░░ Subject: A stop job for unit smartmontools.service has begun execution
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A stop job for unit smartmontools.service has begun execution.
+░░ 
+░░ The job identifier is 2230.
+Nov 22 17:43:01 smartd[1084]: smartd received signal 15: Terminated
+Nov 22 17:43:01 smartd[1084]: Device: /dev/sda [SAT], state written to /var/log/WDC_XXXX_XXXXXX-WD_XXXXXXXXXXXX.ata.state
+Nov 22 17:43:01 smartd[1084]: Device: /dev/sdb [SAT], state written to /var/log/WDC_XXXX_XXXXXXXXX-XXXXX.ata.state
+Nov 22 17:43:01 smartd[1084]: Device: /dev/nvme0, state written to /var/log/Samsung_SSD_960_PRO_512GB-XXXXXXXXX.nvme.state
+Nov 22 17:43:01 smartd[1084]: smartd is exiting (exit status 0)
+Nov 22 17:43:01 systemd[1]: smartmontools.service: Deactivated successfully.
+░░ Subject: Unit succeeded
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ The unit smartmontools.service has successfully entered the 'dead' state.
+Nov 22 17:43:01 systemd[1]: Stopped smartmontools.service - Self Monitoring and Reporting Technology (SMART) Daemon.
+░░ Subject: A stop job for unit smartmontools.service has finished
+░░ Defined-By: systemd
+░░ Support: https://www.debian.org/support
+░░ 
+░░ A stop job for unit smartmontools.service has finished.
+░░ 
+░░ The job identifier is 2230 and the job result is done.

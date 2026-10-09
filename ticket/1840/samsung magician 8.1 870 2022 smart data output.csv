@@ -1,0 +1,19 @@
+﻿Model Name, Samsung SSD 870 EVO 500GB,,,,,,
+Serial Number,X,,,,,,
+Drive Type, SATA,,,,,,
+Result,ID,Description,Threshold,Current Value,Worst Value,Raw Data,
+,5,Reallocated Sector Count,10,100,100,0,OK
+,9,Power-on Hours,0,99,99,1970,OK
+,12,Power-on Count,0,99,99,13,OK
+,177,Wear Leveling Count,0,100,100,0,OK
+,179,Used Reserved Block Count (total),10,100,100,0,OK
+,181,Program Fail Count (total),10,100,100,0,OK
+,182,Erase Fail Count (total),10,100,100,0,OK
+,183,Runtime Bad Count (total),10,100,100,0,OK
+,187,Uncorrectable Error Count,0,100,100,0,OK
+,190,Airflow Temperature,0,75,60,25,OK
+,195,ECC Error Rate,0,200,200,0,OK
+,199,CRC Error Count,0,100,100,0,OK
+,235,POR Recovery Count,0,99,99,9,OK
+,241,Total LBAs Written,0,99,99,568476409,OK
+,252,Vendor Specific,0,100,100,118,OK

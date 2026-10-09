@@ -1,0 +1,31 @@
+Warning: DEFAULT entry missing in drive database file(s)
+Drive found in smartmontools Database.  Drive identity strings:
+MODEL:              SQF-S25C9-960GDCGE
+FIRMWARE:           (any)
+match smartmontools Drive Database entry:
+MODEL REGEXP:       SQF-S25V4-1TDSDC|SQF-S25Z8-960GDSCC|SQF-S25V4-1T-SBC|SQF-S25C9-960GDCGE
+FIRMWARE REGEXP:    SHFMA21[123]|SCFIP5A0|SBFMA61[123]|SCEBH5A0
+MODEL FAMILY:       SQFlash SATA SSDs 
+ATTRIBUTE OPTIONS:  001 Uncorrectable_ECC_Count
+                    009 Power_On_Hours
+                    012 Power_Cycle_Count
+                    014 Device_Capacity
+                    015 User_Capacity
+                    016 Available_Spare_Block
+                    017 Remaining_Spare_Block
+                    100 Total_Erase_Count
+                    168 SATA_Phy_Error_Count
+                    173 MaxAvgErase_Ct
+                    174 Power_Loss_Count
+                    192 Power_Loss_Count
+                    194 Temperature_Celsius
+                    202 Life_Used_Percent
+                    218 CRC_Error_Count
+                    231 Life_Remaining_Percent
+                    234 NAND_Read_(Sector)
+                    235 NAND_Written_(Sector)
+                    241 Host_Write_(Sector)
+                    242 Host_Read_(Sector)
+                    244 Average_Erase_Count
+                    245 Max_Erase_Count
+

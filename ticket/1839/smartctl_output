@@ -1,0 +1,32 @@
+Warning: DEFAULT entry missing in drive database file(s)
+MODEL REGEXP:       SQFlash (6[456]0|830|840( FIPS)?) Series|SAFM(A2A3|02A[3-6])|SBFM(A611|A612|A613|A614|A615|AH12|AU12|AU13|A011|A012|A013)|SCEM(H2A3|H2A4|H2A5|12A3|12A4|12A5|13A4|MP3A0|I15A1|I15A2|I15A3|IH5A3|IP5A0)|SCFMH3A1|SCFIP5A0|SHFB(A221|A222|A223)|SHFM(A211|A212|A213|A231|A232)|S23A05S|SCPB13.0
+FIRMWARE REGEXP:    .*
+MODEL FAMILY:       SQFlash SATA SSDs 
+ATTRIBUTE OPTIONS:  001 Uncorrectable_ECC_Count
+                    009 Power_On_Hours
+                    012 Power_Cycle_Count
+                    014 Device_Capacity
+                    015 User_Capacity
+                    016 Available_Spare_Block
+                    017 Remaining_Spare_Block
+                    100 Total_Erase_Count
+                    168 SATA_Phy_Error_Count
+                    173 MaxAvgErase_Ct
+                    174 Power_Loss_Count
+                    192 Power_Loss_Count
+                    194 Temperature_Celsius
+                    202 Life_Used_Percent
+                    218 CRC_Error_Count
+                    231 Life_Remaining_Percent
+                    234 NAND_Read_(Sector)
+                    235 NAND_Written_(Sector)
+                    241 Host_Write_(Sector)
+                    242 Host_Read_(Sector)
+                    244 Average_Erase_Count
+                    245 Max_Erase_Count
+
+Total number of entries  :    1
+Entries read from file(s):    1
+
+For information about adding a drive to the database see the FAQ on the
+smartmontools home page: https://www.smartmontools.org/
