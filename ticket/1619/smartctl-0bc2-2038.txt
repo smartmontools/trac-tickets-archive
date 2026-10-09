@@ -1,0 +1,7 @@
+smartctl 7.3 2022-02-28 r5338 [x86_64-linux-5.18.1-arch1-1] (local build)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Read Device Identity failed: scsi error unsupported field in scsi command
+
+If this is a USB connected device, look at the various --device=TYPE variants
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.

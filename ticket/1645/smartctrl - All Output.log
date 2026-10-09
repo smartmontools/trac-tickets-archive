@@ -1,0 +1,197 @@
+smartctl 7.3 2022-02-28 r5338 [i686-w64-mingw32-win7-sp1(64)] (sf-7.3-1)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     #DI LCB0D #DFULCB0D0033
+Serial Number:    75UECBGIT
+LU WWN Device Id: 5 000039 66398a103
+Firmware Version: AM001K
+User Capacity:    320,072,933,376 bytes [320 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    5400 rpm
+Form Factor:      2.5 inches
+Device is:        Not in smartctl database 7.3/5319
+ATA Version is:   ATA8-ACS (minor revision not indicated)
+SATA Version is:  SATA 2.6, 3.0 Gb/s (current: 3.0 Gb/s)
+Local Time is:    Thu Jul 21 12:14:43 2022 CDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(  120) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  69) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   050    Pre-fail  Always       -       0
+  2 Throughput_Performance  0x0005   100   100   050    Pre-fail  Offline      -       0
+  3 Spin_Up_Time            0x0027   100   100   001    Pre-fail  Always       -       1356
+  4 Start_Stop_Count        0x0032   100   100   000    Old_age   Always       -       1292
+  5 Reallocated_Sector_Ct   0x0033   100   100   050    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   050    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   100   100   050    Pre-fail  Offline      -       0
+  9 Power_On_Hours          0x0032   071   071   000    Old_age   Always       -       11942
+ 10 Spin_Retry_Count        0x0033   125   100   030    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       1283
+191 G-Sense_Error_Rate      0x0032   100   100   000    Old_age   Always       -       17
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       66
+193 Load_Cycle_Count        0x0032   090   090   000    Old_age   Always       -       105549
+194 Temperature_Celsius     0x0022   100   100   000    Old_age   Always       -       36 (Min/Max 12/49)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0032   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0030   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0032   200   200   000    Old_age   Always       -       0
+220 Disk_Shift              0x0002   100   100   000    Old_age   Always       -       0
+222 Loaded_Hours            0x0032   071   071   000    Old_age   Always       -       11853
+223 Load_Retry_Count        0x0032   100   100   000    Old_age   Always       -       0
+224 Load_Friction           0x0022   100   100   000    Old_age   Always       -       0
+226 Load-in_Time            0x0026   100   100   000    Old_age   Always       -       247
+240 Head_Flying_Hours       0x0001   100   100   001    Pre-fail  Offline      -       0
+
+SMART Error Log Version: 1
+ATA Error Count: 283 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 283 occurred at disk power-on lifetime: 9243 hours (385 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 41 00 70 8e f3 40  Error: WP at LBA = 0x00f38e70 = 15961712
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  61 48 70 50 c5 03 40 00      07:34:10.367  WRITE FPDMA QUEUED
+  61 00 68 b8 a0 f5 40 00      07:34:10.367  WRITE FPDMA QUEUED
+  61 00 60 b8 9f f5 40 00      07:34:10.367  WRITE FPDMA QUEUED
+  61 00 58 b8 9e f5 40 00      07:34:10.367  WRITE FPDMA QUEUED
+  61 00 50 b8 9d f5 40 00      07:34:10.367  WRITE FPDMA QUEUED
+
+Error 282 occurred at disk power-on lifetime: 9243 hours (385 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 41 00 70 8e f3 40  Error: WP at LBA = 0x00f38e70 = 15961712
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  61 08 20 a0 30 03 40 00      07:33:10.091  WRITE FPDMA QUEUED
+  61 08 30 80 92 05 40 00      07:33:09.640  WRITE FPDMA QUEUED
+  61 08 20 f0 8a 10 40 00      07:33:09.639  WRITE FPDMA QUEUED
+  61 08 28 90 0f 08 40 00      07:33:09.639  WRITE FPDMA QUEUED
+  61 08 20 b8 51 05 40 00      07:33:09.639  WRITE FPDMA QUEUED
+
+Error 281 occurred at disk power-on lifetime: 9243 hours (385 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 41 40 70 8e f3 40  Error: UNC at LBA = 0x00f38e70 = 15961712
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  60 08 28 30 6c ee 40 00      07:33:00.270  READ FPDMA QUEUED
+  60 20 08 69 75 16 40 00      07:33:00.270  READ FPDMA QUEUED
+  61 00 00 40 44 05 40 00      07:32:59.952  WRITE FPDMA QUEUED
+  61 00 f8 40 45 05 40 00      07:32:59.952  WRITE FPDMA QUEUED
+  61 00 f0 40 46 05 40 00      07:32:59.952  WRITE FPDMA QUEUED
+
+Error 280 occurred at disk power-on lifetime: 9243 hours (385 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 41 00 70 8e f3 40  Error: WP at LBA = 0x00f38e70 = 15961712
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  61 08 10 58 69 05 40 00      07:30:33.356  WRITE FPDMA QUEUED
+  61 08 10 88 30 03 40 00      07:30:33.138  WRITE FPDMA QUEUED
+  61 08 10 a0 30 03 40 00      07:30:33.138  WRITE FPDMA QUEUED
+  61 20 10 60 c3 03 40 00      07:30:33.137  WRITE FPDMA QUEUED
+  60 20 08 69 75 16 40 00      07:30:32.933  READ FPDMA QUEUED
+
+Error 279 occurred at disk power-on lifetime: 9243 hours (385 days + 3 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  40 41 00 70 8e f3 40  Error: WP at LBA = 0x00f38e70 = 15961712
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  61 08 08 98 30 03 40 00      07:30:15.573  WRITE FPDMA QUEUED
+  61 20 08 d8 c2 03 40 00      07:30:15.573  WRITE FPDMA QUEUED
+  61 00 40 00 ec fc 40 00      07:30:15.435  WRITE FPDMA QUEUED
+  61 00 38 00 eb fc 40 00      07:30:15.435  WRITE FPDMA QUEUED
+  61 00 30 00 ea fc 40 00      07:30:15.435  WRITE FPDMA QUEUED
+
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+

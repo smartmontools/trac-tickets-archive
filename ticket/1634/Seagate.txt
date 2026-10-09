@@ -1,0 +1,25 @@
+pi@pi4:~ $ sudo smartctl /dev/sde
+smartctl 6.6 2017-11-05 r4594 [aarch64-linux-5.10.103-v8+] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+/dev/sde: Unknown USB bridge [0x0bc2:0x2037 (0x1901)]
+Please specify device type with the -d option.
+
+Use smartctl -h to get a usage summary
+
+pi@pi4:~ $ sudo smartctl -x -d sat -T permissive /dev/sde
+smartctl 6.6 2017-11-05 r4594 [aarch64-linux-5.10.103-v8+] (local build)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Read Device Identity failed: scsi error unsupported field in scsi command
+
+=== START OF INFORMATION SECTION ===
+Device Model:     [No Information Found]
+Serial Number:    [No Information Found]
+Firmware Version: [No Information Found]
+Device is:        Not in smartctl database [for details use: -P showall]
+ATA Version is:   [No Information Found]
+Local Time is:    Thu Jul 28 11:59:41 2022 AEST
+SMART support is: Ambiguous - ATA IDENTIFY DEVICE words 82-83 don't show if SMART supported.
+SMART support is: Ambiguous - ATA IDENTIFY DEVICE words 85-87 don't show if SMART is enabled.
+A mandatory SMART command failed: exiting. To continue, add one or more '-T permissive' options.
