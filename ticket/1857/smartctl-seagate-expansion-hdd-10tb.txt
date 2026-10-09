@@ -1,0 +1,30 @@
+smartctl 7.3 2022-02-28 r5338 [aarch64-linux-6.6.31+rpt-rpi-2712] (local build)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               Seagate
+Product:              Expansion HDD
+Revision:             0003
+Compliance:           SPC-4
+User Capacity:        10,000,831,348,224 bytes [10.0 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+Logical Unit id:      0x5000000000000001
+Serial number:        00000000NT1788ZA
+Device type:          disk
+Local Time is:        Sun Jul 28 00:21:49 2024 CEST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Disabled
+Temperature Warning:  Disabled or Not Supported
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
+Device does not support Background scan results logging

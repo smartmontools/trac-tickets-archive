@@ -1,0 +1,49 @@
+--- ./1.txt	2018-08-13 14:00:09.179631939 -0400
++++ ./2.txt	2018-08-13 14:00:09.176631939 -0400
+@@ -1,26 +1,26 @@
+ ID# ATTRIBUTE_NAME FLAG
+ 
+ 1 Raw_Read_Error_Rate 0x000e
+-5 Retired_Block_Count 0x0033
++5 Reallocated_Block_Count 0x0033
+ 9 Power_On_Hours 0x0032
+ 12 Power_Cycle_Count 0x0032
+-13 Read_Soft_Error_Rate 0x002e
+-173 Max_Erase_Count 0x0032
+-174 Unexpected_Pwr_Loss_Cnt 0x0030
+-175 Program_Fail_Count 0x0032
+-179 Used_Rsrvd_Blk_Cnt_Tot 0x0033
++13 ECC_Rate 0x002e
++173 Per_Block_Max_Erase_Count 0x0032
++174 Unexpected_Power_Loss_Count 0x0030
++175 Average_Erase_Count 0x0032
++179 Used_Reserved_Block_Count (SSD_Total) 0x0033
+ 181 Program_Fail_Count 0x0032
+ 182 Erase_Fail_Count 0x0032
+-184 End-to-End_Error 0x0032
+-187 Reported_Uncorrect 0x0032
+-194 Temperature_Celsius 0x0002
+-195 ECC_on_the_Fly_Rate 0x001a
+-197 Current_Pending_Sector 0x0032
+-198 Offline_Uncorrectable 0x0010
+-199 UDMA_CRC_Error_Count 0x003e
+-202 Exception_Mode_Status 0x0033
+-203 Run_Out_Cancel 0x0033
++184 End-to-End_Error_Detection_Count 0x0032
++187 Reported_Uncorrectable_Errors 0x0032
++194 Temperature 0x0002
++195 Reported_UECC 0x001a
++197 Current_Pending_Sector_Count 0x0032
++198 Offline_Scan_Uncorrectable_Sector_Count 0x0010
++199 Ultra_DMA_CRC_Error_Count 0x003e
++202 Exception_mode_status (Read-only_mode) 0x0033
++203 Volatile_Memory_Backup_Source_Failure 0x0033
+ 231 SSD_Life_Left 0x0033
+-235 Lifetime_Writes_GiB 0x0032
+-241 Lifetime_NAND_Prg_GiB 0x0032
+-242 Lifetime_Reads_GiB 0x0032
+\ No newline at end of file
++235 Host_Write_In_GB 0x0032
++241 Nand_Programs_In_GB 0x0032
++242 Lifetime_Reads_From_The_Host_in_GB 0x0032
+\ No newline at end of file

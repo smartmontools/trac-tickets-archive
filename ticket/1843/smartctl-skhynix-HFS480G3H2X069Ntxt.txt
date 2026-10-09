@@ -1,0 +1,250 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-w64-mingw32-2022-21H2] (sf-7.4-1)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     SK hynix SATA SSDs
+Device Model:     HFS480G3H2X069N
+Serial Number:    RRABV10040035
+LU WWN Device Id: 5 439323 243303839
+Add. Product Id:  DELL(tm)
+Firmware Version: DZ02
+User Capacity:    480,103,981,056 bytes [480 GB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    Solid State Device
+Form Factor:      2.5 inches
+TRIM Command:     Available, deterministic, zeroed
+Device is:        In smartctl database 7.3/5598
+ATA Version is:   ACS-4 (minor revision not indicated)
+SATA Version is:  SATA 3.3, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Tue Mar 26 03:01:37 2024 PDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Unavailable
+Wt Cache Reorder: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x03)	Offline data collection activity
+					is in progress.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      ( 245)	Self-test routine in progress...
+					50% of test remaining.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x19) SMART execute Offline immediate.
+					No Auto Offline data collection support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					No Selective Self-test supported.
+SMART capabilities:            (0x0002)	Does not save SMART data before
+					entering power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 (  30) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Error Recovery Control supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 0
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     -OSR--   100   100   006    -    0
+  5 Retired_Block_Count     PO--CK   100   100   002    -    0
+  9 Power_On_Hours          -O--CK   098   098   000    -    2611
+ 12 Power_Cycle_Count       -O--CK   100   100   020    -    27
+ 13 Read_Soft_Error_Rate    -OSR-K   100   100   000    -    0
+173 Max_Erase_Count         -O--CK   089   089   000    -    1067
+175 Program_Fail_Count      -O--CK   089   089   000    -    1037
+179 Used_Rsrvd_Blk_Cnt_Tot  PO--CK   100   100   002    -    0
+180 E2E_Error_Det_Corr_Rate ----C-   100   100   000    -    729
+181 Program_Fail_Count      -O--CK   100   100   000    -    0
+182 Erase_Fail_Count        -O--CK   100   100   000    -    0
+194 Temperature_Celsius     -O----   059   047   000    -    41 (Min/Max 30/53)
+195 ECC_on_the_Fly_Rate     -O--CK   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   100   100   000    -    0
+201 Uncorr_Soft_Read_Err_Rt PO--CK   100   100   050    -    0
+202 Exception_Mode_Status   PO--CK   100   100   050    -    0
+233 Media_Wearout_Indicator -O--CK   100   100   000    -    147995
+235 Lifetime_Writes_GiB     -O--CK   100   100   000    -    147995
+241 Lifetime_NAND_Prg_GiB   -O--CK   100   100   000    -    536253
+245 SSD_Life_Left           PO--CK   089   089   001    -    89
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+General Purpose Log Directory Version 1
+SMART           Log Directory Version 1 [multi-sector log support]
+Address    Access  R/W   Size  Description
+0x00       GPL,SL  R/O      1  Log Directory
+0x03       GPL     R/O      5  Ext. Comprehensive SMART error log
+0x04       GPL,SL  R/O      8  Device Statistics log
+0x07       GPL     R/O      2  Extended self-test log
+0x10       GPL     R/O      1  NCQ Command Error log
+0x11       GPL     R/O      1  SATA Phy Event Counters log
+0x13       GPL     R/O      1  SATA NCQ Send and Receive log
+0x16       GPL     R/W      1  Out Of Band Management Control log
+0x2f       GPL     R/O      1  Set Sector Configuration
+0x30       GPL,SL  R/O      9  IDENTIFY DEVICE data log
+0x80-0x98  GPL,SL  R/W     16  Host vendor specific log
+0x99-0x9a  GPL,SL  R/W      1  Host vendor specific log
+0x9b-0x9f  GPL,SL  R/W     16  Host vendor specific log
+0xe0       GPL,SL  R/W      1  SCT Command/Status
+0xe1       GPL,SL  R/W      1  SCT Data Transfer
+
+SMART Extended Comprehensive Error Log Version: 1 (5 sectors)
+No Errors Logged
+
+SMART Extended Self-test Log Version: 1 (2 sectors)
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+Selective Self-tests/Logging not supported
+
+SCT Status Version:                  3
+SCT Version (vendor specific):       1 (0x0001)
+Device State:                        DST executing in background (3)
+Current Temperature:                    41 Celsius
+Power Cycle Min/Max Temperature:     35/42 Celsius
+Lifetime    Min/Max Temperature:     30/53 Celsius
+Specified Max Operating Temperature:    65 Celsius
+Under/Over Temperature Limit Count:   0/0
+SMART Status:                        0xc24f (PASSED)
+
+SCT Temperature History Version:     2
+Temperature Sampling Period:         1 minute
+Temperature Logging Interval:        1 minute
+Min/Max recommended Temperature:     -20/65 Celsius
+Min/Max Temperature Limit:           -20/125 Celsius
+Temperature History Size (Index):    192 (101)
+
+Index    Estimated Time   Temperature Celsius
+ 102    2024-03-25 23:50    41  **********************
+ 103    2024-03-25 23:51    41  **********************
+ 104    2024-03-25 23:52    42  ***********************
+ 105    2024-03-25 23:53    41  **********************
+ ...    ..( 71 skipped).    ..  **********************
+ 177    2024-03-26 01:05    41  **********************
+ 178    2024-03-26 01:06    40  *********************
+ 179    2024-03-26 01:07    41  **********************
+ 180    2024-03-26 01:08    41  **********************
+ 181    2024-03-26 01:09    40  *********************
+ ...    ..(  5 skipped).    ..  *********************
+ 187    2024-03-26 01:15    40  *********************
+ 188    2024-03-26 01:16    41  **********************
+ 189    2024-03-26 01:17    41  **********************
+ 190    2024-03-26 01:18    40  *********************
+ 191    2024-03-26 01:19    40  *********************
+   0    2024-03-26 01:20    40  *********************
+   1    2024-03-26 01:21    41  **********************
+   2    2024-03-26 01:22    41  **********************
+   3    2024-03-26 01:23    40  *********************
+   4    2024-03-26 01:24    41  **********************
+ ...    ..(  4 skipped).    ..  **********************
+   9    2024-03-26 01:29    41  **********************
+  10    2024-03-26 01:30    40  *********************
+  11    2024-03-26 01:31    40  *********************
+  12    2024-03-26 01:32    40  *********************
+  13    2024-03-26 01:33    41  **********************
+  14    2024-03-26 01:34    40  *********************
+ ...    ..( 10 skipped).    ..  *********************
+  25    2024-03-26 01:45    40  *********************
+  26    2024-03-26 01:46    41  **********************
+  27    2024-03-26 01:47    40  *********************
+ ...    ..(  9 skipped).    ..  *********************
+  37    2024-03-26 01:57    40  *********************
+  38    2024-03-26 01:58    41  **********************
+  39    2024-03-26 01:59    40  *********************
+  40    2024-03-26 02:00    41  **********************
+  41    2024-03-26 02:01    41  **********************
+  42    2024-03-26 02:02    41  **********************
+  43    2024-03-26 02:03    40  *********************
+  44    2024-03-26 02:04    40  *********************
+  45    2024-03-26 02:05    41  **********************
+ ...    ..( 10 skipped).    ..  **********************
+  56    2024-03-26 02:16    41  **********************
+  57    2024-03-26 02:17    40  *********************
+  58    2024-03-26 02:18    41  **********************
+  59    2024-03-26 02:19    40  *********************
+ ...    ..( 32 skipped).    ..  *********************
+  92    2024-03-26 02:52    40  *********************
+  93    2024-03-26 02:53    39  ********************
+  94    2024-03-26 02:54    40  *********************
+  95    2024-03-26 02:55    39  ********************
+  96    2024-03-26 02:56    39  ********************
+  97    2024-03-26 02:57    39  ********************
+  98    2024-03-26 02:58    40  *********************
+  99    2024-03-26 02:59    39  ********************
+ 100    2024-03-26 03:00    39  ********************
+ 101    2024-03-26 03:01    40  *********************
+
+SCT Error Recovery Control:
+           Read:     80 (8.0 seconds)
+          Write:     80 (8.0 seconds)
+
+Device Statistics (GP Log 0x04)
+Page  Offset Size        Value Flags Description
+0x01  =====  =               =  ===  == General Statistics (rev 1) ==
+0x01  0x008  4              27  ---  Lifetime Power-On Resets
+0x01  0x010  4            2611  ---  Power-on Hours
+0x01  0x018  6    310368559106  ---  Logical Sectors Written
+0x01  0x020  6      3102062176  ---  Number of Write Commands
+0x01  0x028  6    569535117424  ---  Logical Sectors Read
+0x01  0x030  6      3776567938  ---  Number of Read Commands
+0x01  0x038  6      9399600000  ---  Date and Time TimeStamp
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x04  0x010  4              45  ---  Resets Between Cmd Acceptance and Completion
+0x05  =====  =               =  ===  == Temperature Statistics (rev 1) ==
+0x05  0x008  1              41  ---  Current Temperature
+0x05  0x010  1              40  ---  Average Short Term Temperature
+0x05  0x018  1              39  ---  Average Long Term Temperature
+0x05  0x020  1              53  ---  Highest Temperature
+0x05  0x028  1              30  ---  Lowest Temperature
+0x05  0x030  1              50  ---  Highest Average Short Term Temperature
+0x05  0x038  1              32  ---  Lowest Average Short Term Temperature
+0x05  0x040  1              40  ---  Highest Average Long Term Temperature
+0x05  0x048  1              34  ---  Lowest Average Long Term Temperature
+0x05  0x050  4               0  ---  Time in Over-Temperature
+0x05  0x058  1              65  ---  Specified Maximum Operating Temperature
+0x05  0x060  4               0  ---  Time in Under-Temperature
+0x05  0x068  1             -20  ---  Specified Minimum Operating Temperature
+0x06  =====  =               =  ===  == Transport Statistics (rev 1) ==
+0x06  0x008  4             340  ---  Number of Hardware Resets
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x07  =====  =               =  ===  == Solid State Device Statistics (rev 1) ==
+0x07  0x008  1              11  ---  Percentage Used Endurance Indicator
+                                |||_ C monitored condition met
+                                ||__ D supports DSN
+                                |___ N normalized value
+
+Pending Defects log (GP Log 0x0c) not supported
+
+SATA Phy Event Counters (GP Log 0x11)
+ID      Size     Value  Description
+0x0001  2            0  Command failed due to ICRC error
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x000a  2            1  Device-to-host register FISes sent due to a COMRESET
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+

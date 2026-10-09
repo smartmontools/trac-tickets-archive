@@ -1,0 +1,1259 @@
+[root@s16 ~]# zabbix_agent2 -t 'smart.disk.discovery' -v -v -v
+2024/08/02 17:28:21.163269 using plugin 'Agent' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163352 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163359 using plugin 'Cpu' (built-in) providing following interfaces: exporter, collector, runner
+2024/08/02 17:28:21.163368 using plugin 'DNS' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163373 using plugin 'Docker' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163378 using plugin 'File' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163389 using plugin 'Hw' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163400 using plugin 'Kernel' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163405 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163408 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator
+2024/08/02 17:28:21.163415 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163420 using plugin 'Memory' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163424 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163433 using plugin 'MongoDB' (/usr/sbin/zabbix-agent2-plugin/zabbix-agent2-plugin-mongodb) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163444 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163448 using plugin 'NetIf' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163453 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163460 using plugin 'PostgreSQL' (/usr/sbin/zabbix-agent2-plugin/zabbix-agent2-plugin-postgresql) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163477 using plugin 'Proc' (built-in) providing following interfaces: exporter, collector
+2024/08/02 17:28:21.163483 using plugin 'ProcExporter' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163487 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:28:21.163492 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163499 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163504 using plugin 'Swap' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163509 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163513 using plugin 'Systemd' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163520 using plugin 'TCP' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163525 using plugin 'UDP' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163529 using plugin 'Uname' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163533 using plugin 'Uptime' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163537 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163541 using plugin 'VFSDev' (built-in) providing following interfaces: exporter, collector
+2024/08/02 17:28:21.163546 using plugin 'VFSDir' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163550 using plugin 'VfsFs' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163554 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163559 using plugin 'WebPage' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163567 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163572 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:28:21.163576 lowering the plugin ZabbixSync capacity to 1 as the configured capacity 100 exceeds limits
+2024/08/02 17:28:21.163580 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter
+2024/08/02 17:28:21.163623 [Modbus] Config is valid
+2024/08/02 17:28:21.163638 Plugin communication protocol version is 6.2.7
+2024/08/02 17:28:21.163656 starting manager
+2024/08/02 17:28:22.000086 [2] processing update request (1 requests)
+2024/08/02 17:28:22.000095 [2] registering new client
+2024/08/02 17:28:22.000099 Calling C function "new_global_regexp()"
+2024/08/02 17:28:22.000125 [2] adding new request for key: 'smart.disk.discovery'
+2024/08/02 17:28:22.000136 [2] created direct exporter task for plugin 'Smart' itemid:0 key 'smart.disk.discovery'
+2024/08/02 17:28:22.000139 [2] created configurator task for plugin Smart
+2024/08/02 17:28:22.000151 plugin Smart: executing configurator task
+2024/08/02 17:28:22.000199 executing direct exporter task for key 'smart.disk.discovery'
+2024/08/02 17:28:22.000204 [Smart] executing smartctl command: sudo -n smartctl -j -V
+2024/08/02 17:28:22.014119 [Smart] command sudo -n smartctl -j -V smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-j",
+      "-V"
+    ],
+    "exit_status": 0
+  }
+}
+2024/08/02 17:28:22.014217 [Smart] executing smartctl command: sudo -n smartctl --scan -j
+2024/08/02 17:28:22.038349 [Smart] command sudo -n smartctl --scan -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "--scan",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "devices": [
+    {
+      "name": "/dev/hdd",
+      "info_name": "/dev/hdd",
+      "type": "ata",
+      "protocol": "ATA"
+    },
+    {
+      "name": "/dev/sda",
+      "info_name": "/dev/sda",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/sdb",
+      "info_name": "/dev/sdb",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_00]",
+      "type": "megaraid,0",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_01]",
+      "type": "megaraid,1",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_02]",
+      "type": "megaraid,2",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_03]",
+      "type": "megaraid,3",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/nvme0",
+      "info_name": "/dev/nvme0",
+      "type": "nvme",
+      "protocol": "NVMe"
+    },
+    {
+      "name": "/dev/nvme1",
+      "info_name": "/dev/nvme1",
+      "type": "nvme",
+      "protocol": "NVMe"
+    },
+    {
+      "name": "/dev/nvme2",
+      "info_name": "/dev/nvme2",
+      "type": "nvme",
+      "protocol": "NVMe"
+    },
+    {
+      "name": "/dev/nvme3",
+      "info_name": "/dev/nvme3",
+      "type": "nvme",
+      "protocol": "NVMe"
+    }
+  ]
+}
+2024/08/02 17:28:22.038487 [Smart] executing smartctl command: sudo -n smartctl --scan -d sat -j
+2024/08/02 17:28:22.061808 [Smart] command sudo -n smartctl --scan -d sat -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "--scan",
+      "-d",
+      "sat",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "devices": [
+    {
+      "name": "/dev/sda",
+      "info_name": "/dev/sda",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/sdb",
+      "info_name": "/dev/sdb",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_00]",
+      "type": "megaraid,0",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_01]",
+      "type": "megaraid,1",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_02]",
+      "type": "megaraid,2",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/1",
+      "info_name": "/dev/bus/1 [megaraid_disk_03]",
+      "type": "megaraid,3",
+      "protocol": "SCSI"
+    }
+  ]
+}
+2024/08/02 17:28:22.061964 [Smart] executing smartctl command: sudo -n smartctl -a /dev/hdd -j
+2024/08/02 17:28:22.061981 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme3 -j
+2024/08/02 17:28:22.062042 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme0 -j
+2024/08/02 17:28:22.062136 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme2 -j
+2024/08/02 17:28:22.062161 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme1 -j
+2024/08/02 17:28:22.086598 [Smart] command sudo -n smartctl -a /dev/hdd -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/hdd",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/hdd",
+    "info_name": "/dev/hdd",
+    "type": "ata",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:28:22.086720 [Smart] skipping device /dev/hdd
+2024/08/02 17:28:22.089156 [Smart] command sudo -n smartctl -a /dev/nvme3 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme3",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme3",
+    "info_name": "/dev/nvme3",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQL27T6HBLA-00A07",
+  "serial_number": "S6CKNT0WA14975",
+  "firmware_version": "GDC5602Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 6,
+  "nvme_version": {
+    "string": "1.4",
+    "value": 66560
+  },
+  "nvme_number_of_namespaces": 32,
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 27,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 0,
+    "data_units_read": 18559969,
+    "data_units_written": 19358495,
+    "host_reads": 108498162,
+    "host_writes": 756274579,
+    "controller_busy_time": 159,
+    "power_cycles": 49,
+    "power_on_hours": 1347,
+    "unsafe_shutdowns": 24,
+    "media_errors": 0,
+    "num_err_log_entries": 0,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      27,
+      38
+    ]
+  },
+  "temperature": {
+    "current": 27
+  },
+  "power_cycle_count": 49,
+  "power_on_time": {
+    "hours": 1347
+  }
+}
+2024/08/02 17:28:22.089285 [Smart] command sudo -n smartctl -a /dev/nvme0 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme0",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme0",
+    "info_name": "/dev/nvme0",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQL27T6HBLA-00A07",
+  "serial_number": "S6CKNT0WA14973",
+  "firmware_version": "GDC5602Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 6,
+  "nvme_version": {
+    "string": "1.4",
+    "value": 66560
+  },
+  "nvme_number_of_namespaces": 32,
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 26,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 0,
+    "data_units_read": 18581300,
+    "data_units_written": 15605496,
+    "host_reads": 108311489,
+    "host_writes": 721464116,
+    "controller_busy_time": 147,
+    "power_cycles": 49,
+    "power_on_hours": 1347,
+    "unsafe_shutdowns": 24,
+    "media_errors": 0,
+    "num_err_log_entries": 0,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      26,
+      37
+    ]
+  },
+  "temperature": {
+    "current": 26
+  },
+  "power_cycle_count": 49,
+  "power_on_time": {
+    "hours": 1347
+  }
+}
+2024/08/02 17:28:22.089938 [Smart] command sudo -n smartctl -a /dev/nvme1 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme1",
+    "info_name": "/dev/nvme1",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQL27T6HBLA-00A07",
+  "serial_number": "S6CKNT0WA14972",
+  "firmware_version": "GDC5602Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 6,
+  "nvme_version": {
+    "string": "1.4",
+    "value": 66560
+  },
+  "nvme_number_of_namespaces": 32,
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 27,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 0,
+    "data_units_read": 17328438,
+    "data_units_written": 15605496,
+    "host_reads": 103107087,
+    "host_writes": 724545009,
+    "controller_busy_time": 139,
+    "power_cycles": 49,
+    "power_on_hours": 1347,
+    "unsafe_shutdowns": 24,
+    "media_errors": 0,
+    "num_err_log_entries": 0,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      27,
+      38
+    ]
+  },
+  "temperature": {
+    "current": 27
+  },
+  "power_cycle_count": 49,
+  "power_on_time": {
+    "hours": 1347
+  }
+}
+2024/08/02 17:28:22.090299 [Smart] command sudo -n smartctl -a /dev/nvme2 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme2",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme2",
+    "info_name": "/dev/nvme2",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQL27T6HBLA-00A07",
+  "serial_number": "S6CKNT0WA14974",
+  "firmware_version": "GDC5602Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 6,
+  "nvme_version": {
+    "string": "1.4",
+    "value": 66560
+  },
+  "nvme_number_of_namespaces": 32,
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 27,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 0,
+    "data_units_read": 17355321,
+    "data_units_written": 19358495,
+    "host_reads": 103227354,
+    "host_writes": 759356648,
+    "controller_busy_time": 152,
+    "power_cycles": 49,
+    "power_on_hours": 1347,
+    "unsafe_shutdowns": 24,
+    "media_errors": 0,
+    "num_err_log_entries": 0,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      27,
+      37
+    ]
+  },
+  "temperature": {
+    "current": 27
+  },
+  "power_cycle_count": 49,
+  "power_on_time": {
+    "hours": 1347
+  }
+}
+2024/08/02 17:28:22.090611 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d 3ware,0 -j
+2024/08/02 17:28:22.090726 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d areca,1 -j
+2024/08/02 17:28:22.090753 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d cciss,0 -j
+2024/08/02 17:28:22.090762 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d sat -j
+2024/08/02 17:28:22.090776 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d areca,1 -j
+2024/08/02 17:28:22.090850 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d sat -j
+2024/08/02 17:28:22.090867 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d cciss,0 -j
+2024/08/02 17:28:22.090886 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d 3ware,0 -j
+2024/08/02 17:28:22.115881 [Smart] command sudo -n smartctl -a /dev/sda -d cciss,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "cciss,0",
+      "/dev/sda",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sda [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:28:22.115931 [Smart] command sudo -n smartctl -a /dev/sda -d 3ware,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "3ware,0",
+      "/dev/sda",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sda",
+    "info_name": "/dev/sda [3ware_disk_00]",
+    "type": "3ware",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:28:22.115984 [Smart] stopped looking for RAID devices of cciss type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sda [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address
+2024/08/02 17:28:22.115995 [Smart] command sudo -n smartctl -a /dev/sdb -d areca,1 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "areca,1",
+      "/dev/sdb",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sdb [areca_disk#01_enc#01] failed: Input/output error",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:28:22.116019 [Smart] stopped looking for RAID devices of areca type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sdb [areca_disk#01_enc#01] failed: Input/output error
+2024/08/02 17:28:22.116024 [Smart] stopped looking for RAID devices of 3ware type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:28:22.116122 [Smart] command sudo -n smartctl -a /dev/sda -d areca,1 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "areca,1",
+      "/dev/sda",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sda [areca_disk#01_enc#01] failed: Input/output error",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:28:22.116188 [Smart] stopped looking for RAID devices of areca type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sda [areca_disk#01_enc#01] failed: Input/output error
+2024/08/02 17:28:22.116270 [Smart] command sudo -n smartctl -a /dev/sda -d sat -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "sat",
+      "/dev/sda",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sda",
+    "info_name": "/dev/sda [SAT]",
+    "type": "sat",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:28:22.116316 [Smart] stopped looking for RAID devices of sat type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:28:22.116571 [Smart] command sudo -n smartctl -a /dev/sdb -d cciss,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "cciss,0",
+      "/dev/sdb",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sdb [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:28:22.116623 [Smart] stopped looking for RAID devices of cciss type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sdb [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address
+2024/08/02 17:28:22.116828 [Smart] command sudo -n smartctl -a /dev/sdb -d sat -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "sat",
+      "/dev/sdb",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sdb",
+    "info_name": "/dev/sdb [SAT]",
+    "type": "sat",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:28:22.116881 [Smart] stopped looking for RAID devices of sat type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:28:22.117678 [Smart] command sudo -n smartctl -a /dev/sdb -d 3ware,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "3ware,0",
+      "/dev/sdb",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sdb",
+    "info_name": "/dev/sdb [3ware_disk_00]",
+    "type": "3ware",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:28:22.117741 [Smart] stopped looking for RAID devices of 3ware type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:28:22.117795 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/1 -d megaraid,0 -j
+2024/08/02 17:28:22.117798 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/1 -d megaraid,3 -j
+2024/08/02 17:28:22.117804 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/1 -d megaraid,2 -j
+2024/08/02 17:28:22.117862 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/1 -d megaraid,1 -j
+2024/08/02 17:28:23.527026 [Smart] command sudo -n smartctl -a /dev/bus/1 -d megaraid,3 -j  smartctl raw response:   Pending defect count:{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,3",
+      "/dev/bus/1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/bus/1",
+    "info_name": "/dev/bus/1 [megaraid_disk_03]",
+    "type": "megaraid,3",
+    "protocol": "SCSI"
+  },
+  "vendor": "SEAGATE",
+  "product": "ST20000NM002D",
+  "model_name": "SEAGATE ST20000NM002D",
+  "revision": "E005",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 39063650304,
+    "bytes": 20000588955648
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "serial_number": "ZVTDAYCK0000W418MVR4",
+  "device_type": {
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "temperature": {
+    "current": 25,
+    "drive_trip": 60
+  },
+  "power_on_time": {
+    "hours": 1357,
+    "minutes": 21
+  },
+  "scsi_grown_defect_list": 0,
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "140118.030",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "34766.115",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "140013.638",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "pending_defects": {
+    "count": 0
+  }
+}
+2024/08/02 17:28:23.527095 [Smart] failed to unmarshal megaraid device with name /dev/bus/1 -d megaraid,3, invalid character 'P' looking for beginning of value
+2024/08/02 17:28:23.558612 [Smart] command sudo -n smartctl -a /dev/bus/1 -d megaraid,2 -j  smartctl raw response:   Pending defect count:{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,2",
+      "/dev/bus/1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/bus/1",
+    "info_name": "/dev/bus/1 [megaraid_disk_02]",
+    "type": "megaraid,2",
+    "protocol": "SCSI"
+  },
+  "vendor": "SEAGATE",
+  "product": "ST20000NM002D",
+  "model_name": "SEAGATE ST20000NM002D",
+  "revision": "E005",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 39063650304,
+    "bytes": 20000588955648
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "serial_number": "ZVTCJDHM0000W411SBAE",
+  "device_type": {
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "temperature": {
+    "current": 26,
+    "drive_trip": 60
+  },
+  "power_on_time": {
+    "hours": 1357,
+    "minutes": 19
+  },
+  "scsi_grown_defect_list": 0,
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "140060.620",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "34609.181",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "140012.756",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "pending_defects": {
+    "count": 0
+  }
+}
+2024/08/02 17:28:23.558678 [Smart] failed to unmarshal megaraid device with name /dev/bus/1 -d megaraid,2, invalid character 'P' looking for beginning of value
+2024/08/02 17:28:23.671156 [Smart] command sudo -n smartctl -a /dev/bus/1 -d megaraid,0 -j  smartctl raw response:   Pending defect count:{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,0",
+      "/dev/bus/1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/bus/1",
+    "info_name": "/dev/bus/1 [megaraid_disk_00]",
+    "type": "megaraid,0",
+    "protocol": "SCSI"
+  },
+  "vendor": "SEAGATE",
+  "product": "ST16000NM004J",
+  "model_name": "SEAGATE ST16000NM004J",
+  "revision": "E005",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 31251759104,
+    "bytes": 16000900661248
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "serial_number": "ZRS1AL840000R4244W4S",
+  "device_type": {
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "temperature": {
+    "current": 24,
+    "drive_trip": 60
+  },
+  "power_on_time": {
+    "hours": 1357,
+    "minutes": 36
+  },
+  "scsi_grown_defect_list": 0,
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "112028.966",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "5.305",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "112013.496",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "pending_defects": {
+    "count": 0
+  }
+}
+2024/08/02 17:28:23.671221 [Smart] failed to unmarshal megaraid device with name /dev/bus/1 -d megaraid,0, invalid character 'P' looking for beginning of value
+2024/08/02 17:28:23.696351 [Smart] command sudo -n smartctl -a /dev/bus/1 -d megaraid,1 -j  smartctl raw response:   Pending defect count:{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,1",
+      "/dev/bus/1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/bus/1",
+    "info_name": "/dev/bus/1 [megaraid_disk_01]",
+    "type": "megaraid,1",
+    "protocol": "SCSI"
+  },
+  "vendor": "SEAGATE",
+  "product": "ST16000NM004J",
+  "model_name": "SEAGATE ST16000NM004J",
+  "revision": "E005",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 31251759104,
+    "bytes": 16000900661248
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "serial_number": "ZRS18K660000R4245ATT",
+  "device_type": {
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "local_time": {
+    "time_t": 1722608902,
+    "asctime": "Fri Aug  2 17:28:22 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "temperature": {
+    "current": 24,
+    "drive_trip": 60
+  },
+  "power_on_time": {
+    "hours": 1357,
+    "minutes": 35
+  },
+  "scsi_grown_defect_list": 0,
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "112088.153",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "155.464",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "112013.627",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "pending_defects": {
+    "count": 0
+  }
+}
+2024/08/02 17:28:23.696398 [Smart] failed to unmarshal megaraid device with name /dev/bus/1 -d megaraid,1, invalid character 'P' looking for beginning of value
+2024/08/02 17:28:23.696478 executed direct exporter task for key 'smart.disk.discovery'
+smart.disk.discovery                          [s|[{"{#NAME}":"nvme0","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQL27T6HBLA-00A07","{#SN}":"S6CKNT0WA14973","{#PATH}":"/dev/nvme0","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"nvme1","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQL27T6HBLA-00A07","{#SN}":"S6CKNT0WA14972","{#PATH}":"/dev/nvme1","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"nvme2","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQL27T6HBLA-00A07","{#SN}":"S6CKNT0WA14974","{#PATH}":"/dev/nvme2","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"nvme3","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQL27T6HBLA-00A07","{#SN}":"S6CKNT0WA14975","{#PATH}":"/dev/nvme3","{#RAIDTYPE}":"","{#ATTRIBUTES}":""}]]
+2024/08/02 17:28:23.696505 manager has been stopped

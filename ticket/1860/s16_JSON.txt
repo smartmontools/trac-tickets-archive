@@ -1,0 +1,100 @@
+[root@s16 ~]# sudo -n smartctl -a /dev/bus/1 -d megaraid,0 -j
+  Pending defect count:{
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-427.20.1.el9_4.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,0",
+      "/dev/bus/1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/bus/1",
+    "info_name": "/dev/bus/1 [megaraid_disk_00]",
+    "type": "megaraid,0",
+    "protocol": "SCSI"
+  },
+  "vendor": "SEAGATE",
+  "product": "ST16000NM004J",
+  "model_name": "SEAGATE ST16000NM004J",
+  "revision": "E005",
+  "scsi_version": "SPC-5",
+  "user_capacity": {
+    "blocks": 31251759104,
+    "bytes": 16000900661248
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "scsi_value": 2,
+    "name": "3.5 inches"
+  },
+  "serial_number": "ZRS1AL840000R4244W4S",
+  "device_type": {
+    "scsi_value": 0,
+    "name": "disk"
+  },
+  "local_time": {
+    "time_t": 1722608229,
+    "asctime": "Fri Aug  2 17:17:09 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "temperature": {
+    "current": 24,
+    "drive_trip": 60
+  },
+  "power_on_time": {
+    "hours": 1357,
+    "minutes": 24
+  },
+  "scsi_grown_defect_list": 0,
+  "scsi_error_counter_log": {
+    "read": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "112028.966",
+      "total_uncorrected_errors": 0
+    },
+    "write": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "5.304",
+      "total_uncorrected_errors": 0
+    },
+    "verify": {
+      "errors_corrected_by_eccfast": 0,
+      "errors_corrected_by_eccdelayed": 0,
+      "errors_corrected_by_rereads_rewrites": 0,
+      "total_errors_corrected": 0,
+      "correction_algorithm_invocations": 0,
+      "gigabytes_processed": "112013.496",
+      "total_uncorrected_errors": 0
+    }
+  },
+  "pending_defects": {
+    "count": 0
+  }
+}

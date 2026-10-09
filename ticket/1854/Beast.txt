@@ -1,0 +1,40 @@
+smartctl 6.6 2017-11-05 r4594 [x86_64-w64-mingw32-w10-b22631] (sf-6.6-1)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ERROR: smartctl takes ONE device name as the final command-line argument.
+You have provided 2 device names:
+/dev/sda
+20\AppData\Local\Temp\SMART.txt
+
+Use smartctl -h to get a usage summary
+
+smartctl 6.6 2017-11-05 r4594 [x86_64-w64-mingw32-w10-b22631] (sf-6.6-1)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ERROR: smartctl takes ONE device name as the final command-line argument.
+You have provided 2 device names:
+/dev/sdb
+20\AppData\Local\Temp\SMART.txt
+
+Use smartctl -h to get a usage summary
+
+smartctl 6.6 2017-11-05 r4594 [x86_64-w64-mingw32-w10-b22631] (sf-6.6-1)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ERROR: smartctl takes ONE device name as the final command-line argument.
+You have provided 2 device names:
+/dev/sda
+20\AppData\Local\Temp\SMART.txt
+
+Use smartctl -h to get a usage summary
+
+smartctl 6.6 2017-11-05 r4594 [x86_64-w64-mingw32-w10-b22631] (sf-6.6-1)
+Copyright (C) 2002-17, Bruce Allen, Christian Franke, www.smartmontools.org
+
+ERROR: smartctl takes ONE device name as the final command-line argument.
+You have provided 2 device names:
+/dev/sdb
+20\AppData\Local\Temp\SMART.txt
+
+Use smartctl -h to get a usage summary
+

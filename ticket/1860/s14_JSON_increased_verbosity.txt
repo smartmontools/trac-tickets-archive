@@ -1,0 +1,3714 @@
+[root@s14 ~]# zabbix_agent2 -t 'smart.disk.discovery' -v -v -v
+2024/08/02 17:33:46.136600 using plugin 'Agent' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136702 using plugin 'Ceph' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:33:46.136709 using plugin 'Cpu' (built-in) providing following interfaces: exporter, collector, runner
+2024/08/02 17:33:46.136716 using plugin 'DNS' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136721 using plugin 'Docker' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136727 using plugin 'File' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136733 using plugin 'Hw' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136738 using plugin 'Kernel' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136742 using plugin 'Log' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136746 using plugin 'MQTT' (built-in) providing following interfaces: watcher, configurator
+2024/08/02 17:33:46.136750 using plugin 'Memcached' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:33:46.136754 using plugin 'Memory' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136758 using plugin 'Modbus' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136767 using plugin 'Mysql' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:33:46.136778 using plugin 'NetIf' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136783 using plugin 'Oracle' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:33:46.136789 using plugin 'Proc' (built-in) providing following interfaces: exporter, collector
+2024/08/02 17:33:46.136798 using plugin 'ProcExporter' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136804 using plugin 'Redis' (built-in) providing following interfaces: exporter, runner, configurator
+2024/08/02 17:33:46.136813 using plugin 'Smart' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136819 using plugin 'Sw' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136824 using plugin 'Swap' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136830 using plugin 'SystemRun' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136834 using plugin 'Systemd' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136839 using plugin 'TCP' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136851 using plugin 'UDP' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136857 using plugin 'Uname' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136862 using plugin 'Uptime' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136869 using plugin 'UserParameter' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136876 using plugin 'Users' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136880 using plugin 'VFSDev' (built-in) providing following interfaces: exporter, collector
+2024/08/02 17:33:46.136885 using plugin 'VFSDir' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136889 using plugin 'VfsFs' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136893 using plugin 'WebCertificate' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136897 using plugin 'WebPage' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136901 using plugin 'ZabbixAsync' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136906 using plugin 'ZabbixStats' (built-in) providing following interfaces: exporter, configurator
+2024/08/02 17:33:46.136910 lowering the plugin ZabbixSync capacity to 1 as the configured capacity 100 exceeds limits
+2024/08/02 17:33:46.136914 using plugin 'ZabbixSync' (built-in) providing following interfaces: exporter
+2024/08/02 17:33:46.136951 [Modbus] Config is valid
+2024/08/02 17:33:46.136987 Plugin communication protocol version is 6.2.7
+2024/08/02 17:33:46.137018 starting manager
+2024/08/02 17:33:47.000510 [2] processing update request (1 requests)
+2024/08/02 17:33:47.000526 [2] registering new client
+2024/08/02 17:33:47.000541 Calling C function "new_global_regexp()"
+2024/08/02 17:33:47.000559 [2] adding new request for key: 'smart.disk.discovery'
+2024/08/02 17:33:47.000573 [2] created direct exporter task for plugin 'Smart' itemid:0 key 'smart.disk.discovery'
+2024/08/02 17:33:47.000579 [2] created configurator task for plugin Smart
+2024/08/02 17:33:47.000594 plugin Smart: executing configurator task
+2024/08/02 17:33:47.000661 executing direct exporter task for key 'smart.disk.discovery'
+2024/08/02 17:33:47.000667 [Smart] executing smartctl command: sudo -n smartctl -j -V
+2024/08/02 17:33:47.029724 [Smart] command sudo -n smartctl -j -V smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-j",
+      "-V"
+    ],
+    "exit_status": 0
+  }
+}
+2024/08/02 17:33:47.030026 [Smart] executing smartctl command: sudo -n smartctl --scan -j
+2024/08/02 17:33:47.066372 [Smart] command sudo -n smartctl --scan -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "--scan",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "devices": [
+    {
+      "name": "/dev/hdd",
+      "info_name": "/dev/hdd",
+      "type": "ata",
+      "protocol": "ATA"
+    },
+    {
+      "name": "/dev/sda",
+      "info_name": "/dev/sda",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/sdb",
+      "info_name": "/dev/sdb",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_00]",
+      "type": "megaraid,0",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_01]",
+      "type": "megaraid,1",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_02]",
+      "type": "megaraid,2",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_03]",
+      "type": "megaraid,3",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/nvme0",
+      "info_name": "/dev/nvme0",
+      "type": "nvme",
+      "protocol": "NVMe"
+    },
+    {
+      "name": "/dev/nvme1",
+      "info_name": "/dev/nvme1",
+      "type": "nvme",
+      "protocol": "NVMe"
+    },
+    {
+      "name": "/dev/nvme2",
+      "info_name": "/dev/nvme2",
+      "type": "nvme",
+      "protocol": "NVMe"
+    },
+    {
+      "name": "/dev/nvme3",
+      "info_name": "/dev/nvme3",
+      "type": "nvme",
+      "protocol": "NVMe"
+    }
+  ]
+}
+2024/08/02 17:33:47.066526 [Smart] executing smartctl command: sudo -n smartctl --scan -d sat -j
+2024/08/02 17:33:47.102904 [Smart] command sudo -n smartctl --scan -d sat -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "--scan",
+      "-d",
+      "sat",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "devices": [
+    {
+      "name": "/dev/sda",
+      "info_name": "/dev/sda",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/sdb",
+      "info_name": "/dev/sdb",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_00]",
+      "type": "megaraid,0",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_01]",
+      "type": "megaraid,1",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_02]",
+      "type": "megaraid,2",
+      "protocol": "SCSI"
+    },
+    {
+      "name": "/dev/bus/0",
+      "info_name": "/dev/bus/0 [megaraid_disk_03]",
+      "type": "megaraid,3",
+      "protocol": "SCSI"
+    }
+  ]
+}
+2024/08/02 17:33:47.103168 [Smart] executing smartctl command: sudo -n smartctl -a /dev/hdd -j
+2024/08/02 17:33:47.103225 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme1 -j
+2024/08/02 17:33:47.103266 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme0 -j
+2024/08/02 17:33:47.103311 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme3 -j
+2024/08/02 17:33:47.103343 [Smart] executing smartctl command: sudo -n smartctl -a /dev/nvme2 -j
+2024/08/02 17:33:47.138660 [Smart] command sudo -n smartctl -a /dev/hdd -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/hdd",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/hdd",
+    "info_name": "/dev/hdd",
+    "type": "ata",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:33:47.138804 [Smart] skipping device /dev/hdd
+2024/08/02 17:33:47.145031 [Smart] command sudo -n smartctl -a /dev/nvme1 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme1",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme1",
+    "info_name": "/dev/nvme1",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQLB7T6HMLA-00007",
+  "serial_number": "S4BGNW0R702722",
+  "firmware_version": "EDB5202Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 4,
+  "nvme_version": {
+    "string": "1.2",
+    "value": 66048
+  },
+  "nvme_number_of_namespaces": 1,
+  "nvme_namespaces": [
+    {
+      "id": 1,
+      "size": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "capacity": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "utilization": {
+        "blocks": 7369996928,
+        "bytes": 3773438427136
+      },
+      "formatted_lba_size": 512
+    }
+  ],
+  "user_capacity": {
+    "blocks": 15002931888,
+    "bytes": 7681501126656
+  },
+  "logical_block_size": 512,
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 27,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 3,
+    "data_units_read": 660272782,
+    "data_units_written": 3736070859,
+    "host_reads": 3512356037,
+    "host_writes": 66709972888,
+    "controller_busy_time": 24660,
+    "power_cycles": 4,
+    "power_on_hours": 21550,
+    "unsafe_shutdowns": 2,
+    "media_errors": 0,
+    "num_err_log_entries": 95,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      27,
+      31,
+      37
+    ]
+  },
+  "temperature": {
+    "current": 27
+  },
+  "power_cycle_count": 4,
+  "power_on_time": {
+    "hours": 21550
+  }
+}
+2024/08/02 17:33:47.146076 [Smart] command sudo -n smartctl -a /dev/nvme2 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme2",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme2",
+    "info_name": "/dev/nvme2",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQLB7T6HMLA-00007",
+  "serial_number": "S4BGNW0R702725",
+  "firmware_version": "EDB5202Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 4,
+  "nvme_version": {
+    "string": "1.2",
+    "value": 66048
+  },
+  "nvme_number_of_namespaces": 1,
+  "nvme_namespaces": [
+    {
+      "id": 1,
+      "size": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "capacity": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "utilization": {
+        "blocks": 7370550768,
+        "bytes": 3773721993216
+      },
+      "formatted_lba_size": 512
+    }
+  ],
+  "user_capacity": {
+    "blocks": 15002931888,
+    "bytes": 7681501126656
+  },
+  "logical_block_size": 512,
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 27,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 3,
+    "data_units_read": 751771976,
+    "data_units_written": 3703469461,
+    "host_reads": 6468725365,
+    "host_writes": 66244438227,
+    "controller_busy_time": 29070,
+    "power_cycles": 4,
+    "power_on_hours": 21550,
+    "unsafe_shutdowns": 2,
+    "media_errors": 0,
+    "num_err_log_entries": 86,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      27,
+      32,
+      38
+    ]
+  },
+  "temperature": {
+    "current": 27
+  },
+  "power_cycle_count": 4,
+  "power_on_time": {
+    "hours": 21550
+  }
+}
+2024/08/02 17:33:47.147363 [Smart] command sudo -n smartctl -a /dev/nvme3 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme3",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme3",
+    "info_name": "/dev/nvme3",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQLB7T6HMLA-00007",
+  "serial_number": "S4BGNW0R702716",
+  "firmware_version": "EDB5202Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 4,
+  "nvme_version": {
+    "string": "1.2",
+    "value": 66048
+  },
+  "nvme_number_of_namespaces": 1,
+  "nvme_namespaces": [
+    {
+      "id": 1,
+      "size": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "capacity": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "utilization": {
+        "blocks": 7370550768,
+        "bytes": 3773721993216
+      },
+      "formatted_lba_size": 512
+    }
+  ],
+  "user_capacity": {
+    "blocks": 15002931888,
+    "bytes": 7681501126656
+  },
+  "logical_block_size": 512,
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 30,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 3,
+    "data_units_read": 659754987,
+    "data_units_written": 3703469461,
+    "host_reads": 3531214126,
+    "host_writes": 66373180778,
+    "controller_busy_time": 24495,
+    "power_cycles": 4,
+    "power_on_hours": 21550,
+    "unsafe_shutdowns": 2,
+    "media_errors": 0,
+    "num_err_log_entries": 95,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      30,
+      36,
+      41
+    ]
+  },
+  "temperature": {
+    "current": 30
+  },
+  "power_cycle_count": 4,
+  "power_on_time": {
+    "hours": 21550
+  }
+}
+2024/08/02 17:33:47.150224 [Smart] command sudo -n smartctl -a /dev/nvme0 -j smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "/dev/nvme0",
+      "-j"
+    ],
+    "exit_status": 0
+  },
+  "device": {
+    "name": "/dev/nvme0",
+    "info_name": "/dev/nvme0",
+    "type": "nvme",
+    "protocol": "NVMe"
+  },
+  "model_name": "SAMSUNG MZQLB7T6HMLA-00007",
+  "serial_number": "S4BGNW0R702720",
+  "firmware_version": "EDB5202Q",
+  "nvme_pci_vendor": {
+    "id": 5197,
+    "subsystem_id": 5197
+  },
+  "nvme_ieee_oui_identifier": 9528,
+  "nvme_total_capacity": 7681501126656,
+  "nvme_unallocated_capacity": 0,
+  "nvme_controller_id": 4,
+  "nvme_version": {
+    "string": "1.2",
+    "value": 66048
+  },
+  "nvme_number_of_namespaces": 1,
+  "nvme_namespaces": [
+    {
+      "id": 1,
+      "size": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "capacity": {
+        "blocks": 15002931888,
+        "bytes": 7681501126656
+      },
+      "utilization": {
+        "blocks": 7369996928,
+        "bytes": 3773438427136
+      },
+      "formatted_lba_size": 512
+    }
+  ],
+  "user_capacity": {
+    "blocks": 15002931888,
+    "bytes": 7681501126656
+  },
+  "logical_block_size": 512,
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true,
+    "nvme": {
+      "value": 0
+    }
+  },
+  "nvme_smart_health_information_log": {
+    "critical_warning": 0,
+    "temperature": 28,
+    "available_spare": 100,
+    "available_spare_threshold": 10,
+    "percentage_used": 3,
+    "data_units_read": 752436066,
+    "data_units_written": 3736070859,
+    "host_reads": 6434166096,
+    "host_writes": 66582068663,
+    "controller_busy_time": 29218,
+    "power_cycles": 4,
+    "power_on_hours": 21550,
+    "unsafe_shutdowns": 2,
+    "media_errors": 0,
+    "num_err_log_entries": 86,
+    "warning_temp_time": 0,
+    "critical_comp_time": 0,
+    "temperature_sensors": [
+      28,
+      33,
+      36
+    ]
+  },
+  "temperature": {
+    "current": 28
+  },
+  "power_cycle_count": 4,
+  "power_on_time": {
+    "hours": 21550
+  }
+}
+2024/08/02 17:33:47.150711 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d 3ware,0 -j
+2024/08/02 17:33:47.150774 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d sat -j
+2024/08/02 17:33:47.150786 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d areca,1 -j
+2024/08/02 17:33:47.150806 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d sat -j
+2024/08/02 17:33:47.150870 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d cciss,0 -j
+2024/08/02 17:33:47.150941 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d areca,1 -j
+2024/08/02 17:33:47.150959 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sda -d cciss,0 -j
+2024/08/02 17:33:47.151000 [Smart] executing smartctl command: sudo -n smartctl -a /dev/sdb -d 3ware,0 -j
+2024/08/02 17:33:47.187303 [Smart] command sudo -n smartctl -a /dev/sdb -d cciss,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "cciss,0",
+      "/dev/sdb",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sdb [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:33:47.187382 [Smart] command sudo -n smartctl -a /dev/sda -d sat -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "sat",
+      "/dev/sda",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sda",
+    "info_name": "/dev/sda [SAT]",
+    "type": "sat",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:33:47.187453 [Smart] stopped looking for RAID devices of cciss type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sdb [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address
+2024/08/02 17:33:47.187472 [Smart] stopped looking for RAID devices of sat type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:33:47.187666 [Smart] command sudo -n smartctl -a /dev/sdb -d areca,1 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "areca,1",
+      "/dev/sdb",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sdb [areca_disk#01_enc#01] failed: Input/output error",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:33:47.187737 [Smart] stopped looking for RAID devices of areca type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sdb [areca_disk#01_enc#01] failed: Input/output error
+2024/08/02 17:33:47.187821 [Smart] command sudo -n smartctl -a /dev/sdb -d sat -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "sat",
+      "/dev/sdb",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sdb",
+    "info_name": "/dev/sdb [SAT]",
+    "type": "sat",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:33:47.187863 [Smart] stopped looking for RAID devices of sat type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:33:47.188418 [Smart] command sudo -n smartctl -a /dev/sda -d areca,1 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "areca,1",
+      "/dev/sda",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sda [areca_disk#01_enc#01] failed: Input/output error",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:33:47.188476 [Smart] stopped looking for RAID devices of areca type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sda [areca_disk#01_enc#01] failed: Input/output error
+2024/08/02 17:33:47.188506 [Smart] command sudo -n smartctl -a /dev/sda -d cciss,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "cciss,0",
+      "/dev/sda",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Smartctl open device: /dev/sda [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address",
+        "severity": "error"
+      }
+    ],
+    "exit_status": 2
+  }
+}
+2024/08/02 17:33:47.188573 [Smart] stopped looking for RAID devices of cciss type, err: failed to get disk data from smartctl: Smartctl open device: /dev/sda [cciss_disk_00] [SCSI/SAT] failed: INQUIRY [SAT]: No such device or address
+2024/08/02 17:33:47.189762 [Smart] command sudo -n smartctl -a /dev/sda -d 3ware,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "3ware,0",
+      "/dev/sda",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sda",
+    "info_name": "/dev/sda [3ware_disk_00]",
+    "type": "3ware",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:33:47.189834 [Smart] stopped looking for RAID devices of 3ware type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:33:47.192473 [Smart] command sudo -n smartctl -a /dev/sdb -d 3ware,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "3ware,0",
+      "/dev/sdb",
+      "-j"
+    ],
+    "exit_status": 2
+  },
+  "device": {
+    "name": "/dev/sdb",
+    "info_name": "/dev/sdb [3ware_disk_00]",
+    "type": "3ware",
+    "protocol": "ATA"
+  }
+}
+2024/08/02 17:33:47.192506 [Smart] stopped looking for RAID devices of 3ware type, err: failed to get disk data from smartctl: unknown error from smartctl
+2024/08/02 17:33:47.192589 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/0 -d megaraid,0 -j
+2024/08/02 17:33:47.192602 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/0 -d megaraid,1 -j
+2024/08/02 17:33:47.192622 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/0 -d megaraid,2 -j
+2024/08/02 17:33:47.192698 [Smart] executing smartctl command: sudo -n smartctl -a /dev/bus/0 -d megaraid,3 -j
+2024/08/02 17:33:47.363026 [Smart] command sudo -n smartctl -a /dev/bus/0 -d megaraid,0 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,0",
+      "/dev/bus/0",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Warning: This result is based on an Attribute check.",
+        "severity": "warning"
+      }
+    ],
+    "exit_status": 4
+  },
+  "device": {
+    "name": "/dev/bus/0",
+    "info_name": "/dev/bus/0 [megaraid_disk_00] [SAT]",
+    "type": "sat+megaraid,0",
+    "protocol": "ATA"
+  },
+  "model_name": "ST16000NM000J-2TW103",
+  "serial_number": "ZR547BZ8",
+  "wwn": {
+    "naa": 5,
+    "oui": 3152,
+    "id": 3703342729
+  },
+  "firmware_version": "SN02",
+  "user_capacity": {
+    "blocks": 31251759104,
+    "bytes": 16000900661248
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "ata_value": 2,
+    "name": "3.5 inches"
+  },
+  "trim": {
+    "supported": false
+  },
+  "in_smartctl_database": false,
+  "ata_version": {
+    "string": "ACS-4 (minor revision not indicated)",
+    "major_value": 4064,
+    "minor_value": 65535
+  },
+  "sata_version": {
+    "string": "SATA 3.3",
+    "value": 511
+  },
+  "interface_speed": {
+    "max": {
+      "sata_value": 14,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    },
+    "current": {
+      "sata_value": 3,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    }
+  },
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "ata_smart_data": {
+    "offline_data_collection": {
+      "status": {
+        "value": 130,
+        "string": "was completed without error",
+        "passed": true
+      },
+      "completion_seconds": 567
+    },
+    "self_test": {
+      "status": {
+        "value": 0,
+        "string": "completed without error",
+        "passed": true
+      },
+      "polling_minutes": {
+        "short": 1,
+        "extended": 1361,
+        "conveyance": 2
+      }
+    },
+    "capabilities": {
+      "values": [
+        123,
+        3
+      ],
+      "exec_offline_immediate_supported": true,
+      "offline_is_aborted_upon_new_cmd": false,
+      "offline_surface_scan_supported": true,
+      "self_tests_supported": true,
+      "conveyance_self_test_supported": true,
+      "selective_self_test_supported": true,
+      "attribute_autosave_enabled": true,
+      "error_logging_supported": true,
+      "gp_logging_supported": true
+    }
+  },
+  "ata_sct_capabilities": {
+    "value": 28861,
+    "error_recovery_control_supported": true,
+    "feature_control_supported": true,
+    "data_table_supported": true
+  },
+  "ata_smart_attributes": {
+    "revision": 10,
+    "table": [
+      {
+        "id": 1,
+        "name": "Raw_Read_Error_Rate",
+        "value": 73,
+        "worst": 64,
+        "thresh": 44,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 18435486,
+          "string": "18435486"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Spin_Up_Time",
+        "value": 90,
+        "worst": 90,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 3,
+          "string": "PO---- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Start_Stop_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 12,
+          "string": "12"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Reallocated_Sector_Ct",
+        "value": 100,
+        "worst": 100,
+        "thresh": 10,
+        "when_failed": "",
+        "flags": {
+          "value": 51,
+          "string": "PO--CK ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Seek_Error_Rate",
+        "value": 88,
+        "worst": 60,
+        "thresh": 45,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 575151882,
+          "string": "575151882"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Power_On_Hours",
+        "value": 75,
+        "worst": 75,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 22385,
+          "string": "22385"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Spin_Retry_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 97,
+        "when_failed": "",
+        "flags": {
+          "value": 19,
+          "string": "PO--C- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Power_Cycle_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 12,
+          "string": "12"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Unknown_Attribute",
+        "value": 100,
+        "worst": 100,
+        "thresh": 50,
+        "when_failed": "",
+        "flags": {
+          "value": 11,
+          "string": "PO-R-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 187,
+        "name": "Reported_Uncorrect",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 188,
+        "name": "Command_Timeout",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 190,
+        "name": "Airflow_Temperature_Cel",
+        "value": 72,
+        "worst": 64,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 605224988,
+          "string": "28 (Min/Max 19/36)"
+        }
+      },
+      {
+        "id": 192,
+        "name": "Power-Off_Retract_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 8,
+          "string": "8"
+        }
+      },
+      {
+        "id": 193,
+        "name": "Load_Cycle_Count",
+        "value": 98,
+        "worst": 98,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 4979,
+          "string": "4979"
+        }
+      },
+      {
+        "id": 194,
+        "name": "Temperature_Celsius",
+        "value": 28,
+        "worst": 40,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 60129542172,
+          "string": "28 (0 14 0 0 0)"
+        }
+      },
+      {
+        "id": 197,
+        "name": "Current_Pending_Sector",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 18,
+          "string": "-O--C- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 198,
+        "name": "Offline_Uncorrectable",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 16,
+          "string": "----C- ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 199,
+        "name": "UDMA_CRC_Error_Count",
+        "value": 200,
+        "worst": 200,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 62,
+          "string": "-OSRCK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 200,
+        "name": "Multi_Zone_Error_Rate",
+        "value": 100,
+        "worst": 100,
+        "thresh": 1,
+        "when_failed": "",
+        "flags": {
+          "value": 35,
+          "string": "PO---K ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 240,
+        "name": "Head_Flying_Hours",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 279787054583680,
+          "string": "20352 (254 119 0)"
+        }
+      },
+      {
+        "id": 241,
+        "name": "Total_LBAs_Written",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 339422107677,
+          "string": "339422107677"
+        }
+      },
+      {
+        "id": 242,
+        "name": "Total_LBAs_Read",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 18444268113962,
+          "string": "18444268113962"
+        }
+      }
+    ]
+  },
+  "power_on_time": {
+    "hours": 22385
+  },
+  "power_cycle_count": 12,
+  "temperature": {
+    "current": 28
+  },
+  "ata_smart_error_log": {
+    "summary": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_self_test_log": {
+    "standard": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_selective_self_test_log": {
+    "revision": 1,
+    "table": [
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      }
+    ],
+    "flags": {
+      "value": 0,
+      "remainder_scan_enabled": false
+    },
+    "power_up_scan_resume_minutes": 0
+  }
+}
+2024/08/02 17:33:47.375702 [Smart] command sudo -n smartctl -a /dev/bus/0 -d megaraid,3 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,3",
+      "/dev/bus/0",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Warning: This result is based on an Attribute check.",
+        "severity": "warning"
+      }
+    ],
+    "exit_status": 4
+  },
+  "device": {
+    "name": "/dev/bus/0",
+    "info_name": "/dev/bus/0 [megaraid_disk_03] [SAT]",
+    "type": "sat+megaraid,3",
+    "protocol": "ATA"
+  },
+  "model_name": "ST20000NM007D-3DJ103",
+  "serial_number": "ZVT5ZBYJ",
+  "wwn": {
+    "naa": 5,
+    "oui": 3152,
+    "id": 3856212894
+  },
+  "firmware_version": "SN01",
+  "user_capacity": {
+    "blocks": 39063650304,
+    "bytes": 20000588955648
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "ata_value": 2,
+    "name": "3.5 inches"
+  },
+  "trim": {
+    "supported": false
+  },
+  "in_smartctl_database": false,
+  "ata_version": {
+    "string": "ACS-4 (minor revision not indicated)",
+    "major_value": 4064,
+    "minor_value": 65535
+  },
+  "sata_version": {
+    "string": "SATA 3.3",
+    "value": 511
+  },
+  "interface_speed": {
+    "max": {
+      "sata_value": 14,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    },
+    "current": {
+      "sata_value": 3,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    }
+  },
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "ata_smart_data": {
+    "offline_data_collection": {
+      "status": {
+        "value": 130,
+        "string": "was completed without error",
+        "passed": true
+      },
+      "completion_seconds": 567
+    },
+    "self_test": {
+      "status": {
+        "value": 0,
+        "string": "completed without error",
+        "passed": true
+      },
+      "polling_minutes": {
+        "short": 1,
+        "extended": 1712,
+        "conveyance": 2
+      }
+    },
+    "capabilities": {
+      "values": [
+        123,
+        3
+      ],
+      "exec_offline_immediate_supported": true,
+      "offline_is_aborted_upon_new_cmd": false,
+      "offline_surface_scan_supported": true,
+      "self_tests_supported": true,
+      "conveyance_self_test_supported": true,
+      "selective_self_test_supported": true,
+      "attribute_autosave_enabled": true,
+      "error_logging_supported": true,
+      "gp_logging_supported": true
+    }
+  },
+  "ata_sct_capabilities": {
+    "value": 28861,
+    "error_recovery_control_supported": true,
+    "feature_control_supported": true,
+    "data_table_supported": true
+  },
+  "ata_smart_attributes": {
+    "revision": 10,
+    "table": [
+      {
+        "id": 1,
+        "name": "Raw_Read_Error_Rate",
+        "value": 77,
+        "worst": 64,
+        "thresh": 44,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 47433712,
+          "string": "47433712"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Spin_Up_Time",
+        "value": 99,
+        "worst": 99,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 3,
+          "string": "PO---- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Start_Stop_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 1,
+          "string": "1"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Reallocated_Sector_Ct",
+        "value": 100,
+        "worst": 100,
+        "thresh": 10,
+        "when_failed": "",
+        "flags": {
+          "value": 51,
+          "string": "PO--CK ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Seek_Error_Rate",
+        "value": 87,
+        "worst": 60,
+        "thresh": 45,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 462209477,
+          "string": "462209477"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Power_On_Hours",
+        "value": 86,
+        "worst": 86,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 13029,
+          "string": "13029"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Spin_Retry_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 97,
+        "when_failed": "",
+        "flags": {
+          "value": 19,
+          "string": "PO--C- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Power_Cycle_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 1,
+          "string": "1"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Unknown_Attribute",
+        "value": 100,
+        "worst": 100,
+        "thresh": 50,
+        "when_failed": "",
+        "flags": {
+          "value": 11,
+          "string": "PO-R-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 187,
+        "name": "Reported_Uncorrect",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 188,
+        "name": "Command_Timeout",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 190,
+        "name": "Airflow_Temperature_Cel",
+        "value": 75,
+        "worst": 45,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 554827801,
+          "string": "25 (Min/Max 18/33)"
+        }
+      },
+      {
+        "id": 192,
+        "name": "Power-Off_Retract_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 1,
+          "string": "1"
+        }
+      },
+      {
+        "id": 193,
+        "name": "Load_Cycle_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 572,
+          "string": "572"
+        }
+      },
+      {
+        "id": 194,
+        "name": "Temperature_Celsius",
+        "value": 25,
+        "worst": 40,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 77309411353,
+          "string": "25 (0 18 0 0 0)"
+        }
+      },
+      {
+        "id": 197,
+        "name": "Current_Pending_Sector",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 18,
+          "string": "-O--C- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 198,
+        "name": "Offline_Uncorrectable",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 16,
+          "string": "----C- ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 199,
+        "name": "UDMA_CRC_Error_Count",
+        "value": 200,
+        "worst": 200,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 62,
+          "string": "-OSRCK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 200,
+        "name": "Multi_Zone_Error_Rate",
+        "value": 100,
+        "worst": 100,
+        "thresh": 1,
+        "when_failed": "",
+        "flags": {
+          "value": 35,
+          "string": "PO---K ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 240,
+        "name": "Head_Flying_Hours",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 8529805062878,
+          "string": "13022 (7 194 0)"
+        }
+      },
+      {
+        "id": 241,
+        "name": "Total_LBAs_Written",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 50946714653,
+          "string": "50946714653"
+        }
+      },
+      {
+        "id": 242,
+        "name": "Total_LBAs_Read",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 6766370600635,
+          "string": "6766370600635"
+        }
+      }
+    ]
+  },
+  "power_on_time": {
+    "hours": 13029
+  },
+  "power_cycle_count": 1,
+  "temperature": {
+    "current": 25
+  },
+  "ata_smart_error_log": {
+    "summary": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_self_test_log": {
+    "standard": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_selective_self_test_log": {
+    "revision": 1,
+    "table": [
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      }
+    ],
+    "flags": {
+      "value": 0,
+      "remainder_scan_enabled": false
+    },
+    "power_up_scan_resume_minutes": 0
+  }
+}
+2024/08/02 17:33:47.433752 [Smart] command sudo -n smartctl -a /dev/bus/0 -d megaraid,1 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,1",
+      "/dev/bus/0",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Warning: This result is based on an Attribute check.",
+        "severity": "warning"
+      }
+    ],
+    "exit_status": 4
+  },
+  "device": {
+    "name": "/dev/bus/0",
+    "info_name": "/dev/bus/0 [megaraid_disk_01] [SAT]",
+    "type": "sat+megaraid,1",
+    "protocol": "ATA"
+  },
+  "model_name": "ST16000NM000J-2TW103",
+  "serial_number": "ZR53X72A",
+  "wwn": {
+    "naa": 5,
+    "oui": 3152,
+    "id": 3696990745
+  },
+  "firmware_version": "SN02",
+  "user_capacity": {
+    "blocks": 31251759104,
+    "bytes": 16000900661248
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "ata_value": 2,
+    "name": "3.5 inches"
+  },
+  "trim": {
+    "supported": false
+  },
+  "in_smartctl_database": false,
+  "ata_version": {
+    "string": "ACS-4 (minor revision not indicated)",
+    "major_value": 4064,
+    "minor_value": 65535
+  },
+  "sata_version": {
+    "string": "SATA 3.3",
+    "value": 511
+  },
+  "interface_speed": {
+    "max": {
+      "sata_value": 14,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    },
+    "current": {
+      "sata_value": 3,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    }
+  },
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "ata_smart_data": {
+    "offline_data_collection": {
+      "status": {
+        "value": 130,
+        "string": "was completed without error",
+        "passed": true
+      },
+      "completion_seconds": 559
+    },
+    "self_test": {
+      "status": {
+        "value": 0,
+        "string": "completed without error",
+        "passed": true
+      },
+      "polling_minutes": {
+        "short": 1,
+        "extended": 1344,
+        "conveyance": 2
+      }
+    },
+    "capabilities": {
+      "values": [
+        123,
+        3
+      ],
+      "exec_offline_immediate_supported": true,
+      "offline_is_aborted_upon_new_cmd": false,
+      "offline_surface_scan_supported": true,
+      "self_tests_supported": true,
+      "conveyance_self_test_supported": true,
+      "selective_self_test_supported": true,
+      "attribute_autosave_enabled": true,
+      "error_logging_supported": true,
+      "gp_logging_supported": true
+    }
+  },
+  "ata_sct_capabilities": {
+    "value": 28861,
+    "error_recovery_control_supported": true,
+    "feature_control_supported": true,
+    "data_table_supported": true
+  },
+  "ata_smart_attributes": {
+    "revision": 10,
+    "table": [
+      {
+        "id": 1,
+        "name": "Raw_Read_Error_Rate",
+        "value": 83,
+        "worst": 64,
+        "thresh": 44,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 220767974,
+          "string": "220767974"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Spin_Up_Time",
+        "value": 90,
+        "worst": 90,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 3,
+          "string": "PO---- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Start_Stop_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 12,
+          "string": "12"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Reallocated_Sector_Ct",
+        "value": 100,
+        "worst": 100,
+        "thresh": 10,
+        "when_failed": "",
+        "flags": {
+          "value": 51,
+          "string": "PO--CK ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Seek_Error_Rate",
+        "value": 87,
+        "worst": 60,
+        "thresh": 45,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 558349499,
+          "string": "558349499"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Power_On_Hours",
+        "value": 75,
+        "worst": 75,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 22385,
+          "string": "22385"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Spin_Retry_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 97,
+        "when_failed": "",
+        "flags": {
+          "value": 19,
+          "string": "PO--C- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Power_Cycle_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 12,
+          "string": "12"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Unknown_Attribute",
+        "value": 100,
+        "worst": 100,
+        "thresh": 50,
+        "when_failed": "",
+        "flags": {
+          "value": 11,
+          "string": "PO-R-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 187,
+        "name": "Reported_Uncorrect",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 188,
+        "name": "Command_Timeout",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 190,
+        "name": "Airflow_Temperature_Cel",
+        "value": 73,
+        "worst": 49,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 638648347,
+          "string": "27 (Min/Max 17/38)"
+        }
+      },
+      {
+        "id": 192,
+        "name": "Power-Off_Retract_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 8,
+          "string": "8"
+        }
+      },
+      {
+        "id": 193,
+        "name": "Load_Cycle_Count",
+        "value": 98,
+        "worst": 98,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 4616,
+          "string": "4616"
+        }
+      },
+      {
+        "id": 194,
+        "name": "Temperature_Celsius",
+        "value": 27,
+        "worst": 40,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 60129542171,
+          "string": "27 (0 14 0 0 0)"
+        }
+      },
+      {
+        "id": 197,
+        "name": "Current_Pending_Sector",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 18,
+          "string": "-O--C- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 198,
+        "name": "Offline_Uncorrectable",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 16,
+          "string": "----C- ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 199,
+        "name": "UDMA_CRC_Error_Count",
+        "value": 200,
+        "worst": 200,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 62,
+          "string": "-OSRCK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 200,
+        "name": "Multi_Zone_Error_Rate",
+        "value": 100,
+        "worst": 100,
+        "thresh": 1,
+        "when_failed": "",
+        "flags": {
+          "value": 35,
+          "string": "PO---K ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 240,
+        "name": "Head_Flying_Hours",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 190992900706128,
+          "string": "20304 (173 181 0)"
+        }
+      },
+      {
+        "id": 241,
+        "name": "Total_LBAs_Written",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 339122206013,
+          "string": "339122206013"
+        }
+      },
+      {
+        "id": 242,
+        "name": "Total_LBAs_Read",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 18554996043962,
+          "string": "18554996043962"
+        }
+      }
+    ]
+  },
+  "power_on_time": {
+    "hours": 22385
+  },
+  "power_cycle_count": 12,
+  "temperature": {
+    "current": 27
+  },
+  "ata_smart_error_log": {
+    "summary": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_self_test_log": {
+    "standard": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_selective_self_test_log": {
+    "revision": 1,
+    "table": [
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      }
+    ],
+    "flags": {
+      "value": 0,
+      "remainder_scan_enabled": false
+    },
+    "power_up_scan_resume_minutes": 0
+  }
+}
+2024/08/02 17:33:47.471432 [Smart] command sudo -n smartctl -a /dev/bus/0 -d megaraid,2 -j  smartctl raw response: {
+  "json_format_version": [
+    1,
+    0
+  ],
+  "smartctl": {
+    "version": [
+      7,
+      2
+    ],
+    "svn_revision": "5155",
+    "platform_info": "x86_64-linux-5.14.0-162.22.2.el9_1.x86_64",
+    "build_info": "(local build)",
+    "argv": [
+      "smartctl",
+      "-a",
+      "-d",
+      "megaraid,2",
+      "/dev/bus/0",
+      "-j"
+    ],
+    "messages": [
+      {
+        "string": "Warning: This result is based on an Attribute check.",
+        "severity": "warning"
+      }
+    ],
+    "exit_status": 4
+  },
+  "device": {
+    "name": "/dev/bus/0",
+    "info_name": "/dev/bus/0 [megaraid_disk_02] [SAT]",
+    "type": "sat+megaraid,2",
+    "protocol": "ATA"
+  },
+  "model_name": "ST20000NM007D-3DJ103",
+  "serial_number": "ZVT5KC2Y",
+  "wwn": {
+    "naa": 5,
+    "oui": 3152,
+    "id": 3855284903
+  },
+  "firmware_version": "SN01",
+  "user_capacity": {
+    "blocks": 39063650304,
+    "bytes": 20000588955648
+  },
+  "logical_block_size": 512,
+  "physical_block_size": 4096,
+  "rotation_rate": 7200,
+  "form_factor": {
+    "ata_value": 2,
+    "name": "3.5 inches"
+  },
+  "trim": {
+    "supported": false
+  },
+  "in_smartctl_database": false,
+  "ata_version": {
+    "string": "ACS-4 (minor revision not indicated)",
+    "major_value": 4064,
+    "minor_value": 65535
+  },
+  "sata_version": {
+    "string": "SATA 3.3",
+    "value": 511
+  },
+  "interface_speed": {
+    "max": {
+      "sata_value": 14,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    },
+    "current": {
+      "sata_value": 3,
+      "string": "6.0 Gb/s",
+      "units_per_second": 60,
+      "bits_per_unit": 100000000
+    }
+  },
+  "local_time": {
+    "time_t": 1722609227,
+    "asctime": "Fri Aug  2 17:33:47 2024 EEST"
+  },
+  "smart_status": {
+    "passed": true
+  },
+  "ata_smart_data": {
+    "offline_data_collection": {
+      "status": {
+        "value": 130,
+        "string": "was completed without error",
+        "passed": true
+      },
+      "completion_seconds": 567
+    },
+    "self_test": {
+      "status": {
+        "value": 0,
+        "string": "completed without error",
+        "passed": true
+      },
+      "polling_minutes": {
+        "short": 1,
+        "extended": 1721,
+        "conveyance": 2
+      }
+    },
+    "capabilities": {
+      "values": [
+        123,
+        3
+      ],
+      "exec_offline_immediate_supported": true,
+      "offline_is_aborted_upon_new_cmd": false,
+      "offline_surface_scan_supported": true,
+      "self_tests_supported": true,
+      "conveyance_self_test_supported": true,
+      "selective_self_test_supported": true,
+      "attribute_autosave_enabled": true,
+      "error_logging_supported": true,
+      "gp_logging_supported": true
+    }
+  },
+  "ata_sct_capabilities": {
+    "value": 28861,
+    "error_recovery_control_supported": true,
+    "feature_control_supported": true,
+    "data_table_supported": true
+  },
+  "ata_smart_attributes": {
+    "revision": 10,
+    "table": [
+      {
+        "id": 1,
+        "name": "Raw_Read_Error_Rate",
+        "value": 77,
+        "worst": 64,
+        "thresh": 44,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 53759280,
+          "string": "53759280"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Spin_Up_Time",
+        "value": 99,
+        "worst": 99,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 3,
+          "string": "PO---- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Start_Stop_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 1,
+          "string": "1"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Reallocated_Sector_Ct",
+        "value": 100,
+        "worst": 100,
+        "thresh": 10,
+        "when_failed": "",
+        "flags": {
+          "value": 51,
+          "string": "PO--CK ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Seek_Error_Rate",
+        "value": 87,
+        "worst": 60,
+        "thresh": 45,
+        "when_failed": "",
+        "flags": {
+          "value": 15,
+          "string": "POSR-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 469985512,
+          "string": "469985512"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Power_On_Hours",
+        "value": 86,
+        "worst": 86,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 13029,
+          "string": "13029"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Spin_Retry_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 97,
+        "when_failed": "",
+        "flags": {
+          "value": 19,
+          "string": "PO--C- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Power_Cycle_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 20,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 1,
+          "string": "1"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Unknown_Attribute",
+        "value": 100,
+        "worst": 100,
+        "thresh": 50,
+        "when_failed": "",
+        "flags": {
+          "value": 11,
+          "string": "PO-R-- ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": true,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 187,
+        "name": "Reported_Uncorrect",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 188,
+        "name": "Command_Timeout",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 190,
+        "name": "Airflow_Temperature_Cel",
+        "value": 73,
+        "worst": 66,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 571605019,
+          "string": "27 (Min/Max 18/34)"
+        }
+      },
+      {
+        "id": 192,
+        "name": "Power-Off_Retract_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 1,
+          "string": "1"
+        }
+      },
+      {
+        "id": 193,
+        "name": "Load_Cycle_Count",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 50,
+          "string": "-O--CK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 573,
+          "string": "573"
+        }
+      },
+      {
+        "id": 194,
+        "name": "Temperature_Celsius",
+        "value": 27,
+        "worst": 40,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 34,
+          "string": "-O---K ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 77309411355,
+          "string": "27 (0 18 0 0 0)"
+        }
+      },
+      {
+        "id": 197,
+        "name": "Current_Pending_Sector",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 18,
+          "string": "-O--C- ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 198,
+        "name": "Offline_Uncorrectable",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 16,
+          "string": "----C- ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": true,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 199,
+        "name": "UDMA_CRC_Error_Count",
+        "value": 200,
+        "worst": 200,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 62,
+          "string": "-OSRCK ",
+          "prefailure": false,
+          "updated_online": true,
+          "performance": true,
+          "error_rate": true,
+          "event_count": true,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 200,
+        "name": "Multi_Zone_Error_Rate",
+        "value": 100,
+        "worst": 100,
+        "thresh": 1,
+        "when_failed": "",
+        "flags": {
+          "value": 35,
+          "string": "PO---K ",
+          "prefailure": true,
+          "updated_online": true,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": true
+        },
+        "raw": {
+          "value": 0,
+          "string": "0"
+        }
+      },
+      {
+        "id": 240,
+        "name": "Head_Flying_Hours",
+        "value": 100,
+        "worst": 100,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 271789825471198,
+          "string": "13022 (247 49 0)"
+        }
+      },
+      {
+        "id": 241,
+        "name": "Total_LBAs_Written",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 50946714653,
+          "string": "50946714653"
+        }
+      },
+      {
+        "id": 242,
+        "name": "Total_LBAs_Read",
+        "value": 100,
+        "worst": 253,
+        "thresh": 0,
+        "when_failed": "",
+        "flags": {
+          "value": 0,
+          "string": "------ ",
+          "prefailure": false,
+          "updated_online": false,
+          "performance": false,
+          "error_rate": false,
+          "event_count": false,
+          "auto_keep": false
+        },
+        "raw": {
+          "value": 6956450165696,
+          "string": "6956450165696"
+        }
+      }
+    ]
+  },
+  "power_on_time": {
+    "hours": 13029
+  },
+  "power_cycle_count": 1,
+  "temperature": {
+    "current": 27
+  },
+  "ata_smart_error_log": {
+    "summary": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_self_test_log": {
+    "standard": {
+      "revision": 1,
+      "count": 0
+    }
+  },
+  "ata_smart_selective_self_test_log": {
+    "revision": 1,
+    "table": [
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      },
+      {
+        "lba_min": 0,
+        "lba_max": 0,
+        "status": {
+          "value": 0,
+          "string": "Not_testing"
+        }
+      }
+    ],
+    "flags": {
+      "value": 0,
+      "remainder_scan_enabled": false
+    },
+    "power_up_scan_resume_minutes": 0
+  }
+}
+2024/08/02 17:33:47.472267 executed direct exporter task for key 'smart.disk.discovery'
+smart.disk.discovery                          [s|[{"{#NAME}":"bus/0 megaraid,2","{#DISKTYPE}":"hdd","{#MODEL}":"ST20000NM007D-3DJ103","{#SN}":"ZVT5KC2Y","{#PATH}":"/dev/bus/0","{#RAIDTYPE}":"megaraid,2","{#ATTRIBUTES}":"Raw_Read_Error_Rate Spin_Up_Time Start_Stop_Count Reallocated_Sector_Ct Seek_Error_Rate Power_On_Hours Spin_Retry_Count Power_Cycle_Count Reported_Uncorrect Command_Timeout Airflow_Temperature_Cel Power-Off_Retract_Count Load_Cycle_Count Temperature_Celsius Current_Pending_Sector Offline_Uncorrectable UDMA_CRC_Error_Count Multi_Zone_Error_Rate Head_Flying_Hours Total_LBAs_Written Total_LBAs_Read"},{"{#NAME}":"bus/0 megaraid,3","{#DISKTYPE}":"hdd","{#MODEL}":"ST20000NM007D-3DJ103","{#SN}":"ZVT5ZBYJ","{#PATH}":"/dev/bus/0","{#RAIDTYPE}":"megaraid,3","{#ATTRIBUTES}":"Raw_Read_Error_Rate Spin_Up_Time Start_Stop_Count Reallocated_Sector_Ct Seek_Error_Rate Power_On_Hours Spin_Retry_Count Power_Cycle_Count Reported_Uncorrect Command_Timeout Airflow_Temperature_Cel Power-Off_Retract_Count Load_Cycle_Count Temperature_Celsius Current_Pending_Sector Offline_Uncorrectable UDMA_CRC_Error_Count Multi_Zone_Error_Rate Head_Flying_Hours Total_LBAs_Written Total_LBAs_Read"},{"{#NAME}":"nvme0","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQLB7T6HMLA-00007","{#SN}":"S4BGNW0R702720","{#PATH}":"/dev/nvme0","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"nvme1","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQLB7T6HMLA-00007","{#SN}":"S4BGNW0R702722","{#PATH}":"/dev/nvme1","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"nvme2","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQLB7T6HMLA-00007","{#SN}":"S4BGNW0R702725","{#PATH}":"/dev/nvme2","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"nvme3","{#DISKTYPE}":"nvme","{#MODEL}":"SAMSUNG MZQLB7T6HMLA-00007","{#SN}":"S4BGNW0R702716","{#PATH}":"/dev/nvme3","{#RAIDTYPE}":"","{#ATTRIBUTES}":""},{"{#NAME}":"bus/0 megaraid,0","{#DISKTYPE}":"hdd","{#MODEL}":"ST16000NM000J-2TW103","{#SN}":"ZR547BZ8","{#PATH}":"/dev/bus/0","{#RAIDTYPE}":"megaraid,0","{#ATTRIBUTES}":"Raw_Read_Error_Rate Spin_Up_Time Start_Stop_Count Reallocated_Sector_Ct Seek_Error_Rate Power_On_Hours Spin_Retry_Count Power_Cycle_Count Reported_Uncorrect Command_Timeout Airflow_Temperature_Cel Power-Off_Retract_Count Load_Cycle_Count Temperature_Celsius Current_Pending_Sector Offline_Uncorrectable UDMA_CRC_Error_Count Multi_Zone_Error_Rate Head_Flying_Hours Total_LBAs_Written Total_LBAs_Read"},{"{#NAME}":"bus/0 megaraid,1","{#DISKTYPE}":"hdd","{#MODEL}":"ST16000NM000J-2TW103","{#SN}":"ZR53X72A","{#PATH}":"/dev/bus/0","{#RAIDTYPE}":"megaraid,1","{#ATTRIBUTES}":"Raw_Read_Error_Rate Spin_Up_Time Start_Stop_Count Reallocated_Sector_Ct Seek_Error_Rate Power_On_Hours Spin_Retry_Count Power_Cycle_Count Reported_Uncorrect Command_Timeout Airflow_Temperature_Cel Power-Off_Retract_Count Load_Cycle_Count Temperature_Celsius Current_Pending_Sector Offline_Uncorrectable UDMA_CRC_Error_Count Multi_Zone_Error_Rate Head_Flying_Hours Total_LBAs_Written Total_LBAs_Read"}]]
+2024/08/02 17:33:47.472325 manager has been stopped
