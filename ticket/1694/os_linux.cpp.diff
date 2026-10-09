@@ -1,0 +1,93 @@
+Index: os_linux.cpp
+===================================================================
+--- os_linux.cpp	(revision 5450)
++++ os_linux.cpp	(working copy)
+@@ -1399,7 +1399,7 @@
+   unsigned int m_eid;
+   unsigned int m_sid;
+ 
+-  bool scsi_cmd(int cdbLen, void *cdb, int dataLen, void *data, int direction);
++  bool scsi_cmd(scsi_cmnd_io *iop);
+ };
+ 
+ linux_sssraid_device::linux_sssraid_device(smart_interface *intf,
+@@ -1439,14 +1439,12 @@
+     pout("%s", buff);
+   }
+ 
+-  bool r = scsi_cmd(iop->cmnd_len, iop->cmnd,
+-          iop->dxfer_len, iop->dxferp, iop->dxfer_dir);
++  bool r = scsi_cmd(iop);
+   return r;
+ }
+ 
+ /* Issue passthrough scsi commands to sssraid controllers */
+-bool linux_sssraid_device::scsi_cmd(int cdbLen, void *cdb,
+-  int dataLen, void *data, int dxfer_dir)
++bool linux_sssraid_device::scsi_cmd(scsi_cmnd_io *iop)
+ {
+   struct sg_io_v4 io_hdr_v4;
+   struct cmd_scsi_passthrough scsi_param;
+@@ -1457,8 +1455,8 @@
+   memset(&bsg_param, 0, sizeof(bsg_param));
+   scsi_param.sense_buffer = sense_buff;
+   scsi_param.sense_buffer_len = 96;
+-  scsi_param.cdb_len = cdbLen;
+-  memcpy(scsi_param.cdb, cdb, cdbLen);
++  scsi_param.cdb_len = iop->cmnd_len;
++  memcpy(scsi_param.cdb, iop->cmnd, iop->cmnd_len);
+   scsi_param.loc.enc_id = m_eid;
+   scsi_param.loc.slot_id = m_sid;
+ 
+@@ -1471,16 +1469,18 @@
+   io_hdr_v4.request = (uintptr_t)(&bsg_param);
+   io_hdr_v4.timeout =  BSG_APPEND_TIMEOUT_MS + DEFAULT_CONMMAND_TIMEOUT_MS;
+ 
+-  switch (dxfer_dir) {
++  switch (iop->dxfer_dir) {
+     case DXFER_NONE:
++      bsg_param.ioctl_pthru.opcode = ADM_RAID_SET;
++      break;
+     case DXFER_FROM_DEVICE:
+-      io_hdr_v4.din_xferp = (uintptr_t)data;
+-      io_hdr_v4.din_xfer_len = dataLen;
++      io_hdr_v4.din_xferp = (uintptr_t)iop->dxferp;
++      io_hdr_v4.din_xfer_len = iop->dxfer_len;
+       bsg_param.ioctl_pthru.opcode = ADM_RAID_READ;
+       break;
+     case DXFER_TO_DEVICE:
+-      io_hdr_v4.dout_xferp = (uintptr_t)data;
+-      io_hdr_v4.dout_xfer_len = dataLen;
++      io_hdr_v4.dout_xferp = (uintptr_t)iop->dxferp;
++      io_hdr_v4.dout_xfer_len = iop->dxfer_len;
+       bsg_param.ioctl_pthru.opcode = ADM_RAID_WRITE;
+       break;
+     default:
+@@ -1491,8 +1491,8 @@
+   bsg_param.msgcode = ADM_BSG_MSGCODE_SCSI_PTHRU;
+   bsg_param.ioctl_pthru.timeout_ms = DEFAULT_CONMMAND_TIMEOUT_MS;
+   bsg_param.ioctl_pthru.info_1.subopcode = ADM_CMD_SCSI_PASSTHROUGH;
+-  bsg_param.ioctl_pthru.addr = (uintptr_t)data;
+-  bsg_param.ioctl_pthru.data_len = dataLen;
++  bsg_param.ioctl_pthru.addr = (uintptr_t)iop->dxferp;
++  bsg_param.ioctl_pthru.data_len = iop->dxfer_len;
+ 
+   bsg_param.ioctl_pthru.info_0.cdb_len = scsi_param.cdb_len;
+   bsg_param.ioctl_pthru.sense_addr = (uintptr_t)scsi_param.sense_buffer;
+@@ -1511,6 +1511,16 @@
+     return (r);
+   }
+ 
++  iop->scsi_status = io_hdr_v4.device_status;
++  
++  int len =  ( iop->max_sense_len < io_hdr_v4.max_response_len ) ?
++               iop->max_sense_len : io_hdr_v4.max_response_len;
++
++  if (iop->sensep != NULL && len > 0) {
++    memcpy((uint8_t*)iop->sensep, (uint8_t*)io_hdr_v4.response, len);
++    iop->resp_sense_len = len;
++  }
++
+   return true;
+ }
+ 
