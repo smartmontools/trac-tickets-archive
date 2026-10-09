@@ -1,0 +1,25 @@
+[525715.630107] usb 2-1: new SuperSpeed Gen 1 USB device number 10 using xhci_hcd
+[525715.651344] usb 2-1: New USB device found, idVendor=0781, idProduct=55b0, bcdDevice= 3.05
+[525715.651771] usb 2-1: New USB device strings: Mfr=2, Product=3, SerialNumber=1
+[525715.652140] usb 2-1: Product: Portable SSD
+[525715.652358] usb 2-1: Manufacturer: SanDisk
+[525715.652576] usb 2-1: SerialNumber: 323332303656343030353135
+[525715.659883] scsi host3: uas
+[525715.661012] scsi 3:0:0:0: Direct-Access     SanDisk  Portable SSD     0305 PQ: 0 ANSI: 6
+[525715.662978] scsi 3:0:0:1: Enclosure         SanDisk  SES Device       0305 PQ: 0 ANSI: 6
+[525715.664818] sd 3:0:0:0: Attached scsi generic sg2 type 0
+[525715.665686] scsi 3:0:0:1: Attached scsi generic sg3 type 13
+[525715.679297] sd 3:0:0:0: [sdc] 3907028992 512-byte logical blocks: (2.00 TB/1.82 TiB)
+[525715.679731] sd 3:0:0:0: [sdc] 4096-byte physical blocks
+[525715.680221] sd 3:0:0:0: [sdc] Write Protect is off
+[525715.680507] sd 3:0:0:0: [sdc] Mode Sense: 5f 00 10 00
+[525715.680798] sd 3:0:0:0: [sdc] Write cache: enabled, read cache: enabled, supports DPO and FUA
+[525715.681528] sd 3:0:0:0: [sdc] Optimal transfer size 1048576 bytes
+[525715.702914]  sdc: sdc1
+[525715.743409] sd 3:0:0:0: [sdc] Attached SCSI disk
+[525715.747738] scsi 3:0:0:1: Wrong diagnostic page; asked for 1 got 8
+[525715.748026] scsi 3:0:0:1: Failed to get diagnostic page 0x1
+[525715.748287] scsi 3:0:0:1: Failed to bind enclosure -19
+[525715.748557] ses 3:0:0:1: Attached Enclosure device
+[525983.777238] [drm:drm_dp_mst_dpcd_read [drm_kms_helper]] *ERROR* mstb 00000000dce9d420 port 2: DPCD read on addr 0x4b0 for 1 bytes NAKed
+[525983.783705] [drm:drm_dp_mst_dpcd_read [drm_kms_helper]] *ERROR* mstb 00000000dce9d420 port 3: DPCD read on addr 0x4b0 for 1 bytes NAKed

@@ -1,0 +1,21 @@
+GPT fdisk (gdisk) version 1.0.6
+
+Partition table scan:
+  MBR: protective
+  BSD: not present
+  APM: not present
+  GPT: present
+
+Found valid GPT with protective MBR; using GPT.
+Disk /dev/sdc: 3907028992 sectors, 1.8 TiB
+Model: Portable SSD    
+Sector size (logical/physical): 512/4096 bytes
+Disk identifier (GUID): BD9C0856-496D-4EC8-B50D-F8A95252B509
+Partition table holds up to 128 entries
+Main partition table begins at sector 2 and ends at sector 33
+First usable sector is 34, last usable sector is 3907028958
+Partitions will be aligned on 2048-sector boundaries
+Total free space is 4029 sectors (2.0 MiB)
+
+Number  Start (sector)    End (sector)  Size       Code  Name
+   1            2048      3907026943   1.8 TiB     0700  PortableSSD

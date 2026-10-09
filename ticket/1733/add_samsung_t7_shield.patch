@@ -1,0 +1,15 @@
+--- drivedb.h.orig	2023-06-18 10:47:59.823186165 +0200
++++ drivedb.h	2023-06-18 10:47:26.300427593 +0200
+@@ -5279,6 +5279,12 @@
+     "",
+     "-d sntasmedia"
+   },
++  { "USB: Samsung Portable SSD T7 Shield; ASMedia ASM2362",
++    "0x04e8:0x61fb",
++    "",
++    "",
++    "-d sntasmedia"
++  },
+   { "USB: Samsung Story Station; ",
+     "0x04e8:0x5f0[56]",
+     "",

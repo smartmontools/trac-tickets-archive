@@ -1,0 +1,19 @@
+*** drivedb.h.orig	Mon Aug  7 17:42:32 2023
+--- drivedb.h	Mon Aug  7 17:43:27 2023
+***************
+*** 2987,2993 ****
+      "-v 250,raw48,Read_Retry_Count "
+    },
+    { "SK hynix SATA SSDs",
+!     "HFS(480|960|1T9|3T8)G3[2E]FEH-7[4A]10A", // tested with HFS480G32FEH-7410A/90037Q00
+      "", "",
+    //"-v 1,raw48,Raw_Read_Error_Rate "
+      "-v 5,raw48,Retired_Block_Count "
+--- 2987,2993 ----
+      "-v 250,raw48,Read_Retry_Count "
+    },
+    { "SK hynix SATA SSDs",
+!     "HFS(480|960|1T9|3T8)G3[2E]FEH.*", // tested with HFS480G32FEH-7410A/90037Q00
+      "", "",
+    //"-v 1,raw48,Raw_Read_Error_Rate "
+      "-v 5,raw48,Retired_Block_Count "

@@ -1,0 +1,3 @@
+NAME   DISC-ALN DISC-GRAN DISC-MAX DISC-ZERO
+sdc           0        4K       4G         0
+└─sdc1        0        4K       4G         0
