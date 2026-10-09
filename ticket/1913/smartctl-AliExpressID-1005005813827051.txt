@@ -1,0 +1,8 @@
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.6.44-production+truenas] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+/dev/sdc: Unknown USB bridge [0x2109:0x0561 (0x9128)]
+Please specify device type with the -d option.
+
+Use smartctl -h to get a usage summary
+
