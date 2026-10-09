@@ -1,0 +1,22 @@
+Text Compare
+Produced: 25/04/2022 01:38:08 AM
+
+Mode:  Differences, With Context
+Left file: /home/aa/Downloads/drivedb.h     Right file: /home/aa/Downloads/drivedb_modify.h
+    "", "",                                                                         =      "", "",
+    "-v 9,sec2hour,Power_On_Hours "                                                        "-v 9,sec2hour,Power_On_Hours "
+    "-v 113,hex48,Proprietary_RR "                                                         "-v 113,hex48,Proprietary_RR "
+    "-v 130,raw48:54321,Minimum_Spares_All_Zs"                                             "-v 130,raw48:54321,Minimum_Spares_All_Zs"
+  //"-v 194,tempminmax,Temperature_Celsius"                                              //"-v 194,tempminmax,Temperature_Celsius"
+  },                                                                                     },
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  { "SSSTC ER2 GD/CD Series SSDs", // Marvel DEAN 2.1                               <>   { "SSSTC ERX GD/CD Series SSDs", // Marvel DEAN 2.1
+    "SSSTC ER2-[CG]D(240|480|960|1920)A?", // tested with SSSTC ER2-GD480/E4N2302l,        "(SSSTC|SATA) ER[23]-[CG]D(240|480|960|1920)A?", // tested with SSSTC ER2-GD480/E4N2302l,
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      // SSSTC ER2-CD1920A/E5MN401                                                  =        // SSSTC ER2-CD1920A/E5MN401
+    "","",                                                                                 "","",
+  //"-v 5,raw16(raw16),Reallocated_Sector_Ct "                                           //"-v 5,raw16(raw16),Reallocated_Sector_Ct "
+  //"-v 9,raw24(raw8),Power_On_Hours "                                                   //"-v 9,raw24(raw8),Power_On_Hours "
+  //"-v 12,raw48,Power_Cycle_Count "                                                     //"-v 12,raw48,Power_Cycle_Count "
+    "-v 170,raw48,Available_Reservd_Space "                                                "-v 170,raw48,Available_Reservd_Space "
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

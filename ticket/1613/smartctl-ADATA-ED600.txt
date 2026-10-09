@@ -1,0 +1,32 @@
+smartctl 7.3 2022-02-28 r5338 [x86_64-w64-mingw32-w10-21H2] (sf-7.3-1)
+Copyright (C) 2002-22, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               ADATA
+Product:              ED600
+Revision:             0204
+Compliance:           SPC-4
+User Capacity:        500,107,862,016 bytes [500 GB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is fully provisioned
+Logical Unit id:      0x3000000000054600
+Serial number:        0000007788CF
+Device type:          disk
+Local Time is:        Tue May 17 20:26:47 2022 NZST
+SMART support is:     Unavailable - device lacks SMART capability.
+Read Cache is:        Enabled
+Writeback Cache is:   Disabled
+
+=== START OF READ SMART DATA SECTION ===
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Error Counter logging not supported
+
+SMART Self-test log
+Num  Test              Status                 segment  LifeTime  LBA_first_err [SK ASC ASQ]
+     Description                              number   (hours)
+# 1  Background short  Completed                   -       0                 - [-   -    -]
+
+Device does not support Background scan results logging
