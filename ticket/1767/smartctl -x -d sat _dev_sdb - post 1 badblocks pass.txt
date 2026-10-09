@@ -1,0 +1,99 @@
+$ smartctl -x -d sat /dev/sdb
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.5.9-200.fc38.x86_64] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     TS512GESD310C
+Serial Number:    REDACTED
+LU WWN Device Id: 0 000000 000000000
+Firmware Version: W0629DM0
+User Capacity:    512 110 190 080 bytes [512 GB]
+Sector Size:      512 bytes logical/physical
+Rotation Rate:    Solid State Device
+TRIM Command:     Available
+Device is:        Not in smartctl database 7.3/5533
+ATA Version is:   ACS-2, ATA8-ACS T13/1699-D revision 4c
+SATA Version is:  SATA 3.1, >6.0 Gb/s (4)
+Local Time is:    Sun Nov  5 21:17:05 2023 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+AAM feature is:   Unavailable
+APM feature is:   Unavailable
+Rd look-ahead is: Enabled
+Write cache is:   Enabled
+DSN feature is:   Unavailable
+ATA Security is:  Disabled, NOT FROZEN [SEC1]
+Wt Cache Reorder: Unavailable
+
+Warning! SMART Attribute Data Structure error: invalid SMART checksum.
+Warning! SMART Attribute Thresholds Structure error: invalid SMART checksum.
+=== START OF READ SMART DATA SECTION ===
+SMART Status command failed: scsi error unsupported scsi opcode
+SMART overall-health self-assessment test result: PASSED
+Warning: This result is based on an Attribute check.
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Total time to complete Offline 
+data collection: 		(    0) seconds.
+Offline data collection
+capabilities: 			 (0x00) 	Offline data collection not supported.
+SMART capabilities:            (0x0000)	Automatic saving of SMART data					is not implemented.
+Error logging capability:        (0x00)	Error logging supported.
+					General Purpose Logging supported.
+
+SMART Attributes Data Structure revision number: 1
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+  1 Raw_Read_Error_Rate     -O--CK   100   100   000    -    0
+  9 Power_On_Hours          -O--CK   100   100   000    -    5
+ 12 Power_Cycle_Count       -O--CK   100   100   000    -    4
+161 Unknown_Attribute       ------   100   100   000    -    100
+169 Unknown_Attribute       ------   100   100   000    -    100
+172 Unknown_Attribute       -O--CK   100   100   000    -    0
+181 Program_Fail_Cnt_Total  -O--CK   100   100   000    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+192 Power-Off_Retract_Count -O---K   100   100   000    -    4
+194 Temperature_Celsius     -O--CK   041   041   000    -    41 (Min/Max 0/41)
+196 Reallocated_Event_Count -O--CK   100   100   000    -    0
+218 Unknown_Attribute       ------   100   100   000    -    0
+231 Unknown_SSD_Attribute   -O--CK   100   100   000    -    100
+233 Media_Wearout_Indicator -O--CK   100   100   000    -    30954
+241 Total_LBAs_Written      -O--CK   100   100   000    -    15676
+242 Total_LBAs_Read         ------   100   100   000    -    15577
+244 Unknown_Attribute       ------   100   100   000    -    3
+245 Unknown_Attribute       ------   100   100   000    -    8
+246 Unknown_Attribute       ------   100   100   000    -    10093
+                            ||||||_ K auto-keep
+                            |||||__ C event count
+                            ||||___ R error rate
+                            |||____ S speed/performance
+                            ||_____ O updated online
+                            |______ P prefailure warning
+
+Read SMART Log Directory failed: scsi error unsupported scsi opcode
+
+ATA_READ_LOG_EXT (addr=0x00:0x00, page=0, n=1) failed: scsi error unsupported scsi opcode
+Read GP Log Directory failed
+
+SMART Extended Comprehensive Error Log (GP Log 0x03) not supported
+
+Read SMART Error Log failed: scsi error unsupported scsi opcode
+
+SMART Extended Self-test Log (GP Log 0x07) not supported
+
+Read SMART Self-test Log failed: scsi error unsupported scsi opcode
+
+Selective Self-tests/Logging not supported
+
+SCT Commands not supported
+
+Device Statistics (GP/SMART Log 0x04) not supported
+
+Pending Defects log (GP Log 0x0c) not supported
+
+ATA_READ_LOG_EXT (addr=0x11:0x00, page=0, n=1) failed: scsi error unsupported scsi opcode
+Read SATA Phy Event Counters failed
+

@@ -1,0 +1,9 @@
+$ smartctl -x /dev/sdb
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.5.9-200.fc38.x86_64] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+/dev/sdb: Unknown USB bridge [0x2174:0x2100 (0x100)]
+Please specify device type with the -d option.
+
+Use smartctl -h to get a usage summary
+

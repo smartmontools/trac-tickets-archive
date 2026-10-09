@@ -1,0 +1,33 @@
+smartctl 7.2 2020-12-30 r5155 [aarch64-linux-6.1.61-v8+] (local build)
+Copyright (C) 2002-20, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Vendor:               Seagate
+Product:              FireCuda HDD
+Revision:             0003
+Compliance:           SPC-4
+User Capacity:        5,000,981,077,504 bytes [5.00 TB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LU is fully provisioned
+Rotation Rate:        5526 rpm
+Form Factor:          2.5 inches
+Logical Unit id:      0x5000000000000001
+Serial number:        00000000NAD30K0B
+Device type:          disk
+Local Time is:        Sat Nov 11 11:55:52 2023 CST
+SMART support is:     Available - device has SMART capability.
+SMART support is:     Disabled
+Temperature Warning:  Disabled or Not Supported
+Read Cache is:        Enabled
+Writeback Cache is:   Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART Health Status: OK
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
+Device does not support Background scan results logging
